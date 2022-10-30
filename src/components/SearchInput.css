@@ -1,0 +1,40 @@
+body {
+    background-color: #2C5CD2 !important;
+}
+
+#search-input-container {
+    background-color: white;
+    padding: 5px;
+    width: 786px;
+}
+
+#search-input-container form  input {
+    width: 534px;
+    border: none;
+}
+
+#search-input-container input:focus {
+    outline: none;
+}
+
+#search-input-container #search-button {
+    width: 54px;
+    height: 45px;
+    margin: 0px;
+}
+
+#search-input-container .dropdown-menu {
+    padding: 10px;
+}
+
+#dropdown-button {
+    width: 180px;
+    display: inline-block !important;
+}
+
+.btn-light:focus {
+    background-color: white;
+    transition: none;
+}
+
+
