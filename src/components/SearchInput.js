@@ -6,40 +6,38 @@ import DropDownItem from "./SearchInput/DropDownItem";
 
 const SearchInput = (props) => {
   return (
-    <div className={props.className} id="search-input-container">
-      <form id="search" className="w-100" placeholder="search..">
-        <div id="dropdown-button">
-          <button
+    <div className={props.className + " rounded"} id="search-input-container">
+      <form id="search" className="w-100 h-100 rounded" placeholder="search..">
+        <button id="dropdown-button" className="h-100 rounded-start"
             type="button"
-            class="btn btn-light dropdown-toggle"
+            class=""
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             Action
-          </button>
           <ul class="dropdown-menu">
             <div id="search-type">
               <DropDownItem
                 type="radio"
-                title="Action"
+                title="Assets"
                 href="#"
                 name="search-type"
               />
               <DropDownItem
                 type="radio"
-                title="Another action"
+                title="Collections"
                 href="#"
                 name="search-type"
               />
             </div>
             <DropDownItem divider={true} />
-            <DropDownItem title="Something else here" href="#" />
-            <DropDownItem title="Separated link" href="#" />
+            <DropDownItem title="Free" href="#" for="free" />
+            <DropDownItem title="Premium" iconClasses="fa-solid fa-crown" href="#"  for="premium"/>
           </ul>
-        </div>
+        </button>
         <input type="text" />
-        <button type="button" id="search-button">
-          s
+        <button type="button" className="rounded-end" id="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
     </div>

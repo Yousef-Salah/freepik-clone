@@ -4,13 +4,17 @@ body {
 
 #search-input-container {
     background-color: white;
-    padding: 5px;
-    width: 786px;
+    padding: 0px;
+    height: 54px;
+    width: 768px;
 }
 
 #search-input-container form > input {
     width: 534px;
+    height: 54px;
+    padding: 10px;
     border: none;
+    
 }
 
 #search-input-container input:focus {
@@ -19,8 +23,11 @@ body {
 
 #search-input-container #search-button {
     width: 54px;
-    height: 45px;
+    height: 53px;
     margin: 0px;
+    border: none;
+    background-color: white;
+    padding: 0px;
 }
 
 #search-input-container .dropdown-menu {
@@ -29,12 +36,25 @@ body {
 
 #dropdown-button {
     width: 180px;
+    height: 52px !important;
     display: inline-block !important;
-}
-
-.btn-light:focus {
+    font-size: 14px;
+    padding: 0px 38px 0px 20px;
+    border: none;
+    outline: none;
     background-color: white;
-    transition: none;
+    position: relative;
 }
 
+#dropdown-button::after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f107';
+    font-weight: 900;
+    display: inline-block; 
+    position: absolute;
+    right: 0px;
+}
 
+.li-icon {
+    margin-right: 7px;
+}
