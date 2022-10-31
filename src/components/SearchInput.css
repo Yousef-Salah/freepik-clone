@@ -8,7 +8,7 @@ body {
     width: 786px;
 }
 
-#search-input-container form  input {
+#search-input-container form > input {
     width: 534px;
     border: none;
 }
