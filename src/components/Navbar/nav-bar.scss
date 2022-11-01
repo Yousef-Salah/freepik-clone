@@ -1,0 +1,67 @@
+$main-color: #4055c7;
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+@mixin resetBootstrap() {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0px;
+    &:hover {
+        //reset hover effects
+    }
+}   
+
+.navbar{
+    background-color: $main-color;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Figtree', sans-serif;
+    a{
+        img{
+            width: 210px;
+            padding: 3px 3px 3px 10px;
+        }
+    }
+    span{
+        img{
+            width: 30px;
+            padding: 1px;
+        }
+    }
+    .navbar-toggler{
+        border: none;
+
+    }
+    .nav-menu{
+        @include resetBootstrap();
+        ul{
+            display: flex;
+            @include resetBootstrap();
+            margin-left: 20px;
+        }
+        li{
+            list-style: none;
+            margin-top: 5px;
+        }
+        a:hover{
+            color: #a5a4a4;
+        }
+        a{
+            @include resetBootstrap();
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            padding-left: 20px;
+       }
+       .btn{
+            @include resetBootstrap();
+            padding: 0px 2px 0px 2px;
+            border-radius: 2px;
+            margin-left:4px ;
+            font-size: 10px;
+            background-color: white;
+            color: black;
+        }
+    }
+}
