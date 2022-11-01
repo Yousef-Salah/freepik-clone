@@ -5,8 +5,19 @@
 
 3- Run `npm install` inside freepik-cap directory (to install project dependencies).
 
-## Available Scripts
 
+## How to push to your branch:
+1- `git add .`
+
+2- `git commit -m "{your comment}"`
+
+3- `git push origin {your_branch_name}`
+
+## Review\pull other code:
+
+* `git checkout {branch_name}`
+
+## Available Scripts
 In the project directory, you can run:
 
 ### `npm start`
