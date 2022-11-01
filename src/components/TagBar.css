@@ -1,0 +1,37 @@
+.icon{
+    width:1em;
+    margin-bottom:7%;
+    margin-right: 3px;
+ aspect-ratio: 1/1;
+
+}
+body{
+    font-family: "Proxima Nova","Verdana","Avenir Next";
+    -webkit-font-smoothing: antialiased;
+       
+}
+.type{
+    font-weight: 700;
+    border-radius:8px;
+height: 44px;
+padding: 10px 15px;
+color:#374957;
+border:1px solid #cfd9e0;
+display: flex;
+align-items: center;
+flex-wrap: nowrap;
+cursor: pointer;
+font-size: 16px;
+
+}
+.tag{
+    font-family: "Proxima Nova","Verdana","Avenir Next";
+    border-radius: 8px;
+    padding: 10px 15px;
+    height: 44px;
+    color: #374957;
+    font-weight: 400;
+    margin: 0;
+    border: 1px solid #cfd9e0;
+    
+}
