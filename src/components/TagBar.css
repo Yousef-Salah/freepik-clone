@@ -6,9 +6,11 @@
 
 }
 body{
+    color: #374957;
     font-family: "Proxima Nova","Verdana","Avenir Next";
-    -webkit-font-smoothing: antialiased;
-       
+    font-size: 16px;
+    line-height: 1.66;
+    -webkit-font-smoothing: antialiased
 }
 .type{
     font-weight: 700;
@@ -35,3 +37,33 @@ font-size: 16px;
     border: 1px solid #cfd9e0;
     
 }
+
+.filters{
+   margin: 0 20 0 0;
+    padding: 0px 30px;
+    display: initial;
+}
+.filtersbtn{
+    margin: 0 20 0 0;
+    padding: 0px 30px;
+    display: block;
+    background: #eff3f6;
+    color: #374957;
+    font-weight: 600;
+    border-radius: 8px;
+    line-height: 34px;
+    max-width: initial;
+    min-width: initial;
+    box-shadow: none;
+    margin-right: 20px;
+    justify-content: center;
+    height: 44px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 250ms linear;
+    text-transform: none;
+    font: inherit;
+}
+
+.offcanvas{
+margin-top: 50px;}
