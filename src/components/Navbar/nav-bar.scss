@@ -5,10 +5,18 @@ $main-color: #4055c7;
   padding: 0;
   box-sizing: border-box;
   border-radius: 0px;
-    &:hover {
-        //reset hover effects
-    }
-}   
+  ul{
+    list-style: none;
+  }
+}
+
+@mixin AnchorFontStyle() {
+    color: white;
+    text-decoration: none;  
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+}
 
 .navbar{
     background-color: $main-color;
@@ -16,9 +24,12 @@ $main-color: #4055c7;
     padding: 0;
     color: white;
     font-family: 'Figtree', sans-serif;
+    display: flex;
+    flex-wrap: nowrap;
+
     a{
         img{
-            width: 210px;
+            width: 190px;
             padding: 3px 3px 3px 10px;
         }
     }
@@ -30,28 +41,22 @@ $main-color: #4055c7;
     }
     .navbar-toggler{
         border: none;
-
+        padding: 10px
     }
     .nav-menu{
         @include resetBootstrap();
         ul{
             display: flex;
             @include resetBootstrap();
-            margin-left: 20px;
         }
         li{
             list-style: none;
             margin-top: 5px;
         }
-        a:hover{
-            color: #a5a4a4;
-        }
         a{
             @include resetBootstrap();
             text-decoration: none;
-            color: white;
-            font-size: 14px;
-            font-weight: 600;
+            @include AnchorFontStyle();
             padding-left: 20px;
        }
        .btn{
@@ -63,5 +68,76 @@ $main-color: #4055c7;
             background-color: white;
             color: black;
         }
+        margin: 15px    
+
+    }
+    .nav-menus{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;    
+    }
+    .pricing-nav{
+        @include resetBootstrap();
+        display: flex;
+        color: white;
+        ul{
+            margin: 10px 0px;
+            display: flex;
+        }
+        li{
+            margin: 10px
+        }
+        a{
+            @include AnchorFontStyle();
+        }
+        .pricing-color{
+            color: #f7b500;
+        }
+    }
+    a:hover,button:hover{
+        color: #c8c7c7 !important;
+    }
+}
+
+.nav-menu-user{
+    @include resetBootstrap();
+    ul{
+        display: flex;
+        @include resetBootstrap();
+        a{
+            @include AnchorFontStyle();
+            min-width: 50px;
+        }
+        li{
+            margin:10px;
+            min-width: 45px;
+        }
+        button{
+            min-width: 70px;
+            background-color: transparent;
+            border: white 1px solid;
+            border-radius: 4px;
+            @include AnchorFontStyle();
+        }
+    }
+    
+}
+.bi-caret-down-fill::before{
+    scale: 0.8;
+    margin-top: 5px;
+}
+// media queries
+@media (max-width: 1150px) {
+    .nav-menu{
+        display: none;
+    }
+    .pricing-nav{
+        display: none !important;
+    }
+    .nav-logo{
+        display: none;
+    }
+    .navbar-toggler{
+        display: unset !important;
     }
 }
