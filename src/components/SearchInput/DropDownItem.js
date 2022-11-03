@@ -3,6 +3,8 @@ const DropDwonItem = (props) => {
   const icon = (props.iconClasses) ? <i className={props.iconClasses + " li-icon"}></i>
   : null;
 
+  const gold = (props.goldItem) ? "gold-item" : "";
+
   const item = (
     <div class="form-check">
       <input
@@ -11,8 +13,10 @@ const DropDwonItem = (props) => {
         value=""
         id={props.for}
         name={props.name}
+        selected
+        
       />
-      <label className="form-check-label" for={props.for}>
+      <label className={`form-check-label ${gold}`} for={props.for}>
         {(icon)? icon: ''}
         {props.title}
       </label>
@@ -24,9 +28,7 @@ const DropDwonItem = (props) => {
   const result = props.divider ? divider : item;
 
   return(
-    <li>
-      {result}
-    </li>
+    result
   );
 };
 
