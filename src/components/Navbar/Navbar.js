@@ -1,10 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './nav-bar.scss';
 
+import Categories from '../../utils/Categories';
+import MoreContent from '../../utils/MoreContent';
+
 const Navbar = () => {
+    const [catVisibility, setCatVisibility] = useState(false);
+    const [moreVisibility, setMoreVisibility] = useState(false);
+    const [arrowDirection, setArrowDirection] = useState("down");
+
+    const categories = Categories();
+    const moreContent = MoreContent();
+
+    //change home to anything else to see inner nav style
+    let pageName = "home";
+    let navClass = "navbar navbar-expand-lg";
+    let shadowStyle = "";
+
+    if (pageName === "home") {
+    } else {
+        navClass += " new-class";
+        shadowStyle = " nav-2-props";
+    }
+
+    const toggleAllOff = () => {
+        setCatVisibility(false);
+        setMoreVisibility(false);
+        setArrowDirection("up");
+    }
+
+    const toggleCatDropdown = () => {
+        if (catVisibility) {
+            setArrowDirection("down");
+        } else {
+            toggleAllOff();
+        }
+        setCatVisibility(!catVisibility);
+    }
+
+    const toggleMoreDropdown = () => {
+        if (moreVisibility) {
+            setArrowDirection("down");
+        } else {
+            toggleAllOff();
+        }
+        setMoreVisibility(!moreVisibility);
+    }
     return (
         <div>
-            <nav className="navbar navbar-expand-lg">
+            <nav className={navClass}>
                 <div className="container-fluid">
                     <button className="navbar-toggler">
                         <span>
@@ -24,18 +68,101 @@ const Navbar = () => {
                                     <li><a href="https://www.freepik.com/popular-psd">PSD</a></li>
                                     <li>
                                         <a href="https://www.freepik.com/popular-psd">3D</a>
-                                        <button className="btn">NEW</button>
+                                        <button className="btn btn-new">NEW</button>
                                     </li>
                                     <li><a href="https://www.freepik.com/popular-psd">Fonts</a></li>
-                                    <li>
-                                        <a href="https://www.freepik.com/popular-psd">Categories
-                                            <i className="bi bi-caret-down-fill"></i>
+                                    <li onClick={toggleCatDropdown}>
+                                        <a href='#'>Categories
+                                            <i className={"bi bi-caret-" + arrowDirection + "-fill"}></i>
                                         </a>
+                                        {catVisibility ? <div className={"cat-drop-list" + shadowStyle}>
+                                            {categories.map((category, index) => {
+                                                return (
+                                                    <li key={index}>
+                                                        <a href={category.url}>{category.name}</a>
+                                                    </li>
+                                                )
+                                            })}
+                                        </div> : null}
+
                                     </li>
+                                    {(catVisibility && pageName === "home") ? <i className="bi bi-caret-down-fill arrow-down-cat "></i> : null}
+
+
                                     <li><a href="https://www.freepik.com/popular-psd">Collections</a></li>
-                                    <li><a href="https://www.freepik.com/popular-psd">More
-                                        <i className="bi bi-caret-down-fill"></i>
-                                    </a></li>
+                                    <li onClick={toggleMoreDropdown}>
+                                        <a href='#'>More
+                                            <i className={"bi bi-caret-" + arrowDirection + "-fill"}></i>
+                                        </a>
+                                        {moreVisibility ? <div className={"more-drop-list" + shadowStyle}>
+                                            <ul>
+                                                <h4>PROJECTS</h4>
+                                                <div className="more-items">
+                                                    {moreContent[0]['projects'].map((item, idx) => {
+                                                        return (
+                                                            <a href={item.url} key={idx}>
+                                                                <li>
+                                                                    <h5>{item.name}</h5>
+                                                                    <h6>{item.desc}</h6>
+                                                                </li>
+                                                            </a>
+                                                        )
+                                                    })}
+
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <h4>PRO SOLUTIONS</h4>
+                                                <div className="more-items">
+                                                    {moreContent[1]['pro_solutions'].map((item, idx) => {
+                                                        return (
+                                                            <a href={item.url} key={idx}>
+                                                                <li>
+                                                                    <h5>{item.name}</h5>
+                                                                    <h6>{item.desc}</h6>
+                                                                </li>
+                                                            </a>
+                                                        )
+                                                    })}
+
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <h4>TOOLS</h4>
+                                                <div className="more-items">
+                                                    {moreContent[2]['tools'].map((item, idx) => {
+                                                        return (
+                                                            <a href={item.url} key={idx}>
+                                                                <li>
+                                                                    <h5>{item.name}</h5>
+                                                                    <h6>{item.desc}</h6>
+                                                                </li>
+                                                            </a>
+                                                        )
+                                                    })}
+                                                </div>
+                                            </ul>
+                                            <ul>
+                                                <h4>APPS AND PLUGINS</h4>
+                                                <div className="more-items">
+                                                    {moreContent[3]['apps_and_plugins'].map((item, idx) => {
+                                                        return (
+                                                            <a href={item.url} key={idx}>
+                                                                <li>
+                                                                    <h5>{item.name}</h5>
+                                                                    <h6>{item.desc}</h6>
+                                                                </li>
+                                                            </a>
+                                                        )
+                                                    })}
+
+                                                </div>
+                                            </ul>
+                                        </div> : null}
+
+                                    </li>
+                                    {(moreVisibility && pageName === "home") ? <i className="bi bi-caret-down-fill arrow-down-more "></i> : null}
+
                                 </ul>
                             </div>
                             <div className="pricing-nav">
@@ -54,12 +181,13 @@ const Navbar = () => {
                             <a className='login-link' href="https://www.freepik.com/popular-psd">Log in </a>
                         </li>
                         <li>
-                            <button className="signup-btn">Sign Up</button>
+                            <button className="signup-btn">Sign up</button>
                         </li>
                     </ul>
                 </div>
             </nav>
-        </div>
+
+        </div >
     )
 }
 

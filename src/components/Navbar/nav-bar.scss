@@ -1,4 +1,6 @@
 $main-color: #4055c7;
+$dark-color: #252a31;
+$anchorColor2: #a9b6c4;
 @import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
 @mixin resetBootstrap() {
   margin: 0;
@@ -9,13 +11,42 @@ $main-color: #4055c7;
     list-style: none;
   }
 }
-
+@mixin arrowDown() {
+    position: absolute;
+    transform: rotateX(180deg);
+    margin-top: 28px;
+    scale: 1.25;
+    color:$dark-color !important;
+}
 @mixin AnchorFontStyle() {
     color: white;
     text-decoration: none;  
     font-size: 13.5px;
     font-weight: 600;
     text-decoration: none;
+}
+
+@mixin popUpBox {
+    background-color: $dark-color;
+    top: 60px;
+    left: 0;
+    border-radius: 10px;
+    padding: 15px 25px 25px;
+    position: absolute;
+    li{
+        list-style: none;
+        padding: 10px;
+        line-height: 30px;
+        @include resetBootstrap();
+        a{
+            @include AnchorFontStyle();
+            color: #a9b6c4 !important;
+        }
+        a:hover,button:hover{
+            color: white !important;
+        }
+        
+    }
 }
 
 .navbar{
@@ -26,7 +57,7 @@ $main-color: #4055c7;
     font-family: 'Figtree', sans-serif;
     display: flex;
     flex-wrap: nowrap;
-
+    position: relative;
     a{
         img{
             width: 190px;
@@ -58,17 +89,18 @@ $main-color: #4055c7;
             text-decoration: none;
             @include AnchorFontStyle();
             padding-left: 20px;
-       }
+        }
        .btn{
             @include resetBootstrap();
-            padding: 0px 2px 0px 2px;
-            border-radius: 2px;
+            padding: 1px 3px 1px 3px;
+            border-radius: 4px;
             margin-left:4px ;
-            font-size: 10px;
+            font-size: 8px;
+            font-weight: 600;
             background-color: white;
-            color: black;
+            color: blue !important;
         }
-        margin: 15px    
+         margin: 15px    
 
     }
     .nav-menus{
@@ -91,11 +123,11 @@ $main-color: #4055c7;
             @include AnchorFontStyle();
         }
         .pricing-color{
-            color: #f7b500;
+            color: #f7b500 !important;
         }
     }
     a:hover,button:hover{
-        color: #c8c7c7 !important;
+        color: #a9b6c4 !important;
     }
 }
 
@@ -110,21 +142,92 @@ $main-color: #4055c7;
         }
         li{
             margin:10px;
-            min-width: 45px;
+            min-width: 37px;
         }
         button{
-            min-width: 70px;
+            min-width: 60px;
             background-color: transparent;
             border: white 1px solid;
             border-radius: 4px;
+            height: fit-content;
+            padding: 3px 0px 3px 0px;
             @include AnchorFontStyle();
         }
     }
     
 }
-.bi-caret-down-fill::before{
+
+.cat-drop-list{
+    @include popUpBox();
+    display: grid;
+    width: 760px;
+    grid-template-columns: repeat(4, 180px);
+    grid-gap: 10px;
+    margin-left: 20%;
+}
+
+.more-drop-list{
+    @include popUpBox();
+    margin-left: 30%;
+    display: flex;
+    min-height: 300px;
+    width: 820px;
+    padding: 20px 10px !important;
+    ul{        
+        width: 25%;
+        height: 100%;
+        display: block !important;
+        padding: 15px 20px 15px 20px !important;
+        h4{
+            font-size: 15px !important;
+            font-weight: 600;
+            color: gray;
+            padding-bottom: 5px;
+        }
+        .more-items{
+            display: block;
+            a{
+                padding-right: 10px;
+                @include resetBootstrap();
+                h5{
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                h6{
+                    font-size: 14px;
+                    color: $anchorColor2;
+                }
+            }
+        }
+    }
+}
+.bi-caret-down-fill::before,.bi-caret-up-fill::before{
     scale: 0.8;
     margin-top: 5px;
+}
+
+.arrow-down-cat{
+    @include arrowDown();
+    margin-left: 381px;
+
+}
+.arrow-down-more{
+    @include arrowDown();
+    margin-left: 535.5px;
+
+}
+.hide-class{
+    display: none !important;
+}
+.nav-cat{
+    position: relative;
+    background-color: #252a30;
+}
+
+.nav-2-props{
+    box-shadow:inset 0px 15px 20px 0px rgb(25, 29, 33, 50%);
+    top: 40px;
+    border-radius: 0px 0px 10px 10px;
 }
 // media queries
 @media (max-width: 1150px) {
@@ -139,5 +242,34 @@ $main-color: #4055c7;
     }
     .navbar-toggler{
         display: unset !important;
+    }
+}
+
+.new-class{
+
+    background-color: #252a30 !important;
+    max-height: 40px !important;
+    a, button{
+        color: #a9b6c4 !important;
+    }
+    button{
+        border: gray 1px solid !important;
+        
+    }
+    a:hover,button:hover{
+        color: white !important;
+    }
+    .nav-logo{
+        display: none;
+    }
+    .nav-menu{
+        margin-left: -10px !important;
+    }
+    .btn{
+        border-radius: 2px;
+
+    }
+    .bi-caret-down-fill::before {
+        margin-top: 0px !important; 
     }
 }
