@@ -7,7 +7,7 @@
 }
 body{
     color: #374957;
-    font-family: "Proxima Nova","Verdana","Avenir Next";
+    font-family: 'Proxima Nova',Verdana,'Avenir Next';
     font-size: 16px;
     line-height: 1.66;
     -webkit-font-smoothing: antialiased
@@ -27,7 +27,7 @@ font-size: 16px;
 
 }
 .tag{
-    font-family: "Proxima Nova","Verdana","Avenir Next";
+    font-family: 'Proxima Nova',Verdana,'Avenir Next';
     border-radius: 8px;
     padding: 10px 15px;
     height: 44px;
