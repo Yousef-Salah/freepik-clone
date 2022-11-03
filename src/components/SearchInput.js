@@ -8,7 +8,7 @@ const SearchInput = (props) => {
   return (
     <div className={props.className + " rounded"} id="search-input-container">
       <form id="search" className="w-100 h-100 rounded" placeholder="search..">
-        <button id="dropdown-button" className="h-100 rounded-start"
+        <button id="search-filters" className="h-100 rounded-start"
             type="button"
             class=""
             data-bs-toggle="dropdown"
