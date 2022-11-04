@@ -1,0 +1,40 @@
+.title{
+    margin-top: 4%;
+    margin-left: 10%;
+    font-size:xx-large;
+    color:black ;
+}
+strong{
+    color:blue;  
+}
+.photo{
+    margin-left:900px;
+    margin-top: -18%;
+    margin-right: 40px;
+}
+.text{
+    margin-left: 10%;
+    color: rgb(52, 51, 51);
+}
+.button{
+  background-color: #1273eb; 
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration:none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-left: 10%;
+  cursor:pointer;
+}
+  .container{
+    border-radius: 20px;
+    margin-top: 10%;
+    background: #afd0e8;
+    padding: 10px; 
+    width: 2000px;
+    height: 270px; 
+  }
