@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    
+  }
+  body {
+    background-color: rgb(76, 76, 236);
+    margin: 0;
+    font-family: Arial;
+  }
+  .column {
+    float: left;
+    width: 8%;
+    padding: 50px;
+  }
+  img {
+    border: 3px solid rgb(76, 76, 236);
+    outline-style: solid ;
+    outline-color:  rgb(190, 210, 246) ;
+  }
+  .column img {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    margin-left: 35px;
+    opacity: 0.8; 
+    cursor:pointer; 
+  }
+  .column img:hover {
+    opacity: 1;
+  }
+  .text{
+        color: rgb(252, 245, 245);
+        font-size: 15px;
+        margin-left: 50px;
+        margin-top: 10%;
+  }
+  
