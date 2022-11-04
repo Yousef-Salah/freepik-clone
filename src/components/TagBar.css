@@ -66,4 +66,13 @@ font-size: 16px;
 }
 
 .offcanvas{
-margin-top: 50px;}
+    margin-top:3%;
+max-width:15%;
+}
+.btn-outline-secondary:click{
+background-color: white;
+
+}
+.sidetag{
+background-color: black;
+    }
