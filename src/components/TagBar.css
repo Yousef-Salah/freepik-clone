@@ -7,10 +7,11 @@
 }
 body{
     color: #374957;
-    font-family: 'Proxima Nova',Verdana,'Avenir Next';
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.66;
-    -webkit-font-smoothing: antialiased
+    -webkit-font-smoothing: antialiased;
+    
 }
 .type{
     font-weight: 700;
@@ -27,7 +28,7 @@ font-size: 16px;
 
 }
 .tag{
-    font-family: 'Proxima Nova',Verdana,'Avenir Next';
+    font-family: Arial, Helvetica, sans-serif;
     border-radius: 8px;
     padding: 10px 15px;
     height: 44px;
@@ -35,9 +36,19 @@ font-size: 16px;
     font-weight: 400;
     margin: 0;
     border: 1px solid #cfd9e0;
+    display:flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    line-height: 14px;
+    white-space: nowrap;
+     
     
 }
-
+.tag-class{
+    box-sizing: border-box;
+    outline: none;
+    line-height: 1.66;
+}
 .filters{
    margin: 0 20 0 0;
     padding: 0px 30px;
@@ -73,6 +84,11 @@ max-width:15%;
 background-color: white;
 
 }
-.sidetag{
-background-color: black;
-    }
+
+.navbar{
+        overflow-y:visible;
+        display:inline-block;
+}
+#navv{
+    max-height: 2px;
+}

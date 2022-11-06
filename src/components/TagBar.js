@@ -6,16 +6,15 @@ import Filters from './Filters';
 const Bar=() =>{
 
     return(
-        <div className="container-fluid ">
-        <nav className="navbar bg-light">
+        <div className="container-fluid">
+        <nav className="navbar bg-light sticky">
+        <span className="container-fluid justify-content-start navbarr" id='navbarr'>
         <Filters/>
-        <br/>
-        <form className="container-fluid justify-content-start ">
          <Type title="Photos" pic='bi bi-image'/>
           <Type title="PSD" pic='bi bi-filetype-psd' />
-          <Type title="All Images" pic='bx bxs-shapes' />
+          <Type title="All images" pic='bx bxs-shapes' />
           <Tag title="arrow"/>
-          <Tag title="backgroud"/>
+          <Tag title="background"/>
           <Tag title="business card"/>
           <Tag title="certificate"/>
           <Tag title="christmas"/>
@@ -24,7 +23,7 @@ const Bar=() =>{
           <Tag title="halloween"/>
           <Tag title="infographic"/>
           <Tag title="pattern" />
-        </form>
+        </span>
       </nav>
       </div>
     );
