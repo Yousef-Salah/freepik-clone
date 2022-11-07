@@ -9,8 +9,8 @@ strong{
 }
 .photo{
     margin-left:900px;
-    margin-top: -18%;
-    margin-right: 40px;
+    margin-top: -17%;
+    margin-right: 20px;
 }
 .text{
     margin-left: 10%;
@@ -37,4 +37,13 @@ strong{
     padding: 10px; 
     width: 2000px;
     height: 270px; 
+  }
+  .row {  
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width: 800px) {
+    .text,.title ,.photo {   
+      flex-direction: column;
+    }
   }

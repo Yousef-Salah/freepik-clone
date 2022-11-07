@@ -1,13 +1,14 @@
- import vector from "./immm/Internet-Vector.jpg"
- import lllustrations from "./immm/card-1.jpg"
- import photo from "./immm/photo.jpg"
- import template from "./immm/templates.jpg"
- import font from "./immm/Fonts.jpg"
- import mockup from "./immm/Mockup.jpg"
- import background from "./immm/background.jpg"
- import textEffect from "./immm/text-effect.jpg"
- import'./Im.css';
-const tt= () =>
+ import vector from "./images/Internet-Vector.jpg"
+ import lllustrations from "./images/card-1.jpg"
+ import photo from "./images/photo.jpg"
+ import template from "./images/templates.jpg"
+ import font from "./images/Fonts.jpg"
+ import mockup from "./images/Mockup.jpg"
+ import background from "./images/background.jpg"
+ import textEffect from "./images/text-effect.jpg"
+ import'./ImageCard.css';
+
+ const ImageCard= () =>
 {
   return(
     
@@ -49,4 +50,4 @@ const tt= () =>
   );
 }
 
-export default tt
+export default ImageCard
