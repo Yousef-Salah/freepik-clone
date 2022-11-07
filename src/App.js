@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="container mt-5">
       <div className="row">
-        <div className="col-10">
+        <div className="col-10 offset-1">
           <SearchInput />
         </div>
       </div>

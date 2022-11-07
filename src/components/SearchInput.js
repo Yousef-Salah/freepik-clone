@@ -70,7 +70,7 @@ const SearchInput = (props) => {
             </div>
           </form>
         </div>
-        <div className="d-inline-block position-relative" id="input-field">
+        <div className="d-inline-block position-relative rounded-start" id="input-field">
           <span className={delteTextIcon} onClick={deleteText}><i class="fa-solid fa-square-xmark fa-2x "></i></span>
           <input type="text" id="search-value" onChange={checkDeleteIconStatus} placeholder="Search.." />
         </div>

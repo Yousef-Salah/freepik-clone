@@ -6,7 +6,8 @@ body {
     background-color: white;
     padding: 0px;
     height: 54px;
-    width: 768px;
+    width: 100%;
+    max-width: 768px;
 }
 
 #search > div {
@@ -127,6 +128,7 @@ body {
     transition: opacity .8s ease .3s;
 }
 
+/*  <=768px for medium screens */
 @media screen and ( max-width: 768px) {
     #search .dropdown {
       display: none !important;
@@ -134,5 +136,14 @@ body {
 
     #search-input-container {
         height: 44px !important;
+    }
+
+    #search #search-button {
+        width: 44px;
+        height: 44px;
+    } 
+
+    #search #input-field {
+        width: calc(100% - 44px);
     }
 }
