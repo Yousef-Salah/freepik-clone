@@ -9,11 +9,26 @@ body {
     width: 768px;
 }
 
-#search #input-field input {
+#search > div {
+    height: 100%;
+    overflow-y: hidden !important;
+}
+
+/* #search .dropdown,
+#search #search-button {
+    overflow-y: hidden;
+}  */
+
+#search #input-field {
     width: 534px;
-    height: 54px;
+}
+
+#search #input-field input {
+    width: 100%;
+    height: 100%;
     padding: 10px 30px 10px 10px;
     border: none;
+    margin: 0px;
     
 }
 
@@ -23,7 +38,11 @@ body {
 
 #search #search-button {
     width: 54px;
-    height: 53px;
+}
+
+#search #search-button button{
+    width: 100%;
+    height: 100%;
     margin: 0px;
     border: none;
     background-color: white;
@@ -33,7 +52,7 @@ body {
 #search .dropdown-menu {
     width: 180px !important;
     padding: 10px 10px 10px 10px;
-    transform: translate(0px, 45px) !important;
+    transform: translate(0px, 65px) !important;
 }
 
 #search .dropdown-menu::before {
@@ -64,7 +83,7 @@ body {
 
 #search-filters {
     width: 180px;
-    height: 52px !important;
+    height: 100% !important;
     display: inline-block !important;
     font-size: 14px;
     padding: 0px 38px 0px 20px;
@@ -98,7 +117,7 @@ body {
 
 #search #input-field span {
     display: inline-block;
-    height: 54px;
+    height: 100%;
     position: absolute;
     color: #BAC8D3;
     cursor: pointer;
@@ -106,4 +125,14 @@ body {
     top: 12px;
 
     transition: opacity .8s ease .3s;
+}
+
+@media screen and ( max-width: 768px) {
+    #search .dropdown {
+      display: none !important;
+    }
+
+    #search-input-container {
+        height: 44px !important;
+    }
 }

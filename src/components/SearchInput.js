@@ -29,9 +29,9 @@ const SearchInput = (props) => {
 
 
   return (
-    <div className={props.className + " rounded"} id="search-input-container">
+    <div className={props.classlist + " rounded"} id="search-input-container">
       <form id="search" className="w-100 h-100 rounded" placeholder="search..">
-        <div className="dropdown d-inline rounded-start">
+        <div className="d-inline-block dropdown rounded-start">
           <button id="search-filters" type="button" className="dropdown-toggle rounded-start text-align-start" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
             Assets
           </button>
@@ -74,9 +74,11 @@ const SearchInput = (props) => {
           <span className={delteTextIcon} onClick={deleteText}><i class="fa-solid fa-square-xmark fa-2x "></i></span>
           <input type="text" id="search-value" onChange={checkDeleteIconStatus} placeholder="Search.." />
         </div>
-        <button type="button" className="rounded-end" id="search-button">
-          <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
+        <div id="search-button" className="d-inline-block">
+          <button type="button" className="rounded-end" >
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
       </form>
     </div>
   );
