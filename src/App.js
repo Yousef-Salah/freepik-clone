@@ -4,10 +4,10 @@ import SearchInput from "./components/SearchInput";
 
 function App() {
   return (
-    <div className="container mt-5">
+    <div className="container-fluid mt-5">
       <div className="row">
-        <div className="col-10 offset-1">
-          <SearchInput />
+        <div className="col-12 align-item-center mr-auto ml-auto">
+          <SearchInput  className="yousef salah khodroj"/>
         </div>
       </div>
     </div>

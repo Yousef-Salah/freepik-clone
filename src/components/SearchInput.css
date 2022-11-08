@@ -11,9 +11,15 @@ body {
 }
 
 #search > div {
-    height: 100%;
-    overflow-y: hidden !important;
+    height: 97%;
+    /* overflow-y: hidden !important; */
 }
+
+/* TODO: Must Be Fixed */
+/* #search {
+	transition: all 0.3 ease 0.1;
+} */
+
 
 /* #search .dropdown,
 #search #search-button {
@@ -146,4 +152,14 @@ body {
     #search #input-field {
         width: calc(100% - 44px);
     }
+
+	#search #input-field span {
+		top: 6px;
+	}
+}
+
+@media screen and (max-width: 792px) and (min-width: 769px) {
+	#search #input-field {
+		width: calc(100% - 180px - 54px);
+	}
 }
