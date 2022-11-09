@@ -1,6 +1,6 @@
 
 const Type=(props) =>{
-    const classes='btn btn-outline-secondary me-3 type '+ props.className
+    const classes='btn btn-outline-secondary me-3 type'+ props.className
     return(
         
         <span className="type-class">

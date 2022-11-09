@@ -42,7 +42,18 @@ flex-shrink: 0;
     margin-top:20px;
 width: fit-content;
 }
+.tag:hover , .type:hover, .SideTag:hover, .SideTagWithPic:hover {
+    background-color: rgb(241 245 249);
+    color: black;
+    border:1px solid #cfd9e0;
 
+}
+.tag:focus{
+    background-color: rgb(241 245 249);
+    color: black;
+    border:1px solid #cfd9e0;
+
+}
 .tag{
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 8px;

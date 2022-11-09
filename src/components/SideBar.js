@@ -3,6 +3,7 @@ import Filters from './Filters'
 import { useState } from 'react';
 import './TagBar.css';
 import SideTag from './SideTag';
+
 const SideBar = () => {
   const getData= (data)=>{
     
@@ -11,10 +12,14 @@ const SideBar = () => {
   return (
     <div className='flex'>
       <div className={`${ open ? "w-64" :"w-0"} h-screen relative p-0 pt-0`}>
-      <div className={`absolute cursor-pointer-right-3 top-9 w-7 -mx-  ${open && 'scale-0'}`}
+      <div className={`absolute cursor-pointer-right-3 ${open && 'scale-0'}`}
       onClick={()=>setOpen(!open)}>
+          <div className='filters'>
+        <div className="container-fluid">
 <button className="btn-light filtersbtn items-center" type="button"> 
         <i className="bi bi-sliders"></i>Filters</button>
+      </div>
+      </div>
       </div>
       <div className={`flex gap-x-2 items-center w-64 mt-3 ${!open && 'scale-0'}`}>
         <i className='bi bi-sliders'></i>
@@ -27,25 +32,25 @@ const SideBar = () => {
         <ul className={`flex pt-6 ${!open && 'scale-0'}` }>
         <div className="accordion" id="accordionExample5">
   <div className="accordion-item bg-white border border-gray-200">
-    <h2 className="accordion-header mb-0" id="headingOne5">
+    <h2 className="accordion-header mb-0 left-4" id="headingOne5">
       <button className="
         accordion-button
         relative
         flex
         items-center
-        w-full
         py-4
         px-5
         text-base text-gray-800 text-left
         bg-white
         border-0
         rounded-none
-        transition
         focus:outline-none
+        
       " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" aria-expanded="true"
-        aria-controls="collapseOne5">
-        Accordion Item #1
-      </button>
+        aria-controls="collapseOne5 ">
+          <i className='bx bx-category-alt absolute  left-4'></i>
+Category      </button>
+
     </h2>
     <div id="collapseOne5" className="accordion-collapse collapse show flex" aria-labelledby="headingOne5">
       <div className="accordion-body py-4 px-5 flex w-64">

@@ -13,12 +13,13 @@ const Filters=()=>{
   const [open, setOpen] =useState(false);
 const filtersClick=()=>{
 setOpen(!open);
+
 }
     return(
 <div>
       <div className='filters'>
         <div className="container-fluid">
-        <button className="btn  btn-light filtersbtn" onClick={filtersClick} type="button" id="filters" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"> 
+        <button className="btn  btn-light filtersbtn" onClick={filtersClick} > 
         <i class="bi bi-sliders"></i>Filters</button>
         </div>
         </div></div>
