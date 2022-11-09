@@ -17,6 +17,8 @@
 
 * `git checkout {branch_name}`
 
+* `git pull`
+
 ## Available Scripts
 In the project directory, you can run:
 
