@@ -37,11 +37,4 @@ justify-content: flex-start;
 .categoryrow{
 padding:5px 0px 20px;
 }
-.arrow{
 
-    margin-left: 50%;
-    float: right;
-    display:flex;
-    justify-content: flex-end;
-    margin-bottom: 5%;
-}

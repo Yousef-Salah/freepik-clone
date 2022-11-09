@@ -3,7 +3,6 @@ import './App.css';
 import TagBar from './components/TagBar';
 import Filters from './components/Filters';
 import SideBar from './components/SideBar';
-import Carousel from './components/Carousel';
 
 function App() {
   return (

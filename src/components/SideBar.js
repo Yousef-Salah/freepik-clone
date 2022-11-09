@@ -3,10 +3,12 @@ import Filters from './Filters'
 import { useState } from 'react';
 import './TagBar.css';
 import SideTag from './SideTag';
+import CollapseBtn from './CollapseBtn';
+import SideTagWithPic from './SideTagWithPic';
 
 const SideBar = () => {
-  const getData= (data)=>{
-    
+  const flipArrow= ()=>{
+    console.log('oi');
   }
   const [open, setOpen] =useState(false);
   return (
@@ -16,7 +18,7 @@ const SideBar = () => {
       onClick={()=>setOpen(!open)}>
           <div className='filters'>
         <div className="container-fluid">
-<button className="btn-light filtersbtn items-center" type="button"> 
+      <button className="btn-light filtersbtn items-center content-center absolute top-5 left-1" type="button"> 
         <i className="bi bi-sliders"></i>Filters</button>
       </div>
       </div>
@@ -28,107 +30,107 @@ const SideBar = () => {
         </h1>
         <button className='bx bx-arrow-from-right text-3xl mt-3 	hover:border border-slate-100   text-black origin-right font-medium flex-end absolute top-0 right-0 '
         onClick={()=>setOpen(!open)}></button>
-              </div>
-        <ul className={`flex pt-6 ${!open && 'scale-0'}` }>
-        <div className="accordion" id="accordionExample5">
-  <div className="accordion-item bg-white border border-gray-200">
-    <h2 className="accordion-header mb-0 left-4" id="headingOne5">
-      <button className="
-        accordion-button
-        relative
-        flex
-        items-center
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        focus:outline-none
-        
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" aria-expanded="true"
-        aria-controls="collapseOne5 ">
-          <i className='bx bx-category-alt absolute  left-4'></i>
-Category      </button>
-
-    </h2>
-    <div id="collapseOne5" className="accordion-collapse collapse show flex" aria-labelledby="headingOne5">
-      <div className="accordion-body py-4 px-5 flex w-64">
-        <SideTag title='Photo'/>
-        <SideTag title='Photo'/>
-        <SideTag title='Vector'/>
-      </div>
     </div>
-  </div>
-  <div className="accordion-item bg-white border border-gray-200">
-    <h2 className="accordion-header mb-0" id="headingTwo5">
-      <button className="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo5" aria-expanded="false"
-        aria-controls="collapseTwo5">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo5" className="accordion-collapse collapse" aria-labelledby="headingTwo5">
-      <div className="accordion-body py-4 px-5">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default,
-        until the collapse plugin adds the appropriate classes that we use to style each
-        element. These classes control the overall appearance, as well as the showing and
-        hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-        our default variables. It's also worth noting that just about any HTML can go within
-        the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div className="accordion-item bg-white border border-gray-200">
-    <h2 className="accordion-header mb-0" id="headingThree5">
-      <button className="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree5" aria-expanded="false"
-        aria-controls="collapseThree5">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree5" className="accordion-collapse collapse" aria-labelledby="headingThree5">
-      <div className="accordion-body py-4 px-5">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default,
-        until the collapse plugin adds the appropriate classes that we use to style each
-        element. These classes control the overall appearance, as well as the showing and
-        hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-        our default variables. It's also worth noting that just about any HTML can go within
-        the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
+    <ul className={`pt-6 block` }>
+                <li><div className={`flex gap-x-2 items-center w-64 mt-3  ${!open && 'scale-0'}`}>
+                <CollapseBtn target="#categoryCollapse" aria="categryCollapse" pic='bx bx-category-alt' title="Categroy"/>
+                </div>
+                <div className="collapse" id="categoryCollapse">
+  <span className="container-fluid ">
+    <div className="row" >
+      <div className='col-4'>
+<SideTag title="Vectors"/> 
 </div>
-        </ul>
-      </div>
+<div className='col-4'>
+<SideTag title="Photos"  /> 
+</div>
+<div className='col-4'>
+<SideTag title="PSD"  /> 
+</div>
+<div className='col-4 mt-2'>
+<SideTag title="Icons"  /> 
+</div>
+</div>
+</span>
+</div>
+                </li>
+                <br/>
+                <li>
+                <div className={`flex gap-x-2 items-center w-64 mt-3 ${!open && 'scale-0'}`}>
+                  
+                <CollapseBtn title="License" pic='bx bx-crown' type='button' aria="licenseCollapse" target="#licenseCollapse" onClick={flipArrow}/>
+                </div>
+<div className="collapse" id="licenseCollapse">
+  <span className="container-fluid">
+    <div className="row category-row">
+<SideTag title="Free"/> 
+<SideTagWithPic title='Premium' pic='bx bx-crown'/>
+</div>
+</span>
+</div>
+                </li>
+                <li>
+                <div className={`flex gap-x-2 items-center w-64 mt-3 ${!open && 'scale-0'}`}>
+                <CollapseBtn title="Color" pic='bx bx-palette'  aria="licenseCollapse" target="#licenseCollapse"/>
+                </div>
+<div className="collapse" id="colorCollapse">
+  <span className="container-fluid">
+    <div className="row category-row">
+<SideTag title="Free"/> 
+<SideTagWithPic title='Premium' pic='bx bx-crown'/>
+</div>
+</span>
+</div>
+                </li>
+                <li>
+                <div className={`flex gap-x-2 items-center w-64 mt-3 ${!open && 'scale-0'}`}>
+                <CollapseBtn title="File type" pic='bx bx-file'  aria="fileCollapse" target="#fileCollapse" />
+                </div>
+<div className="collapse" id="fileCollapse">
+  <span className="container-fluid">
+    <div className="row category-row">
+<SideTag title="JPG"/> 
+<SideTag title="AI"/> 
+<SideTag title="EPS"/> 
+</div>
+</span>
+</div>
+</li>
+<li>
+                <div className={`flex gap-x-2 items-center w-64 mt-3 ${!open && 'scale-0'}`}>
+                <CollapseBtn title="Orientation" pic='bx bx-subdirectory-left'  aria="orientationCollapse" target="#orientationCollapse"/>
+                </div>
+<div className="collapse" id="orientationCollapse">
+  <span className="container-fluid">
+    <div className="row category-row">
+<SideTagWithPic title="Horizontal" pic='bx bx-rectangle'/> 
+<SideTagWithPic title='Vertical' pic='bx bx-rectangle bx-rotate-90'/>
+</div>
+</span>
+</div> 
+</li>
+<li>
+                <div className={`flex gap-x-2 items-center w-64 mt-3 ${!open && 'scale-0'}`}>
+                <CollapseBtn title="Style" pic='bi bi-brush'  aria="styleCollapse" target="#styleCollapse"/>
+                </div>
+<div className="collapse" id="styleCollapse">
+  <span className="container-fluid">
+    <div className="row category-row">
+<SideTag title="Watercolor" /> 
+<SideTag title="Flat" /> 
+<SideTag title="Cartoon" /> 
+<SideTag title="Geometric" /> 
+<SideTag title="Gradiant" /> 
+<SideTag title="Isometric" /> 
+<SideTag title="3D" /> 
+<SideTag title="Hand-drawn" /> 
+</div>
+</span>
+</div> 
+</li>
+                </ul>
+                
+    </div>
       <div>
         <h1 className='p-7 text2xl font-semibold flex-1 h-screen'>
         </h1>
