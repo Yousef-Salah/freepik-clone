@@ -7,7 +7,8 @@ import MoreContent from '../../utils/MoreContent';
 const Navbar = () => {
     const [catVisibility, setCatVisibility] = useState(false);
     const [moreVisibility, setMoreVisibility] = useState(false);
-    const [arrowDirection, setArrowDirection] = useState("down");
+    const [arrowDirectionCat, setarrowDirectionCat] = useState("down");
+    const [arrowDirectionMore, setarrowDirectionMore] = useState("down");
 
     const categories = Categories();
     const moreContent = MoreContent();
@@ -26,13 +27,21 @@ const Navbar = () => {
     const toggleAllOff = () => {
         setCatVisibility(false);
         setMoreVisibility(false);
-        setArrowDirection("up");
+    }
+    const toggleMoreOff = () => {
+        setMoreVisibility(false);
+        setarrowDirectionMore("up");
+    }
+    const toggleCatOff = () => {
+        setCatVisibility(false);
+        setarrowDirectionCat("up");
     }
 
     const toggleCatDropdown = () => {
         if (catVisibility) {
-            setArrowDirection("down");
+            setarrowDirectionCat("down");
         } else {
+            toggleCatOff();
             toggleAllOff();
         }
         setCatVisibility(!catVisibility);
@@ -40,9 +49,10 @@ const Navbar = () => {
 
     const toggleMoreDropdown = () => {
         if (moreVisibility) {
-            setArrowDirection("down");
+            setarrowDirectionMore("down");
         } else {
             toggleAllOff();
+            toggleMoreOff();
         }
         setMoreVisibility(!moreVisibility);
     }
@@ -71,9 +81,9 @@ const Navbar = () => {
                                 <li><a href="https://www.freepik.com/popular-psd">Fonts</a></li>
                                 <li className='side-cat-list' onClick={toggleCatDropdown}>
                                     <a>Categories</a>
-                                    <i className={"bi bi-caret-" + arrowDirection + "-fill"}></i>
+                                    <i className={"bi bi-caret-" + arrowDirectionCat + "-fill"}></i>
                                 </li>
-                                {catVisibility ? <div className={"side-drop-list" + shadowStyle}>
+                                {catVisibility ? <div className={"side-drop-list-cat" + shadowStyle}>
                                     {categories.map((category, index) => {
                                         return (
                                             <li key={index}>
@@ -85,9 +95,9 @@ const Navbar = () => {
                                 <li><a href="https://www.freepik.com/popular-psd">Collections</a></li>
                                 <li className='side-more-list' onClick={toggleMoreDropdown} >
                                     <a>More</a>
-                                    <i className={"bi bi-caret-" + arrowDirection + "-fill"}></i>
+                                    <i className={"bi bi-caret-" + arrowDirectionMore + "-fill"}></i>
                                 </li>
-                                {moreVisibility ? <div className={"side-drop-list" + shadowStyle}>
+                                {moreVisibility ? <div className={"side-drop-list-more" + shadowStyle}>
                                     <ul>
                                         <h4>PROJECTS</h4>
                                         <div className="more-items">
@@ -176,7 +186,7 @@ const Navbar = () => {
                                     <li><a href="https://www.freepik.com/popular-psd">Fonts</a></li>
                                     <li onClick={toggleCatDropdown}>
                                         <a href='#'>Categories
-                                            <i className={"bi bi-caret-" + arrowDirection + "-fill"}></i>
+                                            <i className={"bi bi-caret-" + arrowDirectionCat + "-fill"}></i>
                                         </a>
                                         {catVisibility ? <div className={"cat-drop-list" + shadowStyle}>
                                             {categories.map((category, index) => {
@@ -195,7 +205,7 @@ const Navbar = () => {
                                     <li><a href="https://www.freepik.com/popular-psd">Collections</a></li>
                                     <li onClick={toggleMoreDropdown}>
                                         <a href='#'>More
-                                            <i className={"bi bi-caret-" + arrowDirection + "-fill"}></i>
+                                            <i className={"bi bi-caret-" + arrowDirectionMore + "-fill"}></i>
                                         </a>
                                         {moreVisibility ? <div className={"more-drop-list" + shadowStyle}>
                                             <ul>

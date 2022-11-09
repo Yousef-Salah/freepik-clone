@@ -1,16 +1,5 @@
-$main-color: #4055c7;
-$dark-color: #252a31;
-$anchorColor2: #a9b6c4;
-@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
-@mixin resetBootstrap() {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border-radius: 0px;
-  ul{
-    list-style: none;
-  }
-}
+@import '../../assets/styles/global.scss';
+
 @mixin arrowDown() {
     position: absolute;
     transform: rotateX(180deg);
@@ -18,14 +7,6 @@ $anchorColor2: #a9b6c4;
     scale: 1.25;
     color:$dark-color !important;
 }
-@mixin AnchorFontStyle() {
-    color: white;
-    text-decoration: none;  
-    font-size: 13.5px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
 @mixin popUpBox {
     background-color: $dark-color;
     top: 60px;
@@ -48,7 +29,21 @@ $anchorColor2: #a9b6c4;
         
     }
 }
-
+@mixin moreDropList() {
+    ul{        
+        width: 25%;
+        height: 100%;
+        display: block !important;
+        padding: 15px 20px 15px 20px !important;
+        h4{
+            font-size: 15px !important;
+            font-weight: 600;
+            color: gray;
+            padding-bottom: 5px;
+        }
+        
+    }
+}
 .navbar{
     background-color: $main-color;
     margin: 0;
@@ -58,6 +53,7 @@ $anchorColor2: #a9b6c4;
     display: flex;
     flex-wrap: nowrap;
     position: relative;
+    z-index: 10;
     a{
         img{
             width: 190px;
@@ -169,29 +165,17 @@ $anchorColor2: #a9b6c4;
     width: 760px;
     grid-template-columns: repeat(4, 180px);
     grid-gap: 10px;
-    margin-left: 20%;
+    margin-left: 10%;
 }
 
 .more-drop-list{
     @include popUpBox();
-    margin-left: 30%;
+    margin-left: 15%;
     display: flex;
     min-height: 300px;
     width: 820px;
     padding: 20px 10px !important;
-    ul{        
-        width: 25%;
-        height: 100%;
-        display: block !important;
-        padding: 15px 20px 15px 20px !important;
-        h4{
-            font-size: 15px !important;
-            font-weight: 600;
-            color: gray;
-            padding-bottom: 5px;
-        }
-        
-    }
+    @include moreDropList();
 }
 
 .more-items{
@@ -299,8 +283,35 @@ $anchorColor2: #a9b6c4;
                 color: white !important;
             }
         }
+        .side-drop-list-more{
+            background-color: #2d333b;
+            @include moreDropList();
+            ul{
+                width: 100%;
+                padding: 30px 0px 0px 30px !important;
+            }
+            h4{
+                color: $anchorColor2 !important;
+                padding: 0px;
+            }
+            h5{
+                color: white;
+            }
+            li:hover{
+                h5{
+                    color: $anchorColor2;
+                }
+            }
+            h6{
+                display: none;
+            }
+            li{
+                width: 100% !important;
+                padding: 10px !important;
+            }
+        }
     }
-    .side-drop-list{
+    .side-drop-list-cat{
         border-radius: 10px;
         padding: 15px 25px 25px;
         max-width: 100vw;
