@@ -1,9 +1,37 @@
-#sponsored-by-component {
+#sponsored-by-component { 
+  width: 100%;
+}
+
+#sponsored-by-component .container {
   background-color: #E0E7EB !important;
   height: 201px;
+  padding: 15px !important;
 }
-
-#sponsored-by-component img {
+#sponsored-by-component article {
   height: 120px;
 }
+#sponsored-by-component .bg-image a {
+  display: inline-block !important;
+  background-image: url("https://t3.ftcdn.net/jpg/05/39/81/30/240_F_539813006_5ZJhMgukoWJf8UAJVy45kPSCJs89ZYVY.jpg");
+  width: 100%;
+  height: 100% !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
+
+  object-fit: cover;
+}
+
+/* #sponsored-by-component {
+  width: max-content !important;
+} */
+
+#sponsored-by-component #sponsor-details > * {
+  padding: 15px;
+  width: max-content;
+}
+
+#sponsored-by-component #sponsor-details img {
+  height: 20px;
+}
