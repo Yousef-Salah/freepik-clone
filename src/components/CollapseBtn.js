@@ -1,22 +1,34 @@
-import './Filters.css';
-const CollapseBtn=(props)=>{
+import { useState } from "react";
+import "./Filters.css";
+const CollapseBtn = (props) => {
+  const [open,setOpen] = useState(true);
+  return (
+    <div className="container-fluid table-row mt-5">
+      <div className="collapsebtn">
+        <button
+          className="btn-collapse w-100 "
+          type="button"
+          id={props.id}
+          data-bs-toggle="collapse"
+          data-bs-target={props.target}
+          aria-expanded="false"
+          aria-controls={props.aria}
+          onClick={()=>setOpen(!open)}
+        >
+          <i className={props.pic + ` absolute left-0 mt-1`}></i>
+          <p className="absolute left-6">{props.title} <i class={props.info}></i></p>
+          
+          <i
+            className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${!open && 'rotate-180'}`}
+            data-bs-toggle="collapse"
+            data-bs-target={props.target}
+            aria-expanded="false"
+            aria-controls={props.aria}
+          ></i>
+        </button>
+      </div>
+    </div>
+  );
+};
 
-
-    return (
-      <div className='container-fluid table-row'>
-        <div className="collapsebtn">
-
-             <button className="btn-collapse w-100" type="button" id={props.id} data-bs-toggle="collapse" data-bs-target={props.target} aria-expanded="false" aria-controls={props.aria}>
-             <i className={props.pic} ></i>
-
-{props.title}
-<i className='bx bx-chevron-down arrow absolute right-0' data-bs-toggle="collapse" data-bs-target={props.target} aria-expanded="false" aria-controls={props.aria}></i> 
-
- </button>
-
-       </div>
-        </div>
-    )
-}  
-
-export default CollapseBtn
+export default CollapseBtn;

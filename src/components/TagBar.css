@@ -2,25 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 .icon{
-    width:1em;
-    margin-bottom:7%;
-    margin-right: 3px;
- aspect-ratio: 1/1;
+    margin-right: 3%;
 }
 @media screen and (min-width:576px) {
-.carousel-inner{
-display: flex;
-}
-.carousel-item{
-    display: block;
-    flex:0 0 calc(100%/12);
-    margin:0;
     
-}
-.carousel-inner{
-    padding:1em;
-   
-}
 }
 
 .tag-class{
@@ -60,6 +45,16 @@ width: fit-content;
     color: black;
     border:1px solid #cfd9e0;
 }
+.btn:focus {
+    background-color: rgb(241 245 249) !important;
+    color: black !important;
+    border:1px solid #cfd9e0 !important;
+}
+
+.sidetag:focus {
+    background-color: blueviolet !important;
+color: white !important;
+}
 .tag{
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 8px;
@@ -76,9 +71,6 @@ width: fit-content;
     white-space: nowrap;
     flex-shrink: 0;
     width: fit-content;
-
-     
-    
 }
 .tag-class{
     box-sizing: border-box;
@@ -86,8 +78,6 @@ width: fit-content;
     line-height: 1.66;
     flex-shrink: 0;
     margin-top:20px;
-
-
 }
 .filters{
    margin: 0 20 0 0;
@@ -96,7 +86,6 @@ width: fit-content;
     flex-shrink: 0;
 
 }
-
 .filtersbtn{
     margin: 0 20 0 0;
     padding: 0px 30px;
@@ -121,32 +110,7 @@ width: fit-content;
     display: flex;
 width: fit-content;
 }
-
-.offcanvas{
-    margin-top:3%;
-max-width:15%;
-}
-.btn-outline-secondary:click{
-background-color: white;
-
-}
-
-.navbar{
-        overflow-y:visible;
-        display:flex;
-        background-color: black;
-}
-#navv{
-    max-height: 2px;
-    display: flex;
-    background-color: black;
-}
 .track{
     display: flex;
 overflow: hidden;}
 
-@media screen and(max-width:1080) {
-    .navbar{
-        background-color: black;
-    }
-}
