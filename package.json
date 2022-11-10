@@ -1,6 +1,7 @@
 {
-  "name": "example",
+  "name": "freepik",
   "version": "0.1.0",
+  "description": "web page for sharing Photos, PSD's and Fonts.",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
