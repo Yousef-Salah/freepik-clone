@@ -6,11 +6,7 @@ import Imag from './components/Imag';
 //
 function App() {
   return (
-    <div>
-    
-     <Imag/>
-    
-    </div>
+    <></>
   );
 }
 
