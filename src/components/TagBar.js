@@ -4,7 +4,6 @@ import "./TagBar.css";
 import Type from "./type";
 import Tag from "./Tag";
 import Filters from "./Filters";
-import $ from "jquery";
 import SideBar from "./SideBar";
 
 const TagBar = () => {
