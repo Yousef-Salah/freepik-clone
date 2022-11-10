@@ -1,12 +1,10 @@
-import CategoryCard from "./components/CategoryCard/CategoryCard";
-import Navbar from "./components/Navbar/Navbar";
+
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <CategoryCard />
-    </div>
+    <></>
   );
 }
 
