@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import SearchInput from "./components/SearchInput";
+import SponsoredBy from "./components/SponsoredBy";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="container-fluid mt-5">
+        <div className="row">
+          <div className="col-12 align-item-center mr-auto ml-auto">
+            <SearchInput  className="yousef salah khodroj"/>
+          </div>
+        </div>
+      </div>
+      <SponsoredBy className="mt-5"/>
     </div>
   );
 }
