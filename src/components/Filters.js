@@ -3,7 +3,7 @@ import "./Filters.css";
 import Tag from "./Tag";
 import "boxicons";
 import SideTag from "./SideTag";
-import Type from "./type";
+import Type from "./Type";
 import SideTagWithPic from "./SideTagWithPic";
 import { useState } from "react";
 

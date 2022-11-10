@@ -1,7 +1,7 @@
 //
 
 import "./TagBar.css";
-import Type from "./type";
+import Type from "./Type";
 import Tag from "./Tag";
 import Filters from "./Filters";
 import SideBar from "./SideBar";
