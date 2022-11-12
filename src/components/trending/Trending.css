@@ -5,8 +5,10 @@
   font-family: "Proxima Nova", Verdana, "Avenir Next";
 }
 #trending {
+  min-width: 1096px;
   float: none;
   margin: 0 auto;
+  padding: 0 18px;
   display: block;
   text-align: left;
   color: rgb(58, 71, 85);
@@ -23,10 +25,10 @@
   font-size: 18px;
 }
 
-.container {
+#trend-content {
   position:relative;
 }
-.grid {
+#trending-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     column-count: 4;
@@ -40,7 +42,7 @@
   bottom: 5px;
   margin: 10px;
 }
-.grid::marker {
+#trending-content::marker {
   content: none;
 }
 
