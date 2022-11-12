@@ -1,0 +1,51 @@
+
+.rightImageCard img
+{
+   display: flex;
+   align-self: flex-end;
+   width: 100%;
+} 
+.leftImageCard img{
+   width: 100%;
+}
+.title
+{
+   text-align: center;
+}
+.descreption
+{
+text-align: center;
+}
+
+@media only screen and (max-width: 768px)
+{
+   .leftImageCard img 
+   {
+      display: none;
+   }
+   .title
+{
+   text-align: center;
+}
+   .descreption
+{
+text-align: center;
+}
+
+}
+@media only screen and (max-width: 600px)
+{
+   .rightImageCard img 
+   {
+      display: none;
+   }
+   .title
+   {
+      text-align: center;
+   }
+      .descreption
+   {
+   text-align: center;
+   }
+
+}

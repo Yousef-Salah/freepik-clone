@@ -3,13 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+#iamge-card-text {
     width: 100%;
     min-height: 100vh;
     display:grid;
     place-items:center
 }
-.row
+#iamge-card-text .row
 {
     width:80%;
     max-width: 1170px;
@@ -17,16 +17,18 @@ body {
     grid-template-columns: repeat(2,1fr);
     grid-gap: 50px 30px; 
 }
-.row .leftPhoto
+.row .leftPhotoCard
 {
-    
     overflow: hidden;
 }
-.row .leftPhoto img
+.row .leftPhotoCard img
 {
+    
     width: 100%;
     height: 100%;
     object-fit:fill;
+    grid-column: 3;
+    
 }
 .row .rightPargraph 
 {
@@ -35,7 +37,7 @@ align-items:center
 }
 .row .rightPargraph .content
 {
-    padding-right: 20px;
+    padding-left: 20px;
 }
 .row .rightPargraph .content h3{
     font-size: 25px;
@@ -55,9 +57,10 @@ align-items:center
         padding-right: 0;
     }
 }
+
 @media (max-width:768px)
 {
-    .row{
+    #iamge-card-text .row{
         width:90%;
         grid-template-columns:1fr;
     }
