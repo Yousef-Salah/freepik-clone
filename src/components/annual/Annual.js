@@ -1,4 +1,4 @@
-import "./Annual.css";
+import "./annual.css";
 
 const Annual = () => {
   return (

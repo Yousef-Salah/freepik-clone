@@ -1,4 +1,4 @@
-import "./Trending.css";
+import "./trending.css";
 import TrendingPhoto from "./Trendingphotos";
 const Trending = (props) => {
   return (
