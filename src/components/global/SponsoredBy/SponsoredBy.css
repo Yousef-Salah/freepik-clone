@@ -4,9 +4,10 @@
 
 #sponsored-by-component .container {
   background-color: #E0E7EB !important;
-  height: 201px;
+  height: 200px;
   padding: 15px !important;
 }
+
 #sponsored-by-component article {
   height: 120px;
 }
@@ -19,7 +20,6 @@
   background-size: cover;
   background-position: center;
 
-
   object-fit: cover;
 }
 
@@ -28,10 +28,14 @@
 } */
 
 #sponsored-by-component #sponsor-details > * {
-  padding: 15px;
+  padding: 15px 5px;
   width: max-content;
 }
 
 #sponsored-by-component #sponsor-details img {
   height: 20px;
+}
+
+#sponsor-details {
+  padding: 5px;
 }
