@@ -1,7 +1,8 @@
+import TagBar from "./components/Sidebar/TagBar";
 
 function App() {
   return (
-    <></>
+    <TagBar/>
   );
 }
 
