@@ -9,10 +9,7 @@ function App() {
     <>
 
 <CardHeader/>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
+<div id='s'></div>
 <HeaderWithPargraph isRight={true}/>
 
 </>

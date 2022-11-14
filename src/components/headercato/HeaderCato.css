@@ -1,41 +1,64 @@
+#s{
+height: 250px;
 
+}
 .rightImageCard img
 {
    display: flex;
    align-self: flex-end;
-   width: 100%;
+   width: 90%;
+   float:right;
 } 
 .leftImageCard img{
-   width: 100%;
+   width: 90%;
 }
 .title
 {
-   text-align: center;
+   width :100% ; 
 }
 .descreption
 {
-text-align: center;
+ text-align: center;
 }
 
-@media only screen and (max-width: 768px)
+@media only screen and (max-width: 600px)
 {
-   .leftImageCard img 
+   .leftImageCard  
+   {
+      display: none;
+   }
+   .rightImageCard  
    {
       display: none;
    }
    .title
 {
    text-align: center;
+   margin-bottom: 40px;
 }
    .descreption
 {
 text-align: center;
 }
 
-}
-@media only screen and (max-width: 600px)
+.titleWdescreption
 {
-   .rightImageCard img 
+   margin: 0;
+   height: 100%;
+}
+
+}
+/* meduim screen  */
+@media only screen and (max-width: 992px)
+{
+   .leftImageCard  
+   {
+      display: none;
+   }
+} 
+@media only screen and (max-width: 770px)
+{
+   .rightImageCard  
    {
       display: none;
    }
@@ -47,5 +70,11 @@ text-align: center;
    {
    text-align: center;
    }
+
+}
+.titleWdescreption
+{
+   margin: 0;
+   height: 100%;
 
 }

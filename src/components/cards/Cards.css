@@ -17,15 +17,10 @@
     grid-template-columns: repeat(2,1fr);
     grid-gap: 50px 30px; 
 }
-.row .leftPhotoCard
-{
-    overflow: hidden;
-}
 .row .leftPhotoCard img
 {
     
     width: 100%;
-    height: 100%;
     object-fit:fill;
     grid-column: 3;
     
