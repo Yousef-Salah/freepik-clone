@@ -1,32 +1,17 @@
 import "./SponsoredBy.css";
-// import SponsoredByData from "../../../Data/SponsoredByData";
-// import Sponsor from "./Sponsor";
+import SponsoredByData from "../../../utils/SponsoredByData";
+import Sponsor from "./Sponsor";
 
 const SponsoredBy = (props) => {
   return (
     <div className="mt-5" id="sponsored-by-component">
       <div className="container rounded p-5">
         <section className="row">
-          <article className="col-3 overflow-hidden">
-            <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006" image-link="https://t4.ftcdn.net/jpg/05/37/89/69/240_F_537896903_CnboBEBXJ4FFbUeXJOnFAFVMTQaycQGI.jpg">
-              <img src="https://t3.ftcdn.net/jpg/05/39/81/30/240_F_539813006_5ZJhMgukoWJf8UAJVy45kPSCJs89ZYVY.jpg" alt="" />
-            </a>
-          </article>
-          <article className="col-3 overflow-hidden">
-            <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006" image-link="https://t4.ftcdn.net/jpg/05/37/89/69/240_F_537896903_CnboBEBXJ4FFbUeXJOnFAFVMTQaycQGI.jpg">
-              <img src="https://t3.ftcdn.net/jpg/05/39/81/30/240_F_539813006_5ZJhMgukoWJf8UAJVy45kPSCJs89ZYVY.jpg" alt="" />
-            </a>
-          </article>
-          <article className="col-3 overflow-hidden">
-            <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006" image-link="https://t4.ftcdn.net/jpg/05/37/89/69/240_F_537896903_CnboBEBXJ4FFbUeXJOnFAFVMTQaycQGI.jpg">
-              <img src="https://t3.ftcdn.net/jpg/05/39/81/30/240_F_539813006_5ZJhMgukoWJf8UAJVy45kPSCJs89ZYVY.jpg" alt="" />
-            </a>
-          </article>
-          <article className="col-3 overflow-hidden">
-            <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006" image-link="https://t4.ftcdn.net/jpg/05/37/89/69/240_F_537896903_CnboBEBXJ4FFbUeXJOnFAFVMTQaycQGI.jpg">
-              <img src="https://t3.ftcdn.net/jpg/05/39/81/30/240_F_539813006_5ZJhMgukoWJf8UAJVy45kPSCJs89ZYVY.jpg" alt="" />
-            </a>
-          </article>
+          {
+            SponsoredByData.map(sponsor => {
+              return <Sponsor image={sponsor.image} href={sponsor.href} alt={sponsor.alt} />
+            })
+          }
         </section>
         <section className="row" id="sponsor-details">
           <span className="pt-3">
