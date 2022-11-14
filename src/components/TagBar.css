@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 .icon{
-    margin-right: 3%;
-}
-@media screen and (min-width:576px) {
-    
+   padding: 0px 5px;
 }
 
 .tag-class{
@@ -15,14 +12,13 @@
     justify-content: center;
     align-items: flex-start;
 }
-
 body{
     color: #374957;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.66;
     -webkit-font-smoothing: antialiased;
-    
+    font-weight: 200;
 }
 .type{
     font-weight: 700;
@@ -40,7 +36,7 @@ flex-shrink: 0;
     margin-top:20px;
 width: fit-content;
 }
-.tag:hover , .type:hover, .sidetag:hover, .sidetag:hover {
+.tag:hover , .type:hover, .sidetag:hover {
     background-color: rgb(241 245 249);
     color: black;
     border:1px solid #cfd9e0;
@@ -51,10 +47,7 @@ width: fit-content;
     border:1px solid #cfd9e0 !important;
 }
 
-.sidetag:focus {
-    background-color: blueviolet !important;
-color: white !important;
-}
+
 .tag{
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 8px;
@@ -113,4 +106,16 @@ width: fit-content;
 .track{
     display: flex;
 overflow: hidden;}
+
+.collapse.show{
+    visibility: visible;
+}
+.collapse.arrow{
+    rotate: 90px;
+}
+.sidetag-icon{
+    padding: 0px 5px;
+}
+
+
 
