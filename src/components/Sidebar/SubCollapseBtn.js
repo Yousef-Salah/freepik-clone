@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./Filters.css";
-const CollapseBtn = (props) => {
+const SubCollapseBtn = (props) => {
   const [open, setOpen] = useState(true);
   return (
     <div className="container-fluid table-row mt-5">
-      <div className={`${props.className} collapsebtn`}>
+      <div className={`subcollapsebtn`}>
         <button
-          className={`${props.className} btn-collapse w-64 `}
+          className={`subbtn-collapse w-100 `}
           type="button"
           id={props.id}
           data-bs-toggle="collapse"
@@ -15,10 +15,7 @@ const CollapseBtn = (props) => {
           aria-controls={props.aria}
           onClick={() => setOpen(!open)}
         >
-          <i className={props.pic + ` absolute left-0 mt-1`}></i>
-          <p className={`absolute left-6 + ${props.className}`}>
-            {props.title}
-          </p>
+          <p className="absolute left-0 font-thin collapsep">{props.title}</p>
 
           <i
             className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${
@@ -41,4 +38,4 @@ const CollapseBtn = (props) => {
   );
 };
 
-export default CollapseBtn;
+export default SubCollapseBtn;
