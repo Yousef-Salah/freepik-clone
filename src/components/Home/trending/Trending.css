@@ -7,12 +7,7 @@
 #trending {
   min-width: 1096px;
   float: none;
-<<<<<<<< HEAD:src/components/Home/trending/trending.css
-  margin: 0 auto;
-  padding: 0 18px;
-========
   margin: 50px auto;
->>>>>>>> main:src/components/Home/trending/Trending.css
   display: block;
   text-align: left;
   color: rgb(58, 71, 85);
@@ -31,19 +26,6 @@
   font-size: 18px;
   width: 100%;
 }
-
-<<<<<<<< HEAD:src/components/Home/trending/trending.css
-#trend-content {
-  position:relative;
-}
-#trending-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-    column-count: 4;
-    grid-template-rows: 1fr 1fr 1fr ;
-    padding: 30px;
-    gap: 10px;
-========
 .container {
   position: relative;
   width: 100%;
@@ -55,7 +37,6 @@
   grid-template-rows: 1fr 1fr 1fr;
   padding: 30px;
   gap: 10px;
->>>>>>>> main:src/components/Home/trending/Trending.css
 }
 .trendtext {
   color: white;
@@ -90,11 +71,3 @@
 .trendimg {
   width: 100%;
 }
-<<<<<<<< HEAD:src/components/Home/trending/trending.css
-.item{
-    font-size: 16px;
-    font-weight: 600;
-    border-top-left-radius: 10px;
-}
-========
->>>>>>>> main:src/components/Home/trending/Trending.css
