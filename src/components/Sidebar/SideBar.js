@@ -117,7 +117,18 @@ const SideBar = () => {
               <span className="container-fluid">
                 <div className={`row category-row ${!open && "scale-0"}`}>
                   <div className="row category-row">
-                    <i class="bx bx-circle "></i>
+                  <Colorr color='border' cancel=' bi bi-x cancel mt-4'/>
+                  <Colorr color='bg-red-500' />
+                    <Colorr color='bg-orange-500'/>
+                    <Colorr color='bg-pink-200'/>
+                    <Colorr color='bg-yellow-300'/>
+                    <Colorr color='bg-cyan-500'/>
+                    <Colorr color='bg-blue-500'/>
+                    <Colorr color='bg-purple-500'/>
+                    <Colorr color='bg-dark'/>
+                    <Colorr color='bg-gray-200'/>
+                    <Colorr color='bg-white-200 border'/>
+                    
                   </div>
                 </div>
               </span>
