@@ -1,19 +1,8 @@
-// import Footer from './components/Layouts/Footer/footer';
-// import Trending from './components/Home/trending/Trending';
-// import Annual from './components/Home/AnnualDiscount/Annual'
-// import SearchInput from './components/Layouts/SearchInputCom/SearchInput';
-import SponsoredBy from './components/global/SponsoredBy/SponsoredBy';
-// import CategoryCard from './components/Category/CategoryCard/CategoryCard';
-// import Navbar from './components/Layouts/Navbar/Navbar';
+import React from "react";
+import Footer from "./components/Footer/Footer";
+import "./components/Footer/FooterStyle.css";
 
-// import CardHeader from './components/Category/PandaSection/Crads';
-// import ImageCard from './components/Home/CircleCategoy/Imag';
-// import CommunitySection from './components/Home/JoinCommunity/Joins';
-
-// import TagBar from './components/Search/SideBar/TagBar';
-// import SideBar from './components/Search/SideBar/SideBar';
-
-function App() {
+const App = () => {
   return (
 
   
@@ -42,6 +31,6 @@ function App() {
       {/* <TagBar /> */}
     </div>
   );
-}
+};
 
 export default App;
