@@ -15,6 +15,8 @@ import "./components/Footer/FooterStyle.css";
 //import logo from './logo.svg';
 import './App.css';
 
+//import Photo from './components/join&image/Joins';
+
 function App() {
   return (
     <div className='container'>
