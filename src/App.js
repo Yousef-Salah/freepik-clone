@@ -2,11 +2,25 @@ import React from "react";
 import Footer from "./components/Footer/Footer";
 import "./components/Footer/FooterStyle.css";
 
-const App = () => {
-  return (
 
   
-    <div className="App">
+  
+// import CardHeader from './components/Category/PandaSection/Crads';
+// import ImageCard from './components/Home/CircleCategoy/Imag';
+// import CommunitySection from './components/Home/JoinCommunity/Joins';
+
+// import TagBar from './components/Search/SideBar/TagBar';
+// import SideBar from './components/Search/SideBar/SideBar';
+
+//import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className='container'>
+      <div className='row'>
+        <SponsoredBy />
+        <div className="App">
       <CardHeader/>
 <div id='s'></div>
 <HeaderWithPargraph isRight={true}/>
@@ -30,6 +44,9 @@ const App = () => {
       <hr />
       {/* <TagBar /> */}
     </div>
+      </div>
+      </div>
+      
   );
 };
 
