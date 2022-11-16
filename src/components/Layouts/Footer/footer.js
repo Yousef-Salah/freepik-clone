@@ -3,7 +3,7 @@ import React from 'react';
 import {
   MDBFooter,
   MDBContainer,
-n  MDBCol,
+ MDBCol,
   MDBRow,
   MDBBtn
 } from 'mdb-react-ui-kit';
