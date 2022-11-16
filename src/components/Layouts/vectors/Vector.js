@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import style from './../Vectors/Vector.module.css'
-import $ from 'jquery'
+
 
 
 export default function Vector() {
