@@ -1,16 +1,30 @@
 {
-  "name": "example",
+  "name": "freepik",
   "version": "0.1.0",
+  "description": "web page for sharing Photos, PSD's and Fonts.",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "cdbreact": "^1.5.3",
     "mdb-react-ui-kit": "^5.0.0",
+    "boxicons": "^2.1.4",
+    "pure-react-carousel": "^1.30.1",
+    "create-react-app": "^5.0.1",
+    "bootstrap": "^5.2.2",
+    "cdbreact": "^1.5.3",
+    "mdb-react-ui-kit": "^5.0.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
+    "sass": "^1.55.0",
+    "react-social-icons": "^5.15.0",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
@@ -37,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.2"
   }
 }

@@ -1,0 +1,49 @@
+#sponsored-by-component { 
+  width: 100%;
+}
+
+#sponsored-by-component .container {
+  background-color: #E0E7EB !important;
+  height: 200px;
+  padding: 15px !important;
+}
+
+#sponsored-by-component article {
+  height: 120px;
+}
+
+#sponsored-by-component article img {
+  height: 100%;
+}
+
+/* #sponsored-by-component {
+  width: max-content !important;
+} */
+
+#sponsored-by-component #sponsor-details > * {
+  padding: 15px 5px;
+  width: max-content;
+}
+
+#sponsored-by-component #sponsor-details img {
+  height: 20px;
+}
+
+#sponsored-by-component #sponsor-details #show-more {
+  position: absolute;
+  right: 7px;
+  color: #4E9BE2;
+}
+
+#sponsored-by-component #sponsor-details #show-more span {
+  padding-right: 15px;
+}
+
+#sponsored-by-component #sponsor-details #show-more #ten-free {
+  color: #3D73EE;
+}
+
+#sponsor-details {
+  padding: 5px;
+  position: relative !important;
+}
