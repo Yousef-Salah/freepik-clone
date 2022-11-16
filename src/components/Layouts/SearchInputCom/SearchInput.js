@@ -6,7 +6,6 @@ import DropDownItem from "./SearchInput/DropDownItem";
 // Components
 
 const SearchInput = (props) => {
-
   const [delteTextIcon, setDelteTextIcon] = useState("d-none");
 
   const checkDeleteIconStatus = (event) => {
@@ -15,34 +14,53 @@ const SearchInput = (props) => {
     } else {
       setDelteTextIcon("opacity-0");
       setTimeout(() => {
-        if (!event.target.value)       // in case user is writing while the d-none timeout is running
+        if (!event.target.value)
+          // in case user is writing while the d-none timeout is running
           setDelteTextIcon("d-none");
       }, 1300);
     }
-  }
+  };
 
   const deleteText = (event) => {
-    document.getElementById('search-value').value = "";
+    document.getElementById("search-value").value = "";
     checkDeleteIconStatus(event);
-  }
+  };
 
   let classes = props.className;
   console.log(classes);
 
   return (
-    <div className={props.classlist + " rounded search-text-wrapper"} id="search-input-container ">
-      <form id="search" className=" h-100 rounded" placeholder="search..">
-        <div className="d-inline-block dropdown rounded-start">
-          <button id="search-filters" type="button" className="dropdown-toggle rounded-start text-align-start" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+    <div className={props.classlist + " rounded"} id="search-input-container">
+      <form id="search" className="w-100 h-100 rounded">
+        <div className="dropdown d-inline-block rounded-start">
+          <button
+            id="search-filters"
+            type="button"
+            className="dropdown-toggle rounded-start text-align-start"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-auto-close="outside"
+          >
             Assets
           </button>
-          <form className="dropdown-menu">
+          <div className="dropdown-menu">
             <div id="search-type">
               <div className="mb-2">
-                <DropDownItem type="radio" title="Assets" name="search-type" for="assets" checked={true} />
+                <DropDownItem
+                  type="radio"
+                  title="Assets"
+                  name="search-type"
+                  for="assets"
+                  checked={true}
+                />
               </div>
               <div className="mb-2">
-                <DropDownItem type="radio" title="Collections" name="search-type" for="collections" />
+                <DropDownItem
+                  type="radio"
+                  title="Collections"
+                  name="search-type"
+                  for="collections"
+                />
               </div>
             </div>
             <div className="mb-2">
@@ -52,7 +70,13 @@ const SearchInput = (props) => {
               <DropDownItem title="Free" name="free" for="free" />
             </div>
             <div className="mb-2">
-              <DropDownItem title="Premium" name="premium" for="premium" iconClasses="fa-solid fa-crown" goldItem={true} />
+              <DropDownItem
+                title="Premium"
+                name="premium"
+                for="premium"
+                iconClasses="fa-solid fa-crown"
+                goldItem={true}
+              />
             </div>
             <div className="mb-2">
               <DropDownItem divider={true} />
@@ -69,14 +93,25 @@ const SearchInput = (props) => {
             <div className="mb-2">
               <DropDownItem title="Icons" name="icon" for="icon" />
             </div>
-          </form>
+          </div>
         </div>
-        <div className="d-inline-block position-relative rounded-start" id="input-field">
-          <span className={delteTextIcon} onClick={deleteText}><i className="fa-solid fa-square-xmark fa-2x "></i></span>
-          <input type="text" id="search-value" onChange={checkDeleteIconStatus} placeholder="Search.." className="rounded-start" />
+        <div
+          className="d-inline-block position-relative rounded-start"
+          id="input-field"
+        >
+          <span className={delteTextIcon} onClick={deleteText}>
+            <i class="fa-solid fa-square-xmark fa-2x "></i>
+          </span>
+          <input
+            type="text"
+            id="search-value"
+            onChange={checkDeleteIconStatus}
+            placeholder="Search.."
+            className="rounded-start"
+          />
         </div>
         <div id="search-button" className="d-inline-block">
-          <button type="button" className="rounded-end" >
+          <button type="button" className="rounded-end">
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>

@@ -11,16 +11,9 @@
 #sponsored-by-component article {
   height: 120px;
 }
-#sponsored-by-component .bg-image a {
-  display: inline-block !important;
-  background-image: url("https://t3.ftcdn.net/jpg/05/39/81/30/240_F_539813006_5ZJhMgukoWJf8UAJVy45kPSCJs89ZYVY.jpg");
-  width: 100%;
-  height: 100% !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 
-  object-fit: cover;
+#sponsored-by-component article img {
+  height: 100%;
 }
 
 /* #sponsored-by-component {
@@ -36,6 +29,21 @@
   height: 20px;
 }
 
+#sponsored-by-component #sponsor-details #show-more {
+  position: absolute;
+  right: 7px;
+  color: #4E9BE2;
+}
+
+#sponsored-by-component #sponsor-details #show-more span {
+  padding-right: 15px;
+}
+
+#sponsored-by-component #sponsor-details #show-more #ten-free {
+  color: #3D73EE;
+}
+
 #sponsor-details {
   padding: 5px;
+  position: relative !important;
 }
