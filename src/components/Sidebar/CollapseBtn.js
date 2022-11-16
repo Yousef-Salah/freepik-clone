@@ -1,3 +1,6 @@
+/**  <div className={`container-fluid table-row ${
+      open ? " mt-5" : "mt-5 mb-0"
+    }`}> */
 import { useState } from "react";
 import "./Filters.css";
 const CollapseBtn = (props) => {
