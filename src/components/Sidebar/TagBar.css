@@ -113,6 +113,12 @@
   flex-shrink: 0;
   display: flex;
   width: fit-content;
+  color: #374957;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.66;
+  -webkit-font-smoothing: antialiased;
+  
 }
 .track {
   display: flex;
