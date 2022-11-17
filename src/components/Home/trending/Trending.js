@@ -11,7 +11,7 @@ const Trending = (props) => {
         Check what's popular on Freepik and make your project look trendy and
         professional.
       </p>
-      <div className="grid">
+      <div className="grid" id="exploretrend">
         <div className="item" id="Freedom">
           <TrendingPhoto
             imglink="assets/images/Trending/1.jpeg"

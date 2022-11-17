@@ -1,21 +1,31 @@
-import Footer from './components/Layouts/Footer/footer';
-import Trending from './components/Home/trending/Trending';
-import Annual from './components/Home/AnnualDiscount/Annual'
-import SearchInput from './components/Layouts/SearchInputCom/SearchInput';
-import SponsoredBy from './components/Layouts/SponsoredBy/SponsoredBy';
-import CategoryCard from './components/Category/CategoryCard/CategoryCard';
-import Navbar from './components/Layouts/Navbar/Navbar';
+import React from "react";
+import Footer from "./components/Footer/Footer";
+import "./components/Footer/FooterStyle.css";
 
-import CardHeader from './components/Category/PandaSection/Crads';
-import ImageCard from './components/Home/CircleCategoy/Imag';
-import CommunitySection from './components/Home/JoinCommunity/Joins';
+
+  
+  
+// import CardHeader from './components/Category/PandaSection/Crads';
+// import ImageCard from './components/Home/CircleCategoy/Imag';
+// import CommunitySection from './components/Home/JoinCommunity/Joins';
 
 // import TagBar from './components/Search/SideBar/TagBar';
 // import SideBar from './components/Search/SideBar/SideBar';
 
+//import logo from './logo.svg';
+import './App.css';
+
+//import Photo from './components/join&image/Joins';
+
 function App() {
   return (
-    <div className="App">
+    <div className='container'>
+      <div className='row'>
+        <SponsoredBy />
+        <div className="App">
+      <CardHeader/>
+<div id='s'></div>
+<HeaderWithPargraph isRight={true}/>
       <Navbar />
       <SearchInput />
       <ImageCard />
@@ -36,7 +46,10 @@ function App() {
       <hr />
       {/* <TagBar /> */}
     </div>
+      </div>
+      </div>
+      
   );
-}
+};
 
 export default App;
