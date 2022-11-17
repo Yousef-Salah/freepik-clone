@@ -30,8 +30,8 @@ const SearchInput = (props) => {
   console.log(classes);
 
   return (
-    <div className={props.classlist + " rounded"} id="search-input-container">
-      <form id="search" className="w-100 h-100 rounded">
+    <div className={props.classlist} id="search-input-container">
+      <form id="search" className="h-100 rounded">
         <div className="dropdown d-inline-block rounded-start">
           <button
             id="search-filters"
@@ -73,7 +73,7 @@ const SearchInput = (props) => {
               <DropDownItem
                 title="Premium"
                 name="premium"
-                for="premium"
+                for="premium-checkbox"
                 iconClasses="fa-solid fa-crown"
                 goldItem={true}
               />

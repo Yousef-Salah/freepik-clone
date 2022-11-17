@@ -1,14 +1,9 @@
-.search-text-wrapper {
-  background-color: #4055c7;
-  padding: 50px 0px;
-  border-radius: none !important;
-}
 #search-input-container {
-  background-color: white;
+  background-color: #4055c7;
+
   padding: 0px;
   height: 54px;
   width: 100%;
-  max-width: 768px;
 }
 #search {
   max-width: 770px;
