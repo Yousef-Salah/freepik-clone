@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Filters.css";
+import "./filters.css";
 const SubCollapseBtn = (props) => {
   const [open, setOpen] = useState(true);
   return (

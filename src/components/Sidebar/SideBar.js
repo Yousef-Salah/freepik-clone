@@ -1,7 +1,7 @@
 import React from "react";
 import Filters from "./Filters";
 import { useState } from "react";
-import "./TagBar.css";
+import "./tagbar.css";
 import SideTag from "./SideTag";
 import CollapseBtn from "./CollapseBtn";
 import SideTagWithPic from "./SideTagWithPic";
@@ -116,8 +116,8 @@ const SideBar = () => {
             <div className="collapse" id="colorCollapse">
               <span className="container-fluid">
                 <div className={`row category-row ${!open && "scale-0"}`}>
-                  <div className="row category-row">
-                  <Colorr color='border' cancel=' bi bi-x cancel mt-4'/>
+                  <div className="row category-row color-row">
+                  <Colorr color='border' cancel=' bi bi-x cancel '/>
                   <Colorr color='bg-red-500' />
                     <Colorr color='bg-orange-500'/>
                     <Colorr color='bg-pink-200'/>
@@ -252,6 +252,8 @@ const SideBar = () => {
                 title="File type"
               />
             </div>
+            
+
             <div className="collapse" id="fileTypeCollapse">
               <span className="container-fluid ">
                 <div className={`row category-row ${!open && "scale-0"}`}>
@@ -288,6 +290,7 @@ const SideBar = () => {
                     title="Square"
                     pic="bx bx-rectangle bx-rotate-90"
                   />
+                  <SideTagWithPic title="Panoramic" pic="bx bx-rectangle" />
                 </div>
               </span>
             </div>

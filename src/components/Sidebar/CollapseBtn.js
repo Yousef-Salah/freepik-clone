@@ -2,7 +2,7 @@
       open ? " mt-5" : "mt-5 mb-0"
     }`}> */
 import { useState } from "react";
-import "./Filters.css";
+import "./filters.css";
 const CollapseBtn = (props) => {
   const [open, setOpen] = useState(true);
   return (

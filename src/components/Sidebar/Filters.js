@@ -1,7 +1,6 @@
 import CollapseBtn from "./CollapseBtn";
-import "./Filters.css";
+import "./filters.css";
 import Tag from "./Tag";
-import "boxicons";
 import SideTag from "./SideTag";
 import Type from "./Type";
 import SideTagWithPic from "./SideTagWithPic";
