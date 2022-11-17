@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+.circle-card {
+  background-color: #4055c7;
+  margin: 0;
+  font-family: Arial;
+}
+.circle-card .column {
+  max-width: 8%;
+  padding: 50px;
+  flex: 25%;
+}
+.circle-card img {
+  border: 3px solid rgb(76, 76, 236);
+  outline-style: solid;
+  outline-color: rgb(190, 210, 246);
+}
+.circle-card .column img {
+  border-radius: 100%;
+  max-width: max-content;
+  max-height: max-content;
+  width: 100px;
+  height: 100px;
+  margin-left: 35px;
+  opacity: 0.8;
+  cursor: pointer;
+  zoom: 2px;
+  display: flex;
+}
+.circle-card .column img:hover {
+  opacity: 1;
+}
+.circle-card .text {
+  color: rgb(252, 245, 245);
+  font-size: 15px;
+  margin-left: 50px;
+  margin-top: 10%;
+}
+.circle-card .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}

@@ -1,0 +1,28 @@
+#ann-ual {
+  background-clip: border-box;
+  background-color: rgb(62, 32, 114);
+  padding: 15px;
+}
+#ann-ual {
+  color: white;
+  font-weight: bold;
+}
+#ann-ual .row {
+  float: none;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+#ann-ual .pragraph {
+  text-align: center;
+}
+#ann-ual .content strong {
+  color: rgb(239, 165, 67);
+  font-weight: bold;
+}
+#premium {
+  background-color: rgb(239, 165, 67);
+  color: white;
+  margin-left: 15px;
+  width: 125px;
+}

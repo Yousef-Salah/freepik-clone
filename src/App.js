@@ -1,35 +1,35 @@
-import React from "react";
-import Footer from "./components/Footer/Footer";
-import "./components/Footer/FooterStyle.css";
+import React, { useState } from 'react';
+
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
+
+//page content import
+import Home from "./pages/Home";
+import Category from "./pages/Category";
+import Search from "./pages/Search";
+
+//layouts imports
+import Footer from "./components/Layouts/Footer/Footer";
+import Navbar from "./components/Layouts/Navbar/Navbar";
 
 const App = () => {
-  return (
+  const [page, setPage] = useState("home");
 
-  
+  return (
     <div className="App">
-      <CardHeader/>
-<div id='s'></div>
-<HeaderWithPargraph isRight={true}/>
-      <Navbar />
-      <SearchInput />
-      <ImageCard />
-      <Annual />
-      <Trending />
+      <Navbar page={page} />
+      <BrowserRouter>
+        <Routes>
+          <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
+          <Route path={'/search'} element={<Search page={(name) => { setPage(name) }} />} />
+          <Route path={'/category'} element={<Category page={(name) => { setPage(name) }} />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
-      <h1>##Preview components##</h1>
-      <hr />
-      <CategoryCard />
-      <hr />
-      <CardHeader />
-      <hr />
-      <SponsoredBy />
-      <hr />
-      <CommunitySection />
-      <hr />
-      {/* <SideBar /> */}
-      <hr />
-      {/* <TagBar /> */}
+      {/* <Search /> */}
+      {/* <Category /> */}
+      {/* <Home /> */}
     </div>
+
   );
 };
 
