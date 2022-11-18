@@ -1,7 +1,5 @@
 import { useState } from "react";
-
 import "./filters.css";
-
 const SubCollapseBtn = (props) => {
   const [open, setOpen] = useState(true);
   return (
@@ -20,8 +18,9 @@ const SubCollapseBtn = (props) => {
           <p className="absolute left-0 font-thin collapsep">{props.title}</p>
 
           <i
-            className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${!open && "rotate-180"
-              }`}
+            className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${
+              !open && "rotate-180"
+            }`}
             data-bs-toggle="collapse"
             data-bs-target={props.target}
             aria-expanded="false"
@@ -29,7 +28,7 @@ const SubCollapseBtn = (props) => {
           ></i>
         </button>
         <div
-          className={props.info}
+          class={props.info}
           data-bs-toggle="tooltip"
           data-bs-placement="top"
           data-bs-title="Tooltip on top"

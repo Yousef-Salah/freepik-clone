@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
-
+import React from "react";
+import Filters from "./Filters";
+import { useState } from "react";
 import "./filter-sideBar.css";
-
 import SideTag from "./SideTag";
 import CollapseBtn from "./CollapseBtn";
 import SideTagWithPic from "./SideTagWithPic";
 import SubCollapseBtn from "./SubCollapseBtn";
-
+import Colorr from "./Color";
 const SideBar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="sidebar flex">
       <div
-        className={`${open ? "w-64" : "w-0"
-          } sidebar-content h-screen relative p-0 pt-0 sticky`}
+        className={`${
+          open ? "w-64" : "w-0"
+        } sidebar-content h-screen relative p-0 pt-0 sticky`}
       >
         <div
           className={`absolute cursor-pointer-right-3  ${open && "scale-0"}`}
@@ -31,8 +32,9 @@ const SideBar = () => {
           </div>
         </div>
         <div
-          className={`flex gap-x-2 items-center w-58 mt-3 ${!open && "scale-0"
-            }`}
+          className={`flex gap-x-2 items-center w-58 mt-3 ${
+            !open && "scale-0"
+          }`}
         >
           <i className="bi bi-sliders"></i>
           <h1 className={`text-black origin-left font-medium text-xl`}>
@@ -48,11 +50,11 @@ const SideBar = () => {
         </div>
         <ul className={`pt-0 block sidebarcontent`}>
           {/*Category*/}
-
           <li>
             <div
-              className={`flex gap-x-2 items-center w-100 mt-1  ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-100 mt-1  ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 target="#categoryCollapse"
@@ -75,8 +77,9 @@ const SideBar = () => {
           {/*License*/}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1 ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 title="License"
@@ -98,8 +101,9 @@ const SideBar = () => {
           {/* Color*/}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1 ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 title="Color"
@@ -111,8 +115,19 @@ const SideBar = () => {
             <div className="collapse" id="colorCollapse">
               <span className="container-fluid">
                 <div className={`row category-row ${!open && "scale-0"}`}>
-                  <div className="row category-row">
-                    <i className="bx bx-circle "></i>
+                  <div className="row category-row color-row">
+                  <Colorr color='border' cancel=' bi bi-x cancel '/>
+                  <Colorr color='bg-red-500' />
+                    <Colorr color='bg-orange-500'/>
+                    <Colorr color='bg-pink-200'/>
+                    <Colorr color='bg-yellow-300'/>
+                    <Colorr color='bg-cyan-500'/>
+                    <Colorr color='bg-blue-500'/>
+                    <Colorr color='bg-purple-500'/>
+                    <Colorr color='bg-dark'/>
+                    <Colorr color='bg-gray-200'/>
+                    <Colorr color='bg-white-200 border'/>
+                    
                   </div>
                 </div>
               </span>
@@ -121,8 +136,9 @@ const SideBar = () => {
           {/**People */}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1 ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 title="People"
@@ -224,8 +240,9 @@ const SideBar = () => {
           {/* File Type*/}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1  ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1  ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 target="#fileTypeCollapse"
@@ -234,6 +251,8 @@ const SideBar = () => {
                 title="File type"
               />
             </div>
+            
+
             <div className="collapse" id="fileTypeCollapse">
               <span className="container-fluid ">
                 <div className={`row category-row ${!open && "scale-0"}`}>
@@ -247,8 +266,9 @@ const SideBar = () => {
           {/* Orientation*/}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1 ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 title="Orientation"
@@ -269,6 +289,7 @@ const SideBar = () => {
                     title="Square"
                     pic="bx bx-rectangle bx-rotate-90"
                   />
+                  <SideTagWithPic title="Panoramic" pic="bx bx-rectangle" />
                 </div>
               </span>
             </div>
@@ -276,8 +297,9 @@ const SideBar = () => {
           {/*Style*/}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1 ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 title="Style"
@@ -306,8 +328,9 @@ const SideBar = () => {
           {/**Quick Edit */}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1 ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 title="Quick edit"
@@ -333,8 +356,8 @@ const SideBar = () => {
                     <div className="absolute right-0 w-11 h-6 bg-gray-200 peer-focus:outline-none  dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                   </label>
                   <p className="collapsep">
-                    Edit online with <a href="/">Wepik</a> or
-                    <br /> <a href="/">Storyset</a>
+                    Edit online with <a className="link" href="/">Wepik</a> or
+                    <br /> <a className="link" href="/">Storyset</a>
                   </p>
                 </div>
               </span>
@@ -343,8 +366,9 @@ const SideBar = () => {
           {/**Puplish Date */}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1 ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 title="Puplish Date"
@@ -366,8 +390,9 @@ const SideBar = () => {
           {/**Choice */}
           <li>
             <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${!open && "scale-0"
-                }`}
+              className={`flex gap-x-2 items-center w-64 mt-1 ${
+                !open && "scale-0"
+              }`}
             >
               <CollapseBtn
                 title="Freepik's choice"
@@ -398,8 +423,9 @@ const SideBar = () => {
       </div>
       <div>
         <h1
-          className={` ${open ? "p-0" : "p-9"
-            } text2xl font-semibold flex-1 h-screen`}
+          className={` ${
+            open ? "p-0" : "p-9"
+          } text2xl font-semibold flex-1 h-screen`}
         ></h1>
       </div>
     </div>

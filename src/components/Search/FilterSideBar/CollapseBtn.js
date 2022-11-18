@@ -1,3 +1,6 @@
+/**  <div className={`container-fluid table-row ${
+      open ? " mt-5" : "mt-5 mb-0"
+    }`}> */
 import { useState } from "react";
 import "./filters.css";
 const CollapseBtn = (props) => {
@@ -23,6 +26,9 @@ const CollapseBtn = (props) => {
           <i
             className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${!open && "rotate-180"
               }`}
+            className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${
+              !open && "rotate-180"
+            }`}
             data-bs-toggle="collapse"
             data-bs-target={props.target}
             aria-expanded="false"
@@ -30,7 +36,7 @@ const CollapseBtn = (props) => {
           ></i>
         </button>
         <div
-          className={props.info}
+          class={props.info}
           data-bs-toggle="tooltip"
           data-bs-placement="top"
           data-bs-title="Tooltip on top"
