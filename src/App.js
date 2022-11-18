@@ -1,43 +1,36 @@
-import Footer from './components/Layouts/Footer/footer';
-import Trending from './components/Home/trending/Trending';
-import Annual from './components/Home/AnnualDiscount/Annual'
-import SearchInput from './components/Layouts/SearchInputCom/SearchInput';
-import SponsoredBy from './components/global/SponsoredBy/SponsoredBy';
-import CategoryCard from './components/Category/CategoryCard/CategoryCard';
-import Navbar from './components/Layouts/Navbar/Navbar';
+import React, { useState } from 'react';
 
-import CardHeader from './components/Category/PandaSection/Crads';
-import ImageCard from './components/Home/CircleCategoy/Imag';
-import CommunitySection from './components/Home/JoinCommunity/Joins';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 
-import TagBar from './components/Search/SideBar/TagBar';
-import SideBar from './components/Search/SideBar/SideBar';
+//page content import
+import Home from "./pages/Home";
+import Category from "./pages/Category";
+import Search from "./pages/Search";
 
-function App() {
+//layouts imports
+import Footer from "./components/Layouts/Footer/Footer";
+import Navbar from "./components/Layouts/Navbar/Navbar";
+
+const App = () => {
+  const [page, setPage] = useState("home");
+
   return (
     <div className="App">
-    <Navbar />
-    
-    <SearchInput />
-    <ImageCard />
-    <Annual />
-    <Trending />
-    <Footer />
-    <h1>##Preview components##</h1>
-    <hr />
-    <CategoryCard />
-    <hr />
-    <CardHeader />
-    <hr />
-    <SponsoredBy />
-    <hr />
-    <CommunitySection />
-    <hr />
-    {/* <SideBar /> */}
-    <hr />
-    {/* <TagBar /> */}
-  </div>
+      <Navbar page={page} />
+      <BrowserRouter>
+        <Routes>
+          <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
+          <Route path={'/search'} element={<Search page={(name) => { setPage(name) }} />} />
+          <Route path={'/category'} element={<Category page={(name) => { setPage(name) }} />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+      {/* <Search /> */}
+      {/* <Category /> */}
+      {/* <Home /> */}
+    </div>
+
   );
-}
+};
 
 export default App;

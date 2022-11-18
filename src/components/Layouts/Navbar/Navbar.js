@@ -4,7 +4,7 @@ import './nav-bar.scss';
 import Categories from '../../../utils/Categories';
 import MoreContent from '../../../utils/MoreContent';
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [catVisibility, setCatVisibility] = useState(false);
     const [moreVisibility, setMoreVisibility] = useState(false);
     const [sideVisibility, setSideVisibility] = useState("");
@@ -14,7 +14,7 @@ const Navbar = () => {
     const moreContent = MoreContent();
 
     //change home to anything else to see inner nav style
-    let pageName = "home";
+    let pageName = props.page;
     let navClass = "navbar navbar-expand-lg";
     let shadowStyle = "";
 
@@ -75,14 +75,14 @@ const Navbar = () => {
                         </div>
                         <div className="side-menu-body">
                             <ul className="side-menu-list">
-                                <li><a href="https://www.freepik.com/popular-vectors">Vectors</a></li>
-                                <li><a href="https://www.freepik.com/popular-photos">Photos</a></li>
-                                <li><a href="https://www.freepik.com/popular-psd">PSD</a></li>
+                                <li><a href="/">Vectors</a></li>
+                                <li><a href="/">Photos</a></li>
+                                <li><a href="/">PSD</a></li>
                                 <li>
-                                    <a href="https://www.freepik.com/popular-psd">3D</a>
+                                    <a href="/">3D</a>
                                     <button className="btn btn-new">NEW</button>
                                 </li>
-                                <li><a href="https://www.freepik.com/popular-psd">Fonts</a></li>
+                                <li><a href="/">Fonts</a></li>
                                 <li className='side-cat-list' onClick={toggleCatDropdown}>
                                     <a>Categories</a>
                                     <i className={"bi bi-caret-" + arrowDirectionCat + "-fill"}></i>
@@ -96,7 +96,7 @@ const Navbar = () => {
                                         )
                                     })}
                                 </div> : null}
-                                <li><a href="https://www.freepik.com/popular-psd">Collections</a></li>
+                                <li><a href="/">Collections</a></li>
                                 <li className='side-more-list' onClick={toggleMoreDropdown} >
                                     <a>More</a>
                                     <i className={"bi bi-caret-" + arrowDirectionMore + "-fill"}></i>
@@ -166,28 +166,28 @@ const Navbar = () => {
                                         </div>
                                     </ul>
                                 </div> : null}
-                                <li><a href="https://www.freepik.com/popular-psd">Sell content</a></li>
-                                <li><a className='pricing-color' href="https://www.freepik.com/popular-psd">Pricing</a></li>
+                                <li><a href="/">Sell content</a></li>
+                                <li><a className='pricing-color' href="/">Pricing</a></li>
 
 
                             </ul>
                         </div>
                     </div>
                     <div className="collapse navbar-collapse">
-                        <a href="x">
+                        <a href="/">
                             <img className="nav-logo" src={require('../../../assets/images/navbar/freepik-no_bg.png')} alt="logo" />
                         </a>
                         <div className="nav-menus">
                             <div className="nav-menu">
                                 <ul>
-                                    <li><a href="https://www.freepik.com/popular-vectors">Vectors</a></li>
-                                    <li><a href="https://www.freepik.com/popular-photos">Photos</a></li>
-                                    <li><a href="https://www.freepik.com/popular-psd">PSD</a></li>
+                                    <li><a href="/">Vectors</a></li>
+                                    <li><a href="/">Photos</a></li>
+                                    <li><a href="/">PSD</a></li>
                                     <li>
-                                        <a href="https://www.freepik.com/popular-psd">3D</a>
+                                        <a href="/">3D</a>
                                         <button className="btn btn-new">NEW</button>
                                     </li>
-                                    <li><a href="https://www.freepik.com/popular-psd">Fonts</a></li>
+                                    <li><a href="/">Fonts</a></li>
                                     <li onClick={toggleCatDropdown}>
                                         <a href='#'>Categories
                                             <i className={"bi bi-caret-" + arrowDirectionCat + "-fill"}></i>
@@ -206,7 +206,7 @@ const Navbar = () => {
                                     {(catVisibility && pageName === "home") ? <i className="bi bi-caret-down-fill arrow-down-cat "></i> : null}
 
 
-                                    <li><a href="https://www.freepik.com/popular-psd">Collections</a></li>
+                                    <li><a href="/">Collections</a></li>
                                     <li onClick={toggleMoreDropdown}>
                                         <a href='#'>More
                                             <i className={"bi bi-caret-" + arrowDirectionMore + "-fill"}></i>
@@ -284,8 +284,8 @@ const Navbar = () => {
                             </div>
                             <div className="pricing-nav">
                                 <ul>
-                                    <li><a href='https://www.freepik.com/popular-psd'>Sell Content</a></li>
-                                    <li><a className="pricing-color" href='https://www.freepik.com/popular-psd'>Pricing</a></li>
+                                    <li><a href='/'>Sell Content</a></li>
+                                    <li><a className="pricing-color" href='/'>Pricing</a></li>
                                 </ul>
 
                             </div>
@@ -295,7 +295,7 @@ const Navbar = () => {
                 <div className="nav-menu-user">
                     <ul>
                         <li>
-                            <a className='login-link' href="https://www.freepik.com/popular-psd">Log in </a>
+                            <a className='login-link' href="/">Log in </a>
                         </li>
                         <li>
                             <button className="signup-btn">Sign up</button>
