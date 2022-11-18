@@ -1,5 +1,5 @@
 // Imports
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./search-box.css";
 import DropDownItem from "./SearchDropdown/SearchDropdown";
 
@@ -20,6 +20,55 @@ const SearchBox = (props) => {
       }, 1300);
     }
   };
+
+  const [buttonLabel, SetbuttonLabel] = useState("Assets");
+
+  // useEffect(() => {
+  //   const resultType = document.querySelectorAll('#search-type input');
+  //   const itemTypes = document.querySelectorAll('#item-type input');
+  //   const categories = document.querySelectorAll('#item-category input');
+  // })
+
+  const  buttonLabelHandler = ()=> {
+    // TODO: Bad Code !!
+    const resultType = document.querySelectorAll('#search-type input');    // Assets or collections
+    const itemTypes = document.querySelectorAll('#item-type input');       // Free or Premium
+    const categories = document.querySelectorAll('#item-category input');  // Photos Vectors PSDs ...
+   
+    let searchResultOption;
+    resultType.forEach(ele => {
+      if(ele.checked == true) {
+        searchResultOption = ele;
+      }
+    })
+    
+    let searchTypes = [].filter.call(itemTypes, (ele) => ele.checked == true);
+
+    let resultantCategory;
+    
+    
+    categories.forEach(ele => {
+      if(ele.checked == true) {
+        resultantCategory = ele;
+      }
+    })
+    
+    let resultantLabel = searchResultOption.getAttribute("title");    
+
+    if(searchTypes != null && searchTypes != undefined) {
+      searchTypes.forEach(ele => {
+        if(ele.checked == true) {
+          resultantLabel += ', ' + ele.getAttribute("title");
+        }
+      })
+    }
+
+    if(resultantCategory != null && resultantCategory != undefined) {
+      resultantLabel +=  ', ' + resultantCategory.getAttribute("title");
+    }
+    
+    SetbuttonLabel(resultantLabel);
+  }
 
   const deleteText = (event) => {
     document.getElementById("search-value").value = "";
@@ -42,57 +91,44 @@ const SearchBox = (props) => {
             aria-expanded="false"
             data-bs-auto-close="outside"
           >
-            Assets
+            {buttonLabel}
           </button>
-          <div className="dropdown-menu">
+          <div className="dropdown-menu" id="search-filter-items">
             <div id="search-type">
-              <div className="mb-2">
                 <DropDownItem
                   type="radio"
                   title="Assets"
                   name="search-type"
                   for="assets"
                   checked={true}
+                  handler={buttonLabelHandler}
                 />
-              </div>
-              <div className="mb-2">
                 <DropDownItem
                   type="radio"
                   title="Collections"
                   name="search-type"
                   for="collections"
+                  handler={buttonLabelHandler}
                 />
-              </div>
             </div>
-            <div className="mb-2">
-              <DropDownItem divider={true} />
-            </div>
-            <div className="mb-2">
-              <DropDownItem title="Free" name="free" for="free" />
-            </div>
-            <div className="mb-2">
+              <DropDownItem divider={true} handler={buttonLabelHandler} />
+            <div id="item-type">
+              <DropDownItem title="Free" name="free" for="free" handler={buttonLabelHandler} />
               <DropDownItem
                 title="Premium"
                 name="premium"
                 for="premium-checkbox"
                 iconClasses="fa-solid fa-crown"
                 goldItem={true}
+                handler={buttonLabelHandler}
               />
             </div>
-            <div className="mb-2">
-              <DropDownItem divider={true} />
-            </div>
-            <div className="mb-2">
-              <DropDownItem title="Vectors" name="vectors" for="vectors" />
-            </div>
-            <div className="mb-2">
-              <DropDownItem title="Photos" name="photos" for="photos" />
-            </div>
-            <div className="mb-2">
-              <DropDownItem title="PSD" name="psd" for="psd" />
-            </div>
-            <div className="mb-2">
-              <DropDownItem title="Icons" name="icon" for="icon" />
+            <div id="item-category">
+              <DropDownItem divider={true} handler={buttonLabelHandler} />
+              <DropDownItem title="Vectors" name="vectors" for="vectors" handler={buttonLabelHandler} />
+              <DropDownItem title="Photos" name="photos" for="photos" handler={buttonLabelHandler} />
+              <DropDownItem title="PSD" name="psd" for="psd"handler={buttonLabelHandler}  />
+              <DropDownItem title="Icons" name="icon" for="icon" handler={buttonLabelHandler} />
             </div>
           </div>
         </div>

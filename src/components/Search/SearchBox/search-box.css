@@ -1,15 +1,16 @@
 #search-input-container {
   background-color: #4055c7;
-
   padding: 0px;
   height: 54px;
   width: 100%;
 }
+
 #search {
   max-width: 770px;
   margin: 0 auto;
   background-color: white;
 }
+
 #search > div {
   height: 97%;
   /* overflow-y: hidden !important; */

@@ -6,20 +6,23 @@ const DropDwonItem = (props) => {
   const gold = (props.goldItem) ? "gold-item" : "";
 
   const item = (
-    <div className="form-check">
-      <input
-        className="form-check-input"
-        type={props.type ? props.type : "checkbox"}
-        value=""
-        id={props.for}
-        name={props.name}
-        selected
-
-      />
-      <label className={`form-check-label ${gold}`} htmlFor={props.for}>
-        {(icon) ? icon : ''}
-        {props.title}
-      </label>
+    <div className="mb-2">
+      <div className="form-check">
+        <input
+          className="form-check-input"
+          type={props.type ? props.type : "checkbox"}
+          value=""
+          id={props.for}
+          name={props.name}
+          onClick={props.handler}
+          checked={props.checked}
+          title={props.title}
+        />
+        <label className={`form-check-label ${gold}`} htmlFor={props.for}>
+          {(icon) ? icon : ''}
+          {props.title}
+        </label>
+      </div>
     </div>
   );
 
