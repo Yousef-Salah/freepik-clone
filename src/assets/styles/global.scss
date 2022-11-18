@@ -1,0 +1,23 @@
+$main-color: #4055c7;
+$dark-color: #252a31;
+$anchorColor2: #a9b6c4;
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+h1,h2,h3,h4,h5,h6,p,pre,a,li,span,div,button,textarea,input,select,option,ul,ol,dl,dt,dd,blockquote,code,form,label,legend,table,th,td,thead,tbody,tfoot,tr,fieldset,figure,figcaption,hr,em,strong,small,del,ins,sub,sup,iframe,object,embed,video,audio,canvas,svg,article,aside,details,dialog,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
+  font-family: 'Figtree', cursive;
+}
+@mixin resetBootstrap() {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0px;
+  ul{
+    list-style: none;
+  }
+}
+@mixin AnchorFontStyle() {
+    color: white;
+    text-decoration: none;  
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+}

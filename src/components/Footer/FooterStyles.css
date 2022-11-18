@@ -1,0 +1,18 @@
+.py-5 {
+    background-color: #170f3c;
+    height: 200px;
+    width: 240px;
+    align-items: center;
+    /* Can be changed in the live sample */
+
+}
+
+.p-2 {}
+
+.mx-3 {
+    background-color: rgb(35, 148, 229);
+}
+
+.mt-4 {
+    background-color: rgb(18, 57, 186);
+}

@@ -1,11 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import TagBar from "./components/Sidebar/TagBar";
 import Bar from './components/TagBar';
 
 function App() {
   return (
-
-    <Bar/>
+    <TagBar/>
   );
 }
 
