@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./search-box.css";
 import DropDownItem from "./SearchDropdown/SearchDropdown";
+import DropDownButton from "./SearchDropdown/DropDownButton";
 
 // Components
 
@@ -30,7 +31,8 @@ const SearchBox = (props) => {
   // })
 
   const  buttonLabelHandler = ()=> {
-    // TODO: Bad Code !!
+    // ! Bad Code !!
+    
     const resultType = document.querySelectorAll('#search-type input');    // Assets or collections
     const itemTypes = document.querySelectorAll('#item-type input');       // Free or Premium
     const categories = document.querySelectorAll('#item-category input');  // Photos Vectors PSDs ...
@@ -83,16 +85,7 @@ const SearchBox = (props) => {
     <div className={props.classlist} id="search-input-container">
       <form id="search" className="h-100 rounded">
         <div className="dropdown d-inline-block rounded-start">
-          <button
-            id="search-filters"
-            type="button"
-            className="dropdown-toggle rounded-start text-align-start"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            data-bs-auto-close="outside"
-          >
-            {buttonLabel}
-          </button>
+        <DropDownButton buttonLabel={buttonLabel} />
           <div className="dropdown-menu" id="search-filter-items">
             <div id="search-type">
                 <DropDownItem
@@ -100,7 +93,6 @@ const SearchBox = (props) => {
                   title="Assets"
                   name="search-type"
                   for="assets"
-                  checked={true}
                   handler={buttonLabelHandler}
                 />
                 <DropDownItem
