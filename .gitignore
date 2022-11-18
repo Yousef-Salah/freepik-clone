@@ -25,3 +25,4 @@ yarn-error.log*
 /package-lock.json
 
 /src/._.DS_Store
+package-lock.json

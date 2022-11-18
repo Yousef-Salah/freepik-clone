@@ -1,54 +1,35 @@
-import React from "react";
-import Footer from "./components/Footer/Footer";
-import "./components/Footer/FooterStyle.css";
+import React, { useState } from 'react';
 
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 
-  
-  
-// import CardHeader from './components/Category/PandaSection/Crads';
-// import ImageCard from './components/Home/CircleCategoy/Imag';
-// import CommunitySection from './components/Home/JoinCommunity/Joins';
+//page content import
+import Home from "./pages/Home";
+import Category from "./pages/Category";
+import Search from "./pages/Search";
 
-// import TagBar from './components/Search/SideBar/TagBar';
-// import SideBar from './components/Search/SideBar/SideBar';
+//layouts imports
+import Footer from "./components/Layouts/Footer/Footer";
+import Navbar from "./components/Layouts/Navbar/Navbar";
 
-//import logo from './logo.svg';
-import './App.css';
+const App = () => {
+  const [page, setPage] = useState("home");
 
-//import Photo from './components/join&image/Joins';
-
-function App() {
   return (
-    <div className='container'>
-      <div className='row'>
-        <SponsoredBy />
-        <div className="App">
-      <CardHeader/>
-<div id='s'></div>
-<HeaderWithPargraph isRight={true}/>
-      <Navbar />
-      <SearchInput />
-      <ImageCard />
-      <Annual />
-      <Trending />
+    <div className="App">
+      <Navbar page={page} />
+      <BrowserRouter>
+        <Routes>
+          <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
+          <Route path={'/search'} element={<Search page={(name) => { setPage(name) }} />} />
+          <Route path={'/category'} element={<Category page={(name) => { setPage(name) }} />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
-      <h1>##Preview components##</h1>
-      <hr />
-      <CategoryCard />
-      <hr />
-      <CardHeader />
-      <hr />
-      <SponsoredBy />
-      <hr />
-      <CommunitySection />
-      <hr />
-      {/* <SideBar /> */}
-      <hr />
-      {/* <TagBar /> */}
+      {/* <Search /> */}
+      {/* <Category /> */}
+      {/* <Home /> */}
     </div>
-      </div>
-      </div>
-      
+
   );
 };
 
