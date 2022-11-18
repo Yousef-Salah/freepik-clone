@@ -1,0 +1,163 @@
+#search-input-container {
+  background-color: #4055c7;
+
+  padding: 0px;
+  height: 54px;
+  width: 100%;
+}
+#search {
+  max-width: 770px;
+  margin: 0 auto;
+  background-color: white;
+}
+#search > div {
+  height: 97%;
+  /* overflow-y: hidden !important; */
+}
+
+/* TODO: Must Be Fixed */
+/* #search {
+	transition: all 0.3 ease 0.1;
+} */
+
+/* #search .dropdown,
+#search #search-button {
+    overflow-y: hidden;
+}  */
+
+#search #input-field {
+  width: 534px;
+}
+
+#search #input-field input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px 10px 10px;
+  border: none;
+  margin: 0px;
+}
+
+#search input:focus {
+  outline: none;
+}
+
+#search #search-button {
+  width: 54px;
+}
+
+#search #search-button button {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  border: none;
+  background-color: white;
+  padding: 0px;
+}
+
+#search .dropdown-menu {
+  width: 180px !important;
+  padding: 10px 10px 10px 10px;
+  transform: translate(0px, 65px) !important;
+}
+
+#search .dropdown-menu::before {
+  color: white;
+  font-family: "Font Awesome 5 Free";
+  content: "\f0d8";
+  font-weight: 700;
+  display: inline-block;
+  position: absolute;
+  right: 50%;
+  top: -13px;
+}
+
+#serach .dropdown {
+  position: relative;
+}
+
+#search .dropdown::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 30px;
+  width: 2px;
+  background-color: #cfd9e0;
+  top: calc(50% - 15px);
+  right: 0px;
+}
+
+#search-filters {
+  width: 180px;
+  height: 100% !important;
+  display: inline-block !important;
+  font-size: 14px;
+  padding: 0px 38px 0px 20px;
+  border: none;
+  outline: none;
+  background-color: white;
+  position: relative;
+}
+
+#search-filters::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f107";
+  font-weight: 700;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  top: 45%;
+}
+
+.li-icon {
+  margin-right: 7px;
+}
+
+#search .dropdown-toggle::after {
+  content: "" !important;
+}
+
+.gold-item {
+  color: #efa71c;
+}
+
+#search #input-field span {
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  color: #bac8d3;
+  cursor: pointer;
+  right: 0px;
+  top: 12px;
+
+  transition: opacity 0.8s ease 0.3s;
+}
+
+/*  <=768px for medium screens */
+@media screen and (max-width: 768px) {
+  #search .dropdown {
+    display: none !important;
+  }
+
+  #search-input-container {
+    height: 44px !important;
+  }
+
+  #search #search-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  #search #input-field {
+    width: calc(100% - 44px);
+  }
+
+  #search #input-field span {
+    top: 6px;
+  }
+}
+
+@media screen and (max-width: 792px) and (min-width: 769px) {
+  #search #input-field {
+    width: calc(100% - 180px - 54px);
+  }
+}

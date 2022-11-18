@@ -1,0 +1,11 @@
+.bg-image {
+  width: 90%;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: brown;
+}
+
+.bg-image img {
+  width: 180px;
+  padding: 10px;
+}
