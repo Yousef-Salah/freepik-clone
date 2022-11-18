@@ -61,6 +61,11 @@
   transform: translate(0px, 65px) !important;
 }
 
+#search .dropdown-menu .form-check,
+#search .dropdown-menu .form-check > * {
+  cursor: pointer !important;
+}
+
 #search .dropdown-menu::before {
   color: white;
   font-family: "Font Awesome 5 Free";
@@ -97,6 +102,9 @@
   outline: none;
   background-color: white;
   position: relative;
+
+  text-overflow: ellipsis !important;
+  overflow: hidden;
 }
 
 #search-filters::after {
