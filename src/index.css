@@ -1,3 +1,5 @@
+/* the folowing code breaks other components, un-comment when debugging */
+
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */

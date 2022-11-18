@@ -1,22 +1,22 @@
-.community .title {
+#join-section .title {
   margin-top: 4%;
   margin-left: 10%;
   font-size: xx-large;
   color: black;
 }
-.community strong {
+#join-section strong {
   color: blue;
 }
-.community .photo {
-  margin-left: 800px;
-  margin-top: -22%;
+#join-section .photo {
+  margin-left: 900px;
+  margin-top: -17%;
   margin-right: 20px;
 }
-.community .text {
+#join-section .text {
   margin-left: 10%;
   color: rgb(52, 51, 51);
 }
-.community .button {
+#join-section .button {
   background-color: #1273eb;
   border: none;
   border-radius: 3px;
@@ -30,7 +30,7 @@
   margin-left: 10%;
   cursor: pointer;
 }
-.community .container {
+#join-section {
   border-radius: 20px;
   margin-top: 10%;
   background: #afd0e8;
@@ -38,14 +38,14 @@
   width: 2000px;
   height: 270px;
 }
-.community .row {
+#join-section .row {
   display: flex;
   flex-wrap: wrap;
 }
 @media screen and (max-width: 800px) {
-  .community .text,
-  .community .title,
-  .community .photo {
+  #join-section .text,
+  #join-section .title,
+  #join-section .photo {
     flex-direction: column;
   }
 }
