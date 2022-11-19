@@ -5,53 +5,8 @@
   position: relative;
   width: 100%;
 }
-#trending {
-  box-sizing: border-box;
-  outline: none;
-  font-family: "Proxima Nova", Verdana, "Avenir Next";
-  float: none;
-  margin: 50px auto;
-  display: block;
-  text-align: left;
-  color: rgb(58, 71, 85);
-  width: 95%;
-}
-#trending .title {
-  text-align: center;
-  font-size: 30px;
-  width: 100%;
-}
-#trending strong {
-  color: rgb(53, 113, 227);
-}
-#trending .text-muted {
-  text-align: center;
-  font-size: 18px;
-  width: 100%;
-}
-
-#exploretrend {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-count: 4;
-  grid-template-rows: 1fr 1fr 1fr;
-  padding: 20px;
-  gap: 8px;
-}
 #trending-content::marker {
   content: none;
-}
-#Freedom {
-  display:flex;
-  position:relative;
-  grid-row: span 2;
-  grid-area: 1/1/3/3;
-  align-content: center;
-}
-.item {
-  font-size: 16px;
-  font-weight: 600;
-  width: 100%;
 }
 .trend-zoom {
   width: 100%;
@@ -67,6 +22,7 @@
 	-moz-transition: all 0.2s;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
+  border-radius: 10px;
 }
 .trend-zoom:hover .trendimg{
   -moz-transform: scale(1.04);
@@ -79,5 +35,69 @@
   position: absolute;
   bottom: 5px;
   margin: 10px;
+  width:min-content;
+}
+#trending {
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Proxima Nova", Verdana, "Avenir Next";
+  float: none;
+  margin: 50px auto;
+  display: block;
+  text-align: left;
+  color: rgb(58, 71, 85);
+  width: 95%;
+
+}
+#trending .title {
+  text-align: center;
+  font-size: 30px;
   width: 100%;
+}
+#trending strong {
+  color: rgb(53, 113, 227);
+}
+#trending .text-muted {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+}
+#exploretrend{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 23%;
+  overflow-x: auto;
+}
+@media screen and (min-width: 1096px){
+.trend-zoom .trendimg {
+    border-radius: 0px;
+}
+.trendtext {
+  color: white;
+  position: absolute;
+  bottom: 5px;
+  margin: 10px;
+  width: 100%;
+}
+#exploretrend {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-count: 4;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 10px;
+  row-gap: 10px;
+}
+.item {
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+}
+#Freedom {
+  overflow:unset;
+  display:flex;
+  position:relative;
+  grid-row: span 2;
+  grid-area: 1/1/3/3;
+  align-content: center;
+}
 }
