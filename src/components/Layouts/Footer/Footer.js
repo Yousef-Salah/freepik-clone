@@ -55,7 +55,7 @@ const Footer = () => {
 							<ul className="list-unstyled">
 								<li>aaas</li>
 								<li>bbbb</li>
-								<li>cccc</li>
+								<li>ffff</li>
 								<li>dddd</li>
 							</ul>
 						</div>
