@@ -1,0 +1,19 @@
+#search-container {
+  padding: 20px 0px;
+}
+
+#search-container h1,
+#search-container h2 {
+  color: white;
+  background-color: #4055c7;
+  padding: 0px 0px 10px;
+  margin: 0px;
+}
+
+#search-container h2 {
+  margin-bottom: 30px;
+}
+
+/* .bg-purple {
+  background-color: #4055c7;
+} */

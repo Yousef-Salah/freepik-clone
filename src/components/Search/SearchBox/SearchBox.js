@@ -23,6 +23,7 @@ const SearchBox = (props) => {
   };
 
   const [buttonLabel, SetbuttonLabel] = useState("Assets");
+  const [inputPlaceHolder, setInputPlaceHolder] = useState("Search");
 
   // useEffect(() => {
   //   const resultType = document.querySelectorAll('#search-type input');
@@ -32,6 +33,7 @@ const SearchBox = (props) => {
 
   const  buttonLabelHandler = ()=> {
     // ! Bad Code !!
+    // ! Fix default selected input issue
     
     const resultType = document.querySelectorAll('#search-type input');    // Assets or collections
     const itemTypes = document.querySelectorAll('#item-type input');       // Free or Premium
@@ -55,7 +57,13 @@ const SearchBox = (props) => {
       }
     })
     
-    let resultantLabel = searchResultOption.getAttribute("title");    
+    let resultantLabel = ""; 
+
+    if(searchResultOption != null && searchResultOption != undefined) {
+      resultantLabel += (searchResultOption.getAttribute("title"));  
+    } else {
+      resultantLabel += "Assets";
+    }
 
     if(searchTypes != null && searchTypes != undefined) {
       searchTypes.forEach(ele => {
@@ -76,10 +84,6 @@ const SearchBox = (props) => {
     document.getElementById("search-value").value = "";
     checkDeleteIconStatus(event);
   };
-
-  let classes = props.className;
-  console.log("SearchBox ~ classes", classes)
-
 
   return (
     <div className={props.classlist} id="search-input-container">
@@ -135,7 +139,7 @@ const SearchBox = (props) => {
             type="text"
             id="search-value"
             onChange={checkDeleteIconStatus}
-            placeholder="Search.."
+            placeholder={inputPlaceHolder}
             className="rounded-start"
           />
         </div>
