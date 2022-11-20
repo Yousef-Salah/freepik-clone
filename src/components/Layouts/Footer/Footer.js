@@ -1,6 +1,11 @@
 
 import React from "react";
 import './footer.css'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Footer = () => {
 	return (
@@ -53,14 +58,16 @@ const Footer = () => {
 						<div className="col-md-3 col-sm-6">
 							<h4> SOCIAL MEDIA</h4>
 							<ul className="list-unstyled">
-								<li>aaas</li>
-								<li>bbbb</li>
-								<li>ffff</li>
-								<li>dddd</li>
+								<FacebookIcon className="ficon"/>
+								<TwitterIcon className="ticon"/>
+								<PinterestIcon className="picon"/>
+								<InstagramIcon className="iicon" />
+                                <YouTubeIcon className="yicon"/>
 							</ul>
 						</div>
 
 						{/*Footer-button*/}
+						
 						<div className="footer-button">
 							<img src="https://freepik.cdnpk.net/img/logos/freepikcompany-footer.svg" alt="Freepik Company" width="191" height="27"></img>
 							<p className="text-xs-center">
