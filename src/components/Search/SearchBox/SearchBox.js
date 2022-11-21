@@ -7,8 +7,11 @@ import DropDownButton from "./SearchDropdown/DropDownButton";
 // Components
 
 const SearchBox = (props) => {
-  const [delteTextIcon, setDelteTextIcon] = useState("d-none");
 
+  const [delteTextIcon, setDelteTextIcon] = useState("d-none");
+  const [buttonLabel, SetbuttonLabel] = useState("Assets");
+  const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
+  
   const checkDeleteIconStatus = (event) => {
     if (event.target.value) {
       setDelteTextIcon("opacity-100");
@@ -21,9 +24,6 @@ const SearchBox = (props) => {
       }, 1300);
     }
   };
-
-  const [buttonLabel, SetbuttonLabel] = useState("Assets");
-  const [inputPlaceHolder, setInputPlaceHolder] = useState("Search");
 
   // useEffect(() => {
   //   const resultType = document.querySelectorAll('#search-type input');
@@ -74,7 +74,14 @@ const SearchBox = (props) => {
     }
 
     if(resultantCategory != null && resultantCategory != undefined) {
-      resultantLabel +=  ', ' + resultantCategory.getAttribute("title");
+      let categoryLabel = resultantCategory.getAttribute("title");
+      resultantLabel +=  ', ' + categoryLabel;
+      setInputPlaceHolder("Search for " + categoryLabel.slice(0, -1));
+
+      if(searchResultOption != null && searchResultOption != undefined) {
+        if(searchResultOption.getAttribute("title") == "Collections");
+        setInputPlaceHolder("Search for " + categoryLabel + " collections" )
+      }
     }
     
     SetbuttonLabel(resultantLabel);
@@ -123,7 +130,7 @@ const SearchBox = (props) => {
               <DropDownItem divider={true} handler={buttonLabelHandler} />
               <DropDownItem title="Vectors" name="vectors" for="vectors" handler={buttonLabelHandler} />
               <DropDownItem title="Photos" name="photos" for="photos" handler={buttonLabelHandler} />
-              <DropDownItem title="PSD" name="psd" for="psd"handler={buttonLabelHandler}  />
+              <DropDownItem title="PSDs" name="psd" for="psd"handler={buttonLabelHandler}  />
               <DropDownItem title="Icons" name="icon" for="icon" handler={buttonLabelHandler} />
             </div>
           </div>
