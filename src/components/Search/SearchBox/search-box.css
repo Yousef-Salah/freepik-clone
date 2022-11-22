@@ -170,3 +170,38 @@
     width: calc(100% - 180px - 54px);
   }
 }
+
+.sub-page-search {
+  height: 44px !important;
+}
+/* TODO: */
+.sub-page-search form{
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.sub-page-search *:not(.form-check-input) {
+  background-color: #E2E8EC !important;
+  border-radius: 5px !important;
+}
+
+.sub-page-search .dropdown-menu,
+.sub-page-search .dropdown-menu *:not(.form-check-input) {
+  background-color: white !important;
+}
+
+/* TODO: SOON !! */
+/* .sub-page-search #search-button button:hover {
+  background-color: #4484F2 !important;
+} */
+
+.sub-page-search #search-button {
+  border: 3px solid #CFD9E0;
+  border-radius: 0px !important;
+}
+
+.sub-page-search #input-field span {
+  background-color: transparent !important;
+  right: 2px !important;
+  top: 6px !important;
+}

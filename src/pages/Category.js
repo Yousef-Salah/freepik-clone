@@ -14,7 +14,7 @@ const Category = (props) => {
 
     return (
         <>
-            <SearchInput />
+            <SearchInput mainPage={false} />
             <HeaderWithPargraph />
             <br />
             <CategoryCard />

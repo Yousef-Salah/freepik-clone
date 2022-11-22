@@ -116,8 +116,10 @@ const SearchBox = (props) => {
     checkDeleteIconStatus(event);
   };
 
+  const mainPage = (!props.mainPage) ? "sub-page-search" : "";
+
   return (
-    <div className={props.classlist} id="search-input-container">
+    <div className={mainPage} id="search-input-container">
       <form id="search" className="h-100 rounded">
         <div className="dropdown d-inline-block rounded-start">
         <DropDownButton buttonLabel={buttonLabel} />

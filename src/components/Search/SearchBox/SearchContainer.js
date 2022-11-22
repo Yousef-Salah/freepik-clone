@@ -15,7 +15,7 @@ const SearchContainer = () => {
       </div>
       <div className="container-fluiid">
         <div className="row">
-          <SearchBox />
+          <SearchBox mainPage={true} />
         </div>
       </div>
     </>
