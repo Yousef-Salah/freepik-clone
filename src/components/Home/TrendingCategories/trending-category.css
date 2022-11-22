@@ -35,7 +35,7 @@
   position: absolute;
   bottom: 5px;
   margin: 10px;
-  width:min-content;
+  width:content;
 }
 #trending {
   box-sizing: border-box;
@@ -62,11 +62,19 @@
   font-size: 18px;
   width: 100%;
 }
+.item {
+  font-size: 10px;
+  font-weight: 600;
+  width: 100%;
+}
 #exploretrend{
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 23%;
-  overflow-x: auto;
+  overflow-x:scroll;
+}
+#exploretrend::-webkit-scrollbar {
+  display: none;
 }
 @media screen and (min-width: 1096px){
 .trend-zoom .trendimg {
@@ -81,6 +89,7 @@
 }
 #exploretrend {
   display: grid;
+  overflow: hidden;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-count: 4;
   grid-template-rows: 1fr 1fr 1fr;
@@ -89,11 +98,10 @@
 }
 .item {
   font-size: 16px;
-  font-weight: 600;
+  font-weight:bold;
   width: 100%;
 }
 #Freedom {
-  overflow:unset;
   display:flex;
   position:relative;
   grid-row: span 2;
