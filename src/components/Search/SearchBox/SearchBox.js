@@ -9,7 +9,7 @@ import DropDownButton from "./SearchDropdown/DropDownButton";
 const SearchBox = (props) => {
 
   const [delteTextIcon, setDelteTextIcon] = useState("d-none");
-  const [buttonLabel, SetbuttonLabel] = useState("Assets");
+  const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
   
   const checkDeleteIconStatus = (event) => {
@@ -42,13 +42,13 @@ const SearchBox = (props) => {
       element.addEventListener('click', (event) => {
         let checkedItem = element.getAttribute("title");  // ! again bad code.
 
-        checkedBoxes.forEach((ele) => {
-          ele.checked = false;
+        checkedBoxes.forEach((element) => {
+          element.checked = false;
         });
 
-        checkedBoxes.forEach((elem) => {
-          if(elem.getAttribute("title") == checkedItem) {
-            elem.checked = true;
+        checkedBoxes.forEach((element) => {
+          if(element.getAttribute("title") == checkedItem) {
+            element.checked = true;
           }
         });
       });
@@ -108,7 +108,7 @@ const SearchBox = (props) => {
       }
     }
     
-    SetbuttonLabel(resultantLabel);
+    setButtonLabel(resultantLabel);
   }
 
   const deleteText = (event) => {
