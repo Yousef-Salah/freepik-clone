@@ -31,6 +31,30 @@ const SearchBox = (props) => {
   //   const categories = document.querySelectorAll('#item-category input');
   // })
 
+  useEffect(() => {
+    setCheckedCategory();
+  });
+
+  const setCheckedCategory = () => {
+    const checkedBoxes = document.querySelectorAll('#item-category input');
+    
+    checkedBoxes.forEach((element) => {
+      element.addEventListener('click', (event) => {
+        let checkedItem = element.getAttribute("title");  // ! again bad code.
+
+        checkedBoxes.forEach((ele) => {
+          ele.checked = false;
+        });
+
+        checkedBoxes.forEach((elem) => {
+          if(elem.getAttribute("title") == checkedItem) {
+            elem.checked = true;
+          }
+        });
+      });
+    });
+  }
+
   const  buttonLabelHandler = ()=> {
     // ! Bad Code !!
     // ! Fix default selected input issue

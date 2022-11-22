@@ -16,6 +16,8 @@ const DropDwonItem = (props) => {
           name={props.name}
           onClick={props.handler}
           title={props.title}
+
+          // checked={(props.checked) ? "" : ""}
         />
         <label className={`form-check-label ${gold}`} htmlFor={props.for}>
           {(icon) ? icon : ''}
