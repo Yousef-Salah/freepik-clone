@@ -18,17 +18,15 @@ const CollapseBtn = (props) => {
           aria-controls={props.aria}
           onClick={() => setOpen(!open)}
         >
-          <i className={props.pic + ` absolute left-0 mt-1`}></i>
-          <p className={`absolute left-6 + ${props.className}`}>
+          <i className={props.pic + ` tw-absolute tw-left-0 tw-mt-1`}></i>
+          <p className={`tw-absolute tw-left-6 + ${props.className}`}>
             {props.title}
           </p>
 
           <i
-            className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${!open && "rotate-180"
+            className={`bx bx-chevron-down arrow tw-absolute tw-right-0 tw-mt-1 ${!open && "tw-rotate-180"
               }`}
-            className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${
-              !open && "rotate-180"
-            }`}
+           
             data-bs-toggle="collapse"
             data-bs-target={props.target}
             aria-expanded="false"

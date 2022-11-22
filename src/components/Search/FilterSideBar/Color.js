@@ -2,8 +2,8 @@ import React from 'react'
 
 const Colorr = (props) => {
   return (
-    <div class="colorr w-5 p-3">
-    <button class={`w-5 h-5 rounded-full content-center ${props.color}  text-white color justify-content-center absolute`}>
+    <div class="colorr tw-w-5 tw-p-3">
+    <button class={`tw-w-5 tw-h-5 tw-rounded-full tw-content-center ${props.color}  tw-text-white color tw-justify-content-center tw-absolute`}>
     <i class={props.cancel}></i>
     </button>
 </div>

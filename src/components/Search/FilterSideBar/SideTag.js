@@ -8,7 +8,7 @@ function getClassItem(selected) {
 }
 const SideTag = (props, onClick) => {
   return (
-    <div className="side-tag  w-16">
+    <div className="side-tag  tw-w-16">
       <button className="btn btn-outline-secondary  sidetag">
         <p className="sidetaginner content-center	">{props.title}</p>
       </button>

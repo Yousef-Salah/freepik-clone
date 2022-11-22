@@ -60,6 +60,9 @@
 .sidebar-content{
  overflow-y: scroll !important; 
 } */
+.div.track{
+  height: 10px !important;
+}
 .tag {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 8px;
@@ -120,9 +123,10 @@
   -webkit-font-smoothing: antialiased;
   
 }
-.track {
+#tagbar {
   display: flex;
   overflow: hidden;
+  height: 90px;
 }
 
 .collapse.show {
@@ -138,6 +142,13 @@
   font-size: 14px;
   color: #374957;
 }
+.sidebarrow{
+  padding: 12px 6.5px 0px !important;
+}
+/*.collapse.show{
+  min-height: 5px;
+  max-height:20px ;
+}*/
 .link{
   color: rgb(29, 123, 239);
 } 
@@ -146,5 +157,8 @@
  
 }
 .color-row{
-  padding: 5px 0px 20px !important;
+  padding: 5px 2px 20px !important;
+}
+.colorr{
+  padding: 2px 16px 27px;
 }

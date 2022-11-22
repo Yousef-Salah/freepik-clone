@@ -3,10 +3,10 @@ import "./filters.css";
 const SubCollapseBtn = (props) => {
   const [open, setOpen] = useState(true);
   return (
-    <div className="container-fluid table-row mt-5">
+    <div className="container-fluid table-row tw-mt-5">
       <div className={`subcollapsebtn`}>
         <button
-          className={`subbtn-collapse w-100 `}
+          className={`subbtn-collapse tw-w-100 `}
           type="button"
           id={props.id}
           data-bs-toggle="collapse"
@@ -15,11 +15,11 @@ const SubCollapseBtn = (props) => {
           aria-controls={props.aria}
           onClick={() => setOpen(!open)}
         >
-          <p className="absolute left-0 font-thin collapsep">{props.title}</p>
+          <p className="tw-absolute tw-left-0 tw-font-thin collapsep">{props.title}</p>
 
           <i
-            className={`bx bx-chevron-down arrow absolute right-0 mt-1 ${
-              !open && "rotate-180"
+            className={`bx bx-chevron-down arrow tw-absolute tw-right-0 tw-mt-1 ${
+              !open && "tw-rotate-180"
             }`}
             data-bs-toggle="collapse"
             data-bs-target={props.target}

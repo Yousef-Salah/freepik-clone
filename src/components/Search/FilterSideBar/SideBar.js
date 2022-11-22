@@ -7,23 +7,24 @@ import CollapseBtn from "./CollapseBtn";
 import SideTagWithPic from "./SideTagWithPic";
 import SubCollapseBtn from "./SubCollapseBtn";
 import Colorr from "./Color";
+import Tag from "./Tag";
 const SideBar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="sidebar flex">
       <div
         className={`${
-          open ? "w-64" : "w-0"
-        } sidebar-content h-screen relative p-0 pt-0 sticky`}
+          open ? "tw-w-64" : "tw-w-0"
+        } sidebar-content h-screen tw-relative tw-p-0 tw-pt-0 tw-sticky`}
       >
         <div
-          className={`absolute cursor-pointer-right-3  ${open && "scale-0"}`}
+          className={` tw-cursor-pointer-right-3  ${open && "tw-scale-0"}`}
           onClick={() => setOpen(!open)}
         >
           <div className="filters">
-            <div className="container-fluid">
+            <div className="tw-container-fluid">
               <button
-                className="btn-light filtersbtn items-center content-center absolute top-5 left-1"
+                className="btn-light filtersbtn tw-items-center tw-content-center tw-absolute tw-top-5 tw-left-1"
                 type="button"
               >
                 <i className="bi bi-sliders"></i>Filters
@@ -32,40 +33,35 @@ const SideBar = () => {
           </div>
         </div>
         <div
-          className={`flex gap-x-2 items-center w-58 mt-3 ${
-            !open && "scale-0"
+          className={`tw-flex tw-gap-x-2 tw-items-center tw-w-58 tw-mt- ${
+            !open && "tw-scale-0"
           }`}
         >
           <i className="bi bi-sliders"></i>
-          <h1 className={`text-black origin-left font-medium text-xl`}>
+          <h1 className={`tw-text-black origin-left font-medium tw-text-xl`}>
             Filters
           </h1>
 
           <button
-            className="bx bx-arrow-from-right text-3xl mt-3	hover:border border-slate-100   text-black origin-right font-medium flex-end absolute top-0 right-0 "
+            className="bx bx-arrow-from-right tw-text-3xl tw-mt-3	tw-hover:border tw-border-slate-100   tw-text-black tw-origin-right tw-font-medium tw-flex-end tw-absolute tw-top-0 tw-right-0 "
             onClick={() => setOpen(!open)}
           >
             {" "}
           </button>
         </div>
-        <ul className={`pt-0 block sidebarcontent`}>
+        <ul className={`tw-pt-0 tw-block sidebarcontent`}>
           {/*Category*/}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-100 mt-1  ${
-                !open && "scale-0"
-              }`}
-            >
+           
               <CollapseBtn
                 target="#categoryCollapse"
                 aria="categryCollapse"
                 pic="bx bx-category-alt"
                 title="Categroy"
               />
-            </div>
             <div className="collapse" id="categoryCollapse">
               <span className="container-fluid ">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "scale-0"}`}>
                   <SideTag title="Vectors" />
                   <SideTag title="Photos" />
                   <SideTag title="PSD" />
@@ -76,11 +72,7 @@ const SideBar = () => {
           </li>
           {/*License*/}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${
-                !open && "scale-0"
-              }`}
-            >
+           
               <CollapseBtn
                 title="License"
                 pic="bx bx-crown"
@@ -88,10 +80,9 @@ const SideBar = () => {
                 aria="licenseCollapse"
                 target="#licenseCollapse"
               />
-            </div>
             <div className="collapse" id="licenseCollapse">
               <span className="container-fluid">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "tw-scale-0"}`}>
                   <SideTag title="Free" />
                   <SideTagWithPic title="Premium" pic="bx bx-crown" />
                 </div>
@@ -100,33 +91,29 @@ const SideBar = () => {
           </li>
           {/* Color*/}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${
-                !open && "scale-0"
-              }`}
-            >
+        
               <CollapseBtn
                 title="Color"
                 pic="bx bx-palette"
                 aria="colorCollapse"
                 target="#colorCollapse"
               />
-            </div>
             <div className="collapse" id="colorCollapse">
               <span className="container-fluid">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "scale-0"}`}>
                   <div className="row category-row color-row">
-                  <Colorr color='border' cancel=' bi bi-x cancel '/>
-                  <Colorr color='bg-red-500' />
-                    <Colorr color='bg-orange-500'/>
-                    <Colorr color='bg-pink-200'/>
-                    <Colorr color='bg-yellow-300'/>
-                    <Colorr color='bg-cyan-500'/>
-                    <Colorr color='bg-blue-500'/>
-                    <Colorr color='bg-purple-500'/>
-                    <Colorr color='bg-dark'/>
-                    <Colorr color='bg-gray-200'/>
-                    <Colorr color='bg-white-200 border'/>
+                  <Colorr color='tw-border' cancel=' bi bi-x cancel '/>
+                  <Colorr color='tw-bg-red-500' />
+                    <Colorr color='tw-bg-orange-500'/>
+                    <Colorr color='tw-bg-pink-200'/>
+                    <Colorr color='tw-bg-yellow-300'/>
+                    <Colorr color='tw-bg-green-300'/>
+                    <Colorr color='tw-bg-cyan-500'/>
+                    <Colorr color='tw-bg-blue-500'/>
+                    <Colorr color='tw-bg-purple-500'/>
+                    <Colorr color='tw-bg-black'/>
+                    <Colorr color='tw-bg-gray-200'/>
+                    <Colorr color='tw-bg-white-200 tw-border'/>
                     
                   </div>
                 </div>
@@ -135,11 +122,7 @@ const SideBar = () => {
           </li>
           {/**People */}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${
-                !open && "scale-0"
-              }`}
-            >
+           
               <CollapseBtn
                 title="People"
                 pic="bi bi-person-video"
@@ -148,10 +131,9 @@ const SideBar = () => {
                 //  info='bx bx-info-circle ml-16 mt-2'
                 className="mt-1"
               />
-            </div>
             <div className="collapse" id="peopleCollapse">
               <span className="container-fluid">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "tw-scale-0"}`}>
                   <div className="row category-row">
                     <SubCollapseBtn
                       title="Number Of People"
@@ -161,7 +143,7 @@ const SideBar = () => {
                     <div className="collapse" id="numberOfPeopleCollapse">
                       <span className="container-fluid">
                         <div
-                          className={`row category-row ${!open && "scale-0"}`}
+                          className={`row category-row sidebarrow ${!open && "tw-scale-0"}`}
                         >
                           <SideTag title="1" />
                           <SideTag title="2" />
@@ -180,7 +162,7 @@ const SideBar = () => {
                     <div className="collapse" id="ageCollapse">
                       <span className="container-fluid">
                         <div
-                          className={`row category-row ${!open && "scale-0"}`}
+                          className={`row category-row sidebarrow ${!open && "tw-scale-0"}`}
                         >
                           <SideTag title="Infant" />
                           <SideTag title="Child" />
@@ -202,7 +184,7 @@ const SideBar = () => {
                     <div className="collapse" id="genderCollapse">
                       <span className="container-fluid">
                         <div
-                          className={`row category-row ${!open && "scale-0"}`}
+                          className={`row category-row sidebarrow ${!open && "scale-0"}`}
                         >
                           <SideTag title="Male" />
                           <SideTag title="Female" />
@@ -219,7 +201,7 @@ const SideBar = () => {
                     <div className="collapse" id="ethnicityCollapse">
                       <span className="container-fluid">
                         <div
-                          className={`row category-row ${!open && "scale-0"}`}
+                          className={`row category-row sidebarrow ${!open && "scale-0"}`}
                         >
                           <SideTag title="South African" />
                           <SideTag title="Middle Eastern" />
@@ -239,23 +221,15 @@ const SideBar = () => {
 
           {/* File Type*/}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1  ${
-                !open && "scale-0"
-              }`}
-            >
               <CollapseBtn
                 target="#fileTypeCollapse"
                 aria="fileTypeCollapse"
                 pic="bx bx-file"
                 title="File type"
               />
-            </div>
-            
-
-            <div className="collapse" id="fileTypeCollapse">
+        <div className="collapse" id="fileTypeCollapse">
               <span className="container-fluid ">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "scale-0"}`}>
                   <SideTag title="PSD" />
                   <SideTag title="AI" />
                   <SideTag title="EPS" />
@@ -265,21 +239,17 @@ const SideBar = () => {
           </li>
           {/* Orientation*/}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${
-                !open && "scale-0"
-              }`}
-            >
+            
               <CollapseBtn
                 title="Orientation"
                 pic="bx bx-subdirectory-left"
                 aria="orientationCollapse"
                 target="#orientationCollapse"
               />
-            </div>
+       
             <div className="collapse" id="orientationCollapse">
               <span className="container-fluid">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "scale-0"}`}>
                   <SideTagWithPic title="Horizontal" pic="bx bx-rectangle" />
                   <SideTagWithPic
                     title="Vertical"
@@ -296,11 +266,7 @@ const SideBar = () => {
           </li>
           {/*Style*/}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${
-                !open && "scale-0"
-              }`}
-            >
+           
               <CollapseBtn
                 title="Style"
                 pic="bi bi-brush"
@@ -309,10 +275,10 @@ const SideBar = () => {
                 target="#styleCollapse"
                 className="mt-1"
               />
-            </div>
+          
             <div className="collapse" id="styleCollapse">
               <span className="container-fluid">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "scale-0"}`}>
                   <SideTag title="Watercolor" />
                   <SideTag title="Flat" />
                   <SideTag title="Cartoon" />
@@ -327,11 +293,7 @@ const SideBar = () => {
           </li>
           {/**Quick Edit */}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${
-                !open && "scale-0"
-              }`}
-            >
+           
               <CollapseBtn
                 title="Quick edit"
                 pic="bi bi-brush"
@@ -339,10 +301,10 @@ const SideBar = () => {
                 target="#editCollapse"
                 className="mt-1"
               />
-            </div>
+        
             <div className="collapse" id="editCollapse">
               <span className="container-fluid">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "scale-0"}`}>
                   <label
                     for="default-toggle"
                     className="cursor-pointer absolute "
@@ -365,21 +327,17 @@ const SideBar = () => {
           </li>
           {/**Puplish Date */}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${
-                !open && "scale-0"
-              }`}
-            >
+          
               <CollapseBtn
                 title="Puplish Date"
                 pic="bx bxs-calendar"
                 aria="puplishDateCollapse"
                 target="#puplishDateCollapse"
               />
-            </div>
+          
             <div className="collapse" id="puplishDateCollapse">
               <span className="container-fluid">
-                <div className={`row category-row ${!open && "scale-0"}`}>
+                <div className={`row category-row sidebarrow ${!open && "scale-0"}`}>
                   <SideTag title="Last 3 months" />
                   <SideTag title="Last 6 months" />
                   <SideTag title="Last year" />
@@ -389,31 +347,27 @@ const SideBar = () => {
           </li>
           {/**Choice */}
           <li>
-            <div
-              className={`flex gap-x-2 items-center w-64 mt-1 ${
-                !open && "scale-0"
-              }`}
-            >
+            
               <CollapseBtn
                 title="Freepik's choice"
                 pic="bx bxs-star"
                 aria="choiceCollapse"
                 target="#choiceCollapse"
-                info="bx bx-info-circle ml-32 mt-1"
+                info="bx bx-info-circle tw-ml-32 tw-mt-1 "
               />
-            </div>
+         
             <div className="collapse" id="choiceCollapse">
-              <span className="container-fluid">
-                <div className={`row category-row ${!open && "scale-0"}`}>
-                  <p className="absolute left-0 collapsep">See our favorites</p>
-                  <label for="favToggle" className="cursor-pointer absolute ">
+              <span className="tw-container-fluid">
+                <div className={`row tw-category-row ${!open && "scale-0"}`}>
+                  <p className="tw-absolute tw-left-0 collapsep">See our favorites</p>
+                  <label for="favToggle" className="tw-cursor-pointer tw-absolute ">
                     <input
                       type="checkbox"
-                      value=""
+                      value="0"
                       id="favToggle"
-                      className="sr-only peer absolute right-0"
+                      className="tw-sr-only tw-peer tw-absolute tw-right-0"
                     />
-                    <div className="absolute right-0 w-11 h-6 bg-gray-200 peer-focus:outline-none  dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <div className="tw-absolute tw-right-0 tw-w-11 tw-h-6 tw-bg-gray-200 tw-peer-focus:tw-outline-none  tw-dark:tw-peer-focus:tw-ring-blue-800 tw-rounded-full tw-peer tw-dark:tw-bg-white-700 tw-peer-checked:tw-after:tw-translate-x-full tw-peer-checked:tw-after:tw-border-white tw-after:content-[''] tw-after:absolute tw-after:top-[2px] tw-after:left-[2px] tw-after:tw-bg-white tw-after:tw-border-gray-300 tw-after:tw-border tw-after:tw-rounded-full tw-after:tw-h-5 tw-after:tw-w-5 tw-after:tw-transition-all tw-dark:tw-border-gray-600 tw-peer-checked:tw-bg-blue-600"></div>
                   </label>
                 </div>
               </span>
@@ -424,9 +378,11 @@ const SideBar = () => {
       <div>
         <h1
           className={` ${
-            open ? "p-0" : "p-9"
-          } text2xl font-semibold flex-1 h-screen`}
-        ></h1>
+            open ? "tw-p-0" : "tw-p-9"
+          } tw-text2xl tw-font-semibold tw-flex-1 tw-h-screen`}
+        >
+          
+        </h1>
       </div>
     </div>
   );

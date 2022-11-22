@@ -20,11 +20,15 @@ const FilterSideBar = () => {
   return (
     <div className="container-fluid bar sidebar-search">
       {breakPoint == "desktop" && (
-        <div className="track">
+        <div className="">
+
+        <div className="tw-track" >
+        <SideBar />
+
           {" "}
-          <SideBar />
-          <div className="flex ml-20 h-16">
-            <Type title="Photos" pic="bi bi-image left-0" />
+          <div className="tw-flex tw-ml-20 tw-h-16 tagbar">
+            
+            <Type title="Photos" pic="bi bi-image tw-left-0" />
             <Type title="PSD" pic="bi bi-filetype-psd" />
             <Type title="All images" pic="bx bxs-shapes" />
             <Tag title="arrow" />
@@ -38,12 +42,13 @@ const FilterSideBar = () => {
             <Tag title="infographic" />
             <Tag title="pattern" />
           </div>
+          </div>
         </div>
       )}
       {breakPoint == "mobile" && (
-        <div className="track">
-          <div className="flex  h-16">
-            <Type title="Photos" pic="bi bi-image left-0" />
+        <div className="tw-track">
+          <div className="flex  tw-h-16">
+            <Type title="Photos" pic="bi bi-image tw-left-0" />
             <Type title="PSD" pic="bi bi-filetype-psd" />
             <Type title="All images" pic="bx bxs-shapes" />
             <Tag title="arrow" />
