@@ -13,7 +13,6 @@ import Navbar from "./components/Layouts/Navbar/Navbar";
 
 const App = () => {
   const [page, setPage] = useState("home");
-  console.log("App ~ page", page)
 
   return (
     <div className="App">
