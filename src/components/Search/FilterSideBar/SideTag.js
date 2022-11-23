@@ -1,3 +1,5 @@
+import "./filter-sideBar.css";
+import "./filters.css";
 import { useState } from "react";
 function getClassItem(selected) {
   if (selected) {
@@ -8,7 +10,7 @@ function getClassItem(selected) {
 }
 const SideTag = (props, onClick) => {
   return (
-    <div className="side-tag  tw-w-16">
+    <div className="side-tag ">
       <button className="btn btn-outline-secondary  sidetag">
         <p className="sidetaginner content-center	">{props.title}</p>
       </button>

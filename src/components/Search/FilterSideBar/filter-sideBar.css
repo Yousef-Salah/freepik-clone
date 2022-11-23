@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 .icon {
   padding: 0px 5px;
 }
@@ -28,6 +26,7 @@
   flex-shrink: 0;
   margin-top: 20px;
   width: fit-content;
+  background-color: white;
 }
 .tag:hover,
 .type:hover,
@@ -60,9 +59,7 @@
 .sidebar-content{
  overflow-y: scroll !important; 
 } */
-.div.track{
-  height: 10px !important;
-}
+
 .tag {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 8px;
@@ -79,7 +76,9 @@
   white-space: nowrap;
   flex-shrink: 0;
   width: fit-content;
+  background-color: white;
 }
+
 .tag-class {
   box-sizing: border-box;
   outline: none;
@@ -123,12 +122,6 @@
   -webkit-font-smoothing: antialiased;
   
 }
-#tagbar {
-  display: flex;
-  overflow: hidden;
-  height: 90px;
-}
-
 .collapse.show {
   visibility: visible;
 }
