@@ -37,6 +37,13 @@ const SearchBox = (props) => {
 
   const setCheckedCategory = () => {
     const checkedBoxes = document.querySelectorAll('#item-category input');
+    let previousBox; 
+
+    checkedBoxes.forEach((element) => {
+      if(element.checked == true) {
+        previousBox = element.getAttribute("title");
+      }
+    });
     
     checkedBoxes.forEach((element) => {
       element.addEventListener('click', (event) => {
@@ -47,8 +54,13 @@ const SearchBox = (props) => {
         });
 
         checkedBoxes.forEach((element) => {
-          if(element.getAttribute("title") == checkedItem) {
+          if(element.getAttribute("title") == previousBox) {
+            element.checked = false;
+          }
+          else if(element.getAttribute("title") == checkedItem) {
             element.checked = true;
+          } else {
+            setInputPlaceHolder("Search all assets")
           }
         });
       });
