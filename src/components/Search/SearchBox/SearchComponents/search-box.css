@@ -172,12 +172,15 @@
 }
 
 .sub-page-search {
-  height: 44px !important;
+  height: 65px !important;
+  background-color: white !important;
 }
 /* TODO: */
 .sub-page-search form{
   margin-top: 10px !important;
   margin-bottom: 10px !important;
+  height: 44px !important;
+  /* max-width: none !important; */
 }
 
 .sub-page-search *:not(.form-check-input) {
@@ -205,3 +208,8 @@
   right: 2px !important;
   top: 6px !important;
 }
+
+/* #op-search-container img {
+  background-color: blue;
+  color: white;
+} */

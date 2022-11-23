@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-import SearchContainer from "../components/Search/SearchBox/SearchContainer";
+import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import Annual from "../components/Home/AnnualDiscount/AnnualDiscount";
 import Trending from "../components/Home/TrendingCategories/TrendingCategories";
 import CircleCategoy from "../components/Home/CircleCategoy/CircleCategoy";
@@ -16,7 +16,7 @@ const Home = (props) => {
 
     return (
         <>
-            <SearchContainer />
+            <SearchContainer mainPage={true} />
             <CircleCategoy />
             <Annual />
             <Trending />

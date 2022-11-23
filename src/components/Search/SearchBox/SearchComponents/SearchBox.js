@@ -1,8 +1,8 @@
 // Imports
 import { useEffect, useState } from "react";
 import "./search-box.css";
-import DropDownItem from "./SearchDropdown/SearchDropdown";
-import DropDownButton from "./SearchDropdown/DropDownButton";
+import DropDownItem from "./SearchDropdown";
+import DropDownButton from "./DropDownButton";
 
 // Components
 
