@@ -9,9 +9,29 @@ import Colorr from "./Color";
 import TagBar from "./TagBar";
 import { SideBarData } from "./SideBarData";
 const SideBar = () => {
+  let sidebar= document.getElementById('sidebarr');
+  let tagbar= document.getElementById('tagbar');
+  
+  window.addEventListener('scroll',function(){
+    console.log('scroll',window.pageYOffset);
+
+    if(window.pageYOffset >= 272.7272644042969){
+      console.log('oi');
+      document.getElementById('tagbar').classList.add('fixed-top');
+      document.getElementById('sidebarr').classList.remove('tw-absolute');
+      document.getElementById('sidebarr').classList.add('fixed-top');
+    }
+    else {
+      document.getElementById('tagbar').classList.remove('fixed-top');
+      document.getElementById('sidebarr').classList.add('tw-absolute');
+      document.getElementById('sidebarr').classList.remove('fixed-top');
+    
+    }
+  })
+
   const [open, setOpen] = useState(false);
   return (
-    <div className={`sidebar flex  position-fixed ${
+    <div  id='sidebarr' className={`sidebar flex tw-absolute ${
       open ? "tw-w-64" : "tw-w-0"
     }`}>
       <div
@@ -40,8 +60,10 @@ const SideBar = () => {
           }`}
         >
           <i className="bi bi-sliders tw-absolute tw-top-5 tw-origin-left"></i>
-          <h1 className={`tw-text-black tw-absolute tw-top-5 tw-origin-lef tw-left-6 tw-font-medium tw-text-xl`}>
+          <h1 className={`tw-text-black tw-absolute tw-top-5 tw-origin-lef tw-left-6 tw-font-medium tw-text-xl`}
+>
             Filters
+            
           </h1>
 
           <button
@@ -60,6 +82,7 @@ const SideBar = () => {
             <div>
               {val.title}
               {val.tags}
+
             </div>
            </li>
         )})
@@ -68,9 +91,10 @@ const SideBar = () => {
       </div>
       <div>
         
-          <TagBar className={` ${
-            open ? "tw-inset-x-80 position-fixed" : "tw-inset-x-40 position-fixed"
+          <TagBar id='tagbar' className={` ${
+            open ? "tw-inset-x-80 tw-top-0 " : "tw-inset-x-40 tw-top-0 "
           } `}/>
+
         </div>
       </div>
   );

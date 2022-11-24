@@ -5,8 +5,9 @@ const TagBar = (props) => {
   return (
     <div>
       <div
+      id={props.id}
         className={
-          `tw-flex  tagbar tw-absolute tw-top-72 tw-h-100 ` + props.className
+          `tw-flex  tagbar tw-absolute  tw-h-100 ` + props.className
         }
       >
         {TagBarData.map((val, key) => {
