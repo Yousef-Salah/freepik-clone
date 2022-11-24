@@ -1,7 +1,8 @@
 import './category-section.css'
 
 
-const CategorySection = () => {
+const CategorySection = (props) => {
+    console.log (props.image)
     return (
         <section id="iamge-card-text">
 
@@ -16,11 +17,12 @@ const CategorySection = () => {
                     </div>
                 </div>
                 <div className="leftPhotoCard">
-                    <img src="pnada.jpg" alt="not found"></img>
+                    <img src= "pnada.jpg" alt="not found"/>
+                    {/* {props.image} */}
                 </div>
                 <div className="leftPhotoCard">
-                    <img src="pnada.jpg" alt="not found"></img>
-                </div>
+                    <img src="pnada.jpg" alt="not found"/>
+                    </div>
                 <div className="rightPargraph">
                     <div className="content">
                         <h3>Promote children's films and TV shows with cartoony assets</h3>
