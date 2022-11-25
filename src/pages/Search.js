@@ -14,15 +14,11 @@ const Search = (props) => {
     }, [])
 
     return (
-        <>
+        <div className="search-content">
             <SponsoredSection />
-            <FilterSideBar/>
-            <SearchResultHeader title='Free Vectors'/>
-            <CircleCategoy/>
-            <AnnualDiscount/>
-             <InnerCreation/>
-           
-        </>
+            <FilterSideBar />
+            <SearchResultHeader title='Free Vectors' />
+        </div>
     )
 }
 
