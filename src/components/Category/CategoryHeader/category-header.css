@@ -1,20 +1,32 @@
 #s {
   height: 250px;
 }
+#CategoryHeader
+{
+  background-color: rgb(239, 242, 242);
+}
+
 #category-header .rightImageCard img {
-  display: flex;
-  align-self: flex-end;
-  width: 90%;
+  width: 70%;
   float: right;
+  /* padding-top: 5%; */
 }
 #category-header .leftImageCard img {
-  width: 90%;
+  float: left;
+  /* padding-top: 5%; */
+  width: 70%;
 }
 #category-header .title {
   width: 100%;
+  font-size: 41px;
+  font-weight: bold;
+  padding-top: 8%;
+  text-align: center;
 }
 #category-header .descreption {
   text-align: center;
+  padding-top: 8%;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 600px) {
