@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import CategorySection from '../components/Category/CategorySection/CategorySection';
 import CategoryHeader from '../components/Category/CategoryHeader/CategoryHeader';
-import SearchInput from '../components/Search/SearchBox/SearchBox';
+
+
+import CardHeader from '../components/Category/CategorySection/CategorySection';
+import HeaderWithPargraph from '../components/Category/CategoryHeader/CategoryHeader';
+import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import JoinSection from '../components/Common/JoinSection/JoinSection'
 import CategoryFullList from '../components/Category/CategoryFullList/CategoryFullList';
 
@@ -15,10 +20,11 @@ const Category = (props) => {
 
     return (
         <>
-            <SearchInput />
+            <SearchContainer mainPage={false} />
             <CategoryHeader />
             <CategoryFullList category={urlParams.term} />
             <CategorySection />
+
             <JoinSection />
         </>
     )

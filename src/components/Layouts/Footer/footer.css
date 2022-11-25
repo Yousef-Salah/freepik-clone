@@ -1,12 +1,7 @@
-footer .footer {
-  -webkit-text-size-adjust: 100%;
-  color: #869fb2;
-
+footer {
   font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  font-size: 16px;
-  line-height: 1.66;
-  -webkit-font-smoothing: antialiased;
-  visibility: visible;
+  font-size: 15px;
+  line-height: 1.70;
   box-sizing: border-box;
   outline: none;
   padding: 20px;
@@ -15,31 +10,10 @@ footer .footer {
   background-color: #1d262d;
 }
 
-footer .h4 {
-  padding-left: 10px;
-  -webkit-text-size-adjust: 100%;
-  font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  line-height: 1.66;
-  -webkit-font-smoothing: antialiased;
-  visibility: visible;
-  box-sizing: border-box;
-  outline: none;
-  color: #fff;
-  opacity: 0.85;
-  margin: 0 0 10px;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 footer .list-unstyled {
-  padding-right: 100px;
-  -webkit-text-size-adjust: 100%;
   font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  line-height: 1.66;
-  -webkit-font-smoothing: antialiased;
-  visibility: visible;
-  font-size: 14px;
+  line-height: 1.70;
+  font-size: 12px;
   list-style: none;
   box-sizing: border-box;
   outline: none;
@@ -50,57 +24,52 @@ footer .list-unstyled {
   color: #869fb2;
 }
 
-footer .container {
-  -webkit-text-size-adjust: 100%;
-  color: #374957;
+footer .row {
+  color: #ffffff;
+  opacity: .80;
   font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  font-size: 16px;
-  line-height: 1.66;
-  -webkit-font-smoothing: antialiased;
-  visibility: visible;
-  box-sizing: border-box;
-  outline: none;
-  padding: 20px;
-  padding-left: 0;
-  padding-right: 0;
-  background-color: #1d262d;
+  margin: 10px;
+  font-size: 10px;
 }
 
-footer .row {
-  -webkit-text-size-adjust: 100%;
-  color: #374957;
-  font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  line-height: 1.66;
-  -webkit-font-smoothing: antialiased;
-  visibility: visible;
-  box-sizing: border-box;
-  outline: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin: 0 -5px;
-  font-size: 14px;
-  text-align: center !important;
-}
 
 footer .footer-button {
-  -webkit-text-size-adjust: 100%;
   color: #bac8d3;
   font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  font-size: 16px;
-  line-height: 1.66;
-  -webkit-font-smoothing: antialiased;
-  visibility: visible;
   box-sizing: border-box;
-  outline: none;
   padding-top: 20px;
-  padding-bottom: 20px;
-  max-width: 1400px;
-  margin: 0 auto;
   border-top: 1px solid #374957;
-  -webkit-box-flex: 1;
-  flex: 1 0 100%;
-  padding: 10px 0 0 0;
+  text-align: left;
+}
 
-  text-align: center;
+footer .ficon {
+  color: rgb(54, 102, 225);
+  margin-right: 3%;
+}
+
+footer .ticon {
+  color: rgb(54, 139, 225);
+  margin-right: 3%;
+}
+
+footer .picon {
+  color: rgb(217, 60, 33);
+  margin-right: 3%;
+}
+
+footer .iicon {
+
+  color: rgb(166, 11, 70);
+
+  margin-right: 3%;
+
+}
+
+footer .yicon {
+  color: rgb(217, 60, 33);
+  margin-right: 3%;
+}
+
+footer .dropdown-menu {
+  margin-right: 40px;
 }

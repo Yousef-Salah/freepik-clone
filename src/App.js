@@ -8,7 +8,7 @@ import Category from "./pages/Category";
 import Search from "./pages/Search";
 
 //layouts imports
-import Footer from "./components/Layouts/Footer/Footer";
+import Footer from './components/Layouts/Footer/Footer';
 import Navbar from "./components/Layouts/Navbar/Navbar";
 
 const App = () => {
