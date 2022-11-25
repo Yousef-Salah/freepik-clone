@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import CardHeader from '../components/Category/CategorySection/CategorySection';
 import CategoryCard from '../components/Category/CategoryCard/CategoryCard';
 import HeaderWithPargraph from '../components/Category/CategoryHeader/CategoryHeader';
-import SearchInput from '../components/Search/SearchBox/SearchBox';
+import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import JoinSection from '../components/Common/JoinSection/JoinSection'
 const Category = (props) => {
 
@@ -14,7 +14,7 @@ const Category = (props) => {
 
     return (
         <>
-            <SearchInput />
+            <SearchContainer mainPage={false} />
             <HeaderWithPargraph />
             <br />
             <CategoryCard />

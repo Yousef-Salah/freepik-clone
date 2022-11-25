@@ -1,0 +1,24 @@
+#mp-search-container {
+  padding: 20px 0px;
+  background-color: #4055c7;
+}
+
+#mp-search-container * {
+  color: white;
+  padding: 0px 0px 10px;
+  margin: 0px;
+}
+
+#mp-search-container h1 {
+  font-size: 34px !important;
+  padding-top: 20px;
+}
+
+#mp-search-container h2 {
+  font-size: 22px !important;
+  padding-bottom: 10px;
+}
+
+/* .bg-purple {
+  background-color: #4055c7;
+} */

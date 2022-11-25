@@ -11,7 +11,6 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className="main-footer">
-
 				<div className="container">
 					<div className="row">
 						{/*column 1*/}
