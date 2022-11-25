@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/components/Search/FilterSideBar/*.{html,js}"],
+  prefix:'tw-',
   theme: {
     extend: {
       colors: {

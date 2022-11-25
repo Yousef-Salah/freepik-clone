@@ -1,8 +1,11 @@
 const Type = (props) => {
   return (
-    <span className="type-class shrink-0">
+    <span className={`tw-shrink-0 ` + props.className}>
       <button
-        className="btn btn-outline-secondary me-3 type shrink-0 container-fluid relative flex"
+        className={
+          `tw-btn tw-btn-outline-secondary me-3 tw-shrink-0 tw-container-fluid tw-relative tw-flex ` +
+          props.className1
+        }
         type="button"
       >
         <i className={props.pic + " icon"}></i>
