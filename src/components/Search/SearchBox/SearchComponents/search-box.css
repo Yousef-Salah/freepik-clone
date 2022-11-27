@@ -1,13 +1,11 @@
 .search-text-wrapper {
-  background-color: #4055c7;
-<<<<<<<< HEAD:src/components/Search/SearchBox/SearchComponents/search-box.css
-========
+  background-color: #4055c7; 
   padding: 50px 0px;
   border-radius: none !important;
 }
+
 #search-input-container {
   background-color: white;
->>>>>>>> main:src/components/Layouts/SearchInputCom/SearchInput.css
   padding: 0px;
   height: 54px;
   width: 100%;
