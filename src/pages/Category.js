@@ -10,6 +10,7 @@ import HeaderWithPargraph from '../components/Category/CategoryHeader/CategoryHe
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import JoinSection from '../components/Common/JoinSection/JoinSection'
 import CategoryFullList from '../components/Category/CategoryFullList/CategoryFullList';
+import PreviewModal from '../components/Category/PreviewModal/PreviewModal';
 
 const Category = (props) => {
     const urlParams = useParams();
@@ -26,6 +27,8 @@ const Category = (props) => {
             <CategorySection />
 
             <JoinSection />
+            <PreviewModal />
+
         </>
     )
 }
