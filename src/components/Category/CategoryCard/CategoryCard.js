@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+
+import { Link } from "react-router-dom";
 import './category-card.scss';
 
-const CategoryCard = () => {
+const CategoryCard = (props) => {
+
+    useEffect(() => {
+    }, [props])
     return (
 
         <div className='cat-card'>
-            <a href='https://www.yourllvelyhref.com'>
+            <Link className="card-link" to={props.category.link} >
                 <div className="cat-card-wrapper">
-                    <img src={require('../../../assets/images/category/cat-card-dummy-image.webp')} alt="cat-img" />
-                    <h5>Veteran's day backgrounds</h5>
+                    <img src={require(`../../../${props.category.image}`)} alt="cat-img" />
+                    <h5>{props.category.title}</h5>
                 </div>
-            </a>
+            </Link>
 
         </div>
 

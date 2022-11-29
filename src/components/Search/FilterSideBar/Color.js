@@ -1,12 +1,13 @@
 import React from 'react'
 
-const Colorr = () => {
+const Colorr = (props) => {
   return (
-    <div className='container-fluid'>
-      <input className='color' type='button'>
-        <i className='bx bx-circle bg-dark' ></i>
-      </input>
-    </div>
+    <div class="colorr tw-w-5 tw-p-3">
+    <button class={`tw-w-5 tw-h-5 tw-rounded-full tw-content-center ${props.color}  tw-text-white color tw-justify-content-center tw-absolute`}>
+    <i class={props.cancel}></i>
+    </button>
+</div>
+
   )
 }
 
