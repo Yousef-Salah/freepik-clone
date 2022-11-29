@@ -11,7 +11,7 @@ const SearchResults = () => {
     useEffect(() => {
         // console.log(images);
         // let _filteredImages = images.filter(image => Date.parse(image.publish_date) > Date.parse('10-10-2021'));
-        let _filteredImages = images.filter(image => image.title.toLowerCase().includes('drawing'));
+        let _filteredImages = images.filter(image => image.title.toLowerCase().includes('background'));
         // let _filteredImages = images.filter(image => image.title.toLowerCase().includes('water'));
         // let _filteredImages = images.filter(image => image.age === true);
         // let _filteredImages = images.filter(image => image.age.toLowerCase() === "child");
@@ -39,7 +39,8 @@ const SearchResults = () => {
                         <h5>{item.category}</h5>
                         <img src={item.img_thumb} alt={item.title + "-thumb"} />
                         <br />
-                        {/* <img src={item.img_og} alt={item.title} /> */}
+                        {/* comment this + uncomment scss to preview set together */}
+                        <img src={item.img_og} alt={item.title} />
                     </div>
                 )
             })}
