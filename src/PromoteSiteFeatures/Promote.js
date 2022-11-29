@@ -64,8 +64,8 @@ const Prosss = () => {
                 <img src={photo} alt="promote" loading="lazy" width="70%"></img>
              </div>
              </div>
-            
-             
+   
+                         
 </div>
     );
 }
