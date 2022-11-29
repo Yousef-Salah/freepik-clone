@@ -16,7 +16,7 @@
         margin-right: auto;
         width: 190px;
     }
-    a{
+    a, .card-link{
         text-decoration: none;
     }
     img{
@@ -25,16 +25,19 @@
         position: absolute;
         background: transparent;
         object-fit: cover;
+        max-height: 98px;
     }
     h5{
         width: 95%;
         height: 97.7px;
-        padding-top: 25px;
         position: absolute;        
         text-align: center;
         background-color: #08192b80;
         color: white;
         border-radius: 20px;
+        line-height: 5;
+        font-weight: bold;
+        letter-spacing: 0.3px;
     }
     h5:hover{
         background-color: #08192bac;

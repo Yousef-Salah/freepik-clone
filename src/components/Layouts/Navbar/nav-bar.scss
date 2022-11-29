@@ -19,12 +19,13 @@
         padding: 10px;
         line-height: 30px;
         @include resetBootstrap();
-        a{
+        .anchor-rep,a{
             @include AnchorFontStyle();
-            color: #a9b6c4 !important;
+            color: #a5b7c6 !important;
         }
-        a:hover,button:hover{
+        .anchor-rep:hover,a:hover,button:hover{
             color: white !important;
+            cursor: pointer;
         }
         
     }
@@ -38,14 +39,18 @@
         h4{
             font-size: 15px !important;
             font-weight: 600;
-            color: gray;
+            color: #a5b7c6;
             padding-bottom: 5px;
         }
     }
 }
+.nav-wrapper{
+    background-color: $main-color;
+    width:100%;
+}
 .navbar{
     background-color: $main-color;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     color: white;
     font-family: 'Figtree', sans-serif;
@@ -53,7 +58,7 @@
     flex-wrap: nowrap;
     position: relative;
     z-index: 10;
-    a{
+    .anchor-rep{
         img{
             width: 190px;
             padding: 3px 3px 3px 10px;
@@ -66,7 +71,6 @@
         }
     }
     .navbar-toggler{    
-        
         &:focus{
             border: none !important;
         }
@@ -90,7 +94,7 @@
             list-style: none;
             margin-top: 5px;
         }
-        a{
+        .anchor-rep,a{
             @include resetBootstrap();
             text-decoration: none;
             @include AnchorFontStyle();
@@ -116,13 +120,15 @@
         li{
             margin: 10px
         }
-        a{
+        .anchor-rep,a{
             @include AnchorFontStyle();
         }
         
     }
-    a:hover,button:hover{
-        color: #a9b6c4 !important;
+    .anchor-rep:hover,a:hover,button:hover{
+        color: #a5b7c6 !important;
+        cursor: pointer;
+
     }
 }
 
@@ -148,7 +154,7 @@
     ul{
         display: flex;
         @include resetBootstrap();
-        a{
+        .anchor-rep,a{
             @include AnchorFontStyle();
             min-width: 50px;
         }
@@ -192,6 +198,7 @@
     display: block;
     a{
         padding-right: 10px;
+        text-decoration: none;
         @include resetBootstrap();
         h5{
             font-size: 15px;
@@ -228,7 +235,7 @@
 
 .nav-2-props{
     box-shadow:inset 0px 15px 20px 0px rgb(25, 29, 33, 50%);
-    top: 40px;
+    top: 52px;
     border-radius: 0px 0px 10px 10px;
 }
 // media queries
@@ -250,8 +257,10 @@
 
         img{
             height: 15px;
-
         }
+    }
+    .side-menu-header:hover{
+        cursor: pointer;
     }
     .side-menu{
         top: 0;
@@ -281,7 +290,13 @@
             display: flex;
             align-items: center;
         }
-        a{
+        li:hover{
+            .anchor-rep,a{
+                color: white !important;
+            }
+            cursor: pointer !important;
+        }
+        .anchor-rep,a{
             
             @include resetBootstrap();
             @include AnchorFontStyle();
@@ -340,7 +355,8 @@
             align-items: center;
             padding: 45px 0px 15px 40px !important;
         }
-        a{
+
+        .anchor-rep,a{
             @include resetBootstrap();
             @include AnchorFontStyle();
             font-size: 16px !important;
@@ -349,34 +365,43 @@
             font-weight: 600;
             &:hover{
                 color: white !important;
+                cursor: pointer;
             }
         }
     }
 }
+
 // .side-menu{
 //     display: none;
 // }
 
-.new-class{
-
-    a{
-
+@media (min-width: 1250px) {
+    .navbar{
+        max-width: 1200px;
     }
 }
+
+.other-class{
+    background-color: $dark-color;
+
+}
+
 
 .new-class{
 
     background-color: #252a30 !important;
-    max-height: 40px !important;
-    a, button{
-        color: #a9b6c4 !important;
+    max-height: 44px !important;
+    max-width: none;
+    .anchor-rep,a, button{
+        color: #a5b7c6 !important;
     }
+    
     button{
         border: gray 1px solid !important;
-        
     }
-    a:hover,button:hover{
+    .anchor-rep:hover,a:hover,button:hover{
         color: white !important;
+        cursor: pointer;
     }
     .nav-logo{
         display: none;
@@ -392,3 +417,12 @@
         margin-top: 0px !important; 
     }
 }
+
+.login-link{
+    margin-top: 4px;
+}
+
+li .anchor-rep{
+    margin-top: 2px !important;
+}
+

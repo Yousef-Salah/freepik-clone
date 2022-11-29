@@ -1,6 +1,11 @@
 
 import React from "react";
 import './footer.css'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Footer = () => {
 	return (
@@ -49,24 +54,43 @@ const Footer = () => {
 							</ul>
 
 						</div>	{/*column 5*/}
-						<div className="col-md-3 col-sm-6">
+						<div className="col-md-6 col-sm-6">
 							<h4> SOCIAL MEDIA</h4>
 							<ul className="list-unstyled">
-								<li>aaas</li>
-								<li>bbbb</li>
-								<li>cccc</li>
-								<li>dddd</li>
+								<FacebookIcon className="ficon"/>
+								<TwitterIcon className="ticon"/>
+								<PinterestIcon className="picon"/>
+								<InstagramIcon className="iicon" />
+                                <YouTubeIcon className="yicon"/>
 							</ul>
 						</div>
-
+						</div>
 						{/*Footer-button*/}
+						
 						<div className="footer-button">
 							<img src="https://freepik.cdnpk.net/img/logos/freepikcompany-footer.svg" alt="Freepik Company" width="191" height="27"></img>
 							<p className="text-xs-center">
-								Freepik Company - Copyright ©  2010-2022 Freepik Company S.L. All rights reserved.
+								 Copyright ©  2010-2022 Freepik Company S.L. All rights reserved.
 							</p>
 						</div>
-					</div>
+						
+						<div className="dropdown show">
+  <div className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    English
+  </div>
+
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li className="dropdown-item" href="#">English </li>
+    <li className="dropdown-item" href="#">Español </li>
+    <li className="dropdown-item" href="#">Français</li>
+    <li className="dropdown-item" href="#"> 日本語 </li>
+    <li className="dropdown-item" href="#"> Polski </li>
+    <li className="dropdown-item" href="#">Pусский </li>
+    <li className="dropdown-item" href="#">Nederlands</li>
+    <li className="dropdown-item" href="#"> Italiano</li>
+    <li className="dropdown-item" href="#">한국어 </li>
+  </ul>
+</div>
 				</div>
 			</div>
 		</footer>

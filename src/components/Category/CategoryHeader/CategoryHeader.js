@@ -1,6 +1,7 @@
 import './category-header.css'
-const CategoryHeader = () => {
+const CategoryHeader = (props) => {
   return (
+    <section id='CategoryHeader' >
     <div className='container-fluid' id="category-header">
       <div className='row' >
         <div className='col col-lg-4  col-sm-12 leftImageCard'>
@@ -15,6 +16,7 @@ const CategoryHeader = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 }
 
