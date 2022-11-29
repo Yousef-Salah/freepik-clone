@@ -21,18 +21,10 @@ const Category = (props) => {
     return (
         <>
             <SearchContainer mainPage={false} />
-<<<<<<< HEAD
-            <HeaderWithPargraph />
-            <br />
-            <CategoryCard />
-            <br />
-            <CardHeader />
-=======
             <CategoryHeader />
             <CategoryFullList category={urlParams.term} />
             <CategorySection />
 
->>>>>>> main
             <JoinSection />
         </>
     )
