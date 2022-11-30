@@ -1,90 +1,90 @@
 const Categories = () => {
-    return [
-        {
-            name: 'Backgrounds',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Textures',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Patterns',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Vectors',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Illustrations',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Drawings',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Clip art',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Silhouettes',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Cartoons',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Icons',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Symbols and signs',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
+  return [
+    {
+      name: "Backgrounds",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Textures",
+      url: "/category/textures",
+    },
+    {
+      name: "Patterns",
+      url: "/category/patterns",
+    },
+    {
+      name: "Vectors",
+      url: "/category/vectors",
+    },
+    {
+      name: "Illustrations",
+      url: "/category/illustrations",
+    },
+    {
+      name: "Drawings",
+      url: "/category/drawings",
+    },
+    {
+      name: "Clip art",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Silhouettes",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Cartoons",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Icons",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Symbols and signs",
+      url: "/category/backgrounds",
+    },
 
-        {
-            name: 'Social media',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Business cards',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Invitation cards',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Banners',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Flyers',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Posters',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Stationary',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Logos',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Drawings',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-        {
-            name: 'Mockups',
-            url: 'https://www.freepik.com/popular-vectors'
-        },
-    ]
-}
+    {
+      name: "Social media",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Business cards",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Invitation cards",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Banners",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Flyers",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Posters",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Stationary",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Logos",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Drawings",
+      url: "/category/backgrounds",
+    },
+    {
+      name: "Mockups",
+      url: "/category/backgrounds",
+    },
+  ];
+};
 export default Categories;

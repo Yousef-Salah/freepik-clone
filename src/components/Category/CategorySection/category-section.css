@@ -28,7 +28,8 @@
 .row .rightPargraph 
 {
 display:flex;
-align-items:center
+align-items:center;
+
 }
 .row .rightPargraph .content
 {
@@ -38,6 +39,7 @@ align-items:center
     font-size: 25px;
     line-height: 26px;
     padding-bottom: 15px;
+    font-weight: bold;
 }
 .row .rightPargraph .content p
 {
