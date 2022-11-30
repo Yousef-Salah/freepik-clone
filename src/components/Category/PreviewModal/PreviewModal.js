@@ -23,7 +23,7 @@ const PreviewModal = (props) => {
             </Link>
           </div>
           <div className="col-10" id="main-content">
-            {props.children}.
+            {props.children}
           </div>
           <div className="col-1 position-relative d-flex justify-content-center align-items-center">
             <Link to={""} className="position-absolute d-flex justify-content-center align-items-center bg-fill-animation">
