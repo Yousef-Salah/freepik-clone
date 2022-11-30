@@ -27,7 +27,9 @@ const Category = (props) => {
             <CategorySection />
 
             <JoinSection />
-            <PreviewModal />
+            <PreviewModal name="yousef">
+              just for testing
+            </PreviewModal>
 
         </>
     )
