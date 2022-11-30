@@ -10,6 +10,7 @@ import Search from "./pages/Search";
 //layouts imports
 import Footer from './components/Layouts/Footer/Footer';
 import Navbar from "./components/Layouts/Navbar/Navbar";
+import Promote from './PromoteSiteFeatures/Promote';
 
 const App = () => {
   const [page, setPage] = useState("home");
@@ -25,6 +26,10 @@ const App = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
+
+      <Footer />
+      <Promote/>
+
       {/* <Search /> */}
       {/* <Category /> */}
       {/* <Home /> */}
