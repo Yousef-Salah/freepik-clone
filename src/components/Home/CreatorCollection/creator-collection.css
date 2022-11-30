@@ -1,0 +1,65 @@
+.row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5%;
+    padding-bottom: 7%;
+}
+/* .creator-collection-card1
+{
+    padding-left: 5%;
+    width: 370px;
+}
+.creator-collection-card2
+{
+    padding-left: 5%;
+    width: 400px;
+}
+.creator-collection-card3
+{
+    padding-left: 5%;
+    width: 370px;
+}
+.creator-collection-card4
+{
+    padding-left: 5%;
+} */
+.creator-collection-card
+{
+    width: 380px;
+padding-left: 5%;
+}
+.creator-collection-card img
+{
+border-radius: 10px;
+/* rotate: 3deg; */
+}
+.creator-collection-title
+{
+    padding-left: 5%;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(69, 70, 70);
+}
+.creator-collection-p
+{
+    padding-top: 1%;
+    padding-left: 5%;
+    font-size: 18px;
+    color: rgb(91, 92, 92);
+}
+.Explore-btn
+{
+    padding-left: 30%;
+    color: rgb(77, 77, 247);
+}
+.right-arrow
+{
+    padding-left: 0.5%;
+    color: rgb(77, 77, 247);
+}
+.text-on-photo
+{
+    padding-bottom: 20px;
+}
