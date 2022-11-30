@@ -8,7 +8,7 @@ import Category from "./pages/Category";
 import Search from "./pages/Search";
 
 //layouts imports
-import Footer from "./components/Layouts/Footer/Footer";
+import Footer from './components/Layouts/Footer/Footer';
 import Navbar from "./components/Layouts/Navbar/Navbar";
 
 const App = () => {
@@ -16,15 +16,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar page={page} />
       <BrowserRouter>
+        <Navbar page={page} />
         <Routes>
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
-          <Route path={'/search'} element={<Search page={(name) => { setPage(name) }} />} />
-          <Route path={'/category'} element={<Category page={(name) => { setPage(name) }} />} />
+          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
+          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
       {/* <Search /> */}
       {/* <Category /> */}
       {/* <Home /> */}

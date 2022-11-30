@@ -1,40 +1,24 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './circle-categoy.css';
+import CirclesCategoy from '../../../utils/CirclesCategoy';
+
 const CircleCategoy = () => {
+    const circlesCategory = CirclesCategoy();
+
     return (
-        <div className="circle-card row">
-            <div className="column">
-                <img src="./images/Internet-Vector.jpg" alt="Vectors" ></img>
-                <p className="text" >Vectors</p>
-            </div>
-            <div className="column">
-                <img src="./images/card-1.jpg" alt="lllustrations" ></img>
-                <p className="text" >lllustrations</p>.
-            </div>
-            <div className="column">
-                <img src="./images/Photos.jpg" alt="Photos" ></img>
-                <p className="text" >Photos</p>
-            </div>
-            <div className="column">
-                <img src="./images/templates.jpg" alt="Templates" ></img>
-                <p className="text" >Templates</p>
-            </div>
-            <div className="column">
-                <img src="./images/Fonts.jpg" alt="Fonts" ></img>
-                <p className="text" >Fonts</p>
-            </div>
-            <div className="column">
-                <img src="./images/Mockup.jpg" alt="Mockaups" ></img>
-                <p className="text" >Mockaups</p>
-            </div>
-            <div className="column">
-                <img src="./images/background.jpg" alt="Backgrounds" ></img>
-                <p className="text" >Backgrounds</p>
-            </div>
-            <div className="column">
-                <img src="./images/text-effect.jpg" alt="TextEffects" ></img>
-                <p className="text" >TextEffects</p>
-            </div>
+        <div className="circle-card">
+            {circlesCategory.map((circle, index) => {
+                return (
+                    <div className="circle-element" key={index}>
+                        <Link className="circle-link" to={circle.link}>
+                            <img src={circle.image} alt={circle.title} />
+                            <p className="text">{circle.title}</p>
+                        </Link>
+                    </div>
+                );
+            })}
         </div>
     );
 }

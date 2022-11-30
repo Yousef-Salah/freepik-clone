@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import './nav-bar.scss';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import Categories from '../../../utils/Categories';
-import MoreContent from '../../../utils/MoreContent';
+import "./nav-bar.scss";
+
+import Categories from "../../../utils/Categories";
+import MoreContent from "../../../utils/MoreContent";
 
 const Navbar = (props) => {
     const [catVisibility, setCatVisibility] = useState(false);
@@ -10,13 +12,26 @@ const Navbar = (props) => {
     const [sideVisibility, setSideVisibility] = useState("");
     const [arrowDirectionCat, setarrowDirectionCat] = useState("down");
     const [arrowDirectionMore, setarrowDirectionMore] = useState("down");
+    const [pageName, setPageName] = useState("");
     const categories = Categories();
     const moreContent = MoreContent();
+    const navItems = [
+        { name: "Vectors", link: "/search/vectors", new: false },
+        { name: "Photos", link: "/search/popular-photos", new: false },
+        { name: "PSD", link: "/search/popular-psd", new: false },
+        { name: "3D", link: "/popular-3d", new: true },
+        { name: "Fonts", link: "/search/fonts", new: false },
+        { name: "Categories", link: null, new: false },
+        { name: "Collections", link: "/collections", new: false },
+        { name: "More", link: null, new: false },
+    ];
 
-    //change home to anything else to see inner nav style
-    let pageName = props.page;
     let navClass = "navbar navbar-expand-lg";
     let shadowStyle = "";
+
+    useEffect(() => {
+        setPageName(props.page);
+    }, [props.page]);
 
     if (pageName === "home") {
     } else {
@@ -24,18 +39,20 @@ const Navbar = (props) => {
         shadowStyle = " nav-2-props";
     }
 
+    // console.log("Navbar ~ pageName", pageName);
+    // console.log(catVisibility);
     const toggleAllOff = () => {
         setCatVisibility(false);
         setMoreVisibility(false);
-    }
+    };
     const toggleMoreOff = () => {
         setMoreVisibility(false);
         setarrowDirectionMore("up");
-    }
+    };
     const toggleCatOff = () => {
         setCatVisibility(false);
         setarrowDirectionCat("up");
-    }
+    };
 
     const toggleCatDropdown = () => {
         if (catVisibility) {
@@ -44,12 +61,14 @@ const Navbar = (props) => {
             toggleCatOff();
             toggleAllOff();
         }
+        if (arrowDirectionMore === "up") {
+            setarrowDirectionMore("down");
+        }
         setCatVisibility(!catVisibility);
-    }
-    //toggle side visibility
+    };
     const toggleSide = () => {
         setSideVisibility(sideVisibility === "" ? "show" : "");
-    }
+    };
 
     const toggleMoreDropdown = () => {
         if (moreVisibility) {
@@ -58,236 +77,312 @@ const Navbar = (props) => {
             toggleAllOff();
             toggleMoreOff();
         }
+        if (arrowDirectionCat === "up") {
+            setarrowDirectionCat("down");
+        }
         setMoreVisibility(!moreVisibility);
     }
+
     return (
-        <div>
+        <div className={`nav-wrapper ${pageName === "home" ? "" : "other-class"}`}>
             <nav className={navClass}>
                 <div className="container-fluid">
-                    <button className="navbar-toggler" >
+                    <button className="navbar-toggler">
                         <span>
-                            <img src={require('../../../assets/images/navbar/burger-menu-toggle.png')} alt="burger-menu-toggle" onClick={toggleSide} />
+                            <img
+                                src={require("../../../assets/images/navbar/burger-menu-toggle.png")}
+                                alt="burger-menu-toggle"
+                                onClick={toggleSide}
+                            />
                         </span>
                     </button>
                     <div className={`side-menu collapse ${sideVisibility}`} id="sideMenu">
                         <div className="side-menu-header" onClick={toggleSide}>
-                            <i ><img src={require('../../../assets/images/navbar/close-icon.png')} alt="close" /></i>
+                            <i>
+                                <img
+                                    src={require("../../../assets/images/navbar/close-icon.png")}
+                                    alt="close"
+                                />
+                            </i>
                         </div>
                         <div className="side-menu-body">
                             <ul className="side-menu-list">
-                                <li><a href="/">Vectors</a></li>
-                                <li><a href="/">Photos</a></li>
-                                <li><a href="/">PSD</a></li>
                                 <li>
-                                    <a href="/">3D</a>
+                                    <div className="anchor-rep">
+                                        <Link
+                                            onClick={toggleSide}
+                                            className="anchor-rep"
+                                            to="/search/vectors"
+                                        >
+                                            Vectors
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="anchor-rep">
+                                        <Link
+                                            onClick={toggleSide}
+                                            className="anchor-rep"
+                                            to="/search/popular-photos"
+                                        >
+                                            Photos
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="anchor-rep">
+                                        <Link
+                                            onClick={toggleSide}
+                                            className="anchor-rep"
+                                            to="/search/popular-psd"
+                                        >
+                                            PSD
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="anchor-rep">
+                                        <Link
+                                            onClick={toggleSide}
+                                            className="anchor-rep"
+                                            to="/popular-3d"
+                                        >
+                                            3D
+                                        </Link>
+                                    </div>
                                     <button className="btn btn-new">NEW</button>
                                 </li>
-                                <li><a href="/">Fonts</a></li>
-                                <li className='side-cat-list' onClick={toggleCatDropdown}>
-                                    <a>Categories</a>
-                                    <i className={"bi bi-caret-" + arrowDirectionCat + "-fill"}></i>
+                                <li>
+                                    <div className="anchor-rep">
+                                        <Link
+                                            onClick={toggleSide}
+                                            className="anchor-rep"
+                                            to="/search/fonts"
+                                        >
+                                            Fonts
+                                        </Link>
+                                    </div>
                                 </li>
-                                {catVisibility ? <div className={"side-drop-list-cat" + shadowStyle}>
-                                    {categories.map((category, index) => {
-                                        return (
-                                            <li key={index}>
-                                                <a href={category.url}>{category.name}</a>
-                                            </li>
-                                        )
-                                    })}
-                                </div> : null}
-                                <li><a href="/">Collections</a></li>
-                                <li className='side-more-list' onClick={toggleMoreDropdown} >
-                                    <a>More</a>
-                                    <i className={"bi bi-caret-" + arrowDirectionMore + "-fill"}></i>
+                                <li className="side-cat-list" onClick={toggleCatDropdown}>
+                                    <div className="anchor-rep">Categories</div>
+                                    <i
+                                        className={"bi bi-caret-" + arrowDirectionCat + "-fill"}
+                                    ></i>
                                 </li>
-                                {moreVisibility ? <div className={"side-drop-list-more" + shadowStyle}>
-                                    <ul>
-                                        <h4>PROJECTS</h4>
-                                        <div className="more-items">
-                                            {moreContent[0]['projects'].map((item, idx) => {
-                                                return (
-                                                    <a href={item.url} key={idx}>
-                                                        <li>
-                                                            <h5>{item.name}</h5>
-                                                            <h6>{item.desc}</h6>
-                                                        </li>
-                                                    </a>
-                                                )
-                                            })}
-
-                                        </div>
-                                    </ul>
-                                    <ul>
-                                        <h4>PRO SOLUTIONS</h4>
-                                        <div className="more-items">
-                                            {moreContent[1]['pro_solutions'].map((item, idx) => {
-                                                return (
-                                                    <a href={item.url} key={idx}>
-                                                        <li>
-                                                            <h5>{item.name}</h5>
-                                                            <h6>{item.desc}</h6>
-                                                        </li>
-                                                    </a>
-                                                )
-                                            })}
-
-                                        </div>
-                                    </ul>
-                                    <ul>
-                                        <h4>TOOLS</h4>
-                                        <div className="more-items">
-                                            {moreContent[2]['tools'].map((item, idx) => {
-                                                return (
-                                                    <a href={item.url} key={idx}>
-                                                        <li>
-                                                            <h5>{item.name}</h5>
-                                                            <h6>{item.desc}</h6>
-                                                        </li>
-                                                    </a>
-                                                )
-                                            })}
-                                        </div>
-                                    </ul>
-                                    <ul>
-                                        <h4>APPS AND PLUGINS</h4>
-                                        <div className="more-items">
-                                            {moreContent[3]['apps_and_plugins'].map((item, idx) => {
-                                                return (
-                                                    <a href={item.url} key={idx}>
-                                                        <li>
-                                                            <h5>{item.name}</h5>
-                                                            <h6>{item.desc}</h6>
-                                                        </li>
-                                                    </a>
-                                                )
-                                            })}
-
-                                        </div>
-                                    </ul>
-                                </div> : null}
-                                <li><a href="/">Sell content</a></li>
-                                <li><a className='pricing-color' href="/">Pricing</a></li>
-
-
+                                {catVisibility ? (
+                                    <div className={"side-drop-list-cat" + shadowStyle}>
+                                        {categories.map((category, index) => {
+                                            return (
+                                                <li key={index}>
+                                                    <Link className="anchor-rep" to={category.url}
+                                                        onClick={toggleSide}
+                                                    >
+                                                        {category.name}
+                                                    </Link>
+                                                </li>
+                                            );
+                                        })}
+                                    </div>
+                                ) : null}
+                                <li>
+                                    <div className="anchor-rep">
+                                        <Link
+                                            onClick={toggleSide}
+                                            className="anchor-rep"
+                                            to="/collections"
+                                        >
+                                            Collections
+                                        </Link>
+                                    </div>
+                                </li>
+                                <li className="side-more-list" onClick={toggleMoreDropdown}>
+                                    <div className="anchor-rep">More</div>
+                                    <i
+                                        className={"bi bi-caret-" + arrowDirectionMore + "-fill"}
+                                    ></i>
+                                </li>
+                                {moreVisibility ? (
+                                    <div className={"side-drop-list-more" + shadowStyle}>
+                                        {moreContent.map((item, index) => {
+                                            return (
+                                                <ul key={index}>
+                                                    <h4>{Object.keys(item)[0].toUpperCase()}</h4>
+                                                    <div className="more-items">
+                                                        {item[Object.keys(item)].map(
+                                                            (innerItem, inneridx) => {
+                                                                return (
+                                                                    <a href={innerItem.url} key={inneridx}>
+                                                                        <li>
+                                                                            <h5>{innerItem.name}</h5>
+                                                                            <h6>{innerItem.desc}</h6>
+                                                                        </li>
+                                                                    </a>
+                                                                );
+                                                            }
+                                                        )}
+                                                    </div>
+                                                </ul>
+                                            );
+                                        })}
+                                    </div>
+                                ) : null}
+                                <li>
+                                    <div className="anchor-rep">
+                                        <a href="https://contributor.freepik.com/">Sell content</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="pricing-color">
+                                        <Link to="/pricing">Pricing</Link>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div className="collapse navbar-collapse">
-                        <a href="/">
-                            <img className="nav-logo" src={require('../../../assets/images/navbar/freepik-no_bg.png')} alt="logo" />
-                        </a>
+                        <div className="anchor-rep">
+                            <Link to="/">
+                                <img
+                                    className="nav-logo"
+                                    src={require("../../../assets/images/navbar/freepik-no_bg.png")}
+                                    alt="logo"
+                                />
+                            </Link>
+                        </div>
                         <div className="nav-menus">
                             <div className="nav-menu">
                                 <ul>
-                                    <li><a href="/">Vectors</a></li>
-                                    <li><a href="/">Photos</a></li>
-                                    <li><a href="/">PSD</a></li>
-                                    <li>
-                                        <a href="/">3D</a>
-                                        <button className="btn btn-new">NEW</button>
-                                    </li>
-                                    <li><a href="/">Fonts</a></li>
-                                    <li onClick={toggleCatDropdown}>
-                                        <a href='#'>Categories
-                                            <i className={"bi bi-caret-" + arrowDirectionCat + "-fill"}></i>
-                                        </a>
-                                        {catVisibility ? <div className={"cat-drop-list" + shadowStyle}>
-                                            {categories.map((category, index) => {
-                                                return (
+                                    {navItems.map((item, index) => {
+                                        return (
+                                            <>
+                                                {item.link !== null ? (
                                                     <li key={index}>
-                                                        <a href={category.url}>{category.name}</a>
+                                                        {item.link !== null ? (
+                                                            <Link className="anchor-rep" to={item.link}>
+                                                                {item.name}
+                                                            </Link>
+                                                        ) : null}
+                                                        {item.new ? (
+                                                            <button className="btn btn-new">NEW</button>
+                                                        ) : null}
                                                     </li>
-                                                )
-                                            })}
-                                        </div> : null}
-
-                                    </li>
-                                    {(catVisibility && pageName === "home") ? <i className="bi bi-caret-down-fill arrow-down-cat "></i> : null}
-
-
-                                    <li><a href="/">Collections</a></li>
-                                    <li onClick={toggleMoreDropdown}>
-                                        <a href='#'>More
-                                            <i className={"bi bi-caret-" + arrowDirectionMore + "-fill"}></i>
-                                        </a>
-                                        {moreVisibility ? <div className={"more-drop-list" + shadowStyle}>
-                                            <ul>
-                                                <h4>PROJECTS</h4>
-                                                <div className="more-items">
-                                                    {moreContent[0]['projects'].map((item, idx) => {
-                                                        return (
-                                                            <a href={item.url} key={idx}>
-                                                                <li>
-                                                                    <h5>{item.name}</h5>
-                                                                    <h6>{item.desc}</h6>
+                                                ) : (
+                                                    <>
+                                                        {item.name === "More" ? (
+                                                            <>
+                                                                <li onClick={toggleMoreDropdown} key={index}>
+                                                                    <div className="anchor-rep">
+                                                                        {item.name}
+                                                                        <i
+                                                                            className={
+                                                                                "bi bi-caret-" +
+                                                                                arrowDirectionMore +
+                                                                                "-fill"
+                                                                            }
+                                                                        ></i>
+                                                                    </div>
+                                                                    {moreVisibility ? (
+                                                                        <div
+                                                                            className={"more-drop-list" + shadowStyle}
+                                                                        >
+                                                                            {moreContent.map((item, index) => {
+                                                                                return (
+                                                                                    <ul key={index}>
+                                                                                        <h4>
+                                                                                            {Object.keys(
+                                                                                                item
+                                                                                            )[0].toUpperCase()}
+                                                                                        </h4>
+                                                                                        <div className="more-items">
+                                                                                            {item[Object.keys(item)].map(
+                                                                                                (innerItem, inneridx) => {
+                                                                                                    return (
+                                                                                                        <a
+                                                                                                            href={innerItem.url}
+                                                                                                            key={inneridx}
+                                                                                                        >
+                                                                                                            <li>
+                                                                                                                <h5>
+                                                                                                                    {innerItem.name}
+                                                                                                                </h5>
+                                                                                                                <h6>
+                                                                                                                    {innerItem.desc}
+                                                                                                                </h6>
+                                                                                                            </li>
+                                                                                                        </a>
+                                                                                                    );
+                                                                                                }
+                                                                                            )}
+                                                                                        </div>
+                                                                                    </ul>
+                                                                                );
+                                                                            })}
+                                                                        </div>
+                                                                    ) : null}
                                                                 </li>
-                                                            </a>
-                                                        )
-                                                    })}
-
-                                                </div>
-                                            </ul>
-                                            <ul>
-                                                <h4>PRO SOLUTIONS</h4>
-                                                <div className="more-items">
-                                                    {moreContent[1]['pro_solutions'].map((item, idx) => {
-                                                        return (
-                                                            <a href={item.url} key={idx}>
-                                                                <li>
-                                                                    <h5>{item.name}</h5>
-                                                                    <h6>{item.desc}</h6>
+                                                                {moreVisibility && pageName === "home" ? (
+                                                                    <i className="bi bi-caret-down-fill arrow-down-more "></i>
+                                                                ) : null}
+                                                            </>
+                                                        ) : item.name === "Categories" ? (
+                                                            <>
+                                                                <li onClick={toggleCatDropdown} key={index}>
+                                                                    <div className="anchor-rep">
+                                                                        {item.name}
+                                                                        <i
+                                                                            className={
+                                                                                "bi bi-caret-" +
+                                                                                arrowDirectionCat +
+                                                                                "-fill"
+                                                                            }
+                                                                        ></i>
+                                                                    </div>
+                                                                    {catVisibility ? (
+                                                                        <div
+                                                                            className={"cat-drop-list" + shadowStyle}
+                                                                        >
+                                                                            {categories.map((category, index) => {
+                                                                                return (
+                                                                                    <>
+                                                                                        <li key={index}>
+                                                                                            <Link
+                                                                                                className="anchor-rep"
+                                                                                                to={category.url}
+                                                                                            >
+                                                                                                {category.name}
+                                                                                            </Link>
+                                                                                        </li>
+                                                                                    </>
+                                                                                );
+                                                                            })}
+                                                                        </div>
+                                                                    ) : null}
                                                                 </li>
-                                                            </a>
-                                                        )
-                                                    })}
-
-                                                </div>
-                                            </ul>
-                                            <ul>
-                                                <h4>TOOLS</h4>
-                                                <div className="more-items">
-                                                    {moreContent[2]['tools'].map((item, idx) => {
-                                                        return (
-                                                            <a href={item.url} key={idx}>
-                                                                <li>
-                                                                    <h5>{item.name}</h5>
-                                                                    <h6>{item.desc}</h6>
-                                                                </li>
-                                                            </a>
-                                                        )
-                                                    })}
-                                                </div>
-                                            </ul>
-                                            <ul>
-                                                <h4>APPS AND PLUGINS</h4>
-                                                <div className="more-items">
-                                                    {moreContent[3]['apps_and_plugins'].map((item, idx) => {
-                                                        return (
-                                                            <a href={item.url} key={idx}>
-                                                                <li>
-                                                                    <h5>{item.name}</h5>
-                                                                    <h6>{item.desc}</h6>
-                                                                </li>
-                                                            </a>
-                                                        )
-                                                    })}
-
-                                                </div>
-                                            </ul>
-                                        </div> : null}
-
-                                    </li>
-                                    {(moreVisibility && pageName === "home") ? <i className="bi bi-caret-down-fill arrow-down-more "></i> : null}
-
+                                                                {catVisibility && pageName === "home" ? (
+                                                                    <i className="bi bi-caret-down-fill arrow-down-cat "></i>
+                                                                ) : null}
+                                                            </>
+                                                        ) : null}
+                                                    </>
+                                                )}
+                                            </>
+                                        );
+                                    })}
                                 </ul>
                             </div>
                             <div className="pricing-nav">
                                 <ul>
-                                    <li><a href='/'>Sell Content</a></li>
-                                    <li><a className="pricing-color" href='/'>Pricing</a></li>
+                                    <li>
+                                        <div className="anchor-rep">
+                                            <a href="https://contributor.freepik.com/">
+                                                Sell content
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="anchor-rep pricing-color">Pricing</div>
+                                    </li>
                                 </ul>
-
                             </div>
                         </div>
                     </div>
@@ -295,17 +390,20 @@ const Navbar = (props) => {
                 <div className="nav-menu-user">
                     <ul>
                         <li>
-                            <a className='login-link' href="/">Log in </a>
+                            <div className="login-link anchor-rep">
+                                <Link to="/login">Login</Link>
+                            </div>
                         </li>
                         <li>
-                            <button className="signup-btn">Sign up</button>
+                            <button className="signup-btn">
+                                <Link to="/signup">Sign up</Link>
+                            </button>
                         </li>
                     </ul>
                 </div>
             </nav>
+        </div>
+    );
+};
 
-        </div >
-    )
-}
-
-export default Navbar
+export default Navbar;
