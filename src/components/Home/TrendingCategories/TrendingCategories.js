@@ -2,6 +2,7 @@ import "./trending-category.css";
 import TrendingCard from "./TrendingCard";
 import Cardsphotos from "./Cardsphotos";
 const TrendingCategories = () => {
+  const data = Cardsphotos();
   return (
     <section className="container-fluid" id="trending">
       <h2 className="title">
@@ -11,16 +12,12 @@ const TrendingCategories = () => {
         Check what's popular on Freepik and make your project look trendy and
         professional.
       </p>
+
       <div className="grid" id="exploretrend">
-        {Cardsphotos.map((Trendingphoto) => {
+        {data.map((Trendingphoto) => {
           return (
             <div className="item" id={Trendingphoto.id}>
-              <TrendingCard
-                id={Trendingphoto.id}
-                imglink={Trendingphoto.imglink}
-                phototitle={Trendingphoto.phototitle}
-                weburl={Trendingphoto.weburl}
-              />
+              <TrendingCard {...Trendingphoto}/>
             </div>
           );
         })}
