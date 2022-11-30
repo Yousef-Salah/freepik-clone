@@ -17,11 +17,13 @@ const TrendingCategories = () => {
         {data.map((Trendingphoto) => {
           return (
             <div className="item" id={Trendingphoto.id}>
-              <TrendingCard {...Trendingphoto}/>
+              <TrendingCard Trendingphoto={Trendingphoto}/>
             </div>
+            
           );
         })}
       </div>
+
     </section>
   );
 };

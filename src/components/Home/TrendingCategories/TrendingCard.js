@@ -16,18 +16,3 @@ const TrendingCard = ({Trendingphoto}) => {
   );
 };
 export default TrendingCard;
-
-/*
-const TrendingCard = (props) => {
-  return (
-    <div className="container" id="trend-content">
-      <div className="trend-zoom">
-        <img className="trendimg" src={require(`../../../${props.imglink}`)} alt={props.title}></img>
-        <p className="trendtext">{props.phototitle}</p>
-        <Link to={props.weburl} />
-      </div>
-    </div>
-  );
-};
-export default TrendingCard;
-*/
