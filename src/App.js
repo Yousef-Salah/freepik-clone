@@ -19,16 +19,18 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Navbar page={page} />
+        
         <Routes>
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
           <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
           <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
         </Routes>
+        <Promote/>
         <Footer />
       </BrowserRouter>
-
+      
       <Footer />
-      <Promote/>
+      
 
       {/* <Search /> */}
       {/* <Category /> */}
