@@ -12,7 +12,7 @@ const SearchContainer = (props) => {
           Find and download the best high-quality photos, designs, and mockups
         </h2>
       </div>
-      <div className="container-fluiid">
+      <div className="container-fluid">
         <div className="row gutter-none">
           <SearchBox mainPage={true} />
         </div>
