@@ -11,10 +11,14 @@ export const ModalTrigger = (props) => {
    * return the component with the actual data
    */
 
-  const [display, setDisplay] = useState(true);
+  const [display, setDisplay] = useState(false);
+
+  const buttonHandler = () => {
+    setDisplay(!display);
+  }
 
   return(
-    (display) ? <PreviewModal /> : <></> 
+    (display) ? <PreviewModal buttonHandler={buttonHandler} /> : <button onClick={buttonHandler}>Click me</button> 
   );
 }
 

@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-export const PreviewModal = (props) => {
+const PreviewModal = (props) => {
   
   const [visibility, setVisibility] = useState("");
+  const buttonHandler = props.buttonHandler;
 
   const exitButtonHandler = (e) => {
     e.preventDefault();
     setVisibility("d-none");
     document.body.style.overflow = "visible";
+    buttonHandler();
   }
 
   useEffect(() => {
