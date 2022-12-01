@@ -1,9 +1,12 @@
 import "./trending-category.css";
 import TrendingCard from "./TrendingCard";
+
 import Cardsphotos from "./Cardsphotos";
 const TrendingCategories = () => {
   const data = Cardsphotos();
+
   return (
+
     <section className="container-fluid" id="trending">
       <h2 className="title">
         <strong>Explore</strong> trending categories on Freepik

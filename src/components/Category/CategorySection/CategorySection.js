@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import './category-section.css'
 
 

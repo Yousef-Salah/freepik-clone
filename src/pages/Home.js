@@ -7,7 +7,7 @@ import Trending from "../components/Home/TrendingCategories/TrendingCategories";
 import CircleCategoy from "../components/Home/CircleCategoy/CircleCategoy";
 import InnerCreation from "../components/Home/InnerCreation/InnerCreation";
 import JoinSection from "../components/Common/JoinSection/JoinSection";
-
+import CreatorCollection from '../components/Home/CreatorCollection/CreatorCollection';
 const Home = (props) => {
 
     useEffect(() => {
@@ -20,6 +20,7 @@ const Home = (props) => {
             <CircleCategoy />
             <Annual />
             <Trending />
+            <CreatorCollection/>
             <InnerCreation />
             <JoinSection />
         </>
