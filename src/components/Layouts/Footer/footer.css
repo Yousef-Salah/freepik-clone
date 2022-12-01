@@ -1,9 +1,4 @@
 footer {
-  font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  font-size: 15px;
-  line-height: 1.70;
-  box-sizing: border-box;
-  outline: none;
   padding: 20px;
   padding-left: 0;
   padding-right: 0;
@@ -11,35 +6,26 @@ footer {
 }
 
 footer .list-unstyled {
-  font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  line-height: 1.70;
-  font-size: 12px;
-  list-style: none;
+  line-height: 1.90;
+  font-size: 15px;
   box-sizing: border-box;
-  outline: none;
   background-color: transparent;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 600;
   color: #869fb2;
 }
 
 footer .row {
   color: #ffffff;
   opacity: .80;
-  font-family: "Proxima Nova", "Verdana", "Avenir Next";
   margin: 10px;
-  font-size: 10px;
+  font-size: 18px;
 }
 
 
 footer .footer-button {
   color: #bac8d3;
-  font-family: "Proxima Nova", "Verdana", "Avenir Next";
-  box-sizing: border-box;
   padding-top: 20px;
   border-top: 1px solid #374957;
-  text-align: left;
+  display: flex;
 }
 
 footer .ficon {
@@ -70,6 +56,12 @@ footer .yicon {
   margin-right: 3%;
 }
 
-footer .dropdown-menu {
-  margin-right: 40px;
+footer .dropdown-loc {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer .footer-hover:hover {
+  color: #bac8d3;
+
 }
