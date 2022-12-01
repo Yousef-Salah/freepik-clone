@@ -1,7 +1,10 @@
 import "./trending-category.css";
 import TrendingCard from "./TrendingCard";
-const TrendingCategories = (props) => {
-  
+
+import Cardsphotos from "./Cardsphotos";
+const TrendingCategories = () => {
+  const data = Cardsphotos();
+
   return (
 
     <section className="container-fluid" id="trending">
@@ -12,62 +15,18 @@ const TrendingCategories = (props) => {
         Check what's popular on Freepik and make your project look trendy and
         professional.
       </p>
+
       <div className="grid" id="exploretrend">
-        <div className="item" id="Freedom">
-          <TrendingCard
-            imglink="assets/images/Trending/1.jpeg"
-            phototitle="Freedom Photos"
-          />
-        </div>
-        <div className="item" id="Recycle">
-          <TrendingCard
-            imglink="assets/images/Trending/2.jpeg"
-            phototitle="Recycling"
-          />
-        </div>
-        <div className="item" id="Flower">
-          <TrendingCard
-            imglink="assets/images/Trending/3.jpeg"
-            phototitle="Flower Images"
-          />
-        </div>
-        <div className="item" id="Christmas">
-          <TrendingCard
-            imglink="assets/images/Trending/4.jpeg"
-            phototitle="Christmas 2022"
-          />
-        </div>
-        <div className="item" id="Analog">
-          <TrendingCard
-            imglink="assets/images/Trending/5.jpeg"
-            phototitle="Analog Photos"
-          />
-        </div>
-        <div className="item" id="Smile">
-          <TrendingCard
-            imglink="assets/images/Trending/6.jpeg"
-            phototitle="Smile Images"
-          />
-        </div>
-        <div className="item" id="Body">
-          <TrendingCard
-            imglink="assets/images/Trending/7.jpeg"
-            phototitle="Body Positive"
-          />
-        </div>
-        <div className="item" id="Selfies">
-          <TrendingCard
-            imglink="assets/images/Trending/8.jpeg"
-            phototitle="Selfies Photos"
-          />
-        </div>
-        <div className="item" id="Tote-Bag">
-          <TrendingCard
-            imglink="assets/images/Trending/9.jpeg"
-            phototitle="Tote Bag Mockup"
-          />
-        </div>
+        {data.map((Trendingphoto) => {
+          return (
+            <div className="item" id={Trendingphoto.id}>
+              <TrendingCard Trendingphoto={Trendingphoto}/>
+            </div>
+            
+          );
+        })}
       </div>
+
     </section>
   );
 };
