@@ -7,6 +7,7 @@ import Trending from "../components/Home/TrendingCategories/TrendingCategories";
 import CircleCategoy from "../components/Home/CircleCategoy/CircleCategoy";
 import InnerCreation from "../components/Home/InnerCreation/InnerCreation";
 import JoinSection from "../components/Common/JoinSection/JoinSection";
+import Promote from '../components/Home/PromoteSiteFeatures/Promote';
 
 const Home = (props) => {
 
@@ -21,7 +22,9 @@ const Home = (props) => {
             <Annual />
             <Trending />
             <InnerCreation />
+            <Promote/>
             <JoinSection />
+            
         </>
     )
 }
