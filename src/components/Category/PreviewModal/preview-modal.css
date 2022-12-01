@@ -1,0 +1,32 @@
+#preview-modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(8,25,43,0.85);
+  backdrop-filter: blur(5px);
+}
+
+#preview-modal #main-content {
+  margin-top: 20px;
+  background-color: white;
+  height: calc(100vh - 20px);
+  border-radius: 10px;
+}
+
+#preview-modal .bg-fill-animation {
+  color: white;
+  opacity: 100% !important;
+  width: 44px;
+  height: 44px;
+  transition: all .3s ease .01s !important;
+}
+
+#preview-modal #exit-btn {
+  margin-top: 20px;
+}
+
+#preview-modal a:hover {
+  background-color: rgb(85,97,109);
+}

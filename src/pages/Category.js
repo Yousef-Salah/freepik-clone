@@ -10,6 +10,7 @@ import HeaderWithPargraph from '../components/Category/CategoryHeader/CategoryHe
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import JoinSection from '../components/Common/JoinSection/JoinSection'
 import CategoryFullList from '../components/Category/CategoryFullList/CategoryFullList';
+import { PreviewModal, ModalTrigger} from '../components/Category/PreviewModal/ModalTrigger';
 
 const Category = (props) => {
     const urlParams = useParams();
@@ -17,7 +18,7 @@ const Category = (props) => {
     useEffect(() => {
         props.page("category")
     }, [])
-
+    
     return (
         <>
             <SearchContainer mainPage={false} />
@@ -26,6 +27,9 @@ const Category = (props) => {
             <CategorySection />
 
             <JoinSection />
+            <ModalTrigger />
+            
+
         </>
     )
 }
