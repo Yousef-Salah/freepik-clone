@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; 
 import "./preview-modal.css";
 import PreviewModal from "./PreviewModalComponents/PreviewModal";
 
 export const ModalTrigger = (props) => {
-
   /**
    * Figure our the keywords
    * Search about Keywords
@@ -15,11 +13,15 @@ export const ModalTrigger = (props) => {
 
   const buttonHandler = () => {
     setDisplay(!display);
-  }
+  };
 
-  return(
-    (display) ? <PreviewModal buttonHandler={buttonHandler} /> : <button onClick={buttonHandler}>Click me</button> 
+  return display ? (
+    <PreviewModal buttonHandler={buttonHandler} />
+  ) : (
+    <button className="btn btn-primary" onClick={buttonHandler}>
+      Click to show Modal
+    </button>
   );
-}
+};
 
 export default ModalTrigger;
