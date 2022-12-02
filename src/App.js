@@ -29,7 +29,6 @@ const App = () => {
         <Footer />
       </BrowserRouter>
       
-      <Footer />
       
 
       {/* <Search /> */}
