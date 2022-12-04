@@ -12,6 +12,7 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className="main-footer">
+
 				<div className="container">
 					<div className="row">
 						{/*column 1*/}
@@ -55,7 +56,7 @@ const Footer = () => {
 							</ul>
 
 						</div>	{/*column 5*/}
-						<div className="col-md-6 col-sm-6">
+						<div className="col-md-3 col-sm-6">
 							<h4> SOCIAL MEDIA</h4>
 							<ul className="list-unstyled">
 								<FacebookIcon className="ficon" href="#"/>
