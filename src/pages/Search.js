@@ -7,6 +7,7 @@ import FilterSideBar from '../components/Search/FilterSideBar/FilterSideBar';
 import SearchResultHeader from '../components/Search/FilterSideBar/SearchResultHeader';
 import SideBar from '../components/Search/FilterSideBar/SideBar';
 import TagBar from '../components/Search/FilterSideBar/TagBar';
+import SearchResults from '../components/Search/SearchResults/SearchResults';
 const Search = (props) => {
 
     useEffect(() => {
@@ -18,6 +19,7 @@ const Search = (props) => {
             <SponsoredSection />
             <FilterSideBar />
             <SearchResultHeader title='Free Vectors' />
+            <SearchResults />
         </div>
     )
 }
