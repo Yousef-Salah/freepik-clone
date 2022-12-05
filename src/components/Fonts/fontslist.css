@@ -1,0 +1,54 @@
+.fonts{
+    margin-left:3%;
+}
+.fonts-title{
+    font-size: 18px;
+    font-weight: 500;
+    color:#374957;
+}
+.fontsize{
+    background-color: white !important;
+    color:#a5b7c6;
+    border:0;
+    height: 44px;
+    font-size: 13px;
+    font-weight: 800;
+   padding-top: 0;
+}
+.fontsizebtns{
+    margin-left: .5%;
+}
+.fontsize:hover{
+    color:#374957;
+}
+.size-selected,.size-selected:focus{
+    background-color: #e3e9ed !important;
+    border-radius:12%;
+}
+.p-fontsize{
+    margin-top: 0px;
+}
+.grid-list{
+    margin-left:57%;
+   border-radius: 50%;
+   border-color: black;
+}
+.list{
+    padding-right: 6px;
+}
+.p24{
+    font-size: 24pt;
+    margin-top: 1.3% !important;
+}
+.p36{
+    font-size: 36pt !important;
+    margin-top: 0% !important;
+}
+.p48{
+    font-size: 48pt;
+    margin-top: 0% !important;
+}
+.p72{
+    font-size: 72pt;
+    margin-top: 0% !important;
+}
