@@ -1,17 +1,15 @@
-
-.sidebarcontent{
+.sidebarcontent {
   height: 100%;
   overflow-y: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
   position: fixed;
   max-width: 17rem;
   position: sticky;
-
 }
 ::-webkit-scrollbar {
   width: 5px;
-  max-height: 30%; height: 30%;
-
+  max-height: 30%;
+  height: 30%;
 }
 
 ::-webkit-scrollbar-track {
@@ -23,9 +21,8 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color:#fff;
-  -webkit-box-shadow: inset 0 0 6px rgb(165,183,198);
-  
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 0 6px rgb(165, 183, 198);
 }
 
 .collapsebtn {
@@ -56,20 +53,20 @@
 .sidebar {
   margin-left: 0.8%;
   height: 100%;
- 
 }
 .sidebar-content {
   overflow-y: visible;
 }
-.resultheader{
+.resultheader {
   font-size: 26px;
-  padding-top:6.2rem ;
-  padding-bottom:6.2rem !important ;
+  padding-top: 6.2rem;
+  padding-bottom: 6.2rem !important ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  min-height: 600px;
 }
-.mobile{
-  overflow-x:hidden;
+.mobile {
+  overflow-x: hidden;
 }
 .sidetag {
   border-radius: 8px;
@@ -88,3 +85,4 @@
   color: #374957;
   font-family: Arial, Helvetica, sans-serif;
 }
+

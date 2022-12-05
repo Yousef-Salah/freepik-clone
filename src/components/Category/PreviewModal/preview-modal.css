@@ -1,10 +1,10 @@
 #preview-modal {
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  min-height: 1500px;
   top: 0;
-  z-index: 999;
-  background-color: rgba(8,25,43,0.85);
+  z-index: 1999;
+  background-color: rgba(8, 25, 43, 0.85);
   backdrop-filter: blur(5px);
 }
 
@@ -13,6 +13,7 @@
   background-color: white;
   height: calc(100vh - 20px);
   border-radius: 10px;
+  overflow: scroll;
 }
 
 #preview-modal .bg-fill-animation {
@@ -20,7 +21,7 @@
   opacity: 100% !important;
   width: 44px;
   height: 44px;
-  transition: all .3s ease .01s !important;
+  transition: all 0.3s ease 0.01s !important;
 }
 
 #preview-modal #exit-btn {
@@ -28,5 +29,40 @@
 }
 
 #preview-modal a:hover {
-  background-color: rgb(85,97,109);
+  background-color: rgb(85, 97, 109);
 }
+
+.my-modal-btn {
+  /* display: none; */
+}
+
+.img-content {
+  display: flex;
+  justify-content: space-between;
+}
+.img-content .img-wrapper {
+  /* background-color: gray; */
+  padding: 15px 0px 20px 10px;
+  margin: 0 auto;
+}
+.img-content .img-wrapper img {
+  max-height: 600px;
+}
+
+.img-content .img-info {
+  width: 35%;
+  /* background-color: brown; */
+}
+
+#main-content .related-tags {
+  display: flex;
+}
+
+.download-btn {
+  width: 90%;
+  border-radius: 15px;
+  /* background-color: green; */
+  font-size: 1.4em;
+  padding: 15px 30px 15px 15px;
+}
+
