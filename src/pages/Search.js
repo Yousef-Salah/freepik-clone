@@ -14,6 +14,8 @@ const Search = (props) => {
         props.page("search")
     }, [])
 
+    console.log(sessionStorage.getItem("search-input"));
+
     return (
         <div className="search-content">
             <SponsoredSection />

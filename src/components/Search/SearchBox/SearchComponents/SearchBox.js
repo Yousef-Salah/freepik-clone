@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./search-box.css";
 import DropDownItem from "./SearchDropdown";
 import DropDownButton from "./DropDownButton";
+import { redirect, useNavigate } from "react-router-dom";
 
 // Components
 
@@ -11,6 +12,8 @@ const SearchBox = (props) => {
   const [delteTextIcon, setDelteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
+  const navigate = useNavigate();
+  let data;     // data will be object contains search input and
   
   const checkDeleteIconStatus = (event) => {
     if (event.target.value) {
@@ -128,11 +131,29 @@ const SearchBox = (props) => {
     checkDeleteIconStatus(event);
   };
 
+  const actionHandler = () => {
+    // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
+
+    let form = document.getElementById("search-input-container");
+
+    console.log(form);
+    
+    let data = {};
+    // let data = {
+    //   search: form.getElementById("search-value"),
+
+    //   filters: form.querySelectorAll("")
+    // }
+
+    sessionStorage.setItem("search-value-object", data);
+    return redirect('/search/:term');
+  }
+
   const mainPage = (!props.mainPage) ? "sub-page-search" : "";
 
   return (
     <div className={mainPage} id="search-input-container">
-      <form id="search" className="h-100 rounded">
+      <form id="search" className="h-100 rounded" action={actionHandler()}>
         <div className="dropdown d-inline-block rounded-start">
         <DropDownButton buttonLabel={buttonLabel} />
           <div className="dropdown-menu" id="search-filter-items">
