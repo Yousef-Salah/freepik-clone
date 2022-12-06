@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FontCard = () => {
+const FontCard = (props) => {
   return (
     <>
       <div className="card ">
@@ -10,7 +10,7 @@ const FontCard = () => {
     </div>
     <div className="col-md-11">
       <div className="card-body tw-relative">
-        <h5 className="card-font-title tw-absolute p36">The quick brown fox jumps over the lazy dog</h5>
+        <h5 className={`card-font-title tw-absolute p36 +${props.class}`} >{props.title}</h5>
       </div>
     </div>
   </div>

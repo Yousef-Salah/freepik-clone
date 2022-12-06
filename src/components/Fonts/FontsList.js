@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import FontCard from './FontCard';
 import './fontslist.css';
 const FontsList = () => {
@@ -7,6 +7,19 @@ const FontsList = () => {
   let btn3=document.getElementById('btn3');
   let btn4=document.getElementById('btn4');
   let title=document.getElementsByClassName('card-font-title');
+  let searchInpt=document.getElementById('search');
+  let classe; 
+  let [cardTitle,setTtitle]= useState('The quick brown fox jumps over the lazy dog');
+  cardTitle = cardTitle  ? cardTitle : 'The quick brown fox jumps over the lazy dog';
+  useEffect(()=>{
+    console.log(cardTitle);
+    
+  })
+  function search(){
+    cardTitle=searchInpt.value;
+    console.log(cardTitle);
+    setTtitle(cardTitle);
+  }
   function clear(){
     btn1.classList.remove('size-selected');
     btn2.classList.remove('size-selected');
@@ -20,7 +33,7 @@ const FontsList = () => {
 function btn1Click()  {
  clear();
  btn1.classList.add('size-selected');
- title[0].classList.add('p24');
+ classe='p24';
 }
 function btn2Click()  {
   clear();
@@ -35,7 +48,7 @@ function btn2Click()  {
  function btn4Click()  {
   clear();
   btn4.classList.add('size-selected');
-  title[0].classList.add('p72');
+  title[0].classList.add('p48');
  }
   return (
 
@@ -45,7 +58,7 @@ function btn2Click()  {
   </h2>
   <br/>
   <div className='d-flex'>
-  <input type='text' className='form-control search w-25' placeholder="The quick brown fox jumps over the lazy dogs">
+  <input type='text' id='search' className='form-control search w-25' placeholder="The quick brown fox jumps over the lazy dogs" onKeyUp={search}>
   </input>
 <div className='fontsizebtns'>
   <button className='btn btn-primary fontsize' id='btn1' onClick={btn1Click}>
@@ -86,7 +99,8 @@ function btn2Click()  {
   </button>
   </div>
   </div>
-  <FontCard/>
+  <FontCard title={cardTitle} class={classe}/>
+  <FontCard title={cardTitle} class={classe}/>
   </div>
   )
 }
