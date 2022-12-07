@@ -1,15 +1,16 @@
 import DataBase from "../utils/FinalImages.json"
 
-const DataFilter = (props) =>  {
-  const data = DataBase;
-  const filterdData = [];
-  let filters = props.filters;
-
-  const get = () => {
-    return this.data.slice(0,10);
+export class DataFilter {
+  constructor(filter) {
+    this.data = DataBase;
+    this.filter = filter
+    if(this.filter == null) throw "Whole punch of data";
   }
 
-  return(<></>);
+  // TODO: 
+  get(num) {
+    return this.data.slice(0, num);
+  }
 }
 
 export default DataFilter;

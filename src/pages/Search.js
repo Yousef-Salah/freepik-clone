@@ -10,27 +10,23 @@ import TagBar from '../components/Search/FilterSideBar/TagBar';
 import SearchResults from '../components/Search/SearchResults/SearchResults';
 import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
-import DataBase from "../utils/FinalImages.json";
 
 const Search = (props) => {
 
   let dataFilter;
 
-    useEffect(() => {
-        props.page("search");
-        dataFilter = DataFilter(cookies.searchInput);
-        loadData();
-    }, [dataFilter])
+  useEffect(() => {
+    props.page("search");
+    dataFilter = new DataFilter(cookies.searchInput);
+    loadData(10);
+  }, [dataFilter])
 
 
     const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
     const [data, setData] = useState([]);
 
     const loadData = () => {
-      // setData(dataFilter.get());
-
-      let filteredData = DataBase.slice(0,10);
-      setData(filteredData);
+      setData(dataFilter.get(10));
     }
 
     console.log(cookies.searchInput);
