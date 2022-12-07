@@ -4,6 +4,7 @@ import "./search-box.css";
 import DropDownItem from "./SearchDropdown";
 import DropDownButton from "./DropDownButton";
 import { redirect, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 // Components
 
@@ -12,6 +13,7 @@ const SearchBox = (props) => {
   const [delteTextIcon, setDelteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
+  const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const navigate = useNavigate();
   let data;     // data will be object contains search input and
   
@@ -135,8 +137,6 @@ const SearchBox = (props) => {
     // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
 
     let form = document.getElementById("search-input-container");
-
-    console.log(form);
     
     let data = {};
     // let data = {
@@ -145,15 +145,22 @@ const SearchBox = (props) => {
     //   filters: form.querySelectorAll("")
     // }
 
-    sessionStorage.setItem("search-value-object", data);
-    return redirect('/search/:term');
+    // sessionStorage.setItem("search-value-object", "my name is yousef");
+    
+    setCookie("searchInput", document.getElementById("search-value")?.value, {
+      path: "/"
+    });
+
+    // (props.mainPage) &&  return navigate(`search/${document.getElementById("search-value")?.value}`);
+    if(props.mainPage) return navigate(`search/${document.getElementById("search-value")?.value}`);
+  
   }
 
   const mainPage = (!props.mainPage) ? "sub-page-search" : "";
 
   return (
     <div className={mainPage} id="search-input-container">
-      <form id="search" className="h-100 rounded" action={actionHandler()}>
+      <form id="search" className="h-100 rounded" onSubmit={props.mainPage && actionHandler}>
         <div className="dropdown d-inline-block rounded-start">
         <DropDownButton buttonLabel={buttonLabel} />
           <div className="dropdown-menu" id="search-filter-items">

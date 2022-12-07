@@ -8,13 +8,19 @@ import SearchResultHeader from '../components/Search/FilterSideBar/SearchResultH
 import SideBar from '../components/Search/FilterSideBar/SideBar';
 import TagBar from '../components/Search/FilterSideBar/TagBar';
 import SearchResults from '../components/Search/SearchResults/SearchResults';
+import { useCookies } from "react-cookie";
+
+
 const Search = (props) => {
 
     useEffect(() => {
         props.page("search")
     }, [])
 
-    console.log(sessionStorage.getItem("search-input"));
+    const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
+    
+    console.log(cookies.searchInput);
+    // removeCookie("searchInput");
 
     return (
         <div className="search-content">
