@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import FontCard from './FontCard';
 import './fontslist.css';
+import { FontsData } from "./FontsData";
+import arrayShuffle from 'array-shuffle';
+import { Link, Router } from 'react-router-dom';
 const FontsList = () => {
   let btn1=document.getElementById('btn1');
   let btn2=document.getElementById('btn2');
@@ -8,16 +11,20 @@ const FontsList = () => {
   let btn4=document.getElementById('btn4');
   let title=document.getElementsByClassName('card-font-title');
   let searchInpt=document.getElementById('search');
+  let margin;
   let classe; 
   let [cardTitle,setTtitle]= useState('The quick brown fox jumps over the lazy dog');
   cardTitle = cardTitle  ? cardTitle : 'The quick brown fox jumps over the lazy dog';
-  useEffect(()=>{
-    console.log(cardTitle);
-    
-  })
+  let [shuffled,setShuffle]= useState(arrayShuffle(FontsData));
+  let [marginTop,setMarginTop]=useState('3%');
+  function shuffle(){
+    window.scrollTo(0, 0);
+   btn2Click();
+   setShuffle(arrayShuffle(FontsData));
+   console.log(shuffle);
+   }
   function search(){
     cardTitle=searchInpt.value;
-    console.log(cardTitle);
     setTtitle(cardTitle);
   }
   function clear(){
@@ -25,31 +32,49 @@ const FontsList = () => {
     btn2.classList.remove('size-selected');
     btn3.classList.remove('size-selected');
     btn4.classList.remove('size-selected');
-    title[0].classList.remove('p36');
-    title[0].classList.remove('p24');
-    title[0].classList.remove('p48');
-    title[0].classList.remove('p72');
+    for( let i=0;i<title.length;i++){
+      title[i].classList.remove('p36');
+      title[i].classList.remove('p24');
+      title[i].classList.remove('p48');
+      title[i].classList.remove('p72');
+    }
+    
   }
 function btn1Click()  {
  clear();
  btn1.classList.add('size-selected');
- classe='p24';
+ for( let i=0;i<title.length;i++){
+  title[i].classList.add('p24');
+}
+setMarginTop('3%');
+
 }
 function btn2Click()  {
   clear();
   btn2.classList.add('size-selected');
-  title[0].classList.add('p36');
+  for( let i=0;i<title.length;i++){
+    title[i].classList.add('p36');
+  }
+  setMarginTop('2.5%');
+
  }
  function btn3Click()  {
   clear();
   btn3.classList.add('size-selected');
-  title[0].classList.add('p48');
+  for( let i=0;i<title.length;i++){
+    title[i].classList.add('p48');
+  }
+  setMarginTop('1.5%');
  }
  function btn4Click()  {
   clear();
   btn4.classList.add('size-selected');
-  title[0].classList.add('p48');
+  for( let i=0;i<title.length;i++){
+    title[i].classList.add('p72');
+  }
+  setMarginTop('1.3%');
  }
+
   return (
 
 <div className='fonts '>
@@ -57,8 +82,8 @@ function btn2Click()  {
   Type something and try our free fonts
   </h2>
   <br/>
-  <div className='d-flex'>
-  <input type='text' id='search' className='form-control search w-25' placeholder="The quick brown fox jumps over the lazy dogs" onKeyUp={search}>
+  <div className='titles'>
+  <input type='text' id='search' className='form-control search ' placeholder="The quick brown fox jumps over the lazy dog" onKeyUp={search}>
   </input>
 <div className='fontsizebtns'>
   <button className='btn btn-primary fontsize' id='btn1' onClick={btn1Click}>
@@ -99,8 +124,27 @@ function btn2Click()  {
   </button>
   </div>
   </div>
-  <FontCard title={cardTitle} class={classe}/>
-  <FontCard title={cardTitle} class={classe}/>
+ {/*<Router>
+  <ul>
+  {shuffled.map((val)=>{
+    return(
+      <li>
+        <Link to={'https://www.tutorialrepublic.com/faq/how-to-change-the-cursor-into-a-hand-pointer-on-hover-using-css.php'}>
+      <FontCard title={cardTitle} fontName={val.fontName} img={val.img} stylesCount={val.numberOfStyles} font={val.font} margin={marginTop}/>
+      </Link>
+      </li> );
+  })}
+  </ul>
+  </Router>*/} <ul>
+   {shuffled.map((val)=>{
+    return(
+      <li>
+        <Link to={val.link}>
+      <FontCard title={cardTitle} fontName={val.fontName} img={val.img} stylesCount={val.numberOfStyles} font={val.font} margin={marginTop}/>
+      </Link>
+      </li> );
+  })}</ul>
+  <button onClick={shuffle} type="button" class="btn btn-primary nextpage">Next Page  <i class="bi bi-arrow-right" ></i></button>
   </div>
   )
 }
