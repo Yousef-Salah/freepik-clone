@@ -133,21 +133,36 @@ const SearchBox = (props) => {
     checkDeleteIconStatus(event);
   };
 
-  const actionHandler = () => {
+  const actionHandler = (event) => {
     // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
+    event.preventDefault();
 
-    let form = document.getElementById("search-input-container");
+    let searchType = document.querySelectorAll("#search-type input");
+    let itemTypes = document.querySelectorAll("#item-type input");
+    let category = document.querySelectorAll("#item-category input");
+
+    let data = {
+      search: document.getElementById("search-value").value,
+      searchType: "",            // assets collections
+      itemTypes: "",             // free premium
+      category: "",
+  };
     
-    let data = {};
-    // let data = {
-    //   search: form.getElementById("search-value"),
+    let type = [].map.call(searchType, (element) => {
+      return (element.checked);
+    })[0];
 
-    //   filters: form.querySelectorAll("")
-    // }
+    (type) ? data.searchType = type.getAttribute("name") : data.searchType = "assets";
+
+    let itemTypesList = [].filter.call(itemTypes, (ele) => (ele.checked) ? ele.getAttribute("name"):  false);
+    data.itemTypes = itemTypesList || ['a', 'b'];
+    data.category = [].filter.call(category, (ele) => ele.checked == true)[0]?.getAttribute("name");
+    
+  
 
     // sessionStorage.setItem("search-value-object", "my name is yousef");
     
-    setCookie("searchInput", document.getElementById("search-value")?.value, {
+    setCookie("searchInput", JSON.stringify(data), {
       path: "/"
     });
 
@@ -160,7 +175,7 @@ const SearchBox = (props) => {
 
   return (
     <div className={mainPage} id="search-input-container">
-      <form id="search" className="h-100 rounded" onSubmit={props.mainPage && actionHandler}>
+      <form id="search" className="h-100 rounded" onSubmit={actionHandler}>
         <div className="dropdown d-inline-block rounded-start">
         <DropDownButton buttonLabel={buttonLabel} />
           <div className="dropdown-menu" id="search-filter-items">

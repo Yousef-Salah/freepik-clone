@@ -4,7 +4,7 @@ export class DataFilter {
   constructor(filter) {
     this.data = DataBase;
     this.filter = filter
-    if(this.filter == null) throw "Whole punch of data";
+    if(this.filter == null);
   }
 
   // TODO: 

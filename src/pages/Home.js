@@ -18,7 +18,7 @@ const Home = (props) => {
 
     return (
         <>
-            <SearchContainer mainPage={true} />
+            <SearchContainer mainPage />
             <CircleCategoy />
             <Annual />
             <Trending />

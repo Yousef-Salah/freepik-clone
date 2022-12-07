@@ -10,6 +10,8 @@ import TagBar from '../components/Search/FilterSideBar/TagBar';
 import SearchResults from '../components/Search/SearchResults/SearchResults';
 import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
+import SearchContainer from '../components/Search/SearchBox/SearchContainer';
+
 
 const Search = (props) => {
 
@@ -33,12 +35,15 @@ const Search = (props) => {
     // removeCookie("searchInput");
 
     return (
+      <>
+        <SearchContainer mainPage={false} />
         <div className="search-content">
             <SponsoredSection />
             <FilterSideBar />
             <SearchResultHeader title='Free Vectors' />
             <SearchResults data={data}/>
         </div>
+      </>
     )
 }
 
