@@ -8,9 +8,10 @@ import Category from "./pages/Category";
 import Search from "./pages/Search";
 
 //layouts imports
-import Footer from './components/Layouts/Footer/Footer';
+
 import Navbar from "./components/Layouts/Navbar/Navbar";
 //import Promote from './PromoteSiteFeatures/Promote';
+import Footer from "./components/Layouts/Footer/footer";
 
 const App = () => {
   const [page, setPage] = useState("home");
@@ -26,7 +27,7 @@ const App = () => {
           <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
         </Routes>
         
-        <Footer />
+        <Footer/>
       </BrowserRouter>
       
       
