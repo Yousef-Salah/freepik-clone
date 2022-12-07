@@ -11,7 +11,7 @@ import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import JoinSection from '../components/Common/JoinSection/JoinSection'
 import CategoryFullList from '../components/Category/CategoryFullList/CategoryFullList';
 import { PreviewModal, ModalTrigger} from '../components/Category/PreviewModal/ModalTrigger';
-
+import RelatedArticles from '../components/Category/RelatedArticles/RelatedArticles';
 const Category = (props) => {
     const urlParams = useParams();
 
@@ -25,8 +25,9 @@ const Category = (props) => {
             <CategoryHeader />
             <CategoryFullList category={urlParams.term} />
             <CategorySection />
-
+            <RelatedArticles/>
             <JoinSection />
+            
             <ModalTrigger />
             
 

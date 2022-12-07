@@ -4,29 +4,42 @@
  height: 50px;
  font-size: 18px;
 }*/
-.subtitle{
-    margin-top: 30px;
-   margin-right: 200px;
-  }
-  #icon{
-    margin-top: 30px;
-    height: 50px;
-    width: 50px;
-    background-color:  #94bfee;
-    background-size: 16px;
-    padding: 17px;
-    font-size: 25px;
-    border-radius: 15px;
-  }
-  .title{
-    margin-left: 300px;
-  }
-  strong{
-    color: blue;
-  }
-  .photo{
-    /*width:100%;*/
-    margin-left: 600px;
-    margin-top: -450px;
-    margin-right: 10px;
-  }
+.caption{
+  margin-top: 30px;
+ margin-right: 200px;
+ font-size: medium;
+}
+#symbol{
+  margin-top: 30px;
+  height: 50px;
+  width: 50px;
+  background-color:  #94bfee;
+  background-size: 16px;
+  padding: 17px;
+  font-size: 25px;
+  border-radius: 15px;
+}
+.Promote-title{
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+
+}
+.strongTitle{
+  color: blue;
+}
+.secondTitle{
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+}
+.PromotePhoto{
+  /*width:100%;*/
+  width: 45%;
+  margin-left: 650px;
+  margin-top: -430px;
+  margin-right: 10px;
+}
+.iconTitle{
+  font-size: 25px;
+}

@@ -1,0 +1,14 @@
+.col{
+    /*margin-left: 70px;
+    width: 450px;*/
+    width: 30%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: 45px;
+}
+.card-title{
+    font-size: large;
+}
+.CardTitle{
+    font-size: 20%;
+}
