@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './search-results.scss';
 import FinalImages from '../../../utils/FinalImages.json';
+import Searchimgcard from './Searchimgcard';
 const SearchResults = () => {
     const [images, setImages] = useState(FinalImages);
     const [filteredImages, setFilteredImages] = useState([]);
@@ -26,11 +27,7 @@ const SearchResults = () => {
             {filteredImages.map(item => {
                 return (
                     <div key={item.id}>
-                        <h4>{item.title}</h4>
-                        <h5>{item.category}</h5>
-                        <img src={item.img_thumb} alt={item.title + "-thumb"} />
-                        <br />
-                        <img src={item.img_og} alt={item.title} />
+                        <Searchimgcard Cardphoto={item} />
                     </div>
                 )
             })}
