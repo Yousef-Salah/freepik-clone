@@ -3,32 +3,38 @@ import './creator-collection.css';
 const CreatorCollection = () =>
 {
     return   (
-<section id='creator-collection-section' >
-<div className='creator-collection-title'>
+<>
+  <div className='creator-collection-title'>
 <h1>Unlock your inner creator</h1>
 </div>
 <div className='creator-collection-p'>
-Get the inspiration you need with these collections carefully selected to boost your project’s engagement.
-<button className='Explore-btn'>Explore</button>
-<i className="fa-solid fa-arrow-right right-arrow"></i>
+Get the inspiration you need with these collections carefully selected to boost your project's engagement.
+<a href='http://localhost:3000/collections' className='Explore-btn'>Explore<i className="fa-solid fa-arrow-right right-arrow"></i></a>
 </div>
-  <div className='row' >
-    <div className='col col-lg-3 col-med-3  creator-collection-card'>
-      <img src='creator-collection-img1.png' alt='...' />
+      <div className="container" id="creator-collection">
+      <div className="creator-collection-div">
+      <img className="creator-collection-img1" src= 'creator-collection-img1.png' />
+        <img className="creator-collection-img" src= 'creator-collection-img1.png' />
+        <p className='creator-collection-text'>Breafast cupcake <p id = "resoursess">80 resources</p></p>
+        
+     </div>
+     <div className="creator-collection-div">
+      <img className="creator-collection-img1" src= 'creator-collection-img1.png' />
+        <img className="creator-collection-img" src= 'creator-collection-img1.png' />
+        <p className='creator-collection-text'>Breafast cupcake<p id = "resoursess">25 resources</p></p>
+     </div> <div className="creator-collection-div">
+      <img className="creator-collection-img1" src= 'creator-collection-img1.png' />
+        <img className="creator-collection-img" src= 'creator-collection-img1.png' />
+        <p className='creator-collection-text'>Breafast cupcake<p id = "resoursess">59 resources</p></p>
+     </div> <div className="creator-collection-div">
+      <img className="creator-collection-img1" src= 'creator-collection-img1.png' />
+        <img className="creator-collection-img" src= 'creator-collection-img1.png' />
+        <p className='creator-collection-text'>Breafast cupcake<p id = "resoursess">80 resources</p></p>
+     </div>
     </div>
 
-    <div className='col col-lg-3 col-med-3   creator-collection-card'>
-      <img src='creator-collection-img2.png' alt='...' />
-          </div>
+    </>
 
-    <div className='col col-lg-3 col-med-3  creator-collection-card'>
-      <img src='creator-collection-img3.png' alt='...' />
-    </div>
-    <div className='col col-lg-3 col-med-3  creator-collection-card'>
-      <img src='creator-collection-img4.png' alt='...' />
-    </div>
-  </div>
-</section>
     );
     }
 

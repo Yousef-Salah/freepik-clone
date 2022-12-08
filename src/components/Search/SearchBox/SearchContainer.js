@@ -13,7 +13,7 @@ const SearchContainer = (props) => {
         </h2>
       </div>
       <div className="container-fluid">
-        <div className="row gutter-none">
+        <div className="row">
           <SearchBox mainPage={true} />
         </div>
       </div>

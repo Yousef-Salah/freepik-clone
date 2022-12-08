@@ -13,10 +13,8 @@ const SideBar = () => {
   let tagbar= document.getElementById('tagbar');
   
   window.addEventListener('scroll',function(){
-    console.log('scroll',window.pageYOffset);
 
     if(window.pageYOffset >= 272.7272644042969){
-      console.log('oi');
       document.getElementById('tagbar').classList.add('fixed-top');
       document.getElementById('sidebarr').classList.remove('tw-absolute');
       document.getElementById('sidebarr').classList.add('fixed-top');
