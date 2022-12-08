@@ -13,30 +13,24 @@ import Navbar from "./components/Layouts/Navbar/Navbar";
 //import Promote from './PromoteSiteFeatures/Promote';
 
 const App = () => {
-  const [page, setPage] = useState("home");
+	const [page, setPage] = useState("home");
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar page={page} />
-        
-        <Routes>
-          <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
-          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
-          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
-        </Routes>
-        
-        <Footer />
-      </BrowserRouter>
-      
-      
+	return (
+		<div className="App">
+			<BrowserRouter>
+				<Navbar page={page} />
 
-      {/* <Search /> */}
-      {/* <Category /> */}
-      {/* <Home /> */}
-    </div>
+				<Routes>
+					<Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
+					<Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
+					<Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
+				</Routes>
 
-  );
+				<Footer />
+			</BrowserRouter>
+		</div>
+
+	);
 };
 
 export default App;

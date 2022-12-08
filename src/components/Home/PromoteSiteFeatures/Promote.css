@@ -4,29 +4,29 @@
  height: 50px;
  font-size: 18px;
 }*/
-.subtitle{
-    margin-top: 30px;
-   margin-right: 200px;
-  }
-  #icon{
-    margin-top: 30px;
-    height: 50px;
-    width: 50px;
-    background-color:  #94bfee;
-    background-size: 16px;
-    padding: 17px;
-    font-size: 25px;
-    border-radius: 15px;
-  }
-  .title{
-    margin-left: 300px;
-  }
-  strong{
-    color: blue;
-  }
-  .photo{
-    /*width:100%;*/
-    margin-left: 600px;
-    margin-top: -450px;
-    margin-right: 10px;
-  }
+.subtitle {
+  margin-top: 30px;
+  margin-right: 200px;
+}
+#icon {
+  margin-top: 30px;
+  height: 50px;
+  width: 50px;
+  background-color: #94bfee;
+  background-size: 16px;
+  padding: 17px;
+  font-size: 25px;
+  border-radius: 15px;
+}
+.subtitle .title {
+  margin-left: 300px;
+}
+strong {
+  color: blue;
+}
+.photo {
+  /*width:100%;*/
+  margin-left: 600px;
+  margin-top: -450px;
+  margin-right: 10px;
+}
