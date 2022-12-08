@@ -4,6 +4,7 @@ import './fontslist.css';
 import { FontsData } from "./FontsData";
 import arrayShuffle from 'array-shuffle';
 import { Link, Router } from 'react-router-dom';
+import FontCardGrid from './FontCardGrid';
 const FontsList = () => {
   let btn1=document.getElementById('btn1');
   let btn2=document.getElementById('btn2');
@@ -20,7 +21,8 @@ const FontsList = () => {
   function shuffle(){
     window.scrollTo(0, 0);
    btn2Click();
-   setShuffle(FontsData.sort((a, b,c,d,e) => 1 - Math.random()));
+    shuffled=FontsData.sort((a, b) => .9 - Math.random());
+   setShuffle(shuffled);
    console.log(shuffled);
    }
   function search(){
@@ -115,7 +117,7 @@ function btn2Click()  {
     </p>
   </button>
 </div>
-<div className='grid-list'>
+<div className='grid-list tw-absolute '>
 <button className='list'>
 <i className="bi bi-list-ul"></i>
   </button>
@@ -124,27 +126,35 @@ function btn2Click()  {
   </button>
   </div>
   </div>
- {/*<Router>
-  <ul>
-  {shuffled.map((val)=>{
-    return(
-      <li>
-        <Link to={'https://www.tutorialrepublic.com/faq/how-to-change-the-cursor-into-a-hand-pointer-on-hover-using-css.php'}>
-      <FontCard title={cardTitle} fontName={val.fontName} img={val.img} stylesCount={val.numberOfStyles} font={val.font} margin={marginTop}/>
-      </Link>
-      </li> );
-  })}
-  </ul>
-  </Router>*/} <ul>
+ <ul>
    {shuffled.map((val)=>{
     return(
       <li>
         <Link to={val.link}>
-      <FontCard title={cardTitle} fontName={val.fontName} img={val.img} stylesCount={val.numberOfStyles} font={val.font} margin={marginTop}/>
+      <FontCard title={cardTitle} fontName={val.fontName} img={require(`../../assets/images/fonts/${val.img}`)} stylesCount={val.numberOfStyles} font={val.font} margin={marginTop}/>
       </Link>
       </li> );
   })}</ul>
   <button onClick={shuffle} type="button" class="btn btn-primary nextpage">Next Page  <i class="bi bi-arrow-right" ></i></button>
+  <ul>
+  <div className='container-fluid'>
+    <div className='row'>
+      
+{shuffled.map((val)=>{
+  return(
+    <div className='col-lg-2 col-sm-6 col-md-4'>
+    <li>
+      <Link to={val.link}>
+    <FontCardGrid name={val.fontName} img={require(`../../assets/images/fonts/${val.img}`)} creator={val.creator} avatar={require(`../../assets/images/fonts/avatars/${val.avatar}`)}/>
+      </Link>
+    </li>
+    </div>
+  )
+})}
+</div>
+
+  </div>
+  </ul>
   </div>
   )
 }

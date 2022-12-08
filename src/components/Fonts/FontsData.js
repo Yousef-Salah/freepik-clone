@@ -3,40 +3,53 @@ export const FontsData=[
     {
         numberOfStyles:'1',
         fontName:'Menor',
-        img:'https://fonts.freepiklabs.com/storage/5801/conversions/1-thumb2x.jpg',
+        img:'ageer.webp',
         font:'Georgia, "Times New Roman", Times, serif',
-        link:'/'
+        link:'/',
+        avatar:'default_07.png',
+        creator:'Ahmaddramz'
     },{
         numberOfStyles:'1',
         fontName:'Chadelova',
-        img:'https://fonts.freepiklabs.com/storage/4105/conversions/1-thumb2x.jpg',
+        img:'1-thumb2x.webp',
         font:'"Apple Chancery", cursive',
-        link:'/'
+        link:'/',
+        avatar:'default_08.png',
+        creator:'Twinletter'
+
     },
     {
         numberOfStyles:'1',
         fontName:'Qatora',
-        img:'https://fonts.freepiklabs.com/storage/5443/conversions/Qatora-01-thumb2x.jpg',
+        img:'Qatora-01-thumb2x.webp',
         font:'Trattatello, fantasy',
-        link:'/'
+        link:'/',
+        avatar:'default_09.png',
+        creator:'Letterhend'
+
     },
     {
         numberOfStyles:'1',
         fontName:'Delliger',
-        img:'https://fonts.freepiklabs.com/storage/5807/conversions/1-thumb2x.jpg',
+        img:'Delliger-01.webp',
         font:'OCR A Std, monospace',
-        link:'/'
+        link:'/',
+        avatar:'youngtype.jpg',
+        creator:'youngtype'
+
     },
     {
         numberOfStyles:'1',
         fontName:'Watchout',
-        img:'https://fonts.freepiklabs.com/storage/8006/conversions/Cover-thumb2x.jpg',
+        img:'Cover-thumb2x.jpg',
         font:'Snell Roundhand, cursive'
-        , link:'/'
+        , link:'/',avatar:'default_08.png',
+        creator:'GassType'
+
     },{
         numberOfStyles:'14',
         fontName:'Takashimura',
-        img:'https://fonts.freepiklabs.com/storage/2434/conversions/Takashimura_1-thumb2x.jpg',
-        font:'Chalkduster, fantasy'
+        img:'Takashimura_1-thumb2x.webp',
+        font:'Chalkduster, fantasy',avatar:'default_08.png',creator:'GassType'
     }
 ]
