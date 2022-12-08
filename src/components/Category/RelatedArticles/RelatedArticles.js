@@ -7,7 +7,7 @@ const Related = () => {
     return (
        
 <div className="row row-cols-1 row-cols-md-3 g-4">
-  <div className="col">
+  <div className="Related-col">
     <div className="card h-100">
       <img src={chosing} className="card-img-top" alt="chosing" ></img>
       <div className="card-body">
@@ -17,7 +17,7 @@ const Related = () => {
       </div>
     </div>
   </div>
-  <div className="col">
+  <div className="Related-col">
     <div className="card h-100">
       <img src={Great} className="card-img-top" alt="Great"></img>
       <div className="card-body">
@@ -26,7 +26,7 @@ const Related = () => {
       </div>
     </div>
   </div>
-  <div className="col">
+  <div className="Related-col">
     <div className="card h-100">
       <img src={Cover} className="card-img-top" alt="Cover"></img>
       <div className="card-body">
