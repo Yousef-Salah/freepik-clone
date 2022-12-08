@@ -1,11 +1,19 @@
+import React, { useState, useEffect } from 'react';
+
 import "./trending-category.css";
 import TrendingCard from "./TrendingCard";
 
 import Cardsphotos from "./Cardsphotos";
-const TrendingCategories = () => {
-  const data = Cardsphotos();
+const TrendingCategories = (props) => {
+	const [headingDisplay, setHeadingDisplay] = useState(true);
+	const data = Cardsphotos();
 
-  return (
+	useEffect(() => {
+		if (props.headingDisplay === false) {
+			setHeadingDisplay(false);
+		}
+	}, [props.headingDisplay])
+	return (
 
     <section className="container-fluid" id="trending">
       <h2 id="explore-title">
@@ -16,18 +24,18 @@ const TrendingCategories = () => {
         professional.
       </p>
 
-      <div className="grid" id="exploretrend">
-        {data.map((Trendingphoto) => {
-          return (
-            <div className="item" id={Trendingphoto.id}>
-              <TrendingCard Trendingphoto={Trendingphoto}/>
-            </div>
-            
-          );
-        })}
-      </div>
+			<div className="grid" id="exploretrend">
+				{data.map((Trendingphoto) => {
+					return (
+						<div className="item" id={Trendingphoto.id}>
+							<TrendingCard Trendingphoto={Trendingphoto} />
+						</div>
 
-    </section>
-  );
+					);
+				})}
+			</div>
+
+		</section>
+	);
 };
 export default TrendingCategories;

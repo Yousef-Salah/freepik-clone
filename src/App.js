@@ -14,7 +14,7 @@ import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
 
 const App = () => {
-  const [page, setPage] = useState("home");
+	const [page, setPage] = useState("home");
 
   return (
     <div className="App">
@@ -40,7 +40,7 @@ const App = () => {
       {/* <Home /> */}
     </div>
 
-  );
+	);
 };
 
 export default App;
