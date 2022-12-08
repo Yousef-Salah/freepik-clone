@@ -15,22 +15,14 @@ const TrendingCategories = (props) => {
 	}, [props.headingDisplay])
 	return (
 
-		<section className="container-fluid" id="trending">
-			<>
-				{headingDisplay ?
-					<>
-
-						<h2 className="title">
-							<strong>Explore</strong> trending categories on Freepik
-						</h2>
-						<p className="text-muted">
-							Check what's popular on Freepik and make your project look trendy and
-							professional.
-						</p>
-					</>
-					: null}
-
-			</>
+    <section className="container-fluid" id="trending">
+      <h2 id="explore-title">
+        <strong>Explore</strong> trending categories on Freepik
+      </h2>
+      <p className="text-muted">
+        Check what's popular on Freepik and make your project look trendy and
+        professional.
+      </p>
 
 			<div className="grid" id="exploretrend">
 				{data.map((Trendingphoto) => {

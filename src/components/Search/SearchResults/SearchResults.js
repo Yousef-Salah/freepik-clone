@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './search-results.scss';
 import FinalImages from '../../../utils/FinalImages.json';
-import ModalTrigger from '../../Category/PreviewModal/ModalTrigger';
+import Searchimgcard from './Searchimgcard';
 const SearchResults = () => {
 	const [images, setImages] = useState(FinalImages);
 	const [filteredImages, setFilteredImages] = useState([]);
@@ -23,36 +23,16 @@ const SearchResults = () => {
 		setLoaded(true);
 	}, [filteredImages])
 
-	const toggleModal = () => {
-		setModalDisplay(!modalDisplay);
-		console.log("changed!")
-		console.log(modalDisplay);
-	}
-	const modalHandler = (item) => {
-		console.log("modalHandler");
-		setModalData(item)
-	}
-	return (
-		<div className='search-results'>
-			{/* only for testing data*/}
-			<ModalTrigger displayStatus={modalDisplay} data={modalData} />
-			{loaded && filteredImages.map(item => {
-				return (
-					<>
-						<div key={item.id} onClick={() => modalHandler(item)}>
-							<h4>{item.title}</h4>
-							<h5>{item.category}</h5>
-							<div onClick={toggleModal}>
-								<img src={item.img_thumb} alt={item.title + "-thumb"} />
-							</div>
-							{/* <br />
-							<img src={item.img_og} alt={item.title} /> */}
-						</div>
-					</>
-				)
-			})}
-		</div>
-	)
+    return (
+        <div>
+            {/* only for testing data*/}
+            {filteredImages.map(item => {
+                return (
+                        <Searchimgcard Cardphoto={item} />
+                )
+            })}
+        </div>
+    )
 }
 
 export default SearchResults

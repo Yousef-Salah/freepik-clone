@@ -1,20 +1,21 @@
 import { Link } from "react-router-dom";
+
 const Searchimgcard = ({ Cardphoto }) => {
   return (
     <div className="container" id="search-photo-card">
-      <Link to={Cardphoto.imgurl}>
+      <Link to={"/"}>
         <img
           className="searchimg-card"
-          src={require(`../../../${Cardphoto.image}`)}
+          src={Cardphoto.img_thumb}
           alt={Cardphoto.title}
         />
       </Link>
       <div className="overlay">
-        <p className="descreption">{Cardphoto.desc}</p>
+        {/* <p className="descreption">{Cardphoto.desc}</p> */}
         <Link to={Cardphoto.authour_assets}>
           <img
             className="searchimg-author"
-            src={require(`../../../${Cardphoto.authour_image}`)}
+            src={Cardphoto.authour_image}
             alt={Cardphoto.title}
           />
           <h1 className="author">{Cardphoto.author}</h1>
