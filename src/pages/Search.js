@@ -11,18 +11,18 @@ import SearchResults from '../components/Search/SearchResults/SearchResults';
 import FontsList from '../components/Fonts/FontsList';
 const Search = (props) => {
 
-    useEffect(() => {
-        props.page("search")
-    }, [])
+  useEffect(() => {
+    props.page("search");
+  }, []);
 
-    return (
-        <div className="search-content">
-            <SponsoredSection />
-            <FilterSideBar />
-            <SearchResultHeader title='Free Vectors' />
-            <FontsList/>
-        </div>
-    )
-}
+  return (
+    <div className="search-content">
+      <SponsoredSection />
+      <FilterSideBar />
+      <SearchResultHeader title="Free Vectors" />
+      <FontsList/>
+    </div>
+  );
+};
 
-export default Search
+export default Search;
