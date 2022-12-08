@@ -8,7 +8,7 @@ const TrendingCategories = () => {
   return (
 
     <section className="container-fluid" id="trending">
-      <h2 className="title">
+      <h2 className="explore-title">
         <strong>Explore</strong> trending categories on Freepik
       </h2>
       <p className="text-muted">
