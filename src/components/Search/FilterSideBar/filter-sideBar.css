@@ -85,6 +85,11 @@
   line-height: 1.66;
   flex-shrink: 0;
   margin-top: 20px;
+  background-color: white;
+}
+
+.type-class{
+  background-color: white;
 }
 .filters {
   margin: 0 20 0 0;

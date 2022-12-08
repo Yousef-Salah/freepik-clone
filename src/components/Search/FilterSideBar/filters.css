@@ -12,6 +12,12 @@
   height: 30%;
 }
 
+.filters{
+  background-color: white;
+}
+#sidebarr{
+  background-color: white;
+}
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 3px rgb(255, 255, 255);
   border-radius: 2px;
@@ -47,9 +53,6 @@
   width: max-content;
   padding: 4px 5px;
 }
-.sidetag-selected {
-  background-color: black;
-}
 .sidebar {
   /* margin-left: 0.8%; */
   height: 100%;
@@ -69,9 +72,11 @@
   font-weight: bold;
   min-height: 600px;
 }
-.mobile {
-  overflow-x: hidden;
-}
+.mobile{
+    white-space: nowrap;
+    overflow-x: clip;
+    max-width: 100%;
+    }
 .sidetag {
   border-radius: 8px;
   padding: 10px;
