@@ -25,8 +25,9 @@ const App = () => {
           <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
           <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
         </Routes>
-        
+
         <Footer />
+
       </BrowserRouter>
       
       
