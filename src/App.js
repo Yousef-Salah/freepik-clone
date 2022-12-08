@@ -10,6 +10,7 @@ import Search from "./pages/Search";
 //layouts imports
 import Footer from './components/Layouts/Footer/footer';
 import Navbar from "./components/Layouts/Navbar/Navbar";
+import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
 
 const App = () => {
@@ -24,10 +25,12 @@ const App = () => {
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
           <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
           <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
+          <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
+
         </Routes>
 
-        <Footer />
 
+        <Footer />
       </BrowserRouter>
       
       
