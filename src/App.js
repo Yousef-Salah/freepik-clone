@@ -8,11 +8,12 @@ import Category from "./pages/Category";
 import Search from "./pages/Search";
 
 //layouts imports
-import Footer from './components/Layouts/Footer/footer';
+
 import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
+import Footer from "./components/Layouts/Footer/footer";
 
 
 const App = () => {
@@ -34,9 +35,8 @@ const App = () => {
           <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
 
         </Routes>
-
-
-        <Footer />
+        
+        <Footer/>
       </BrowserRouter>
       
 
