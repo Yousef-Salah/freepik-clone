@@ -1,11 +1,6 @@
 
 import React from "react";
 import './footer.css'
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import{Link} from 'react-router-dom';
 
 const Footer = () => {
@@ -58,13 +53,13 @@ const Footer = () => {
 						</div>	{/*column 5*/}
 						<div className="col-md-3 col-sm-6">
 							<h4> SOCIAL MEDIA</h4>
-							<ul className="list-unstyled">
+							{/* <ul className="list-unstyled">
 								<FacebookIcon className="ficon" href="#"/>
 								<TwitterIcon className="ticon" href="#"/>
 								<PinterestIcon className="picon" href="#"/>
 								<InstagramIcon className="iicon" href="#"/>
                                 <YouTubeIcon className="yicon" href="#"/>
-							</ul>
+							</ul> */}
 						</div>
 						</div>
 						{/*Footer-button*/}
