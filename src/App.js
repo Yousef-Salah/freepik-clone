@@ -10,8 +10,10 @@ import Search from "./pages/Search";
 //layouts imports
 import Footer from './components/Layouts/Footer/footer';
 import Navbar from "./components/Layouts/Navbar/Navbar";
+import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
+
 
 const App = () => {
 	const [page, setPage] = useState("home");
@@ -20,11 +22,15 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Navbar page={page} />
-        
         <Routes>
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
           <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
           <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
+          <Route path={'/pricing'}element={
+          // <Pricing page={(name)=>{setPage(name)}} />
+              <Pricing page={(name)=>{setPage(name)}} />
+          // <h1>Hello world</h1>
+          } />
           <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
 
         </Routes>
@@ -32,7 +38,6 @@ const App = () => {
 
         <Footer />
       </BrowserRouter>
-      
       
 
       {/* <Search /> */}
