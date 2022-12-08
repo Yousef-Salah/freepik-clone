@@ -33,7 +33,7 @@ const SearchResults = () => {
 		setModalData(item)
 	}
 	return (
-		<div>
+		<div className='search-results'>
 			{/* only for testing data*/}
 			<ModalTrigger displayStatus={modalDisplay} data={modalData} />
 			{loaded && filteredImages.map(item => {
@@ -45,8 +45,8 @@ const SearchResults = () => {
 							<div onClick={toggleModal}>
 								<img src={item.img_thumb} alt={item.title + "-thumb"} />
 							</div>
-							<br />
-							<img src={item.img_og} alt={item.title} />
+							{/* <br />
+							<img src={item.img_og} alt={item.title} /> */}
 						</div>
 					</>
 				)
