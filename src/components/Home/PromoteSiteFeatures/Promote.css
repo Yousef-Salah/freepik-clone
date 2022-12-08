@@ -4,29 +4,44 @@
  height: 50px;
  font-size: 18px;
 }*/
-.subtitle {
+.caption{
   margin-top: 30px;
-  margin-right: 200px;
+ margin-right: 200px;
+ font-size: medium;
 }
-#icon {
-  margin-top: 30px;
+#symbol{
+  margin-top: 20px;
   height: 50px;
   width: 50px;
-  background-color: #94bfee;
+  background-color:  #94bfee;
   background-size: 16px;
   padding: 17px;
   font-size: 25px;
   border-radius: 15px;
 }
-.subtitle .title {
-  margin-left: 300px;
+.Promote-title{
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+
 }
-strong {
+.strongTitle{
   color: blue;
 }
-.photo {
+.secondTitle{
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+}
+.PromotePhoto{
   /*width:100%;*/
-  margin-left: 600px;
-  margin-top: -450px;
+  width: 45%;
+  margin-left: 650px;
+  margin-top: -430px;
   margin-right: 10px;
+}
+.iconTitle{
+  font-size: 25px;
+  
+  
 }
