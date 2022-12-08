@@ -1,19 +1,23 @@
-
-.sidebarcontent{
+.sidebarcontent {
   height: 100%;
   overflow-y: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
   position: fixed;
   max-width: 17rem;
   position: sticky;
-
 }
 ::-webkit-scrollbar {
   width: 5px;
-  max-height: 30%; height: 30%;
-
+  max-height: 30%;
+  height: 30%;
 }
 
+.filters{
+  background-color: white;
+}
+#sidebarr{
+  background-color: white;
+}
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 3px rgb(255, 255, 255);
   border-radius: 2px;
@@ -23,9 +27,8 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color:#fff;
-  -webkit-box-shadow: inset 0 0 6px rgb(165,183,198);
-  
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 0 6px rgb(165, 183, 198);
 }
 
 .collapsebtn {
@@ -50,27 +53,30 @@
   width: max-content;
   padding: 4px 5px;
 }
-.sidetag-selected {
-  background-color: black;
-}
 .sidebar {
-  margin-left: 0.8%;
+  /* margin-left: 0.8%; */
   height: 100%;
- 
 }
 .sidebar-content {
   overflow-y: visible;
+  background-color: white;
+  /* padding: 10px; */
+  margin: 0px;
+  min-height: 100%;
 }
-.resultheader{
+.resultheader {
   font-size: 26px;
-  padding-top:6.2rem ;
-  padding-bottom:6.2rem !important ;
+  padding-top: 6.2rem;
+  padding-bottom: 6.2rem !important ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  min-height: 600px;
 }
 .mobile{
-  overflow-x:hidden;
-}
+    white-space: nowrap;
+    overflow-x: clip;
+    max-width: 100%;
+    }
 .sidetag {
   border-radius: 8px;
   padding: 10px;
@@ -88,3 +94,12 @@
   color: #374957;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media screen and (max-width: 1000px) {
+  .tagbar {
+    display: flex !important;
+    overflow: scroll !important;
+    position: unset !important;
+  }
+}
+

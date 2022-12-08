@@ -1,6 +1,5 @@
 footer {
   padding: 20px;
-  padding-left: 0;
   padding-right: 0;
   background-color: #1d262d;
 }
@@ -9,7 +8,6 @@ footer .list-unstyled {
   line-height: 1.90;
   font-size: 15px;
   box-sizing: border-box;
-  background-color: transparent;
   color: #869fb2;
 }
 
@@ -28,33 +26,45 @@ footer .footer-button {
   display: flex;
 }
 
-footer .ficon {
+footer .fa-square-facebook {
   color: rgb(54, 102, 225);
-  margin-right: 3%;
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 5%;
 }
 
-footer .ticon {
+footer .fa-square-twitter {
   color: rgb(54, 139, 225);
-  margin-right: 3%;
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 5%;
+
 }
 
-footer .picon {
+footer .fa-square-pinterest {
   color: rgb(217, 60, 33);
-  margin-right: 3%;
+  font-size: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-right: 5%;
 }
 
-footer .iicon {
 
-  color: rgb(166, 11, 70);
-
-  margin-right: 3%;
-
-}
-
-footer .yicon {
+footer .fa-square-youtube {
+  cursor: pointer;
+  font-size: 30px;
   color: rgb(217, 60, 33);
-  margin-right: 3%;
+  margin-right: 5%;
 }
+
+footer .fa-square-instagram {
+  color: #E1306C;
+
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
 
 footer .dropdown-loc {
   display: flex;
@@ -64,4 +74,8 @@ footer .dropdown-loc {
 footer .footer-hover:hover {
   color: #bac8d3;
 
+}
+
+.sing-in {
+  color: #bac8d3;
 }

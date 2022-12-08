@@ -10,28 +10,27 @@ import HeaderWithPargraph from '../components/Category/CategoryHeader/CategoryHe
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import JoinSection from '../components/Common/JoinSection/JoinSection'
 import CategoryFullList from '../components/Category/CategoryFullList/CategoryFullList';
-import { PreviewModal, ModalTrigger} from '../components/Category/PreviewModal/ModalTrigger';
+import { PreviewModal, ModalTrigger } from '../components/Category/PreviewModal/ModalTrigger';
 
 const Category = (props) => {
-    const urlParams = useParams();
+	const urlParams = useParams();
 
-    useEffect(() => {
-        props.page("category")
-    }, [])
-    
-    return (
-        <>
-            <SearchContainer mainPage={false} />
-            <CategoryHeader />
-            <CategoryFullList category={urlParams.term} />
-            <CategorySection />
+	useEffect(() => {
+		props.page("category")
+	}, [])
 
-            <JoinSection />
-            <ModalTrigger />
-            
+	return (
+		<>
+			<SearchContainer mainPage={false} />
+			<CategoryHeader />
+			<CategoryFullList category={urlParams.term} />
+			<CategorySection />
+			<JoinSection />
+			<ModalTrigger />
 
-        </>
-    )
+
+		</>
+	)
 }
 
 export default Category
