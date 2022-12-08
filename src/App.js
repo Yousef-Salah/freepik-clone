@@ -8,14 +8,15 @@ import Category from "./pages/Category";
 import Search from "./pages/Search";
 
 //layouts imports
-import Footer from './components/Layouts/Footer/Footer';
+import Footer from './components/Layouts/Footer/footer';
 import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
+import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
 
 
 const App = () => {
-  const [page, setPage] = useState("home");
+	const [page, setPage] = useState("home");
 
   return (
     <div className="App">
@@ -30,7 +31,11 @@ const App = () => {
               <Pricing page={(name)=>{setPage(name)}} />
           // <h1>Hello world</h1>
           } />
+          <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
+
         </Routes>
+
+
         <Footer />
       </BrowserRouter>
       
@@ -40,7 +45,7 @@ const App = () => {
       {/* <Home /> */}
     </div>
 
-  );
+	);
 };
 
 export default App;
