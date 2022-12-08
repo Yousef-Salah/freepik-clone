@@ -6,7 +6,7 @@ const Searchimgcard = ({ Cardphoto }) => {
       <Link to={"/"}>
         <img
           className="searchimg-card"
-          src={require(`../../../${Cardphoto.img_thumb}`)}
+          src={Cardphoto.img_thumb}
           alt={Cardphoto.title}
         />
       </Link>
@@ -15,7 +15,7 @@ const Searchimgcard = ({ Cardphoto }) => {
         <Link to={Cardphoto.authour_assets}>
           <img
             className="searchimg-author"
-            src={require(`../../../${Cardphoto.authour_image}`)}
+            src={Cardphoto.authour_image}
             alt={Cardphoto.title}
           />
           <h1 className="author">{Cardphoto.author}</h1>

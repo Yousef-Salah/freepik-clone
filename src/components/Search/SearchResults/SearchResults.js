@@ -26,9 +26,7 @@ const SearchResults = () => {
             {/* only for testing data*/}
             {filteredImages.map(item => {
                 return (
-                    <div key={item.id}>
                         <Searchimgcard Cardphoto={item} />
-                    </div>
                 )
             })}
         </div>
