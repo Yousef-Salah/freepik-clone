@@ -2,36 +2,43 @@ import React, { useState, useEffect } from 'react';
 
 import './search-results.scss';
 import FinalImages from '../../../utils/FinalImages.json';
-import Searchimgcard from './Searchimgcard';
-const SearchResults = () => {
-	const [images, setImages] = useState(FinalImages);
-	const [filteredImages, setFilteredImages] = useState([]);
-	const [modalDisplay, setModalDisplay] = useState(false);
-	const [modalData, setModalData] = useState({});
-	const [loaded, setLoaded] = useState(false);
-	useEffect(() => {
-		console.log(images);
 
-		let _filteredImages = images.filter(image => image.title.toLowerCase().includes('background'));
+const SearchResults = (props) => {
+    // const [images, setImages] = useState(FinalImages);
+    // const [filteredImages, setFilteredImages] = useState([]);
 
-		setFilteredImages(_filteredImages);
-	}, [])
+    // useEffect(() => {
+    //     // console.log(images);
+
+    //     let _filteredImages = images.filter(image => image.title.toLowerCase().includes('background'));
+
+    //     setFilteredImages(_filteredImages);
+    // }, [])
 
 
-	useEffect(() => {
-		console.log(filteredImages);
-		setLoaded(true);
-	}, [filteredImages])
+    // useEffect(() => {
+    //     console.log(filteredImages);
+
+    // }, [filteredImages])
+
+    console.log("from component")
+    console.log(props.data[1])
+
 
     return (
-        <div>
-            {/* only for testing data*/}
-            {filteredImages.map(item => {
-                return (
-                        <Searchimgcard Cardphoto={item} />
-                )
-            })}
-        </div>
+      <div>
+        {props.data.map(item => {
+          return (
+            <div key={item.id}>
+              <h4>{item.title}</h4>
+              <h5>{item.category}</h5>
+              <img src={item.img_thumb} alt={item.title + "-thumb"} />
+              <br />
+              {/* <img src={item.img_og} alt={item.title} /> */}
+            </div>
+          )
+        })}
+    </div>
     )
 }
 
