@@ -20,8 +20,8 @@ const FontsList = () => {
   function shuffle(){
     window.scrollTo(0, 0);
    btn2Click();
-   setShuffle(arrayShuffle(FontsData));
-   console.log(shuffle);
+   setShuffle(FontsData.sort((a, b,c,d,e) => 1 - Math.random()));
+   console.log(shuffled);
    }
   function search(){
     cardTitle=searchInpt.value;
