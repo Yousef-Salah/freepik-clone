@@ -5,11 +5,11 @@ const FontCard = (props) => {
   return (
       <div className="font-card " >
   <div className="row g-0">
-    <div className="col-md-2 font-image col-sm-5">
+    <div className="col-md-2 font-image col-sm-6 col-10">
       <img src={props.img} className="img-fluid rounded-start b"  />
     </div>
-    <div className="col-md-10 col-sm-7">
-      <div className="card-body tw-relative">
+    <div className="col-md-10 col-sm-6 col-2">
+      <div className="card-body ">
         <div className='d-flex name-count' style={{marginTop:`${props.margin}`}}>
       <p className='creator'>{props.fontName}</p>
       <p className='styles-count'>{props.stylesCount} Styles</p>

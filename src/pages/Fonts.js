@@ -12,7 +12,7 @@ import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import FontsList from '../components/Fonts/FontsList';
 
-const Search = (props) => {
+const Fonts = (props) => {
 
   let dataFilter;
 
@@ -46,4 +46,4 @@ const Search = (props) => {
   );
 };
 
-export default Search;
+export default Fonts;

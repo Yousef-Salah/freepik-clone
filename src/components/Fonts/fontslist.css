@@ -30,17 +30,20 @@
 }
 .grid-list{
     margin-left:90%;
-   border-radius: 50%;
-   border-color: black;
    font-size: 190%;
-   font-weight: bolder;
+   font-weight: 700;
    color: rgb(165, 183, 198);
-   border-radius: 5ch;
+   border-color:#374957 ;
+   border-radius: 0ch !important;
+}
+.grid-list-selected{
+    background-color: #e3e9ed;
+    
 }
 .list,.bi-list-ul{
-    padding-right: 6px;
-    border: black;
-    border-radius: 2ch;
+    padding-left: 1px;
+    padding-right: 1px;
+    font-weight: 700;
 }
 .name-count{
     margin-top:1%;
@@ -102,37 +105,42 @@
     margin-left: 46%;
     margin-top: 2%;
     margin-bottom: 2%;
-    width: 9%;
-    height: 2%;
     border-radius: .5ch;
+    overflow: hidden;
+    flex-shrink: 1;
+    padding-left: 1%;
+    padding-right: 1%;
 }
-
 .img-wrapper {
     position: relative;
     text-align: center;
     color: white;
     width: fit-content;
   }
+  .fontimg{
+    border-radius: .3ch;
+  }
   .font-name {
     position: absolute;
-    bottom: 15%;
+    bottom: 18%;
     left: 2%;
   }
   .desc{
     visibility: hidden;
     position: absolute;
-    bottom: .95%;
+    bottom: 2.6%;
     background: linear-gradient(rgba(8,25,43,0) 40%, rgba(8,25,43,0.85)) ;
     width: 100%;
     height: 100%;
     background-size:10%;
     opacity: 100%;
+    border-radius:.3ch ;
   }
   .avatar{
     position: absolute;
     bottom: 6%;
-    left: 2%;
-    width: 7%;
+    left: 2.3%;
+    width: 8%;
     border-radius: 5ch;
     border-color: white;
     opacity: 100% !important;
@@ -143,14 +151,20 @@
 }
   .creator-name{
     position: absolute;
-    bottom: 4%;
-    left: 10%;
+    bottom: 5%;
+    left: 12%;
   }
   @media only screen and (min-width: 768px) {
     .img-wrapper:hover .desc{
         visibility: visible;
         background-position: 100% 100% ;
       }
+  }
+  @media only screen and(min-width:992px){
+    .avatar{
+        margin-bottom: 10% !important;
+        width: 50% !important;
+    }
   }
   
     
