@@ -6,6 +6,12 @@ import Searchimgcard from "./Searchimgcard";
 import SearchResultHeader from "../FilterSideBar/SearchResultHeader"
 
 const SearchResults = (props) => {
+
+  // useEffect(() => {
+  //   console.log(cookies.searchInput)
+  // })
+
+
   return (
     <>
       <SearchResultHeader title="Free Vectores" />

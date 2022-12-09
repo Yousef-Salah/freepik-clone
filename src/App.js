@@ -15,9 +15,13 @@ import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
 import Footer from "./components/Common/Footer/Footer";
 
+// Helper Classes 
+import DataFilter from './Helpers/DataFilter';
+
 
 const App = () => {
 	const [page, setPage] = useState("home");
+  let dataFilter = new DataFilter();
 
   return (
     <div className="App">
@@ -25,8 +29,8 @@ const App = () => {
         <Navbar page={page} />
         <Routes>
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
-          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
-          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
+          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
+          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
           <Route path={'/pricing'}element={
           // <Pricing page={(name)=>{setPage(name)}} />
               <Pricing page={(name)=>{setPage(name)}} />

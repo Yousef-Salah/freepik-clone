@@ -144,7 +144,7 @@ const SearchBox = (props) => {
     let data = {
       search: document.getElementById("search-value").value,
       searchType: "",            // assets collections
-      itemPriceType: "",             // free premium
+      itemPriceType: [],             // free premium
       category: "",
   };
     
@@ -152,19 +152,16 @@ const SearchBox = (props) => {
       if(element.checked) return element;
     })[0];
 
-    (type) ? data.searchType = type.getAttribute("name") : data.searchType = "assets";
+    (type) ? data.searchType = type.getAttribute("for") : data.searchType = "assets";
 
-    let itemPriceTypesList = [].map.call(itemPriceType, (ele) => {
+    [].forEach.call(itemPriceType, (ele) => {
       if(ele.checked) { 
-        return ele.getAttribute("name");
+        data.itemPriceType.push(ele.getAttribute("name"));
       }
     });
     
-    data.itemPriceType = itemPriceTypesList || [];
     data.category = [].filter.call(category, (ele) => ele.checked == true)[0]?.getAttribute("name");
-    
   
-
     // sessionStorage.setItem("search-value-object", "my name is yousef");
     
     setCookie("searchInput", JSON.stringify(data), {
@@ -217,7 +214,7 @@ const SearchBox = (props) => {
               <DropDownItem title="Vectors" name="vectors" for="vectors" handler={buttonLabelHandler} />
               <DropDownItem title="Photos" name="photos" for="photos" handler={buttonLabelHandler} />
               <DropDownItem title="PSDs" name="psd" for="psd"handler={buttonLabelHandler}  />
-              <DropDownItem title="Icons" name="icon" for="icon" handler={buttonLabelHandler} />
+              <DropDownItem title="Icons" name="icons" for="icon" handler={buttonLabelHandler} />
             </div>
           </div>
         </div>
