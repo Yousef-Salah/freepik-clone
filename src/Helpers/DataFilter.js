@@ -9,7 +9,7 @@ export class DataFilter {
 
   // TODO: 
   get(num) {
-    return this.data.slice(0, num);
+    return this.data.slice(0, 10);
   }
 }
 

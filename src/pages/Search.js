@@ -10,6 +10,7 @@ import SearchResults from '../components/Search/SearchResults/SearchResults';
 import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
+import Searchimgcard from '../components/Search/SearchResults/Searchimgcard';
 
 
 const Search = (props) => {
@@ -19,7 +20,7 @@ const Search = (props) => {
   useEffect(() => {
     props.page("search");
     dataFilter = new DataFilter(cookies.searchInput);
-    loadData(10);
+    loadData();
   }, [dataFilter])
 
 
@@ -29,7 +30,6 @@ const Search = (props) => {
     const loadData = () => {
       setData(dataFilter.get(10));
     }
-
     console.log(cookies.searchInput);
     // removeCookie("searchInput");
 
@@ -39,7 +39,7 @@ const Search = (props) => {
     <div className="search-content">
       <SponsoredSection />
       <FilterSideBar />
-      <SearchResultHeader title="Free Vectors" />
+      <SearchResults titel="Free Vectors" images={data} />
     </div>
       </>
   );

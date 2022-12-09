@@ -137,25 +137,30 @@ const SearchBox = (props) => {
     // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
     event.preventDefault();
 
-    let searchType = document.querySelectorAll("#search-type input");
-    let itemTypes = document.querySelectorAll("#item-type input");
-    let category = document.querySelectorAll("#item-category input");
+    let searchType = document.querySelectorAll("#search-type input");      // Assets or collections
+    let itemPriceType = document.querySelectorAll("#item-type input");         // Free or Premium
+    let category = document.querySelectorAll("#item-category input");      // Photos Vectors PSDs ...
 
     let data = {
       search: document.getElementById("search-value").value,
       searchType: "",            // assets collections
-      itemTypes: "",             // free premium
+      itemPriceType: "",             // free premium
       category: "",
   };
     
-    let type = [].map.call(searchType, (element) => {
-      return (element.checked);
+    let type = [].map.call(searchType, (element) => {   // assets of collections
+      if(element.checked) return element;
     })[0];
 
     (type) ? data.searchType = type.getAttribute("name") : data.searchType = "assets";
 
-    let itemTypesList = [].filter.call(itemTypes, (ele) => (ele.checked) ? ele.getAttribute("name"):  false);
-    data.itemTypes = itemTypesList || ['a', 'b'];
+    let itemPriceTypesList = [].map.call(itemPriceType, (ele) => {
+      if(ele.checked) { 
+        return ele.getAttribute("name");
+      }
+    });
+    
+    data.itemPriceType = itemPriceTypesList || [];
     data.category = [].filter.call(category, (ele) => ele.checked == true)[0]?.getAttribute("name");
     
   
