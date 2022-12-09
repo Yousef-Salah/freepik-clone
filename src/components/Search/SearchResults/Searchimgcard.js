@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-
+import "./Searchimgcard.css"
 const Searchimgcard = ({ Cardphoto }) => {
   return (
     <div className="container" id="search-photo-card">
       <Link to={"/"}>
         <img
-          className="searchimg-card"
+          className="searchcard-img"
           src={Cardphoto.img_thumb}
           alt={Cardphoto.title}
         />
       </Link>
-      <div className="overlay">
+      <div className="searchcard-overlay">
         {/* <p className="descreption">{Cardphoto.desc}</p> */}
         <Link to={Cardphoto.authour_assets}>
           <img
@@ -21,10 +21,15 @@ const Searchimgcard = ({ Cardphoto }) => {
           <h1 className="author">{Cardphoto.author}</h1>
         </Link>
         <p className="likes-no">{Cardphoto.likes}</p>
-        <button className="btn like-btn"><span className="bi bi-heart"></span></button>
-        <button className="btn collect-btn"><span className="bi bi-folder-plus"></span></button>
-        <button className="btn pintrest-btn"><span className="bi bi-pinterest"></span></button>
-
+        <button className="btn like-btn">
+          <span className="bi bi-heart"></span>
+        </button>
+        <button className="btn collect-btn">
+          <span className="bi bi-folder-plus"></span>
+        </button>
+        <button className="btn pintrest-btn">
+          <span className="bi bi-pinterest"></span>
+        </button>
       </div>
     </div>
   );

@@ -1,0 +1,13 @@
+#search-photo-card {
+    position: relative;
+    width:fit-content;
+}
+.searchcard-img {
+    display: block;
+    width: 100%;
+}
+.searchcard-overlay {
+    position: absolute;
+    bottom: 5px;
+    margin: 10px;
+}

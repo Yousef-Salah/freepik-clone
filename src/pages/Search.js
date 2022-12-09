@@ -10,6 +10,7 @@ import SearchResults from '../components/Search/SearchResults/SearchResults';
 import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
+import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
 
 
 const Search = (props) => {
@@ -40,6 +41,7 @@ const Search = (props) => {
       <SponsoredSection />
       <FilterSideBar />
       <SearchResultHeader title="Free Vectors" />
+      <SearchResults1 />
     </div>
       </>
   );
