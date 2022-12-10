@@ -53,7 +53,8 @@ const Footer = () => {
 						</div>	{/*column 5*/}
 						<div className="col-md-3 col-sm-6">
 							<h4> SOCIAL MEDIA</h4>
-							{/* <ul className="list-unstyled">
+							{/*
+							 <ul className="list-unstyled">
 								<FacebookIcon className="ficon" href="#"/>
 								<TwitterIcon className="ticon" href="#"/>
 								<PinterestIcon className="picon" href="#"/>
@@ -65,7 +66,7 @@ const Footer = () => {
 						{/*Footer-button*/}
 						
 						<div className="footer-button">
-							<img src="https://freepik.cdnpk.net/img/logos/freepikcompany-footer.svg" alt="Freepik Company" width="191" height="27"></img>
+							<img src="https://freepik.cdnpk.net/img/logos/freepikcompany-footer.svg" alt="Freepik Company"></img>
 							<p className="text-xs-center">
 								 Copyright ©  2010-2022 Freepik Company S.L. All rights reserved.
 							</p>
