@@ -1,13 +1,46 @@
-#search-photo-card {
-    position: relative;
-    width:fit-content;
+#search-card {
+  box-sizing: border-box;
+  position: relative;
+  color: white;
+  padding-bottom: 15px;
 }
 .searchcard-img {
-    display: block;
-    width: 100%;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  max-width: 100%;
 }
-.searchcard-overlay {
-    position: absolute;
-    bottom: 5px;
-    margin: 10px;
+#searchcard {
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  margin: 5px;
+}
+.likes-no {
+  font-size: 80%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}
+#searchauthor-img {
+  width: 14%;
+  float: left;
+  padding-right: 5px;
+}
+#searchauthor-name {
+  font-size: 70%;
+}
+.searchcard-buttons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  top: 0;
+  right: 0;
+}
+.searchcard-button span{
+    border-style: double;
+    border-radius: 2px;
 }
