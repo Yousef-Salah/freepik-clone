@@ -1,0 +1,81 @@
+footer {
+  padding: 20px;
+  padding-right: 0;
+  background-color: #1d262d;
+}
+
+footer .list-unstyled {
+  line-height: 1.90;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #869fb2;
+}
+
+footer .row {
+  color: #ffffff;
+  opacity: .80;
+  margin: 10px;
+  font-size: 18px;
+}
+
+
+footer .footer-button {
+  color: #bac8d3;
+  padding-top: 20px;
+  border-top: 1px solid #374957;
+  display: flex;
+}
+
+footer .fa-square-facebook {
+  color: rgb(54, 102, 225);
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+footer .fa-square-twitter {
+  color: rgb(54, 139, 225);
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 5%;
+
+}
+
+footer .fa-square-pinterest {
+  color: rgb(217, 60, 33);
+  font-size: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+
+footer .fa-square-youtube {
+  cursor: pointer;
+  font-size: 30px;
+  color: rgb(217, 60, 33);
+  margin-right: 5%;
+}
+
+footer .fa-square-instagram {
+  color: #E1306C;
+
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+
+footer .dropdown-loc {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer .footer-hover:hover {
+  color: #bac8d3;
+
+}
+
+.sing-in {
+  color: #bac8d3;
+}

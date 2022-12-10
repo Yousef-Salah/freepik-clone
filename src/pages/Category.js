@@ -13,7 +13,7 @@ import CategoryFullList from '../components/Category/CategoryFullList/CategoryFu
 import { PreviewModal, ModalTrigger} from '../components/Category/PreviewModal/ModalTrigger';
 import RelatedArticles from '../components/Category/RelatedArticles/RelatedArticles';
 const Category = (props) => {
-    const urlParams = useParams();
+	const urlParams = useParams();
 
     useEffect(() => {
         props.page("category")
@@ -31,8 +31,8 @@ const Category = (props) => {
             <ModalTrigger />
             
 
-        </>
-    )
+		</>
+	)
 }
 
 export default Category
