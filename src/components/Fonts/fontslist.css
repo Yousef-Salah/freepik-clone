@@ -1,5 +1,6 @@
 .fonts{
     margin-left:3%;
+    margin-right:3%;
 }
 .fonts-title{
     font-size: 18px;
@@ -30,20 +31,23 @@
 }
 .grid-list{
     margin-left:90%;
-   font-size: 190%;
    font-weight: 700;
    color: rgb(165, 183, 198);
    border-color:#374957 ;
-   border-radius: 0ch !important;
+   border: 1px ridge  #CFD9E0;
+   border-radius: 0px !important;
+
+   font-size: 140%;
+   font-size: 25px;
 }
 .grid-list-selected{
-    background-color: #e3e9ed;
+       background-color: rgb(227, 233, 237);
     
 }
 .list,.bi-list-ul{
-    padding-left: 1px;
-    padding-right: 1px;
-    font-weight: 700;
+    
+}
+.grid,.bi-grid-3x3-gap-fill{
 }
 .name-count{
     margin-top:1%;
@@ -104,12 +108,15 @@
     background-color: rgb(18 115 235);
     margin-left: 46%;
     margin-top: 2%;
-    margin-bottom: 2%;
-    border-radius: .5ch;
+    margin-bottom: 4%;
+    border-radius: .3ch;
     overflow: hidden;
     flex-shrink: 1;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 1.7%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    padding-right: 1.7%;
+    font-size: 16px;
 }
 .img-wrapper {
     position: relative;
@@ -128,10 +135,10 @@
   .desc{
     visibility: hidden;
     position: absolute;
-    bottom: 2.6%;
+    bottom: 2.1%;
     background: linear-gradient(rgba(8,25,43,0) 40%, rgba(8,25,43,0.85)) ;
     width: 100%;
-    height: 100%;
+    height: 97%;
     background-size:10%;
     opacity: 100%;
     border-radius:.3ch ;
@@ -151,10 +158,10 @@
 }
   .creator-name{
     position: absolute;
-    bottom: 5%;
+    bottom: 6%;
     left: 12%;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 772px) {
     .img-wrapper:hover .desc{
         visibility: visible;
         background-position: 100% 100% ;
@@ -166,8 +173,21 @@
         width: 50% !important;
     }
   }
-  
-    
-  
+  @media only screen and (min-width: 100px) and (max-width: 1024px){
+    .grid-list{
+        margin-left: 80% !important;
+
+    }
+  }
+  .grid-view{
+    bottom: 37% !important;
+    margin-left: 94.5% !important;
+  }
+ .fontsgrid{
+    width: 95%;
+ }
+  .gridcard{
+    padding: 0px 5px;
+  }
   
 

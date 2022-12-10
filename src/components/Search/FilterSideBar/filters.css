@@ -67,10 +67,11 @@
 .resultheader {
   font-size: 26px;
   padding-top: 6.2rem;
-  padding-bottom: 6.2rem !important ;
+  padding-bottom: 1rem !important ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
+
 .mobile{
     white-space: nowrap;
     overflow-x: scroll;
@@ -94,3 +95,15 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+.search-description{
+  font-size: 17px;
+  font-weight: 100 !important;
+  margin-left: 25%;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; 
+  margin-bottom: 2rem
+}

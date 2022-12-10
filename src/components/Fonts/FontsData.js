@@ -85,5 +85,28 @@ export const FontsData=[
         img:'Artboard-1-preview.webp',
         font:'Brush Script MT, Brush Script Std, cursive',link:'/',avatar:'default_01.png',
         creator:'Letterhend'
+    },{
+        numberOfStyles:'2',
+        fontName:'Billy Money',
+        img:'Billy_Money_1-preview.jpg',
+        font:'Arial, sans-serif	',link:'/',avatar:'default_01.png',
+        creator:'Alit Design'
+    },{
+        numberOfStyles:'1',
+        fontName:'The last Shuriken',
+        img:'Cover-preview.webp',
+        font:'Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif	',
+        link:'/',
+        avatar:'default_07.png',
+        creator:'Ahmaddramz'
+    },{
+        numberOfStyles:'1',
+        fontName:'Chadelova',
+        img:'REBOG-01-preview.webp',
+        font:'Palatino, URW Palladio L, serif',
+        link:'/',
+        avatar:'default_08.png',
+        creator:'Twinletter'
+
     }
 ]

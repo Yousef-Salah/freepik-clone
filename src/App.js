@@ -14,6 +14,8 @@ import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
 import Footer from "./components/Layouts/Footer/footer";
+import Fonts from './pages/Fonts';
+import FontsFormatGrid from './pages/FontsFormatGrid';
 
 
 const App = () => {
@@ -33,6 +35,8 @@ const App = () => {
           // <h1>Hello world</h1>
           } />
           <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
+          <Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
+          <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
         </Routes>
         
