@@ -12,6 +12,7 @@ const FontsList = () => {
   let btn3 = document.getElementById("btn3");
   let btn4 = document.getElementById("btn4");
   let title = document.getElementsByClassName("card-font-title");
+  let nameCount = document.getElementsByClassName("name-count");
   let fontCheckInpt = document.getElementById("fontCheck");
   let margin;
   let classe;
@@ -49,6 +50,11 @@ const FontsList = () => {
       title[i].classList.remove("p24");
       title[i].classList.remove("p48");
       title[i].classList.remove("p72");
+      nameCount[i].classList.remove("margin3");
+      nameCount[i].classList.remove("margin25");
+      nameCount[i].classList.remove("margin15");
+      nameCount[i].classList.remove("margin13");
+
     }
   }
   function btn1Click() {
@@ -56,32 +62,34 @@ const FontsList = () => {
     btn1.classList.add("size-selected");
     for (let i = 0; i < title.length; i++) {
       title[i].classList.add("p24");
+      nameCount[i].classList.add("margin3");
+
     }
-    setMarginTop("3%");
+    
   }
   function btn2Click() {
     clear();
     btn2.classList.add("size-selected");
     for (let i = 0; i < title.length; i++) {
       title[i].classList.add("p36");
+      nameCount[i].classList.add("margin25");
     }
-    setMarginTop("2.5%");
   }
   function btn3Click() {
     clear();
     btn3.classList.add("size-selected");
     for (let i = 0; i < title.length; i++) {
       title[i].classList.add("p48");
+      nameCount[i].classList.add("margin15");
     }
-    setMarginTop("1.5%");
   }
   function btn4Click() {
     clear();
     btn4.classList.add("size-selected");
     for (let i = 0; i < title.length; i++) {
       title[i].classList.add("p72");
+      nameCount[i].classList.add("margin13");
     }
-    setMarginTop("1.3%");
   }
  return (
   <div className="fonts ">
@@ -165,7 +173,6 @@ const FontsList = () => {
               img={require(`../../assets/images/fonts/${val.img}`)}
               stylesCount={val.numberOfStyles}
               font={val.font}
-              margin={marginTop}
             />
           </Link>
         </li>

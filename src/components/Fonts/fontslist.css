@@ -49,10 +49,7 @@
 }
 .grid,.bi-grid-3x3-gap-fill{
 }
-.name-count{
-    margin-top:1%;
-    color: black;
-}
+
 .styles-count{
     color:#374957 !important;
     margin-left: .7%;
@@ -64,8 +61,6 @@
 .p36{
     font-size: 36px !important;
     
-    margin-bottom: 0%;
-    position: absolute !important;
 }
 .p48{
     font-size: 48px;
@@ -172,13 +167,24 @@
         margin-bottom: 10% !important;
         width: 50% !important;
     }
+    
   }
-  @media only screen and (min-width: 100px) and (max-width: 1024px){
-    .grid-list{
-        margin-left: 80% !important;
-
+  @media only screen and (min-width: 1000px) and (max-width: 1920px){
+   
+    .margin3{
+        margin-top: 3%;
+    }
+    .margin25{
+        margin-top: 2.5%;
+    }
+    .margin15{
+        margin-top: 1.5%;
+    }
+    .margin13{
+        margin-top: 1.3%;
     }
   }
+
   .grid-view{
     bottom: 37% !important;
     margin-left: 94.5% !important;
