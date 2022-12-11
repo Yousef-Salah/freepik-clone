@@ -12,6 +12,7 @@ import Search from "./pages/Search";
 import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
 import Login from './pages/Login';
+//import Enhance from './components/Pricing/PricingSection/Enhance/Enhance';
 //import Promote from './PromoteSiteFeatures/Promote';
 import Footer from "./components/Common/Footer/Footer";
 
