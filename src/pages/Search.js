@@ -40,7 +40,6 @@ const Search = (props) => {
       <SponsoredSection />
       <FilterSideBar />
       <SearchResultHeader title="Free Vectors" />
-      <FontsList />
     </div>
       </>
   );

@@ -30,7 +30,7 @@ const FontsGridView = () => {
     </div>
     <ul>
     <div className="container-fluid fontsgrid">
-      <div className="row row-cols-lg-3 row-cols-sm-2 row-cols-1 row-cols-md-3 row-cols-xl-5">
+      <div className="row row-cols-lg-3 row-cols-sm-2 row-cols-1 row-cols-md-2 row-cols-xl-5">
       
         {shuffled.map((val) => {
           return (
