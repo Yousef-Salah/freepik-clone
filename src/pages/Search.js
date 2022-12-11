@@ -10,13 +10,18 @@ import SearchResults from "../components/Search/SearchResults/SearchResults";
 import { useCookies } from "react-cookie";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Searchimgcard from "../components/Search/SearchResults/Searchimgcard";
+import Spinner from "../components/Search/LoadingSpinner/Spinner";
 
 const Search = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const [data, setData] = useState([]);
   
   useEffect(() => {
-    props.page("search");
+    props.page("search");   
+    setTimeout(() => {
+      document.getElementById("loading-spinner").style.display = "none";
+      document.getElementById("search-results-content").classList.remove('d-none');
+    }, 5000);
     loadData();
   }, [data]);
 
@@ -31,7 +36,9 @@ const Search = (props) => {
       <div className="search-content">
         <SponsoredSection />
         <FilterSideBar />
+        <div>Hello it's me</div>
         <SearchResults titel="Free Vectors" images={data} />
+        <Spinner />
       </div>
     </>
   );
