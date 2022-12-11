@@ -3,15 +3,17 @@ import "./Searchimgcard.css";
 const Searchimgcard = ({ Cardphoto }) => {
   return (
     <div className="container-fluid" id="search-card">
-        <Link to={"/"}>
-          <img
-            className="searchcard-img"
-            src={Cardphoto.img_thumb}
-            alt={Cardphoto.title}
-          />
-        </Link>
+      <Link to={"/"}>
+        <img
+          className="searchcard-img"
+          src={Cardphoto.img_thumb}
+          alt={Cardphoto.title}
+        />
+      </Link>
       <div className="overlay" id="searchcard">
-        <p className="descreption">{Cardphoto.desc}</p>
+        <p className="descreption">{Cardphoto.title}</p>
+        <p className="likes-no">{Cardphoto.likes}</p>
+
         <Link to={Cardphoto.authour_assets}>
           <img
             className="authour"
@@ -23,16 +25,15 @@ const Searchimgcard = ({ Cardphoto }) => {
             {Cardphoto.author}
           </p>
         </Link>
-        <p className="likes-no">{Cardphoto.likes}</p>
         <div className="searchcard-buttons ">
-          <button className="searchcard-button" id="btn like-btn">
+          <button className="btn searchcard-button" id="like-btn">
             <span className="bi bi-heart"></span>
           </button>
-          <button className="searchcard-button" id="btn collect-btn">
+          <button className="btn searchcard-button" id="collect-btn">
             <span className="bi bi-folder-plus"></span>
           </button>
-          <button className="searchcard-button" id="btn pintrest-btn">
-            <span className="fa-brands fa-pinterest"></span>
+          <button className="btn searchcard-button" id="pintrest-btn">
+            <span className="bi bi-pinterest"></span>
           </button>
         </div>
       </div>

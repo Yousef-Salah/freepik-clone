@@ -1,28 +1,36 @@
 #search-card {
-  box-sizing: border-box;
   position: relative;
   color: white;
   padding-bottom: 15px;
 }
 .searchcard-img {
+  background-size:cover;
   position: relative;
   z-index: 1;
-  display: inline-block;
   max-width: 100%;
 }
 #searchcard {
   position: absolute;
+  opacity: 0;
   z-index: 1;
   top: 5px;
   margin: 5px;
 }
 .likes-no {
-  font-size: 80%;
-  display: flex;
-  justify-content: flex-end;
-  z-index: 1;
+  position: absolute;
+  font-size: 50%;
+  background-color: white;
+  color: rgb(188, 52, 48);
+  border-width: 1px;
+  border-radius: 2px;
+  border-color: rgb(188, 52, 48);
+  z-index: 3;
   top: 0;
   right: 0;
+}
+.descreption {
+  font-size: 70%;
+  margin-bottom: 2px;
 }
 #searchauthor-img {
   width: 14%;
@@ -37,10 +45,25 @@
   display: flex;
   flex-direction: column;
   z-index: 2;
-  top: 0;
+  top: 7px;
   right: 0;
 }
-.searchcard-button span{
-    border-style: double;
-    border-radius: 2px;
+.searchcard-button {
+    
+  color: gray;
+  font-size: 50%;
+  margin-bottom: 1px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+}
+#pintrest-btn {
+  color: white;
+  background-color: rgb(188, 52, 48);
+  border-radius: 2px;
+}
+#search-card:hover #searchcard {
+  opacity: 1;
+}
+#search-card:hover .searchcard-img{
+  filter: brightness(0.8);
 }
