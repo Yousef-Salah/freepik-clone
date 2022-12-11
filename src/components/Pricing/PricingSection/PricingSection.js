@@ -5,11 +5,7 @@ const PricingSection = () => {
   return (
     <div className="tab-content" id="pills-tabContent">
       <div className="tab-pane fade show active" id="pills-individual" role="tabpanel" aria-labelledby="pills-individual-tab"><img src='pricing1.png' alt='pricing-photo1' />
-        <table>
-          <box>
 
-          </box>
-        </table>
         <div className="card">
           <div className="card-body">
             <table className="table table-borderless">
