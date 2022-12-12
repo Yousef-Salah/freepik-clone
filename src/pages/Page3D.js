@@ -11,6 +11,8 @@ import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import FontsList from '../components/Fonts/FontsList';
+import Card3D from '../components/Card3D/Card3D';
+import CardLayout from '../components/Card3D/CardLayout';
 
 const Fonts = (props) => {
 
@@ -39,7 +41,7 @@ const Fonts = (props) => {
     <div className="search-content">
       <FilterSideBar />
       <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
-      <FontsList />
+   <CardLayout/>
     </div>
       </>
   );

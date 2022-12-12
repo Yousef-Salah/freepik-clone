@@ -31,7 +31,10 @@ const SideBar = () => {
   return (
     <div  id='sidebarr' className={`sidebar flex tw-absolute ${
       open ? "tw-w-64" : "tw-w-0"
-    }`}>
+    }`}  style={{
+      // Use the isOpen state to control the transform property
+      transform: !open ? 'translateX(0)' : 'translateX(-100px)',
+    }}>
       <div
         className={`${
           open ? "tw-w-64" : "tw-w-0"

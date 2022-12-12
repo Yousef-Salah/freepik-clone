@@ -1,44 +1,45 @@
 import React from 'react'
 import "./filters.css";
 import { useState } from 'react';
-const SearchResultHeader = (props) => {
-let popular = document.getElementById('popularDropBtn');
-let recent = document.getElementById('recentDropBtn');
-let [dropHeaderr,setDropHeader]=useState('Popular');
-let [popular1,setPopular1]=useState('bx bx-check ');
-let [recent1,setRecent1]=useState('unchecked');
-let dropHeader='Popular';
-function setPopular(){
-  setDropHeader('Popular');
-  console.log(dropHeaderr);
-  setPopular1('bx bx-check ');
-  setRecent1('unchecked');
 
-}
-function setRecent(){
-  setDropHeader('Recent');
-  setPopular1('unchecked');
-  setRecent1('bx bx-check');
-}
+const SearchResultHeader = (props) => {
+  let [dropHeaderr, setDropHeader] = useState('Popular');
+  let [popular1, setPopular1] = useState('bx bx-check ');
+  let [recent1, setRecent1] = useState('unchecked');
+
+  // This is the new code
+  let sort = props.sort || false;
+
+  function setPopular() {
+    setDropHeader('Popular');
+    setPopular1('bx bx-check ');
+    setRecent1('unchecked');
+  }
+
+  function setRecent() {
+    setDropHeader('Recent');
+    setPopular1('unchecked');
+    setRecent1('bx bx-check');
+  }
+
   return (
     <>
-    <div className='container-fluid d-flex justify-content-center resultheader'>
-      <h1 className='headerr'>
+      <div className='container-fluid d-flex justify-content-center resultheader'>
+        <h1 className='headerr'>
+          {props.title}
+        </h1>
+        <br />
+      </div>
 
-        {props.title}
-      
-      
-      </h1>
-      <br />
-      
-    </div>
-    <p className='search-description'>
-{props.description}
+      <p className='search-description'>
+        {props.description}
+      </p>
 
-        </p>
-       {/* <div className="dropdown sort">
-    Sort By:
-  <button className="btn btn-primary dropdown-toggle sort-by-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      {/* This is the new code */}
+      {sort && (
+        <div className="dropdown sort" id="dropdown sort">
+          Sort By:
+          <button className="btn btn-primary dropdown-toggle sort-by-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
   {dropHeaderr}
   </button>
   <ul className="dropdown-menu sortmenu">
@@ -46,9 +47,9 @@ function setRecent(){
     <li><a className="dropdown-item sortbtn2"  onClick={setRecent} id='recentDropBtn'href="#"> <i class={recent1}></i> Recent</a></li>
   </ul>
 </div>
-  */}
-    </>
-  )
+      )}
+    </>)
 }
 
-export default SearchResultHeader
+
+export default SearchResultHeader;

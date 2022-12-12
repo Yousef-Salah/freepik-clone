@@ -1,0 +1,66 @@
+.name {
+    position: absolute;
+    top: 5%;
+    left:5%;
+    
+  }
+  .desc-3d{
+    visibility: hidden;
+    position: absolute;
+    bottom: 2.1%;
+    background: linear-gradient(rgba(8,25,43,0) 0%, rgba(8,25,43,0.85) ) ;
+    width: 100%;
+    height: 97%;
+    background-size:10%;
+    opacity: 100%;
+    border-radius:.3ch ;
+  }
+
+  .card-3d-wrapper{
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 200px;
+    margin-top: 10%;
+  }
+  .photo-3d{
+    border-radius: .3ch;
+
+  }
+  .card-3d-wrapper:hover .desc-3d{
+    visibility: visible;
+    background-position: 100% 100% ;
+    
+  }
+.custom-tooltip{
+    background-color: black !important;
+    visibility: visible !important;
+}
+.avatar1{
+    position: absolute;
+    border-radius: 5ch;
+    width: 13%;
+    top: 17%;
+    left:5%;
+}
+.owner-3d{
+    position: absolute;
+    top: 18%;
+    left:20%;
+    font-size: 14px;
+    font-weight: 100;
+}
+.pinterest{
+    border-radius: 15ch;
+    position: absolute;
+    top: 18%;
+    left:20%;
+    font-size: 14px;
+    font-weight: 100;
+    width: 15%;
+}
+
+.layout-3d{
+margin-left:3%;
+margin-right:3%;
+}

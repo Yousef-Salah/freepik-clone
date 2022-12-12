@@ -5,7 +5,7 @@ const FontCard = (props) => {
       <div className="font-card " >
   <div className="row g-0">
     <div className="col-md-2 font-image col-sm-2 col-2">
-      <img src={props.img} className="img-fluid rounded-start b"  />
+      <img src={props.img} className="img-fluid rounded-start img-card"  />
     </div>
     <div className="col-md-10 col-sm-10 col-10">
       <div className="card-body ">

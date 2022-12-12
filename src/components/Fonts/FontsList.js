@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import FontCard from "./FontCard";
 import "./fontslist.css";
 import { FontsData } from "./FontsData";
-import arrayShuffle from "array-shuffle";
 import { Link, Router } from "react-router-dom";
 import FontCardGrid from "./FontCardGrid";
 import Fonts from "../../pages/Fonts";
@@ -22,20 +21,24 @@ const FontsList = () => {
   cardTitle = cardTitle
     ? cardTitle
     : "The quick brown fox jumps over the lazy dog";
-  let [shuffled, setShuffle] = useState(arrayShuffle(FontsData));
+  let [shuffled, setShuffle] = useState((FontsData));
   let [marginTop, setMarginTop] = useState("3%");
-  function shuffle() {
-    window.scrollTo(0, 0);
-    btn2Click();
-    shuffled = shuffled.sort(function (a, b) {
-      return Math.random() - Math.random() * Math.random();
-    });
-    
-    setShuffle( shuffled.sort(function (a, b) {
-      return Math.random() - Math.random() * Math.random();
-    }));
-    console.log(shuffled);
+  function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+}
+
+function shuffle() {
+  window.scrollTo(0, 0);
+  btn2Click();
+  const newShuffledArray = [...shuffled];
+  shuffleArray(newShuffledArray);
+  setShuffle(newShuffledArray);
+  console.log(newShuffledArray);
+}
+
   function fontCheck() {
     cardTitle = fontCheckInpt.value;
     setTtitle(cardTitle);
@@ -65,7 +68,7 @@ const FontsList = () => {
       nameCount[i].classList.add("margin3");
 
     }
-    
+  
   }
   function btn2Click() {
     clear();
@@ -103,12 +106,14 @@ const FontsList = () => {
       placeholder="The quick brown fox jumps over the lazy dog"
       onKeyUp={fontCheck}
     ></input>
+   
     <div className="fontsizebtns">
       <button
         className="btn btn-primary fontsize"
         id="btn1"
         onClick={btn1Click}
       >
+        
         <p className="p-fontsize">
           A
           <br />

@@ -2,21 +2,30 @@ import React, { useState, useEffect } from "react";
 import FontCard from "./FontCard";
 import "./fontslist.css";
 import { FontsData } from "./FontsData";
-import arrayShuffle from "array-shuffle";
 import { Link, Router } from "react-router-dom";
 import FontCardGrid from "./FontCardGrid";
 import Fonts from "../../pages/Fonts";
 const FontsGridView = () => {
-  let [shuffled, setShuffle] = useState(arrayShuffle(FontsData));
+  let [shuffled, setShuffle] = useState((FontsData));
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }  
   function shuffle() {
     window.scrollTo(0, 0);
-    shuffled = FontsData.sort((a, b) => 0.9 - Math.random());
-    setShuffle(shuffled);
-    console.log(shuffled);
-  }
+    const newShuffledArray = [...shuffled]; 
+    shuffleArray(newShuffledArray); 
+    setShuffle(newShuffledArray); 
+    console.log(newShuffledArray);
+  }  
   return (
     <>
-    <div className="grid-list position-absolute grid-view">
+   
+    <ul>
+    <div className="container-fluid fontsgrid">
+    <div className="grid-list position-absolute grid-view" id='grid-list'>
       <button className="list ">
         <Link to="/fonts" > 
         <i class='bx bx-list-ul'></i>
@@ -28,8 +37,6 @@ const FontsGridView = () => {
         </Link>
       </button>
     </div>
-    <ul>
-    <div className="container-fluid fontsgrid">
       <div className="row row-cols-lg-3 row-cols-sm-2 row-cols-1 row-cols-md-2 row-cols-xl-5">
       
         {shuffled.map((val) => {
