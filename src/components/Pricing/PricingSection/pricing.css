@@ -5,7 +5,7 @@
 
 }
 
-.card {
+.card1 {
     font-size: small;
     margin-top: 30px;
     margin-left: 100px;
@@ -27,4 +27,27 @@
 .logo-crown {
     color: orange;
     font-size: small;
+}
+
+.card2 {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    margin-top: 30px;
+    margin-left: 100px;
+    max-height: 1000px;
+    max-width: 600px;
+    border-radius: 10px;
+
+}
+
+.card3 {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 100px;
+    max-height: 1000px;
+    max-width: 600px;
+    border-radius: 10px;
 }

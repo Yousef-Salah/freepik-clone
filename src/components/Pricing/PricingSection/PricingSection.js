@@ -6,7 +6,7 @@ const PricingSection = () => {
     <div className="tab-content" id="pills-tabContent">
       <div className="tab-pane fade show active" id="pills-individual" role="tabpanel" aria-labelledby="pills-individual-tab"><img src='pricing1.png' alt='pricing-photo1' />
 
-        <div className="card">
+        <div className="card card1">
           <div className="card-body">
             <table className="table table-borderless">
 
@@ -139,10 +139,26 @@ const PricingSection = () => {
                 </td>
 
               </tr>
-
-
-
             </table>
+
+          </div>
+        </div>
+        <div className="card card2">
+          <div className="card-body">
+            <h5 className="card-title"><strong>12 months</strong></h5>
+            <p className="card-text">
+              <strong>9 EUR*</strong>/month
+              <strong>108 EUR*</strong>every <strong>12</strong> months * VAT and local taxes may apply
+            </p>
+            <a href="#" class="btn btn-primary">Subscribe now</a>
+          </div>
+        </div>
+
+        <div className="card card3">
+          <div className="card-body">
+            <h5 className="card-title"><strong>1 month</strong> </h5>
+            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Subscribe now</a>
 
           </div>
         </div>
@@ -158,8 +174,6 @@ const PricingSection = () => {
             <button className="nav-link" id="pills-teams-tab" data-bs-toggle="pill" data-bs-target="#pills-teams" type="button" role="tab" aria-controls="pills-teams" aria-selected="false">Teams</button>
           </li>
         </ul>
-
-
 
       </div>
 
