@@ -136,6 +136,7 @@ const SearchBox = (props) => {
   const actionHandler = (event) => {
     // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
     event.preventDefault();
+    alert("yousef")
 
     let searchType = document.querySelectorAll("#search-type input");      // Assets or collections
     let itemPriceType = document.querySelectorAll("#item-type input");         // Free or Premium
@@ -167,6 +168,8 @@ const SearchBox = (props) => {
     setCookie("searchInput", JSON.stringify(data), {
       path: "/"
     });
+
+    props.dataHandler();
 
     // (props.mainPage) &&  return navigate(`search/${document.getElementById("search-value")?.value}`);
     if(props.mainPage) return navigate(`search/${document.getElementById("search-value")?.value}`);

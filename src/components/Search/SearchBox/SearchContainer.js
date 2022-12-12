@@ -14,7 +14,7 @@ const SearchContainer = (props) => {
       </div>
       <div className="container-fluid">
         <div className="row">
-          <SearchBox mainPage={true} />
+          <SearchBox dataHandler={props.dataHandler} mainPage={true} />
         </div>
       </div>
     </>
@@ -23,7 +23,7 @@ const SearchContainer = (props) => {
   let categoriesSearchComponent = (
     <div className="container-fluid" id="op-search-container">
       <div className="row">        
-        <SearchBox mainPage={false} />
+        <SearchBox dataHandler={props.dataHandler} mainPage={false} />
       </div>
     </div>
   );
