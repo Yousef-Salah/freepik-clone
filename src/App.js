@@ -14,36 +14,38 @@ import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
 import Footer from "./components/Common/Footer/Footer";
+import NotFound from './components/Common/NotFound/NotFound';
 
 
 const App = () => {
 	const [page, setPage] = useState("home");
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar page={page} />
-        <Routes>
-          <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
-          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
-          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
-          <Route path={'/pricing'}element={
-          // <Pricing page={(name)=>{setPage(name)}} />
-              <Pricing page={(name)=>{setPage(name)}} />
-          // <h1>Hello world</h1>
-          } />
-          <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
+	return (
+		<div className="App">
+			<BrowserRouter>
+				<Navbar page={page} />
+				<Routes>
+					<Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
+					<Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
+					<Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
+					<Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
+					<Route path={'/pricing'} element={
+						// <Pricing page={(name)=>{setPage(name)}} />
+						<Pricing page={(name) => { setPage(name) }} />
+						// <h1>Hello world</h1>
+					} />
+					<Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
 
-        </Routes>
-        
-        <Footer/>
-      </BrowserRouter>
-      
+				</Routes>
 
-      {/* <Search /> */}
-      {/* <Category /> */}
-      {/* <Home /> */}
-    </div>
+				<Footer />
+			</BrowserRouter>
+
+
+			{/* <Search /> */}
+			{/* <Category /> */}
+			{/* <Home /> */}
+		</div>
 
 	);
 };
