@@ -10,17 +10,20 @@ const Search = (props) => {
 
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const [data, setData] = useState(props.dataFilter.getData(cookies.searchInput));
+  const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   
   useEffect(() => {
     props.page("search");   
-    setTimeout(() => {
-      document.getElementById("loading-spinner").style.display = "none";
-      document.getElementById("search-results-content").classList.remove('d-none');
-    }, 5000);
-  });
+  }, [spinnerTrigger]);
 
   const loadData = () => {
     setData(props.dataFilter.getData(cookies.searchInput));
+    document.getElementById("search-results-content").classList.add('d-none');
+    setSpinnerTrigger(true);
+    setTimeout(() => {
+      document.getElementById("search-results-content").classList.remove('d-none');
+      setSpinnerTrigger(false);
+    }, 5000);
   };
 
   return (
@@ -29,7 +32,7 @@ const Search = (props) => {
       <div className="search-content">
         <FilterSideBar />
         <SearchResults titel="Free Vectors" images={data} />
-        <Spinner />
+        <Spinner visible={spinnerTrigger} />
       </div>
       <SponsoredSection />
     </>

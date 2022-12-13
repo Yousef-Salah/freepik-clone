@@ -1,8 +1,8 @@
 import "./loading-spinner.css";
 
-const Spinner = () => {
+const Spinner = (props) => {
   return (
-    <div className="position-relative">
+    <div className={`position-relative ${ !props.visible && "d-none" }`}>
       <div class="spinner-border text-info" role="status" id="loading-spinner">
         <span class="sr-only">Loading...</span>
       </div>
