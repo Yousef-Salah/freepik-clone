@@ -1,0 +1,38 @@
+.sep-cat {
+  height: 150px;
+  position: relative;
+}
+
+.inline-f-cat {
+  overflow: scroll;
+  display: flex;
+  width: 94%;
+  margin: 0 auto;
+}
+
+.btn-arrow {
+  width: fit-content;
+  padding: 10px;
+  background: round;
+  border: 1px black solid;
+  position: absolute;
+  margin-top: 28px;
+  background-color: white;
+  cursor: pointer;
+  top: 20px;
+}
+.sc-back {
+  left: 10px;
+  border-radius: 10px 3px 3px 10px;
+}
+.sc-front {
+  right: 10px;
+  border-radius: 3px 10px 10px 3px;
+}
+
+.hidden {
+  display: none;
+}
+.visible {
+  display: unset;
+}
