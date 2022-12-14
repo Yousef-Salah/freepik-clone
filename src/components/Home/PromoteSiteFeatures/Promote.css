@@ -42,8 +42,6 @@
 }
 .iconTitle{
   font-size: 25px;
-  
-  
 }
 /* @media screen and (max-width:768px) {
   .container{
@@ -80,8 +78,6 @@
   padding-right: 500px;
 }
 }
-
-
 @media (min-width: 768px){
 .col-md-4 {
     flex: 0 0 auto;
@@ -94,17 +90,9 @@
   margin-left: 145px;
 }
 }
-
-
-
-
-
-
 @media screen and (max-width:969px) {
   .PromotePhoto{
 
     display:none;
-    
-  }
-  
+  } 
 }

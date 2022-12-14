@@ -17,7 +17,30 @@
 .caption{
     text-align: center;
 }*/
-#EnhanceSymbol{
+/*.EnhanceCard{
+    margin-left: 100px;
+}*/
+/*.EnhanceText{
+    font-size: 13px;
+    width: 250px;
+}
+.EnhanceTitle{
+   
+    margin-left: 60px;
+}
+.Enhance-img{
+    width: 140px; 
+}*/
+#Enhance-container{
+    margin-left: 10px;
+    margin-right: 20px;
+}
+#Enhance-img{
+    width: 150px;
+    margin-left:90px ;
+    
+}
+/*#EnhanceSymbol{
     margin-top: 20px;
     margin-left: 150px;
     height: 50px;
@@ -27,12 +50,13 @@
     padding: 17px;
     font-size: 25px;
     border-radius: 30px;
-}
+}*/
 #symbolTitle{
     text-align: center;
-    font-size: 20px;
+    font-size: 17px;
     width: 100%;
 }
 #symbolText{
     text-align: center;
+    font-size: 13px;
 }
