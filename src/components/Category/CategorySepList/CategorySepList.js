@@ -12,7 +12,7 @@ const CategorySepList = (props) => {
 	const checkScroll = () => {
 		list.scrollLeft < 850 ? setFrontVis('visible') : setFrontVis('hidden');
 		list.scrollLeft >= 10 ? setBackVis('visible') : setBackVis('hidden');
-
+		console.log(list.offsetWidth, list.scrollLeft)
 	}
 	const scrollList = () => {
 		list.scrollLeft += 300;
