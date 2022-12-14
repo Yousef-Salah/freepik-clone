@@ -49,17 +49,20 @@
   right: 0;
 }
 .searchcard-button {
-    
-  color: gray;
   font-size: 50%;
   margin-bottom: 1px;
-  background-color: rgb(255, 255, 255);
   border-radius: 2px;
 }
-#pintrest-btn {
+#pintrest-btn{
   color: white;
   background-color: rgb(188, 52, 48);
   border-radius: 2px;
+  
+}
+
+#like-btn,#collect-btn {
+    color: gray;
+    background-color: rgb(255, 255, 255);
 }
 #search-card:hover #searchcard {
   opacity: 1;
@@ -67,3 +70,22 @@
 #search-card:hover .searchcard-img{
   filter: brightness(0.8);
 }
+#premium-icon{
+    color: white ;
+    float: left;
+    margin-right: 2%;
+}
+#premium-img{
+    position: absolute;
+    padding: 2%;
+    z-index: 2;
+    color: rgb(226, 168, 58);
+    background-color: rgb(88, 96, 107);
+    margin-top: 2%;
+    margin-left: 2%;
+    border-radius: 2px;
+}
+#search-card:hover #premium-img {
+    opacity: 0;
+  }
+  

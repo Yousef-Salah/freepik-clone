@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
 import "./Searchimgcard.css";
+const premiumicon =({Cardphoto}) =>{
+  if (Cardphoto.premium==true) {
+    return (<i className="fa-sharp fa-solid fa-crown" id="premium-icon" ></i>);
+  }
+  else return "";
+}//for the icon inside the hover 
+const premiumimg =({Cardphoto}) =>{
+  if (Cardphoto.premium==true) {
+    return (<i className="fa-sharp fa-solid fa-crown" id="premium-img" ></i>);
+  }
+  else return "";
+}//for the icon outside the hover 
 const Searchimgcard = ({ Cardphoto }) => {
   return (
     <div className="container-fluid" id="search-card">
+      {premiumimg({Cardphoto})} 
       <Link to={"/"}>
         <img
           className="searchcard-img"
@@ -11,9 +24,10 @@ const Searchimgcard = ({ Cardphoto }) => {
         />
       </Link>
       <div className="overlay" id="searchcard">
+      {premiumicon({Cardphoto})}
+
         <p className="descreption">{Cardphoto.title}</p>
         <p className="likes-no">{Cardphoto.likes}</p>
-
         <Link to={Cardphoto.authour_assets}>
           <img
             className="authour"
@@ -25,15 +39,19 @@ const Searchimgcard = ({ Cardphoto }) => {
             {Cardphoto.author}
           </p>
         </Link>
+
         <div className="searchcard-buttons ">
-          <button className="btn searchcard-button" id="like-btn">
+          <button type="button" className="btn searchcard-button" id="like-btn" > 
             <span className="bi bi-heart"></span>
+            {/* <p>Like</p> */}
           </button>
-          <button className="btn searchcard-button" id="collect-btn">
+          <button type="button" className="btn searchcard-button" id="collect-btn">
             <span className="bi bi-folder-plus"></span>
+            {/* <p>Collect</p> */}
           </button>
-          <button className="btn searchcard-button" id="pintrest-btn">
+          <button  type="button" className="btn searchcard-button" id="pintrest-btn">
             <span className="bi bi-pinterest"></span>
+            {/* <p>Save</p> */}
           </button>
         </div>
       </div>
