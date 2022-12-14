@@ -25,6 +25,7 @@
   border-radius: 2px;
   border-color: rgb(188, 52, 48);
   z-index: 3;
+  padding: 1%;
   top: 0;
   right: 0;
 }
