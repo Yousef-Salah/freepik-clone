@@ -13,8 +13,10 @@ const Card3D = () => {
 freepik
     </p>
     <img src='https://play-lh.googleusercontent.com/dVsv8Hc4TOUeLFAahxR8KANg22W9dj2jBsTW1VHv3CV-5NCZjP9D9i2j5IpfVx2NTB8' className='pinterest' />
+
    </div> 
     </div> 
+
     </>
   )
 }

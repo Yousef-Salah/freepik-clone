@@ -17,7 +17,11 @@
    padding-top: 0;
 }
 .fontsizebtns{
-    margin-left: .5%;
+    margin-top: .5%;
+    height: min-content;
+    white-space: nowrap;
+    overflow-x: clip;
+    max-width: 100%;
 }
 .fontsize:hover{
     color:#374957;
@@ -29,6 +33,7 @@
 .p-fontsize{
     margin-top: 0px;
 }
+
 .grid-list{
    font-weight: 700;
    color: rgb(165, 183, 198);
@@ -41,18 +46,19 @@ right: 2.8%;
 }
 .grid-list-selected{
        background-color: rgb(227, 233, 237);
-    
+       color:rgb(55, 73, 87);
 }
-.list,.bi-list-ul{
-    
+.list:hover,.grid:hover{
+    background-color: rgb(227, 233, 237);
 }
-.grid,.bi-grid-3x3-gap-fill{
+.list,.grid{
+    transition: 0.3s;
+
+}
+.bi-list-ul:hover{
+    color: black;
 }
 
-.styles-count{
-    color:#374957 !important;
-    margin-left: .7%;
-}
 .p24{
     font-size: 24px;
     margin-top: 0%;
@@ -71,10 +77,19 @@ right: 2.8%;
 .font-card{
     margin-bottom: 20px;
     margin-top: 20px;
+    white-space: nowrap;
+    overflow-x: clip;
+    max-width: 100%;
 } 
 .font-card:hover{
     cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+    #font-card-info {
+      font-size: 12px !important;
+    }
+  }
+
 .card-font-title{
     white-space: nowrap;
     overflow-x: clip;
@@ -92,12 +107,7 @@ right: 2.8%;
    padding: 0 .7%;
   height: 50px;
 }
-@media only screen and (max-width:655px) {
-    .grid-list{
-        margin-top: 7%;
-        margin-left: 85%;
-    }
-}
+
 
 .titles{
     display: flex;
@@ -106,6 +116,7 @@ right: 2.8%;
 .font-image{
     width: 12.5%;
     flex-shrink: 0 !important;
+    max-width: 100% !important;
 }
 @media only screen and (max-width:650px){
     .font-image{
@@ -181,7 +192,8 @@ right: 2.8%;
         width: 50% !important;
     }
     
-  }
+  } 
+ 
   @media only screen and (min-width: 1000px) and (max-width: 1920px){
    
     .margin3{
@@ -202,11 +214,13 @@ right: 2.8%;
 
 .grid-view{
     margin-top: 10% !important;
-   margin-top: -2.8%;
+    margin-top: -48px !important;
     position: absolute !important;
     right:2.75%;
     display: flex;
-    
+  }
+  .cardrow{
+    margin-left: 0px;
   }
 
  .fontsgrid{

@@ -2,15 +2,18 @@
     position: absolute;
     top: 5%;
     left:5%;
-    
+    transition: top 0.1s ease-in-out !important;
+    top:-10%;
+    visibility: hidden;
+    z-index: -50;
   }
   .desc-3d{
-    visibility: hidden;
+      visibility: hidden;
     position: absolute;
-    bottom: 2.1%;
-    background: linear-gradient(rgba(8,25,43,0) 0%, rgba(8,25,43,0.85) ) ;
+    bottom: 0%;
+    background:linear-gradient(180deg, rgba(8,25,43,0.5) 32.05%, rgba(8,25,43,0.75) 100%);
     width: 100%;
-    height: 97%;
+    height: 100%;
     background-size:10%;
     opacity: 100%;
     border-radius:.3ch ;
@@ -25,30 +28,44 @@
   }
   .photo-3d{
     border-radius: .3ch;
-
   }
   .card-3d-wrapper:hover .desc-3d{
     visibility: visible;
     background-position: 100% 100% ;
-    
   }
-.custom-tooltip{
-    background-color: black !important;
-    visibility: visible !important;
-}
+  .card-3d-wrapper:hover .name{
+    visibility: visible;
+    top:4%;
+    visibility: visible;
+    z-index: 0;
+  }
+  .card-3d-wrapper:hover .avatar1{
+    top:17%;
+    visibility: visible;
+    z-index: 0;
+  }
+  .card-3d-wrapper:hover .owner-3d{
+    top:18%;
+    visibility: visible;
+    z-index: 0;
+  }
 .avatar1{
     position: absolute;
     border-radius: 5ch;
     width: 13%;
-    top: 17%;
+    top: -2%;
     left:5%;
+    visibility: hidden;
+    transition: top 0.1s ease-in-out !important;
 }
 .owner-3d{
     position: absolute;
-    top: 18%;
+    top: -1%;
     left:20%;
     font-size: 14px;
     font-weight: 100;
+    visibility: hidden;
+    transition: top 0.1s ease-in-out !important;
 }
 .pinterest{
     border-radius: 15ch;

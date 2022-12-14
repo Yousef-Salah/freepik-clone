@@ -98,16 +98,16 @@ function shuffle() {
   <div className="fonts ">
   <h2 className="fonts-title">Type something and try our free fonts</h2>
   <br />
-  <div className="titles ">
+  <div className="titles row row-cols-lg-3 row-cols-sm-3 row-cols-1">
     <input
       type="text"
       id="fontCheck"
-      className="form-control search "
+      className="form-control search col"
       placeholder="The quick brown fox jumps over the lazy dog"
       onKeyUp={fontCheck}
     ></input>
    
-    <div className="fontsizebtns">
+    <div className="fontsizebtns col">
       <button
         className="btn btn-primary fontsize"
         id="btn1"
@@ -153,8 +153,7 @@ function shuffle() {
           72pt
         </p>
       </button>
-    </div>
-    <div className="grid-list position-absolute ">
+      <div className="grid-list position-absolute col">
       <button className="list grid-list-selected">
         <Link to="/fonts" > 
         <i class='bx bx-list-ul'></i>
@@ -167,6 +166,8 @@ function shuffle() {
       </button>
     </div>
   </div>
+    </div>
+    
   <ul>
     {shuffled.map((val) => {
       return (
