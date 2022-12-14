@@ -13,6 +13,7 @@ const SearchBox = (props) => {
   const [delteTextIcon, setDelteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
+  // const [buttonColor, setButtonColor] = useState(true);   // search button hover bg color blue or not
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const navigate = useNavigate();
   let data;     // data will be object contains search input and
