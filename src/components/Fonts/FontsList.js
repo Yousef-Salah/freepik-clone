@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FontCard from "./FontCard";
 import "./fontslist.css";
 import { FontsData } from "./FontsData";
-import { Link, Router } from "react-router-dom";
-import FontCardGrid from "./FontCardGrid";
-import Fonts from "../../pages/Fonts";
+import { Link } from "react-router-dom";
 const FontsList = () => {
   let btn1 = document.getElementById("btn1");
   let btn2 = document.getElementById("btn2");
@@ -13,8 +11,6 @@ const FontsList = () => {
   let title = document.getElementsByClassName("card-font-title");
   let nameCount = document.getElementsByClassName("name-count");
   let fontCheckInpt = document.getElementById("fontCheck");
-  let margin;
-  let classe;
   let [cardTitle, setTtitle] = useState(
     "The quick brown fox jumps over the lazy dog"
   );
@@ -22,7 +18,6 @@ const FontsList = () => {
     ? cardTitle
     : "The quick brown fox jumps over the lazy dog";
   let [shuffled, setShuffle] = useState((FontsData));
-  let [marginTop, setMarginTop] = useState("3%");
   function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
