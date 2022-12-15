@@ -7,24 +7,25 @@ import Categories from "../../../utils/Categories";
 import MoreContent from "../../../utils/MoreContent";
 
 const Navbar = (props) => {
-	const [catVisibility, setCatVisibility] = useState(false);
-	const [moreVisibility, setMoreVisibility] = useState(false);
-	const [sideVisibility, setSideVisibility] = useState("");
-	const [arrowDirectionCat, setarrowDirectionCat] = useState("down");
-	const [arrowDirectionMore, setarrowDirectionMore] = useState("down");
-	const [pageName, setPageName] = useState("");
-	const categories = Categories();
-	const moreContent = MoreContent();
-	const navItems = [
-		{ name: "Vectors", link: "/search/vectors", new: false },
-		{ name: "Photos", link: "/search/popular-photos", new: false },
-		{ name: "PSD", link: "/search/popular-psd", new: false },
-		{ name: "3D", link: "/popular-3d", new: true },
-		{ name: "Fonts", link: "/search/fonts", new: false },
-		{ name: "Categories", link: null, new: false },
-		{ name: "Collections", link: "/collections", new: false },
-		{ name: "More", link: null, new: false },
-	];
+
+    const [catVisibility, setCatVisibility] = useState(false);
+    const [moreVisibility, setMoreVisibility] = useState(false);
+    const [sideVisibility, setSideVisibility] = useState("");
+    const [arrowDirectionCat, setarrowDirectionCat] = useState("down");
+    const [arrowDirectionMore, setarrowDirectionMore] = useState("down");
+    const [pageName, setPageName] = useState("");
+    const categories = Categories();
+    const moreContent = MoreContent();
+    const navItems = [
+        { name: "Vectors", link: "/search/vectors", new: false },
+        { name: "Photos", link: "/search/popular-photos", new: false },
+        { name: "PSD", link: "/search/popular-psd", new: false },
+        { name: "3D", link: "/3d-models", new: true },
+        { name: "Fonts", link: "/fonts", new: false },
+        { name: "Categories", link: null, new: false },
+        { name: "Collections", link: "/collections", new: false },
+        { name: "More", link: null, new: false },
+    ];
 
 	let navClass = "navbar navbar-expand-lg";
 	let shadowStyle = "";
@@ -145,7 +146,7 @@ const Navbar = (props) => {
 										<Link
 											onClick={toggleSide}
 											className="anchor-rep"
-											to="/popular-3d"
+											to="/3d-models"
 										>
 											3D
 										</Link>
@@ -157,7 +158,7 @@ const Navbar = (props) => {
 										<Link
 											onClick={toggleSide}
 											className="anchor-rep"
-											to="/search/fonts"
+											to="/fonts"
 										>
 											Fonts
 										</Link>
