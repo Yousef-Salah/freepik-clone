@@ -13,14 +13,9 @@ import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
-<<<<<<< HEAD
-import Footer from "./components/Layouts/Footer/Footer";
 import Fonts from './pages/Fonts';
 import FontsFormatGrid from './pages/FontsFormatGrid';
 import Page3D from './pages/Page3D';
-=======
-import Footer from "./components/Common/Footer/Footer";
->>>>>>> main
 
 
 const App = () => {
@@ -46,7 +41,6 @@ const App = () => {
 
         </Routes>
         
-        <Footer/>
       </BrowserRouter>
       
 
