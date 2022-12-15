@@ -39,7 +39,9 @@ const SearchBox = (props) => {
 
   useEffect(() => {
     setCheckedCategory();
-  });
+    if(!props.mainPage) props.dataHandler();
+
+  }, []);
 
   const setCheckedCategory = () => {
     const checkedBoxes = document.querySelectorAll('#item-category input');
@@ -137,7 +139,6 @@ const SearchBox = (props) => {
   const actionHandler = (event) => {
     // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
     event.preventDefault();
-    alert("yousef")
 
     let searchType = document.querySelectorAll("#search-type input");      // Assets or collections
     let itemPriceType = document.querySelectorAll("#item-type input");         // Free or Premium
@@ -169,11 +170,10 @@ const SearchBox = (props) => {
     setCookie("searchInput", JSON.stringify(data), {
       path: "/"
     });
-
-    if(props.mainPage == true) return navigate(`search/${document.getElementById("search-value")?.value}`);
     
-    props.dataHandler();
+    if(!props.mainPage) props.dataHandler();
 
+    else return navigate(`search/${document.getElementById("search-value")?.value}`);
     // (props.mainPage) &&  return navigate(`search/${document.getElementById("search-value")?.value}`);
   
   }

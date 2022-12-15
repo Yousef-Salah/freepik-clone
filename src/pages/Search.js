@@ -13,8 +13,7 @@ const Search = (props) => {
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   
   useEffect(() => {
-    props.page("search");  
-    loadData(); 
+    props.page("search");   
   }, [spinnerTrigger]);
 
   const loadData = () => {
@@ -24,7 +23,7 @@ const Search = (props) => {
     setTimeout(() => {
       document.getElementById("search-results-content").classList.remove('d-none');
       setSpinnerTrigger(false);
-    }, 5000);
+    }, 3000);
   };
 
   return (
