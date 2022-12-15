@@ -1,11 +1,11 @@
 .name {
     position: absolute;
-    top: 5%;
     left:5%;
     transition: top 0.1s ease-in-out !important;
     top:-10%;
     visibility: hidden;
     z-index: -50;
+    justify-content: end;
   }
   .desc-3d{
       visibility: hidden;
@@ -68,10 +68,10 @@
     transition: top 0.1s ease-in-out !important;
 }
 .pinterest{
-    border-radius: 15ch;
+    border-radius: .2ch;
     position: absolute;
-    top: 18%;
-    left:20%;
+    top: 5%;
+    left:80%;
     font-size: 14px;
     font-weight: 100;
     width: 15%;
