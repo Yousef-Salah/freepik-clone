@@ -14,7 +14,7 @@ const FontCard = (props) => {
             <p className='styles-count'>{props.stylesCount} Styles</p>
           </div>
           <p style={{ fontFamily: `${props.font}` }} className={`card-font-title p36 +${props.class}`}>
-            <span className="text-truncate">{props.title}</span>
+            {props.title}
           </p>
         </div>
       </div>

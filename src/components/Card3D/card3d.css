@@ -1,4 +1,4 @@
-.name {
+.name-3d {
     position: absolute;
     left:5%;
     transition: top 0.1s ease-in-out !important;
@@ -18,7 +18,6 @@
     opacity: 100%;
     border-radius:.3ch ;
   }
-
   .card-3d-wrapper{
     position: relative;
     text-align: center;
@@ -33,7 +32,7 @@
     visibility: visible;
     background-position: 100% 100% ;
   }
-  .card-3d-wrapper:hover .name{
+  .card-3d-wrapper:hover .name-3d{
     visibility: visible;
     top:4%;
     visibility: visible;
