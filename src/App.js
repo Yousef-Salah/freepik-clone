@@ -14,11 +14,13 @@ import Login from './pages/Login';
 import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
 //import Promote from './PromoteSiteFeatures/Promote';
+import Footer from "./components/Common/Footer/Footer";
+import NotFound from './components/Common/NotFound/NotFound';
+
 
 
 const App = () => {
 	const [page, setPage] = useState("home");
-
   return (
     <div className="App">
       <BrowserRouter>
