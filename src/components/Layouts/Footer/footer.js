@@ -1,11 +1,7 @@
 
 import React from "react";
 import './footer.css'
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
+
 import{Link} from 'react-router-dom';
 
 const Footer = () => {
