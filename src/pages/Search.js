@@ -13,7 +13,8 @@ const Search = (props) => {
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   
   useEffect(() => {
-    props.page("search");   
+    props.page("search");  
+    loadData(); 
   }, [spinnerTrigger]);
 
   const loadData = () => {

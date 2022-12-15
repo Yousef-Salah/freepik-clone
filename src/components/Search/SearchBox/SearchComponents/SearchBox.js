@@ -10,7 +10,7 @@ import { useCookies } from "react-cookie";
 
 const SearchBox = (props) => {
 
-  const [delteTextIcon, setDelteTextIcon] = useState("d-none");
+  const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
   // const [buttonColor, setButtonColor] = useState(true);   // search button hover bg color blue or not
@@ -20,13 +20,13 @@ const SearchBox = (props) => {
   
   const checkDeleteIconStatus = (event) => {
     if (event.target.value) {
-      setDelteTextIcon("opacity-100");
+      setDeleteTextIcon("opacity-100");
     } else {
-      setDelteTextIcon("opacity-0");
+      setDeleteTextIcon("opacity-0");
       setTimeout(() => {
         if (!event.target.value)
           // in case user is writing while the d-none timeout is running
-          setDelteTextIcon("d-none");
+          setDeleteTextIcon("d-none");
       }, 1300);
     }
   };
@@ -170,10 +170,11 @@ const SearchBox = (props) => {
       path: "/"
     });
 
+    if(props.mainPage == true) return navigate(`search/${document.getElementById("search-value")?.value}`);
+    
     props.dataHandler();
 
     // (props.mainPage) &&  return navigate(`search/${document.getElementById("search-value")?.value}`);
-    if(props.mainPage) return navigate(`search/${document.getElementById("search-value")?.value}`);
   
   }
 
@@ -226,7 +227,7 @@ const SearchBox = (props) => {
           className="d-inline-block position-relative rounded-start"
           id="input-field"
         >
-          <span className={delteTextIcon} onClick={deleteText}>
+          <span className={deleteTextIcon} onClick={deleteText}>
             <i className="fa-solid fa-square-xmark fa-2x "></i>
           </span>
           <input

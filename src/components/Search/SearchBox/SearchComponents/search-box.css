@@ -193,10 +193,10 @@
   background-color: transparent !important;
 }
 
-#search #search-button {
+/* #search #search-button {
   background-color: blue !important;
   outline: 3px solid blue !important;
-}
+} */
 
 .sub-page-search .dropdown-menu,
 .sub-page-search .dropdown-menu *:not(.form-check-input) {

@@ -22,7 +22,7 @@ const SearchContainer = (props) => {
 
   let categoriesSearchComponent = (
     <div className="container-fluid" id="op-search-container">
-      <div className="row">        
+      <div className="row">
         <SearchBox dataHandler={props.dataHandler} mainPage={false} />
       </div>
     </div>
