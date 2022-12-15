@@ -12,12 +12,12 @@ import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import FontsList from '../components/Fonts/FontsList';
 
-const Search = (props) => {
+const Fonts = (props) => {
 
   let dataFilter;
 
   useEffect(() => {
-    props.page("search");
+    props.page("Fonts");
     dataFilter = new DataFilter(cookies.searchInput);
     loadData(10);
   }, [dataFilter])
@@ -37,12 +37,12 @@ const Search = (props) => {
       <>
         <SearchContainer mainPage={false} />
     <div className="search-content">
-      <SponsoredSection />
       <FilterSideBar />
-      <SearchResultHeader title="Free Vectors" />
+      <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
+      <FontsList />
     </div>
       </>
   );
 };
 
-export default Search;
+export default Fonts;

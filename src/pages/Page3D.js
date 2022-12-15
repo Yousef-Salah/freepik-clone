@@ -11,13 +11,15 @@ import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import FontsList from '../components/Fonts/FontsList';
+import Card3D from '../components/Card3D/Card3D';
+import CardLayout from '../components/Card3D/CardLayout';
 
-const Search = (props) => {
+const Fonts = (props) => {
 
   let dataFilter;
 
   useEffect(() => {
-    props.page("search");
+    props.page("Fonts");
     dataFilter = new DataFilter(cookies.searchInput);
     loadData(10);
   }, [dataFilter])
@@ -37,12 +39,12 @@ const Search = (props) => {
       <>
         <SearchContainer mainPage={false} />
     <div className="search-content">
-      <SponsoredSection />
       <FilterSideBar />
-      <SearchResultHeader title="Free Vectors" />
+      <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
+   <CardLayout/>
     </div>
       </>
   );
 };
 
-export default Search;
+export default Fonts;

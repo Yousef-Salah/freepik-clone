@@ -20,7 +20,7 @@ const Navbar = (props) => {
         { name: "Photos", link: "/search/popular-photos", new: false },
         { name: "PSD", link: "/search/popular-psd", new: false },
         { name: "3D", link: "/popular-3d", new: true },
-        { name: "Fonts", link: "/search/fonts", new: false },
+        { name: "Fonts", link: "/fonts", new: false },
         { name: "Categories", link: null, new: false },
         { name: "Collections", link: "/collections", new: false },
         { name: "More", link: null, new: false },
@@ -157,7 +157,7 @@ const Navbar = (props) => {
                                         <Link
                                             onClick={toggleSide}
                                             className="anchor-rep"
-                                            to="/search/fonts"
+                                            to="/fonts"
                                         >
                                             Fonts
                                         </Link>

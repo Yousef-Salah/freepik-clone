@@ -6,14 +6,14 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Search from "./pages/Search";
-
+import Fonts from './pages/Fonts';
+import FontsFormatGrid from './pages/FontsFormatGrid';
+import Page3D from './pages/Page3D';
+import Login from './pages/Login';
 //layouts imports
-
 import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
-import Login from './pages/Login';
 //import Promote from './PromoteSiteFeatures/Promote';
-import Footer from "./components/Common/Footer/Footer";
 
 
 const App = () => {
@@ -33,10 +33,12 @@ const App = () => {
           // <h1>Hello world</h1>
           } />
           <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
+          <Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
+          <Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
+          <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
         </Routes>
         
-        <Footer/>
       </BrowserRouter>
       
 
