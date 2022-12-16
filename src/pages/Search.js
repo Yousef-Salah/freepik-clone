@@ -36,8 +36,6 @@ const Search = (props) => {
         <FilterSideBar />
         <SearchResults titel="Free Vectors" images={data} />
         <Spinner visible={spinnerTrigger} />
-        <SearchResultHeader title="Free Vectors" sort='True' />
-        <SearchResults1 />
       </div>
       <SponsoredSection />
     </>
