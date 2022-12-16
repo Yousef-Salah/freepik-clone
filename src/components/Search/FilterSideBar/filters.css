@@ -70,6 +70,7 @@
   padding-bottom: 1rem !important ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  /* min-height: 600px; */
 }
 
 .mobile{

@@ -12,7 +12,8 @@ const SideBar = () => {
   let sidebar= document.getElementById('sidebarr');
   let tagbar= document.getElementById('tagbar');
   
-  window.addEventListener('scroll',function(){
+  // window.addEventListener('scroll',function(){
+
 
     if(window.pageYOffset >= 390.7272644042969){
       document.getElementById('tagbar').classList.add('fixed-top');
@@ -24,8 +25,8 @@ const SideBar = () => {
       document.getElementById('sidebarr').classList.add('tw-absolute');
       document.getElementById('sidebarr').classList.remove('fixed-top');
     
-    }
-  })
+  //   }
+  // })
 
   const [open, setOpen] = useState(false);
   return (

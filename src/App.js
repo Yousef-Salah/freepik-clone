@@ -17,9 +17,13 @@ import Pricing from './pages/Pricing';
 import NotFound from './components/Common/NotFound/NotFound';
 import Footer from './components/Layouts/Footer/Footer';
 
+// Helper Classes 
+import DataFilter from './Helpers/DataFilter';
+
 
 const App = () => {
 	const [page, setPage] = useState("home");
+  let dataFilter = new DataFilter();
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,8 +31,8 @@ const App = () => {
         <Routes>
           <Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
-          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
-          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
+          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
+          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
           <Route path={'/pricing'}element={
           // <Pricing page={(name)=>{setPage(name)}} />
               <Pricing page={(name)=>{setPage(name)}} />
