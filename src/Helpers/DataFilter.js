@@ -8,6 +8,8 @@ export class DataFilter {
 
   getData(filters) {
 
+    if(filters == undefined) return [];
+
     let filteredData = JSON.parse(JSON.stringify(this.data));
 
     if(filters.category) {
