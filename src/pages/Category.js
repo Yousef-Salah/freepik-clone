@@ -22,17 +22,14 @@ const Category = (props) => {
 
 	return (
 		<>
-			<SearchContainer mainPage={false} />
+     		{/*<SearchContainer mainPage={false} />*/}
 			<CategoryHeader />
 			<CategoryFullList category={urlParams.term} />
 			<CategorySepList category={urlParams.term} />
 			<CategorySection />
 			<RelatedArticles />
 			<JoinSection />
-
 			<ModalTrigger />
-
-
 		</>
 	)
 }

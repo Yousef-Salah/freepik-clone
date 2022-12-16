@@ -13,12 +13,9 @@ import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import FontsList from '../components/Fonts/FontsList';
 import Card3D from '../components/Card3D/Card3D';
 import CardLayout from '../components/Card3D/CardLayout';
-
 const Fonts = (props) => {
-
   let dataFilter;
-
-  useEffect(() => {
+  /*useEffect(() => {
     props.page("Fonts");
     dataFilter = new DataFilter(cookies.searchInput);
     loadData(10);
@@ -32,17 +29,19 @@ const Fonts = (props) => {
       setData(dataFilter.get(10));
     }
 
-    console.log(cookies.searchInput);
+    console.log(cookies.searchInput); 
+  /*}
     // removeCookie("searchInput");
+        */
 
   return (
       <>
-        <SearchContainer mainPage={false} />
-    <div className="search-content">
+      {/*<SearchContainer mainPage={false} />*/}
+      <div className="search-content">
       <FilterSideBar />
       <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
-   <CardLayout/>
-    </div>
+       <CardLayout/>
+  </div>
       </>
   );
 };
