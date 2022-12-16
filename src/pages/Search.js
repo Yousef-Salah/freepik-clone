@@ -39,7 +39,7 @@ const Search = (props) => {
     <div className="search-content">
       <SponsoredSection />
       <FilterSideBar />
-      <SearchResultHeader title="Free Vectors" />
+      <SearchResultHeader title="Free Vectors" sort='True'/>
     </div>
       </>
   );

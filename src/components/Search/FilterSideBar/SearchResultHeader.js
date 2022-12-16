@@ -36,11 +36,11 @@ const SearchResultHeader = (props) => {
       </p>
 
       {/* This is the new code */}
-      {sort && (
-        <div className="dropdown sort" id="dropdown sort">
+      {props.sort && (
+        <div className="dropdown sort" id="dropdown-sort">
           Sort By:
           <button className="btn btn-primary dropdown-toggle sort-by-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-  {dropHeaderr}
+      {dropHeaderr}
   </button>
   <ul className="dropdown-menu sortmenu">
     <li><a className="dropdown-item sortbtn1"  onClick={setPopular} id='popularDropBtn' href="#"> <i class={popular1}></i> Popular</a></li>
