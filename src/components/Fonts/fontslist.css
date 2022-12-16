@@ -1,5 +1,6 @@
 .fonts{
     margin-left:3%;
+    margin-right:3%;
 }
 .fonts-title{
     font-size: 18px;
@@ -16,7 +17,11 @@
    padding-top: 0;
 }
 .fontsizebtns{
-    margin-left: .5%;
+    margin-top: .5%;
+    height: min-content;
+    white-space: nowrap;
+    overflow-x: clip;
+    max-width: 100%;
 }
 .fontsize:hover{
     color:#374957;
@@ -29,26 +34,24 @@
     margin-top: 0px;
 }
 .grid-list{
-    margin-left:90%;
-   border-radius: 50%;
-   border-color: black;
-   font-size: 190%;
-   font-weight: bolder;
+   font-weight: 700;
    color: rgb(165, 183, 198);
-   border-radius: 5ch;
+   border-color:#374957 ;
+   border: 1px ridge  #CFD9E0;
+   border-radius: 0px !important;
+right: 2.8%;
+   font-size: 140%;
+   font-size: 25px;
 }
-.list,.bi-list-ul{
-    padding-right: 6px;
-    border: black;
-    border-radius: 2ch;
+.grid-list-selected{
+       background-color: rgb(227, 233, 237);
+       color:rgb(55, 73, 87);
 }
-.name-count{
-    margin-top:1%;
-    color: black;
+.list:hover,.grid:hover{
+    background-color: rgb(227, 233, 237);
 }
-.styles-count{
-    color:#374957 !important;
-    margin-left: .7%;
+.list,.grid{
+    transition: 0.3s;
 }
 .p24{
     font-size: 24px;
@@ -57,8 +60,6 @@
 .p36{
     font-size: 36px !important;
     
-    margin-bottom: 0%;
-    position: absolute !important;
 }
 .p48{
     font-size: 48px;
@@ -70,25 +71,34 @@
 .font-card{
     margin-bottom: 20px;
     margin-top: 20px;
+    white-space: nowrap;
+    overflow-x: clip;
+    max-width: 100%;
 } 
 .font-card:hover{
     cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+    #font-card-info {
+      font-size: 12px !important;
+    }
+  }
+
 .card-font-title{
     white-space: nowrap;
     overflow-x: clip;
     max-width: 100%;
     
 }
-
 .card-body{
     margin-left: 1%;
 }
 .search{
-    width: 19% !important;
+    width: 350px !important;
    margin-left: 0px !important;
    margin-right: 0px !important;
    padding: 0 .7%;
+   height: 50px;
 }
 .titles{
     display: flex;
@@ -96,43 +106,58 @@
 }
 .font-image{
     width: 12.5%;
+    flex-shrink: 0 !important;
+    max-width: 100% !important;
+}
+@media only screen and (max-width:650px){
+    .font-image{
+        width: 15%;
+    }
 }
 .nextpage{
     background-color: rgb(18 115 235);
     margin-left: 46%;
     margin-top: 2%;
-    margin-bottom: 2%;
-    width: 9%;
-    height: 2%;
-    border-radius: .5ch;
+    margin-bottom: 4%;
+    border-radius: .3ch;
+    overflow: hidden;
+    flex-shrink: 1;
+    padding-left: 1.7%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    padding-right: 1.7%;
+    font-size: 16px;
 }
-
 .img-wrapper {
     position: relative;
     text-align: center;
     color: white;
     width: fit-content;
   }
+  .fontimg{
+    border-radius: .3ch;
+  }
   .font-name {
     position: absolute;
-    bottom: 15%;
+    bottom: 18%;
     left: 2%;
   }
   .desc{
     visibility: hidden;
     position: absolute;
-    bottom: .95%;
+    bottom: 2.1%;
     background: linear-gradient(rgba(8,25,43,0) 40%, rgba(8,25,43,0.85)) ;
     width: 100%;
-    height: 100%;
+    height: 97%;
     background-size:10%;
     opacity: 100%;
+    border-radius:.3ch ;
   }
   .avatar{
     position: absolute;
     bottom: 6%;
-    left: 2%;
-    width: 7%;
+    left: 2.3%;
+    width: 8%;
     border-radius: 5ch;
     border-color: white;
     opacity: 100% !important;
@@ -143,17 +168,53 @@
 }
   .creator-name{
     position: absolute;
-    bottom: 4%;
-    left: 10%;
+    bottom: 6%;
+    left: 12%;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 772px) {
     .img-wrapper:hover .desc{
         visibility: visible;
         background-position: 100% 100% ;
       }
   }
-  
-    
-  
+  @media only screen and(min-width:992px){
+    .avatar{
+        margin-bottom: 10% !important;
+        width: 50% !important;
+    }
+  } 
+  @media only screen and (min-width: 1000px) and (max-width: 1920px){
+   
+    .margin3{
+        margin-top: 3%;
+    }
+    .margin25{
+        margin-top: 2.5%;
+    }
+    .margin15{
+        margin-top: 1.5%;
+    }
+    .margin13{
+        margin-top: 1.3%;
+    }
+   
+  }
+.grid-view{
+    margin-top: 10% !important;
+    margin-top: -48px !important;
+    position: absolute !important;
+    right:2.75%;
+    display: flex;
+  }
+  .cardrow{
+    margin-left: 0px;
+  }
+
+ .fontsgrid{
+    width: 95%;
+ }
+  .gridcard{
+    padding: 0px 5px;
+  }
   
 
