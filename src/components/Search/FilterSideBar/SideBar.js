@@ -9,6 +9,7 @@ import Colorr from "./Color";
 import TagBar from "./TagBar";
 import { SideBarData } from "./SideBarData";
 const SideBar = () => {
+  const [open, setOpen] = useState(false);
   let sidebar= document.getElementById('sidebarr');
   let tagbar= document.getElementById('tagbar');
   
@@ -27,8 +28,6 @@ const SideBar = () => {
     
   //   }
   // })
-
-  const [open, setOpen] = useState(false);
   return (
     <div  id='sidebarr' className={`sidebar flex tw-absolute ${
       open ? "tw-w-64" : "tw-w-0"
@@ -100,6 +99,6 @@ const SideBar = () => {
         </div>
       </div>
   );
-};
+};}
 
 export default SideBar;

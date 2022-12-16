@@ -6,9 +6,8 @@ import { useCookies } from "react-cookie";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
 import DataFilter from "../Helpers/DataFilter";
-import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
-
+import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultHeader";
 
 const Search = (props) => {
 
