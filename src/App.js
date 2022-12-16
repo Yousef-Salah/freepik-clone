@@ -13,6 +13,8 @@ import Login from './pages/Login';
 //layouts imports
 import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
+import Login from './pages/Login';
+//import Enhance from './components/Pricing/PricingSection/Enhance/Enhance';
 //import Promote from './PromoteSiteFeatures/Promote';
 import NotFound from './components/Common/NotFound/NotFound';
 import Footer from './components/Layouts/Footer/Footer';
