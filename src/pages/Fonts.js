@@ -10,15 +10,14 @@ import SearchResults from '../components/Search/SearchResults/SearchResults';
 import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
-import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
+import FontsList from '../components/Fonts/FontsList';
 
-
-const Search = (props) => {
+const Fonts = (props) => {
 
   let dataFilter;
 
   useEffect(() => {
-    props.page("search");
+    props.page("Fonts");
     dataFilter = new DataFilter(cookies.searchInput);
     loadData(10);
   }, [dataFilter])
@@ -36,15 +35,14 @@ const Search = (props) => {
 
   return (
       <>
-      <SearchContainer mainPage={false} />
-      <div className="search-content">
-      <SponsoredSection />
+        <SearchContainer mainPage={false} />
+    <div className="search-content">
       <FilterSideBar />
-      <SearchResultHeader title="Free Vectors" sort='True'/>
-      <SearchResults1 />
+      <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
+      <FontsList />
     </div>
       </>
   );
 };
 
-export default Search;
+export default Fonts;
