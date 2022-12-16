@@ -1,4 +1,3 @@
-
 import React from "react";
 import './footer.css'
 import{Link} from 'react-router-dom';
@@ -63,7 +62,7 @@ const Footer = () => {
 						</div>
 						</div>
 						{/*Footer-button*/}
-						
+
 						<div className="footer-button">
 							<img src="https://freepik.cdnpk.net/img/logos/freepikcompany-footer.svg" alt="Freepik Company" width="191" height="27"></img>
 							<p className="text-xs-center">
