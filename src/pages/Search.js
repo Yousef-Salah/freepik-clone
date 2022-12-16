@@ -34,12 +34,10 @@ const Search = (props) => {
       <SearchContainer dataHandler={loadData} mainPage={false} />
       <div className="search-content">
         <FilterSideBar />
-        <SearchResults titel="Free Vectors" images={data} />
+        <SearchResults images={data} />
         <Spinner visible={spinnerTrigger} />
-        <SearchResultHeader title="Free Vectors" sort='True' />
-        <SearchResults1 />
-      </div>
-      <SponsoredSection />
+        </div>
+       <SponsoredSection />
     </>
 
   );
