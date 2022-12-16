@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
 import DataFilter from "../Helpers/DataFilter";
-import SearchContainer from '../components/Search/SearchBox/SearchContainer';
+import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultHeader";
 import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
 
 
@@ -15,9 +15,9 @@ const Search = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const [data, setData] = useState(props.dataFilter.getData(cookies.searchInput));
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
-  
+
   useEffect(() => {
-    props.page("search");   
+    props.page("search");
   }, [spinnerTrigger]);
 
   const loadData = () => {
@@ -37,8 +37,8 @@ const Search = (props) => {
         <FilterSideBar />
         <SearchResults titel="Free Vectors" images={data} />
         <Spinner visible={spinnerTrigger} />
-        <SearchResultHeader title="Free Vectors" sort='True'/>
-      <SearchResults1 />
+        <SearchResultHeader title="Free Vectors" sort='True' />
+        <SearchResults1 />
       </div>
       <SponsoredSection />
     </>
