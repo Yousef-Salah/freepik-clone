@@ -36,8 +36,8 @@ const Search = (props) => {
         <FilterSideBar />
         <SearchResults images={data} />
         <Spinner visible={spinnerTrigger} />
-        </div>
-       <SponsoredSection />
+      </div>
+      <SponsoredSection />
     </>
 
   );
