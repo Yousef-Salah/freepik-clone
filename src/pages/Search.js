@@ -30,16 +30,15 @@ const Search = (props) => {
   };
 
   return (
-    <>
+    <> 
+    <SponsoredSection />
       <SearchContainer dataHandler={loadData} mainPage={false} />
       <div className="search-content">
         <FilterSideBar />
         <SearchResults images={data} />
         <Spinner visible={spinnerTrigger} />
       </div>
-      <SponsoredSection />
     </>
-
   );
 };
 
