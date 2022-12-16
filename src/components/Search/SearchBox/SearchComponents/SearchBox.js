@@ -10,22 +10,23 @@ import { useCookies } from "react-cookie";
 
 const SearchBox = (props) => {
 
-  const [delteTextIcon, setDelteTextIcon] = useState("d-none");
+  const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
+  // const [buttonColor, setButtonColor] = useState(true);   // search button hover bg color blue or not
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const navigate = useNavigate();
   let data;     // data will be object contains search input and
   
   const checkDeleteIconStatus = (event) => {
     if (event.target.value) {
-      setDelteTextIcon("opacity-100");
+      setDeleteTextIcon("opacity-100");
     } else {
-      setDelteTextIcon("opacity-0");
+      setDeleteTextIcon("opacity-0");
       setTimeout(() => {
         if (!event.target.value)
           // in case user is writing while the d-none timeout is running
-          setDelteTextIcon("d-none");
+          setDeleteTextIcon("d-none");
       }, 1300);
     }
   };
@@ -38,7 +39,9 @@ const SearchBox = (props) => {
 
   useEffect(() => {
     setCheckedCategory();
-  });
+    if(!props.mainPage) props.dataHandler();
+
+  }, []);
 
   const setCheckedCategory = () => {
     const checkedBoxes = document.querySelectorAll('#item-category input');
@@ -137,37 +140,41 @@ const SearchBox = (props) => {
     // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
     event.preventDefault();
 
-    let searchType = document.querySelectorAll("#search-type input");
-    let itemTypes = document.querySelectorAll("#item-type input");
-    let category = document.querySelectorAll("#item-category input");
+    let searchType = document.querySelectorAll("#search-type input");      // Assets or collections
+    let itemPriceType = document.querySelectorAll("#item-type input");         // Free or Premium
+    let category = document.querySelectorAll("#item-category input");      // Photos Vectors PSDs ...
 
     let data = {
       search: document.getElementById("search-value").value,
       searchType: "",            // assets collections
-      itemTypes: "",             // free premium
+      itemPriceType: [],             // free premium
       category: "",
   };
     
-    let type = [].map.call(searchType, (element) => {
-      return (element.checked);
+    let type = [].map.call(searchType, (element) => {   // assets of collections
+      if(element.checked) return element;
     })[0];
 
-    (type) ? data.searchType = type.getAttribute("name") : data.searchType = "assets";
+    (type) ? data.searchType = type.getAttribute("for") : data.searchType = "assets";
 
-    let itemTypesList = [].filter.call(itemTypes, (ele) => (ele.checked) ? ele.getAttribute("name"):  false);
-    data.itemTypes = itemTypesList || ['a', 'b'];
-    data.category = [].filter.call(category, (ele) => ele.checked == true)[0]?.getAttribute("name");
+    [].forEach.call(itemPriceType, (ele) => {
+      if(ele.checked) { 
+        data.itemPriceType.push(ele.getAttribute("name"));
+      }
+    });
     
+    data.category = [].filter.call(category, (ele) => ele.checked == true)[0]?.getAttribute("name");
   
-
     // sessionStorage.setItem("search-value-object", "my name is yousef");
     
     setCookie("searchInput", JSON.stringify(data), {
       path: "/"
     });
+    
+    if(!props.mainPage) props.dataHandler();
 
+    else return navigate(`search/${document.getElementById("search-value")?.value}`);
     // (props.mainPage) &&  return navigate(`search/${document.getElementById("search-value")?.value}`);
-    if(props.mainPage) return navigate(`search/${document.getElementById("search-value")?.value}`);
   
   }
 
@@ -212,7 +219,7 @@ const SearchBox = (props) => {
               <DropDownItem title="Vectors" name="vectors" for="vectors" handler={buttonLabelHandler} />
               <DropDownItem title="Photos" name="photos" for="photos" handler={buttonLabelHandler} />
               <DropDownItem title="PSDs" name="psd" for="psd"handler={buttonLabelHandler}  />
-              <DropDownItem title="Icons" name="icon" for="icon" handler={buttonLabelHandler} />
+              <DropDownItem title="Icons" name="icons" for="icon" handler={buttonLabelHandler} />
             </div>
           </div>
         </div>
@@ -220,7 +227,7 @@ const SearchBox = (props) => {
           className="d-inline-block position-relative rounded-start"
           id="input-field"
         >
-          <span className={delteTextIcon} onClick={deleteText}>
+          <span className={deleteTextIcon} onClick={deleteText}>
             <i className="fa-solid fa-square-xmark fa-2x "></i>
           </span>
           <input
