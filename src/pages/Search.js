@@ -5,6 +5,10 @@ import SearchResults from "../components/Search/SearchResults/SearchResults";
 import { useCookies } from "react-cookie";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
+import DataFilter from "../Helpers/DataFilter";
+import SearchContainer from '../components/Search/SearchBox/SearchContainer';
+import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
+
 
 const Search = (props) => {
 
@@ -33,9 +37,12 @@ const Search = (props) => {
         <FilterSideBar />
         <SearchResults titel="Free Vectors" images={data} />
         <Spinner visible={spinnerTrigger} />
+        <SearchResultHeader title="Free Vectors" sort='True'/>
+      <SearchResults1 />
       </div>
       <SponsoredSection />
     </>
+
   );
 };
 
