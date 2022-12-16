@@ -10,7 +10,8 @@ import SearchResults from '../components/Search/SearchResults/SearchResults';
 import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
-import FontsList from '../components/Fonts/FontsList';
+import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
+
 
 const Search = (props) => {
 
@@ -35,11 +36,12 @@ const Search = (props) => {
 
   return (
       <>
-        <SearchContainer mainPage={false} />
-    <div className="search-content">
+      <SearchContainer mainPage={false} />
+      <div className="search-content">
       <SponsoredSection />
       <FilterSideBar />
       <SearchResultHeader title="Free Vectors" sort='True'/>
+      <SearchResults1 />
     </div>
       </>
   );
