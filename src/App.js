@@ -14,9 +14,8 @@ import Login from './pages/Login';
 import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
 //import Promote from './PromoteSiteFeatures/Promote';
-import Footer from "./components/Common/Footer/Footer";
 import NotFound from './components/Common/NotFound/NotFound';
-
+import Footer from './components/Layouts/Footer/Footer';
 
 
 const App = () => {
@@ -26,6 +25,7 @@ const App = () => {
       <BrowserRouter>
         <Navbar page={page} />
         <Routes>
+          <Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
           <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} />} />
           <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} />} />
@@ -34,21 +34,19 @@ const App = () => {
               <Pricing page={(name)=>{setPage(name)}} />
           // <h1>Hello world</h1>
           } />
-          <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
+          <Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
           <Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
           <Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
           <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
         </Routes>
-        
+        <Footer/>
       </BrowserRouter>
       
-
       {/* <Search /> */}
       {/* <Category /> */}
       {/* <Home /> */}
     </div>
-
 	);
 };
 
