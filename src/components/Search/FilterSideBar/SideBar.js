@@ -13,7 +13,7 @@ const SideBar = () => {
   let sidebar= document.getElementById('sidebarr');
   let tagbar= document.getElementById('tagbar');
   
-  // window.addEventListener('scroll',function(){
+  window.addEventListener('scroll',function(){
 
 
     if(window.pageYOffset >= 390.7272644042969){
@@ -26,8 +26,8 @@ const SideBar = () => {
       document.getElementById('sidebarr').classList.add('tw-absolute');
       document.getElementById('sidebarr').classList.remove('fixed-top');
     
-  //   }
-  // })
+    }
+  })
   return (
     <div  id='sidebarr' className={`sidebar flex tw-absolute ${
       open ? "tw-w-64" : "tw-w-0"
@@ -99,6 +99,6 @@ const SideBar = () => {
         </div>
       </div>
   );
-};}
+};
 
 export default SideBar;
