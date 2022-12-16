@@ -32,13 +32,15 @@ const App = () => {
               <Pricing page={(name)=>{setPage(name)}} />
           // <h1>Hello world</h1>
           } />
-          <Route path={'/login/:term'} element={<Login page={(name) => { setPage(name) }} />} />
+          <Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
 
         </Routes>
         
         <Footer/>
       </BrowserRouter>
+      <BrowserRouter>
       
+      </BrowserRouter>
 
       {/* <Search /> */}
       {/* <Category /> */}

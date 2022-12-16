@@ -1,0 +1,37 @@
+#login #login-btns {
+  display: grid;
+  grid-row: 1fr;
+  row-gap: 20%;
+  grid-column: 1fr;
+  justify-content: center;
+  margin: 5% 0 10%;
+}
+#log-in{
+    margin: 5% 10%;
+    font-weight: bold;
+}
+#login-btn-google,#login-btn-facebook,#login-btn-email {
+  display:inline-flex;
+  justify-content: center;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+}
+#login-icon-google,#login-icon-facebook,#login-icon-email {
+  margin-right: 10px;
+  float: left;
+}
+#addaccount{
+    margin: 15%;
+}
+#addaccount strong{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: rgb(54, 113, 227);
+}
+#login-icon-facebook{
+    color: rgb(54, 113, 227);
+}
