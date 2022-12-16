@@ -10,25 +10,25 @@ import TagBar from "./TagBar";
 import { SideBarData } from "./SideBarData";
 const SideBar = () => {
   const [open, setOpen] = useState(false);
-  let sidebar = document.getElementById('sidebarr');
-  let tagbar = document.getElementById('tagbar');
-
+  let sidebar= document.getElementById('sidebarr');
+  let tagbar= document.getElementById('tagbar');
+  
   // window.addEventListener('scroll',function(){
 
 
-  if (window.pageYOffset >= 390.7272644042969) {
-    document.getElementById('tagbar').classList.add('fixed-top');
-    document.getElementById('sidebarr').classList.remove('tw-absolute');
-    document.getElementById('sidebarr').classList.add('fixed-top');
-  }
-  else {
-    document.getElementById('tagbar').classList.remove('fixed-top');
-    document.getElementById('sidebarr').classList.add('tw-absolute');
-    document.getElementById('sidebarr').classList.remove('fixed-top');
-
-    //   }
-    // })
-    return (
+    if(window.pageYOffset >= 390.7272644042969){
+      document.getElementById('tagbar').classList.add('fixed-top');
+      document.getElementById('sidebarr').classList.remove('tw-absolute');
+      document.getElementById('sidebarr').classList.add('fixed-top');
+    }
+    else {
+      document.getElementById('tagbar').classList.remove('fixed-top');
+      document.getElementById('sidebarr').classList.add('tw-absolute');
+      document.getElementById('sidebarr').classList.remove('fixed-top');
+    
+  //   }
+  // })
+  return (
     <div  id='sidebarr' className={`sidebar flex tw-absolute ${
       open ? "tw-w-64" : "tw-w-0"
     }`}  style={{
@@ -62,7 +62,7 @@ const SideBar = () => {
         >
           <i className="bi bi-sliders tw-absolute tw-top-5 tw-origin-left"></i>
           <h1 className={`tw-text-black tw-absolute tw-top-5 tw-origin-lef tw-left-6 tw-font-medium tw-text-xl`}
-
+>
             Filters
             
           </h1>
@@ -97,7 +97,7 @@ const SideBar = () => {
           } `}/>
 
         </div>
-      </div >
+      </div>
   );
 };}
 
