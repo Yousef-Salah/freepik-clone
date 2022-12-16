@@ -9,12 +9,14 @@ import Colorr from "./Color";
 import TagBar from "./TagBar";
 import { SideBarData } from "./SideBarData";
 const SideBar = () => {
+  const [open, setOpen] = useState(false);
   let sidebar= document.getElementById('sidebarr');
   let tagbar= document.getElementById('tagbar');
   
   window.addEventListener('scroll',function(){
 
-    if(window.pageYOffset >= 272.7272644042969){
+
+    if(window.pageYOffset >= 390.7272644042969){
       document.getElementById('tagbar').classList.add('fixed-top');
       document.getElementById('sidebarr').classList.remove('tw-absolute');
       document.getElementById('sidebarr').classList.add('fixed-top');
@@ -26,12 +28,13 @@ const SideBar = () => {
     
     }
   })
-
-  const [open, setOpen] = useState(false);
   return (
     <div  id='sidebarr' className={`sidebar flex tw-absolute ${
       open ? "tw-w-64" : "tw-w-0"
-    }`}>
+    }`}  style={{
+      // Use the isOpen state to control the transform property
+      transform: !open ? 'translateX(0)' : 'translateX(-100px)',
+    }}>
       <div
         className={`${
           open ? "tw-w-64" : "tw-w-0"
