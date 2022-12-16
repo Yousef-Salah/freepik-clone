@@ -1,0 +1,30 @@
+#discover-collections-section
+{
+padding-bottom: 10%;
+}
+
+
+.discover-collection-title
+{
+display: flex;
+}
+#discover-collection-h1
+{
+    padding-left: 17%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 25px;
+    font-weight:500;
+}
+.Viewall-btn
+{
+    color: blue;
+padding-left: 8%;
+font-weight: 500;
+
+}
+.Viewall-btn i {
+    padding-left: 10px ;
+    font-size: 14px;
+}
+

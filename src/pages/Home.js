@@ -10,6 +10,7 @@ import Promote from '../components/Home/PromoteSiteFeatures/Promote';
 import Wepik from '../components/Home/Wepik/Wepik';
 
 import CreatorCollection from "../components/Home/CreatorCollection/CreatorCollection";
+import DiscoverCollections from '../components/Collections/DiscoverCollection/DiscoverCollections';
 const Home = (props) => {
 
     useEffect(() => {
@@ -23,6 +24,7 @@ const Home = (props) => {
             <Annual />
             <Trending />
             <CreatorCollection/>
+            <DiscoverCollections/>
             <Promote/>
             <JoinSection />
             <Wepik />
