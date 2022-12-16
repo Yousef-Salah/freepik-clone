@@ -14,9 +14,9 @@ const Search = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const [data, setData] = useState(props.dataFilter.getData(cookies.searchInput));
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
-  
+
   useEffect(() => {
-    props.page("search");   
+    props.page("search");
   }, [spinnerTrigger]);
 
   const loadData = () => {
@@ -36,8 +36,8 @@ const Search = (props) => {
         <FilterSideBar />
         <SearchResults titel="Free Vectors" images={data} />
         <Spinner visible={spinnerTrigger} />
-        <SearchResultHeader title="Free Vectors" sort='True'/>
-      <SearchResults1 />
+        <SearchResultHeader title="Free Vectors" sort='True' />
+        <SearchResults1 />
       </div>
       <SponsoredSection />
     </>
