@@ -40,7 +40,6 @@ const App = () => {
         <Footer/>
       </BrowserRouter>
       
-
       {/* <Search /> */}
       {/* <Category /> */}
       {/* <Home /> */}

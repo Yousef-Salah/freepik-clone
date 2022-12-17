@@ -34,10 +34,12 @@
 #Enhance-container{
     margin-left: 10px;
     margin-right: 20px;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 #Enhance-img{
     width: 150px;
-    margin-left:90px ;
+    margin-left:100px ;
     
 }
 /*#EnhanceSymbol{
