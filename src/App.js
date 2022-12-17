@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Navbar page={page} /> */}
+        <Navbar page={page} />
         <Routes>
           <Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
@@ -46,7 +46,7 @@ const App = () => {
           <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
       </BrowserRouter>
       
       {/* <Search /> */}
