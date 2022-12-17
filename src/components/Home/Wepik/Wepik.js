@@ -5,7 +5,7 @@ const Wepik = () => {
     return (
         <div className="wepik-cont" id="wepik">
             <div className="col-6 wepik">
-                <img className="wepik-logo " src="https://freepik.cdnpk.net/img/logos/wepik-colored.svg" />
+                <img className="wepik-logo " src="https://freepik.cdnpk.net/img/logos/wepik-colored.svg" alt="wepik-logo" />
                 <h4 className="wepik-header" >
                     Create beautiful designs online.
                 </h4>
@@ -16,7 +16,7 @@ const Wepik = () => {
             </div>
 
             <div className="col-6 wepik-photo">
-                <img src='wepikPhoto.png' />
+                <img src='wepikPhoto.png'alt="wepik-pho" />
             </div>
         </div>
 
