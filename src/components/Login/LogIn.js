@@ -1,39 +1,43 @@
 import { Link } from "react-router-dom";
+import "./logIn.css"
 
 const LogIn = ({ Login }) => {
   return (
-    <div className="container">
+    <div className="container text-center" id="login">
       <div className="row">
-        <div className="col-sm">
-          <img className="login-img" src={Login.img_url} alt={"image title"} />
-          <p>
+        <nav className="col-6" id="loginphoto">
+          <img className="login-img" src={require('../../assets/images/loginsignup/1.jpeg')} alt={"nature photos"} />
+          <p className="login-imgby">
             Image by
             <Link to={"/home"}>
               <strong>freepik</strong>
             </Link>
           </p>
-        </div>
-        <div className="col-sm" id="login-form">
-          <h2 id="log-in">Log IN</h2>
-          <button id="login-google-btn">
-            <i className="bi bi-google"></i>
+        </nav>
+        <nav className="col-6" id="login-form">
+          <img src={require('../../assets/images/loginsignup/freepiklogo.png')} alt="freepik logo" className="login-freepik"/>
+          <p className="h4" id="log-in">Log in</p>
+          <nav className="row" id="login-btns">
+          <button className="login-btn" id="login-btn-google">
+            <i className="bi bi-google" id="login-icon-google"></i>
             <p>Continue with Google</p>
           </button>
-          <button id="login-facebook-btn">
-            <i className="bi bi-facebook"></i>
+          <button className="login-btn" id="login-btn-facebook">
+            <i className="bi bi-facebook" id="login-icon-facebook"></i>
             <p>Continue with Facebook</p>
           </button>
-          <button id="login-email-btn">
-            <i className="bi bi-envelope"></i>
+          <button className="login-btn" id="login-btn-email">
+            <i className="bi bi-envelope " id="login-icon-email"></i>
             <p>Continue with email</p>
           </button>
-          <p>
+          </nav>
+          <p className="row-flex" id="addaccount">
             Don’t you have an account?
             <Link to={"/"}>
               <strong> Sign up</strong>
             </Link>
           </p>
-        </div>
+        </nav>
       </div>
     </div>
   );
