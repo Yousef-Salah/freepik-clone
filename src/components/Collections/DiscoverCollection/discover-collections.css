@@ -1,9 +1,67 @@
-#discover-collections-section
+.discover-collections-section
 {
 padding-bottom: 10%;
 }
-
-
+.discover-collection-div
+{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+}
+.discover-collection-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.discover-collection-row2
+{
+    width: 275px;;
+}
+.discover-collection-row3
+{
+    width: 275px;;
+}
+#discover-img3
+{
+    height: 354px;
+    object-fit: cover;
+    padding-right: 60px;
+}
+#discover-para
+{
+    margin-left: 30px;
+    padding-top: 10px;
+    font-size: 16px;
+}
+#discover-resources
+{
+    margin-left: 30px;
+    color:rgb(86, 86, 86);
+    font-size: 13px;
+    font-weight: 500;
+}
+#discover-img1
+{
+    margin-left: 30px;
+    border-radius: 10px;
+}
+#discover-img2
+{
+    margin-left: 30px;
+    border-radius: 10px;
+}
+/* .bi-three-dots-vertical::before {
+    content: "\f5d3";
+    padding-top: 13px;  
+    padding-left: 111%;
+    padding-top: 15px;
+} */
+.discover-dropDown
+{
+    margin-left: 110%;
+    margin-top: 5px;
+}
 .discover-collection-title
 {
 display: flex;
