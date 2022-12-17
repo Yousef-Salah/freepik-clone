@@ -1,0 +1,97 @@
+#Signup {
+  max-width: 100%;
+  max-height: 100%;
+}
+.Sign-up-photo {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 0;
+}
+.signup-imgby {
+  color: white;
+  position: absolute;
+  display: block;
+  bottom: 8px;
+  left: 16px;
+}
+.signup-imgby strong {
+    margin-left: 3px;
+}
+.Sign-up-form {
+  align-self: center;
+}
+.signup-freepik {
+  display: inline-flex;
+  justify-content: center;
+  margin: 20% 0 8%;
+  width: 25%;
+}
+#sign-up {
+  margin: 5% 10%;
+  font-weight: bold;
+}
+.signupinputs {
+  display: grid;
+  grid-column: 1fr;
+}
+#signup-btns {
+  display: grid;
+  grid-row: 1fr;
+  row-gap: 20%;
+  grid-column: 1fr;
+  justify-content: center;
+  margin: 5% 0 10%;
+}
+.signup-btn {
+  display: flex;
+  justify-content: center;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+#signup-icon-google,
+#signup-icon-facebook,
+#signup-icon-email {
+  margin-right: 10px;
+}
+#logintoaccount {
+  margin: 15%;
+}
+#logintoaccount strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: rgb(54, 113, 227);
+  margin-left: 3px;
+
+}
+#signup-icon-facebook {
+  color: rgb(54, 113, 227);
+}
+.signupTerms {
+  margin: 20%;
+}
+.Freepiknews {
+  display: flex;
+  padding-top: 10%;
+  margin: 4%;
+}
+.newscheckbox {
+  align-self: flex-start;
+  margin: 2%;
+  text-align: start;
+}
+.freepik-news {
+  text-align: start;
+  justify-content: center;
+}
+.freepik-company{
+    display: inline-flex;
+    justify-content: center;
+    max-width: 40%;
+}
+.freepikcompany{
+    margin-left: 2% ;
+}
