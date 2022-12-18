@@ -20,6 +20,7 @@ import Footer from './components/Layouts/Footer/Footer';
 
 // Helper Classes 
 import DataFilter from './Helpers/DataFilter';
+import Signup from './pages/Signup';
 
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
           // <h1>Hello world</h1>
           } />
           <Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
+          <Route path={'/signup'} element={<Signup page={(name) => { setPage(name) }} />} />
           <Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
           <Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
           <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
