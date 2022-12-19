@@ -3,18 +3,18 @@ import "./logIn.css"
 
 const LogIn = ({ Login }) => {
   return (
-    <div className="container text-center" id="login">
-      <div className="row">
-        <nav className="col-6" id="loginphoto">
+    <div className="container-fluid text-center full-height" id="login">
+      <div className="row" id="log-in-row">
+        <nav className="col-8" id="loginphoto">
           <img className="login-img" src={require('../../assets/images/loginsignup/1.jpeg')} alt={"nature photos"} />
-          <p className="login-imgby">
+          <div className="login-imgby">
             Image by
-            <Link to={"/home"}>
+            <Link to={"/"}>
               <strong>freepik</strong>
             </Link>
-          </p>
+          </div>
         </nav>
-        <nav className="col-6" id="login-form">
+        <nav className="col-4" id="login-form">
           <img src={require('../../assets/images/loginsignup/freepiklogo.png')} alt="freepik logo" className="login-freepik"/>
           <p className="h4" id="log-in">Log in</p>
           <nav className="row" id="login-btns">
@@ -33,10 +33,21 @@ const LogIn = ({ Login }) => {
           </nav>
           <p className="row-flex" id="addaccount">
             Don’t you have an account?
-            <Link to={"/"}>
+            <Link to={"/signup"}>
               <strong> Sign up</strong>
             </Link>
           </p>
+          <nav className="freepik-company">
+            <p className="text-muted">by</p>
+            <Link to={'/'}>
+            <img
+            className="freepikcompany"
+              src={require("../../assets/images/loginsignup/freepik-company.png")}
+              alt="By freepik company"
+            ></img>
+            </Link>
+          </nav>
+
         </nav>
       </div>
     </div>
