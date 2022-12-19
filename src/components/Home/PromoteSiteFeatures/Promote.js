@@ -5,8 +5,8 @@ import './Promote.css';
 const Prosss = (props) => {
     return (
         <div>
-            <div className='Pomote-container'>
-                <div className='row Pomote-content'>
+            <div className='container' id="Pomote-container">
+                <div className='row 'id='Pomote-content'>
                     <div className='col-3 col-md-4  col-xl-12 ' id='symbol'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="bi bi-star" >
                             <path d={props.icon} />

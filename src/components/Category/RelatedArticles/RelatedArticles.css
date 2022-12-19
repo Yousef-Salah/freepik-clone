@@ -1,10 +1,11 @@
 .Related-col{
     /*margin-left: 70px;
     width: 450px;*/
-    width: 30%;
+    width: 100%;
     object-fit: cover;
     border-radius: 10px;
-    margin-left: 45px;
+    display: flex;
+    margin-left: 15px;
 }
 .card-title{
     font-size: large;
@@ -12,5 +13,23 @@
 .CardTitle{
     font-size: 20%;
 }
+.row.related-articles{
+    width: 134%;
+ }
 
-
+ @media screen and (max-width: 1246px){
+    .col-3.related-articles  {
+        width: 37%;
+        
+        
+    }
+    .row.related-articles{
+        width: 124%;
+     }
+    @media screen and (max-width: 640px){
+.col-3.related-articles {
+    width: 76%;
+    
+}
+    }
+    }
