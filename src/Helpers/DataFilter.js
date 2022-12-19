@@ -8,10 +8,8 @@ export class DataFilter {
 
   getData(filters) {
 
-    if(filters == undefined) return [];
-
     let filteredData = JSON.parse(JSON.stringify(this.data));
-
+    console.log(filters)
     if(filters.category) {
       filteredData = filteredData.filter((item) => item.category.toLowerCase().includes(filters.category.toLowerCase()));
     }

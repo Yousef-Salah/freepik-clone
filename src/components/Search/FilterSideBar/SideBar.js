@@ -16,17 +16,17 @@ const SideBar = () => {
   window.addEventListener('scroll',function(){
 
 
-    if(window.pageYOffset >= 390.7272644042969){
-      document.getElementById('tagbar').classList.add('fixed-top');
-      document.getElementById('sidebarr').classList.remove('tw-absolute');
-      document.getElementById('sidebarr').classList.add('fixed-top');
-    }
-    else {
-      document.getElementById('tagbar').classList.remove('fixed-top');
-      document.getElementById('sidebarr').classList.add('tw-absolute');
-      document.getElementById('sidebarr').classList.remove('fixed-top');
+    // if(window.pageYOffset >= 390.7272644042969){
+    //   document.getElementById('tagbar').classList.add('fixed-top');
+    //   document.getElementById('sidebarr').classList.remove('tw-absolute');
+    //   document.getElementById('sidebarr').classList.add('fixed-top');
+    // }
+    // else {
+    //   document.getElementById('tagbar').classList.remove('fixed-top');
+    //   document.getElementById('sidebarr').classList.add('tw-absolute');
+    //   document.getElementById('sidebarr').classList.remove('fixed-top');
     
-    }
+    // }
   })
   return (
     <div  id='sidebarr' className={`sidebar flex tw-absolute ${

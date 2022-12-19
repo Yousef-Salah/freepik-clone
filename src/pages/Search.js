@@ -14,6 +14,7 @@ const Search = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const [data, setData] = useState(props.dataFilter.getData(cookies.searchInput));
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
+  const [contentState, setContentState] = useState(true);
 
   useEffect(() => {
     props.page("search");
@@ -21,11 +22,11 @@ const Search = (props) => {
 
   const loadData = () => {
     setData(props.dataFilter.getData(cookies.searchInput));
-    document.getElementById("search-results-content").classList.add('d-none');
+    setContentState(false);
     setSpinnerTrigger(true);
     setTimeout(() => {
-      document.getElementById("search-results-content").classList.remove('d-none');
       setSpinnerTrigger(false);
+      setContentState(true);
     }, 3000);
   };
 
@@ -34,7 +35,7 @@ const Search = (props) => {
       <SearchContainer dataHandler={loadData} mainPage={false} />
       <div className="search-content">
         <FilterSideBar />
-        <SearchResults images={data} />
+        <SearchResults images={data} visible={contentState} />
         <Spinner visible={spinnerTrigger} />
       </div>
       <SponsoredSection />
