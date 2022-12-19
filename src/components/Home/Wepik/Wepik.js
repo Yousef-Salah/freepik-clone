@@ -18,7 +18,7 @@ const Wepik = () => {
             <div className="col-6 wepik-photo">
                 <img src='wepikPhoto.png'alt="wepik-pho" />
             </div>
-        </div>
+            </div>
 
 
 
