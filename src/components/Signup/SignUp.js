@@ -52,13 +52,12 @@ const SignUp = () => {
                 Company by email.
               </p>
             </nav>
+              <p className="signupTerms text-muted">
+                By continuing, you agree to Freepik Company’s Terms of Use and
+                Privacy Policy.
+              </p>
           </nav>
-          <nav>
-          <p className="signupTerms text-muted">
-            By continuing, you agree to Freepik Company’s Terms of Use and
-            Privacy Policy.
-          </p>
-          </nav>
+
           <p className="row-flex" id="logintoaccount">
             Already have an account
             <Link to={"/login"}>
@@ -67,12 +66,12 @@ const SignUp = () => {
           </p>
           <nav className="freepik-company">
             <p className="text-muted">by</p>
-            <Link to={'/'}>
-            <img
-            className="freepikcompany"
-              src={require("../../assets/images/loginsignup/freepik-company.png")}
-              alt="By freepik company"
-            ></img>
+            <Link to={"/"}>
+              <img
+                className="freepikcompany"
+                src={require("../../assets/images/loginsignup/freepik-company.png")}
+                alt="By freepik company"
+              ></img>
             </Link>
           </nav>
         </nav>
