@@ -17,9 +17,6 @@ const Search = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const [data, setData] = useState(props.dataFilter.getData(cookies.searchInput));
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
-  const push =()=>{
-    alert('oi');
-  }
   useEffect(() => {
     props.page("search");
   }, [spinnerTrigger]);
