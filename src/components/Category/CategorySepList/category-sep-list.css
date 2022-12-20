@@ -1,11 +1,12 @@
 .sep-cat {
   height: fit-content;
   position: relative;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 20px auto 20px auto;
   font-size: 24px;
   font-weight: bold;
   padding: 0 20px;
+  background-color: #e3e9ed;
 }
 
 .inline-f-cat {

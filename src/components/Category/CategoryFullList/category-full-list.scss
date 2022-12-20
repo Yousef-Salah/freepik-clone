@@ -1,5 +1,6 @@
 .cat-full-list{
     width: 100%;
+	background-color: #eff2f2;
 }
 
 .full-list-wrapper{
@@ -83,7 +84,7 @@
 
 @media screen and (min-width: 1025px) {
     .full-list-wrapper{
-		margin-left: 2%;
+		margin-left: 5%;
         width: 92%;
         grid-template-columns: repeat(4, 1fr);
         .cat-card{

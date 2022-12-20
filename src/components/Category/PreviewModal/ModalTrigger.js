@@ -21,7 +21,6 @@ export const ModalTrigger = (props) => {
 
 	const buttonHandler = () => {
 		setDisplay(!display);
-
 		console.log("tring to close the modal");
 	};
 

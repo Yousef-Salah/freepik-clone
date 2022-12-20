@@ -15,7 +15,7 @@ import RelatedArticles from '../components/Category/RelatedArticles/RelatedArtic
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
 const Category = (props) => {
 	const urlParams = useParams();
-	const [catNum, setCatNum] = useState(1);
+	const [cat, setCat] = useState(props.catStyle);
 	useEffect(() => {
 		props.page("category")
 	}, [])
@@ -24,7 +24,7 @@ const Category = (props) => {
 		<>
 			{/*<SearchContainer mainPage={false} />*/}
 			<CategoryHeader />
-			{catNum ? <CategoryFullList category={urlParams.term} />
+			{cat === "style_full" ? <CategoryFullList category={urlParams.term} />
 				:
 				<CategorySepList category={urlParams.term} />}
 

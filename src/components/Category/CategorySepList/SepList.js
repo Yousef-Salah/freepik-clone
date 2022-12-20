@@ -4,7 +4,6 @@ import CategoryCard from '../CategoryCard/CategoryCard'
 import CategoryList from '../../../utils/CateroryList';
 import './category-sep-list.css';
 const SepList = (props) => {
-	const [category, setCategory] = useState(props.category);
 	const [frontVis, setFrontVis] = useState('visible');
 	const [backVis, setBackVis] = useState('hidden');
 	const list = document.getElementById('sep-cat-list');
@@ -26,7 +25,7 @@ const SepList = (props) => {
 	const categoryList = CategoryList();
 	return (
 		<div className="sep-cat">
-			<h3>By color:</h3>
+			<h3>By {props.by}:</h3>
 			<div className='inline-f-cat' id="sep-cat-list">
 				{categoryList.map((item, index) => {
 					return (

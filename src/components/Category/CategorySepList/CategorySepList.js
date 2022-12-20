@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react';
 import SepList from './SepList'
 
-const CategorySepList = () => {
+const CategorySepList = (props) => {
+	const [category, setCategory] = useState(props.category);
+
 	return (
 		<>
-			<SepList />
-			<SepList />
-			<SepList />
-			<SepList />
-			<SepList />
+			<SepList by="color" />
+			<SepList by="event" />
+			<SepList by="topic" />
+			<SepList by="texture/material" />
+			<SepList by="style" />
 		</>
 	)
 }

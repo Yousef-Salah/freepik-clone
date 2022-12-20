@@ -25,35 +25,30 @@ import Signup from './pages/Signup';
 
 const App = () => {
 	const [page, setPage] = useState("home");
-  let dataFilter = new DataFilter();
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar page={page} />
-        <Routes>
-          <Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
-          <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
-          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
-          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
-          <Route path={'/pricing'}element={
-          // <Pricing page={(name)=>{setPage(name)}} />
-              <Pricing page={(name)=>{setPage(name)}} />
-          // <h1>Hello world</h1>
-          } />
-          <Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
-          <Route path={'/signup'} element={<Signup page={(name) => { setPage(name) }} />} />
-          <Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
-          <Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
-          <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
+	let dataFilter = new DataFilter();
+	return (
+		<div className="App">
+			<BrowserRouter>
+				<Navbar page={page} />
+				<Routes>
+					<Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
+					<Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
+					<Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
+					<Route path={'/category/:term'} element={<Category catStyle="style_full" page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
+					<Route path={'/pricing'} element={
+						<Pricing page={(name) => { setPage(name) }} />
+					} />
+					<Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
+					<Route path={'/signup'} element={<Signup page={(name) => { setPage(name) }} />} />
+					<Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
+					<Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
+					<Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
-      
-      {/* <Search /> */}
-      {/* <Category /> */}
-      {/* <Home /> */}
-    </div>
+				</Routes>
+				<Footer page={page} />
+			</BrowserRouter>
+
+		</div>
 	);
 };
 
