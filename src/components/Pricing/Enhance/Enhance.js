@@ -1,14 +1,14 @@
 import './Enhance.css';
-import file from '../Enhance/index.1.jpg';
-import crown from '../Enhance/index.2.jpg';
-import refresh from '../Enhance/index3.jpg';
-import add from '../Enhance/index4.jpg';
+import file from '../../../assets/images/Enhance/index.1.jpg';
+import crown from '../../../assets/images/Enhance/index.2.jpg';
+import refresh from '../../../assets/images/Enhance/index3.jpg';
+import add from '../../../assets/images/Enhance/index4.jpg';
 const Enhance = () => {
   return (
 
     <div>
       <p className='Enhance-title'> Enhance your design process today</p>
-      
+
       <div className="row row-cols-1 row-cols-md-4 " id="Enhance-container">
         <div className="col">
           <div className="enhance">

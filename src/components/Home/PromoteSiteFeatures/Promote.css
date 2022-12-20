@@ -1,122 +1,140 @@
-.caption{
+.caption {
   margin-top: 30px;
   padding-right: 640px;
- font-size: medium;
+  font-size: medium;
 }
-#symbol{
+
+#symbol {
   margin-top: 20px;
   height: 50px;
   width: 50px;
-  background-color:  #94bfee;
+  background-color: #94bfee;
   background-size: 16px;
   padding: 17px;
   font-size: 25px;
   border-radius: 15px;
 }
-.Promote-title{
+
+.Promote-title {
   text-align: center;
   font-size: 30px;
   width: 100%;
 
 }
-.strongTitle{
+
+.strongTitle {
   color: blue;
 }
-.secondTitle{
+
+.secondTitle {
   text-align: center;
   font-size: 20px;
   width: 100%;
 }
-.PromotePhoto{
-  /*width:100%;*/
-  width: 35%;
+
+.PromotePhoto {
+  width: 30%;
   margin-left: 800px;
-  margin-top: -350px;
+  margin-top: -400px;
   margin-right: 10px;
 }
-.iconTitle{
+
+.iconTitle {
   font-size: 25px;
 }
-@media (min-width: 1200px){
-.col-xl-10 {
+
+@media (min-width: 1200px) {
+  .col-xl-10 {
     flex: 0 0 auto;
     width: 94.333333%;
+  }
 }
-}
-#Pomote-content{
+
+#Pomote-content {
   padding-left: 150px
-
 }
 
 
-@media screen and (max-width: 1246px ){
-  .col-3 {
+@media screen and (max-width: 1246px) {
+  #paragraph {
     width: 92%;
   }
-  .caption{
+
+  .caption {
     padding-right: 0px;
   }
 
   @media screen and (max-width:1095px) {
-    .PromotePhoto{
-  
-      display:none;
-      
+    .PromotePhoto {
+
+      display: none;
+
     }
-    .col-3{
-  
+
+    #paragraph {
+
       width: 43%;
     }
-    .caption
-    {
+
+    .caption {
       padding-right: 0px;
     }
 
 
-    @media screen and (max-width: 841px ){
-      .col-3 {
+    @media screen and (max-width: 841px) {
+      #paragraph {
         width: 40%;
       }
+    }
+
+    @media screen and (max-width: 640px) {
+      #paragraph {
+        width: 86%;
       }
-      @media screen and (max-width: 640px ){
-        .col-3 {
-          width: 86%;
-        }
-        #Pomote-content {
-          padding-left: 36px;
+
+      #Pomote-content {
+        padding-left: 36px;
       }
-        }
-        @media screen and (max-width: 369px ){
-          .col-3 {
-            width: 85%;
-          }
-          #Pomote-content {
-            padding-left: 36px;
-        }
-          }
-          @media screen and (max-width: 345px  ){
-            .col-3 {
-              width: 84%;
-            }
-            #Pomote-content {
-              padding-left: 36px;
-          }
-            }
-            @media screen and (max-width: 325px  ){
-              .col-3 {
-                width: 80%;
-              }
-              #Pomote-content {
-                padding-left: 36px;
-            }
-              }
-              @media screen and (max-width: 262px  ){
-                .col-3 {
-                  width: 70%;
-                }
-                #Pomote-content {
-                  padding-left: 36px;
-              }
-                }
+    }
+
+    @media screen and (max-width: 369px) {
+      #paragraph {
+        width: 85%;
+      }
+
+      #Pomote-content {
+        padding-left: 36px;
+      }
+    }
+
+    @media screen and (max-width: 345px) {
+      #paragraph {
+        width: 84%;
+      }
+
+      #Pomote-content {
+        padding-left: 36px;
+      }
+    }
+
+    @media screen and (max-width: 325px) {
+      #paragraph {
+        width: 80%;
+      }
+
+      #Pomote-content {
+        padding-left: 36px;
+      }
+    }
+
+    @media screen and (max-width: 262px) {
+      #paragraph {
+        width: 70%;
+      }
+
+      #Pomote-content {
+        padding-left: 36px;
+      }
+    }
   }
-  }
+}

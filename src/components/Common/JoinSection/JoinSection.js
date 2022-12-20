@@ -1,4 +1,4 @@
-import photo from "./community.png";
+import photo from "../../../assets/images/Join-section/community.png";
 import './join-section.css';
 const im = () => {
     return (

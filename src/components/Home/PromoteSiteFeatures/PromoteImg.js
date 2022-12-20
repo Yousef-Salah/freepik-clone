@@ -1,5 +1,6 @@
 import './Promote.css';
-import photo from "./resources.jpg";
+import photo from "../../../assets/images/Promote/resources.jpg";
+
 const PromoteImg = () =>{
     return(
         <div className="PromotePhoto">

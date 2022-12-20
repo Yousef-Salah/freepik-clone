@@ -13,9 +13,9 @@ import CategoryFullList from '../components/Category/CategoryFullList/CategoryFu
 import { PreviewModal, ModalTrigger } from '../components/Category/PreviewModal/ModalTrigger';
 import RelatedArticles from '../components/Category/RelatedArticles/RelatedArticles';
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
-import chosing from "../components/Category/RelatedArticles/choosing-consistent.jpg";
-import Great from "../components/Category/RelatedArticles/Great-PowerPoint.jpg";
-import Cover from "../components/Category/RelatedArticles/VideoCalls_Cover.jpg";
+import chosing from "../assets/images/Related-Articles/choosing-consistent.jpg";
+import Great from "../assets/images/Related-Articles/Great-PowerPoint.jpg";
+import Cover from "../assets/images/Related-Articles/VideoCalls_Cover.jpg";
 const Category = (props) => {
 	const urlParams = useParams();
 
@@ -25,28 +25,31 @@ const Category = (props) => {
 
 	return (
 		<>
-     		{/*<SearchContainer mainPage={false} />*/}
+			{/*<SearchContainer mainPage={false} />*/}
 			<CategoryHeader />
 			{/* <CategoryFullList category={urlParams.term} /> */}
 			<CategorySepList category={urlParams.term} />
 			<CategorySection />
 			{/* -12 col-md-10 col-lg-6 col-xl-4 col-xxl-3 */}
-		    <div className="row related-articles ">
+			<div className="row related-articles ">
+				<div><p className='Related-articles-title'>
+                <h3>Related articles</h3>
+            </p></div>
 				<div className='col-3 related-articles '>
-			<RelatedArticles title="Video call backgrounds: change your meeting’s look"
-			heder="The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..."
-			image={Cover} />
-			</div>
-			<div className='col-3 related-articles '>
-			<RelatedArticles title="10 tips for a great powerpoint presentation"
-			heder="Today it is not enough for a successful performance just to tell about your idea. People certainly want to see,..."
-			image={Great} />
-			</div>
-			<div className='col-3 related-articles'>
-			<RelatedArticles title="Tips for choosing consistent images for your designs"
-			heder="One of the fundamental elements of graphic design is consistency. No matter what article, design book, workshop,..."
-			image={chosing} />
-			</div>
+					<RelatedArticles title="Video call backgrounds: change your meeting’s look"
+						heder="The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..."
+						image={Cover} />
+				</div>
+				<div className='col-3 related-articles '>
+					<RelatedArticles title="10 tips for a great powerpoint presentation"
+						heder="Today it is not enough for a successful performance just to tell about your idea. People certainly want to see,..."
+						image={Great} />
+				</div>
+				<div className='col-3 related-articles'>
+					<RelatedArticles title="Tips for choosing consistent images for your designs"
+						heder="One of the fundamental elements of graphic design is consistency. No matter what article, design book, workshop,..."
+						image={chosing} />
+				</div>
 			</div>
 			<JoinSection />
 			<ModalTrigger />
