@@ -5,14 +5,11 @@ import SearchResults from "../components/Search/SearchResults/SearchResults";
 import { useCookies } from "react-cookie";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
-import DataFilter from "../Helpers/DataFilter";
-import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
-import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultHeader";
 
 const Search = (props) => {
 
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
-  const [data, setData] = useState(props.dataFilter.getData(cookies.searchInput));
+  const [data, setData] = useState([]);
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   const [contentState, setContentState] = useState(true);
 
@@ -21,18 +18,20 @@ const Search = (props) => {
   }, [spinnerTrigger]);
 
   const loadData = () => {
-    setData(props.dataFilter.getData(cookies.searchInput));
+    setData(props.searchQuery);
     setContentState(false);
     setSpinnerTrigger(true);
     setTimeout(() => {
       setSpinnerTrigger(false);
       setContentState(true);
-    }, 3000);
+    }, 1500);
   };
+
+  console.log(data);
 
   return (
     <>
-      <SearchContainer dataHandler={loadData} mainPage={false} />
+      <SearchContainer dataHandler={loadData} mainPage={false} setSearchQuery={props.setSearchQuery} />
       <div className="search-content">
         <FilterSideBar />
         <SearchResults images={data} visible={contentState} />

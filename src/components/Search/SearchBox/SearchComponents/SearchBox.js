@@ -13,6 +13,46 @@ const SearchBox = (props) => {
   const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
+
+  const [searchInput, setSearchInput] = useState('');
+  const [itemType, setItemType] = useState('Assets');     // Assets or collections
+  const [itemPrice, setItemPrice] = useState([]);   // Free or Premium
+  const [category, setCategory] = useState('');
+
+  const searchInputHanlder = (e) => {
+    if(!e.target.value) {
+      setSearchInput('');
+      setDeleteTextIcon('d-none');
+    } else {
+      setSearchInput(e.target.value);
+      setDeleteTextIcon('');
+    }
+    // checkDeleteIconStatus();
+  }
+
+  const itemTypeHandler = (e) => {
+    e.target.checked = true;
+    setItemType(e.target.getAttribute('title'));
+  }
+
+  const itemPriceHandler = (e) => {
+    // ! Not the perfect one
+
+    const name = e.target.getAttribute('name');
+
+    if(!itemPrice.length) {        // there is no selected input
+      itemPrice.push(name);
+    } 
+    else if(itemPrice.length == 2) {
+      const index = itemPrice.indexOf(name);
+      itemPrice.splice(index,1);
+    } 
+    else {
+      (itemPrice[0] == name) ?  itemPrice.pop() : itemPrice.push(name);
+    }
+    console.log(itemPrice)
+  }
+  
   // const [buttonColor, setButtonColor] = useState(true);   // search button hover bg color blue or not
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const navigate = useNavigate();
@@ -38,7 +78,7 @@ const SearchBox = (props) => {
   // })
 
   useEffect(() => {
-    setCheckedCategory();
+    // setCheckedCategory();
     if(!props.mainPage) props.dataHandler();
 
   }, []);
@@ -140,37 +180,48 @@ const SearchBox = (props) => {
     // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
     event.preventDefault();
 
-    let searchType = document.querySelectorAll("#search-type input");      // Assets or collections
-    let itemPriceType = document.querySelectorAll("#item-type input");         // Free or Premium
-    let category = document.querySelectorAll("#item-category input");      // Photos Vectors PSDs ...
-
     let data = {
-      search: document.getElementById("search-value").value,
-      searchType: "",            // assets collections
-      itemPriceType: [],             // free premium
-      category: "",
-  };
-    
-    let type = [].map.call(searchType, (element) => {   // assets of collections
-      if(element.checked) return element;
-    })[0];
+      search: searchInput,
+      searchType: itemType,                 // assets collections
+      itemPriceType: itemPrice,       // free premium
+      category: category,
+    };
 
-    (type) ? data.searchType = type.getAttribute("for") : data.searchType = "assets";
 
-    [].forEach.call(itemPriceType, (ele) => {
-      if(ele.checked) { 
-        data.itemPriceType.push(ele.getAttribute("name"));
-      }
-    });
+    // let searchType = document.querySelectorAll("#search-type input");      // Assets or collections
+    // let itemPriceType = document.querySelectorAll("#item-type input");         // Free or Premium
+    // let category = document.querySelectorAll("#item-category input");      // Photos Vectors PSDs ...
+
+  //   let data = {
+  //     search: document.getElementById("search-value").value,
+  //     searchType: "",            // assets collections
+  //     itemPriceType: [],             // free premium
+  //     category: "",
+  // };
     
-    data.category = [].filter.call(category, (ele) => ele.checked == true)[0]?.getAttribute("name");
+  //   let type = [].map.call(searchType, (element) => {   // assets of collections
+  //     if(element.checked) return element;
+  //   })[0];
+
+  //   (type) ? data.searchType = type.getAttribute("for") : data.searchType = "assets";
+
+  //   [].forEach.call(itemPriceType, (ele) => {
+  //     if(ele.checked) { 
+  //       data.itemPriceType.push(ele.getAttribute("name"));
+  //     }
+  //   });
+    
+  //   data.category = [].filter.call(category, (ele) => ele.checked == true)[0]?.getAttribute("name");
   
     // sessionStorage.setItem("search-value-object", "my name is yousef");
     
     setCookie("searchInput", JSON.stringify(data), {
       path: "/"
     });
+
+    props.setSearchQuery(data);
     
+    console.log(data)
     if(!props.mainPage) props.dataHandler();
 
     else return navigate(`search/${document.getElementById("search-value")?.value}`);
@@ -193,6 +244,7 @@ const SearchBox = (props) => {
                   name="search-type"
                   for="assets"
                   handler={buttonLabelHandler}
+                  inputHandler={itemTypeHandler}
                 />
                 <DropDownItem
                   type="radio"
@@ -200,11 +252,18 @@ const SearchBox = (props) => {
                   name="search-type"
                   for="collections"
                   handler={buttonLabelHandler}
+                  inputHandler={itemTypeHandler}
                 />
             </div>
               <DropDownItem divider={true} handler={buttonLabelHandler} />
-            <div id="item-type">
-              <DropDownItem title="Free" name="free" for="free" handler={buttonLabelHandler} />
+            <div id="item-price">
+              <DropDownItem 
+                title="Free" 
+                name="free" 
+                for="free" 
+                handler={buttonLabelHandler} 
+                inputHandler={itemPriceHandler}
+              />
               <DropDownItem
                 title="Premium"
                 name="premium"
@@ -212,6 +271,7 @@ const SearchBox = (props) => {
                 iconClasses="fa-solid fa-crown"
                 goldItem={true}
                 handler={buttonLabelHandler}
+                inputHandler={itemPriceHandler}
               />
             </div>
             <div id="item-category">
@@ -233,9 +293,10 @@ const SearchBox = (props) => {
           <input
             type="text"
             id="search-value"
-            onChange={checkDeleteIconStatus}
+            onChange={searchInputHanlder}
             placeholder={inputPlaceHolder}
             className="rounded-start"
+            value={searchInput}
           />
         </div>
         <div id="search-button" className="d-inline-block">

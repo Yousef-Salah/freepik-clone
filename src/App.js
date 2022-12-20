@@ -25,21 +25,27 @@ import Signup from './pages/Signup';
 
 const App = () => {
 	const [page, setPage] = useState("home");
+
+  const [searchQuery,setSearchQuery] = useState({
+      search: '',
+      searchType: "",     // assets collections
+      itemPriceType: [],  // free premium
+      category: "",
+    }
+  );
+
   let dataFilter = new DataFilter();
+
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar page={page} />
         <Routes>
           <Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
-          <Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
-          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
+          <Route path={'/'} element={<Home page={(name) => { setPage(name) }} setSearchQuery={setSearchQuery} />} />
+          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} setSearchQuery={setSearchQuery} searchQuery={searchQuery} />} />
           <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
-          <Route path={'/pricing'}element={
-          // <Pricing page={(name)=>{setPage(name)}} />
-              <Pricing page={(name)=>{setPage(name)}} />
-          // <h1>Hello world</h1>
-          } />
+          <Route path={'/pricing'}element={<Pricing page={(name)=>{setPage(name)}} />} />
           <Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
           <Route path={'/signup'} element={<Signup page={(name) => { setPage(name) }} />} />
           <Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />

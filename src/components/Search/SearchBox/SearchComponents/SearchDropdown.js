@@ -16,6 +16,7 @@ const DropDwonItem = (props) => {
           name={props.name}
           onClick={props.handler}
           title={props.title}
+          onChange={props.inputHandler}
 
           // checked={(props.checked) ? "" : ""}
         />
