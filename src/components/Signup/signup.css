@@ -1,9 +1,14 @@
-.Sign-up-photo {
+#Signup{
+  padding: 0;
+}
+#Sign-up-photo {
   position: relative;
   text-align: center;
   color: white;
+  padding: 0;
+
 }
-.Sign-up-form {
+#Sign-up-form {
   align-self: center;
 }
 #Sign-up-photo .signup-imgby {
@@ -66,6 +71,7 @@
 
 }
 .Freepiknews {
+  font-family: Comic  ;
   display: flex;
   float: left;
   padding-top: 5%;
