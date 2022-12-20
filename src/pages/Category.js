@@ -10,7 +10,7 @@ import CategoryFullList from '../components/Category/CategoryFullList/CategoryFu
 import ModalTrigger from '../components/Category/PreviewModal/ModalTrigger';
 import RelatedArticles from '../components/Category/RelatedArticles/RelatedArticles';
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
-
+import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 const Category = (props) => {
 	//? didnt work with useParams() in useState
 	// const [catParam, setCatParam] = useState(useParams().term);
