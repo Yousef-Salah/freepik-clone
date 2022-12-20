@@ -1,0 +1,75 @@
+#login {
+  height: fit-content;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+#loginphoto {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 0;
+}
+#login-form {
+  align-self: center;
+}
+#loginphoto .login-imgby {
+  position: absolute;
+  display: block;
+  bottom: 8px;
+  left: 16px;
+}
+.login-imgby strong {
+  margin-left: 3px;
+}
+#login #login-btns {
+  display: grid;
+  grid-row: 1fr;
+  row-gap: 20%;
+  grid-column: 1fr;
+  justify-content: center;
+  margin: 5% 0 10%;
+}
+.login-freepik {
+  display: inline-flex;
+  justify-content: center;
+  margin: 20% 0 8%;
+  width: 18%;
+}
+#log-in {
+  margin: 5% 10%;
+  font-weight: bold;
+}
+#login-btn-google,
+#login-btn-facebook,
+#login-btn-email {
+  display: flex;
+  justify-content: center;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+#login-icon-google,
+#login-icon-facebook,
+#login-icon-email {
+  margin-right: 10px;
+  float: left;
+}
+#addaccount {
+  margin: 15%;
+}
+#addaccount strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: rgb(54, 113, 227);
+}
+#login-icon-facebook {
+  color: rgb(54, 113, 227);
+}
+@media screen and(max-width:1400px) {
+  .log-in {
+    width: 100%;
+  }
+}

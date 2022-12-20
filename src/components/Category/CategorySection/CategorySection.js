@@ -3,7 +3,6 @@ import './category-section.css'
 
 
 const CategorySection = (props) => {
-	console.log(props.image)
 	return (
 		<section id="iamge-card-text">
 
@@ -21,6 +20,11 @@ const CategorySection = (props) => {
 					<img src='pnada.jpg' alt="not found" />
 					{/* {props.image} */}
 				</div>
+
+
+
+
+				
 				<div className="leftPhotoCard">
 					<img src={props.leftPhotoCard} alt="not found" />
 				</div>

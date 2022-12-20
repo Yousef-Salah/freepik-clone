@@ -6,7 +6,7 @@ import Annual from "../components/Home/AnnualDiscount/AnnualDiscount";
 import Trending from "../components/Home/TrendingCategories/TrendingCategories";
 import CircleCategoy from "../components/Home/CircleCategoy/CircleCategoy";
 import JoinSection from "../components/Common/JoinSection/JoinSection";
-import Promote from '../components/Home/PromoteSiteFeatures/Promote';
+// import Promote from '../components/Home/PromoteSiteFeatures/Promote';
 import Wepik from '../components/Home/Wepik/Wepik';
 import CreatorCollection from "../components/Home/CreatorCollection/CreatorCollection";
 import DiscoverCollections from "../components/Collections/DiscoverCollection/DiscoverCollections"
@@ -24,7 +24,7 @@ const Home = (props) => {
 
     return (
         <>
-            <SearchContainer mainPage />
+            <SearchContainer mainPage={true} />
             <CircleCategoy />
             <Annual />
             <Trending />
@@ -37,7 +37,11 @@ const Home = (props) => {
                 <CreatorCollection />
                 <ExploreCard />
             </div>
-            <DiscoverCollectionTitle />
+
+
+            {/* on the collection page just for testting */}
+            
+            {/* <DiscoverCollectionTitle />
             <div className='container-fluid cscs'>
                 <div className='row discover-collection-row'>
                     <div className='col-3'>
@@ -50,8 +54,13 @@ const Home = (props) => {
                         <DiscoverCollections />
                     </div>
                 </div>
-            </div>
+            </div> */} 
+
+
+
+
             <Wepik />
+
 
 
         </>
