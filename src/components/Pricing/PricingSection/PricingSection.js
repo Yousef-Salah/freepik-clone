@@ -4,8 +4,8 @@ import './pricing.css';
 const PricingSection = () => {
   return (
     <div className="tab-content" id="pills-tabContent">
-      <div className="tab-pane fade show active" id="pills-individual" role="tabpanel" aria-labelledby="pills-individual-tab"><img src='pricing1.png' alt='pricing-photo1' />
-        <div className='card-sect'>
+      <div className="tab-pane fade show active " id="pills-individual" role="tabpanel" aria-labelledby="pills-individual-tab"><img src='pricing1.png' alt='pricing-photo1' />
+        <div className='card-sect row row-col-lg-2 row-col-1 row-col-sm-1 row-col-md-2'>
           <div className="card card1">
             <div className="card-body">
               <table className="table table-borderless">
@@ -171,7 +171,7 @@ const PricingSection = () => {
       </div>
 
       <div className="tab-pane fade" id="pills-teams" role="tabpanel" aria-labelledby="pills-teams-tab"><img src='pricing2.png' alt='pricing-photo2' />
-        <div className='card-section2'>
+        <div className='card-section2 row row-col-lg-2 row-col-1 row-col-sm-1 row-col-md-2'>
           <div className="card card-teams1">
             <div className="card-body">
               <h5 className="card-title"><strong>Freepik Teams plan</strong> </h5>

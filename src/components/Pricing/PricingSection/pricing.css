@@ -206,3 +206,20 @@
     color: white;
 
 }
+
+@media only screen and (max-width:645px) {
+
+    .card1,
+    .card-teams1,
+    .card-temas2,
+    .card2,
+    .card3 {
+        margin-left: 0px;
+        width: 100%;
+        max-height: 100% !important;
+    }
+
+    .btn-subs {
+        margin-left: 0px;
+    }
+}
