@@ -5,9 +5,7 @@ import { FontsData } from "./FontsData";
 import { Link } from "react-router-dom";
 const FontsList = () => {
   
-  let title = document.getElementsByClassName("card-font-title");
-  let nameCount = document.getElementsByClassName("name-count");
-  let fontCheckInpt = document.getElementById("fontCheck");
+
   let [cardTitle, setTtitle] = useState(
     "The quick brown fox jumps over the lazy dog"
   );
