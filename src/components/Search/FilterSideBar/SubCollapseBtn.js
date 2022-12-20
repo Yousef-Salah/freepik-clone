@@ -29,13 +29,10 @@ const SubCollapseBtn = (props) => {
         </button>
         <div
           class={props.info}
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Tooltip on top"
+          
         ></div>
       </div>
     </div>
   );
 };
-
 export default SubCollapseBtn;
