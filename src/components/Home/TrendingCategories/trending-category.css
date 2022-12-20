@@ -4,6 +4,9 @@
   font-family: "Proxima Nova", Verdana, "Avenir Next";
   position: relative;
   width: 100%;
+  align-self: center;
+  justify-content: center;
+
 }
 #trending-content::marker {
   content: none;
@@ -14,6 +17,8 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+  align-self: center;
+
 
 }
 .trend-zoom .trendimg {
@@ -23,6 +28,7 @@
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
   border-radius: 10px;
+  
 }
 .trend-zoom:hover .trendimg{
   -moz-transform: scale(1.04);
@@ -33,9 +39,11 @@
 .trendtext {
   color: white;
   position: absolute;
-  bottom: 5px;
-  margin: 10px;
-  width:content;
+  bottom: 5%;
+  margin: 5%;
+  font-size: 90%;
+  width:fit-content;
+  
 }
 #trending {
   box-sizing: border-box;
@@ -51,7 +59,7 @@
 }
 #trending #explore-title {
   text-align: center;
-  font-size: 30px;
+  font-size: 90%;
   width: 100%;
 }
 #trending strong {
@@ -59,7 +67,7 @@
 }
 #trending .text-muted {
   text-align: center;
-  font-size: 18px;
+  font-size: 80%;
   width: 100%;
 }
 .item {
@@ -86,6 +94,7 @@
   bottom: 5px;
   margin: 10px;
   width: 100%;
+  font-size: 100%;
 }
 #exploretrend {
   display: grid;
@@ -95,6 +104,16 @@
   grid-template-rows: 1fr 1fr 1fr;
   padding: 10px;
   row-gap: 10px;
+}
+#trending #explore-title {
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+}
+#trending .text-muted {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
 }
 .item {
   font-size: 16px;

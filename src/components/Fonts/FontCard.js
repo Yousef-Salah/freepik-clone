@@ -1,5 +1,4 @@
 import React from 'react'
-//../../assets/images/fonts/ageer.JPG
 const FontCard = (props) => {
   return (
     <div className="font-card">
@@ -9,11 +8,11 @@ const FontCard = (props) => {
       </div>
       <div className="col-md-10 col-sm-10 col-10" id='font-card-info'>
         <div className="card-body">
-          <div className='d-flex name-count margin25'>
+          <div className={`d-flex name-count ${props.margin}`}>
             <p className='creator'>{props.fontName}</p>
             <p className='styles-count'>{props.stylesCount} Styles</p>
           </div>
-          <p style={{ fontFamily: `${props.font}` }} className={`card-font-title p36 +${props.class}`}>
+          <p style={{ fontFamily: `${props.font}` }} className={`card-font-title ${props.fontSize}`}>
             {props.title}
           </p>
         </div>

@@ -61,7 +61,9 @@
 .sidebar-content{
  overflow-y: scroll !important; 
 } */
-
+.tagbar{
+ background-color: black;
+}
 .tag {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 8px;
@@ -79,7 +81,6 @@
   flex-shrink: 0;
   width: fit-content;
   background-color: white;
-  
 }
 
 .tag-class {
