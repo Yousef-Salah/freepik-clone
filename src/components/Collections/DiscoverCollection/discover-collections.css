@@ -1,7 +1,3 @@
-.discover-collections-section
-{
-padding-bottom: 10%;
-}
 .discover-collection-div
 {
     display: flex;
@@ -16,7 +12,6 @@ padding-bottom: 10%;
     flex-direction: row;
     padding-top: 5%;
     padding-bottom: 5%;;
-    margin-left: 50px;
 }
 .discover-collection-row2
 {
@@ -28,9 +23,10 @@ padding-bottom: 10%;
 }
 #discover-img3
 {
-    height: 354px;
+    width: 220px;
+    height: 351px;
     object-fit: cover;
-    padding-right: 60px;
+    padding-left: 40px;
 }
 #discover-para
 {
@@ -54,16 +50,19 @@ padding-bottom: 10%;
 {
     margin-left: 30px;
     border-radius: 10px;
+    height: 200px;
+    width:300px;
+    margin-top: 1%;
+} 
+.bi-three-dots-vertical::before {
+    padding: 0;
 }
-/* .bi-three-dots-vertical::before {
-    content: "\f5d3";
-    padding-top: 13px;  
-    padding-left: 111%;
-    padding-top: 15px;
-} */
+.dropdown-div
+{
+    margin-left: 140px;
+}
 .discover-dropDown
 {
-    margin-left: 65%;
     margin-top: 5px;
 }
 .discover-collection-title
@@ -90,7 +89,7 @@ font-weight: 500;
     font-size: 14px;
 }
 
-@media only screen and (max-width: 1087px) {
+/* @media only screen and (max-width: 1087px) {
     #discover-img1
 {
     margin-left: 30px;
@@ -112,5 +111,5 @@ font-weight: 500;
     padding-right: 60px;
     margin-right: 10px;
 }
-}
+} */
 

@@ -48,7 +48,8 @@
   padding-top: 5%;
   padding-bottom: 5%;
   display: flex;
-  margin-left: 50px;
+  flex-direction: row;
+  margin-left: 20px;
   overflow-x: auto;
 }
 
@@ -62,9 +63,10 @@
 
 }
 
-.creator-collection-div .creator-collection-img {
+.creator-collection-img {
+ 
+  
   width: 290px;
-  object-fit: contain;
   position: relative;
   border-radius: 20px;
 }
@@ -77,13 +79,17 @@
 }
 
 .creator-collection-div:hover .creator-collection-text {
-  padding-bottom: 1%;
+  padding-bottom: 4%;
 }
 
 #resoursess {
   display: none;
-  font-size: small;
-  margin-left: 19%;
+  color: azure;
+  position: absolute;
+  bottom: 15px;
+  padding-left: 30%;
+  text-align: center;
+  font-size: 12px;
 }
 
 .creator-collection-div:hover #resoursess {
@@ -96,38 +102,20 @@
 .creator-collection-text {
   color: white;
   position: absolute;
-  bottom: 5px;
-  margin: 10px;
-  width: content;
-  padding-left: 22%;
+  bottom: 20px;
+  text-align: center;
+  padding-right: 19%;
 }
 
 .creator-collection-img1 {
-  height: 100%;
-  width: 300px;
-  object-fit: contain;
-  -moz-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
   position: absolute;
+  width: 294px;
   rotate: 5deg;
-  width: 290px;
+  /* width: 290px; */
   border-radius: 20px;
 }
 
-/*   
-  @media only screen and (min-width:1400px) {
-    .creator-collection-div{
-      display: flex;
-      justify-content: space-between;
-      box-sizing: border-box;
-    outline: none;
-    position: relative;
-    width: 100%;
-    margin-top: 2%;
-    margin-bottom: 6%;
-    }
-  } */
+
 .discover-collection-div {
   width: 200px;
 }

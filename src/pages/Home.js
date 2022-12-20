@@ -29,32 +29,16 @@ const Home = (props) => {
             <Annual />
             <Trending />
             <CreatorCollectionTitle />
-            <div className='row collection-row'>
-
-                <CreatorCollection />
-                <CreatorCollection />
-                <CreatorCollection />
-                <CreatorCollection />
-                <ExploreCard />
-            </div>
+            
+            <CreatorCollection />
+                
+    
 
 
             {/* on the collection page just for testting */}
-            
-            {/* <DiscoverCollectionTitle />
-            <div className='container-fluid cscs'>
-                <div className='row discover-collection-row'>
-                    <div className='col-3'>
-                        <DiscoverCollections />
-                    </div> <div className='col-3'>
-                        <DiscoverCollections />
-                    </div> <div className='col-3'>
-                        <DiscoverCollections />
-                    </div> <div className='col-3'>
-                        <DiscoverCollections />
-                    </div>
-                </div>
-            </div> */} 
+
+            <DiscoverCollectionTitle />
+            <DiscoverCollections />
 
 
 
