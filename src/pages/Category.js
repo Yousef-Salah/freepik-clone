@@ -15,17 +15,19 @@ import RelatedArticles from '../components/Category/RelatedArticles/RelatedArtic
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
 const Category = (props) => {
 	const urlParams = useParams();
-
+	const [catNum, setCatNum] = useState(1);
 	useEffect(() => {
 		props.page("category")
 	}, [])
 
 	return (
 		<>
-     		{/*<SearchContainer mainPage={false} />*/}
+			{/*<SearchContainer mainPage={false} />*/}
 			<CategoryHeader />
-			<CategoryFullList category={urlParams.term} />
-			<CategorySepList category={urlParams.term} />
+			{catNum ? <CategoryFullList category={urlParams.term} />
+				:
+				<CategorySepList category={urlParams.term} />}
+
 			<CategorySection />
 			<RelatedArticles />
 			<JoinSection />
