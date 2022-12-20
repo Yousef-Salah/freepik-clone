@@ -44,7 +44,7 @@ const Search = (props) => {
 
         <Spinner visible={spinnerTrigger} />
       </div>
-    </div>
+    </>
   );
 };
 
