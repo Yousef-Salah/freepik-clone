@@ -8,6 +8,7 @@ import Spinner from "../components/Search/LoadingSpinner/Spinner";
 import DataFilter from "../Helpers/DataFilter";
 import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
 import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultHeader";
+import SideBar from "../components/Search/SideBar/SideBar";
 
 const Search = (props) => {
 
@@ -34,8 +35,8 @@ const Search = (props) => {
     <SponsoredSection />
       <SearchContainer dataHandler={loadData} mainPage={false} />
       <div className="search-content">
-        <FilterSideBar />
         <SearchResults images={data} />
+        <FilterSideBar/>
         <Spinner visible={spinnerTrigger} />
       </div>
     </>

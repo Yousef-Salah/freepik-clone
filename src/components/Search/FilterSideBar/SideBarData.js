@@ -1,8 +1,7 @@
 import CollapseBtn from "./CollapseBtn";
 import Colorr from "./Color";
-import SideTag from "./SideTag";
-import SideTagWithPic from "./SideTagWithPic";
 import SubCollapseBtn from "./SubCollapseBtn";
+import Tag from "./Tag";
 
 export const SideBarData = [
     {
@@ -16,10 +15,10 @@ export const SideBarData = [
        tags: <div className="collapse" id="categoryCollapse">
        <span className="container-fluid ">
          <div className={`row category-row sidebarrow `}>
-           <SideTag title="Vectors" />
-           <SideTag title="Photos" />
-           <SideTag title="PSD" />
-           <SideTag title="Icons" />
+           <Tag title="Vectors" />
+           <Tag title="Photos" />
+           <Tag title="PSD" />
+           <Tag title="Icons" />
          </div>
        </span>
      </div>
@@ -36,8 +35,8 @@ export const SideBarData = [
        tags:  <div className="collapse" id="licenseCollapse">
        <span className="container-fluid">
          <div className={`row category-row sidebarrow`}>
-           <SideTag title="Free" />
-           <SideTagWithPic title="Premium" pic="bx bx-crown" />
+           <Tag title="Free" />
+           <Tag title="Premium" pic="bx bx-crown" />
          </div>
        </span>
      </div>
@@ -92,10 +91,10 @@ export const SideBarData = [
             <div
               className={`row category-row sidebarrow `}
             >
-              <SideTag title="1" />
-              <SideTag title="2" />
-              <SideTag title="3" />
-              <SideTag title="4+" />
+              <Tag title="1" />
+              <Tag title="2" />
+              <Tag title="3" />
+              <Tag title="4+" />
             </div>
           </span>
         </div>
@@ -111,13 +110,13 @@ export const SideBarData = [
             <div
               className={`row category-row sidebarrow `}
             >
-              <SideTag title="Infant" />
-              <SideTag title="Child" />
-              <SideTag title="Teen" />
-              <SideTag title="Young Adult" />
-              <SideTag title="Adult" />
-              <SideTag title="Senior" />
-              <SideTag title="Elder" />
+              <Tag title='infant'/>
+              <Tag title="Child" />
+              <Tag title="Teen" />
+              <Tag title="Young Adult" />
+              <Tag title="Adult" />
+              <Tag title="Senior" />
+              <Tag title="Elder" />
             </div>
           </span>
         </div>
@@ -133,8 +132,8 @@ export const SideBarData = [
             <div
               className={`row category-row sidebarrow `}
             >
-              <SideTag title="Male" />
-              <SideTag title="Female" />
+              <Tag title="Male" />
+              <Tag title="Female" />
             </div>
           </span>
         </div>
@@ -150,13 +149,13 @@ export const SideBarData = [
             <div
               className={`row category-row sidebarrow `}
             >
-              <SideTag title="South African" />
-              <SideTag title="Middle Eastern" />
-              <SideTag title="East Asian" />
-              <SideTag title="Black" />
-              <SideTag title="Hispanic" />
-              <SideTag title="Indian" />
-              <SideTag title="White" />
+              <Tag title="South African" />
+              <Tag title="Middle Eastern" />
+              <Tag title="East Asian" />
+              <Tag title="Black" />
+              <Tag title="Hispanic" />
+              <Tag title="Indian" />
+              <Tag title="White" />
             </div>
           </span>
         </div>
@@ -175,9 +174,9 @@ export const SideBarData = [
   tags: <div className="collapse" id="fileTypeCollapse">
   <span className="container-fluid ">
     <div className={`row category-row sidebarrow`}>
-      <SideTag title="PSD" />
-      <SideTag title="AI" />
-      <SideTag title="EPS" />
+      <Tag title="PSD" />
+      <Tag title="AI" />
+      <Tag title="EPS" />
     </div>
   </span>
 </div>
@@ -191,16 +190,16 @@ export const SideBarData = [
 tags:<div className="collapse" id="orientationCollapse">
 <span className="container-fluid">
   <div className={`row category-row sidebarrow `}>
-    <SideTagWithPic title="Horizontal" pic="bx bx-rectangle" />
-    <SideTagWithPic
+    <Tag title="Horizontal" pic="bx bx-rectangle" />
+    <Tag
       title="Vertical"
       pic="bx bx-rectangle bx-rotate-90"
     />
-    <SideTagWithPic
+    <Tag
       title="Square"
       pic="bx bx-rectangle bx-rotate-90"
     />
-    <SideTagWithPic title="Panoramic" pic="bx bx-rectangle" />
+    <Tag title="Panoramic" pic="bx bx-rectangle" />
   </div>
 </span>
 </div>
@@ -216,14 +215,14 @@ tags:<div className="collapse" id="orientationCollapse">
 tags:<div className="collapse" id="styleCollapse">
 <span className="container-fluid">
   <div className={`row category-row sidebarrow `}>
-    <SideTag title="Watercolor" />
-    <SideTag title="Flat" />
-    <SideTag title="Cartoon" />
-    <SideTag title="Geometric" />
-    <SideTag title="Gradiant" />
-    <SideTag title="Isometric" />
-    <SideTag title="3D" />
-    <SideTag title="Hand-drawn" />
+    <Tag title="Watercolor" />
+    <Tag title="Flat" />
+    <Tag title="Cartoon" />
+    <Tag title="Geometric" />
+    <Tag title="Gradiant" />
+    <Tag title="Isometric" />
+    <Tag title="3D" />
+    <Tag title="Hand-drawn" />
   </div>
 </span>
 </div>},{
@@ -267,9 +266,9 @@ tags: <div className="collapse" id="editCollapse">
   tags: <div className="collapse" id="puplishDateCollapse">
   <span className="container-fluid">
     <div className={`row category-row sidebarrow `}>
-      <SideTag title="Last 3 months" />
-      <SideTag title="Last 6 months" />
-      <SideTag title="Last year" />
+      <Tag title="Last 3 months" />
+      <Tag title="Last 6 months" />
+      <Tag title="Last year" />
     </div>
   </span>
 </div>

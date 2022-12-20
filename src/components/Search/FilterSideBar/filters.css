@@ -17,6 +17,7 @@
 }
 #sidebarr{
   background-color: white;
+ height: 50px;
 }
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 3px rgb(255, 255, 255);
@@ -54,15 +55,16 @@
   padding: 4px 5px;
 }
 .sidebar {
-  /* margin-left: 0.8%; */
+  margin-left: 2%; 
   height: 100%;
 }
 .sidebar-content {
   overflow-y: visible;
   background-color: white;
   /* padding: 10px; */
-  margin: 0px;
-  min-height: 100%;
+  margin-left: 30%;
+  height: 1hz;
+  z-index: -3;
 }
 .resultheader {
   font-size: 26px;
@@ -72,11 +74,10 @@
   font-weight: bold;
 }
 
-.mobile{
-    white-space: nowrap;
-    overflow-x: scroll;
-    max-width: 100%;
-    }
+.tagbar{
+  width: 50%;
+    background-color: white;
+}
 .sidetag {
   border-radius: 8px;
   padding: 10px;

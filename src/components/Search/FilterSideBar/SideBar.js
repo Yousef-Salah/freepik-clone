@@ -1,9 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./filter-sideBar.css";
-import SideTag from "./SideTag";
 import CollapseBtn from "./CollapseBtn";
-import SideTagWithPic from "./SideTagWithPic";
 import SubCollapseBtn from "./SubCollapseBtn";
 import Colorr from "./Color";
 import TagBar from "./TagBar";
@@ -12,10 +10,7 @@ const SideBar = () => {
   const [open, setOpen] = useState(false);
   let sidebar= document.getElementById('sidebarr');
   let tagbar= document.getElementById('tagbar');
-  
   window.addEventListener('scroll',function(){
-
-
     if(window.pageYOffset >= 390.7272644042969){
       document.getElementById('tagbar').classList.add('fixed-top');
       document.getElementById('sidebarr').classList.remove('tw-absolute');
@@ -83,7 +78,6 @@ const SideBar = () => {
             <div>
               {val.title}
               {val.tags}
-
             </div>
            </li>
         )})

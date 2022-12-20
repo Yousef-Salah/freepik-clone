@@ -5,23 +5,18 @@ import { useState } from 'react';
 const SearchResultHeader = (props) => {
   let [dropHeaderr, setDropHeader] = useState('Popular');
   let [popular1, setPopular1] = useState('bx bx-check ');
-  let [recent1, setRecent1] = useState('unchecked');
-
-  // This is the new code
+  let [recent1, setRecent1] = useState('unchecked');  
   let sort = props.sort || false;
-
   function setPopular() {
     setDropHeader('Popular');
     setPopular1('bx bx-check ');
     setRecent1('unchecked');
   }
-
   function setRecent() {
     setDropHeader('Recent');
     setPopular1('unchecked');
     setRecent1('bx bx-check');
   }
-
   return (
     <>
       <div className='container-fluid d-flex justify-content-center resultheader'>
@@ -34,8 +29,6 @@ const SearchResultHeader = (props) => {
       <p className='search-description'>
         {props.description}
       </p>
-
-      {/* This is the new code */}
       {props.sort && (
         <div className="dropdown sort" id="dropdown-sort">
           Sort By:
