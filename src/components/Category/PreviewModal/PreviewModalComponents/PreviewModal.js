@@ -9,24 +9,16 @@ const PreviewModal = (props) => {
 	const [loaded, setLoaded] = useState(false);
 	const buttonHandler = props.buttonHandler;
 	console.log(props.data);
+
 	const exitButtonHandler = (e) => {
 		e.preventDefault();
 		setVisibility("d-none");
-		document.body.style.overflow = "visible";
 		buttonHandler();
 	}
 
 	useEffect(() => {
-		document.body.style.overflow = "hidden";
-	})
-	useEffect(() => {
 		setLoaded(true);
 	}, [props.data])
-
-	// ! hating web design
-	// * I am not a web designer
-	// + I am not a web designer
-	// ? I am not a web designer		
 
 	return (
 		<div id="preview-modal" className={visibility}>

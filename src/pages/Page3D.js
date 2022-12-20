@@ -14,36 +14,40 @@ import FontsList from '../components/Fonts/FontsList';
 import Card3D from '../components/Card3D/Card3D';
 import CardLayout from '../components/Card3D/CardLayout';
 const Fonts = (props) => {
-  let dataFilter;
-  /*useEffect(() => {
-    props.page("Fonts");
-    dataFilter = new DataFilter(cookies.searchInput);
-    loadData(10);
-  }, [dataFilter])
+	let dataFilter;
+	/*useEffect(() => {
+	  props.page("Fonts");
+	  dataFilter = new DataFilter(cookies.searchInput);
+	  loadData(10);
+	}, [dataFilter])
+  
+	useEffect(() => {
+	  props.page("Fonts");
+	}, [])
+  
+  
+	  const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
+	  const [data, setData] = useState([]);
+  
+	  const loadData = () => {
+		setData(dataFilter.get(10));
+	  }
+  
+	  console.log(cookies.searchInput); 
+	/*}
+	  // removeCookie("searchInput");
+		  */
 
-
-    const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
-    const [data, setData] = useState([]);
-
-    const loadData = () => {
-      setData(dataFilter.get(10));
-    }
-
-    console.log(cookies.searchInput); 
-  /*}
-    // removeCookie("searchInput");
-        */
-
-  return (
-      <>
-      {/*<SearchContainer mainPage={false} />*/}
-      <div className="search-content">
-      <FilterSideBar />
-      <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
-       <CardLayout/>
-  </div>
-      </>
-  );
+	return (
+		<>
+			{/*<SearchContainer mainPage={false} />*/}
+			<div className="search-content">
+				<FilterSideBar />
+				<SearchResultHeader title="Free Fonts" description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!' />
+				<CardLayout />
+			</div>
+		</>
+	);
 };
 
 export default Fonts;

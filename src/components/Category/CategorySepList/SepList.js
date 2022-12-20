@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import CategoryCard from '../CategoryCard/CategoryCard'
 import CategoryList from '../../../utils/CateroryList';
+
 import './category-sep-list.css';
 const SepList = (props) => {
 	const [frontVis, setFrontVis] = useState('visible');
@@ -11,7 +12,6 @@ const SepList = (props) => {
 	const checkScroll = () => {
 		list.scrollLeft < 850 ? setFrontVis('visible') : setFrontVis('hidden');
 		list.scrollLeft >= 10 ? setBackVis('visible') : setBackVis('hidden');
-		console.log(list.offsetWidth, list.scrollLeft)
 	}
 	const scrollList = () => {
 		list.scrollLeft += 300;

@@ -8,14 +8,10 @@
   padding: 0 20px;
   background-color: #e3e9ed;
 }
-
 .inline-f-cat {
   overflow: scroll;
   display: flex;
-  /* width: 94%; */
-  /* max-width: 1200px; */
 }
-
 .btn-arrow {
   width: fit-content;
   padding: 6px 8px;
@@ -35,14 +31,12 @@
   right: 20px;
   border-radius: 3px 0px 0px 3px;
 }
-
 .hidden {
   display: none;
 }
 .visible {
   display: unset;
 }
-
 @media (max-width: 600px) {
   .btn-arrow {
     display: none;
@@ -52,3 +46,6 @@
   }
 }
 
+.cat-sep-lists {
+	background-color: #e3e9ed;
+  }
