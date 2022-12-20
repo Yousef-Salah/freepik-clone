@@ -30,6 +30,9 @@ const Category = (props) => {
 
 	return (
 		<>
+    
+     	<SearchContainer mainPage={false} page='category' setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
+
 			<CategoryHeader />
 			{cat === "style_full" ? <CategoryFullList category={catParam} />
 				:

@@ -16,6 +16,7 @@ const SideBar = (props) => {
   let tagbar= document.getElementById('tagbar');
   
   window.addEventListener('scroll',function(){
+
     if(window.pageYOffset >= 390.7272644042969){
       document.getElementById('tagbar').classList.add('fixed-top');
       document.getElementById('sidebarr').classList.remove('tw-absolute');
@@ -26,7 +27,7 @@ const SideBar = (props) => {
       document.getElementById('sidebarr').classList.add('tw-absolute');
       document.getElementById('sidebarr').classList.remove('fixed-top');
     
-    }
+    // }
   })
   return (
     <div  id='sidebarr' className={`sidebar flex tw-absolute ${
