@@ -18,7 +18,9 @@ const Search = (props) => {
   }, [spinnerTrigger]);
 
   const loadData = () => {
-    setData(props.searchQuery);
+    console.log(props)
+    setData(props.dataFilter.getData(props.searchQuery));
+    console.log(data)
     setContentState(false);
     setSpinnerTrigger(true);
     setTimeout(() => {

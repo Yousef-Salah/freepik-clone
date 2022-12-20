@@ -8,9 +8,9 @@ const SearchResults = (props) => {
     <>
       <SearchResultHeader title="Free Vectores" sort='True' />
       <div id="search-results-content" className={(!props.visible) ?'d-none' : ''}>
-        {/* {props.images.map((item) => {
+        {props.images.map((item) => {
           return <Searchimgcard Cardphoto={item} />;
-        })} */}
+        })}
       </div>
     </>
   );

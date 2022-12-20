@@ -19,6 +19,12 @@ const SearchBox = (props) => {
   const [itemPrice, setItemPrice] = useState([]);   // Free or Premium
   const [category, setCategory] = useState('');
 
+
+  useEffect(() => {
+    // setCheckedCategory();
+    if(!props.mainPage && (props.page != 'category')) props.dataHandler();
+  }, []);
+
   const searchInputHanlder = (e) => {
     if(!e.target.value) {
       setSearchInput('');
@@ -31,32 +37,36 @@ const SearchBox = (props) => {
   }
 
   const itemTypeHandler = (e) => {
-    e.target.checked = true;
-    setItemType(e.target.getAttribute('title'));
+    let itemType = e.target.getAttribute('title');
+    let buttonLabel = buttonLabelGenerator();
+    setItemType(itemType);
+    setButtonLabel(buttonLabel);
   }
 
   const itemPriceHandler = (e) => {
     // ! Not the perfect one
 
     const name = e.target.getAttribute('name');
+    let prices = itemPrice;
 
     if(!itemPrice.length) {        // there is no selected input
-      itemPrice.push(name);
+      prices.push(name);
     } 
     else if(itemPrice.length == 2) {
       const index = itemPrice.indexOf(name);
-      itemPrice.splice(index,1);
+      prices.splice(index,1);
     } 
     else {
-      (itemPrice[0] == name) ?  itemPrice.pop() : itemPrice.push(name);
+      (prices[0] == name) ?  prices.pop() : prices.push(name);
     }
-    console.log(itemPrice)
+
+    setItemPrice(prices);
+    setButtonLabel(buttonLabelGenerator());
   }
   
   // const [buttonColor, setButtonColor] = useState(true);   // search button hover bg color blue or not
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const navigate = useNavigate();
-  let data;     // data will be object contains search input and
   
   const checkDeleteIconStatus = (event) => {
     if (event.target.value) {
@@ -70,163 +80,46 @@ const SearchBox = (props) => {
       }, 1300);
     }
   };
-
-  // useEffect(() => {
-  //   const resultType = document.querySelectorAll('#search-type input');
-  //   const itemTypes = document.querySelectorAll('#item-type input');
-  //   const categories = document.querySelectorAll('#item-category input');
-  // })
-
-  useEffect(() => {
-    // setCheckedCategory();
-    if(!props.mainPage) props.dataHandler();
-
-  }, []);
-
-  const setCheckedCategory = () => {
-    const checkedBoxes = document.querySelectorAll('#item-category input');
-    let previousBox; 
-
-    checkedBoxes.forEach((element) => {
-      if(element.checked == true) {
-        previousBox = element.getAttribute("title");
-      }
-    });
+  
+  const  buttonLabelGenerator = ()=> { 
     
-    checkedBoxes.forEach((element) => {
-      element.addEventListener('click', (event) => {
-        let checkedItem = element.getAttribute("title");  // ! again bad code.
+    let label = '';
 
-        checkedBoxes.forEach((element) => {
-          element.checked = false;
-        });
+    label = itemType;
 
-        checkedBoxes.forEach((element) => {
-          if(element.getAttribute("title") == previousBox) {
-            element.checked = false;
-          }
-          else if(element.getAttribute("title") == checkedItem) {
-            element.checked = true;
-          } else {
-            setInputPlaceHolder("Search all assets")
-          }
-        });
-      });
-    });
+    if(itemPrice.length) label += ', ' +  itemPrice.join(', ');
+
+    if(category) label += ', ' + category;
+
+    return label;
   }
-
-  const  buttonLabelHandler = ()=> {
-    // ! Bad Code !!
-    // ! Fix default selected input issue
-    
-    const resultType = document.querySelectorAll('#search-type input');    // Assets or collections
-    const itemTypes = document.querySelectorAll('#item-type input');       // Free or Premium
-    const categories = document.querySelectorAll('#item-category input');  // Photos Vectors PSDs ...
-   
-    let searchResultOption;
-    resultType.forEach(ele => {
-      if(ele.checked == true) {
-        searchResultOption = ele;
-      }
-    })
-    
-    let searchTypes = [].filter.call(itemTypes, (ele) => ele.checked == true);
-
-    let resultantCategory;
-    
-    
-    categories.forEach(ele => {
-      if(ele.checked == true) {
-        resultantCategory = ele;
-      }
-    })
-    
-    let resultantLabel = ""; 
-
-    if(searchResultOption != null && searchResultOption != undefined) {
-      resultantLabel += (searchResultOption.getAttribute("title"));  
-    } else {
-      resultantLabel += "Assets";
-    }
-
-    if(searchTypes != null && searchTypes != undefined) {
-      searchTypes.forEach(ele => {
-        if(ele.checked == true) {
-          resultantLabel += ', ' + ele.getAttribute("title");
-        }
-      })
-    }
-
-    if(resultantCategory != null && resultantCategory != undefined) {
-      let categoryLabel = resultantCategory.getAttribute("title");
-      resultantLabel +=  ', ' + categoryLabel;
-      setInputPlaceHolder("Search for " + categoryLabel.slice(0, -1));
-
-      if(searchResultOption != null && searchResultOption != undefined) {
-        if(searchResultOption.getAttribute("title") == "Collections");
-        setInputPlaceHolder("Search for " + categoryLabel + " collections" )
-      }
-    }
-    
-    setButtonLabel(resultantLabel);
-  }
-
+  
   const deleteText = (event) => {
     document.getElementById("search-value").value = "";
     checkDeleteIconStatus(event);
   };
 
   const actionHandler = (event) => {
-    // sessionStorage.setItem("search-input", document.getElementById("search-input-container"));
-    event.preventDefault();
 
+    event.preventDefault();
+    
     let data = {
       search: searchInput,
-      searchType: itemType,                 // assets collections
+      searchType: itemType,           // assets collections
       itemPriceType: itemPrice,       // free premium
       category: category,
     };
-
-
-    // let searchType = document.querySelectorAll("#search-type input");      // Assets or collections
-    // let itemPriceType = document.querySelectorAll("#item-type input");         // Free or Premium
-    // let category = document.querySelectorAll("#item-category input");      // Photos Vectors PSDs ...
-
-  //   let data = {
-  //     search: document.getElementById("search-value").value,
-  //     searchType: "",            // assets collections
-  //     itemPriceType: [],             // free premium
-  //     category: "",
-  // };
     
-  //   let type = [].map.call(searchType, (element) => {   // assets of collections
-  //     if(element.checked) return element;
-  //   })[0];
+    props.setSearchQuery(data);
 
-  //   (type) ? data.searchType = type.getAttribute("for") : data.searchType = "assets";
-
-  //   [].forEach.call(itemPriceType, (ele) => {
-  //     if(ele.checked) { 
-  //       data.itemPriceType.push(ele.getAttribute("name"));
-  //     }
-  //   });
-    
-  //   data.category = [].filter.call(category, (ele) => ele.checked == true)[0]?.getAttribute("name");
+    if(!props.mainPage && (props.page != 'category')) {
+      props.dataHandler();
+    } 
+    else return navigate(`${props.page == 'category' ? '../../' : ''}search/${document.getElementById("search-value")?.value}`);
   
-    // sessionStorage.setItem("search-value-object", "my name is yousef");
-    
     setCookie("searchInput", JSON.stringify(data), {
       path: "/"
     });
-
-    props.setSearchQuery(data);
-    
-    console.log(data)
-    if(!props.mainPage) props.dataHandler();
-
-    else return navigate(`search/${document.getElementById("search-value")?.value}`);
-    // (props.mainPage) &&  return navigate(`search/${document.getElementById("search-value")?.value}`);
-  
   }
 
   const mainPage = (!props.mainPage) ? "sub-page-search" : "";
@@ -243,7 +136,6 @@ const SearchBox = (props) => {
                   title="Assets"
                   name="search-type"
                   for="assets"
-                  handler={buttonLabelHandler}
                   inputHandler={itemTypeHandler}
                 />
                 <DropDownItem
@@ -251,17 +143,15 @@ const SearchBox = (props) => {
                   title="Collections"
                   name="search-type"
                   for="collections"
-                  handler={buttonLabelHandler}
                   inputHandler={itemTypeHandler}
                 />
             </div>
-              <DropDownItem divider={true} handler={buttonLabelHandler} />
+              <DropDownItem divider={true} />
             <div id="item-price">
               <DropDownItem 
                 title="Free" 
                 name="free" 
                 for="free" 
-                handler={buttonLabelHandler} 
                 inputHandler={itemPriceHandler}
               />
               <DropDownItem
@@ -270,16 +160,15 @@ const SearchBox = (props) => {
                 for="premium-checkbox"
                 iconClasses="fa-solid fa-crown"
                 goldItem={true}
-                handler={buttonLabelHandler}
                 inputHandler={itemPriceHandler}
               />
             </div>
             <div id="item-category">
-              <DropDownItem divider={true} handler={buttonLabelHandler} />
-              <DropDownItem title="Vectors" name="vectors" for="vectors" handler={buttonLabelHandler} />
-              <DropDownItem title="Photos" name="photos" for="photos" handler={buttonLabelHandler} />
-              <DropDownItem title="PSDs" name="psd" for="psd"handler={buttonLabelHandler}  />
-              <DropDownItem title="Icons" name="icons" for="icon" handler={buttonLabelHandler} />
+              <DropDownItem divider={true}  />
+              <DropDownItem title="Vectors" name="vectors" for="vectors"  />
+              <DropDownItem title="Photos" name="photos" for="photos"  />
+              <DropDownItem title="PSDs" name="psd" for="psd"  />
+              <DropDownItem title="Icons" name="icons" for="icon"  />
             </div>
           </div>
         </div>
