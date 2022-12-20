@@ -3,16 +3,10 @@ import "./preview-modal.css";
 import PreviewModal from "./PreviewModalComponents/PreviewModal";
 
 export const ModalTrigger = (props) => {
-	/**
-	 * Figure our the keywords
-	 * Search about Keywords
-	 * return the component with the actual data
-	 */
-
+	//? This component handles toggling the modal, and passes the data to the modal
+	//? requires the displayStatus from the props to load/unload the modal
 	const [display, setDisplay] = useState(false);
 	const [initialLoad, setInitialLoad] = useState(true);
-	console.log("ModalTrigger ~ display", display)
-	console.log(props.data)
 
 	useEffect(() => {
 		!initialLoad && buttonHandler();
@@ -21,16 +15,12 @@ export const ModalTrigger = (props) => {
 
 	const buttonHandler = () => {
 		setDisplay(!display);
-
-		console.log("tring to close the modal");
 	};
 
 	return display ? (
 		<PreviewModal buttonHandler={buttonHandler} data={props.data} />
 	) : (
-		// <button className="btn btn-primary my-modal-btn" onClick={buttonHandler}>
-		// 	Click to show Modal
-		// </button>
+
 		null
 	);
 };

@@ -3,9 +3,9 @@ import "./logIn.css"
 
 const LogIn = ({ Login }) => {
   return (
-    <div className="container-fluid text-center full-height" id="login">
+    <div className="container-fluid text-center" id="login">
       <div className="row" id="log-in-row">
-        <nav className="col-8" id="loginphoto">
+        <nav className="col-lg-8" id="loginphoto">
           <img className="login-img" src={require('../../assets/images/loginsignup/1.jpeg')} alt={"nature photos"} />
           <div className="login-imgby">
             Image by
@@ -14,7 +14,7 @@ const LogIn = ({ Login }) => {
             </Link>
           </div>
         </nav>
-        <nav className="col-4" id="login-form">
+        <nav className="col-lg-4" id="login-form">
           <img src={require('../../assets/images/loginsignup/freepiklogo.png')} alt="freepik logo" className="login-freepik"/>
           <p className="h4" id="log-in">Log in</p>
           <nav className="row" id="login-btns">
