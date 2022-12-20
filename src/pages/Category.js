@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import CategorySection from '../components/Category/CategorySection/CategorySection';
+import CategorySectionTwo from '../components/Category/CategorySection/CategorySectionTwo';
 import CategoryHeader from '../components/Category/CategoryHeader/CategoryHeader';
 
 import JoinSection from '../components/Common/JoinSection/JoinSection'
@@ -20,6 +21,7 @@ const Category = (props) => {
 		const charCode = char.charCodeAt(0);
 		return charCode >= 'a'.charCodeAt(0) && charCode <= 'c'.charCodeAt(0);
 	}
+
 
 	useEffect(() => {
 		props.page("category")

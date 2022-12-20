@@ -16,7 +16,7 @@
   /* padding-top: 5%; */
   width: 70%;
 }
-#category-header .title {
+#category-header .Catotitle {
   width: 100%;
   font-size: 41px;
   font-weight: bold;
@@ -36,7 +36,7 @@
   #category-header .rightImageCard {
     display: none;
   }
-  #category-header .title {
+  #category-header .Catotitle {
     text-align: center;
     margin-bottom: 40px;
   }
@@ -54,12 +54,16 @@
   #category-header .leftImageCard {
     display: none;
   }
+  #category-header .rightImageCard img {
+    width: 180px;
+    height: 250px;
+  }
 }
 @media only screen and (max-width: 770px) {
   #category-header .rightImageCard {
     display: none;
   }
-  #category-header .title {
+  #category-header .Catotitle {
     text-align: center;
   }
   #category-header .descreption {
