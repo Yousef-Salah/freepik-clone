@@ -14,15 +14,15 @@ const SearchBox = (props) => {
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
 
-  const [searchInput, setSearchInput] = useState('');
-  const [itemType, setItemType] = useState('Assets');     // Assets or collections
-  const [itemPrice, setItemPrice] = useState([]);   // Free or Premium
-  const [category, setCategory] = useState('');
-
+  const [searchInput, setSearchInput] = useState(props.searchQuery.searchInput);
+  const [itemType, setItemType] = useState(props.searchQuery.itemType);     // Assets or collections
+  const [itemPrice, setItemPrice] = useState(props.searchQuery.itemPriceType);   // Free or Premium  // ! fix dataFilter bug
+  const [category, setCategory] = useState(props.searchQuery.category);
 
   useEffect(() => {
-    // setCheckedCategory();
     if(!props.mainPage && (props.page != 'category')) props.dataHandler();
+    setButtonLabel(buttonLabelGenerator());
+    setSearchInputPlaceHolder()
   }, []);
 
   const searchInputHanlder = (e) => {
@@ -37,16 +37,14 @@ const SearchBox = (props) => {
   }
 
   const itemTypeHandler = (e) => {
-    let itemType = e.target.getAttribute('title');
-    let buttonLabel = buttonLabelGenerator();
-    setItemType(itemType);
-    setButtonLabel(buttonLabel);
+    setItemType(e.target.getAttribute('title'));
+    setButtonLabel(buttonLabelGenerator());
   }
 
   const itemPriceHandler = (e) => {
     // ! Not the perfect one
 
-    const name = e.target.getAttribute('name');
+    const name = e.target.getAttribute('title');
     let prices = itemPrice;
 
     if(!itemPrice.length) {        // there is no selected input
@@ -62,6 +60,26 @@ const SearchBox = (props) => {
 
     setItemPrice(prices);
     setButtonLabel(buttonLabelGenerator());
+  }
+
+  const itemCategoryHandler = (e) => {
+    let value = e.target.getAttribute('title');
+
+    if(value === category) setCategory('');
+    else setCategory(value);
+
+    setButtonLabel(buttonLabelGenerator());
+  }
+
+  const setSearchInputPlaceHolder = () => {
+    let result = category;
+
+    result += " " + itemType;
+
+    if(category) result = "Search for " + result;
+    else result = "Search for All " + result;
+
+    setInputPlaceHolder(result);
   }
   
   // const [buttonColor, setButtonColor] = useState(true);   // search button hover bg color blue or not
@@ -90,7 +108,7 @@ const SearchBox = (props) => {
     if(itemPrice.length) label += ', ' +  itemPrice.join(', ');
 
     if(category) label += ', ' + category;
-
+    
     return label;
   }
   
@@ -99,13 +117,15 @@ const SearchBox = (props) => {
     checkDeleteIconStatus(event);
   };
 
-  const actionHandler = (event) => {
+  const submitActionHandler = (event) => {
 
     event.preventDefault();
+
+    if(event.target.value == '') return;
     
     let data = {
-      search: searchInput,
-      searchType: itemType,           // assets collections
+      searchInput: searchInput,
+      itemType: itemType,           // assets collections
       itemPriceType: itemPrice,       // free premium
       category: category,
     };
@@ -126,7 +146,7 @@ const SearchBox = (props) => {
 
   return (
     <div className={mainPage} id="search-input-container">
-      <form id="search" className="h-100 rounded" onSubmit={actionHandler}>
+      <form id="search" className="h-100 rounded" onSubmit={submitActionHandler}>
         <div className="dropdown d-inline-block rounded-start">
         <DropDownButton buttonLabel={buttonLabel} />
           <div className="dropdown-menu" id="search-filter-items">
@@ -137,6 +157,7 @@ const SearchBox = (props) => {
                   name="search-type"
                   for="assets"
                   inputHandler={itemTypeHandler}
+                  value={itemType}
                 />
                 <DropDownItem
                   type="radio"
@@ -144,6 +165,7 @@ const SearchBox = (props) => {
                   name="search-type"
                   for="collections"
                   inputHandler={itemTypeHandler}
+                  value={itemType}
                 />
             </div>
               <DropDownItem divider={true} />
@@ -153,6 +175,7 @@ const SearchBox = (props) => {
                 name="free" 
                 for="free" 
                 inputHandler={itemPriceHandler}
+                value={itemPrice.includes("Free") ? "Free" : ""}
               />
               <DropDownItem
                 title="Premium"
@@ -161,14 +184,15 @@ const SearchBox = (props) => {
                 iconClasses="fa-solid fa-crown"
                 goldItem={true}
                 inputHandler={itemPriceHandler}
+                value={itemPrice.includes("Premium") ? "Premium" : ""}
               />
             </div>
             <div id="item-category">
-              <DropDownItem divider={true}  />
-              <DropDownItem title="Vectors" name="vectors" for="vectors"  />
-              <DropDownItem title="Photos" name="photos" for="photos"  />
-              <DropDownItem title="PSDs" name="psd" for="psd"  />
-              <DropDownItem title="Icons" name="icons" for="icon"  />
+              <DropDownItem divider={true}  single/>
+              <DropDownItem title="Vectors" name="vectors" for="vectors" inputHandler={itemCategoryHandler} category={category} single />
+              <DropDownItem title="Photos" name="photos" for="photos" inputHandler={itemCategoryHandler} category={category} single />
+              <DropDownItem title="PSDs" name="psd" for="psd" inputHandler={itemCategoryHandler} category={category} single />
+              <DropDownItem title="Icons" name="icons" for="icon" inputHandler={itemCategoryHandler} category={category} single />
             </div>
           </div>
         </div>

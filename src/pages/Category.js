@@ -22,7 +22,7 @@ const Category = (props) => {
 
 	return (
 		<>
-     	<SearchContainer mainPage={false} page='category' setSearchQuery={props.setSearchQuery} />
+     	<SearchContainer mainPage={false} page='category' setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
 			<CategoryHeader />
 			<CategoryFullList category={urlParams.term} />
 			<CategorySepList category={urlParams.term} />

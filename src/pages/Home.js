@@ -18,7 +18,7 @@ const Home = (props) => {
 
     return (
         <>
-            <SearchContainer mainPage={true} setSearchQuery={props.setSearchQuery} />
+            <SearchContainer mainPage={true} setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
             <CircleCategoy />
             <Annual />
             <Trending />

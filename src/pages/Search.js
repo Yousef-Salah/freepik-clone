@@ -15,12 +15,11 @@ const Search = (props) => {
 
   useEffect(() => {
     props.page("search");
+    console.log(props.searchQuery)
   }, [spinnerTrigger]);
 
   const loadData = () => {
-    console.log(props)
     setData(props.dataFilter.getData(props.searchQuery));
-    console.log(data)
     setContentState(false);
     setSpinnerTrigger(true);
     setTimeout(() => {
@@ -29,11 +28,9 @@ const Search = (props) => {
     }, 1500);
   };
 
-  console.log(data);
-
   return (
     <>
-      <SearchContainer dataHandler={loadData} mainPage={false} setSearchQuery={props.setSearchQuery} />
+      <SearchContainer dataHandler={loadData} mainPage={false} setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
       <div className="search-content">
         <FilterSideBar />
         <SearchResults images={data} visible={contentState} />
