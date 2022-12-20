@@ -1,6 +1,7 @@
 import React from 'react'
 // rafce
 import './pricing.css';
+import { Link } from 'react-router-dom';
 const PricingSection = () => {
   return (
     <div className="tab-content" id="pills-tabContent">
@@ -154,7 +155,7 @@ const PricingSection = () => {
                   <strong className='font-strong'>9 EUR*</strong> <span className="color-textcard">/month</span>
                   <strong>108 EUR*</strong><span className="color-textcard">every</span> <strong>12</strong> <span className="color-textcard">months <br></br>* VAT and local taxes may apply</span>
                 </p>
-                <a href="#" class="btn btn-primary btn-subs">Subscribe now</a>
+                <Link href="#" className="btn btn-primary btn-subs">Subscribe now</Link>
               </div>
             </div>
 
@@ -162,7 +163,7 @@ const PricingSection = () => {
               <div className="card-body">
                 <h5 className="card-title"><strong className='font-strong'> 1 MONTH</strong> </h5>
                 <p className="card-text"><strong className='font-strong'>15 EUR*</strong><span className="color-textcard">/month</span> <strong>15 EUR*</strong> <span className="color-textcard"> every month <br></br>* VAT and local taxes may apply </span></p>
-                <a href="#" class="btn btn-primary btn-subs">Subscribe now</a>
+                <Link className="btn btn-primary btn-subs">Subscribe now</Link>
 
               </div>
             </div>
@@ -223,7 +224,7 @@ const PricingSection = () => {
               </div>
 
               <div className='btn-team'>
-                <a href="#" className="btn btn-primary">Create your Teams plan</a>
+                <Link href="#" className="btn btn-primary">Create your Teams plan</Link>
               </div>
             </div>
           </div>
