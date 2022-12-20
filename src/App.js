@@ -34,7 +34,7 @@ const App = () => {
 					<Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
 					<Route path={'/'} element={<Home page={(name) => { setPage(name) }} />} />
 					<Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
-					<Route path={'/category/:term'} element={<Category catStyle="style_full" page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
+					<Route path={'/category/:term'} element={<Category catStyle="style_sep" page={(name) => { setPage(name) }} dataFilter={dataFilter} />} />
 					<Route path={'/pricing'} element={
 						<Pricing page={(name) => { setPage(name) }} />
 					} />

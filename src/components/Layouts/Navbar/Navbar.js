@@ -44,8 +44,6 @@ const Navbar = (props) => {
 		shadowStyle = " nav-2-props";
 	}
 
-	// console.log("Navbar ~ pageName", pageName);
-	// console.log(catVisibility);
 	const toggleAllOff = () => {
 		setCatVisibility(false);
 		setMoreVisibility(false);

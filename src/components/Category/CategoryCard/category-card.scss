@@ -10,15 +10,9 @@
 	padding: 3px;
     width: 250px;
 	height: 140px;
-
     float: left;
     .cat-card-wrapper{
         position: relative;
-		
-        // margin-left: auto;
-        // margin-right: auto;
-        // width: 250px;
-		// height: 130px;
 		margin-right: 20px;
     }
     a, .card-link{
@@ -33,7 +27,6 @@
         object-fit: cover;
     }
     h5{
-        // width: 95%;
         height: fit-content;
 		top: 3em;
 		bottom: 0;
@@ -61,7 +54,5 @@
 	}
 	.cat-card img{
 	  height: 80px;
-  
 	}
-  
   }

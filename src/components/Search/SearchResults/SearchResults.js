@@ -13,17 +13,13 @@ const SearchResults = (props) => {
 
 	useEffect(() => {
 		setLoaded(true);
-		console.log("lol")
 	}, [props.images])
 
 	const toggleModal = () => {
 		setModalDisplay(!modalDisplay);
-		console.log("changed!")
-		console.log(modalDisplay);
 	}
 
 	const modalHandler = (item) => {
-		console.log("modalHandler");
 		setModalData(item)
 		toggleModal();
 	}
