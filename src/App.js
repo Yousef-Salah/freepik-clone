@@ -44,7 +44,7 @@ const App = () => {
           <Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} setSearchQuery={setSearchQuery} searchQuery={searchQuery} />} />
           <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} setSearchQuery={setSearchQuery} searchQuery={searchQuery} />} />
-          <Route path={'/category/:term'} element={<Category page={(name) => { setPage(name) }} dataFilter={dataFilter} setSearchQuery={setSearchQuery} searchQuery={searchQuery} />} />
+          <Route path={'/category/:term'} element={<Category catStyle="style_sep" page={(name) => { setPage(name) }} dataFilter={dataFilter} setSearchQuery={setSearchQuery} searchQuery={searchQuery} />} />
           <Route path={'/pricing'}element={<Pricing page={(name)=>{setPage(name)}} />} />
           <Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
           <Route path={'/signup'} element={<Signup page={(name) => { setPage(name) }} />} />
@@ -56,9 +56,6 @@ const App = () => {
         <Footer/>
       </BrowserRouter>
       
-      {/* <Search /> */}
-      {/* <Category /> */}
-      {/* <Home /> */}
     </div>
 	);
 };

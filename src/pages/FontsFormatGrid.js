@@ -16,7 +16,7 @@ import FontsList from '../components/Fonts/FontsList';
 const FontsFormatGrid = (props) => {
 
     let dataFilter;
-
+/*
     useEffect(() => {
       props.page("Fonts");
       dataFilter = new DataFilter(cookies.searchInput);
@@ -33,10 +33,10 @@ const FontsFormatGrid = (props) => {
   
       console.log(cookies.searchInput);
       // removeCookie("searchInput");
-  
+  */
     return (
         <>
-          <SearchContainer mainPage={false} />
+          {/*<SearchContainer mainPage={false} />*/}
       <div className="search-content">
         <FilterSideBar />
         <SearchResultHeader title="Free Fonts" description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>

@@ -8,8 +8,14 @@ import CircleCategoy from "../components/Home/CircleCategoy/CircleCategoy";
 import JoinSection from "../components/Common/JoinSection/JoinSection";
 // import Promote from '../components/Home/PromoteSiteFeatures/Promote';
 import Wepik from '../components/Home/Wepik/Wepik';
-
 import CreatorCollection from "../components/Home/CreatorCollection/CreatorCollection";
+import DiscoverCollections from "../components/Collections/DiscoverCollection/DiscoverCollections"
+import DiscoverCollectionTitle from '../components/Collections/DiscoverCollection/DiscoverCollectionsTitle';
+import CreatorCollectionTitle from '../components/Home/CreatorCollection/CreatorCollectionTitle';
+import ExploreCard from '../components/Home/CreatorCollection/ExploreCard';
+
+
+
 const Home = (props) => {
 
     useEffect(() => {
@@ -22,10 +28,23 @@ const Home = (props) => {
             <CircleCategoy />
             <Annual />
             <Trending />
-            <CreatorCollection/>
-            {/* <Promote/> */}
-            <JoinSection />
+            <CreatorCollectionTitle />
+            
+            <CreatorCollection />
+                
+    
+
+
+            {/* on the collection page just for testting */}
+{/* 
+            <DiscoverCollectionTitle />
+            <DiscoverCollections /> */}
+
+
+
+
             <Wepik />
+
 
 
         </>

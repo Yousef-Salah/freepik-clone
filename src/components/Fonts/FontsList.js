@@ -4,16 +4,14 @@ import "./fontslist.css";
 import { FontsData } from "./FontsData";
 import { Link } from "react-router-dom";
 const FontsList = () => {
-  let btn1 = document.getElementById("btn1");
-  let btn2 = document.getElementById("btn2");
-  let btn3 = document.getElementById("btn3");
-  let btn4 = document.getElementById("btn4");
-  let title = document.getElementsByClassName("card-font-title");
-  let nameCount = document.getElementsByClassName("name-count");
-  let fontCheckInpt = document.getElementById("fontCheck");
+  
+
   let [cardTitle, setTtitle] = useState(
     "The quick brown fox jumps over the lazy dog"
   );
+  const [selected,setSelected]=useState({btn1Class:'',btn2Class:'size-selected',btn3Class:'',btn4Class:''});
+  const sizes={btn1Size:['p24','margin3'],btn2Size:['p36','margin25'],btn3Size:['p48','margin15'],btn4Size:['p72','margin15']};
+  const [size,setSize]=useState(['p36','margin25']);
   cardTitle = cardTitle
     ? cardTitle
     : "The quick brown fox jumps over the lazy dog";
@@ -24,67 +22,32 @@ const FontsList = () => {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-
   function shuffle() {
     window.scrollTo(0, 0);
-    button2Click();
     const newShuffledArray = [...shuffled];
     shuffleArray(newShuffledArray);
     setShuffle(newShuffledArray);
-    console.log(newShuffledArray);
   }
-
-  function fontCheck() {
-    cardTitle = fontCheckInpt.value;
+  function fontCheck(e) {
+    cardTitle = e.target.value;
     setTtitle(cardTitle);
-  }
-  function clear() {
-    btn1.classList.remove("size-selected");
-    btn2.classList.remove("size-selected");
-    btn3.classList.remove("size-selected");
-    btn4.classList.remove("size-selected");
-    for (let i = 0; i < title.length; i++) {
-      title[i].classList.remove("p36");
-      title[i].classList.remove("p24");
-      title[i].classList.remove("p48");
-      title[i].classList.remove("p72");
-      nameCount[i].classList.remove("margin3");
-      nameCount[i].classList.remove("margin25");
-      nameCount[i].classList.remove("margin15");
-      nameCount[i].classList.remove("margin13");
-    }
-  }
-  function button1Click() {
-    clear();
-    btn1.classList.add("size-selected");
-    for (let i = 0; i < title.length; i++) {
-      title[i].classList.add("p24");
-      nameCount[i].classList.add("margin3");
-    }
-  }
-  function button2Click() {
-    clear();
-    btn2.classList.add("size-selected");
-    for (let i = 0; i < title.length; i++) {
-      title[i].classList.add("p36");
-      nameCount[i].classList.add("margin25");
-    }
-  }
-  function button3Click() {
-    clear();
-    btn3.classList.add("size-selected");
-    for (let i = 0; i < title.length; i++) {
-      title[i].classList.add("p48");
-      nameCount[i].classList.add("margin15");
-    }
-  }
-  function button4Click() {
-    clear();
-    btn4.classList.add("size-selected");
-    for (let i = 0; i < title.length; i++) {
-      title[i].classList.add("p72");
-      nameCount[i].classList.add("margin13");
-    }
+  }  
+  function buttonClick(e) {
+    let id = e.currentTarget.id;
+    let newClasses = { ...selected };
+    Object.keys(newClasses).forEach((key) => {
+      if (key == id + 'Class') {
+        newClasses[key] = 'size-selected';
+      } else {
+        newClasses[key] = '';
+      }
+    });
+    Object.keys(sizes).forEach((key) => {
+      if (key == id + 'Size') {
+        setSize(sizes[key]) ;
+      } ;
+    });
+    setSelected(newClasses);
   }
   return (
     <div className="fonts ">
@@ -101,9 +64,9 @@ const FontsList = () => {
 
         <div className="fontsizebtns col">
           <button
-            className="btn btn-primary fontsize"
+            className={`btn btn-primary fontsize  ${selected.btn1Class}`}
             id="btn1"
-            onClick={button1Click}
+            onClick={buttonClick}
           >
             <p className="p-fontsize">
               A
@@ -112,9 +75,9 @@ const FontsList = () => {
             </p>
           </button>
           <button
-            className="btn btn-primary fontsize size-selected"
+            className={`btn btn-primary fontsize ${selected.btn2Class}`}
             id="btn2"
-            onClick={button2Click}
+            onClick={buttonClick}
           >
             <p>
               A
@@ -123,9 +86,9 @@ const FontsList = () => {
             </p>
           </button>
           <button
-            className="btn btn-primary fontsize"
+            className={`btn btn-primary fontsize ${selected.btn3Class}`}
             id="btn3"
-            onClick={button3Click}
+            onClick={buttonClick}
           >
             <p>
               A
@@ -134,9 +97,9 @@ const FontsList = () => {
             </p>
           </button>
           <button
-            className="btn btn-primary fontsize"
+            className={`btn btn-primary fontsize ${selected.btn4Class}`}
             id="btn4"
-            onClick={button4Click}
+            onClick={buttonClick}
           >
             <p>
               A
@@ -170,6 +133,8 @@ const FontsList = () => {
                   img={require(`../../assets/images/fonts/${val.img}`)}
                   stylesCount={val.numberOfStyles}
                   font={val.font}
+                  fontSize={size[0]}
+                  margin={size[1]}
                 />
               </Link>
             </li>
@@ -182,5 +147,4 @@ const FontsList = () => {
     </div>
   );
 };
-
 export default FontsList;

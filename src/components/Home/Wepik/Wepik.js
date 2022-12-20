@@ -15,8 +15,8 @@ const Wepik = () => {
                 <button type="button" className="btn btn-primary btn-lg wepik-btn" >Start editing online </button>
             </div>
 
-            <div className="col-6 wepik-photo">
-                <img src='wepikPhoto.png'alt="wepik-pho" />
+            <div className="col-6 d-sm-none d-none d-lg-block wepik-photo">
+                <img src='wepikPhoto.png' alt="wepik-pho" />
             </div>
         </div>
 
