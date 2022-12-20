@@ -4,28 +4,34 @@ import { useParams } from 'react-router-dom';
 import CategorySection from '../components/Category/CategorySection/CategorySection';
 import CategoryHeader from '../components/Category/CategoryHeader/CategoryHeader';
 
-
-import CardHeader from '../components/Category/CategorySection/CategorySection';
-import HeaderWithPargraph from '../components/Category/CategoryHeader/CategoryHeader';
-import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import JoinSection from '../components/Common/JoinSection/JoinSection'
 import CategoryFullList from '../components/Category/CategoryFullList/CategoryFullList';
-import { PreviewModal, ModalTrigger } from '../components/Category/PreviewModal/ModalTrigger';
+import ModalTrigger from '../components/Category/PreviewModal/ModalTrigger';
 import RelatedArticles from '../components/Category/RelatedArticles/RelatedArticles';
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
+
 const Category = (props) => {
-	const urlParams = useParams();
+	//? didnt work with useParams() in useState
+	// const [catParam, setCatParam] = useState(useParams().term);
+	const [cat, setCat] = useState(props.catStyle);
+	let catParam = useParams().term;
+
+	function isAlpaUpper(char) {
+		const charCode = char.charCodeAt(0);
+		return charCode >= 'a'.charCodeAt(0) && charCode <= 'c'.charCodeAt(0);
+	}
 
 	useEffect(() => {
 		props.page("category")
-	}, [])
+		isAlpaUpper(catParam[0]) ? setCat("style_sep") : setCat("style_full")
+	}, [catParam])
 
 	return (
 		<>
-     		{/*<SearchContainer mainPage={false} />*/}
 			<CategoryHeader />
-			<CategoryFullList category={urlParams.term} />
-			<CategorySepList category={urlParams.term} />
+			{cat === "style_full" ? <CategoryFullList category={catParam} />
+				:
+				<CategorySepList category={catParam} />}
 			<CategorySection />
 			<RelatedArticles />
 			<JoinSection />

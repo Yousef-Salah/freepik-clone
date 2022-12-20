@@ -5,7 +5,7 @@ footer {
 }
 
 footer .list-unstyled {
-  line-height: 1.90;
+  line-height: 1.9;
   font-size: 15px;
   box-sizing: border-box;
   color: #869fb2;
@@ -13,11 +13,10 @@ footer .list-unstyled {
 
 footer .row {
   color: #ffffff;
-  opacity: .80;
+  opacity: 0.8;
   margin: 10px;
   font-size: 18px;
 }
-
 
 footer .footer-button {
   color: #bac8d3;
@@ -38,7 +37,6 @@ footer .fa-square-twitter {
   font-size: 30px;
   cursor: pointer;
   margin-right: 5%;
-
 }
 
 footer .fa-square-pinterest {
@@ -49,7 +47,6 @@ footer .fa-square-pinterest {
   margin-right: 5%;
 }
 
-
 footer .fa-square-youtube {
   cursor: pointer;
   font-size: 30px;
@@ -58,13 +55,12 @@ footer .fa-square-youtube {
 }
 
 footer .fa-square-instagram {
-  color: #E1306C;
+  color: #e1306c;
 
   font-size: 30px;
   cursor: pointer;
   margin-right: 5%;
 }
-
 
 footer .dropdown-loc {
   display: flex;
@@ -73,9 +69,12 @@ footer .dropdown-loc {
 
 footer .footer-hover:hover {
   color: #bac8d3;
-
 }
 
 .sing-in {
   color: #bac8d3;
+}
+
+.hide-fot {
+  display: none;
 }
