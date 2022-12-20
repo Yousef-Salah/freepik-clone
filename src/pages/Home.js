@@ -36,9 +36,9 @@ const Home = (props) => {
 
 
             {/* on the collection page just for testting */}
-
+{/* 
             <DiscoverCollectionTitle />
-            <DiscoverCollections />
+            <DiscoverCollections /> */}
 
 
 
