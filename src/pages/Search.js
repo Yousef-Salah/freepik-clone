@@ -8,14 +8,18 @@ import Spinner from "../components/Search/LoadingSpinner/Spinner";
 import DataFilter from "../Helpers/DataFilter";
 import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
 import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultHeader";
-import SideBar from "../components/Search/SideBar/SideBar";
-
+import SideBar from "../components/Search/FilterSideBar/SideBar";
 const Search = (props) => {
-
+  const [open, setOpen] = useState(false);
+  const updateOpen = (value) => {
+    setOpen(value);
+  }
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const [data, setData] = useState(props.dataFilter.getData(cookies.searchInput));
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
-
+  const push =()=>{
+    alert('oi');
+  }
   useEffect(() => {
     props.page("search");
   }, [spinnerTrigger]);
@@ -31,15 +35,17 @@ const Search = (props) => {
   };
 
   return (
-    <> 
+    <div > 
     <SponsoredSection />
       <SearchContainer dataHandler={loadData} mainPage={false} />
-      <div className="search-content">
-        <SearchResults images={data} />
-        <FilterSideBar/>
+      <SideBar updateOpen={updateOpen}/>
+      <div className={`search-content ${
+      !open ? "base" : "fbase"
+    }`} >
+        <SearchResults images={data}/>
         <Spinner visible={spinnerTrigger} />
       </div>
-    </>
+    </div>
   );
 };
 

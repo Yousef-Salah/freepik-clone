@@ -6,10 +6,15 @@ import SubCollapseBtn from "./SubCollapseBtn";
 import Colorr from "./Color";
 import TagBar from "./TagBar";
 import { SideBarData } from "./SideBarData";
-const SideBar = () => {
+const SideBar = (props) => {
   const [open, setOpen] = useState(false);
+  const toggle = () => {
+    setOpen(!open);
+    props.updateOpen(!open);
+  }
   let sidebar= document.getElementById('sidebarr');
   let tagbar= document.getElementById('tagbar');
+  
   window.addEventListener('scroll',function(){
     if(window.pageYOffset >= 390.7272644042969){
       document.getElementById('tagbar').classList.add('fixed-top');
@@ -37,7 +42,8 @@ const SideBar = () => {
       >
         <div
           className={` tw-cursor-pointer-right-3  ${open && "tw-scale-0"}`}
-          onClick={() => setOpen(!open)}
+          onClick={() => {setOpen(!open);
+            props.updateOpen(!open);}}
         >
           <div className="filters">
             <div className="tw-container-fluid">
@@ -64,8 +70,10 @@ const SideBar = () => {
 
           <button
             className="bx bx-arrow-from-right tw-text-3xl tw-mt-3	tw-hover:border tw-border-slate-100   tw-text-black tw-origin-right tw-font-medium tw-flex-end tw-absolute tw-top-0 tw-right-0 "
-            onClick={() => setOpen(!open)}
+            onClick={() => {setOpen(!open);
+              props.updateOpen(!open);}}
           >
+             
             {" "}
           </button>
         </div>
@@ -86,10 +94,7 @@ const SideBar = () => {
       </div>
       <div>
         
-          <TagBar id='tagbar' className={` ${
-            open ? "tw-inset-x-80 tw-top-0 " : "tw-inset-x-40 tw-top-0 "
-          } `}/>
-
+       
         </div>
       </div>
   );

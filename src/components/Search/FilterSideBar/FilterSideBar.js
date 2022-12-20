@@ -5,9 +5,12 @@ import TagBar from "./TagBar";
 const FilterSideBar =()=> {
   return (
     <>
-    <SideBar/>
-    
-  
+    <div className="d-md-none d-sm-none d-none d-lg-block">
+        <SideBar />
+    </div>
+    <div className="d-lg-none ">
+    <TagBar/>
+    </div>
     </>
   );
 };
