@@ -113,7 +113,7 @@ const SearchBox = (props) => {
   }
   
   const deleteText = (event) => {
-    document.getElementById("search-value").value = "";
+    setSearchInput('');
     checkDeleteIconStatus(event);
   };
 
