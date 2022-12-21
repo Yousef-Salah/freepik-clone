@@ -18,6 +18,9 @@ const Fonts = (props) => {
   const updateOpen = (value) => {
     setOpen(value);
   }
+  useEffect(() => {
+    props.page("Fonts");
+  }, [])
   let dataFilter;
   /*useEffect(() => {
     props.page("Fonts");

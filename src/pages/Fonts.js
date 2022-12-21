@@ -15,7 +15,9 @@ import FontsList from '../components/Fonts/FontsList';
 const Fonts = (props) => {
 
   let dataFilter;
-
+  useEffect(() => {
+    props.page("Fonts");
+  }, [])
   /*useEffect(() => {
     props.page("Fonts");
     dataFilter = new DataFilter(cookies.searchInput);
