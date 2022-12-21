@@ -44,7 +44,7 @@
 }
 
 @media (min-width: 1200px) {
-  .col-xl-10 {
+  #paragraph{
     flex: 0 0 auto;
     width: 94.333333%;
   }
