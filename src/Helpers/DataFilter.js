@@ -7,28 +7,30 @@ export class DataFilter {
   }
 
   getData(filters) {
-
     let filteredData = JSON.parse(JSON.stringify(this.data));
+    
+    if(filters.searchInput) {
+      filteredData = filteredData.filter((item) => item.title.toLowerCase().includes(filters.searchInput.toLowerCase()));
+    }
 
     if(filters.category) {
-      filteredData = filteredData.filter((item) => item.category.toLowerCase().includes(filters.category.toLowerCase()));
+      filteredData = filteredData.filter((item) => {
+        item.title.toLowerCase().includes(filters.category.toLowerCase()) ||
+        item.category.toLowerCase().includes(filters.category.toLowerCase()) 
+      })
     }
 
     if(filters.itemPriceType.length == 1) {
-      if(filters.itemPriceType[0].toLowerCase() == 'free') {
+      if(filters.itemPriceType[0] == 'Free') {
         filteredData = filteredData.filter((item) => item.premium == false);
       }
 
-      if(filters.itemPriceType[0].toLowerCase() == 'premium') {
+      if(filters.itemPriceType[0] == 'Premium') {
         filteredData = filteredData.filter((item) => item.premium == true);
       }
     }
 
-    if(filters.search) {
-      filteredData = filteredData.filter((item) => item.title.toLowerCase().includes(filters.search.toLowerCase()))
-    }
-
-    return filteredData.slice(0,10);    // for pagination
+    return filteredData;    // for pagination
   }
 }
 

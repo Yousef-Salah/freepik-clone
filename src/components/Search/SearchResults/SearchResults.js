@@ -28,7 +28,7 @@ const SearchResults = (props) => {
 		<>
 			{loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
 			<SearchResultHeader title="Free Vectores" sort='True' />
-			<div id="search-results-content" className="d-none">
+			<div id="search-results-content" className={(!props.visible) ? 'd-none' : ''}>
 				{props.images.map((item) => {
 					return (
 						<div onClick={() => modalHandler(item)} >

@@ -21,8 +21,7 @@ const Search = (props) => {
 
   useEffect(() => {
     props.page("search");
-    console.log(props.searchQuery)
-  }, [spinnerTrigger]);
+  }, [spinnerTrigger, props.data]);
 
   const loadData = () => {
     setData(props.dataFilter.getData(props.searchQuery));
