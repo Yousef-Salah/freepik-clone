@@ -170,16 +170,24 @@
   }
 }
 
+@media screen and (min-width:770px) {
+  .sub-page-search form #input-field {
+    width: calc(100% - 180px - 54px) !important;
+  }
+}
+
 .sub-page-search {
-  height: 65px !important;
+  height: 45px !important;
   background-color: white !important;
 }
 
 /* TODO: */
 .sub-page-search form{
+  max-width: none !important;
   margin-top: 10px !important;
   margin-bottom: 10px !important;
   height: 44px !important;
+  width: 100%;
   /* max-width: none !important; */
 }
 

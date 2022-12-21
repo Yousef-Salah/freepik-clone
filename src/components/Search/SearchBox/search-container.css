@@ -26,3 +26,12 @@
 /* .bg-purple {
   background-color: #4055c7;
 } */
+
+#op-search-container {
+  /* height: 45px !important; */
+}
+
+#op-search-container img {
+  height: 40px !important;
+  max-height: 40px;
+}
