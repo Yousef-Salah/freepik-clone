@@ -26,7 +26,7 @@ const Searchimgcard = ({ Cardphoto }) => {
         {/* </Link> */}
         <nav className="Cardphoto">
           {premiumicon({ Cardphoto })}
-          <p className="descreption">{Cardphoto.title}</p>
+          <p className="searchcard-desc">{Cardphoto.title}</p>
           <Link to={Cardphoto.authour_assets}>
             <img
               className="authour"
