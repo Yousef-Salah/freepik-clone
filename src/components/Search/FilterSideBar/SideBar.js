@@ -15,19 +15,20 @@ const SideBar = (props) => {
   let sidebar= document.getElementById('sidebarr');
   let tagbar= document.getElementById('tagbar');
   
-  window.addEventListener('scroll',function(){
-    if(window.pageYOffset >= 390.7272644042969){
-      document.getElementById('tagbar').classList.add('fixed-top');
-      document.getElementById('sidebarr').classList.remove('tw-absolute');
-      document.getElementById('sidebarr').classList.add('fixed-top');
-    }
-    else {
-      document.getElementById('tagbar').classList.remove('fixed-top');
-      document.getElementById('sidebarr').classList.add('tw-absolute');
-      document.getElementById('sidebarr').classList.remove('fixed-top');
+  // window.addEventListener('scroll',function(){
+
+  //   // if(window.pageYOffset >= 390.7272644042969){
+  //   //   document.getElementById('tagbar').classList.add('fixed-top');
+  //   //   document.getElementById('sidebarr').classList.remove('tw-absolute');
+  //   //   document.getElementById('sidebarr').classList.add('fixed-top');
+  //   // }
+  //   // else {
+  //   //   document.getElementById('tagbar').classList.remove('fixed-top');
+  //   //   document.getElementById('sidebarr').classList.add('tw-absolute');
+  //   //   document.getElementById('sidebarr').classList.remove('fixed-top');
     
-    }
-  })
+  //   // }
+  
   return (
     <div  id='sidebarr' className={`sidebar flex tw-absolute ${
       open ? "tw-w-64" : "tw-w-0"

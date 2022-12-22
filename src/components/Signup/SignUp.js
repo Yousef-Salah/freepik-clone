@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import "./signup.css";
 const SignUp = () => {
   return (
-    <div className="container text-center" id="Signup">
+    <div className="container-fluid text-center" id="Signup">
       <div className="row" id="Sign-up">
-        <div className="Sign-up-photo col-8">
+        <nav className="col-lg-8" id="Sign-up-photo">
           <img
             className="signup-img"
             src={require("../../assets/images/loginsignup/3.jpeg")}
@@ -16,8 +16,8 @@ const SignUp = () => {
               <strong>freepik</strong>
             </Link>
           </div>
-        </div>
-        <div className="Sign-up-form col-4">
+        </nav>
+        <nav className="col-lg-4" id="Sign-up-form">
           <img
             className="signup-freepik"
             src={require("../../assets/images/loginsignup/freepiklogo.png")}
@@ -26,7 +26,7 @@ const SignUp = () => {
           <p className="h4" id="sign-up">
             Create an account
           </p>
-          <nav className="signupinputs container">
+          <nav className="signupinputs">
             <nav className="row" id="signup-btns">
               <button className="signup-btn" id="signup-btn-google">
                 <i className="bi bi-google" id="signup-icon-google"></i>
@@ -52,11 +52,12 @@ const SignUp = () => {
                 Company by email.
               </p>
             </nav>
+              <p className="signupTerms text-muted">
+                By continuing, you agree to Freepik Company’s Terms of Use and
+                Privacy Policy.
+              </p>
           </nav>
-          <p className="signupTerms text-muted">
-            By continuing, you agree to Freepik Company’s Terms of Use and
-            Privacy Policy.
-          </p>
+
           <p className="row-flex" id="logintoaccount">
             Already have an account
             <Link to={"/login"}>
@@ -65,15 +66,15 @@ const SignUp = () => {
           </p>
           <nav className="freepik-company">
             <p className="text-muted">by</p>
-            <Link to={'/'}>
-            <img
-            className="freepikcompany"
-              src={require("../../assets/images/loginsignup/freepik-company.png")}
-              alt="By freepik company"
-            ></img>
+            <Link to={"/"}>
+              <img
+                className="freepikcompany"
+                src={require("../../assets/images/loginsignup/freepik-company.png")}
+                alt="By freepik company"
+              ></img>
             </Link>
           </nav>
-        </div>
+        </nav>
       </div>
     </div>
   );

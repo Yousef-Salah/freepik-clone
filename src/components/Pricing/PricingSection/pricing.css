@@ -9,11 +9,13 @@
     font-size: small;
     margin-top: 30px;
     margin-left: 100px;
-    max-height: 1000px;
     max-width: 600px;
-    border-radius: 10px;
+    border-radius: 20px;
     width: 60%;
-    box-shadow: 2px 2px 2px rgba(186, 183, 183, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
+    border-color: #f8fafb;
+    ;
+
 
 }
 
@@ -40,23 +42,25 @@
     margin-left: 50px;
     max-height: 1000px;
     max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(186, 183, 183, 0.5);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
+    border-color: #f8fafb;
+    ;
     cursor: pointer;
 
 }
 
 .card3 {
-    display: flex;
     padding: 30px;
     justify-content: center;
     margin-top: 30px;
     margin-left: 50px;
-    max-height: 1000px;
+    max-height: 200px;
     max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(186, 183, 183, 0.5);
-
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
+    border-color: #f8fafb;
+    ;
     cursor: pointer;
 
 }
@@ -66,10 +70,155 @@
 .card-sect {
     display: flex;
     flex: 2;
-    background-color: rgba(234, 234, 234, 0.5);
+    background-color: #f8fafb;
     padding-bottom: 30px;
 }
 
 .card-section {
     flex: 1;
+}
+
+.card-teams1 {
+    font-size: small;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 150px;
+    max-height: 350px;
+    max-width: 700px;
+    border-radius: 20px;
+    border-color: #f8fafb;
+    ;
+    box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
+
+}
+
+.card-temas2 {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 50px;
+    max-height: 600px;
+    padding-left: 10px;
+    max-width: 500px;
+    font-size: small;
+    border-radius: 20px;
+    border-color: #f8fafb;
+    ;
+    box-shadow: 2px 2px 2px 2px rgba(185, 186, 183, 0.5);
+}
+
+.more-info {
+    cursor: pointer;
+    color: #1675eb;
+    margin-left: 3px;
+}
+
+.best-value {
+    background-color: #c7ebff;
+    background-size: 100px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    color: #1675eb;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.font-strong {
+    font-size: larger;
+    display: flex;
+}
+
+.btn-subs {
+    margin-left: 300px;
+}
+
+.color-textcard {
+    color: slategray;
+    font-size: smaller;
+    font-weight: bolder;
+}
+
+.card-text {
+    padding: 10px;
+}
+
+.card-section2 {
+    display: flex;
+    flex: 2;
+    background-color: #f8fafb;
+    padding-bottom: 30px;
+}
+
+
+
+.card-tite {
+    display: flex;
+
+}
+
+.card-text3 {
+    padding-left: 150px;
+}
+
+.btn-team {
+    padding-left: 100px;
+    margin-top: 30px;
+}
+
+.font-eur {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.input-value {
+    padding-left: 270px;
+}
+
+.form-control {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.save-sp {
+    background-color: #c7ebff;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    color: #1675eb;
+    font-size: 14px;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.new-sp {
+    background-color: #2f8ff7;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    border-radius: 2px;
+    font-weight: bold;
+    color: white;
+
+}
+
+@media only screen and (max-width:645px) {
+
+    .card1,
+    .card-teams1,
+    .card-temas2,
+    .card2,
+    .card3 {
+        margin-left: 0px;
+        width: 100%;
+        max-height: 100% !important;
+    }
+
+    .btn-subs {
+        margin-left: 0px;
+    }
 }
