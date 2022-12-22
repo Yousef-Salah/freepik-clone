@@ -14,12 +14,8 @@ import FontsList from '../components/Fonts/FontsList';
 import Card3D from '../components/Card3D/Card3D';
 import CardLayout from '../components/Card3D/CardLayout';
 const Fonts = (props) => {
-  const [open, setOpen] = useState(false);
-  const updateOpen = (value) => {
-    setOpen(value);
-  }
   useEffect(() => {
-    props.page("Fonts");
+    props.page("3d-models");
   }, [])
   let dataFilter;
   /*useEffect(() => {
@@ -44,11 +40,7 @@ const Fonts = (props) => {
   return (
       <>
       {/*<SearchContainer mainPage={false} />*/}
-      <SideBar updateOpen={updateOpen}/>
-
-      <div className={`search-content ${
-      !open ? "base" : "pushed"
-    }`} >
+      <div className="search-content" >
       <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
        <CardLayout/>
   </div>

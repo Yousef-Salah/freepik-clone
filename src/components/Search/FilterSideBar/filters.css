@@ -152,5 +152,11 @@
 }
 
 .pushed{
- left: 15%;
+ left: 250px;
+ width: 90%;
+ position: relative;
+}
+
+.sidebarcontent{
+  height:57rem ;
 }

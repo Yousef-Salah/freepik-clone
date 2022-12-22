@@ -122,7 +122,7 @@ const FontsList = () => {
         </div>
       </div>
 
-      <ul>
+      <ul className="fonts-list">
         {shuffled.map((val) => {
           return (
             <li>

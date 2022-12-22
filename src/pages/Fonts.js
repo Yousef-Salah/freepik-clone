@@ -11,13 +11,17 @@ import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import FontsList from '../components/Fonts/FontsList';
-
+import Card3D from '../components/Card3D/Card3D';
+import CardLayout from '../components/Card3D/CardLayout';
 const Fonts = (props) => {
-
-  let dataFilter;
+  const [open, setOpen] = useState(false);
+  const updateOpen = (value) => {
+    setOpen(value);
+  }
   useEffect(() => {
     props.page("Fonts");
   }, [])
+  let dataFilter;
   /*useEffect(() => {
     props.page("Fonts");
     dataFilter = new DataFilter(cookies.searchInput);
@@ -37,14 +41,17 @@ const Fonts = (props) => {
     // removeCookie("searchInput");
         */
 
-    return (
+  return (
       <>
       {/*<SearchContainer mainPage={false} />*/}
-     <div className="search-content">
-      <FilterSideBar />
+      <SideBar updateOpen={updateOpen}/>
+
+      <div className={`search-content ${
+      !open ? "base" : "pushed"
+    }`} >
       <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
-      <FontsList />
-    </div>
+       <FontsList/>
+  </div>
       </>
   );
 };
