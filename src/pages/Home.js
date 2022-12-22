@@ -29,22 +29,27 @@ const Home = (props) => {
             <Annual />
             <Trending />
             <CreatorCollectionTitle />
-            
+
             <CreatorCollection />
-                
-    
+
+
 
 
             {/* on the collection page just for testting */}
-{/* 
+            {/* 
             <DiscoverCollectionTitle />
             <DiscoverCollections /> */}
 
 
 
 
-            <Wepik />
-
+            <Wepik
+                logoUrl="https://freepik.cdnpk.net/img/logos/wepik-colored.svg"
+                headerText="Create beautiful designs online."
+                paragraphText="Customize and download free templates to make stunning designs with our online editing tool."
+                buttonText="Start editing online"
+                photoUrl="wepikPhoto.png"
+            />
 
 
         </>
