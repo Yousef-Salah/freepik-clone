@@ -7,7 +7,6 @@ import SearchResultHeader from '../components/Search/FilterSideBar/SearchResultH
 import SideBar from '../components/Search/FilterSideBar/SideBar';
 import TagBar from '../components/Search/FilterSideBar/TagBar';
 import SearchResults from '../components/Search/SearchResults/SearchResults';
-import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 import FontsGridView from '../components/Fonts/FontsGridView';
@@ -15,25 +14,6 @@ import FontsList from '../components/Fonts/FontsList';
 
 const FontsFormatGrid = (props) => {
 
-    let dataFilter;
-/*
-    useEffect(() => {
-      props.page("Fonts");
-      dataFilter = new DataFilter(cookies.searchInput);
-      loadData(10);
-    }, [dataFilter])
-  
-  
-      const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
-      const [data, setData] = useState([]);
-  
-      const loadData = () => {
-        setData(dataFilter.get(10));
-      }
-  
-      console.log(cookies.searchInput);
-      // removeCookie("searchInput");
-  */
     return (
         <>
           {/*<SearchContainer mainPage={false} />*/}

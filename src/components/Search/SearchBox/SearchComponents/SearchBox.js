@@ -4,7 +4,6 @@ import "./search-box.css";
 import DropDownItem from "./SearchDropdown";
 import DropDownButton from "./DropDownButton";
 import { redirect, useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
 
 // Components
 
@@ -13,12 +12,6 @@ const SearchBox = (props) => {
   const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
-
-  // const [searchInput, setSearchInput] = useState(props.searchQuery.current.searchInput);
-  // const [itemType, setItemType] = useState(props.searchQuery.itemType);     // Assets or collections
-  // const [itemPrice, setItemPrice] = useState(props.searchQuery.itemPriceType);   // Free or Premium  // ! fix dataFilter bug
-  // const [category, setCategory] = useState(props.searchQuery.category);
-
   const searchInput = useRef(props.searchQuery.current.searchInput);
   const itemType = useRef(props.searchQuery.current.itemType);
   const category = useRef(props.searchQuery.current.category);
@@ -87,7 +80,6 @@ const SearchBox = (props) => {
     setInputPlaceHolder(result);
   }
   
-  const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const navigate = useNavigate();
   
   const checkDeleteIconStatus = (event) => {
@@ -149,10 +141,6 @@ const SearchBox = (props) => {
       props.dataHandler();
     } 
     else return navigate(`${props.page == 'category' ? '../../' : ''}search/${searchInput.current}`);
-  
-    setCookie("searchInput", JSON.stringify(data), {
-      path: "/"
-    });
   }
 
   const mainPage = (!props.mainPage) ? "sub-page-search" : "";

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import SponsoredSection from "../components/Common/SponsorSection/SponsorSection";
 import FilterSideBar from "../components/Search/FilterSideBar/FilterSideBar";
 import SearchResults from "../components/Search/SearchResults/SearchResults";
-import { useCookies } from "react-cookie";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
 import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
@@ -14,7 +13,6 @@ const Search = (props) => {
   const updateOpen = (value) => {
     setOpen(value);
   }
-  const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const [data, setData] = useState([]);
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   const [contentState, setContentState] = useState(true);

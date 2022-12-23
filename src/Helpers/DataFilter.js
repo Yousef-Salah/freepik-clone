@@ -1,4 +1,3 @@
-import { useCookies } from "react-cookie";
 import DataBase from "../utils/FinalImages.json";
 
 export class DataFilter {

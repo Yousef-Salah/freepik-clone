@@ -7,7 +7,6 @@ import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultH
 import SideBar from "../components/Search/FilterSideBar/SideBar";
 import TagBar from "../components/Search/FilterSideBar/TagBar";
 import SearchResults from "../components/Search/SearchResults/SearchResults";
-import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import FontsList from "../components/Fonts/FontsList";

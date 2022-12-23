@@ -24,7 +24,9 @@ const SearchContainer = (props) => {
     <div className="container-fluid" id="op-search-container">
       <div className="row">
         <div className="col-3 col-sm-2 d-flex align-items-center justify-content-center">
-          <img className="h-100" src={require('../../../assets/images/icons/freepik-full-logo.PNG')} alt="freepik icon" />
+          <a href="http://localhost:3000" className="d-inline-block w-100 h-100">
+            <img className="h-100" src={require('../../../assets/images/icons/freepik-full-logo.PNG')} alt="freepik icon" />
+          </a>
         </div>
         <div className="col-9 col-sm-10">
           <SearchBox dataHandler={props.dataHandler} mainPage={false} searchQuery={props.searchQuery} page={props.page}/>
