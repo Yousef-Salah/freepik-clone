@@ -17,13 +17,12 @@ const Tag = (props) => {
           ` btn btn-outline-secondary d-flex ` + className1
         }
         type="button"
-        onClick={() => navigate(`/search/${props.title}`)}
+        onClick={() => navigate(`/${props.page}/${props.title}`)}
       >
         <p>
         <i className={props.pic ? props.pic+ " icon":'d-none' }></i>
         {props.title}
         </p>
-       
       </button>
     </span>
   );

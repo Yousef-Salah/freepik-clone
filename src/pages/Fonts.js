@@ -20,59 +20,59 @@ const Fonts = (props) => {
   const TagBarData=[{
     title: "All fonts",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Funny",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Happy",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Creative",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Retro",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Brush",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Calligraphy",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Comic",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Wedding",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Halloween",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Summer",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Fall",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Latin",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   },{
     title: "Vintage",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fonts'
   }
 ]
   const [open, setOpen] = useState(false);
@@ -113,7 +113,7 @@ const Fonts = (props) => {
       <TagBar data={TagBarData} className={`${
       !open ? "base" : "pushed-tagbar"
     }`}/>
-      <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
+      <SearchResultHeader title={"Free " + ''} description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
        <FontsList/>
   </div>
       </>

@@ -17,6 +17,7 @@ let data=props.data;
               pic={val.pic}
               className={val.className}
               className1={val.className1}
+              page={val.page}
             />
           );
         })}

@@ -27,7 +27,7 @@ const SearchResults = (props) => {
 	return (
 		<>
 			{loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
-			<SearchResultHeader title="Free Vectores" sort='True' />
+			<SearchResultHeader title={"Showing results for " + props.title} sort='True' />
 			<div id="search-results-content" className="d-none">
 				{props.images.map((item) => {
 					return (
