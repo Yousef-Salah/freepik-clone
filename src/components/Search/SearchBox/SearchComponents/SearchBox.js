@@ -8,7 +8,8 @@ import { redirect, useNavigate } from "react-router-dom";
 // Components
 
 const SearchBox = (props) => {
-
+  
+  const [searchInputState, setSearchInputState] = useState(props.searchQuery.current.searchInput);
   const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
@@ -18,7 +19,7 @@ const SearchBox = (props) => {
   const itemPricesList = useRef(props.searchQuery.current.itemPriceType);
 
   useEffect(() => {
-    if(!props.mainPage && (props.page != 'category')) props.dataHandler();
+    if (!props.mainPage && props.page != "category") props.dataHandler();
 
     setButtonLabel(buttonLabelGenerator());
     setSearchInputPlaceHolder();
@@ -27,61 +28,63 @@ const SearchBox = (props) => {
   const searchInputHanlder = (e) => {
     searchInput.current = e.target.value;
 
-    if(searchInput.current === '') {
-      setDeleteTextIcon('d-none');
+    setSearchInputState(e.target.value);
+
+    if (searchInput.current === "") {
+      setDeleteTextIcon("d-none");
     } else {
-      setDeleteTextIcon('');
+      setDeleteTextIcon("");
     }
-  }
+  };
 
   const itemTypeHandler = (e) => {
-    itemType.current = e.target.getAttribute('title');
+    itemType.current = e.target.getAttribute("title");
     setButtonLabel(buttonLabelGenerator());
     setSearchInputPlaceHolder();
-  }
+  };
 
   const itemPriceHandler = (e) => {
+    const incomingPrice = e.target.getAttribute("title");
 
-    const incomingPrice = e.target.getAttribute('title');
-
-    if(!itemPricesList.current.length) {        // there is no selected input
+    if (!itemPricesList.current.length) {
+      // there is no selected input
       itemPricesList.current.push(incomingPrice);
-    } 
-    else if(itemPricesList.current.length == 2) {
+    } else if (itemPricesList.current.length == 2) {
       const index = itemPricesList.current.indexOf(incomingPrice);
-      itemPricesList.current.splice(index,1);
-    } 
-    else {
-      (itemPricesList.current[0] == incomingPrice) ?  itemPricesList.current.pop() : itemPricesList.current.push(incomingPrice);
+      itemPricesList.current.splice(index, 1);
+    } else {
+      itemPricesList.current[0] == incomingPrice
+        ? itemPricesList.current.pop()
+        : itemPricesList.current.push(incomingPrice);
     }
-    
+
     setButtonLabel(buttonLabelGenerator());
     setSearchInputPlaceHolder();
-  }
+  };
 
   const itemCategoryHandler = (e) => {
-    let value = e.target.getAttribute('title');
+    let value = e.target.getAttribute("title");
 
-    if(value === category.current) category.current = '';
+    if (value === category.current) category.current = "";
     else category.current = value;
 
     setButtonLabel(buttonLabelGenerator());
     setSearchInputPlaceHolder();
-  }
+  };
 
   const setSearchInputPlaceHolder = () => {
     let result = category.current;
 
     result += " " + itemType.current;
 
-    if(category.current) result = "Search for " + result;
+    if (category.current) result = "Search for " + result;
     else result = "Search for All " + result;
 
     setInputPlaceHolder(result);
-  }
-  
+  };
+
   const navigate = useNavigate();
-  
+
   const checkDeleteIconStatus = (event) => {
     if (event.target.value) {
       setDeleteTextIcon("opacity-100");
@@ -94,25 +97,26 @@ const SearchBox = (props) => {
       }, 1300);
     }
   };
-  
-  const  buttonLabelGenerator = ()=> { 
-    
-    let label = '';
+
+  const buttonLabelGenerator = () => {
+    let label = "";
 
     label = itemType.current;
 
     // if(itemPrice.length) label += ', ' +  itemPrice.join(', ');
 
-    if(itemPricesList.current) label += ' ' +  itemPricesList.current.join(', ');
+    if (itemPricesList.current)
+      label += " " + itemPricesList.current.join(", ");
 
-    if(category.current) label += ', ' + category.current;
-    
+    if (category.current) label += ", " + category.current;
+
     return label;
-  }
-  
+  };
+
   const deleteText = (event) => {
-    searchInput.current = '';
-    event.target.value = '';
+    searchInput.current = "";
+    event.target.value = "";
+    setSearchInputState("");
     setDeleteTextIcon("opacity-0");
 
     setTimeout(() => {
@@ -123,58 +127,65 @@ const SearchBox = (props) => {
   };
 
   const submitActionHandler = (event) => {
-
     event.preventDefault();
 
-    if(event.target.value == '') return;
-    
+    if (event.target.value == "") return;
+
     let data = {
       searchInput: searchInput.current,
-      itemType: itemType.current,           // assets collections
-      itemPriceType: itemPricesList.current,       // free premium
+      itemType: itemType.current, // assets collections
+      itemPriceType: itemPricesList.current, // free premium
       category: category.current,
     };
-    
+
     props.searchQuery.current = data;
 
-    if(!props.mainPage && (props.page != 'category')) {
+    if (!props.mainPage && props.page != "category") {
       props.dataHandler();
-    } 
-    else return navigate(`${props.page == 'category' ? '../../' : ''}search/${searchInput.current}`);
-  }
+    } else
+      return navigate(
+        `${props.page == "category" ? "../../" : ""}search/${
+          searchInput.current
+        }`
+      );
+  };
 
-  const mainPage = (!props.mainPage) ? "sub-page-search" : "";
+  const mainPage = !props.mainPage ? "sub-page-search" : "";
 
   return (
     <div className={mainPage} id="search-input-container">
-      <form id="search" className="h-100 rounded" onSubmit={submitActionHandler}>
+      <form
+        id="search"
+        className="h-100 rounded"
+        onSubmit={submitActionHandler}
+      >
         <div className="dropdown d-inline-block rounded-start">
-        <DropDownButton buttonLabel={buttonLabel} />
+          <DropDownButton buttonLabel={buttonLabel} />
           <div className="dropdown-menu" id="search-filter-items">
             <div id="search-type">
-                <DropDownItem
-                  type="radio"
-                  title="Assets"
-                  name="search-type"
-                  for="assets"
-                  inputHandler={itemTypeHandler}
-                  value={itemType.current}
-                />
-                <DropDownItem
-                  type="radio"
-                  title="Collections"
-                  name="search-type"
-                  for="collections"
-                  inputHandler={itemTypeHandler}
-                  value={itemType.current}
-                />
+              <DropDownItem
+                type="radio"
+                title="Assets"
+                name="search-type"
+                for="assets"
+                inputHandler={itemTypeHandler}
+                value={itemType.current}
+              />
+              <DropDownItem
+                type="radio"
+                title="Collections"
+                name="search-type"
+                for="collections"
+                inputHandler={itemTypeHandler}
+                value={itemType.current}
+              />
             </div>
-              <DropDownItem divider={true} />
+            <DropDownItem divider={true} />
             <div id="item-price">
-              <DropDownItem 
-                title="Free" 
-                name="free" 
-                for="free" 
+              <DropDownItem
+                title="Free"
+                name="free"
+                for="free"
                 inputHandler={itemPriceHandler}
                 value={itemPricesList.current.includes("Free") ? "Free" : ""}
               />
@@ -185,15 +196,38 @@ const SearchBox = (props) => {
                 iconClasses="fa-solid fa-crown"
                 goldItem={true}
                 inputHandler={itemPriceHandler}
-                value={itemPricesList.current.includes("Premium") ? "Premium" : ""}
+                value={
+                  itemPricesList.current.includes("Premium") ? "Premium" : ""
+                }
               />
             </div>
             <div id="item-category">
-              <DropDownItem divider={true}  single/>
-              <DropDownItem title="Vectors" name="vectors" for="vectors" inputHandler={itemCategoryHandler} category={category.current} single />
-              <DropDownItem title="Photos" name="photos" for="photos" inputHandler={itemCategoryHandler} category={category.current} single />
-              <DropDownItem title="PSDs" name="psd" for="psd" inputHandler={itemCategoryHandler} category={category.current} single />
-              <DropDownItem title="Icons" name="icons" for="icon" inputHandler={itemCategoryHandler} category={category.current} single />
+              <DropDownItem divider={true} single />
+              <DropDownItem
+                title="Vectors"
+                name="vectors"
+                for="vectors"
+                inputHandler={itemCategoryHandler}
+                category={category.current}
+                single
+              />
+              <DropDownItem
+                title="Photos"
+                name="photos"
+                for="photos"
+                inputHandler={itemCategoryHandler}
+                category={category.current}
+                single
+              />
+              <DropDownItem
+                title="PSDs"
+                name="psd"
+                for="psd"
+                inputHandler={itemCategoryHandler}
+                category={category.current}
+                single
+              />
+              <DropDownItem title="Icons" name="icons" for="icon" inputHandler={itemCategoryHandler} category={category.current} single/>
             </div>
           </div>
         </div>
@@ -210,7 +244,7 @@ const SearchBox = (props) => {
             onChange={searchInputHanlder}
             placeholder={inputPlaceHolder}
             className="rounded-start"
-            value={searchInput.current}
+            value={searchInputState}
           />
         </div>
         <div id="search-button" className="d-inline-block">
