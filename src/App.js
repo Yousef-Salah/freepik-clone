@@ -60,7 +60,7 @@ const App = () => {
 
 
 				</Routes>
-				<Footer />
+				<Footer page={page} />
 			</BrowserRouter>
 
 		</div>
