@@ -16,7 +16,12 @@ const SearchResults = (props) => {
 	}, [props.images])
 
 	const toggleModal = () => {
+		props.modalStatus(!modalDisplay);
 		setModalDisplay(!modalDisplay);
+		console.log(!modalDisplay)
+	}
+	const sendClosed = () => {
+		// props.closedStatus(false);
 	}
 
 	const modalHandler = (item) => {
@@ -26,8 +31,8 @@ const SearchResults = (props) => {
 
 	return (
 		<>
-			{loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
-			<SearchResultHeader title="Free Vectores" sort='True' />
+			{loaded && <ModalTrigger displayStatus={modalDisplay} MTStatus={sendClosed} data={modalData} />}
+			<SearchResultHeader title={"Showing results for " + props.title} sort='True' />
 			<div id="search-results-content" className={(!props.visible) ? 'd-none' : ''}>
 				{props.images.map((item) => {
 					return (
