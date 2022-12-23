@@ -1,6 +1,6 @@
 import photo from "../../../assets/images/Join-section/community.png";
 import './join-section.css';
-const im = () => {
+const Join = () => {
     return (
         <div className="container" id="join-section">
             <div className="content">
@@ -18,4 +18,4 @@ const im = () => {
         </div>
     );
 }
-export default im
+export default Join

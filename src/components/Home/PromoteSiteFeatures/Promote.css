@@ -63,8 +63,8 @@
   .caption {
     padding-right: 0px;
   }
-
-  @media screen and (max-width:1095px) {
+}
+  @media screen and (max-width:1396px) {
     .PromotePhoto {
 
       display: none;
@@ -137,4 +137,3 @@
       }
     }
   }
-}
