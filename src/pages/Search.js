@@ -123,8 +123,11 @@ const Search = (props) => {
       <TagBar data={TagBarData} className={`${
       !open ? "base" : "pushed-tagbar"
     }`}/>
-        <SearchResults images={data} visible={contentState} title={location.pathname.split("/")[2].replace("%20", " ")}/>
-<SearchResults1/>
+            <SearchResults images={data} title={location.pathname.split("/")[2].replace("%20", " ")}
+					// closedStatus={toggleBackBack}
+					/>
+					<Spinner visible={spinnerTrigger} />
+          <SearchResults1/>
         <Spinner visible={spinnerTrigger} />
       </div>
     </>

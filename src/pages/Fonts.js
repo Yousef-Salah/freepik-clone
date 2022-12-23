@@ -101,7 +101,20 @@ const Fonts = (props) => {
   /*}
     // removeCookie("searchInput");
         */
-
+    const [lastWord, setLastWord] = useState('');
+    let [link,setLink]=useState( window.location.href)
+    useEffect(() => {
+      let link1 = (window.location.href);
+      setLink(link1);
+      const words = link.split('/');
+      const fontsIndex = words.indexOf('fonts');
+      const newLastWord = words[fontsIndex + 1];
+      setLastWord(newLastWord);
+      console.log(link);
+    }, [link]);
+    
+  lastWord?lastWord:'';
+  
   return (
       <>
       {/*<SearchContainer mainPage={false} />*/}
@@ -113,7 +126,7 @@ const Fonts = (props) => {
       <TagBar data={TagBarData} className={`${
       !open ? "base" : "pushed-tagbar"
     }`}/>
-      <SearchResultHeader title={"Free " + ''} description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
+      <SearchResultHeader title={`Free ${lastWord} Fonts` } description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
        <FontsList/>
   </div>
       </>
