@@ -109,3 +109,10 @@
 margin-left:3%;
 margin-right:3%;
 }
+.next3d{
+  width:190px !important;
+  height: 52px;
+left: -1%;
+position: relative;
+margin-top: 10%;
+}

@@ -162,3 +162,34 @@
 .colorr{
   padding: 2px 16px 27px;
 }
+@media only screen and (max-width:1095px) {
+  .filterscont,.sidebarcontent,#sidebarr{
+    display: none !important;
+    transform: scale(0);
+  }
+  .pushed{
+    left:0% !important;
+    width:100% !important;
+  }
+  .tagbar,.pushed-tagbar{
+    left:1% !important;
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width:767px) {
+  .tagbar,.pushed-tagbar{
+    left:1% !important;
+    width: 100% !important;
+    top:10.7% !important;
+  }
+  .fonts-page .tagbar,.fonts-page .pushed-tagbar{
+    top:0% !important;
+  }
+  .page-3d .tagbar,.page-3d .pushed-tagbar{
+    top:4% !important;
+  }
+}
+
+.page-3d .tagbar{
+  left:4%;
+}

@@ -141,7 +141,7 @@ const FontsList = () => {
           );
         })}
       </ul>
-      <button onClick={shuffle} type="button" class="btn btn-primary nextpage">
+      <button onClick={shuffle} type="button" className="btn btn-primary nextpage">
         Next Page <i class="bi bi-arrow-right"></i>
       </button>
     </div>

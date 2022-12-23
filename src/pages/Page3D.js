@@ -14,6 +14,24 @@ import FontsList from "../components/Fonts/FontsList";
 import Card3D from "../components/Card3D/Card3D";
 import CardLayout from "../components/Card3D/CardLayout";
 const Fonts = (props) => {
+  const TagBarData=[{
+    title: "Photos",
+  pic: "bi bi-image tw-left-0",
+  className: "type-class",
+  className1: "type",
+},
+{
+  title: "PSD",
+  pic: "bi bi-filetype-psd",
+  className: "type-class",
+  className1: "type",
+},
+{
+  title: "All images",
+  pic: "bx bxs-shapes",
+  className: "type-class",
+  className1: "type",
+}]
   useEffect(() => {
     props.page("3d-models");
   }, [])
@@ -40,7 +58,8 @@ const Fonts = (props) => {
   return (
     <>
       {/*<SearchContainer mainPage={false} />*/}
-      <div className="search-content" >
+      <div className="search-content page-3d" >
+        <TagBar data={TagBarData}/>
       <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
        <CardLayout/>
   </div>

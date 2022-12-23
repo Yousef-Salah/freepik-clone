@@ -2,45 +2,48 @@ import React from "react";
 import { useState } from "react";
 import "./filter-sideBar.css";
 import CollapseBtn from "./CollapseBtn";
-import SubCollapseBtn from "./SubCollapseBtn";
 import Colorr from "./Color";
-import TagBar from "./TagBar";
-import { SideBarData1 } from "./SideBarData1";
 import Tag from "./Tag";
 const SideBar = (props) => {
+  let data=props.data;
   const [open, setOpen] = useState(false);
   const toggle = () => {
     setOpen(!open);
     props.updateOpen(!open);
   };
-  let sidebar = document.getElementById("sidebarr");
-  let tagbar = document.getElementById("tagbar");
-
-  // window.addEventListener('scroll',function(){
-
-  //   // if(window.pageYOffset >= 390.7272644042969){
-  //   //   document.getElementById('tagbar').classList.add('fixed-top');
+  const [scrollClass,setScrollClass]=useState('position-absolute');
+window.addEventListener('scroll',function(){
+//   //   document.getElementById('tagbar').classList.add('fixed-top');
   //   //   document.getElementById('sidebarr').classList.remove('position-absolute');
   //   //   document.getElementById('sidebarr').classList.add('fixed-top');
-  //   // }
+ if(window.pageYOffset >= 278.7272644042969 &&window.pageYOffset<2641 ){
+  setScrollClass('fixed-top top-filters')
+  console.log(window.pageYOffset);
+ }
+ else if(window.pageYOffset >= 2642){
+  setScrollClass('position-static')
+ }
+ else{
+  setScrollClass('position-absolute')
+ }
   //   // else {
   //   //   document.getElementById('tagbar').classList.remove('fixed-top');
   //   //   document.getElementById('sidebarr').classList.add('position-absolute');
   //   //   document.getElementById('sidebarr').classList.remove('fixed-top');
 
-  //   // }
+ })
 
   return (
     <div
       id="sidebarr"
-      className={`sidebar flex position-absolute ${
+      className={`sidebar flex ${scrollClass} ${
         open ? "tw-w-64 translatex100" : "tw-w-0 translatex0"
       }`}
     >
       <div
         className={`${
           open ? "tw-w-64" : "tw-w-0"
-        } sidebar-content h-screen tw-relative tw-p-0 tw-pt-0 tw-sticky`}
+        } sidebar-content h-screen tw-p-0 tw-pt-0 tw-sticky`}
       >
         <div
           className={` ${open && "tw-scale-0"}`}
@@ -50,7 +53,7 @@ const SideBar = (props) => {
           }}
         >
           <div className="filters">
-            <div className="container-fluid">
+            <div className="container-fluid filterscont">
               <button
                 className="btn-light filtersbtn tw-items-center position-absolute tw-top-5 tw-left-1"
                 type="button"
@@ -81,7 +84,7 @@ const SideBar = (props) => {
           </button>
         </div>
         <ul className={`sidebarcontent`}>
-          {SideBarData1.map((val) => {
+          {data.map((val) => {
             const tags = val.tags;
             const colors = val.colors;
             const subs = val.subs;

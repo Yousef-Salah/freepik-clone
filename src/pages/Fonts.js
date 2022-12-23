@@ -14,6 +14,67 @@ import FontsList from '../components/Fonts/FontsList';
 import Card3D from '../components/Card3D/Card3D';
 import CardLayout from '../components/Card3D/CardLayout';
 const Fonts = (props) => {
+  const SideBarData=[{
+    collapse:'Type',icon:'bi bi-type',icon1:[],tag:1,tags:['All','Serif','Sans Serif','Display','Slab serif','Script','Monospace'],id:'typeCollapse'
+  }]
+  const TagBarData=[{
+    title: "All fonts",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Funny",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Happy",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Creative",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Retro",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Brush",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Calligraphy",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Comic",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Wedding",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Halloween",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Summer",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Fall",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Latin",
+    className: "tag-class",
+    className1: "tag"
+  },{
+    title: "Vintage",
+    className: "tag-class",
+    className1: "tag"
+  }
+]
   const [open, setOpen] = useState(false);
   const updateOpen = (value) => {
     setOpen(value);
@@ -44,11 +105,14 @@ const Fonts = (props) => {
   return (
       <>
       {/*<SearchContainer mainPage={false} />*/}
-      <SideBar updateOpen={updateOpen}/>
+      <SideBar updateOpen={updateOpen} data={SideBarData}/>
 
-      <div className={`search-content ${
+      <div className={`fonts-page ${
       !open ? "base" : "pushed"
     }`} >
+      <TagBar data={TagBarData} className={`${
+      !open ? "base" : "pushed-tagbar"
+    }`}/>
       <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
        <FontsList/>
   </div>

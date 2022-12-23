@@ -9,7 +9,85 @@ import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
 import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultHeader";
 import SideBar from "../components/Search/FilterSideBar/SideBar";
 import TagBar from "../components/Search/FilterSideBar/TagBar";
-
+import { SideBarData1 } from "../components/Search/FilterSideBar/SideBarData1";
+const TagBarData=[ {
+  title: "Photos",
+  pic: "bi bi-image tw-left-0",
+  className: "type-class",
+  className1: "type",
+},
+{
+  title: "PSD",
+  pic: "bi bi-filetype-psd",
+  className: "type-class",
+  className1: "type",
+},
+{
+  title: "All images",
+  pic: "bx bxs-shapes",
+  className: "type-class",
+  className1: "type",
+},
+{
+  title: "arrow",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "Background",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "business card",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "certificates",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "christmas",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "flower",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "frame",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "halloween",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "infographic",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+},
+{
+  title: "pattern",
+  pic: "bx bx-search icon",
+  className: "tag-class",
+  className1: "tag",
+}]
 const Search = (props) => {
   const [open, setOpen] = useState(false);
   const updateOpen = (value) => {
@@ -36,15 +114,15 @@ const Search = (props) => {
   };
 
   return (
-
     <>
       <SearchContainer dataHandler={loadData} mainPage={false} setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
-      <SideBar updateOpen={updateOpen}/>
-
+      <SideBar updateOpen={updateOpen} data={SideBarData1}/>
       <div className={`search-content ${
       !open ? "base" : "pushed"
     }`} >
-      <TagBar/>
+      <TagBar data={TagBarData} className={`${
+      !open ? "base" : "pushed-tagbar"
+    }`}/>
         <SearchResults images={data} visible={contentState} />
 <SearchResults1/>
         <Spinner visible={spinnerTrigger} />
