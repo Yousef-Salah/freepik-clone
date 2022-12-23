@@ -1,10 +1,25 @@
 .sidebarcontent {
-  height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   position: fixed;
   max-width: 17rem;
   position: sticky;
+  height:57rem ;
+  
+}
+.pushed .sidebarcontent{
+  border-right: 2px solid #e3e9ed;
+  border-top: 2px solid #e3e9ed;
+}
+.translatex100{
+  transform:translateX(-100px);
+}
+.translatex100 .sidebarcontent{
+  border-right: 2px solid #e3e9ed;
+  border-top: 2px solid #e3e9ed;
+}
+.translatex0{
+  transform:translateX(0);
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -34,8 +49,16 @@
 
 .collapsebtn {
   border-radius: 0em;
+  transition: 0s;
+}
+.sidebarrow{
+  transition: 0s;
+
 }
 
+.sub-page-search{
+  border-bottom: 15 black;
+}
 .btn-collapse {
   border: 0ch;
   background-color: white;
@@ -47,6 +70,8 @@
   line-height: 1.66;
   -webkit-font-smoothing: antialiased;
   font-weight: 200;
+  transition: 0s;
+
 }
 
 .side-tag {
@@ -152,11 +177,15 @@
 }
 
 .pushed{
- left: 250px;
- width: 90%;
+ left: 270px;
+ width: 80%;
  position: relative;
 }
-
-.sidebarcontent{
-  height:57rem ;
+.sidebar-content .collapse.show{
+  margin-bottom: -20%;
+  transition: 0s;
+}
+.collapseicon{
+  font-weight: 600;
+  font-size: 18px;
 }

@@ -38,10 +38,13 @@ const Search = (props) => {
 
     <>
       <SearchContainer dataHandler={loadData} mainPage={false} setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
-      <div className="search-content">
-        <FilterSideBar />
-        <SearchResults images={data} visible={contentState} />
+      <SideBar updateOpen={updateOpen}/>
 
+      <div className={`search-content ${
+      !open ? "base" : "pushed"
+    }`} >
+        <SearchResults images={data} visible={contentState} />
+<SearchResults1/>
         <Spinner visible={spinnerTrigger} />
       </div>
     </>

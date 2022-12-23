@@ -4,7 +4,7 @@ import { Cards3dData } from "./Cards3dData";
 import { Link } from "react-router-dom";
 const CardLayout = () => {
   return (
-    <div className="row row-cols-lg-7 row-cols-md-7 row-cols-xl-7 layout-3d">
+    <div className="row layout-3d ">
         {Cards3dData.map((val) => {
           return (
             <div className="col">

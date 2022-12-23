@@ -16,8 +16,10 @@ const Tag = (props) => {
         }
         type="button"
       >
+        <p>
         <i className={props.pic ? props.pic:'d-none' + " icon"}></i>
         {props.title}
+        </p>
       </button>
     </span>
   );

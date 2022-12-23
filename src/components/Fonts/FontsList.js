@@ -57,7 +57,7 @@ const FontsList = () => {
         <input
           type="text"
           id="fontCheck"
-          className="form-control search col"
+          className="form-control fontcheck col"
           placeholder="The quick brown fox jumps over the lazy dog"
           onKeyUp={fontCheck}
         ></input>
