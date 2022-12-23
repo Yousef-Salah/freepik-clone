@@ -1,5 +1,5 @@
 // Imports
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./search-box.css";
 import DropDownItem from "./SearchDropdown";
 import DropDownButton from "./DropDownButton";
@@ -14,75 +14,79 @@ const SearchBox = (props) => {
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
 
-  const [searchInput, setSearchInput] = useState(props.searchQuery.searchInput);
-  const [itemType, setItemType] = useState(props.searchQuery.itemType);     // Assets or collections
-  const [itemPrice, setItemPrice] = useState(props.searchQuery.itemPriceType);   // Free or Premium  // ! fix dataFilter bug
-  const [category, setCategory] = useState(props.searchQuery.category);
+  // const [searchInput, setSearchInput] = useState(props.searchQuery.current.searchInput);
+  // const [itemType, setItemType] = useState(props.searchQuery.itemType);     // Assets or collections
+  // const [itemPrice, setItemPrice] = useState(props.searchQuery.itemPriceType);   // Free or Premium  // ! fix dataFilter bug
+  // const [category, setCategory] = useState(props.searchQuery.category);
+
+  const searchInput = useRef(props.searchQuery.current.searchInput);
+  const itemType = useRef(props.searchQuery.current.itemType);
+  const category = useRef(props.searchQuery.current.category);
+  const itemPricesList = useRef(props.searchQuery.current.itemPriceType);
 
   useEffect(() => {
-   if(!props.mainPage && (props.page != 'category')) props.dataHandler();
+    if(!props.mainPage && (props.page != 'category')) props.dataHandler();
+
     setButtonLabel(buttonLabelGenerator());
-    setSearchInputPlaceHolder()
+    setSearchInputPlaceHolder();
   }, [props.data]);
 
   const searchInputHanlder = (e) => {
-    if(e.target.value === '') {
-      setSearchInput('');
+    searchInput.current = e.target.value;
+
+    if(searchInput.current === '') {
       setDeleteTextIcon('d-none');
     } else {
-      setSearchInput(e.target.value);
       setDeleteTextIcon('');
     }
-    // checkDeleteIconStatus();
   }
 
   const itemTypeHandler = (e) => {
-    setItemType(e.target.getAttribute('title'));
+    itemType.current = e.target.getAttribute('title');
     setButtonLabel(buttonLabelGenerator());
+    setSearchInputPlaceHolder();
   }
 
   const itemPriceHandler = (e) => {
-    // ! Not the perfect one
 
-    const name = e.target.getAttribute('title');
-    let prices = itemPrice;
+    const incomingPrice = e.target.getAttribute('title');
 
-    if(!itemPrice.length) {        // there is no selected input
-      prices.push(name);
+    if(!itemPricesList.current.length) {        // there is no selected input
+      itemPricesList.current.push(incomingPrice);
     } 
-    else if(itemPrice.length == 2) {
-      const index = itemPrice.indexOf(name);
-      prices.splice(index,1);
+    else if(itemPricesList.current.length == 2) {
+      const index = itemPricesList.current.indexOf(incomingPrice);
+      itemPricesList.current.splice(index,1);
     } 
     else {
-      (prices[0] == name) ?  prices.pop() : prices.push(name);
+      (itemPricesList.current[0] == incomingPrice) ?  itemPricesList.current.pop() : itemPricesList.current.push(incomingPrice);
     }
-
-    setItemPrice(prices);
+    
     setButtonLabel(buttonLabelGenerator());
+    setSearchInputPlaceHolder();
   }
 
   const itemCategoryHandler = (e) => {
     let value = e.target.getAttribute('title');
 
-    if(value === category) setCategory('');
-    else setCategory(value);
+    if(value === category.current) category.current = '';
+    else category.current = value;
 
     setButtonLabel(buttonLabelGenerator());
+    setSearchInputPlaceHolder();
   }
 
   const setSearchInputPlaceHolder = () => {
-    let result = category;
+    let result = category.current;
 
-    result += " " + itemType;
+    result += " " + itemType.current;
 
-    if(category) result = "Search for " + result;
+    if(category.current) result = "Search for " + result;
     else result = "Search for All " + result;
 
     setInputPlaceHolder(result);
   }
   
-  // const [buttonColor, setButtonColor] = useState(true);   // search button hover bg color blue or not
   const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
   const navigate = useNavigate();
   
@@ -103,18 +107,27 @@ const SearchBox = (props) => {
     
     let label = '';
 
-    label = itemType;
+    label = itemType.current;
 
-    if(itemPrice.length) label += ', ' +  itemPrice.join(', ');
+    // if(itemPrice.length) label += ', ' +  itemPrice.join(', ');
 
-    if(category) label += ', ' + category;
+    if(itemPricesList.current) label += ' ' +  itemPricesList.current.join(', ');
+
+    if(category.current) label += ', ' + category.current;
     
     return label;
   }
   
   const deleteText = (event) => {
-    setSearchInput('');
-    checkDeleteIconStatus(event);
+    searchInput.current = '';
+    event.target.value = '';
+    setDeleteTextIcon("opacity-0");
+
+    setTimeout(() => {
+      if (!event.target.value)
+        // in case user is writing while the d-none timeout is running
+        setDeleteTextIcon("d-none");
+    }, 1300);
   };
 
   const submitActionHandler = (event) => {
@@ -124,18 +137,18 @@ const SearchBox = (props) => {
     if(event.target.value == '') return;
     
     let data = {
-      searchInput: searchInput,
-      itemType: itemType,           // assets collections
-      itemPriceType: itemPrice,       // free premium
-      category: category,
+      searchInput: searchInput.current,
+      itemType: itemType.current,           // assets collections
+      itemPriceType: itemPricesList.current,       // free premium
+      category: category.current,
     };
     
-    props.setSearchQuery(data);
+    props.searchQuery.current = data;
 
     if(!props.mainPage && (props.page != 'category')) {
       props.dataHandler();
     } 
-    else return navigate(`${props.page == 'category' ? '../../' : ''}search/${document.getElementById("search-value")?.value}`);
+    else return navigate(`${props.page == 'category' ? '../../' : ''}search/${searchInput.current}`);
   
     setCookie("searchInput", JSON.stringify(data), {
       path: "/"
@@ -157,7 +170,7 @@ const SearchBox = (props) => {
                   name="search-type"
                   for="assets"
                   inputHandler={itemTypeHandler}
-                  value={itemType}
+                  value={itemType.current}
                 />
                 <DropDownItem
                   type="radio"
@@ -165,7 +178,7 @@ const SearchBox = (props) => {
                   name="search-type"
                   for="collections"
                   inputHandler={itemTypeHandler}
-                  value={itemType}
+                  value={itemType.current}
                 />
             </div>
               <DropDownItem divider={true} />
@@ -175,7 +188,7 @@ const SearchBox = (props) => {
                 name="free" 
                 for="free" 
                 inputHandler={itemPriceHandler}
-                value={itemPrice.includes("Free") ? "Free" : ""}
+                value={itemPricesList.current.includes("Free") ? "Free" : ""}
               />
               <DropDownItem
                 title="Premium"
@@ -184,15 +197,15 @@ const SearchBox = (props) => {
                 iconClasses="fa-solid fa-crown"
                 goldItem={true}
                 inputHandler={itemPriceHandler}
-                value={itemPrice.includes("Premium") ? "Premium" : ""}
+                value={itemPricesList.current.includes("Premium") ? "Premium" : ""}
               />
             </div>
             <div id="item-category">
               <DropDownItem divider={true}  single/>
-              <DropDownItem title="Vectors" name="vectors" for="vectors" inputHandler={itemCategoryHandler} category={category} single />
-              <DropDownItem title="Photos" name="photos" for="photos" inputHandler={itemCategoryHandler} category={category} single />
-              <DropDownItem title="PSDs" name="psd" for="psd" inputHandler={itemCategoryHandler} category={category} single />
-              <DropDownItem title="Icons" name="icons" for="icon" inputHandler={itemCategoryHandler} category={category} single />
+              <DropDownItem title="Vectors" name="vectors" for="vectors" inputHandler={itemCategoryHandler} category={category.current} single />
+              <DropDownItem title="Photos" name="photos" for="photos" inputHandler={itemCategoryHandler} category={category.current} single />
+              <DropDownItem title="PSDs" name="psd" for="psd" inputHandler={itemCategoryHandler} category={category.current} single />
+              <DropDownItem title="Icons" name="icons" for="icon" inputHandler={itemCategoryHandler} category={category.current} single />
             </div>
           </div>
         </div>
@@ -209,7 +222,7 @@ const SearchBox = (props) => {
             onChange={searchInputHanlder}
             placeholder={inputPlaceHolder}
             className="rounded-start"
-            value={searchInput}
+            value={searchInput.current}
           />
         </div>
         <div id="search-button" className="d-inline-block">

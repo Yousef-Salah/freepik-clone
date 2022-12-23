@@ -24,7 +24,7 @@ const Search = (props) => {
   }, [spinnerTrigger, props.data]);
 
   const loadData = () => {
-    setData(props.dataFilter.getData(props.searchQuery));
+    setData(props.dataFilter.getData(props.searchQuery.current));
     setContentState(false);
     setSpinnerTrigger(true);
     setTimeout(() => {
@@ -36,7 +36,7 @@ const Search = (props) => {
   return (
 
     <>
-      <SearchContainer dataHandler={loadData} mainPage={false} setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
+      <SearchContainer dataHandler={loadData} mainPage={false} searchQuery={props.searchQuery} />
       <div className="search-content">
         <FilterSideBar />
         <SearchResults images={data} visible={contentState} />
