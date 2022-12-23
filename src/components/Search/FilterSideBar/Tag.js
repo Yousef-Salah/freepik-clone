@@ -17,7 +17,7 @@ const Tag = (props) => {
         type="button"
       >
         <p>
-        <i className={props.pic ? props.pic:'d-none' + " icon"}></i>
+        <i className={props.pic ? props.pic+ " icon":'d-none' }></i>
         {props.title}
         </p>
       </button>

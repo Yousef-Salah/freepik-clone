@@ -8,6 +8,7 @@ import Spinner from "../components/Search/LoadingSpinner/Spinner";
 import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
 import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultHeader";
 import SideBar from "../components/Search/FilterSideBar/SideBar";
+import TagBar from "../components/Search/FilterSideBar/TagBar";
 
 const Search = (props) => {
   const [open, setOpen] = useState(false);
@@ -43,6 +44,7 @@ const Search = (props) => {
       <div className={`search-content ${
       !open ? "base" : "pushed"
     }`} >
+      <TagBar/>
         <SearchResults images={data} visible={contentState} />
 <SearchResults1/>
         <Spinner visible={spinnerTrigger} />
