@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SponsoredSection from "../components/Common/SponsorSection/SponsorSection";
-import FilterSideBar from "../components/Search/FilterSideBar/FilterSideBar";
 import SearchResults from "../components/Search/SearchResults/SearchResults";
 import { useCookies } from "react-cookie";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
 import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
-import SearchResultHeader from "../components/Search/FilterSideBar/SearchResultHeader";
 import SideBar from "../components/Search/FilterSideBar/SideBar";
 import TagBar from "../components/Search/FilterSideBar/TagBar";
 import { SideBarData1 } from "../components/Search/FilterSideBar/SideBarData1";
@@ -127,7 +124,7 @@ const Search = (props) => {
       <TagBar data={TagBarData} className={`${
       !open ? "base" : "pushed-tagbar"
     }`}/>
-            <SearchResults images={data} title={location.pathname.split("/")[2].replace("%20", " ")}
+            <SearchResults images={data} title={location.pathname.split("/")[2].replace("%20", " ").replace("-"," ")}
 					// closedStatus={toggleBackBack}
 					/>
 					<Spinner visible={spinnerTrigger} />

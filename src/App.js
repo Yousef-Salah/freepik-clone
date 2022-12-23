@@ -57,6 +57,7 @@ const App = () => {
           <Route path={'/fonts/:term'} element={<Fonts page={(name) => { setPage(name) }} />} />
           <Route path={'/fonts/'} element={<Fonts page={(name) => { setPage(name) }} />} />
           <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
+          <Route path={'/fontsgrid/:term'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
         </Routes>
         <Footer/>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./filter-sideBar.css";
+import "./filters.css";
 import CollapseBtn from "./CollapseBtn";
 import Colorr from "./Color";
 import Tag from "./Tag";
@@ -13,12 +13,8 @@ const SideBar = (props) => {
   };
   const [scrollClass,setScrollClass]=useState('position-absolute');
 window.addEventListener('scroll',function(){
-//   //   document.getElementById('tagbar').classList.add('fixed-top');
-  //   //   document.getElementById('sidebarr').classList.remove('position-absolute');
-  //   //   document.getElementById('sidebarr').classList.add('fixed-top');
- if(window.pageYOffset >= 278.7272644042969 &&window.pageYOffset<2641 ){
+ if(window.pageYOffset >= 278.7272644042969 &&window.pageYOffset<2641 && open ){
   setScrollClass('fixed-top top-filters')
-  console.log(window.pageYOffset);
  }
  else if(window.pageYOffset >= 2642){
   setScrollClass('position-static')
@@ -26,10 +22,6 @@ window.addEventListener('scroll',function(){
  else{
   setScrollClass('position-absolute')
  }
-  //   // else {
-  //   //   document.getElementById('tagbar').classList.remove('fixed-top');
-  //   //   document.getElementById('sidebarr').classList.add('position-absolute');
-  //   //   document.getElementById('sidebarr').classList.remove('fixed-top');
 
  })
 
@@ -103,7 +95,7 @@ window.addEventListener('scroll',function(){
                     <div className={`row category-row sidebarrow `}>
                       {val.tag === 1
                         ? tags.map((tag, index) => (
-                            <Tag title={tag} pic={val.icon1[index]} />
+                            <Tag title={tag} pic={val.icon1[index]} page={val.page}/>
                           ))
                         : null}
                       {val.color === 1 ? (
@@ -125,7 +117,7 @@ window.addEventListener('scroll',function(){
                               <span className="container ">
                                 <div className={`row category-row  container`}>
                                   {sub.tags.map((tag, index) => (
-                                    <Tag title={tag} />
+                                    <Tag title={tag} page={val.page}/>
                                   ))}
                                 </div>
                               </span>

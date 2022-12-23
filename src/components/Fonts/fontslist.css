@@ -130,7 +130,7 @@ right: 2.8%;
    .card-body{
    left: 115px;
    position: absolute;
-   max-width: 10%;
+   max-width: 70%;
     white-space: nowrap;
     overflow-x: clip;
   }
@@ -150,6 +150,25 @@ right: 2.8%;
         flex-shrink: 0;
         height: 67px;
         max-width: fit-content !important;
+    }
+}
+
+@media only screen and (min-width:151px) and (max-width:395px){
+    .card-body{
+        left: 115px;
+        position: absolute;
+        max-width: 40% !important;
+         white-space: nowrap;
+         overflow-x: clip;
+    }
+}
+@media only screen  and (max-width:180px){
+    .card-body{
+        left: 115px;
+        position: absolute;
+        max-width: 2% !important;
+         white-space: nowrap;
+         overflow-x: clip;
     }
 }
 .nextpage{
@@ -222,7 +241,6 @@ right: 2.8%;
     }
   } 
   @media only screen and (min-width: 1000px) and (max-width: 1920px){
-   
     .margin3{
         margin-top: 3%;
     }

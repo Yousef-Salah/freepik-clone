@@ -1,79 +1,69 @@
 import React, { useState, useEffect } from 'react';
-import SponsoredSection from "../components/Common/SponsorSection/SponsorSection"
-import AnnualDiscount from '../components/Home/AnnualDiscount/AnnualDiscount';
-import CircleCategoy from '../components/Home/CircleCategoy/CircleCategoy';
-import FilterSideBar from '../components/Search/FilterSideBar/FilterSideBar';
-import SearchResultHeader from '../components/Search/FilterSideBar/SearchResultHeader';
+import SearchResultHeader from '../components/Search/SearchResults/SearchResultHeader';
 import SideBar from '../components/Search/FilterSideBar/SideBar';
 import TagBar from '../components/Search/FilterSideBar/TagBar';
-import SearchResults from '../components/Search/SearchResults/SearchResults';
-import { useCookies } from "react-cookie";
-import DataFilter from "../Helpers/DataFilter";
-import SearchContainer from '../components/Search/SearchBox/SearchContainer';
-import FontsList from '../components/Fonts/FontsList';
-import Card3D from '../components/Card3D/Card3D';
-import CardLayout from '../components/Card3D/CardLayout';
 import FontsGridView from '../components/Fonts/FontsGridView';
 const Fonts = (props) => {
   const SideBarData=[{
-    collapse:'Type',icon:'bi bi-type',icon1:[],tag:1,tags:['All','Serif','Sans Serif','Display','Slab serif','Script','Monospace'],id:'typeCollapse'
+    collapse:'Type',icon:'bi bi-type',icon1:[],tag:1,tags:['All','Serif','Sans Serif','Display','Slab serif','Script','Monospace'],id:'typeCollapse',page:'fontsgrid'
   }]
+
   const TagBarData=[{
     title: "All fonts",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Funny",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Happy",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Creative",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Retro",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Brush",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Calligraphy",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Comic",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Wedding",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Halloween",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Summer",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Fall",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Latin",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   },{
     title: "Vintage",
     className: "tag-class",
-    className1: "tag"
+    className1: "tag",page:'fontsgrid'
   }
 ]
   const [open, setOpen] = useState(false);
@@ -102,7 +92,18 @@ const Fonts = (props) => {
   /*}
     // removeCookie("searchInput");
         */
-
+    const [lastWord, setLastWord] = useState('');
+    let [link,setLink]=useState( window.location.href)
+    useEffect(() => {
+      setLink(location.pathname);
+    
+      if (link !== 'http://localhost:3000/fonts') {
+        const words = link.split('/');
+        const fontsIndex = words.indexOf('fonts');
+        const newLastWord = words[fontsIndex + 1];
+        setLastWord(newLastWord.replace("All%20fonts"," "));
+            }
+    }, [location]);
   return (
       <>
       {/*<SearchContainer mainPage={false} />*/}
@@ -114,7 +115,7 @@ const Fonts = (props) => {
       <TagBar data={TagBarData} className={`${
       !open ? "base" : "pushed-tagbar"
     }`}/>
-      <SearchResultHeader title="Free Fonts"  description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
+      <SearchResultHeader title={`Free ${lastWord} Fonts` }   description='Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!'/>
       <FontsGridView/>
 
        

@@ -20,7 +20,7 @@ const Tag = (props) => {
         onClick={() => navigate(`/${props.page}/${props.title}`)}
       >
         <p>
-        <i className={props.pic ? props.pic+ " icon":'d-none' }></i>
+        <i className={props.pic ? props.pic+ " tag-icon":'d-none' }></i>
         {props.title}
         </p>
       </button>

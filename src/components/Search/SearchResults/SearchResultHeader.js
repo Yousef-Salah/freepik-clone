@@ -1,5 +1,5 @@
 import React from 'react'
-import "./filters.css";
+import "./searchresultheader.css";
 import { useState } from 'react';
 
 const SearchResultHeader = (props) => {

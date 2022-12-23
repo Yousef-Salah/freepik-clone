@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import "./search-results.scss";
 import Searchimgcard from "./Searchimgcard";
-import SearchResultHeader from "../FilterSideBar/SearchResultHeader"
+import SearchResultHeader from "./SearchResultHeader"
 import ModalTrigger from "../../Category/PreviewModal/ModalTrigger";
 
 const SearchResults = (props) => {
@@ -27,7 +27,7 @@ const SearchResults = (props) => {
 	return (
 		<>
 			{loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
-			<SearchResultHeader title={"Showing results for " + props.title} sort='True' />
+			<SearchResultHeader title={"Showing results for " + props.title} sort={true} />
 			<div id="search-results-content" className="d-none">
 				{props.images.map((item) => {
 					return (
