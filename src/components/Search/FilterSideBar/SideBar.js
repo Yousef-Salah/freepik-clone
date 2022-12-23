@@ -5,25 +5,26 @@ import CollapseBtn from "./CollapseBtn";
 import Colorr from "./Color";
 import Tag from "./Tag";
 const SideBar = (props) => {
-  let data=props.data;
+  let data = props.data;
   const [open, setOpen] = useState(false);
   const toggle = () => {
     setOpen(!open);
     props.updateOpen(!open);
   };
-  const [scrollClass,setScrollClass]=useState('position-absolute');
-window.addEventListener('scroll',function(){
- if(window.pageYOffset >= 278.7272644042969 &&window.pageYOffset<2641 && open ){
-  setScrollClass('fixed-top top-filters')
- }
- else if(window.pageYOffset >= 2642){
-  setScrollClass('position-static')
- }
- else{
-  setScrollClass('position-absolute')
- }
-
- })
+  const [scrollClass, setScrollClass] = useState("position-absolute");
+  window.addEventListener("scroll", function () {
+    if (
+      window.pageYOffset >= 278.7272644042969 &&
+      window.pageYOffset < 2641 &&
+      open
+    ) {
+      setScrollClass("fixed-top top-filters");
+    } else if (window.pageYOffset >= 2642) {
+      setScrollClass("position-static");
+    } else {
+      setScrollClass("position-absolute");
+    }
+  });
 
   return (
     <div
@@ -95,7 +96,11 @@ window.addEventListener('scroll',function(){
                     <div className={`row category-row sidebarrow `}>
                       {val.tag === 1
                         ? tags.map((tag, index) => (
-                            <Tag title={tag} pic={val.icon1[index]} page={val.page}/>
+                            <Tag
+                              title={tag}
+                              pic={val.icon1[index]}
+                              page={val.page}
+                            />
                           ))
                         : null}
                       {val.color === 1 ? (
@@ -117,7 +122,7 @@ window.addEventListener('scroll',function(){
                               <span className="container ">
                                 <div className={`row category-row  container`}>
                                   {sub.tags.map((tag, index) => (
-                                    <Tag title={tag} page={val.page}/>
+                                    <Tag title={tag} page={val.page} />
                                   ))}
                                 </div>
                               </span>
@@ -131,11 +136,8 @@ window.addEventListener('scroll',function(){
                             type="checkbox"
                             role="switch"
                             id={val.switchId}
-                            
                           />
-                          <label
-                            className="form-check-label toggle-label"
-                          >
+                          <label className="form-check-label toggle-label">
                             {val.par}
                           </label>
                         </div>

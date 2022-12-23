@@ -1,15 +1,10 @@
 import React from "react";
 import Type from "./Tag";
 const TagBar = (props) => {
-let data=props.data;
+  let data = props.data;
   return (
     <div>
-      <div
-      id={props.id}
-        className={
-          `tagbar  ` + props.className
-        }
-      >
+      <div id={props.id} className={`tagbar  ` + props.className}>
         {data.map((val, key) => {
           return (
             <Type
