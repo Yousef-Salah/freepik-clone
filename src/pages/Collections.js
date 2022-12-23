@@ -13,4 +13,4 @@ const Collections =(props)=>{
     );
 
 }
-export default  Collections ;
+export default  Collections;

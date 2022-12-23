@@ -40,7 +40,7 @@ const Search = (props) => {
       <SearchContainer dataHandler={loadData} mainPage={false} setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
       <div className="search-content">
         <FilterSideBar />
-        <SearchResults images={data} visible={contentState} />
+        <SearchResults1 images={data} visible={contentState} />
 
         <Spinner visible={spinnerTrigger} />
       </div>
