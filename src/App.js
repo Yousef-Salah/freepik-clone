@@ -52,7 +52,7 @@ const App = () => {
           <Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
           <Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
           <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
-          <Route path={'/collection'} element={<Login page={(name) => { setPage(name) }} />} />
+          <Route path={'/collections'} element={<Collections page={(name) => { setPage(name) }} />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
