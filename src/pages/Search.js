@@ -98,6 +98,10 @@ const Search = (props) => {
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   const [contentState, setContentState] = useState(true);
 
+	useEffect(() => {
+		props.newQuery(location);
+		console.log("did it")
+	}, [location]);
   useEffect(() => {
     props.page("search");
     console.log(props.searchQuery)
