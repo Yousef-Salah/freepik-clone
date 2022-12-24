@@ -7,40 +7,40 @@
   max-height: 100%;
   padding-right: 2%;
 }
-.pushed .sidebarcontent{
+.pushed .sidebarcontent {
   border-right: 2px solid #e3e9ed;
   border-top: 2px solid #e3e9ed;
 }
-.translatex100{
-  transform:translateX(-100px);
+.translatex100 {
+  transform: translateX(-100px);
 }
-.translatex100 .sidebarcontent{
+.translatex100 .sidebarcontent {
   border-right: 2px solid #e3e9ed;
   border-top: 2px solid #e3e9ed;
 }
-.translatex0{
-  transform:translateX(0);
+.translatex0 {
+  transform: translateX(0);
 }
 .sidebarcontent::-webkit-scrollbar {
   width: 5px;
   max-height: 30%;
   height: 30%;
 }
-.tagbar::-webkit-scrollbar{
+.tagbar::-webkit-scrollbar {
   width: 0px;
   visibility: hidden;
   height: 0%;
 }
-.filters{
+.filters {
   background-color: white;
 }
-.tw-w-0 .filters{
+.tw-w-0 .filters {
   background-color: transparent;
 }
-#sidebarr{
+#sidebarr {
   border: 10px black;
   background-color: white;
- height: 0px;
+  height: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -53,7 +53,7 @@
   border-radius: 0em;
   transition: 0s;
 }
-.sidebarrow{
+.sidebarrow {
   transition: 0s;
 }
 .btn-collapse {
@@ -75,12 +75,12 @@
   padding: 4px 5px;
 }
 .sidebar {
-  margin-left: 38px; 
+  margin-left: 38px;
   height: 100%;
 }
 .sidebar-content {
-  overflow-y: visible;
   background-color: white;
+  /* overflow-y: visible; */
   /* padding: 10px; */
   margin-left: 30%;
 }
@@ -108,7 +108,7 @@
   color: #374957;
   font-family: Arial, Helvetica, sans-serif;
 }
-.search-description{
+.search-description {
   font-size: 17px;
   font-weight: 100 !important;
   margin-left: 25%;
@@ -116,35 +116,35 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center; 
-  margin-bottom: 2rem
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.pushed{
- left: 270px;
- width: 80%;
- position: relative;
+.pushed {
+  left: 270px;
+  width: 80%;
+  position: relative;
 }
-.sidebar-content .collapse.show{
+.sidebar-content .collapse.show {
   margin-bottom: -20%;
   transition: 0s;
 }
-.collapseicon{
+.collapseicon {
   font-weight: 600;
   font-size: 18px;
 }
-.toggle-label{
-  color:#5f7d95;
-  left:0;
+.toggle-label {
+  color: #5f7d95;
+  left: 0;
   position: absolute;
-  width:80%;
+  width: 80%;
 }
-.toggle-switch{
+.toggle-switch {
   position: relative;
   left: 110%;
 }
-.tagbar{
-  left:200px;
+.tagbar {
+  left: 200px;
   overflow-x: scroll;
   width: 87%;
   background-color: white;
@@ -152,7 +152,7 @@
   display: flex;
   position: absolute;
 }
-.pushed-tagbar{
+.pushed-tagbar {
   left: 2%;
   width: 100%;
 }
@@ -287,46 +287,54 @@
   font-size: 14px;
   color: #374957;
 }
-.sidebarrow{
+.sidebarrow {
   padding: 12px 6.5px 0px !important;
 }
-.link{
+.link {
   color: rgb(29, 123, 239);
-} 
-.cancel{
-  color:rgb(192,201,215);
 }
-.color-row{
+.cancel {
+  color: rgb(192, 201, 215);
+}
+.color-row {
   padding: 5px 2px 20px !important;
 }
-.colorr{
+.colorr {
   padding: 2px 16px 27px;
 }
-@media only screen and (max-width:1095px) {
-  .filterscont,.sidebarcontent,#sidebarr{
+@media only screen and (max-width: 1095px) {
+  .filterscont,
+  .sidebarcontent,
+  #sidebarr {
     display: none !important;
     transform: scale(0);
   }
-  .pushed{
-    left:0% !important;
-    width:100% !important;
+  .pushed {
+    left: 0% !important;
+    width: 100% !important;
   }
-  .tagbar,.pushed-tagbar{
-    left:1% !important;
+  .tagbar,
+  .pushed-tagbar {
+    left: 1% !important;
     width: 100% !important;
   }
 }
-@media only screen and (max-width:767px) {
-  .tagbar,.pushed-tagbar{
-    left:1% !important;
+@media only screen and (max-width: 767px) {
+  .tagbar,
+  .pushed-tagbar {
+    left: 1% !important;
     width: 100% !important;
-    top:10.7% !important;
+    top: 10.7% !important;
   }
-  .page-3d .tagbar,.page-3d .pushed-tagbar,.fonts-page .tagbar,.fonts-page .pushed-tagbar{
-    top:4% !important;
+  .page-3d .tagbar,
+  .page-3d .pushed-tagbar,
+  .fonts-page .tagbar,
+  .fonts-page .pushed-tagbar {
+    top: 4% !important;
   }
 }
 
-.page-3d .tagbar{
-  left:4%;
+.page-3d .tagbar {
+  left: 4%;
 }
+

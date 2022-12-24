@@ -51,6 +51,7 @@
   #iamge-card-text .row {
     width: 90%;
     grid-template-columns: 1fr;
+    display: flex;
   }
 }
 #iamge-card-text .row {
