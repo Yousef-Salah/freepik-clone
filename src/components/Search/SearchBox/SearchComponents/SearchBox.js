@@ -129,7 +129,9 @@ const SearchBox = (props) => {
   const submitActionHandler = (event) => {
     event.preventDefault();
 
-    if (event.target.value == "") return;
+    if (searchInputState === "") { 
+      return;
+    }
 
     let data = {
       searchInput: searchInput.current,
@@ -142,12 +144,13 @@ const SearchBox = (props) => {
 
     if (!props.mainPage && props.page != "category") {
       props.dataHandler();
-    } else
+    } else {
       return navigate(
         `${props.page == "category" ? "../../" : ""}search/${
           searchInput.current
         }`
       );
+    }
   };
 
   const mainPage = !props.mainPage ? "sub-page-search" : "";
@@ -239,6 +242,7 @@ const SearchBox = (props) => {
             <i className="fa-solid fa-square-xmark fa-2x "></i>
           </span>
           <input
+            required={true}
             type="text"
             id="search-value"
             onChange={searchInputHanlder}
