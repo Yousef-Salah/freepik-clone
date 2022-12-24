@@ -10,6 +10,7 @@ import Fonts from './pages/Fonts';
 import FontsFormatGrid from './pages/FontsFormatGrid';
 import Page3D from './pages/Page3D';
 import Login from './pages/Login';
+import Collections from './pages/Collections';
 //layouts imports
 import Navbar from "./components/Layouts/Navbar/Navbar";
 import Pricing from './pages/Pricing';
@@ -34,6 +35,14 @@ const App = () => {
       category: "",
     }
   );
+  
+  	const addQuery = (sq) => {
+		console.log(sq);
+		let searchCat = sq.pathname.split("/")[2];
+		let searchQuery = sq.search.split("?query=")[1];
+		console.log(searchCat, searchQuery);
+	}
+
 
   let dataFilter = new DataFilter();
 
@@ -52,6 +61,8 @@ const App = () => {
           <Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
           <Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
           <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
+          <Route path={'/fonts/:term'} element={<Fonts page={(name) => { setPage(name) }} />} />
+          <Route path={'/fontsgrid/:term'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
         </Routes>
         <Footer/>
@@ -59,6 +70,7 @@ const App = () => {
       </BrowserRouter>
       
     </div>
+
 	);
 };
 

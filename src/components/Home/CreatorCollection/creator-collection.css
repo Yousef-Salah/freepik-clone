@@ -1,3 +1,6 @@
+
+
+/* css for the discover collection title */
 .creator-collection-title {
   padding-left: 5%;
   font-size: 28px;
@@ -28,52 +31,43 @@
 .Explore-btn::after {
   display: inline-block;
   padding-left: 8px;
-  -webkit-transition: transform 0.3s ease-out;
-  -moz-transition: transform 0.3s ease-out;
-  -ms-transition: transform 0.3s ease-out;
-  -o-transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-
 }
 
-.right-arrow:hover {
-  -webkit-transform: translateX(4px);
-  -moz-transform: translateX(4px);
-  -ms-transform: translateX(4px);
-  -o-transform: translateX(4px);
+.Explore-btn:hover .right-arrow{
   transform: translateX(4px);
 }
 
+
+/* Css for the discover collection cards  */
+
 .collection-row {
+  display: flex;
+  justify-content: space-evenly;
   padding-top: 5%;
   padding-bottom: 5%;
-  display: flex;
-  flex-direction: row;
-  margin-left: 20px;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 
 .creator-collection-div {
-  box-sizing: border-box;
-  outline: none;
   position: relative;
   width: 100%;
   margin-top: 2%;
   margin-bottom: 6%;
-
 }
 
 .creator-collection-img {
- 
-  
-  width: 290px;
+  width: 300px;
   position: relative;
   border-radius: 20px;
 }
-
+.creator-collection-img1 {
+  position: absolute;
+  width: 294px;
+  rotate: 5deg;
+  /* width: 290px; */
+  border-radius: 20px;
+}
 .creator-collection-div:hover .creator-collection-img {
-  -moz-transform: scale(1.009);
-  -webkit-transform: scale(1.4);
   transform: scale(1.013);
   filter: brightness(.8);
 }
@@ -87,16 +81,13 @@
   color: azure;
   position: absolute;
   bottom: 15px;
-  padding-left: 30%;
+  padding-left: 95px;
   text-align: center;
   font-size: 12px;
 }
 
 .creator-collection-div:hover #resoursess {
   display: flex;
-  -moz-transform: scale(1.009);
-  -webkit-transform: scale(1.4);
-  transform: scale(1.009);
 }
 
 .creator-collection-text {
@@ -104,21 +95,10 @@
   position: absolute;
   bottom: 20px;
   text-align: center;
-  padding-right: 19%;
-}
-
-.creator-collection-img1 {
-  position: absolute;
-  width: 294px;
-  rotate: 5deg;
-  /* width: 290px; */
-  border-radius: 20px;
+  padding-left: 40px;
 }
 
 
-.discover-collection-div {
-  width: 200px;
-}
 
 @media (max-width:1245px) {
   .discover-collection-div {
@@ -141,7 +121,7 @@
 }
 .exploreBox {
   text-align: center;
-  width: 70px;
+  width: 50px;
   font-size: medium;
   padding-top: 20px;
 }
@@ -149,7 +129,7 @@
 
   .exploreBox {
     text-align: center;
-    width: 150px;
+    width: 95px;
     font-size: medium;
     margin-top: 30px;
   }
@@ -158,16 +138,16 @@
 
   .exploreBox {
     text-align: center;
-    width: 100px;
+    width: 90px;
     font-size: medium;
     margin-top: 30px;
   }
 }
-@media  (max-width: 539px) and (min-width: 300px) {
+@media  (max-width: 540px) and (min-width: 300px) {
 
   .exploreBox {
     text-align: center;
-    width: 80px;
+    width: 68px;
     font-size:10px;
     margin-top: 10px;
   }
@@ -194,4 +174,12 @@
 .exploreBoxCard {
   color: rgb(77, 77, 247);
 
+}
+@media (max-width:844px ) and (min-width:390px) { 
+  .creator-collection-text {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-size: 9px;
+   float: left;
+  }
 }

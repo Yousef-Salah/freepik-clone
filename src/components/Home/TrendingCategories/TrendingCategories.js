@@ -27,7 +27,7 @@ const TrendingCategories = (props) => {
 			<div className="grid" id="exploretrend">
 				{data.map((Trendingphoto) => {
 					return (
-						<div className="item" id={Trendingphoto.id}>
+						<div className="trenditem" id={Trendingphoto.id}>
 							<TrendingCard Trendingphoto={Trendingphoto} />
 						</div>
 

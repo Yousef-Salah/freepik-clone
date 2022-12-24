@@ -41,7 +41,7 @@
   position: absolute;
   bottom: 5%;
   margin: 5%;
-  font-size: 90%;
+  font-size: 100%;
   width:fit-content;
   
 }
@@ -54,12 +54,12 @@
   display: block;
   text-align: left;
   color: rgb(58, 71, 85);
-  width: 95%;
+  width: 100%;
 
 }
 #trending #explore-title {
   text-align: center;
-  font-size: 90%;
+  font-size: 100%;
   width: 100%;
 }
 #trending strong {
@@ -67,18 +67,18 @@
 }
 #trending .text-muted {
   text-align: center;
-  font-size: 80%;
+  font-size: 100%;
   width: 100%;
 }
-.item {
-  font-size: 10px;
+.trenditem {
+  font-size: 15px;
   font-weight: 600;
   width: 100%;
 }
 #exploretrend{
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 23%;
+  grid-auto-columns: 60%;
   overflow-x:scroll;
 }
 #exploretrend::-webkit-scrollbar {
@@ -115,7 +115,7 @@
   font-size: 18px;
   width: 100%;
 }
-.item {
+.trenditem {
   font-size: 16px;
   font-weight:bold;
   width: 100%;

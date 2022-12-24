@@ -90,7 +90,7 @@ const Footer = (props) => {
 										Engilsh
 									</a>
 
-									<ul class="dropdown-menu">
+									<ul className="dropdown-menu">
 										<li><a className="dropdown-item" href="#">Português</a></li>
 										<li><a className="dropdown-item" href="#">Deutsch</a></li>
 										<li><a className="dropdown-item" href="#">English</a></li>

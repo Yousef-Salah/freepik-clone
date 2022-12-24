@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import "./search-results.scss";
 import Searchimgcard from "./Searchimgcard";
-import SearchResultHeader from "../FilterSideBar/SearchResultHeader"
+import SearchResultHeader from "./SearchResultHeader"
 import ModalTrigger from "../../Category/PreviewModal/ModalTrigger";
 
 const SearchResults = (props) => {
@@ -16,7 +16,12 @@ const SearchResults = (props) => {
 	}, [props.images])
 
 	const toggleModal = () => {
+		props.modalStatus(!modalDisplay);
 		setModalDisplay(!modalDisplay);
+		console.log(!modalDisplay)
+	}
+	const sendClosed = () => {
+		// props.closedStatus(false);
 	}
 
 	const modalHandler = (item) => {
@@ -27,8 +32,8 @@ const SearchResults = (props) => {
 	return (
 		<>
 			{loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
-			<SearchResultHeader title="Free Vectores" sort='True' />
-			<div id="search-results-content" className={(!props.visible) ? 'd-none' : ''}>
+			<SearchResultHeader title={"Showing results for " + props.title} sort={true} />
+			<div id="search-results-content" className="d-none">
 				{props.images.map((item) => {
 					return (
 						<div onClick={() => modalHandler(item)} >
