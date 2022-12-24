@@ -11,6 +11,10 @@ import ModalTrigger from '../components/Category/PreviewModal/ModalTrigger';
 import RelatedArticles from '../components/Category/RelatedArticles/RelatedArticles';
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
+import chosing from "../assets/images/Related-Articles/choosing-consistent.jpg";
+import Great from "../assets/images/Related-Articles/Great-PowerPoint.jpg";
+import Cover from "../assets/images/Related-Articles/VideoCalls_Cover.jpg";
+
 const Category = (props) => {
 	//? didnt work with useParams() in useState
 	// const [catParam, setCatParam] = useState(useParams().term);
@@ -30,15 +34,13 @@ const Category = (props) => {
 
 	return (
 		<>
-    
-     	<SearchContainer mainPage={false} page='category' setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
 
-			<CategoryHeader />
+			<SearchContainer mainPage={false} page='category' setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} />
+			<CategoryHeader catotitle="The best backgrounds for your projects" catodesc="All your drawings, illustrations and compositions are not standing on thin air, right? There's scenery, something that tells everyone where your creation takes place. That's the background, probably one of the most important elements that make everything feel complete. A background is also a nice decorative touch, especially in slideshows, flyers, and other projects." />
 			{cat === "style_full" ? <CategoryFullList category={catParam} />
 				:
 				<CategorySepList category={catParam} />}
 			<CategorySection />
-			{/* -12 col-md-10 col-lg-6 col-xl-4 col-xxl-3 */}
 			<div className="row related-articles ">
 				<div><p className='Related-articles-title'>
                 <h3>Related articles</h3>
@@ -65,4 +67,4 @@ const Category = (props) => {
 	)
 }
 
-export default Category
+export default Category;

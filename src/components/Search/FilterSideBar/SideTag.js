@@ -1,4 +1,4 @@
-import "./filter-sideBar.css";
+// import "./filter-sideBar.css";
 import "./filters.css";
 import { useState } from "react";
 function getClassItem(selected) {

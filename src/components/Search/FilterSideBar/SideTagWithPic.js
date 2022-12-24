@@ -1,4 +1,4 @@
-import "./filter-sideBar.css";
+// import "./filter-sideBar.css";
 import "./filters.css";
 const SideTagWithPic = (props) => {
   return (
