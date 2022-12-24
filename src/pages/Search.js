@@ -124,7 +124,7 @@ const Search = (props) => {
 				<SearchResults images={data} title={location.pathname.split("/")[2].replace("%20", " ").replace("-", " ")}
 				// closedStatus={toggleBackBack}
 				/>
-				<Spinner visible={spinnerTrigger} />
+				{/* <Spinner visible={spinnerTrigger} /> */}
 				<SearchResults1 />
 				<Spinner visible={spinnerTrigger} />
 			</div>

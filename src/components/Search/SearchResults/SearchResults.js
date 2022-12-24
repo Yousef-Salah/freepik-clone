@@ -20,9 +20,7 @@ const SearchResults = (props) => {
 		setModalDisplay(!modalDisplay);
 		console.log(!modalDisplay)
 	}
-	const sendClosed = () => {
-		// props.closedStatus(false);
-	}
+
 
 	const modalHandler = (item) => {
 		setModalData(item)

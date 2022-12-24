@@ -14,7 +14,7 @@ export const ModalTrigger = (props) => {
 	}, [props.displayStatus])
 
 	const buttonHandler = () => {
-		props.MTStatus(!display)
+		// props.MTStatus(!display)
 		setDisplay(!display);
 	};
 
