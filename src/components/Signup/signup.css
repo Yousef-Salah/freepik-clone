@@ -1,49 +1,48 @@
-#Signup {
-  max-width: 100%;
-  max-height: 100%;
+#Signup{
+  padding: 0;
+  max-height:100%;
 }
-.Sign-up-photo {
+#Sign-up-photo {
   position: relative;
   text-align: center;
   color: white;
   padding: 0;
 }
-.signup-imgby {
-  color: white;
+.signup-img{
+  padding: 0;
+  width: 100%;
+  height: max-content;
+  max-height: 100vh;
+}
+#Sign-up-form {
+  align-self: center;
+}
+#Sign-up-photo .signup-imgby {
   position: absolute;
   display: block;
-  bottom: 8px;
+  bottom: 10px;
   left: 16px;
 }
 .signup-imgby strong {
     margin-left: 3px;
 }
-.Sign-up-form {
-  align-self: center;
+#Signup #signup-btns {
+  display: grid;
+  grid-row: 1fr;
+  row-gap: 10%;
+  grid-column: 1fr;
+  justify-content: center;
+  margin: 2% 0 5%;
 }
 .signup-freepik {
   display: inline-flex;
   justify-content: center;
-  margin: 20% 0 8%;
+  margin: 8% 0 4%;
   width: 25%;
 }
-#sign-up {
-  margin: 5% 10%;
-  font-weight: bold;
-}
-.signupinputs {
-  display: grid;
-  grid-column: 1fr;
-}
-#signup-btns {
-  display: grid;
-  grid-row: 1fr;
-  row-gap: 20%;
-  grid-column: 1fr;
-  justify-content: center;
-  margin: 5% 0 10%;
-}
-.signup-btn {
+#signup-btn-google,
+#signup-btn-facebook,
+#signup-btn-email {
   display: flex;
   justify-content: center;
   border-width: 2px;
@@ -56,9 +55,10 @@
 #signup-icon-facebook,
 #signup-icon-email {
   margin-right: 10px;
+  float: left;
 }
 #logintoaccount {
-  margin: 15%;
+  margin: 5%;
 }
 #logintoaccount strong {
   font-family: Arial, Helvetica, sans-serif;
@@ -71,12 +71,16 @@
   color: rgb(54, 113, 227);
 }
 .signupTerms {
-  margin: 20%;
+  display: inline-block;
+  margin: 5%;
+  padding: 0;
+
 }
 .Freepiknews {
+  font-family: Comic  ;
   display: flex;
-  padding-top: 10%;
-  margin: 4%;
+  float: left;
+  margin: 5%;
 }
 .newscheckbox {
   align-self: flex-start;
@@ -91,6 +95,8 @@
     display: inline-flex;
     justify-content: center;
     max-width: 40%;
+    margin-bottom: 5%;
+
 }
 .freepikcompany{
     margin-left: 2% ;

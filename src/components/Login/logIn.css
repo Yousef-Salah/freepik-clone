@@ -1,8 +1,6 @@
 #login {
-  height: fit-content;
-  max-width: 100%;
+  padding: 0;
   max-height: 100%;
-  
 }
 #loginphoto {
   position: relative;
@@ -10,13 +8,19 @@
   color: white;
   padding: 0;
 }
+.login-img {
+  padding: 0;
+  width: 100%;
+  height: max-content;
+  max-height: 100vh;
+}
 #login-form {
   align-self: center;
 }
 #loginphoto .login-imgby {
   position: absolute;
   display: block;
-  bottom: 8px;
+  bottom: 10px;
   left: 16px;
 }
 .login-imgby strong {
@@ -34,11 +38,7 @@
   display: inline-flex;
   justify-content: center;
   margin: 20% 0 8%;
-  width: 18%;
-}
-#log-in {
-  margin: 5% 10%;
-  font-weight: bold;
+  width: 25%;
 }
 #login-btn-google,
 #login-btn-facebook,
@@ -58,7 +58,7 @@
   float: left;
 }
 #addaccount {
-  margin: 15%;
+  margin: 20%;
 }
 #addaccount strong {
   font-family: Arial, Helvetica, sans-serif;
@@ -67,9 +67,4 @@
 }
 #login-icon-facebook {
   color: rgb(54, 113, 227);
-}
-@media screen and(max-width:1400px) {
-  .log-in {
-    width: 100%;
-  }
 }

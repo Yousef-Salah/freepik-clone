@@ -1,22 +1,18 @@
 import React from "react";
-import Type from "./Type";
-import { TagBarData } from "./TagBarData";
+import Type from "./Tag";
 const TagBar = (props) => {
+  let data = props.data;
   return (
     <div>
-      <div
-      id={props.id}
-        className={
-          `tw-flex  tagbar tw-absolute  tw-h-100 ` + props.className
-        }
-      >
-        {TagBarData.map((val, key) => {
+      <div id={props.id} className={`tagbar  ` + props.className}>
+        {data.map((val, key) => {
           return (
             <Type
               title={val.title}
               pic={val.pic}
               className={val.className}
               className1={val.className1}
+              page={val.page}
             />
           );
         })}

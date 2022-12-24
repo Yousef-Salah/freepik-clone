@@ -8,8 +8,6 @@ export class DataFilter {
 
   getData(filters) {
 
-    if(filters == undefined) return [];
-
     let filteredData = JSON.parse(JSON.stringify(this.data));
 
     if(filters.category) {
@@ -30,7 +28,7 @@ export class DataFilter {
       filteredData = filteredData.filter((item) => item.title.toLowerCase().includes(filters.search.toLowerCase()))
     }
 
-    return filteredData.slice(0,10);
+    return filteredData.slice(0,10);    // for pagination
   }
 }
 
