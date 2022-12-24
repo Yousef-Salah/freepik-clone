@@ -2,11 +2,16 @@
   color: white;
   padding-bottom: 15px;
 }
-.testsearchcard{
+
+.searchcard-img {
+  width: fit-content;
+  height: 160px;
+}
+.testsearchcard {
   position: relative;
   display: inline-block;
 }
-.Cardphoto{
+.Cardphoto {
   position: absolute;
   top: 0;
   left: 0;
@@ -76,7 +81,7 @@
 #search-card:hover .searchcard {
   opacity: 1;
 }
-#search-card:hover .Cardphoto{
+#search-card:hover .Cardphoto {
   opacity: 1;
 }
 
@@ -93,7 +98,7 @@
   padding: 2%;
   z-index: 2;
   color: rgb(226, 168, 58);
-  background-color: rgb(88, 96, 107,.7);
+  background-color: rgb(88, 96, 107, 0.7);
   margin-top: 2%;
   margin-left: 2%;
   border-radius: 2px;
@@ -101,3 +106,4 @@
 #search-card:hover #premium-img {
   opacity: 0;
 }
+

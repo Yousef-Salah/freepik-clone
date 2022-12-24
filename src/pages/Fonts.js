@@ -15,41 +15,39 @@ const Fonts = (props) => {
   useEffect(() => {
     props.page("Fonts");
   }, []);
-  let dataFilter;
+	const [lastWord, setLastWord] = useState("");
+	let [link, setLink] = useState(window.location.href);
+	useEffect(() => {
+		setLink(location.pathname);
 
-  
-  const [lastWord, setLastWord] = useState("");
-  let [link, setLink] = useState(window.location.href);
-  useEffect(() => {
-    setLink(location.pathname);
+		if (link !== "http://localhost:3000/fonts") {
+			const words = link.split("/");
+			const fontsIndex = words.indexOf("fonts");
+			const newLastWord = words[fontsIndex + 1];
+			setLastWord(newLastWord.replace("All%20fonts", " "));
+		}
+	}, [location]);
 
-    if (link !== "http://localhost:3000/fonts") {
-      const words = link.split("/");
-      const fontsIndex = words.indexOf("fonts");
-      const newLastWord = words[fontsIndex + 1];
-      setLastWord(newLastWord.replace("All%20fonts", " "));
-    }
-  }, [location]);
 
-  return (
-    <> 
+	return (
+		<>
 
-      {/*<SearchContainer mainPage={false} />*/}
-      <SideBar updateOpen={updateOpen} data={FontsSideBarData} />
+			{/*<SearchContainer mainPage={false} />*/}
+			<SideBar updateOpen={updateOpen} data={SideBarData} />
 
-      <div className={`fonts-page ${!open ? "base" : "pushed"}`}>
-        <TagBar
-          data={FontsTagBarData}
-          className={`${!open ? "base" : "pushed-tagbar"}`}
-        />
-        <SearchResultHeader
-          title={`Free ${lastWord} Fonts`}
-          description="Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!"
-        />
-        <FontsList />
-      </div>
-    </>
-  );
+			<div className={`fonts-page ${!open ? "base" : "pushed"}`}>
+				<TagBar
+					data={TagBarData}
+					className={`${!open ? "base" : "pushed-tagbar"}`}
+				/>
+				<SearchResultHeader
+					title={`Free ${lastWord} Fonts`}
+					description="Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!"
+				/>
+				<FontsList />
+			</div>
+		</>
+	);
 };
 
 export default Fonts;

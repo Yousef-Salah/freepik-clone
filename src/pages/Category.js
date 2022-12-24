@@ -12,6 +12,11 @@ import RelatedArticles from '../components/Category/RelatedArticles/RelatedArtic
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 
+import chosing from "../assets/images/Related-Articles/choosing-consistent.jpg";
+import Great from "../assets/images/Related-Articles/Great-PowerPoint.jpg";
+import Cover from "../assets/images/Related-Articles/VideoCalls_Cover.jpg";
+
+
 const Category = (props) => {
 	//? didnt work with useParams() in useState
 	// const [catParam, setCatParam] = useState(useParams().term);
@@ -34,17 +39,35 @@ const Category = (props) => {
     
      	<SearchContainer mainPage={false} page='category' searchQuery={props.searchQuery} />
 
-
 			<CategoryHeader catotitle="The best backgrounds for your projects" catodesc="All your drawings, illustrations and compositions are not standing on thin air, right? There's scenery, something that tells everyone where your creation takes place. That's the background, probably one of the most important elements that make everything feel complete. A background is also a nice decorative touch, especially in slideshows, flyers, and other projects." />
 			{cat === "style_full" ? <CategoryFullList category={catParam} />
 				:
 				<CategorySepList category={catParam} />}
 			<CategorySection />
-			<RelatedArticles />
+			<div className="row related-articles ">
+				<div><p className='Related-articles-title'>
+                <h3>Related articles</h3>
+            </p></div>
+				<div className='col-3 related-articles '>
+					<RelatedArticles title="Video call backgrounds: change your meeting’s look"
+						heder="The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..."
+						image={Cover} />
+				</div>
+				<div className='col-3 related-articles '>
+					<RelatedArticles title="10 tips for a great powerpoint presentation"
+						heder="Today it is not enough for a successful performance just to tell about your idea. People certainly want to see,..."
+						image={Great} />
+				</div>
+				<div className='col-3 related-articles'>
+					<RelatedArticles title="Tips for choosing consistent images for your designs"
+						heder="One of the fundamental elements of graphic design is consistency. No matter what article, design book, workshop,..."
+						image={chosing} />
+				</div>
+			</div>
 			<JoinSection />
 			<ModalTrigger />
 		</>
 	)
 }
 
-export default Category
+export default Category;

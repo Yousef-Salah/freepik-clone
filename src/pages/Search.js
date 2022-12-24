@@ -22,18 +22,20 @@ const Search = (props) => {
 
 	useEffect(() => {
 		props.page("search");
-    props.newQuery(location);
+		props.newQuery(location);
 	}, [spinnerTrigger, location]);
 
-  const loadData = () => {
-    setData(props.dataFilter.getData(props.searchQuery.current));
-    setContentState(false);
-    setSpinnerTrigger(true);
-    setTimeout(() => {
-      setSpinnerTrigger(false);
-      setContentState(true);
-    }, 1500);
-  };
+
+	const loadData = () => {
+		setData(props.dataFilter.getData(props.searchQuery.current));
+		setContentState(false);
+		setSpinnerTrigger(true);
+		setTimeout(() => {
+			setSpinnerTrigger(false);
+			setContentState(true);
+		}, 1500);
+	};
+
 	return (
 		<>
 			<SearchContainer dataHandler={loadData} mainPage={false} searchQuery={props.searchQuery} />
@@ -43,11 +45,9 @@ const Search = (props) => {
 				<TagBar data={SearchTagBarData} className={`${!open ? "base" : "pushed-tagbar"
 					}`} />
 				<SearchResults images={data} visible={contentState} title={location.pathname.split("/")[2].replace("%20", " ").replace("-", " ")}
-				// closedStatus={toggleBackBack}
 				/>
-				<SearchResults1 />
 				<Spinner visible={spinnerTrigger} />
-			</div>
+			</div >
 		</>
 	);
 };

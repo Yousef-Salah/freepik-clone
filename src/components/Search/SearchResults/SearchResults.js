@@ -16,13 +16,11 @@ const SearchResults = (props) => {
 	}, [props.images])
 
 	const toggleModal = () => {
-		props.modalStatus(!modalDisplay);
+		// props.modalStatus(!modalDisplay);
 		setModalDisplay(!modalDisplay);
 		console.log(!modalDisplay)
 	}
-	const sendClosed = () => {
-		// props.closedStatus(false);
-	}
+
 
 	const modalHandler = (item) => {
 		setModalData(item)
@@ -33,11 +31,11 @@ const SearchResults = (props) => {
 		<>
 			{loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
 			<SearchResultHeader title={"Showing results for " + props.title} sort={true} />
-			<div id="search-results-content" className={(!props.visible) ? "d-none": ""}>
+			<div id="grid-cards" className={(!props.visible) ? "d-none" : ""}>
 				{props.images.map((item) => {
 					return (
-						<div onClick={() => modalHandler(item)} >
-							<Searchimgcard Cardphoto={item} />;
+						<div className="card-wrapper" onClick={() => modalHandler(item)} >
+							<Searchimgcard Cardphoto={item} />
 						</div>
 					)
 				})}
