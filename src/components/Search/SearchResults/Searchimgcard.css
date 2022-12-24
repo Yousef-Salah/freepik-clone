@@ -1,20 +1,26 @@
 #search-card {
-  position: relative;
   color: white;
   padding-bottom: 15px;
-  cursor: pointer;
 }
-.searchcard-img {
-  background-size: cover;
+.testsearchcard{
   position: relative;
-  z-index: 1;
-  max-width: 100%;
+  display: inline-block;
 }
-#searchcard {
+.Cardphoto{
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   opacity: 0;
   z-index: 1;
-  top: 5px;
+  margin: 5px;
+}
+.searchcard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
   margin: 5px;
 }
 .likes-no {
@@ -30,17 +36,17 @@
   top: 0;
   right: 0;
 }
-.descreption {
-  font-size: 70%;
+.searchcard-desc {
+  font-size: 85%;
   margin-bottom: 2px;
 }
 #searchauthor-img {
-  width: 14%;
+  width: 10%;
   float: left;
   padding-right: 5px;
 }
 #searchauthor-name {
-  font-size: 70%;
+  font-size: 85%;
 }
 .searchcard-buttons {
   position: absolute;
@@ -51,6 +57,7 @@
   right: 0;
 }
 .searchcard-button {
+  top: 0;
   font-size: 50%;
   margin-bottom: 1px;
   border-radius: 2px;
@@ -66,9 +73,13 @@
   color: gray;
   background-color: rgb(255, 255, 255);
 }
-#search-card:hover #searchcard {
+#search-card:hover .searchcard {
   opacity: 1;
 }
+#search-card:hover .Cardphoto{
+  opacity: 1;
+}
+
 #search-card:hover .searchcard-img {
   filter: brightness(0.8);
 }
@@ -82,7 +93,7 @@
   padding: 2%;
   z-index: 2;
   color: rgb(226, 168, 58);
-  background-color: rgb(88, 96, 107);
+  background-color: rgb(88, 96, 107,.7);
   margin-top: 2%;
   margin-left: 2%;
   border-radius: 2px;
@@ -90,4 +101,3 @@
 #search-card:hover #premium-img {
   opacity: 0;
 }
-

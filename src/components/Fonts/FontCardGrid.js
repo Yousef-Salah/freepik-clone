@@ -1,17 +1,17 @@
-import React from 'react'
-import './fontslist.css';
+import React from "react";
+import "./fontslist.css";
 
 const FontCardGrid = (props) => {
   return (
     <div class="img-wrapper fontscardgrid">
-    <img src={props.img} className='fontimg'/>
-    <div className='desc'>
-    <div className="font-name" >{props.name}</div>
-    <img className="avatar" src={props.avatar}/>
-    <div className="creator-name">{props.creator}</div>
+      <img src={props.img} className="fontimg" />
+      <div className="desc">
+        <div className="font-name">{props.name}</div>
+        <img className="avatar" src={props.avatar} />
+        <div className="creator-name">{props.creator}</div>
+      </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default FontCardGrid
+export default FontCardGrid;

@@ -34,7 +34,12 @@ const App = () => {
       category: "",
     }
   );
-
+	const addQuery = (sq) => {
+		console.log(sq);
+		let searchCat = sq.pathname.split("/")[2];
+		let searchQuery = sq.search.split("?query=")[1];
+		console.log(searchCat, searchQuery);
+	}
   let dataFilter = new DataFilter();
 
   return (
@@ -44,15 +49,17 @@ const App = () => {
         <Routes>
           <Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} setSearchQuery={setSearchQuery} searchQuery={searchQuery} />} />
-          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} setSearchQuery={setSearchQuery} searchQuery={searchQuery} />} />
+          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter} setSearchQuery={setSearchQuery} searchQuery={searchQuery} newQuery={addQuery}/>} />
           <Route path={'/category/:term'} element={<Category catStyle="style_sep" page={(name) => { setPage(name) }} dataFilter={dataFilter} setSearchQuery={setSearchQuery} searchQuery={searchQuery} />} />
           <Route path={'/pricing'}element={<Pricing page={(name)=>{setPage(name)}} />} />
           <Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
           <Route path={'/signup'} element={<Signup page={(name) => { setPage(name) }} />} />
           <Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
-          <Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
+          <Route path={'/fonts/:term'} element={<Fonts page={(name) => { setPage(name) }} />} />
+          <Route path={'/fonts/'} element={<Fonts page={(name) => { setPage(name) }} />} />
           <Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
           <Route path={'/collections'} element={<Collections page={(name) => { setPage(name) }} />} />
+
         </Routes>
         <Footer/>
       </BrowserRouter>
