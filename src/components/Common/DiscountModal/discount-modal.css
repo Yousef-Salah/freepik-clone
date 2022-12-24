@@ -1,0 +1,59 @@
+:root {
+  --blue-color: #4545e1;
+}
+
+#discount-modal {
+  position: sticky !important;
+  bottom: 0;
+}
+
+#discount-modal > div {
+  max-width: 350px;
+  background-color: var(--blue-color);
+  color: #d7d7ff;
+  overflow: hidden;
+
+  position: absolute !important;
+  bottom: 10px;
+  right: 10px;
+}
+
+#discount-modal #freepik-icon {
+  max-width: 50px;
+}
+
+#discount-modal span {
+  font-size: larger;
+  font-weight: bold;
+  color: white;
+}
+
+#discount-modal a {
+  position: relative;
+  z-index: 3;
+  background-color: var(--blue);
+}
+
+#discount-modal button {
+  z-index: 3;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255,255,255, 0.2);
+  transition: background-color 0.2s ease 0.1s;
+}
+
+#discount-modal button:hover {
+  background-color: rgb(255,255,255, 0.6);
+}
+
+#discount-modal #righ-side-image {
+  z-index: 2;
+  position: absolute;
+  height: 100%  !important;
+  top: 0;
+  right: 0;
+}
+
+

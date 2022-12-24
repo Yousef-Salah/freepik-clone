@@ -1,16 +1,39 @@
-.Related-col{
-    /*margin-left: 70px;
-    width: 450px;*/
-    width: 30%;
+#Related-col {
+    width: 100%;
     object-fit: cover;
     border-radius: 10px;
-    margin-left: 45px;
+    display: flex;
+    margin-left: 180px;
+
+
 }
-.card-title{
+.Related-articles-title{
+    font-size:xx-large;
+    margin-left: 100px;
+    padding-bottom: 15px;
+}
+#Related-title {
     font-size: large;
 }
-.CardTitle{
-    font-size: 20%;
+
+.row.related-articles {
+    /*width: 134%;*/
+    width: 100%;
+
 }
 
+@media screen and (max-width: 1246px) {
+    .related-articles {
+        width: 37%;
+    }
 
+    .row.related-articles {
+        width: 124%;
+    }
+
+    @media screen and (max-width: 640px) {
+        .related-articles {
+            width: 76%;
+        }
+    }
+}

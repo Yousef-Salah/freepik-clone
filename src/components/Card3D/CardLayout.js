@@ -2,23 +2,44 @@ import React from "react";
 import Card3D from "./Card3D";
 import { Cards3dData } from "./Cards3dData";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const CardLayout = () => {
+  let [shuffled, setShuffle] = useState(Cards3dData);
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  function shuffle() {
+    window.scrollTo(0, 0);
+    const newShuffledArray = [...shuffled];
+    shuffleArray(newShuffledArray);
+    setShuffle(newShuffledArray);
+  }
   return (
-    <div className="row row-cols-lg-7 row-cols-md-7 row-cols-xl-7 layout-3d">
-        {Cards3dData.map((val) => {
-          return (
-            <div className="col">
-              <Link to={val.link}>
-                <Card3D
-                  image={require(`../../assets/images/3dmodels/${val.image}`)}
-                  name={val.name}
-                  avatar={require(`../../assets/images/3dmodels/avatars/${val.avatar}`)}
-                  owner={val.owner}
-                />
-              </Link>
-            </div>
-          );
-        })}
+    <div className="row layout-3d ">
+      {shuffled.map((val) => {
+        return (
+          <div className="col">
+            <Link to={val.link}>
+              <Card3D
+                image={require(`../../assets/images/3dmodels/${val.image}`)}
+                name={val.name}
+                avatar={require(`../../assets/images/3dmodels/avatars/${val.avatar}`)}
+                owner={val.owner}
+              />
+            </Link>
+          </div>
+        );
+      })}
+      <button
+        onClick={shuffle}
+        type="button"
+        className="btn btn-primary  nextpage next3d"
+      >
+        Next Page <i class="bi bi-arrow-right"></i>
+      </button>
     </div>
   );
 };

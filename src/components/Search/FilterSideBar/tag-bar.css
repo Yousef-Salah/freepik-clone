@@ -1,0 +1,10 @@
+.tab-bar-container {
+  background-color: transparent;
+  height: 80px !important;
+  width: 100% !important;
+}
+
+.tagbar {
+  overflow: scroll;
+}
+

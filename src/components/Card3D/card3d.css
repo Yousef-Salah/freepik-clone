@@ -18,36 +18,64 @@
     opacity: 100%;
     border-radius:.3ch ;
   }
-  .card-3d-wrapper{
-    position: relative;
-    text-align: center;
-    color: white;
-    width: 200px;
-    margin-top: 10%;
+  @media only screen and  (max-width:1095px) {
+    
+    .card-3d-wrapper{
+      position: relative;
+      text-align: center;
+      color: white;
+      width: 222px;
+      aspect-ratio:1;
+      margin-top: 10%;
+    }
+  }
+  @media only screen and (min-width:1096px) {
+    .card-3d-wrapper{
+      position: relative;
+      text-align: center;
+      color: white;
+      width: 195px;
+      aspect-ratio:1;
+      margin-top: 10%;
+    }
+    .card-3d-wrapper:hover .desc-3d{
+      visibility: visible;
+      background-position: 100% 100% ;
+    }
+    .card-3d-wrapper:hover .name-3d{
+      visibility: visible;
+      top:4%;
+      visibility: visible;
+      z-index: 0;
+    }
+    .card-3d-wrapper:hover .avatar1{
+      top:17%;
+      visibility: visible;
+      z-index: 0;
+    }
+    .card-3d-wrapper:hover .owner-3d{
+      top:18%;
+      visibility: visible;
+      z-index: 0;
+    }
+  }
+  .search-content{
+    overflow-x: hidden;
+  }
+  @media only screen and (max-width:790px) {
+    .card-3d-wrapper{
+      position: relative;
+      text-align: center;
+      color: white;
+      width: 280px;
+      aspect-ratio:1;
+      margin-top: 10%;
+    }
   }
   .photo-3d{
     border-radius: .3ch;
   }
-  .card-3d-wrapper:hover .desc-3d{
-    visibility: visible;
-    background-position: 100% 100% ;
-  }
-  .card-3d-wrapper:hover .name-3d{
-    visibility: visible;
-    top:4%;
-    visibility: visible;
-    z-index: 0;
-  }
-  .card-3d-wrapper:hover .avatar1{
-    top:17%;
-    visibility: visible;
-    z-index: 0;
-  }
-  .card-3d-wrapper:hover .owner-3d{
-    top:18%;
-    visibility: visible;
-    z-index: 0;
-  }
+  
 .avatar1{
     position: absolute;
     border-radius: 5ch;
@@ -76,7 +104,15 @@
     width: 15%;
 }
 
+
 .layout-3d{
 margin-left:3%;
 margin-right:3%;
+}
+.next3d{
+  width:190px !important;
+  height: 52px;
+left: -1%;
+position: relative;
+margin-top: 10%;
 }

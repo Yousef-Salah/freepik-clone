@@ -14,15 +14,24 @@
 }
 
 #mp-search-container h1 {
-  font-size: 34px !important;
   padding-top: 20px;
 }
 
 #mp-search-container h2 {
-  font-size: 22px !important;
   padding-bottom: 10px;
 }
 
-/* .bg-purple {
-  background-color: #4055c7;
-} */
+#op-search-container img {
+  height: 40px !important;
+  max-height: 40px;
+}
+
+@media screen and (max-width: 576px) {
+  #mp-search-container h1 {
+    font-size: medium;
+  }
+
+  #mp-search-container h2 {
+    font-size: small;
+  }
+}

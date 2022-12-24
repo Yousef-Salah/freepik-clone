@@ -2,14 +2,14 @@
      [   {
            id: 1,
            title: "coffee Theme",
-           link: "creator-collection-img1.png",
+           link: "creator-collection-img5.png",
            ctext: "coffee Theme",
            cresources: "80 resources",
         },
         {
             id: 2,
             title: "Christmas Gifts",
-            link: "creator-collection-img5.png",
+            link: "creator-collection-img4.png",
             ctext: "Christmas Gifts",
             cresources: "70 resources",
          },

@@ -91,23 +91,25 @@ const Footer = (props) => {
 									Copyright ©  2010-2022 Freepik Company S.L. All rights reserved.
 								</p>
 							</div>
-							<div className="dropdown dropdown-loc">
-								<Link className="btn btn-secondary dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Engilsh
-								</Link>
+              
+							<div className="dropdown-loc">
+								<div className="dropdown">
+									<a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Engilsh
+									</a>
 
-								<ul className="dropdown-menu">
-									<li><Link className="dropdown-item" href="#">Português</Link></li>
-									<li><Link className="dropdown-item" href="#">Deutsch</Link></li>
-									<li><Link className="dropdown-item" href="#">English</Link></li>
-									<li><Link className="dropdown-item" href="#">Español</Link></li>
-									<li><Link className="dropdown-item" href="#">Français</Link></li>
-									<li><Link className="dropdown-item" href="#">日本語</Link></li>
-									<li><Link className="dropdown-item" href="#">Polski</Link></li>
-									<li><Link className="dropdown-item" href="#">Pусский</Link></li>
-									<li><Link className="dropdown-item" href="#">Nederlands</Link></li>
-									<li><Link className="dropdown-item" href="#">Italiano</Link></li>
-									<li><Link className="dropdown-item" href="#">한국어</Link></li>
+									<ul className="dropdown-menu">
+										<li><a className="dropdown-item" href="#">Português</a></li>
+										<li><a className="dropdown-item" href="#">Deutsch</a></li>
+										<li><a className="dropdown-item" href="#">English</a></li>
+										<li><a className="dropdown-item" href="#">Español</a></li>
+										<li><a className="dropdown-item" href="#">Français</a></li>
+										<li><a className="dropdown-item" href="#">日本語</a></li>
+										<li><a className="dropdown-item" href="#">Polski</a></li>
+										<li><a className="dropdown-item" href="#">Pусский</a></li>
+										<li><a className="dropdown-item" href="#">Nederlands</a></li>
+										<li><a className="dropdown-item" href="#">Italiano</a></li>
+										<li><a className="dropdown-item" href="#">한국어</a></li>
 
 
 								</ul>

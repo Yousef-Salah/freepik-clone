@@ -13,18 +13,7 @@
 
 #search > div {
   height: 97%;
-  /* overflow-y: hidden !important; */
 }
-
-/* TODO: Must Be Fixed */
-/* #search {
-	transition: all 0.3 ease 0.1;
-} */
-
-/* #search .dropdown,
-#search #search-button {
-    overflow-y: hidden;
-}  */
 
 #search #input-field {
   width: 534px;
@@ -170,16 +159,24 @@
   }
 }
 
+@media screen and (min-width:770px) {
+  .sub-page-search form #input-field {
+    width: calc(100% - 180px - 54px) !important;
+  }
+}
+
 .sub-page-search {
-  height: 65px !important;
+  height: 45px !important;
   background-color: white !important;
 }
 
 /* TODO: */
 .sub-page-search form{
+  max-width: none !important;
   margin-top: 10px !important;
   margin-bottom: 10px !important;
   height: 44px !important;
+  width: 100%;
   /* max-width: none !important; */
 }
 
@@ -193,20 +190,10 @@
   background-color: transparent !important;
 }
 
-/* #search #search-button {
-  background-color: blue !important;
-  outline: 3px solid blue !important;
-} */
-
 .sub-page-search .dropdown-menu,
 .sub-page-search .dropdown-menu *:not(.form-check-input) {
   background-color: white !important;
 }
-
-/* TODO: SOON !! */
-/* .sub-page-search #search-button button:hover {
-  background-color: #4484F2 !important;
-} */
 
 .sub-page-search #search-button {
   border: 3px solid #CFD9E0;
@@ -218,8 +205,3 @@
   right: 2px !important;
   top: 6px !important;
 }
-
-/* #op-search-container img {
-  background-color: blue;
-  color: white;
-} */
