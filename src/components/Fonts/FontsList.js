@@ -4,14 +4,22 @@ import "./fontslist.css";
 import { FontsData } from "./FontsData";
 import { Link } from "react-router-dom";
 const FontsList = () => {
-  
-
   let [cardTitle, setTtitle] = useState(
     "The quick brown fox jumps over the lazy dog"
   );
-  const [selected,setSelected]=useState({btn1Class:'',btn2Class:'size-selected',btn3Class:'',btn4Class:''});
-  const sizes={btn1Size:['p24','margin3'],btn2Size:['p36','margin25'],btn3Size:['p48','margin15'],btn4Size:['p72','margin15']};
-  const [size,setSize]=useState(['p36','margin25']);
+  const [selected, setSelected] = useState({
+    btn1Class: "",
+    btn2Class: "size-selected",
+    btn3Class: "",
+    btn4Class: "",
+  });
+  const sizes = {
+    btn1Size: ["p24", "margin3"],
+    btn2Size: ["p36", "margin25"],
+    btn3Size: ["p48", "margin15"],
+    btn4Size: ["p72", "margin15"],
+  };
+  const [size, setSize] = useState(["p36", "margin25"]);
   cardTitle = cardTitle
     ? cardTitle
     : "The quick brown fox jumps over the lazy dog";
@@ -31,21 +39,21 @@ const FontsList = () => {
   function fontCheck(e) {
     cardTitle = e.target.value;
     setTtitle(cardTitle);
-  }  
+  }
   function buttonClick(e) {
     let id = e.currentTarget.id;
     let newClasses = { ...selected };
     Object.keys(newClasses).forEach((key) => {
-      if (key == id + 'Class') {
-        newClasses[key] = 'size-selected';
+      if (key == id + "Class") {
+        newClasses[key] = "size-selected";
       } else {
-        newClasses[key] = '';
+        newClasses[key] = "";
       }
     });
     Object.keys(sizes).forEach((key) => {
-      if (key == id + 'Size') {
-        setSize(sizes[key]) ;
-      } ;
+      if (key == id + "Size") {
+        setSize(sizes[key]);
+      }
     });
     setSelected(newClasses);
   }
@@ -57,7 +65,7 @@ const FontsList = () => {
         <input
           type="text"
           id="fontCheck"
-          className="form-control search col"
+          className="form-control fontcheck col"
           placeholder="The quick brown fox jumps over the lazy dog"
           onKeyUp={fontCheck}
         ></input>
@@ -122,7 +130,7 @@ const FontsList = () => {
         </div>
       </div>
 
-      <ul>
+      <ul className="fonts-list">
         {shuffled.map((val) => {
           return (
             <li>
@@ -141,7 +149,11 @@ const FontsList = () => {
           );
         })}
       </ul>
-      <button onClick={shuffle} type="button" class="btn btn-primary nextpage">
+      <button
+        onClick={shuffle}
+        type="button"
+        className="btn btn-primary nextpage"
+      >
         Next Page <i class="bi bi-arrow-right"></i>
       </button>
     </div>

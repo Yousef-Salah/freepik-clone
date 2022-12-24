@@ -38,7 +38,6 @@ const App = () => {
 		let searchCat = sq.pathname.split("/")[2];
 		let searchQuery = sq.search.split("?query=")[1];
 		console.log(searchCat, searchQuery);
-
 	}
 	let dataFilter = new DataFilter();
 
@@ -55,8 +54,10 @@ const App = () => {
 					<Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />
 					<Route path={'/signup'} element={<Signup page={(name) => { setPage(name) }} />} />
 					<Route path={'/3d-models'} element={<Page3D page={(name) => { setPage(name) }} />} />
-					<Route path={'/fonts'} element={<Fonts page={(name) => { setPage(name) }} />} />
+					<Route path={'/fonts/:term'} element={<Fonts page={(name) => { setPage(name) }} />} />
+					<Route path={'/fonts/'} element={<Fonts page={(name) => { setPage(name) }} />} />
 					<Route path={'/fontsgrid'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
+					<Route path={'/fontsgrid/:term'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
 
 				</Routes>
