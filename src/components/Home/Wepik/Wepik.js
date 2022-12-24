@@ -5,12 +5,12 @@ const Wepik = (props) => {
         <div className="wepik-cont" id="wepik">
             <div className="col-6 wepik">
                 <img className="wepik-logo " src={props.logoUrl} alt="wepik-logo" />
-                <h4 className="wepik-header" >
+                <h5 className="wepik-header" >
                     {props.headerText}
-                </h4>
-                <p className="wepik-paragraph">
+                </h5>
+                <h6 className="wepik-paragraph">
                     {props.paragraphText}
-                </p>
+                </h6>
                 <button type="button" className="btn btn-primary btn-lg wepik-btn" >{props.buttonText}</button>
             </div>
 

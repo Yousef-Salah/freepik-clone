@@ -1,10 +1,11 @@
 .wepik-logo {
-    height: 50px;
+    max-width: 1000px;
+    max-height: 500px;
 }
 
 .wepik-header {
     line-height: 1.90;
-    font-size: 30px;
+    font-size: 6vmin;
     font-weight: 100;
     padding-top: 30px;
 }
@@ -17,7 +18,7 @@
 
 .wepik-paragraph {
     padding-top: 30px;
-    font-size: 20px;
+    font-size: 3vmin;
     color: #869fb2;
 }
 
@@ -35,11 +36,4 @@
 .wepik-photo img {
     margin-right: 10px;
     max-height: 600px;
-    display: block;
-}
-
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
 }
