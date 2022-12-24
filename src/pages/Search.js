@@ -94,7 +94,7 @@ const Search = (props) => {
 	const updateOpen = (value) => {
 		setOpen(value);
 	}
-	const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
+	// const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
 	const [data, setData] = useState([]);
 	const [spinnerTrigger, setSpinnerTrigger] = useState(true);
 	const [contentState, setContentState] = useState(true);
