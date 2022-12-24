@@ -4,124 +4,17 @@ import SideBar from "../components/Search/FilterSideBar/SideBar";
 import TagBar from "../components/Search/FilterSideBar/TagBar";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
+import FontsTagBarData from "../utils/FontsTagBarData";
+import FontsSideBarData from "../utils/FontsSideBarData";
 import FontsList from "../components/Fonts/FontsList";
 const Fonts = (props) => {
-
-	const SideBarData = [
-		{
-			collapse: "Type",
-			icon: "bi bi-type",
-			icon1: [],
-			tag: 1,
-			tags: [
-				"All",
-				"Serif",
-				"Sans Serif",
-				"Display",
-				"Slab serif",
-				"Script",
-				"Monospace",
-			],
-			id: "typeCollapse",
-			page: "fonts",
-		},
-	];
-	const TagBarData = [
-		{
-			title: "All fonts",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Funny",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Happy",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Creative",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Retro",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Brush",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Calligraphy",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Comic",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Wedding",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Halloween",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Summer",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Fall",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Latin",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-		{
-			title: "Vintage",
-			className: "tag-class",
-			className1: "tag",
-			page: "fonts",
-		},
-	];
-	const [open, setOpen] = useState(false);
-	const updateOpen = (value) => {
-		setOpen(value);
-	};
-	useEffect(() => {
-		props.page("Fonts");
-	}, []);
-	let dataFilter;
-
-
+  const [open, setOpen] = useState(false);
+  const updateOpen = (value) => {
+    setOpen(value);
+  };
+  useEffect(() => {
+    props.page("Fonts");
+  }, []);
 	const [lastWord, setLastWord] = useState("");
 	let [link, setLink] = useState(window.location.href);
 	useEffect(() => {
@@ -135,15 +28,16 @@ const Fonts = (props) => {
 		}
 	}, [location]);
 
+
 	return (
 		<>
 
 			{/*<SearchContainer mainPage={false} />*/}
-			<SideBar updateOpen={updateOpen} data={SideBarData} />
+			<SideBar updateOpen={updateOpen} data={FontsSideBarData} />
 
 			<div className={`fonts-page ${!open ? "base" : "pushed"}`}>
 				<TagBar
-					data={TagBarData}
+					data={FontsTagBarData}
 					className={`${!open ? "base" : "pushed-tagbar"}`}
 				/>
 				<SearchResultHeader

@@ -90,7 +90,7 @@ right: 2.8%;
     max-width: 100%;
     
 }
-.card-body{
+.card-body-fonts{
     margin-left: 1%;
 }
 .fontcheck{
@@ -127,7 +127,7 @@ right: 2.8%;
    .img{
     max-width: auto !important;
    }
-   .card-body{
+   .card-body-fonts{
    left: 115px;
    position: absolute;
    max-width: 70%;
@@ -154,7 +154,7 @@ right: 2.8%;
 }
 
 @media only screen and (min-width:151px) and (max-width:395px){
-    .card-body{
+    .card-body-fonts{
         left: 115px;
         position: absolute;
         max-width: 40% !important;
@@ -163,7 +163,7 @@ right: 2.8%;
     }
 }
 @media only screen  and (max-width:180px){
-    .card-body{
+    .card-body-fonts{
         left: 115px;
         position: absolute;
         max-width: 2% !important;
