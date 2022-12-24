@@ -118,6 +118,7 @@ const Footer = (props) => {
 
 						</div>
 					</div>
+					</div>
 				</footer>
 			)}
 		</>

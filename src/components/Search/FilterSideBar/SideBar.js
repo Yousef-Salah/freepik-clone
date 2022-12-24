@@ -11,25 +11,10 @@ const SideBar = (props) => {
 		setOpen(!open);
 		props.updateOpen(!open);
 	};
-	const [scrollClass, setScrollClass] = useState("position-absolute");
-	window.addEventListener("scroll", function () {
-		if (
-			window.pageYOffset >= 278.7272644042969 &&
-			window.pageYOffset < 2641 &&
-			open
-		) {
-			setScrollClass("fixed-top top-filters");
-		} else if (window.pageYOffset >= 2642) {
-			setScrollClass("position-static");
-		} else {
-			setScrollClass("position-absolute");
-		}
-	});
-
 	return (
 		<div
 			id="sidebarr"
-			className={`sidebar flex ${scrollClass} ${open ? "tw-w-64 translatex100" : "tw-w-0 translatex0"
+			className={`sidebar flex position-absolute ${open ? "tw-w-64 translatex100" : "tw-w-0 translatex0"
 				}`}
 		>
 			<div
