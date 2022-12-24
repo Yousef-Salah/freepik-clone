@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import "./search-results.scss";
-import FinalImages from "../../../utils/FinalImages.json";
+// import FinalImages from "../../../utils/FinalImages.json";
 import Searchimgcard from "./Searchimgcard";
 import ModalTrigger from "../../Category/PreviewModal/ModalTrigger";
 
 const SearchResults1 = (props) => {
 	//static data & filter
-	const [images, setImages] = useState(FinalImages);
+	// const [images, setImages] = useState(FinalImages);
 	const [filteredImages, setFilteredImages] = useState([]);
 
 	// for modal
@@ -32,9 +32,10 @@ const SearchResults1 = (props) => {
 	// end static useEffect
 
 
-	// useEffect(() => {
-	// 	setLoaded(true);
-	// }, [props.images])
+	useEffect(() => {
+		setLoaded(true);
+		setFilteredImages(props.images)
+	}, [props.images])
 
 	const toggleModal = () => {
 		// props.modalStatus(!modalDisplay);

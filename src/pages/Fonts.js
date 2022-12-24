@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import SearchResultHeader from "../components/Search/SearchResults/SearchResultHeader";
 import SideBar from "../components/Search/FilterSideBar/SideBar";
 import TagBar from "../components/Search/FilterSideBar/TagBar";
-// import { useCookies } from "react-cookie";
 import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import FontsList from "../components/Fonts/FontsList";
