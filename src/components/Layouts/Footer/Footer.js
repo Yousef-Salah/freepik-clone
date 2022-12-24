@@ -39,7 +39,7 @@ const Footer = (props) => {
 								<div className="col-md-3 col-sm-6">
 									<h4>INFORMATION</h4>
 									<ul className="list-unstyled">
-										<li><Link className="footer-hover" to="/search/procing">Pricing</Link></li>
+										<li><Link className="footer-hover" to="/search/pricing">Pricing</Link></li>
 										<li><Link className="footer-hover" to="/search/business">Business</Link></li>
 										<li><Link className="footer-hover" to="/search/jobs">Jobs</Link></li>
 										<li><Link className="footer-hover" to="/search/sell your content">Sell your content</Link></li>
@@ -56,26 +56,33 @@ const Footer = (props) => {
 										<li><Link className="footer-hover" to="/search/cookies policy">Cookies policy</Link></li>
 										<li><Link className="footer-hover" to="/search/cookies sttings">Cookies settings</Link></li>
 									</ul>
-								</div>	{/*column 4*/}
-								<div className="col-md-3 col-sm-6">
 									<h4> SUPPORT</h4>
 									<ul className="list-unstyled">
 										<li><Link className="footer-hover" to="/search/faq">FAQ</Link></li>
 										<li><Link className="footer-hover" to="/search/contact">Contact</Link></li>
+
 									</ul>
 
-								</div>	{/*column 5*/}
+								</div>	{/*column 4*/}
 								<div className="col-md-3 col-sm-6">
 									<h4> SOCIAL MEDIA</h4>
-									{/* <ul className="list-unstyled">
-									<FacebookIcon className="ficon" href="#"/>
-									<TwitterIcon className="ticon" href="#"/>
-									<PinterestIcon className="picon" href="#"/>
-									<InstagramIcon className="iicon" href="#"/>
-									<YouTubeIcon className="yicon" href="#"/>
-								</ul> */}
+									<ul className="list-unstyled">
+										<i className="fa-brands fa-square-facebook"></i>
+										<i className="fa-brands fa-square-twitter"></i>
+										<i className="fa-brands fa-square-pinterest"></i>
+										<i className="fa-brands fa-square-instagram"></i>
+										<i className="fa-brands fa-square-youtube"></i>
+									</ul>
+									<div className="sign-upfooter">
+										<p className="para-sign">Get exclusive assets sent straight to your inbox</p>
+										<ul className="signup-footer">
+											<li><Link className="btn btn-primary footer-hover" to="/signup">Sign up</Link></li>
+										</ul>
+									</div>
 								</div>
+
 							</div>
+
 							{/*Footer-button*/}
 
 							<div className="footer-button">
@@ -84,30 +91,28 @@ const Footer = (props) => {
 									Copyright ©  2010-2022 Freepik Company S.L. All rights reserved.
 								</p>
 							</div>
-							<div className="dropdown-loc">
-								<div className="dropdown">
-									<a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Engilsh
-									</a>
+							<div className="dropdown dropdown-loc">
+								<Link className="btn btn-secondary dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Engilsh
+								</Link>
 
-									<ul class="dropdown-menu">
-										<li><a className="dropdown-item" href="#">Português</a></li>
-										<li><a className="dropdown-item" href="#">Deutsch</a></li>
-										<li><a className="dropdown-item" href="#">English</a></li>
-										<li><a className="dropdown-item" href="#">Español</a></li>
-										<li><a className="dropdown-item" href="#">Français</a></li>
-										<li><a className="dropdown-item" href="#">日本語</a></li>
-										<li><a className="dropdown-item" href="#">Polski</a></li>
-										<li><a className="dropdown-item" href="#">Pусский</a></li>
-										<li><a className="dropdown-item" href="#">Nederlands</a></li>
-										<li><a className="dropdown-item" href="#">Italiano</a></li>
-										<li><a className="dropdown-item" href="#">한국어</a></li>
+								<ul className="dropdown-menu">
+									<li><Link className="dropdown-item" href="#">Português</Link></li>
+									<li><Link className="dropdown-item" href="#">Deutsch</Link></li>
+									<li><Link className="dropdown-item" href="#">English</Link></li>
+									<li><Link className="dropdown-item" href="#">Español</Link></li>
+									<li><Link className="dropdown-item" href="#">Français</Link></li>
+									<li><Link className="dropdown-item" href="#">日本語</Link></li>
+									<li><Link className="dropdown-item" href="#">Polski</Link></li>
+									<li><Link className="dropdown-item" href="#">Pусский</Link></li>
+									<li><Link className="dropdown-item" href="#">Nederlands</Link></li>
+									<li><Link className="dropdown-item" href="#">Italiano</Link></li>
+									<li><Link className="dropdown-item" href="#">한국어</Link></li>
 
 
-									</ul>
-								</div>
-
+								</ul>
 							</div>
+
 						</div>
 					</div>
 				</footer>
