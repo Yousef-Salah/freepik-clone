@@ -36,7 +36,7 @@ const App = () => {
     }
   );
   
-  	const addQuery = (sq) => {
+  const addQuery = (sq) => {
 		console.log(sq);
 		let searchCat = sq.pathname.split("/")[2];
 		let searchQuery = sq.search.split("?query=")[1];
@@ -53,7 +53,7 @@ const App = () => {
         <Routes>
           <Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
           <Route path={'/'} element={<Home page={(name) => { setPage(name) }} searchQuery={searchQuery} />} />
-          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter}  searchQuery={searchQuery} />} />
+          <Route path={'/search/:term'} element={<Search page={(name) => { setPage(name) }} dataFilter={dataFilter}  searchQuery={searchQuery} newQuery={addQuery} />} />
           <Route path={'/category/:term'} element={<Category catStyle="style_sep" page={(name) => { setPage(name) }} dataFilter={dataFilter} searchQuery={searchQuery} />} />
           <Route path={'/pricing'}element={<Pricing page={(name)=>{setPage(name)}} />} />
           <Route path={'/login'} element={<Login page={(name) => { setPage(name) }} />} />

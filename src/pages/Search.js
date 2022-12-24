@@ -94,38 +94,36 @@ const Search = (props) => {
 	const updateOpen = (value) => {
 		setOpen(value);
 	}
-	const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
 	const [data, setData] = useState([]);
 	const [spinnerTrigger, setSpinnerTrigger] = useState(true);
 	const [contentState, setContentState] = useState(true);
 
-
-	useEffect(() => {
-		props.newQuery(location);
-		console.log("did it")
-	}, [location]);
 	useEffect(() => {
 		props.page("search");
-		console.log(props.searchQuery)
-	}, [spinnerTrigger]);
+    props.newQuery(location);
+	}, [spinnerTrigger, location]);
 
-	useEffect(() => {
-		props.newQuery(location);
-		console.log("did it")
-	}, [location]);
+  const loadData = () => {
+    setData(props.dataFilter.getData(props.searchQuery.current));
+    setContentState(false);
+    setSpinnerTrigger(true);
+    setTimeout(() => {
+      setSpinnerTrigger(false);
+      setContentState(true);
+    }, 1500);
+  };
 
 	return (
 		<>
-			{/* <SearchContainer dataHandler={loadData} mainPage={false} setSearchQuery={props.setSearchQuery} searchQuery={props.searchQuery} /> */}
+			<SearchContainer dataHandler={loadData} mainPage={false} searchQuery={props.searchQuery} />
 			<SideBar updateOpen={updateOpen} data={SideBarData1} />
 			<div className={`search-content ${!open ? "base" : "pushed"
 				}`} >
 				<TagBar data={TagBarData} className={`${!open ? "base" : "pushed-tagbar"
 					}`} />
-				<SearchResults images={data} title={location.pathname.split("/")[2].replace("%20", " ").replace("-", " ")}
+				<SearchResults images={data} visible={contentState} title={location.pathname.split("/")[2].replace("%20", " ").replace("-", " ")}
 				// closedStatus={toggleBackBack}
 				/>
-				<Spinner visible={spinnerTrigger} />
 				<SearchResults1 />
 				<Spinner visible={spinnerTrigger} />
 			</div>

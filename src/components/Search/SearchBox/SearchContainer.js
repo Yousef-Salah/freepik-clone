@@ -1,7 +1,6 @@
 import SearchBox from "./SearchComponents/SearchBox";
 import "./search-container.css";
 import { Link } from "react-router-dom";
-import mainIcon from "../../../assets/images/navbar/freepik-no_bg.png";
 
 const SearchContainer = (props) => {
   let mainPageComponent = (
@@ -23,10 +22,10 @@ const SearchContainer = (props) => {
   let categoriesSearchComponent = (
     <div className="container-fluid" id="op-search-container">
       <div className="row">
-        <div className="col-3 col-sm-2 d-flex align-items-center justify-content-center">
-          <a href="http://localhost:3000" className="d-inline-block w-100 h-100">
+        <div className="col-3 col-sm-2">
+          <Link to="/" className="d-flex align-items-center justify-content-center w-100 h-100">
             <img className="h-100" src={require('../../../assets/images/icons/freepik-full-logo.PNG')} alt="freepik icon" />
-          </a>
+          </Link>
         </div>
         <div className="col-9 col-sm-10">
           <SearchBox dataHandler={props.dataHandler} mainPage={false} searchQuery={props.searchQuery} page={props.page}/>

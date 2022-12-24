@@ -8,9 +8,8 @@ const SearchResults1 = () => {
   const [modalDisplay, setModalDisplay] = useState(false);
   const [modalData, setModalData] = useState({});
   const [loaded, setLoaded] = useState(false);
+  
   useEffect(() => {
-    console.log(images);
-
     let _filteredImages = images.filter((image) =>
       image.title.toLowerCase().includes("background")
     );
@@ -19,7 +18,6 @@ const SearchResults1 = () => {
   }, []);
 
   useEffect(() => {
-    console.log(filteredImages);
     setLoaded(true);
   }, [filteredImages]);
   const item = filteredImages[0];
