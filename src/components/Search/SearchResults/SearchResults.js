@@ -16,7 +16,12 @@ const SearchResults = (props) => {
 	}, [props.images])
 
 	const toggleModal = () => {
+		props.modalStatus(!modalDisplay);
 		setModalDisplay(!modalDisplay);
+		console.log(!modalDisplay)
+	}
+	const sendClosed = () => {
+		// props.closedStatus(false);
 	}
 
 	const modalHandler = (item) => {

@@ -20,13 +20,13 @@ const SearchBox = (props) => {
   const [category, setCategory] = useState(props.searchQuery.category);
 
   useEffect(() => {
-    if(!props.mainPage && (props.page != 'category')) props.dataHandler();
+   if(!props.mainPage && (props.page != 'category')) props.dataHandler();
     setButtonLabel(buttonLabelGenerator());
     setSearchInputPlaceHolder()
-  }, []);
+  }, [props.data]);
 
   const searchInputHanlder = (e) => {
-    if(!e.target.value) {
+    if(e.target.value === '') {
       setSearchInput('');
       setDeleteTextIcon('d-none');
     } else {
@@ -113,7 +113,7 @@ const SearchBox = (props) => {
   }
   
   const deleteText = (event) => {
-    document.getElementById("search-value").value = "";
+    setSearchInput('');
     checkDeleteIconStatus(event);
   };
 
@@ -213,7 +213,7 @@ const SearchBox = (props) => {
           />
         </div>
         <div id="search-button" className="d-inline-block">
-          <button type="button" className="rounded-end">
+          <button type="submit" className="rounded-end">
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
