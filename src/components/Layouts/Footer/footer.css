@@ -56,7 +56,6 @@ footer .fa-square-youtube {
 
 footer .fa-square-instagram {
   color: #e1306c;
-
   font-size: 30px;
   cursor: pointer;
   margin-right: 5%;
@@ -65,16 +64,23 @@ footer .fa-square-instagram {
 footer .dropdown-loc {
   display: flex;
   justify-content: flex-end;
+
 }
 
 footer .footer-hover:hover {
   color: #bac8d3;
 }
 
-.sing-in {
-  color: #bac8d3;
-}
+
 
 .hide-fot {
   display: none;
+}
+
+.para-sign {
+  color: #869fb2;
+  padding-top: 10%;
+  padding-bottom: 2%;
+  font-size: small;
+  font-weight: bolder;
 }
