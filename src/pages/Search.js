@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import SearchResults from "../components/Search/SearchResults/SearchResults";
-import { useCookies } from "react-cookie";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
 import SearchResults1 from '../components/Search/SearchResults/Searchcardtest';
@@ -87,6 +86,7 @@ const TagBarData = [{
 	className1: "tag", page: 'search'
 }]
 const Search = (props) => {
+
 	const location = useLocation();
 	const [open, setOpen] = useState(false);
 	// const [asideOpen, setAsideOpen] = useState(false);
@@ -98,6 +98,7 @@ const Search = (props) => {
 	const [data, setData] = useState([]);
 	const [spinnerTrigger, setSpinnerTrigger] = useState(true);
 	const [contentState, setContentState] = useState(true);
+
 
 	useEffect(() => {
 		props.newQuery(location);
