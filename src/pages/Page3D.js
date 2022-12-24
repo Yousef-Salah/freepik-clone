@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import SearchResultHeader from "../components/Search/SearchResults/SearchResultHeader";
 import TagBar from "../components/Search/FilterSideBar/TagBar";
-import { useCookies } from "react-cookie";
+import SearchResults from "../components/Search/SearchResults/SearchResults";
+
 import DataFilter from "../Helpers/DataFilter";
 import CardLayout from "../components/Card3D/CardLayout";
 const Fonts = (props) => {
@@ -27,24 +28,6 @@ const Fonts = (props) => {
     props.page("3d-models");
   }, [])
   let dataFilter;
-  /*useEffect(() => {
-    props.page("Fonts");
-    dataFilter = new DataFilter(cookies.searchInput);
-    loadData(10);
-  }, [dataFilter])
-
-
-    const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
-    const [data, setData] = useState([]);
-
-    const loadData = () => {
-      setData(dataFilter.get(10));
-    }
-
-    console.log(cookies.searchInput); 
-  /*}
-    // removeCookie("searchInput");
-        */
 
   return (
     <>

@@ -7,6 +7,7 @@ import DataFilter from "../Helpers/DataFilter";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import FontsList from "../components/Fonts/FontsList";
 const Fonts = (props) => {
+
   const SideBarData = [
     {
       collapse: "Type",
@@ -120,24 +121,8 @@ const Fonts = (props) => {
     props.page("Fonts");
   }, []);
   let dataFilter;
-  /*useEffect(() => {
-    props.page("Fonts");
-    dataFilter = new DataFilter(cookies.searchInput);
-    loadData(10);
-  }, [dataFilter])
 
-
-    const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
-    const [data, setData] = useState([]);
-
-    const loadData = () => {
-      setData(dataFilter.get(10));
-    }
-
-    console.log(cookies.searchInput); 
-  /*}
-    // removeCookie("searchInput");
-        */
+  
   const [lastWord, setLastWord] = useState("");
   let [link, setLink] = useState(window.location.href);
   useEffect(() => {
@@ -152,7 +137,8 @@ const Fonts = (props) => {
   }, [location]);
 
   return (
-    <>
+    <> 
+
       {/*<SearchContainer mainPage={false} />*/}
       <SideBar updateOpen={updateOpen} data={SideBarData} />
 

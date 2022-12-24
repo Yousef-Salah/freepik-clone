@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import SearchResultHeader from "../components/Search/SearchResults/SearchResultHeader";
 import SideBar from "../components/Search/FilterSideBar/SideBar";
@@ -118,24 +119,7 @@ const Fonts = (props) => {
     props.page("Fonts");
   }, []);
   let dataFilter;
-  /*useEffect(() => {
-    props.page("Fonts");
-    dataFilter = new DataFilter(cookies.searchInput);
-    loadData(10);
-  }, [dataFilter])
-
-
-    const [cookies, setCookie, removeCookie] = useCookies(["searchInput"]);
-    const [data, setData] = useState([]);
-
-    const loadData = () => {
-      setData(dataFilter.get(10));
-    }
-
-    console.log(cookies.searchInput); 
-  /*}
-    // removeCookie("searchInput");
-        */
+  
   const [lastWord, setLastWord] = useState("");
   let [link, setLink] = useState(window.location.href);
   useEffect(() => {
@@ -165,6 +149,7 @@ const Fonts = (props) => {
           description="Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!"
         />
         <FontsGridView />
+
       </div>
     </>
   );
