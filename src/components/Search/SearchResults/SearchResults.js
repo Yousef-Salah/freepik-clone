@@ -35,7 +35,7 @@ const SearchResults = (props) => {
 				{props.images.map((item) => {
 					return (
 						<div className="card-wrapper" onClick={() => modalHandler(item)} >
-							<Searchimgcard Cardphoto={item} />;
+							<Searchimgcard Cardphoto={item} />
 						</div>
 					)
 				})}
