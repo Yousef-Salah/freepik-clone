@@ -113,7 +113,7 @@ const Footer = (props) => {
 
 
 								</ul>
-                </div>
+
 							</div>
 
 						</div>
