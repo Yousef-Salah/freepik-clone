@@ -5,7 +5,6 @@ import utils from './utils'
 const CategorySection = (props) => {
 
 	const [sections, setSections] = useState(utils());
-	console.log(props.image)
 	return (
 		<section id="iamge-card-text">
 			{/* dynamic content */}

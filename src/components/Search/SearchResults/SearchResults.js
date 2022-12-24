@@ -18,7 +18,6 @@ const SearchResults = (props) => {
 	const toggleModal = () => {
 		// props.modalStatus(!modalDisplay);
 		setModalDisplay(!modalDisplay);
-		console.log(!modalDisplay)
 	}
 
 

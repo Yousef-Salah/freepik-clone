@@ -37,10 +37,8 @@ const App = () => {
 	);
   
 	const addQuery = (sq) => {
-		console.log(sq);
 		let searchCat = sq.pathname.split("/")[2];
 		let searchQuery = sq.search.split("?query=")[1];
-		console.log(searchCat, searchQuery);
 	}
 
 	let dataFilter = new DataFilter();

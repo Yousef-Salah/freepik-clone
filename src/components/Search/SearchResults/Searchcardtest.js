@@ -17,7 +17,6 @@ const SearchResults1 = (props) => {
 
 	//static useEffect
 	useEffect(() => {
-		console.log(images);
 
 		let _filteredImages = images.filter((image) =>
 			image.title.toLowerCase().includes("background")
@@ -26,7 +25,6 @@ const SearchResults1 = (props) => {
 		setFilteredImages(_filteredImages);
 	}, []);
 	useEffect(() => {
-		console.log(filteredImages);
 		setLoaded(true);
 	}, [filteredImages]);
 	// end static useEffect
@@ -40,7 +38,6 @@ const SearchResults1 = (props) => {
 	const toggleModal = () => {
 		// props.modalStatus(!modalDisplay);
 		setModalDisplay(!modalDisplay);
-		console.log(!modalDisplay)
 	}
 
 
