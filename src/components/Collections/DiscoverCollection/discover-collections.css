@@ -1,115 +1,248 @@
-.discover-collection-div
-{
-    display: flex;
-    justify-content: space-between;
-  width: 100%;
-  margin-top: 2%;
-  margin-bottom: 6%;
+
+.discover-collection-div:hover{
+    /* filter: brightness(120%); */
+    -webkit-filter: brightness(.5);
+   filter: brightness(.8);
 }
-.discover-collection-row
-{
+.discover-collection-div {
     display: flex;
-    flex-direction: row;
     padding-top: 5%;
-    padding-bottom: 5%;;
 }
-.discover-collection-row2
-{
-    width: 275px;;
+
+.discover-collection-row2 {
+    width: 270px;
+    ;
 }
-.discover-collection-row3
-{
-    width: 275px;;
+
+.discover-collection-row3 {
+    width: 270px;
+    ;
 }
-#discover-img3
-{
-    width: 220px;
-    height: 351px;
+
+#discover-img3 {
+    height: 100%;
     object-fit: cover;
-    padding-left: 40px;
+    border-radius: 15px;
 }
-#discover-para
-{
+
+#discover-para {
     margin-left: 30px;
     padding-top: 10px;
     font-size: 16px;
 }
-#discover-resources
-{
+
+#discover-resources {
     margin-left: 30px;
-    color:rgb(86, 86, 86);
+    color: rgb(86, 86, 86);
     font-size: 13px;
     font-weight: 500;
 }
-#discover-img1
-{
+
+#discover-img1 {
     margin-left: 30px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
-#discover-img2
-{
+
+#discover-img2 {
     margin-left: 30px;
-    border-radius: 10px;
-    height: 200px;
-    width:300px;
-    margin-top: 1%;
-} 
+    border-radius: 15px;
+    height: 170px;
+    width: 270px;
+    margin-top: 1px;
+}
+
+
+
+/* CSS the discover collection title */
 .bi-three-dots-vertical::before {
     padding: 0;
 }
-.dropdown-div
-{
+
+.dropdown-div {
     margin-left: 140px;
 }
-.discover-dropDown
-{
+
+.discover-dropDown {
     margin-top: 5px;
 }
-.discover-collection-title
-{
-display: flex;
+
+.discover-collection-title {
+    display: flex;
+    padding-top: 5%;
 }
-#discover-collection-h1
-{
+
+#discover-collection-h1 {
     padding-left: 17%;
     padding-bottom: 3%;
     text-align: center;
     font-size: 25px;
-    font-weight:500;
+    font-weight: 500;
 }
-.Viewall-btn
-{
-    color: blue;
-padding-left: 8%;
-font-weight: 500;
 
+.Viewall-btn {
+    color: blue;
+    padding-left: 8%;
+    font-weight: 500;
 }
+
 .Viewall-btn i {
-    padding-left: 10px ;
+    padding-left: 10px;
     font-size: 14px;
 }
 
-/* @media only screen and (max-width: 1087px) {
-    #discover-img1
-{
-    margin-left: 30px;
-    border-radius: 10px;
-    width: 100px;
-    margin-right: 10px;
-}
-#discover-img2
-{
-    margin-left: 30px;
-    border-radius: 10px;
-    width: 100px;
-    margin-right: 10px;
-}
-#discover-img3
-{
-    height: 107px;
-    object-fit: cover;
-    padding-right: 60px;
-    margin-right: 10px;
-}
-} */
+@media (min-width:389px) and (max-width:845px) {
+    .discover-collection-col {
+        width: 150px;
 
+    }
+
+    .dropdown-div {
+        margin-left: 2px;
+    }
+
+    .discover-collection-div {
+        margin-left: 36px;
+    }
+
+    #discover-para {
+        margin-left: 60px;
+    }
+
+    #discover-collection-h1 {
+        text-align: start;
+    }
+
+    #discover-resources {
+        margin-left: 60px;
+    }
+    .Viewall-btn {
+        color: blue;
+        padding-left: 1%;
+        font-weight: 500;
+        font-size: 10px;
+    }
+    .Viewall-btn i   {
+        font-size: 10px;
+    }
+
+}
+
+@media (min-width:319px) and (max-width:374px) {
+    .discover-collection-col {
+        width: 150px;
+
+    }
+
+    .discover-collection-div {
+        margin-left: -9px;
+    }
+
+    #discover-collection-h1 {
+        font-size: 15px;
+    }
+
+    .dropdown-div {
+        margin-left: 115px;
+    }
+
+    .Viewall-btn {
+        color: blue;
+        padding-left: 1%;
+        font-weight: 500;
+        font-size: 8px;
+    }
+    .Viewall-btn i   {
+        font-size: 10px;
+    }
+}
+
+@media (min-width:375px) and (max-width:424px) {
+    .discover-collection-col {
+        width: 150px;
+
+    }
+
+    .discover-collection-div {
+        margin-left: 15px;
+    }
+
+    .dropdown-div {
+        margin-left: 110px;
+    }
+
+    #discover-collection-h1 {
+        font-size: 20px;
+    }
+
+    #discover-para {
+        margin-left: 50px;
+    }
+
+    #discover-resources {
+        margin-left: 55px;
+    }
+    .Viewall-btn {
+        color: blue;
+        padding-left: 1%;
+        font-weight: 500;
+        font-size: 10px;
+    }
+    .Viewall-btn i   {
+        font-size: 10px;
+    }
+}
+
+@media (min-width:425px) and (max-width:767px) {
+    .discover-collection-col {
+        width: 150px;
+
+    }
+
+    .discover-collection-div {
+        margin-left: 40px;
+    }
+
+    .dropdown-div {
+        margin-left: 110px;
+    }
+
+    #discover-para {
+        margin-left: 80px;
+    }
+
+    #discover-resources {
+        margin-left: 75px;
+    }
+}
+
+@media (min-width:768px) {
+    .discover-collection-col {
+        width: 150px;
+
+    }
+
+    .discover-collection-div {
+        margin-left: 15px;
+    }
+
+    .dropdown-div {
+        margin-left: 110px;
+    }
+
+    #discover-para {
+        margin-left: 50px;
+    }
+
+    #discover-resources {
+        margin-left: 55px;
+    }
+    .Viewall-btn {
+        color: blue;
+        padding-left: 1%;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .Viewall-btn i   {
+        font-size: 15px;
+    }
+}
