@@ -5,6 +5,7 @@
 #discount-modal {
   position: sticky !important;
   bottom: 0;
+  z-index: 10;
 }
 
 #discount-modal > div {
@@ -30,12 +31,12 @@
 
 #discount-modal a {
   position: relative;
-  z-index: 3;
+  z-index: 13;
   background-color: var(--blue);
 }
 
 #discount-modal button {
-  z-index: 3;
+  z-index: 13;
   top: 5px;
   right: 5px;
   width: 40px;
@@ -49,7 +50,7 @@
 }
 
 #discount-modal #righ-side-image {
-  z-index: 2;
+  z-index: 12;
   position: absolute;
   height: 100%  !important;
   top: 0;
