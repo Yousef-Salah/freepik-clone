@@ -11,7 +11,7 @@ const FontCard = (props) => {
           />
         </div>
         <div className="col-md-10 col-sm-10 col-10" id="font-card-info">
-          <div className="card-body">
+          <div className="card-body card-body-fonts">
             <div className={`d-flex name-count ${props.margin}`}>
               <p className="creator">{props.fontName}</p>
               <p className="styles-count">{props.stylesCount} Styles</p>
