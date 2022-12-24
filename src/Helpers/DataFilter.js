@@ -1,4 +1,4 @@
-import DataBase from "../utils/FinalImages.json";
+import DataBase from "../utils/Database";
 
 export class DataFilter {
   constructor() {
@@ -6,7 +6,7 @@ export class DataFilter {
   }
 
   getData(filters) {
-    let filteredData = JSON.parse(JSON.stringify(this.data));
+    let filteredData = this.data;
     
     if(filters.searchInput) {
       filteredData = filteredData.filter((item) => item.title.toLowerCase().includes(filters.searchInput.toLowerCase()));
