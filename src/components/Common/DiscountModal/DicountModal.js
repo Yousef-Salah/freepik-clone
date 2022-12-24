@@ -13,7 +13,7 @@ const DiscountModal = () => {
 
   return (
     <div className="position-relative" id="discount-modal">
-      <div className={modalState}>
+      <div className={modalState + " p-2"}>
         <div className="container text-light">
           <div className="row">
             <div className="col-7">
