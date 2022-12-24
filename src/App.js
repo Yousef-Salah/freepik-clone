@@ -22,6 +22,7 @@ import Footer from './components/Layouts/Footer/Footer';
 import DataFilter from './Helpers/DataFilter';
 import Signup from './pages/Signup';
 
+import DiscountModal from "./components/Common/DiscountModal/DicountModal";
 
 const App = () => {
 	const [page, setPage] = useState("home");
@@ -54,6 +55,7 @@ const App = () => {
 
         </Routes>
         <Footer/>
+        <DiscountModal />
       </BrowserRouter>
       
     </div>
