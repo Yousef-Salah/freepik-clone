@@ -33,11 +33,11 @@ const Fonts = (props) => {
 		<>
 
 			{/*<SearchContainer mainPage={false} />*/}
-			<SideBar updateOpen={updateOpen} data={SideBarData} />
+			<SideBar updateOpen={updateOpen} data={FontsSideBarData} />
 
 			<div className={`fonts-page ${!open ? "base" : "pushed"}`}>
 				<TagBar
-					data={TagBarData}
+					data={FontsTagBarData}
 					className={`${!open ? "base" : "pushed-tagbar"}`}
 				/>
 				<SearchResultHeader
