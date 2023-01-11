@@ -44,26 +44,10 @@ const Category = (props) => {
 				:
 				<CategorySepList category={catParam} />}
 			<CategorySection />
-			<div className="row related-articles ">
-				<div><p className='Related-articles-title'>
-                <h3>Related articles</h3>
-            </p></div>
-				<div className='col-3 related-articles '>
-					<RelatedArticles title="Video call backgrounds: change your meeting’s look"
-						heder="The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..."
-						image={Cover} />
-				</div>
-				<div className='col-3 related-articles '>
-					<RelatedArticles title="10 tips for a great powerpoint presentation"
-						heder="Today it is not enough for a successful performance just to tell about your idea. People certainly want to see,..."
-						image={Great} />
-				</div>
-				<div className='col-3 related-articles'>
-					<RelatedArticles title="Tips for choosing consistent images for your designs"
-						heder="One of the fundamental elements of graphic design is consistency. No matter what article, design book, workshop,..."
-						image={chosing} />
-				</div>
-			</div>
+
+            <RelatedArticles title="10 tips for a great powerpoint presentation"
+                heder="Today it is not enough for a successful performance just to tell about your idea. People certainly want to see,..."
+                image={Great}  />
 			<JoinSection />
 			<ModalTrigger />
 		</>
