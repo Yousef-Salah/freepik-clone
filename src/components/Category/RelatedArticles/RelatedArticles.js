@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import './RelatedArticles.css';
-
+import './related-articles.scss';
 
 const RelatedArticles = (props) => {
   return (
-    <section className='container'>
+    <section className='container' id='related-articles-section'>
         <div className='row'>
-            <h2> Related Articles</h2>
+            <h2 className='h2'> Related articles</h2>
         </div>
         <div className='row'>
-            <a className='col-4 article p-3'>
+            <a className='col-12 col-sm-6 col-md-4 article p-3'>
                 <img className='rounded mb-3' src='https://mediablog.cdnpk.net/sites/9/2021/12/120_Backgrounds_VideoCalls_Cover_1280x720_EN-1.jpg' alt='nothing' />
-                <h3 className='fs-5 fw-semibold'>Video call backgrounds: change your meeting’s look</h3>
-                <p className='fs-6 fw-lighter'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
+                <h3 className='fs-5'>Video call backgrounds: change your meeting’s look</h3>
+                <p className='fs-6 fw-lighter opacity-75'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
             </a>
-            <a className='col-4 article p-3'>
+            <a className='col-12 col-sm-6 col-md-4 article p-3'>
                 <img className='rounded mb-3' src='https://mediablog.cdnpk.net/sites/9/2021/12/120_Backgrounds_VideoCalls_Cover_1280x720_EN-1.jpg' alt='nothing' />
-                <h3 className='fs-5 fw-semibold'>Video call backgrounds: change your meeting’s look</h3>
-                <p className='fs-6 fw-lighter'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
+                <h3 className='fs-5'>Video call backgrounds: change your meeting’s look</h3>
+                <p className='fs-6 fw-lighter opacity-75'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
             </a>
-            <a className='col-4 article p-3'>
+            <a className='col-12 col-sm-6 col-md-4 article p-3'>
                 <img className='rounded mb-3' src='https://mediablog.cdnpk.net/sites/9/2021/12/120_Backgrounds_VideoCalls_Cover_1280x720_EN-1.jpg' alt='nothing' />
-                <h3 className='fs-5 fw-semibold'>Video call backgrounds: change your meeting’s look</h3>
-                <p className='fs-6 fw-lighter'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
+                <h3 className='fs-5'>Video call backgrounds: change your meeting’s look</h3>
+                <p className='fs-6 fw-lighter opacity-75'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
             </a>
         </div>
 

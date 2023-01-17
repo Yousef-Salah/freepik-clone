@@ -1,0 +1,23 @@
+
+.article {
+    cursor: pointer;
+
+    &:hover p {
+        color: black;
+    }
+
+    h3 {
+        color: #374957;
+        font-weight: 600;
+        
+        &:hover {
+            color: #1273eb;
+            font-weight: 600;
+        }
+        
+    }
+}
+
+#related-articles-section h2 {
+    font-weight: 600;
+}
