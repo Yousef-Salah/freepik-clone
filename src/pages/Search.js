@@ -8,6 +8,7 @@ import TagBar from "../components/Search/FilterSideBar/TagBar";
 import { SideBarData1 } from "../components/Search/FilterSideBar/SideBarData1";
 import { useLocation } from "react-router";
 import SearchTagBarData from "../utils/SearchTagBarData";
+import MainLayout from "../components/Layouts/MainLayout";
 const Search = (props) => {
 	const location = useLocation();
 	const [open, setOpen] = useState(false);
@@ -38,16 +39,18 @@ const Search = (props) => {
 
 	return (
 		<>
-			<SearchContainer dataHandler={loadData} mainPage={false} searchQuery={props.searchQuery} />
-			<SideBar updateOpen={updateOpen} data={SideBarData1} />
-			<div className={`search-content ${!open ? "base" : "pushed"
-				}`} >
-				<TagBar data={SearchTagBarData} className={`${!open ? "base" : "pushed-tagbar"
-					}`} />
-				<SearchResults images={data} visible={contentState} title={location.pathname.split("/")[2].replace("%20", " ").replace("-", " ")}
-				/>
-				<Spinner visible={spinnerTrigger} />
-			</div >
+            <MainLayout page={props.page}>
+                <SearchContainer dataHandler={loadData} mainPage={false} searchQuery={props.searchQuery} />
+                <SideBar updateOpen={updateOpen} data={SideBarData1} />
+                <div className={`search-content ${!open ? "base" : "pushed"
+                    }`} >
+                    <TagBar data={SearchTagBarData} className={`${!open ? "base" : "pushed-tagbar"
+                        }`} />
+                    <SearchResults images={data} visible={contentState} title={location.pathname.split("/")[2].replace("%20", " ").replace("-", " ")}
+                    />
+                    <Spinner visible={spinnerTrigger} />
+                </div >
+            </MainLayout>
 		</>
 	);
 };
