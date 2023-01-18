@@ -1,11 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./discount-modal.css";
 
 const DiscountModal = () => {
   // search for abolute relative path
 
-  const [modalState, setModalState] = useState("");
+  const [modalState, setModalState] = useState("d-none");
+
+  useEffect(() => {
+    let discountOfferTime = JSON.parse(localStorage.getItem('discount-offer-time'));
+    discountOfferTime = new Date(discountOfferTime);
+
+    if(discountOfferTime) {
+        
+        var current = new Date();
+        var diffMs = (current - discountOfferTime); 
+        var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); 
+
+        if(diffMins >= 5) {  // diff in miutes greater than 5 minutes 
+            setModalState("");
+            localStorage.setItem('discount-offer-time', JSON.stringify(new Date()));
+        }
+    }    
+    
+}, [modalState]);
 
   const modalStateHandler = () => {
     setModalState("d-none");

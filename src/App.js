@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
@@ -42,6 +42,11 @@ const App = () => {
 	}
 
 	let dataFilter = new DataFilter();
+
+    useEffect(() => {
+        let discountOfferTime = JSON.parse(localStorage.getItem('discount-offer-time'));
+        if(!discountOfferTime) localStorage.setItem('discount-offer-time', JSON.stringify(new Date()));
+    });
 
 	return (
 		<div className="App">
