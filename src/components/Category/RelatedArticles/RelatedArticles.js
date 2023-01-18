@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './related-articles.scss';
+import data from './related-articles-data';
 
 const RelatedArticles = (props) => {
   return (
@@ -8,21 +9,15 @@ const RelatedArticles = (props) => {
             <h2 className='h2'> Related articles</h2>
         </div>
         <div className='row'>
-            <a className='col-12 col-sm-6 col-md-4 article p-3'>
-                <img className='rounded mb-3' src='https://mediablog.cdnpk.net/sites/9/2021/12/120_Backgrounds_VideoCalls_Cover_1280x720_EN-1.jpg' alt='nothing' />
-                <h3 className='fs-5'>Video call backgrounds: change your meeting’s look</h3>
-                <p className='fs-6 fw-lighter opacity-75'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
-            </a>
-            <a className='col-12 col-sm-6 col-md-4 article p-3'>
-                <img className='rounded mb-3' src='https://mediablog.cdnpk.net/sites/9/2021/12/120_Backgrounds_VideoCalls_Cover_1280x720_EN-1.jpg' alt='nothing' />
-                <h3 className='fs-5'>Video call backgrounds: change your meeting’s look</h3>
-                <p className='fs-6 fw-lighter opacity-75'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
-            </a>
-            <a className='col-12 col-sm-6 col-md-4 article p-3'>
-                <img className='rounded mb-3' src='https://mediablog.cdnpk.net/sites/9/2021/12/120_Backgrounds_VideoCalls_Cover_1280x720_EN-1.jpg' alt='nothing' />
-                <h3 className='fs-5'>Video call backgrounds: change your meeting’s look</h3>
-                <p className='fs-6 fw-lighter opacity-75'>The year 2020 kept everyone separated. Even though many people thought that 2021 was going to be different,..</p>
-            </a>
+            {data.map(article => {
+               return (
+                    <a className='col-12 col-sm-6 col-md-4 article p-3'>
+                        <img className='rounded mb-3' src={`/temp-imgs/related-articles/${article.image}`} alt='nothing' />
+                        <h3 className='fs-5'>{ article.header }</h3>
+                        <p className='fs-6 fw-lighter opacity-75'>{ article.description }</p>
+                    </a>
+               );
+            })}
         </div>
 
     </section>
