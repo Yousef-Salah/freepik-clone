@@ -1,27 +1,23 @@
-
-//import photo from './Promote/resources.jpg';
-import './Promote.css';
-//import resources from './resources.jpg';
+import "./Promote.css";
 const Prosss = (props) => {
-    return (
-        <div>
-            <div className='container' id="Pomote-container">
-                <div className='row ' id='Pomote-content'>
-                    <div className='col-3 col-md-4  col-xl-12 ' id='symbol'>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="bi bi-star" >
-                            <path d={props.icon} />
-                        </svg>
-                    </div>
-                    <div className='col-3  col-xl-10 ' id='paragraph'>
-                        <p className="caption">
-                            <h3 className="iconTitle">{props.heder}</h3>
-                            {props.title}</p>
-
-                    </div>
-                </div>
-            </div>
+  return (
+    <div>
+      <div className="container" id="Pomote-container">
+        <div className="row " id="promote-content">
+          <div className="col-2" id="symbol">
+            <svg xmlns="http://www.w3.org/2000/svg" className="bi bi-star">
+              <path d={props.icon} />
+            </svg>
+          </div>
+          <div className="col-10" id="paragraph">
+            <p className="caption">
+              <h3 className="iconTitle">{props.heder}</h3>
+              {props.title}
+            </p>
+          </div>
         </div>
-
-    );
-}
+      </div>
+    </div>
+  );
+};
 export default Prosss;
