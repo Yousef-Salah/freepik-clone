@@ -9,32 +9,34 @@ import Wepik from "../components/Home/Wepik/Wepik";
 import CreatorCollection from "../components/Home/CreatorCollection/CreatorCollection";
 import CreatorCollectionTitle from "../components/Home/CreatorCollection/CreatorCollectionTitle";
 import PromoteSiteFeatures from "../components/Home/PromoteSiteFeatures/PromoteSiteFeatures";
+import Calender from "../components/Home/Calender/Calender";
 
 const Home = (props) => {
-  useEffect(() => {
-    props.page("home");
-  }, []);
+	useEffect(() => {
+		props.page("home");
+	}, []);
 
-  return (
-    <>
-      <SearchContainer mainPage={true} searchQuery={props.searchQuery} />
-      <CircleCategoy />
-      <Annual />
-      <Trending />
+	return (
+		<>
+			<SearchContainer mainPage={true} searchQuery={props.searchQuery} />
+			<CircleCategoy />
+			<Annual />
+			<Trending />
 
-      <CreatorCollectionTitle />
-      <CreatorCollection />
-      <PromoteSiteFeatures />
-      <JoinSection />
-      <Wepik
-        logoUrl="https://freepik.cdnpk.net/img/logos/wepik-colored.svg"
-        headerText="Create beautiful designs online."
-        paragraphText="Customize and download free templates to make stunning designs with our online editing tool."
-        buttonText="Start editing online"
-        photoUrl="wepikPhoto.png"
-      />
-    </>
-  );
+			<CreatorCollectionTitle />
+			<CreatorCollection />
+			<PromoteSiteFeatures />
+			<Calender />
+			<JoinSection />
+			<Wepik
+				logoUrl="https://freepik.cdnpk.net/img/logos/wepik-colored.svg"
+				headerText="Create beautiful designs online."
+				paragraphText="Customize and download free templates to make stunning designs with our online editing tool."
+				buttonText="Start editing online"
+				photoUrl="wepikPhoto.png"
+			/>
+		</>
+	);
 };
 
 export default Home;
