@@ -205,3 +205,11 @@
   right: 2px !important;
   top: 6px !important;
 }
+
+#search-input-tags {
+    background-color: #4055c7;
+}
+
+#search-input-tags > * {
+    width: auto;
+}
