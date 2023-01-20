@@ -6,6 +6,7 @@ import TagBar from "../components/Search/FilterSideBar/TagBar";
 import FontsGridView from "../components/Fonts/FontsGridView";
 import FontsTagBarData from "../utils/FontsTagBarData";
 import FontsSideBarData from "../utils/FontsSideBarData";
+import MainLayout from "../components/Layouts/MainLayout";
 
 const Fonts = (props) => {
   const [open, setOpen] = useState(false);
@@ -31,6 +32,7 @@ const Fonts = (props) => {
   }, [location]);
   return (
     <>
+    <MainLayout page={props.page}>
       {/*<SearchContainer mainPage={false} />*/}
       <SideBar updateOpen={updateOpen} data={FontsSideBarData} />
 
@@ -48,6 +50,7 @@ const Fonts = (props) => {
         <FontsGridView />
 
       </div>
+    </MainLayout>
     </>
   );
 };

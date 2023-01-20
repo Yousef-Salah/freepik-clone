@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
@@ -43,10 +43,15 @@ const App = () => {
 
 	let dataFilter = new DataFilter();
 
+    useEffect(() => {
+        let discountOfferTime = JSON.parse(localStorage.getItem('discount-offer-time'));
+        if(!discountOfferTime) localStorage.setItem('discount-offer-time', JSON.stringify(new Date()));
+    });
+
 	return (
 		<div className="App">
 			<BrowserRouter>
-				<Navbar page={page} />
+				{/* <Navbar page={page} /> */}
 				<Routes>
 					<Route path={'/*'} element={<NotFound page={(name) => { setPage(name) }} />} />
 					<Route path={'/'} element={<Home page={(name) => { setPage(name) }} searchQuery={searchQuery} />} />
@@ -62,7 +67,7 @@ const App = () => {
 					<Route path={'/fontsgrid/:term'} element={<FontsFormatGrid page={(name) => { setPage(name) }} />} />
 
 				</Routes>
-				<Footer />
+				{/* <Footer /> */}
 				<DiscountModal />
 			</BrowserRouter>
 

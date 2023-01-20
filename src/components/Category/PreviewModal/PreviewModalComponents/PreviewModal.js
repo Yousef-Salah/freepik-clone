@@ -15,6 +15,21 @@ const PreviewModal = (props) => {
 		buttonHandler();
 	}
 
+    // TODO:: check for correctance of adding new element to DOM
+    const downloadImage = async () => {
+        const image = await fetch(props.data.img_og);       // fetching the data from out source link
+        const imageBlog = await image.blob();               // convert fetched data to be readable data
+        const imageURL = URL.createObjectURL(imageBlog);    // create url that represents the fetched image
+      
+        const link = document.createElement('a');           // create `a` element to use it to download the image
+        link.href = imageURL;
+        link.download = props.data.title;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+      
+
 	useEffect(() => {
 		setLoaded(true);
 	}, [props.data])
@@ -35,7 +50,7 @@ const PreviewModal = (props) => {
 									<img src={props.data.img_og} alt={props.data.title} />
 								</div>
 								<div className="img-info">
-									<button className="download-btn">
+									<button className="download-btn" onClick={downloadImage}>
 										<i class="bi bi-download"></i>
 										<span>Download</span>
 									</button>
