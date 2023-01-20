@@ -17,6 +17,8 @@ import PromoteImg from '../components/Home/PromoteSiteFeatures/PromoteImg';
 import PromoteTitle from '../components/Home/PromoteSiteFeatures/PromoteTitle';
 import Promote from '../components/Home/PromoteSiteFeatures/Promote';
 import MainLayout from '../components/Layouts/MainLayout';
+import Navbar from '../components/Layouts/Navbar/Navbar';
+import Footer from '../components/Layouts/Footer/Footer';
 
 
 const Home = (props) => {
@@ -27,9 +29,11 @@ const Home = (props) => {
 
     return (
         <>
-            <MainLayout page={"home"}>
-            <SearchContainer mainPage={true} searchQuery={props.searchQuery} />
-            <CircleCategoy />
+            <header id="main-page-header">
+                <Navbar page={"home"} />
+                <SearchContainer mainPage={true} searchQuery={props.searchQuery} />
+                <CircleCategoy />
+            </header>
             <Annual />
             <Trending />
             <CreatorCollectionTitle />
@@ -66,9 +70,9 @@ const Home = (props) => {
                 photoUrl="wepikPhoto.png"
             />
 
-            </MainLayout>
-        </>
+            <Footer />
+            </>
     )
 }
 
-export default Home
+export default Home;
