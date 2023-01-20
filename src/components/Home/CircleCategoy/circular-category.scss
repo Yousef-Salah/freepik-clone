@@ -7,6 +7,8 @@
     width: 100%;
     margin-top: 25px;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
 
     &::-webkit-scrollbar {
         display: none;
@@ -24,7 +26,7 @@
             flex-direction: column;
             align-items: center;
 
-            span {
+            .image-border {
                 width: 120px;
                 height: 120px;
                 border-radius: 50%;
@@ -35,21 +37,39 @@
                 margin-bottom: 15px;
                 z-index: 2;
                 overflow: hidden;
+                transition: all 0.2s ease-out;
 
-                img {
+                .image-container {
                     width: 108px !important;
                     height: 108px !important;
-                    object-fit: cover;
+                    overflow: hidden;
                     border-radius: 50%;
-                    z-index: 1;
-                    
-                    &:hover {
-                        border-color: rgba(255, 255, 255, 0.8);
-                        scale: 1.2;
+                    transition: inherit;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        z-index: 1;
+                        transition: inherit;
                     }
                 }
             }
 
+            &:hover {
+                .image-border {
+                    border-color: rgba(255, 255, 255, 1);
+
+                    .image-container {
+                        overflow: hidden !important;
+
+                        img {
+                            scale: 1.2;
+                        }
+                    }
+                }
+            }
         }
 
     }

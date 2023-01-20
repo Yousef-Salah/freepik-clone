@@ -13,9 +13,11 @@ const CircleCategoy = () => {
                 return (
                     <div className="circular-category" key={index}>
                         <Link className="circle-link" to={circle.link}>
-                            <span>
-                                <img src={circle.image} alt={circle.title} />
-                            </span>
+                            <div className="image-border">
+                                <div className="image-container">
+                                    <img src={circle.image} alt={circle.title} />
+                                </div>
+                            </div>
                             <p className="text">{circle.title}</p>
                         </Link>
                     </div>
