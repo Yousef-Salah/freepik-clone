@@ -1,66 +1,101 @@
 #join-section .title {
-  margin-top: 4%;
-  margin-left: 10%;
   font-size: xx-large;
-  color: black;
+  color: #374957;
+  padding-bottom: 25px;
 }
 #join-section strong {
   color: blue;
 }
-#join-section .photo {
-  margin-left: 900px;
-  margin-top: -16%;
-  margin-right: 10px;
+#join-section {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto 30px auto;
+  border-radius: 10px;
+  background-image: linear-gradient(45deg, #d2eafd, #e9f7fe);
+  padding-bottom: 20px;
+  overflow: hidden;
 }
+#join-section .photo {
+  height: 300px;
+  width: 400px;
+  position: relative;
+}
+#join-section img {
+  height: 330px;
+  object-fit: cover;
+  margin-top: -20px;
+  position: absolute;
+}
+#join-section .content {
+  width: 65%;
+  padding: 50px 60px 0 80px;
+}
+
 #join-section .text {
-  margin-left: 10%;
-  color: rgb(52, 51, 51);
+  width: 90%;
+  max-width: fit-content;
+  color: #485762;
+  font-size: 16px;
+  margin-bottom: 40px;
 }
 #join-section .button {
   background-color: #1273eb;
-  border: none;
   border-radius: 3px;
   color: #fff;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  margin-left: 10%;
-  cursor: pointer;
+  font-size: 15px;
+  padding: 12px 26px;
 }
-#join-section {
-  border-radius: 20px;
-  margin-top: 10%;
-  background: #afd0e8;
-  padding: 10px;
-  width: 100%;
-  height: 270px;
+#join-section .image-wrapper{
+	width: fit-content;
+	height: fit-content;
 }
-#join-section .row {
-  display: flex;
-  flex-wrap: wrap;
-}
-@media screen and (max-width: 800px) {
-  #join-section .text,
-  #join-section .title,
-  #join-section .photo {
-    flex-direction: column;
+@media (max-width: 1000px) {
+	#join-section {
+	  padding: 0 0 20px 0;
+	  max-width:none ;
+	}
+	#join-section .content{
+		padding: 50px 0px 20px 50px;
+	}
+	#join-section .title{
+		font-size: 1.3rem;
+	}
+	#join-section .text{
+		font-size: 1rem;
+	}
+	#join-section .photo{
+		margin-right:-15%;
+	}
+
   }
-  @media screen and (max-width:1000px) {
-    #join-section .photo{
-      display: none;
-    }
+@media (max-width: 1200px ) and (min-width:1000px) {
+  #join-section {
+    padding-bottom: 50px;
   }
-  }
-  @media screen and (max-width:1188px) {
-    #join-section .photo{
-      display: none;
-    }
-}
-@media screen and (max-width:1200px) {
   #join-section .photo{
-    margin-top: -13%;
+	margin-right:-10%;
+}
+  #join-section .content{
+	width: fit-content;
   }
+}
+@media (max-width: 725px) {
+	#join-section .photo{
+		display: none;
+	}
+	#join-section .content{
+		width: 100%;
+	}
+
+	#join-section .title{
+		font-size: 1.8rem;
+		width: 90%;
+	}
+	#join-section .text{
+		font-size: 1.3rem;
+		width: 90%;
+	}
+
 }
