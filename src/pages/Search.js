@@ -62,5 +62,6 @@ const Search = (props) => {
     </MainLayout>
 
   );
+}
   
-  export default Search;
+export default Search;

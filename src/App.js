@@ -46,7 +46,6 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar page={page} />
         <Routes>
           <Route
             path={"/*"}
@@ -189,7 +188,6 @@ const App = () => {
             }
           />
         </Routes>
-        <Footer />
         <DiscountModal />
       </BrowserRouter>
     </div>
