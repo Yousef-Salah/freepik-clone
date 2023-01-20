@@ -7,6 +7,7 @@ import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import FontsTagBarData from "../utils/FontsTagBarData";
 import FontsSideBarData from "../utils/FontsSideBarData";
 import FontsList from "../components/Fonts/FontsList";
+import MainLayout from "../components/Layouts/MainLayout";
 const Fonts = (props) => {
   const [open, setOpen] = useState(false);
   const updateOpen = (value) => {
@@ -31,7 +32,7 @@ const Fonts = (props) => {
 
 	return (
 		<>
-
+        <MainLayout page={props.page}>
 			{/*<SearchContainer mainPage={false} />*/}
 			<SideBar updateOpen={updateOpen} data={FontsSideBarData} />
 
@@ -46,6 +47,7 @@ const Fonts = (props) => {
 				/>
 				<FontsList />
 			</div>
+        </MainLayout>
 		</>
 	);
 };

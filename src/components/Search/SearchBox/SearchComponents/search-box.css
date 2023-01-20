@@ -1,5 +1,5 @@
 #search-input-container {
-  background-color: #4055c7;
+  background-color: transparent;
   padding: 0px;
   height: 54px;
   width: 100%;
@@ -204,4 +204,8 @@
   background-color: transparent !important;
   right: 2px !important;
   top: 6px !important;
+}
+
+#search-input-tags > * {
+    width: auto;
 }

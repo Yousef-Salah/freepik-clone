@@ -8,6 +8,8 @@ import TagBar from "../components/Search/FilterSideBar/TagBar";
 import { SideBarData1 } from "../components/Search/FilterSideBar/SideBarData1";
 import { useLocation } from "react-router";
 import SearchTagBarData from "../utils/SearchTagBarData";
+import MainLayout from "../components/Layouts/MainLayout";
+
 const Search = (props) => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -34,7 +36,8 @@ const Search = (props) => {
   };
 
   return (
-    <>
+    <MainLayout page={props.page}>
+
       <SearchContainer
         dataHandler={loadData}
         mainPage={false}
@@ -56,9 +59,8 @@ const Search = (props) => {
         />
         <Spinner visible={spinnerTrigger} />
       </div>
-    </>
+    </MainLayout>
+
   );
-};
-
-export default Search;
-
+  
+  export default Search;

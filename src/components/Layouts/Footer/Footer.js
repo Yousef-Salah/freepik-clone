@@ -3,18 +3,18 @@ import './footer.css'
 import { Link } from 'react-router-dom';
 
 const Footer = (props) => {
-	const [pageName, setPageName] = useState("");
+	// const [pageName, setPageName] = useState("");
 	const [loaded, setLoaded] = useState(false);
 	let fotClass = "";
 
 	useEffect(() => {
-		setPageName(props.page);
+		// setPageName(props.page);
 		setLoaded(true)
-	}, [props.page]);
+	}, [loaded]);
 
-	if (pageName === "login" || pageName === "signup") {
-		fotClass += " hide-fot";
-	}
+	// if (pageName === "login" || pageName === "signup") {
+	// 	fotClass += " hide-fot";
+	// }
 
 	return (
 		<>

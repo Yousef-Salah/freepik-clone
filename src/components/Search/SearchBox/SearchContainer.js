@@ -1,6 +1,9 @@
 import SearchBox from "./SearchComponents/SearchBox";
 import "./search-container.css";
 import { Link } from "react-router-dom";
+import TransparentSearchTag from "./SearchComponents/TransparentSearchTag";
+
+// TODO: Search input responsive bug & container class issue
 
 const SearchContainer = (props) => {
   let mainPageComponent = (
@@ -14,6 +17,11 @@ const SearchContainer = (props) => {
       <div className="container-fluid">
         <div className="row">
           <SearchBox dataHandler={props.dataHandler} mainPage={true} searchQuery={props.searchQuery} page={props.page}/>
+        </div>
+        <div className="row d-flex justify-content-center pt-3" id="search-input-tags">
+          <TransparentSearchTag title="Infographic" />
+          <TransparentSearchTag title="Social Media" />
+          <TransparentSearchTag title="Template" />
         </div>
       </div>
     </>

@@ -1,0 +1,99 @@
+#circular-categories-container {
+    background-color: transparent;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 165px !important;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .circular-category {
+        width: 161px;
+        height: 170px;
+        display: inline-block;
+
+        a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+
+            .image-border {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 2px solid rgba(255, 255, 255, 0.4);  
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;    
+                // margin-bottom: 15px;
+                z-index: 2;
+                overflow: hidden;
+                transition: all 0.2s ease-out;
+                position: relative;
+
+                .image-container {
+                    width: 108px !important;
+                    height: 108px !important;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    transition: inherit;
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        z-index: 1;
+                        transition: inherit;
+                    }
+                }
+            }
+
+            &:hover {
+                .image-border {
+                    border-color: rgba(255, 255, 255, 1);
+
+                    .image-container {
+                        overflow: hidden !important;
+
+                        img {
+                            scale: 1.2;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 1096px) {
+                width: 100px;
+                height: 95px;
+
+                .image-border {
+                    width: 65px !important;
+                    height: 65px !important;
+                    
+                    .image-container {
+                        width: 56px !important;
+                        height: 56px !important;
+                        top: 2.5px;
+                        left: 2.5px;
+                    }
+                }
+            }
+        }
+
+    }
+
+}

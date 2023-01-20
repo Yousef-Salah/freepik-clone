@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import DiscoverCollections from "../components/Collections/DiscoverCollection/DiscoverCollections";
 import DiscoverCollectionTitle from "../components/Collections/DiscoverCollection/DiscoverCollectionsTitle";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
+import MainLayout from '../components/Layouts/MainLayout';
 
 const Collections = (props) => {
   const [data, setData] = useState([]);
@@ -21,7 +22,8 @@ const Collections = (props) => {
     }, 1500);
   };
   return (
-    <>
+    
+    <MainLayout page={props.page}>
       <SearchContainer
         dataHandler={loadData}
         mainPage={false}
@@ -29,7 +31,7 @@ const Collections = (props) => {
       />
       <DiscoverCollectionTitle />
       <DiscoverCollections />
-    </>
+    </MainLayout>
   );
 };
 export default Collections;
