@@ -14,14 +14,14 @@ const DiscoverCollections = () => {
                   <div className="discover-collection-div">
                     <div className="col-6 discover-collection-col">
                       <div className="row discover-collection-row2">
-                        <img src={item.link} id="discover-img1" />
+                        <img src={`/assets/images/collection-page/${item.link}`} id="discover-img1" />
                       </div>
                       <div className="row discover-collection-row3">
-                        <img src={item.link2} id="discover-img2" />
+                        <img src={`/assets/images/collection-page/${item.link2}`} id="discover-img2" />
                       </div>
                     </div>
                     <div className="col-6 discover-collection-col">
-                      <img src={item.link3} id="discover-img3" />
+                      <img src={`/assets/images/collection-page/${item.link3}`} id="discover-img3" />
                     </div>
                   </div>
                 </div>

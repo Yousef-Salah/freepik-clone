@@ -65,7 +65,7 @@ const Home = (props) => {
                 headerText="Create beautiful designs online."
                 paragraphText="Customize and download free templates to make stunning designs with our online editing tool."
                 buttonText="Start editing online"
-                photoUrl="wepikPhoto.png"
+                photoUrl="/assets/images/wepik-section/wepikPhoto.png"
             />
 
             <Footer />
