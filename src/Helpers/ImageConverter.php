@@ -33,7 +33,7 @@ foreach($json_data as $record) {
 
   // echo $record['id'] .'      ' . $image_type . '<br>';
 
-  $json_data[$counter]['image_path'] = $image_name;
+  $json_data[$counter]['img_path'] = $image_name;
   unset($record['img_thumb']);
   $json_data[$counter] = $record;
   $counter++;

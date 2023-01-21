@@ -20,7 +20,7 @@ const Searchimgcard = ({ Cardphoto }) => {
 				{/* <Link to={"/"}> */}
 				<img
 					className="searchcard-img"
-					src={Cardphoto.img_thumb}
+					src={Cardphoto.img_path}
 					alt={Cardphoto.title}
 				/>
 				{/* </Link> */}
