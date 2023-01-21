@@ -5,10 +5,10 @@
     white-space: nowrap;
     height: 165px !important;
     width: 100%;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
+    margin-top: 80px;
+    // margin-bottom: 80px !important;
+    // display: flex;
+    // justify-content: center;
 
     &::-webkit-scrollbar {
         display: none;
@@ -25,7 +25,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
             
+            p {
+                text-align: center;
+            }
 
             .image-border {
                 width: 120px;
@@ -35,7 +41,7 @@
                 // display: flex;
                 // justify-content: center;
                 // align-items: center;    
-                // margin-bottom: 15px;
+                margin: 0 auto 15px auto;
                 z-index: 2;
                 overflow: hidden;
                 transition: all 0.2s ease-out;
@@ -76,24 +82,43 @@
                 }
             }
 
+        }
+
             @media screen and (max-width: 1096px) {
                 width: 100px;
                 height: 95px;
 
-                .image-border {
-                    width: 65px !important;
-                    height: 65px !important;
-                    
-                    .image-container {
-                        width: 56px !important;
-                        height: 56px !important;
-                        top: 2.5px;
-                        left: 2.5px;
+                a {
+                    .image-border {
+                        width: 65px !important;
+                        height: 65px !important;
+                        
+                        .image-container {
+                            width: 56px !important;
+                            height: 56px !important;
+                            top: 2.5px;
+                            left: 2.5px;
+                        }
                     }
                 }
             }
-        }
 
     }
 
+    @media screen and (max-width: 1096px) {
+        margin-top: 50px;
+        height: 145px;
+        padding: 0 20px;
+    }
+
+}
+
+#main-page-header {
+    padding-bottom: 80px !important;
+}
+
+@media screen and (max-width: 1096px) {
+    #main-page-header {
+        padding-bottom: 48px !important;
+    }
 }
