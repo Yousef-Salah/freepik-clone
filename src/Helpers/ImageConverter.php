@@ -24,7 +24,7 @@ foreach($json_data as $record) {
   $image_code = $record['img_thumb'];
   $image_type = get_string_between($image_code, 'data:image/', ';base64');
   $image_code = str_replace('data:image/' . $image_type .';base64,', '', $image_code);
-	$image_code = str_replace(' ', '+', $image_code);
+  $image_code = str_replace(' ', '+', $image_code);
 
   $data = base64_decode($image_code);
   
@@ -34,6 +34,8 @@ foreach($json_data as $record) {
   // echo $record['id'] .'      ' . $image_type . '<br>';
 
   $json_data[$counter]['image_path'] = $image_name;
+  unset($record['img_thumb']);
+  $json_data[$counter] = $record;
   $counter++;
 } 
 
