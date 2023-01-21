@@ -6,7 +6,7 @@ const LogIn = ({ Login }) => {
     <div className="container-fluid text-center" id="login">
       <div className="row" id="log-in-row">
         <nav className="col-lg-8" id="loginphoto">
-          <img className="login-img" src={require('../../assets/images/loginsignup/1.jpeg')} alt={"nature photos"} />
+          <img className="login-img" src='/assets/images/loginsignup/1.jpeg' alt={"nature photos"} />
           <div className="login-imgby">
             Image by
             <Link to={"/"}>
@@ -15,7 +15,7 @@ const LogIn = ({ Login }) => {
           </div>
         </nav>
         <nav className="col-lg-4" id="login-form">
-          <img src={require('../../assets/images/loginsignup/freepiklogo.png')} alt="freepik logo" className="login-freepik"/>
+          <img src='/assets/images/loginsignup/freepiklogo.png' alt="freepik logo" className="login-freepik"/>
           <p className="h4" id="log-in">Log in</p>
           <nav className="row" id="login-btns">
           <button className="login-btn" id="login-btn-google">
@@ -42,7 +42,7 @@ const LogIn = ({ Login }) => {
             <Link to={'/'}>
             <img
             className="freepikcompany"
-              src={require("../../assets/images/loginsignup/freepik-company.png")}
+              src="/assets/images/loginsignup/freepik-company.png"
               alt="By freepik company"
             ></img>
             </Link>

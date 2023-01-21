@@ -1,4 +1,3 @@
-import photo from "../../../assets/images/Join-section/community.png";
 import "./join-section.css";
 const Join = () => {
   return (
@@ -21,7 +20,7 @@ const Join = () => {
       </div>
       <div className="photo">
         <div className="image-wrapper">
-          <img src={photo} alt="Join Freepik" loading="lazy"></img>
+          <img src="/assets/images/Join-section/community.png" alt="Join Freepik" loading="lazy"></img>
         </div>
       </div>
     </div>

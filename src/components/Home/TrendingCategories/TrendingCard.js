@@ -6,7 +6,7 @@ const TrendingCard = ({ Trendingphoto }) => {
         <Link to={"/search/" + Trendingphoto.title}>
           <img
             className="trendimg"
-            src={require(`../../../${Trendingphoto.image}`)}
+            src={`/${Trendingphoto.image}`}
             alt={Trendingphoto.title}
           />
           <p className="trendtext">{Trendingphoto.title}</p>

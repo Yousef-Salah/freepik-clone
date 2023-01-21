@@ -12,9 +12,6 @@ import RelatedArticles from '../components/Category/RelatedArticles/RelatedArtic
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 
-import chosing from "../assets/images/Related-Articles/choosing-consistent.jpg";
-import Great from "../assets/images/Related-Articles/Great-PowerPoint.jpg";
-import Cover from "../assets/images/Related-Articles/VideoCalls_Cover.jpg";
 import MainLayout from '../components/Layouts/MainLayout';
 
 
@@ -48,7 +45,7 @@ const Category = (props) => {
 
             <RelatedArticles title="10 tips for a great powerpoint presentation"
                 heder="Today it is not enough for a successful performance just to tell about your idea. People certainly want to see,..."
-                image={Great}  />
+                image="/assets/images/Related-Articles/Great-PowerPoint.jpg"  />
 			<JoinSection />
 			<ModalTrigger />
         </MainLayout>

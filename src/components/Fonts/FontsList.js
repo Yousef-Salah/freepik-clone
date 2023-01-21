@@ -138,7 +138,7 @@ const FontsList = () => {
                 <FontCard
                   title={cardTitle}
                   fontName={val.fontName}
-                  img={require(`../../assets/images/fonts/${val.img}`)}
+                  img={`/assets/images/fonts/${val.img}`}
                   stylesCount={val.numberOfStyles}
                   font={val.font}
                   fontSize={size[0]}
