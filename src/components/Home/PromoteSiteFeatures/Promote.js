@@ -10,10 +10,10 @@ const Prosss = (props) => {
             </svg>
           </div>
           <div className="col-10" id="paragraph">
-            <p className="caption">
+            <div className="caption">
               <h3 className="iconTitle">{props.heder}</h3>
               {props.title}
-            </p>
+            </div>
           </div>
         </div>
       </div>
@@ -21,3 +21,4 @@ const Prosss = (props) => {
   );
 };
 export default Prosss;
+

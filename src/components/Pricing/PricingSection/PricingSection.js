@@ -207,10 +207,10 @@ const PricingSection = () => {
               <div className='card-bd'>
                 <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
                   <li className="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-annual-tab" data-bs-toggle="pill" data-bs-target="#pills-annual" type="button" role="tab" aria-controls="pills-annual" aria-selected="true">Annual</button>
+                    <button className="nav-link active" id="pills-annual-tab" data-bs-toggle="pill" data-bs-target="#pills-annual" type="button" role="tab" aria-controls="pills-annual" aria-selected="true">Annual</button>
                   </li>
                   <li className="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-monthly-tab" data-bs-toggle="pill" data-bs-target="#pills-monthly" type="button" role="tab" aria-controls="pills-monthly" aria-selected="false">Monthly</button>
+                    <button className="nav-link" id="pills-monthly-tab" data-bs-toggle="pill" data-bs-target="#pills-monthly" type="button" role="tab" aria-controls="pills-monthly" aria-selected="false">Monthly</button>
                   </li>
                 </ul>
                 <span className='save-sp'>Save 10%</span>

@@ -16,8 +16,7 @@ const CollapseBtn = (props) => {
           data-bs-target={props.target}
           aria-expanded="false"
           aria-controls={props.aria}
-          onClick={() => setOpen(!open)}
-        >
+          onClick={() => setOpen(!open)}>
           <i className={props.pic + ` tw-absolute tw-left-0 collapseicon`}></i>
           <p className={`tw-absolute tw-left-6 ${props.className3}`}>
             {props.title}
@@ -30,15 +29,16 @@ const CollapseBtn = (props) => {
             data-bs-toggle="collapse"
             data-bs-target={props.target}
             aria-expanded="false"
-            aria-controls={props.aria}
-          ></i>
+            aria-controls={props.aria}></i>
         </button>
         <div
-          class={props.info ? "bx bx-info-circle tw-ml-16 tw-mt-1" : ""}
-        ></div>
+          className={
+            props.info ? "bx bx-info-circle tw-ml-16 tw-mt-1" : ""
+          }></div>
       </div>
     </div>
   );
 };
 
 export default CollapseBtn;
+

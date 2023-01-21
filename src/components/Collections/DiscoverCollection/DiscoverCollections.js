@@ -36,7 +36,7 @@ const DiscoverCollections = () => {
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
+                        <i className="bi bi-three-dots-vertical"></i>
                       </button>
                       <ul className="dropdown-menu">
                         <li>

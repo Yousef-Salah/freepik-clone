@@ -19,9 +19,9 @@ const CardLayout = () => {
   }
   return (
     <div className="row layout-3d ">
-      {shuffled.map((val) => {
+      {shuffled.map((val, idx) => {
         return (
-          <div className="col">
+          <div className="col" key={idx}>
             <Link to={val.link}>
               <Card3D
                 image={require(`../../assets/images/3dmodels/${val.image}`)}
@@ -36,12 +36,12 @@ const CardLayout = () => {
       <button
         onClick={shuffle}
         type="button"
-        className="btn btn-primary  nextpage next3d"
-      >
-        Next Page <i class="bi bi-arrow-right"></i>
+        className="btn btn-primary  nextpage next3d">
+        Next Page <i className="bi bi-arrow-right"></i>
       </button>
     </div>
   );
 };
 
 export default CardLayout;
+

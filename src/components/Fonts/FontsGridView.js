@@ -26,7 +26,7 @@ const FontsGridView = () => {
           <div className="grid-list grid-view" id="grid-list">
             <button className="list ">
               <Link to="/fonts">
-                <i class="bx bx-list-ul"></i>
+                <i className="bx bx-list-ul"></i>
               </Link>
             </button>
             <button className="grid grid-list-selected">
@@ -55,8 +55,8 @@ const FontsGridView = () => {
           </div>
         </div>
       </ul>
-      <button onClick={shuffle} type="button" class="btn btn-primary nextpage">
-        Next Page <i class="bi bi-arrow-right"></i>
+      <button onClick={shuffle} type="button" className="btn btn-primary nextpage">
+        Next Page <i className="bi bi-arrow-right"></i>
       </button>
     </>
   );
