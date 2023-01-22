@@ -1,39 +1,57 @@
-.wepik-logo {
-    max-width: 1000px;
-    max-height: 500px;
-}
-
-.wepik-header {
-    line-height: 1.90;
-    font-size: 6vmin;
-    font-weight: 100;
-    padding-top: 30px;
-}
-
 .wepik-cont {
-    display: flex;
-    background-color: #f8fafb;
-    padding: 20px 150px;
+  display: flex;
+  background-color: #f8fafb;
+  padding: 25px 0 0px 0;
+  margin: 20px 0 40px 0;
 }
-
+.wepik-header {
+  line-height: 1.9;
+  font-size: 1.8rem;
+  font-weight: 100;
+  padding-top: 30px;
+}
 .wepik-paragraph {
-    padding-top: 30px;
-    font-size: 3vmin;
-    color: #869fb2;
+  padding-top: 30px;
+  font-size: 1.3rem;
+  color: #869fb2;
+  width: 90%;
 }
-
 .wepik-btn {
-    background-color: rgb(41, 112, 244);
-    margin-top: 30px;
+  background-color: #1273eb;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 15px;
+  padding: 12px 26px;
+  margin-top: 30px;
 }
-
-.wepik {
-    padding: 80px;
-    padding-left: 0;
-    padding-right: 0;
-}
-
 .wepik-photo img {
-    margin-right: 10px;
-    max-height: 600px;
+  margin-right: 10px;
+  max-height: 600px;
+}
+
+@media (max-width: 1000px) {
+  .wepik {
+    padding: 30px 0 10px 3%;
+  }
+  .wepik-header {
+    font-size: 1.6rem;
+  }
+  .wepik-paragraph {
+    font-size: 1.15rem;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .wepik-photo {
+    display: none;
+  }
+  .wepik {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1000px) {
+  .wepik {
+    padding: 3% 0 10px 8%;
+  }
 }
