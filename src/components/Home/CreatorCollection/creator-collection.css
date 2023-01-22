@@ -1,8 +1,9 @@
-
-
-/* css for the discover collection title */
+#creator-inner-col {
+  width: 96%;
+  margin: 0 auto;
+  padding: 45px 10px;
+}
 .creator-collection-title {
-  padding-left: 5%;
   font-size: 28px;
   font-weight: bold;
   color: rgb(69, 70, 70);
@@ -10,17 +11,16 @@
 
 .creator-collection-p {
   padding-top: 1%;
-  padding-left: 5%;
   font-size: 18px;
   color: rgb(91, 92, 92);
+  display: flex;
+  justify-content: space-between;
 }
 
 .Explore-btn {
   font-size: medium;
-  font-weight: 500;
-  padding-left: 30%;
   color: rgb(77, 77, 247);
-  width: 40%;
+  min-width: 70px;
 }
 
 .right-arrow {
@@ -33,19 +33,26 @@
   padding-left: 8px;
 }
 
-.Explore-btn:hover .right-arrow{
+.Explore-btn:hover .right-arrow {
   transform: translateX(4px);
 }
 
+.d-collection-col {
+  display: inline-block;
+  padding: 0 40px 0 0;
+}
 
 /* Css for the discover collection cards  */
-
 .collection-row {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   overflow-x: scroll;
+  margin: 0 auto;
+  padding: 4vw 0;
+}
+.collection-row::-webkit-scrollbar {
+  display: none;
 }
 
 .creator-collection-div {
@@ -57,19 +64,23 @@
 
 .creator-collection-img {
   width: 300px;
+  height: 370px;
   position: relative;
-  border-radius: 20px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 .creator-collection-img1 {
   position: absolute;
-  width: 294px;
-  rotate: 5deg;
-  /* width: 290px; */
-  border-radius: 20px;
+  width: 300px;
+  height: 370px;
+  rotate: 4deg;
+  border-radius: 10px;
+  opacity: 0.5;
+  object-fit: cover;
 }
 .creator-collection-div:hover .creator-collection-img {
   transform: scale(1.013);
-  filter: brightness(.8);
+  filter: brightness(0.8);
 }
 
 .creator-collection-div:hover .creator-collection-text {
@@ -81,12 +92,12 @@
   color: azure;
   position: absolute;
   bottom: 15px;
-  padding-left: 95px;
   text-align: center;
   font-size: 12px;
 }
 
 .creator-collection-div:hover #resoursess {
+  justify-content: center;
   display: flex;
 }
 
@@ -95,91 +106,57 @@
   position: absolute;
   bottom: 20px;
   text-align: center;
-  padding-left: 40px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
 }
 
-
-
-@media (max-width:1245px) {
-  .discover-collection-div {
-    width: 25px;
-  }
+.exploreBox {
+  height: 100%;
+  width: calc(35vw - 20px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  border: 1px solid #808080aa;
+}
+.c-c-t-r {
+  width: 98%;
+  margin: 0 auto;
 }
 
-
-@media (max-width: 1400px) {
+@media (max-width: 768px) {
   .Explore-btn {
     display: none;
   }
+  .d-collection-col img {
+    min-width: 150px;
+    min-height: 190px;
+    width: 35vw;
+    height: 45vw;
+  }
+  .d-collection-col {
+    padding: 0 15px;
+  }
+  .creator-collection-title {
+    font-size: 24px;
+    text-align: center;
+  }
+  .creator-collection-p {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0 20px 0;
+  }
 }
-
-@media (min-width: 1400px) {
+@media (min-width: 768px) {
   .exploreBox {
     display: none;
-    text-align: center;
-  }
-}
-.exploreBox {
-  text-align: center;
-  width: 50px;
-  font-size: medium;
-  padding-top: 20px;
-}
-@media  (max-width: 820px) and (min-width: 640px) {
-
-  .exploreBox {
-    text-align: center;
-    width: 95px;
-    font-size: medium;
-    margin-top: 30px;
-  }
-}
-@media  (max-width: 639px) and (min-width: 540px) {
-
-  .exploreBox {
-    text-align: center;
-    width: 90px;
-    font-size: medium;
-    margin-top: 30px;
-  }
-}
-@media  (max-width: 540px) and (min-width: 300px) {
-
-  .exploreBox {
-    text-align: center;
-    width: 68px;
-    font-size:10px;
-    margin-top: 10px;
-  }
-}
-@media  (max-width: 365px) and (min-width: 0px) {
-
-  .exploreBox {
-    text-align: center;
-    width: 50px;
-    font-size:10px;
-    padding-bottom: 2px;
-  }
-}
-@media (min-width: 821px) {
-
-  .exploreBox {
-    text-align: center;
-    width: 150px;
-    font-size: medium;
-    margin-top: 60px;
   }
 }
 
-.exploreBoxCard {
-  color: rgb(77, 77, 247);
-
-}
-@media (max-width:844px ) and (min-width:390px) { 
-  .creator-collection-text {
-    color: rgb(255, 255, 255);
-    position: absolute;
-    font-size: 9px;
-   float: left;
+@media (min-width: 1450px) {
+  .collection-row {
+    width: fit-content;
   }
 }
