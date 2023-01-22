@@ -1,4 +1,7 @@
-## A new version will be published soon!! 
+## A new version will be published soon!!!
+<br />
+<br />
+<br />
 
 ## How to setup project files on your local machine:
 1- Clone the repository. `git clone https://github.com/Yousef-Salah/freepik-cap.git`
