@@ -131,7 +131,7 @@ const PreviewModal = (props) => {
 									{Trendingphotos().map((item, index) => {
 										return (
 											<div className="au-img-wrapper" key={index}>
-												<img src={require(`../../../../${item.image}`)} alt="title" />
+												<img src={item.image} alt="title" />
 											</div>
 										)
 									}
@@ -146,22 +146,22 @@ const PreviewModal = (props) => {
 							<h4 >You Might Also Like</h4>
 							<div className="au-images-2">
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 							</div>
 
