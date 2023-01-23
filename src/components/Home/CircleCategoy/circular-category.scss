@@ -1,11 +1,13 @@
 #circular-categories-container {
     background-color: transparent;
     overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-y: visible;
     white-space: nowrap;
     height: 165px !important;
     width: 100%;
     margin-top: 80px;
+    box-sizing: border-box;
+    font-size: 18px;
     // margin-bottom: 80px !important;
     // display: flex;
     // justify-content: center;
@@ -41,7 +43,7 @@
                 // display: flex;
                 // justify-content: center;
                 // align-items: center;    
-                margin: 0 auto 15px auto;
+                margin: 0 auto 10px auto;
                 z-index: 2;
                 overflow: hidden;
                 transition: all 0.2s ease-out;
@@ -107,18 +109,19 @@
 
     @media screen and (max-width: 1096px) {
         margin-top: 50px;
-        height: 145px;
+        height: 95px !important;
         padding: 0 20px;
+        font-size: 13px;
     }
 
 }
 
 #main-page-header {
-    padding-bottom: 80px !important;
+    padding-bottom: 80px;
 }
 
 @media screen and (max-width: 1096px) {
     #main-page-header {
-        padding-bottom: 48px !important;
+        padding-bottom: 40px;
     }
 }
