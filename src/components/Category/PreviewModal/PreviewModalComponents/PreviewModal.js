@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SponsoredBy from "../../../Layouts/SponsoredBy/SponsoredBy";
 import Trendingphotos from "../../../Home/TrendingCategories/Trendingphotos";
 import "../preview-modal.css";
@@ -15,18 +15,25 @@ const PreviewModal = (props) => {
 		buttonHandler();
 	}
 
+    const navigate = useNavigate();
+
     // TODO:: check for correctance of adding new element to DOM
     const downloadImage = async () => {
-        const image = await fetch(props.data.img_og);       // fetching the data from out source link
-        const imageBlog = await image.blob();               // convert fetched data to be readable data
-        const imageURL = URL.createObjectURL(imageBlog);    // create url that represents the fetched image
-      
-        const link = document.createElement('a');           // create `a` element to use it to download the image
-        link.href = imageURL;
-        link.download = props.data.title;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+
+        if( !props.data.premium ) {  
+            const image = await fetch(props.data.img_og);       // fetching the data from out source link
+            const imageBlog = await image.blob();               // convert fetched data to be readable data
+            const imageURL = URL.createObjectURL(imageBlog);    // create url that represents the fetched image
+          
+            const link = document.createElement('a');           // create `a` element to use it to download the image
+            link.href = imageURL;
+            link.download = props.data.title;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            return navigate('/login');
+        }
     }
       
 
