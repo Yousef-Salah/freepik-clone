@@ -34,7 +34,7 @@ const Category = (props) => {
 
 	return (
 		<>
-        <MainLayout page={props.page}>
+        <MainLayout page={props.page} pageTitle={catParam.charAt(0).toUpperCase() + catParam.slice(1)}>
      	<SearchContainer mainPage={false} page='category' searchQuery={props.searchQuery} />
 
 			<CategoryHeader catotitle="The best backgrounds for your projects" catodesc="All your drawings, illustrations and compositions are not standing on thin air, right? There's scenery, something that tells everyone where your creation takes place. That's the background, probably one of the most important elements that make everything feel complete. A background is also a nice decorative touch, especially in slideshows, flyers, and other projects." />

@@ -23,7 +23,7 @@ const Collections = (props) => {
   };
   return (
     
-    <MainLayout page={props.page}>
+    <MainLayout page={props.page} pageTitle="Collections">
       <SearchContainer
         dataHandler={loadData}
         mainPage={false}

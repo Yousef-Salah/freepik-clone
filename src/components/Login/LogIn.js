@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import "./logIn.css"
+import DocumentTitleHandler from "../Common/DocumentTitleHandler";
 
 const LogIn = ({ Login }) => {
   return (
+    <>
     <div className="container-fluid text-center" id="login">
       <div className="row" id="log-in-row">
         <nav className="col-lg-8" id="loginphoto">
@@ -51,6 +53,9 @@ const LogIn = ({ Login }) => {
         </nav>
       </div>
     </div>
+
+    <DocumentTitleHandler pageTitle="Log In" />
+    </>
   );
 };
 export default LogIn;

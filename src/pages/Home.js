@@ -17,6 +17,7 @@ import Promote from '../components/Home/PromoteSiteFeatures/Promote';
 import MainLayout from '../components/Layouts/MainLayout';
 import Navbar from '../components/Layouts/Navbar/Navbar';
 import Footer from '../components/Layouts/Footer/Footer';
+import DocumentTitleHandler from "../components/Common/DocumentTitleHandler";
 
 
 const Home = (props) => {
@@ -69,6 +70,7 @@ const Home = (props) => {
             />
 
             <Footer />
+            <DocumentTitleHandler pageTitle="Home" />
             </>
     )
 }

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import DocumentTitleHandler from "../Common/DocumentTitleHandler";
 import "./signup.css";
 const SignUp = () => {
   return (
+    <>
     <div className="container-fluid text-center" id="Signup">
       <div className="row" id="Sign-up">
         <nav className="col-lg-8" id="Sign-up-photo">
@@ -77,6 +79,8 @@ const SignUp = () => {
         </nav>
       </div>
     </div>
+    <DocumentTitleHandler pageTitle="Sign Up" />
+    </>
   );
 };
 export default SignUp;
