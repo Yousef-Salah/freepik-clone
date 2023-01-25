@@ -1,22 +1,30 @@
-#s {
-  height: 250px;
+#category-header {
+  background: linear-gradient(#e3e9ed, #ffffff);
+  height: 450px;
+  display: flex;
+  justify-content: space-between;
 }
-#CategoryHeader
-{
-  background-color: rgb(239, 242, 242);
+#category-header * {
+  margin: 0;
+  padding: 0;
 }
-
-#category-header .rightImageCard img {
-  width: 70%;
+#category-header .right-card-image,
+#category-header .left-card-image {
+  width: fit-content;
+  flex: 0.3;
+}
+#category-header .right-card-image img {
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
   float: right;
-  /* padding-top: 5%; */
 }
-#category-header .leftImageCard img {
-  float: left;
-  /* padding-top: 5%; */
-  width: 70%;
+#category-header .left-card-image img {
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
 }
-#category-header .Catotitle {
+#category-header .head-cat-title {
   width: 100%;
   font-size: 41px;
   font-weight: bold;
@@ -27,50 +35,71 @@
   text-align: center;
   padding-top: 8%;
   font-size: 18px;
+  color: #6c757d;
 }
-
-@media only screen and (max-width: 600px) {
-  #category-header .leftImageCard {
+.header-desc {
+  flex: 0.4;
+}
+@media only screen and (max-width: 520px) {
+  #category-header .right-card-image {
     display: none;
   }
-  #category-header .rightImageCard {
-    display: none;
-  }
-  #category-header .Catotitle {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  #category-header .descreption {
-    text-align: center;
-  }
-
-  #category-header .titleWdescreption {
-    margin: 0;
-    height: 100%;
+  .header-desc {
+    flex: 0.95 !important;
   }
 }
 /* meduim screen  */
-@media only screen and (max-width: 992px) {
-  #category-header .leftImageCard {
+@media only screen and (max-width: 1400px) {
+  #category-header .left-card-image {
     display: none;
   }
-  #category-header .rightImageCard img {
-    width: 180px;
-    height: 250px;
+  #category-header {
+    height: 350px;
   }
-}
-@media only screen and (max-width: 770px) {
-  #category-header .rightImageCard {
-    display: none;
+  .header-desc {
+    flex: 0.65;
   }
-  #category-header .Catotitle {
-    text-align: center;
+  #category-header h1 {
+    font-size: 2rem !important;
+    text-align: left !important;
+    padding-left: 15px;
+  }
+  #category-header p {
+    text-align: left !important;
+    font-size: 1.1rem !important;
+    padding-left: 15px;
+  }
+  #category-header .right-card-image {
+    flex: 0.35;
+    height: 70%;
   }
   #category-header .descreption {
-    text-align: center;
+    padding-top: 20px;
   }
 }
-#category-header .titleWdescreption {
-  margin: 0;
-  height: 100%;
+@media only screen and (max-width: 768px) {
+  #category-header {
+    height: fit-content;
+  }
+  .header-desc {
+    flex: 0.65;
+  }
+  #category-header h1 {
+    font-size: 1.4rem !important;
+    padding-left: 15px;
+  }
+  #category-header p {
+    font-size: 0.8rem !important;
+    padding-left: 15px;
+  }
+  #category-header .right-card-image {
+    flex: 0.35;
+    height: 100%;
+  }
+  #category-header .head-cat-title {
+    padding: 30px 0 0 20px;
+  }
+  #category-header img {
+    min-height: 200px;
+  }
 }
