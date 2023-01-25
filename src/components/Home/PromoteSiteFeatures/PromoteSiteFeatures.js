@@ -1,7 +1,7 @@
 import PromoteImg from "./PromoteImg";
 import PromoteTitle from "./PromoteTitle";
 import Promote from "./Promote";
-import "./Promote.css";
+import "./promote.css";
 const PromoteSiteFeatures = () => {
   return (
     <div id="promote-site-features">
@@ -37,3 +37,4 @@ const PromoteSiteFeatures = () => {
 };
 
 export default PromoteSiteFeatures;
+

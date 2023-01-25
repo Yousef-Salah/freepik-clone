@@ -1,11 +1,12 @@
 import photo from "../../../assets/images/Promote/resources.jpg";
-import "./Promote.css";
+import "./promote.css";
 
 const PromoteImg = () => {
   return (
-    <div className="PromotePhoto">
+    <div className="promote-photo">
       <img src={photo} alt="promote" loading="lazy"></img>
     </div>
   );
 };
 export default PromoteImg;
+

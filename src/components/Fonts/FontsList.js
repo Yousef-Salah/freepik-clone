@@ -58,7 +58,7 @@ const FontsList = () => {
     setSelected(newClasses);
   }
   return (
-    <div className="fonts ">
+    <div className="fonts">
       <h2 className="fonts-title">Type something and try our free fonts</h2>
       <br />
       <div className="titles row row-cols-lg-3 row-cols-sm-3 row-cols-1">

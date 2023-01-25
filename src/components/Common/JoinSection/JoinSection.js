@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import photo from "../../../assets/images/Join-section/community.png";
 import "./join-section.css";
 const Join = () => {
@@ -11,13 +12,13 @@ const Join = () => {
           Behind every stock image there's a creative mind.You can also create
           content and sell it on Freepik
         </p>
-        <a
-          href="#"
+        <Link
+          to="/register"
           className="button"
           target="_blank"
           rel="noopener noreferrer">
           Sell content
-        </a>
+        </Link>
       </div>
       <div className="photo">
         <div className="image-wrapper">

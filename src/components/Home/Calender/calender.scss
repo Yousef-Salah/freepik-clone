@@ -5,7 +5,6 @@
       rgba(17, 17, 17, 0.9)
     ),
     url("https://static-gcp.freepikcompany.com/freepik/chinese-new-year-2023/gam/noise.png");
-
 	height: 400px;
 	width: 100%;
 	overflow: hidden;
@@ -13,7 +12,6 @@
 .gold-text{
 	color: #f8d346;
 }
-
 .cal-wrapper{
 	display: flex;
 	flex-direction: row;
@@ -45,10 +43,10 @@
 			cursor: pointer;
 			width: 150px;
 			height: 44px;
-			font-size: 16px;
+			font-size: 1rem;
 			line-height: 44px;
 			transition: 250ms linear;
-			background: #1274eb00;
+			background: rgb(255 255 255 / 8%);
 			color: white ;
 			float: left;
 		}
@@ -70,7 +68,6 @@
 	}
 	}
 }
-
 @media (max-width: 768px) {
 	.cal-wrapper{
 		.cal-info{

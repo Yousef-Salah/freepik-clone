@@ -68,6 +68,7 @@
   position: relative;
   border-radius: 10px;
   object-fit: cover;
+  transition: all 0.2s;
 }
 .creator-collection-img1 {
   position: absolute;
@@ -79,7 +80,7 @@
   object-fit: cover;
 }
 .creator-collection-div:hover .creator-collection-img {
-  transform: scale(1.013);
+  transform: scale(1.015);
   filter: brightness(0.8);
 }
 
@@ -87,7 +88,7 @@
   padding-bottom: 4%;
 }
 
-#resoursess {
+.resources {
   display: none;
   color: azure;
   position: absolute;
@@ -96,7 +97,7 @@
   font-size: 12px;
 }
 
-.creator-collection-div:hover #resoursess {
+.creator-collection-div:hover .resources {
   justify-content: center;
   display: flex;
 }
@@ -159,4 +160,11 @@
   .collection-row {
     width: fit-content;
   }
+
+  .inner-col-title {
+    width: 1350px;
+    margin: 0 auto;
+    padding-right: 15px;
+  }
 }
+

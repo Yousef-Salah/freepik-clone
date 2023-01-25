@@ -6,7 +6,7 @@
   width: 100%;
   align-self: center;
   justify-content: center;
-  padding-left: 0px;
+  padding:0px 10px
 }
 #trending-content::marker {
   content: none;
@@ -23,22 +23,19 @@
 .trend-zoom .trendimg {
   width: 100%;
   object-fit: contain;
-  -moz-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  border-radius: 10px;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 .trend-zoom:hover .trendimg {
-  -moz-transform: scale(1.04);
-  -webkit-transform: scale(1.04);
-  transform: scale(1.04);
-  filter: brightness(0.8);
-  /* border-radius: 10px; */
+  -moz-transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
 }
 .trendtext {
   color: white;
   position: absolute;
-  bottom: 5%;
+  bottom: 0;
   margin: 5%;
   font-size: 100%;
   width: fit-content;
@@ -76,6 +73,12 @@
   font-weight: 600;
   width: 100%;
 }
+.trendimg{
+	filter: brightness(0.8);
+}
+.trendimg:hover{
+	filter: brightness(0.7);
+}
 #exploretrend {
   display: grid;
   grid-auto-flow: column;
@@ -86,10 +89,14 @@
 #exploretrend::-webkit-scrollbar {
   display: none;
 }
-
+@media (max-width:1096px){
+  .trend-zoom{
+ 	border-radius: 10px;
+  }
+}
 @media screen and (min-width: 1096px) {
-  .trend-zoom .trendimg {
-    border-radius: 5px;
+  .trend-zoom{
+	border-radius: 5px;
   }
   #trending {
     padding: 50px 0px;
@@ -104,10 +111,10 @@
   .trendtext {
     color: white;
     position: absolute;
-    bottom: 5px;
-    margin: 10px;
+    bottom: 0;
+    margin: 15px;
     width: 100%;
-    font-size: 100%;
+    font-size: 1.2rem;
   }
   #exploretrend {
     display: grid;
@@ -117,6 +124,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     padding: 10px;
     row-gap: 10px;
+	/* border-radius: 4% / 14%; */
   }
   #trending #explore-title {
     text-align: center;
