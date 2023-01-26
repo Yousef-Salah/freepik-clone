@@ -8,8 +8,9 @@ import { redirect, useNavigate } from "react-router-dom";
 // Components
 
 const SearchBox = (props) => {
-  
-  const [searchInputState, setSearchInputState] = useState(props.searchQuery.current.searchInput);
+  const [searchInputState, setSearchInputState] = useState(
+    props.searchQuery.current.searchInput
+  );
   const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
@@ -78,7 +79,7 @@ const SearchBox = (props) => {
     result += " " + itemType.current;
 
     if (category.current) result = "Search for " + result;
-    else result = "Search for All " + result;
+    else result = "Search all" + result;
 
     setInputPlaceHolder(result);
   };
@@ -129,7 +130,7 @@ const SearchBox = (props) => {
   const submitActionHandler = (event) => {
     event.preventDefault();
 
-    if (searchInputState === "") { 
+    if (searchInputState === "") {
       return;
     }
 
@@ -160,8 +161,7 @@ const SearchBox = (props) => {
       <form
         id="search"
         className="h-100 rounded"
-        onSubmit={submitActionHandler}
-      >
+        onSubmit={submitActionHandler}>
         <div className="dropdown d-inline-block rounded-start">
           <DropDownButton buttonLabel={buttonLabel} />
           <div className="dropdown-menu" id="search-filter-items">
@@ -230,14 +230,20 @@ const SearchBox = (props) => {
                 category={category.current}
                 single
               />
-              <DropDownItem title="Icons" name="icons" for="icon" inputHandler={itemCategoryHandler} category={category.current} single/>
+              <DropDownItem
+                title="Icons"
+                name="icons"
+                for="icon"
+                inputHandler={itemCategoryHandler}
+                category={category.current}
+                single
+              />
             </div>
           </div>
         </div>
         <div
           className="d-inline-block position-relative rounded-start"
-          id="input-field"
-        >
+          id="input-field">
           <span className={deleteTextIcon} onClick={deleteText}>
             <i className="fa-solid fa-square-xmark fa-2x "></i>
           </span>
@@ -263,3 +269,4 @@ const SearchBox = (props) => {
 
 // Exports
 export default SearchBox;
+
