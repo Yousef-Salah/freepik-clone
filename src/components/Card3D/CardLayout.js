@@ -3,6 +3,7 @@ import Card3D from "./Card3D";
 import { Cards3dData } from "./Cards3dData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
 const CardLayout = () => {
   let [shuffled, setShuffle] = useState(Cards3dData);
   function shuffleArray(array) {
@@ -24,9 +25,9 @@ const CardLayout = () => {
           <div className="col" key={idx}>
             <Link to={val.link}>
               <Card3D
-                image={require(`../../assets/images/3dmodels/${val.image}`)}
+                image={`/assets/images/3dmodels/${val.image}`}
                 name={val.name}
-                avatar={require(`../../assets/images/3dmodels/avatars/${val.avatar}`)}
+                avatar={`/assets/images/3dmodels/avatars/${val.avatar}`}
                 owner={val.owner}
               />
             </Link>

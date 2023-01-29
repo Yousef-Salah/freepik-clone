@@ -12,6 +12,7 @@ import Navbar from "../components/Layouts/Navbar/Navbar";
 import Footer from "../components/Layouts/Footer/Footer";
 import PromoteSiteFeatures from "../components/Home/PromoteSiteFeatures/PromoteSiteFeatures";
 import Calender from "../components/Home/Calender/Calender";
+import DocumentTitleHandler from "../components/Common/DocumentTitleHandler";
 const Home = (props) => {
   useEffect(() => {
     props.page("home");

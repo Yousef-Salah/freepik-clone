@@ -10,7 +10,7 @@ const CategoryCard = (props) => {
 		<div className='cat-card'>
 			<Link className="card-link" to={props.category.link} >
 				<div className="cat-card-wrapper">
-					<img src={require(`../../../${props.category.image}`)} alt={props.category.title} />
+					<img src={`/${props.category.image}`} alt={props.category.title} />
 					<h5>{props.category.title}</h5>
 				</div>
 			</Link>

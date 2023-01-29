@@ -25,6 +25,25 @@
     }
 }
 
-#related-articles-section h2 {
-    font-weight: 600;
+#related-articles-section {
+    background-color: #f8fafb;
+    padding: 10px 0;
+
+    @media screen and (min-width: 480px) {
+        padding: 20px 0 10px;
+    }
+    
+    @media screen and (min-width: 768px) {
+        padding: 30px 0 20px;
+    }
+    
+    @media screen and (min-width: 1400px) {
+        padding: 90px 0;
+    }
+
+    
+    
+    h2 {
+        font-weight: 600;
+    }
 }

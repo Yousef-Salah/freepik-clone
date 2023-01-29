@@ -9,7 +9,7 @@ const Pricing = (props) => {
     //useEffect(() => {props.page("pricing")}, [])
     return (
         <>
-            <MainLayout page={props.page}>
+            <MainLayout page={props.page} pageTitle="Pricing">
                 <div className='pricing-wrapper'>
                     <PricingSection />
                     <Enhance />

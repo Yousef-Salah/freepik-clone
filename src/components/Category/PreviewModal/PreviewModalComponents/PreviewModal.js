@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SponsoredBy from "../../../Layouts/SponsoredBy/SponsoredBy";
 import Trendingphotos from "../../../Home/TrendingCategories/Trendingphotos";
 import "../preview-modal.css";
@@ -15,18 +15,25 @@ const PreviewModal = (props) => {
 		buttonHandler();
 	}
 
+    const navigate = useNavigate();
+
     // TODO:: check for correctance of adding new element to DOM
     const downloadImage = async () => {
-        const image = await fetch(props.data.img_og);       // fetching the data from out source link
-        const imageBlog = await image.blob();               // convert fetched data to be readable data
-        const imageURL = URL.createObjectURL(imageBlog);    // create url that represents the fetched image
-      
-        const link = document.createElement('a');           // create `a` element to use it to download the image
-        link.href = imageURL;
-        link.download = props.data.title;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+
+        if( !props.data.premium ) {  
+            const image = await fetch(props.data.img_og);       // fetching the data from out source link
+            const imageBlog = await image.blob();               // convert fetched data to be readable data
+            const imageURL = URL.createObjectURL(imageBlog);    // create url that represents the fetched image
+          
+            const link = document.createElement('a');           // create `a` element to use it to download the image
+            link.href = imageURL;
+            link.download = props.data.title;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            return navigate('/login');
+        }
     }
       
 
@@ -131,7 +138,7 @@ const PreviewModal = (props) => {
 									{Trendingphotos().map((item, index) => {
 										return (
 											<div className="au-img-wrapper" key={index}>
-												<img src={require(`../../../../${item.image}`)} alt="title" />
+												<img src={item.image} alt="title" />
 											</div>
 										)
 									}
@@ -146,22 +153,22 @@ const PreviewModal = (props) => {
 							<h4 >You Might Also Like</h4>
 							<div className="au-images-2">
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 								<div className="au-img-wrapper">
-									<img src={props.data.img_thumb} alt="title" />
+									<img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
 								</div>
 							</div>
 

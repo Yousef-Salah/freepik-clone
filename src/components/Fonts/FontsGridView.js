@@ -43,9 +43,9 @@ const FontsGridView = () => {
                     <Link to={val.link}>
                       <FontCardGrid
                         name={val.fontName}
-                        img={require(`../../assets/images/fonts/${val.img}`)}
+                        img={`/assets/images/fonts/${val.img}`}
                         creator={val.creator}
-                        avatar={require(`../../assets/images/fonts/avatars/${val.avatar}`)}
+                        avatar={`/assets/images/fonts/avatars/${val.avatar}`}
                       />
                     </Link>
                   </li>

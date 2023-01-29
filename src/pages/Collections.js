@@ -21,12 +21,14 @@ const Collections = (props) => {
     }, 1500);
   };
   return (
-    <MainLayout page={props.page}>
+    
+    <MainLayout page={props.page} pageTitle="Collections">
       <SearchContainer
         dataHandler={loadData}
         mainPage={false}
         searchQuery={props.searchQuery}
       />
+
       <Collection />
     </MainLayout>
   );

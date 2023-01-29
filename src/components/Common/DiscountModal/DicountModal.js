@@ -38,7 +38,7 @@ const DiscountModal = () => {
               <img
                 className="d-inline-block"
                 id="freepik-icon"
-                src={require("../../../assets/images/icons/freepik-white-icon.png")}
+                src="/assets/images/icons/freepik-white-icon.png"
                 alt="freepik icon"
               />
               <span>freepik</span>
@@ -75,7 +75,7 @@ const DiscountModal = () => {
 
         <div id="righ-side-image">
           <img
-            src={require("../../../assets/images/DiscountModal/DiscountModal.jpg")}
+            src="/assets/images/DiscountModal/DiscountModal.jpg"
           />
         </div>
       </div>

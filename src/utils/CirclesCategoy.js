@@ -4,82 +4,82 @@ const CirclesCategoy = () => {
     return [
         {
             title: "Vectors",
-            image: "./images/Internet-Vector.jpg",
+            image: "Internet-Vector.jpg",
             link: "/search/vectors",
         },
         {
             title: "lllustrations",
-            image: "./images/card-1.jpg",
+            image: "card-1.jpg",
             link: "/search/illustrations",
         },
         {
             title: "Photos",
-            image: "./images/Photos.jpg",
+            image: "Photos.jpg",
             link: "/search/photos",
         },
         {
             title: "Templates",
-            image: "./images/templates.jpg",
+            image: "templates.jpg",
             link: "/search/templates",
         },
         {
             title: "Fonts",
-            image: "./images/Fonts.jpg",
+            image: "Fonts.jpg",
             link: "/search/fonts",
         },
         {
             title: "Mockaups",
-            image: "./images/Mockup.jpg",
+            image: "Mockup.jpg",
             link: "/search/mockups",
         },
         {
             title: "Backgrounds",
-            image: "./images/background.jpg",
+            image: "background.jpg",
             link: "/search/backgrounds",
         },
         {
             title: "TextEffects",
-            image: "./images/text-effect.jpg",
+            image: "text-effect.jpg",
             link: "/search/text-effects",
         },
         {
             title: "Vectors",
-            image: "./images/Internet-Vector.jpg",
+            image: "Internet-Vector.jpg",
             link: "/search/vectors",
         },
         {
             title: "lllustrations",
-            image: "./images/card-1.jpg",
+            image: "card-1.jpg",
             link: "/search/illustrations",
         },
         {
             title: "Photos",
-            image: "./images/Photos.jpg",
+            image: "Photos.jpg",
             link: "/search/photos",
         },
         {
             title: "Templates",
-            image: "./images/templates.jpg",
+            image: "templates.jpg",
             link: "/search/templates",
         },
         {
             title: "Fonts",
-            image: "./images/Fonts.jpg",
+            image: "Fonts.jpg",
             link: "/search/fonts",
         },
         {
             title: "Mockaups",
-            image: "./images/Mockup.jpg",
+            image: "Mockup.jpg",
             link: "/search/mockups",
         },
         {
             title: "Backgrounds",
-            image: "./images/background.jpg",
+            image: "background.jpg",
             link: "/search/backgrounds",
         },
         {
             title: "TextEffects",
-            image: "./images/text-effect.jpg",
+            image: "text-effect.jpg",
             link: "/search/text-effects",
         },
     ]
