@@ -1,4 +1,4 @@
-import "./promote.css";
+import "./Promote.css";
 const Prosss = (props) => {
   return (
     <div className="promote-content">

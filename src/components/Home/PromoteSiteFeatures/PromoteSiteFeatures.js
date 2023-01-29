@@ -1,7 +1,7 @@
 import PromoteImg from "./PromoteImg";
 import PromoteTitle from "./PromoteTitle";
 import Promote from "./Promote";
-import "./promote.css";
+import "./Promote.css";
 const PromoteSiteFeatures = () => {
   return (
     <div id="promote-site-features">

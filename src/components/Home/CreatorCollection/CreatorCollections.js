@@ -9,8 +9,8 @@ const CreatorCollections = () => {
         return (
           <div className="d-collection-col" key={idx}>
             <div className="creator-collection-div">
-              <img className="creator-collection-img1" src={item.link} />
-              <img className="creator-collection-img" src={item.link} />
+              <img className="creator-collection-img1" src={`assets/images/creator-collection/${item.link}`} />
+              <img className="creator-collection-img" src={`assets/images/creator-collection/${item.link}`} />
               <div className="row text-rescources">
                 <p className="creator-collection-text">{item.ctext}</p>
                 <p className="resources">{item.cresources}</p>

@@ -12,7 +12,7 @@ const SearchContainer = (props) => {
         <div className="logo-wrapper">
           <img
             // src="assets/images/navbar/freepik-no_bg.png"
-            src="https://github.com/Yousef-Salah/freepik-cap/blob/yousef/public/assets/images/navbar/freepik-no_bg.png"
+            src="assets/images/navbar/freepik-no_bg.png"
             alt="freepik logo"
           />
         </div>
