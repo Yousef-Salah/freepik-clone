@@ -36,7 +36,7 @@ const Search = (props) => {
   };
 
   return (
-    <MainLayout page={props.page}>
+    <MainLayout page={props.page} pageTitle="Search">
 
       <SearchContainer
         dataHandler={loadData}

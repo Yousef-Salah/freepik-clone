@@ -32,7 +32,7 @@ const Fonts = (props) => {
   }, [location]);
   return (
     <>
-    <MainLayout page={props.page}>
+    <MainLayout page={props.page} pageTitle="Fonts">
       {/*<SearchContainer mainPage={false} />*/}
       <SideBar updateOpen={updateOpen} data={FontsSideBarData} />
 

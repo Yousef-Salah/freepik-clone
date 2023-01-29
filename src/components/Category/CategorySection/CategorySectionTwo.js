@@ -8,7 +8,7 @@ const CategorySectionTwo = (props) => {
 
             <div className="row">
                 <div className="leftPhotoCard">
-                    <img src={require('./pnada.jpg')} alt="not found" />
+                    <img src="/assets/images/categroy-page/pnada.jpg" alt="not found" />
                 </div>
                 <div className="rightPargraph">
                     <div className="content">

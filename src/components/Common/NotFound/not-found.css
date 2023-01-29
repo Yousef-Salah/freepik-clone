@@ -10,7 +10,7 @@
   max-width: 800px;
 }
 .not-found_bg {
-  background: #002e53 url("/public/not_found.png");
+  background: #002e53 url("/public/assets/images/not-found-page/not_found.png");
   display: flex;
   justify-content: space-around;
 }

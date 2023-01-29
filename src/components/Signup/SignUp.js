@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
+import DocumentTitleHandler from "../Common/DocumentTitleHandler";
 import "./signup.css";
 const SignUp = () => {
   return (
+    <>
     <div className="container-fluid text-center" id="Signup">
       <div className="row" id="Sign-up">
         <nav className="col-lg-8" id="Sign-up-photo">
           <img
             className="signup-img"
-            src={require("../../assets/images/loginsignup/3.jpeg")}
+            src="/assets/images/loginsignup/3.jpeg"
             alt={"baby photos"}
           />
           <div className="signup-imgby">
@@ -20,7 +22,7 @@ const SignUp = () => {
         <nav className="col-lg-4" id="Sign-up-form">
           <img
             className="signup-freepik"
-            src={require("../../assets/images/loginsignup/freepiklogo.png")}
+            src="/assets/images/loginsignup/freepiklogo.png"
             alt="freepik logo"
           />
           <p className="h4" id="sign-up">
@@ -69,7 +71,7 @@ const SignUp = () => {
             <Link to={"/"}>
               <img
                 className="freepikcompany"
-                src={require("../../assets/images/loginsignup/freepik-company.png")}
+                src="../../assets/images/loginsignup/freepik-company.png"
                 alt="By freepik company"
               ></img>
             </Link>
@@ -77,6 +79,8 @@ const SignUp = () => {
         </nav>
       </div>
     </div>
+    <DocumentTitleHandler pageTitle="Sign Up" />
+    </>
   );
 };
 export default SignUp;

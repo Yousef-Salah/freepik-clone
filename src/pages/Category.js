@@ -12,9 +12,6 @@ import RelatedArticles from '../components/Category/RelatedArticles/RelatedArtic
 import CategorySepList from '../components/Category/CategorySepList/CategorySepList';
 import SearchContainer from '../components/Search/SearchBox/SearchContainer';
 
-import chosing from "../assets/images/Related-Articles/choosing-consistent.jpg";
-import Great from "../assets/images/Related-Articles/Great-PowerPoint.jpg";
-import Cover from "../assets/images/Related-Articles/VideoCalls_Cover.jpg";
 import MainLayout from '../components/Layouts/MainLayout';
 
 
@@ -37,7 +34,7 @@ const Category = (props) => {
 
 	return (
 		<>
-        <MainLayout page={props.page}>
+        <MainLayout page={props.page} pageTitle={catParam.charAt(0).toUpperCase() + catParam.slice(1)}>
      	<SearchContainer mainPage={false} page='category' searchQuery={props.searchQuery} />
 
 			<CategoryHeader catotitle="The best backgrounds for your projects" catodesc="All your drawings, illustrations and compositions are not standing on thin air, right? There's scenery, something that tells everyone where your creation takes place. That's the background, probably one of the most important elements that make everything feel complete. A background is also a nice decorative touch, especially in slideshows, flyers, and other projects." />
@@ -48,7 +45,7 @@ const Category = (props) => {
 
             <RelatedArticles title="10 tips for a great powerpoint presentation"
                 heder="Today it is not enough for a successful performance just to tell about your idea. People certainly want to see,..."
-                image={Great}  />
+                image="/assets/images/Related-Articles/Great-PowerPoint.jpg"  />
 			<JoinSection />
 			<ModalTrigger />
         </MainLayout>

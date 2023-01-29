@@ -10,7 +10,7 @@ const Calender = () => {
 				</div>
 				<div className="cover-image">
 					<div className="cover-wrapper">
-						<img src="images/calender/cover.webp" alt="caover-img" />
+						<img src="assets/images/calender/cover.webp" alt="caover-img" />
 					</div>
 				</div>
 			</div>

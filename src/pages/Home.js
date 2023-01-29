@@ -17,6 +17,7 @@ import Promote from '../components/Home/PromoteSiteFeatures/Promote';
 import MainLayout from '../components/Layouts/MainLayout';
 import Navbar from '../components/Layouts/Navbar/Navbar';
 import Footer from '../components/Layouts/Footer/Footer';
+import DocumentTitleHandler from "../components/Common/DocumentTitleHandler";
 
 
 const Home = (props) => {
@@ -65,10 +66,11 @@ const Home = (props) => {
                 headerText="Create beautiful designs online."
                 paragraphText="Customize and download free templates to make stunning designs with our online editing tool."
                 buttonText="Start editing online"
-                photoUrl="wepikPhoto.png"
+                photoUrl="/assets/images/wepik-section/wepikPhoto.png"
             />
 
             <Footer />
+            <DocumentTitleHandler pageTitle="Home" />
             </>
     )
 }

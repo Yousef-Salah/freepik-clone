@@ -95,7 +95,7 @@ const Navbar = (props) => {
 							<button className="navbar-toggler">
 								<span>
 									<img
-										src={require("../../../assets/images/navbar/burger-menu-toggle.png")}
+										src={"/assets/images/navbar/burger-menu-toggle.png"}
 										alt="burger-menu-toggle"
 										onClick={toggleSide}
 									/>
@@ -105,7 +105,7 @@ const Navbar = (props) => {
 								<div className="side-menu-header" onClick={toggleSide}>
 									<i>
 										<img
-											src={require("../../../assets/images/navbar/close-icon.png")}
+											src={"/assets/images/navbar/close-icon.png"}
 											alt="close"
 										/>
 									</i>
@@ -249,7 +249,7 @@ const Navbar = (props) => {
 									<Link to="/">
 										<img
 											className="nav-logo"
-											src={require("../../../assets/images/navbar/freepik-no_bg.png")}
+											src={"/assets/images/navbar/freepik-no_bg.png"}
 											alt="logo"
 										/>
 									</Link>

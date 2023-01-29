@@ -15,7 +15,7 @@ const Fonts = (props) => {
 
   return (
     <>
-    <MainLayout page={props.page}>
+    <MainLayout page={props.page} pageTitle="3d-models">
       {/*<SearchContainer mainPage={false} />*/}
       <div className="search-content page-3d" >
         <TagBar data={TagBarData3D}/>
