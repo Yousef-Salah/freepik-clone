@@ -3,10 +3,13 @@
   position: relative;
   max-width: 1350px;
   margin: 20px auto 20px auto;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 0 20px;
-  background-color: #e3e9ed;
+  background-color: #fff;
+}
+.sep-cat h3 {
+  font-size: 1.3rem;
 }
 .inline-f-cat {
   overflow: scroll;
@@ -47,5 +50,9 @@
 }
 
 .cat-sep-lists {
-	background-color: #e3e9ed;
-  }
+  background-color: #fff;
+}
+/* hide scroll bar */
+.inline-f-cat::-webkit-scrollbar {
+  display: none;
+}

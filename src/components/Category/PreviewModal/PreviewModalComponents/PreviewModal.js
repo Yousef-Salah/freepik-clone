@@ -58,21 +58,21 @@ const PreviewModal = (props) => {
 								</div>
 								<div className="img-info">
 									<button className="download-btn" onClick={downloadImage}>
-										<i class="bi bi-download"></i>
+										<i className="bi bi-download"></i>
 										<span>Download</span>
 									</button>
 									<div className="info-row flex-div">
-										<i class="bi bi-shield-check"></i>
+										<i className="bi bi-shield-check"></i>
 										<h3>Free License</h3>
 										<a href="https://google.com" >More info</a>
 									</div>
 									<div className="info-row flex-div">
-										<i class="bi bi-pen"></i>
+										<i className="bi bi-pen"></i>
 										<h3>Attribution required?</h3>
 										<a href="https://google.com" >How to Attribute</a>
 									</div>
 									<div className="info-row flex-div">
-										<i class="bi bi-file-earmark"></i>
+										<i className="bi bi-file-earmark"></i>
 										<h3>File Type: </h3>
 										<h3 className="file-type"> {props.data.file_type.toUpperCase()}</h3>
 										<a href="https://google.com">How to edit?</a>
@@ -96,20 +96,20 @@ const PreviewModal = (props) => {
 								</div>
 								<div className="media-share">
 									<div className="media-btn share">
-										<i class="bi bi-share"></i>
+										<i className="bi bi-share"></i>
 										<h5>Share</h5>
 									</div>
 									<div className=" media-btn collect">
-										<i class="bi bi-bookmark"></i>
+										<i className="bi bi-bookmark"></i>
 										<h5>Collect</h5>
 									</div>
 									<div className="media-btn like">
-										<i class="bi bi-heart"></i>
+										<i className="bi bi-heart"></i>
 										<h5>Like</h5>
 									</div>
 									{/* pintrest */}
 									<div className="pint media-btn">
-										<i class="bi bi-pinterest"></i>
+										<i className="bi bi-pinterest"></i>
 									</div>
 								</div>
 							</div>
@@ -122,13 +122,13 @@ const PreviewModal = (props) => {
 									{props.data.related_tags?.map(tag => {
 										return (
 											<Link to={"/search/" + tag} className="img-rtag">
-												<i class="bi bi-search"></i>
+												<i className="bi bi-search"></i>
 												{tag}</Link>
 										)
 									}
 									)}
 									<Link to={"/search/" + props.data.title} className="img-rtag">
-										<i class="bi bi-search"></i>
+										<i className="bi bi-search"></i>
 										28+</Link>
 								</div>
 

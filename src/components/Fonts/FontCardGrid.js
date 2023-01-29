@@ -3,7 +3,7 @@ import "./fontslist.css";
 
 const FontCardGrid = (props) => {
   return (
-    <div class="img-wrapper fontscardgrid">
+    <div className="img-wrapper fontscardgrid">
       <img src={props.img} className="fontimg" />
       <div className="desc">
         <div className="font-name">{props.name}</div>
@@ -15,3 +15,4 @@ const FontCardGrid = (props) => {
 };
 
 export default FontCardGrid;
+

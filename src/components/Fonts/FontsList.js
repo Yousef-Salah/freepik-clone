@@ -58,7 +58,7 @@ const FontsList = () => {
     setSelected(newClasses);
   }
   return (
-    <div className="fonts ">
+    <div className="fonts">
       <h2 className="fonts-title">Type something and try our free fonts</h2>
       <br />
       <div className="titles row row-cols-lg-3 row-cols-sm-3 row-cols-1">
@@ -118,7 +118,7 @@ const FontsList = () => {
           <div className="grid-list position-absolute col">
             <button className="list grid-list-selected">
               <Link to="/fonts">
-                <i class="bx bx-list-ul"></i>
+                <i className="bx bx-list-ul"></i>
               </Link>
             </button>
             <button className="grid">
@@ -154,7 +154,7 @@ const FontsList = () => {
         type="button"
         className="btn btn-primary nextpage"
       >
-        Next Page <i class="bi bi-arrow-right"></i>
+        Next Page <i className="bi bi-arrow-right"></i>
       </button>
     </div>
   );

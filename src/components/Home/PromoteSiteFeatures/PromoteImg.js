@@ -8,3 +8,4 @@ const PromoteImg = () => {
   );
 };
 export default PromoteImg;
+

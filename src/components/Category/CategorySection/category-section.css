@@ -49,9 +49,15 @@
 
 @media (max-width: 768px) {
   #iamge-card-text .row {
-    width: 90%;
+    width: 100%;
     grid-template-columns: 1fr;
     display: flex;
+  }
+  #iamge-card-text img {
+    padding: 40px;
+  }
+  .row .rightPargraph .content h3 {
+    font-size: 1.3rem;
   }
 }
 #iamge-card-text .row {
@@ -61,4 +67,3 @@
 #iamge-card-text {
   margin-bottom: 40px;
 }
-

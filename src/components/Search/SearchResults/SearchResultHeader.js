@@ -32,8 +32,7 @@ const SearchResultHeader = (props) => {
             className="btn btn-primary dropdown-toggle sort-by-dropdown"
             type="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+            aria-expanded="false">
             {dropHeaderr}
           </button>
           <ul className="dropdown-menu sortmenu">
@@ -42,10 +41,9 @@ const SearchResultHeader = (props) => {
                 className="dropdown-item sortbtn1"
                 onClick={setPopular}
                 id="popularDropBtn"
-                href="#"
-              >
+                href="#">
                 {" "}
-                <i class={popular1}></i> Popular
+                <i className={popular1}></i> Popular
               </a>
             </li>
             <li>
@@ -53,10 +51,9 @@ const SearchResultHeader = (props) => {
                 className="dropdown-item sortbtn2"
                 onClick={setRecent}
                 id="recentDropBtn"
-                href="#"
-              >
+                href="#">
                 {" "}
-                <i class={recent1}></i> Recent
+                <i className={recent1}></i> Recent
               </a>
             </li>
           </ul>
@@ -67,3 +64,4 @@ const SearchResultHeader = (props) => {
 };
 
 export default SearchResultHeader;
+

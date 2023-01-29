@@ -29,7 +29,7 @@ export class DataFilter {
       }
     }
 
-    return filteredData;    // for pagination
+    return filteredData.slice(0, 15);    // for pagination
   }
 }
 

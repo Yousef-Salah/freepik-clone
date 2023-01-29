@@ -1,14 +1,14 @@
-import './creator-collection.css';
-
+import { Link } from "react-router-dom";
+import "./creator-collection.css";
 
 const ExploreCard = () => {
-return (
-
-<div className='box exploreBox' >
-<a href='http://localhost:3000/collections' className='exploreBoxCard' >Explore<i className="fa-solid fa-arrow-right "></i></a>
-</div>
-
-);
-}
+  return (
+    <div className="box exploreBox">
+      <Link to="collections" className="exploreBoxCard">
+        Explore<i className="fa-solid fa-arrow-right "></i>
+      </Link>
+    </div>
+  );
+};
 
 export default ExploreCard;

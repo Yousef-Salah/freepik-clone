@@ -30,14 +30,6 @@ const CategoryFullList = (props) => {
 					)
 				}
 				)}
-				{categoryList.map((item, index) => {
-					return (
-						<div className="card-wrapper" key={index}>
-							<CategoryCard category={item} />
-						</div>
-					)
-				}
-				)}
 			</div>
 		</div>
 	)

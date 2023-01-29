@@ -7,7 +7,6 @@ import Categories from "../../../utils/Categories";
 import MoreContent from "../../../utils/MoreContent";
 
 const Navbar = (props) => {
-
 	const [catVisibility, setCatVisibility] = useState(false);
 	const [moreVisibility, setMoreVisibility] = useState(false);
 	const [sideVisibility, setSideVisibility] = useState("");
@@ -84,12 +83,13 @@ const Navbar = (props) => {
 			setarrowDirectionCat("down");
 		}
 		setMoreVisibility(!moreVisibility);
-	}
+	};
 
 	return (
 		<>
 			{loaded && (
-				<div className={`nav-wrapper ${pageName === "home" ? "" : "other-class"}`}>
+				<div
+					className={`nav-wrapper ${pageName === "home" ? "" : "other-class"}`}>
 					<nav className={navClass}>
 						<div className="container-fluid">
 							<button className="navbar-toggler">
@@ -101,7 +101,9 @@ const Navbar = (props) => {
 									/>
 								</span>
 							</button>
-							<div className={`side-menu collapse ${sideVisibility}`} id="sideMenu">
+							<div
+								className={`side-menu collapse ${sideVisibility}`}
+								id="sideMenu">
 								<div className="side-menu-header" onClick={toggleSide}>
 									<i>
 										<img
@@ -117,8 +119,7 @@ const Navbar = (props) => {
 												<Link
 													onClick={toggleSide}
 													className="anchor-rep"
-													to="/search/vectors"
-												>
+													to="/search/vectors">
 													Vectors
 												</Link>
 											</div>
@@ -128,8 +129,7 @@ const Navbar = (props) => {
 												<Link
 													onClick={toggleSide}
 													className="anchor-rep"
-													to="/search/popular-photos"
-												>
+													to="/search/popular-photos">
 													Photos
 												</Link>
 											</div>
@@ -139,8 +139,7 @@ const Navbar = (props) => {
 												<Link
 													onClick={toggleSide}
 													className="anchor-rep"
-													to="/search/popular-psd"
-												>
+													to="/search/popular-psd">
 													PSD
 												</Link>
 											</div>
@@ -150,8 +149,7 @@ const Navbar = (props) => {
 												<Link
 													onClick={toggleSide}
 													className="anchor-rep"
-													to="/3d-models"
-												>
+													to="/3d-models">
 													3D
 												</Link>
 											</div>
@@ -162,8 +160,7 @@ const Navbar = (props) => {
 												<Link
 													onClick={toggleSide}
 													className="anchor-rep"
-													to="/fonts"
-												>
+													to="/fonts">
 													Fonts
 												</Link>
 											</div>
@@ -171,17 +168,19 @@ const Navbar = (props) => {
 										<li className="side-cat-list" onClick={toggleCatDropdown}>
 											<div className="anchor-rep">Categories</div>
 											<i
-												className={"bi bi-caret-" + arrowDirectionCat + "-fill"}
-											></i>
+												className={
+													"bi bi-caret-" + arrowDirectionCat + "-fill"
+												}></i>
 										</li>
 										{catVisibility ? (
 											<div className={"side-drop-list-cat" + shadowStyle}>
 												{categories.map((category, index) => {
 													return (
 														<li key={index}>
-															<Link className="anchor-rep" to={category.url}
-																onClick={toggleSide}
-															>
+															<Link
+																className="anchor-rep"
+																to={category.url}
+																onClick={toggleSide}>
 																{category.name}
 															</Link>
 														</li>
@@ -194,8 +193,7 @@ const Navbar = (props) => {
 												<Link
 													onClick={toggleSide}
 													className="anchor-rep"
-													to="/collections"
-												>
+													to="/collections">
 													Collections
 												</Link>
 											</div>
@@ -203,8 +201,9 @@ const Navbar = (props) => {
 										<li className="side-more-list" onClick={toggleMoreDropdown}>
 											<div className="anchor-rep">More</div>
 											<i
-												className={"bi bi-caret-" + arrowDirectionMore + "-fill"}
-											></i>
+												className={
+													"bi bi-caret-" + arrowDirectionMore + "-fill"
+												}></i>
 										</li>
 										{moreVisibility ? (
 											<div className={"side-drop-list-more" + shadowStyle}>
@@ -233,7 +232,9 @@ const Navbar = (props) => {
 										) : null}
 										<li>
 											<div className="anchor-rep">
-												<a href="https://contributor.freepik.com/">Sell content</a>
+												<a href="https://contributor.freepik.com/">
+													Sell content
+												</a>
 											</div>
 										</li>
 										<li>
@@ -275,7 +276,9 @@ const Navbar = (props) => {
 															<>
 																{item.name === "More" ? (
 																	<>
-																		<li onClick={toggleMoreDropdown} key={index}>
+																		<li
+																			onClick={toggleMoreDropdown}
+																			key={index}>
 																			<div className="anchor-rep">
 																				{item.name}
 																				<i
@@ -283,13 +286,13 @@ const Navbar = (props) => {
 																						"bi bi-caret-" +
 																						arrowDirectionMore +
 																						"-fill"
-																					}
-																				></i>
+																					}></i>
 																			</div>
 																			{moreVisibility ? (
 																				<div
-																					className={"more-drop-list" + shadowStyle}
-																				>
+																					className={
+																						"more-drop-list" + shadowStyle
+																					}>
 																					{moreContent.map((item, index) => {
 																						return (
 																							<ul key={index}>
@@ -304,8 +307,7 @@ const Navbar = (props) => {
 																											return (
 																												<a
 																													href={innerItem.url}
-																													key={inneridx}
-																												>
+																													key={inneridx}>
 																													<li>
 																														<h5>
 																															{innerItem.name}
@@ -339,25 +341,22 @@ const Navbar = (props) => {
 																						"bi bi-caret-" +
 																						arrowDirectionCat +
 																						"-fill"
-																					}
-																				></i>
+																					}></i>
 																			</div>
 																			{catVisibility ? (
 																				<div
-																					className={"cat-drop-list" + shadowStyle}
-																				>
+																					className={
+																						"cat-drop-list" + shadowStyle
+																					}>
 																					{categories.map((category, index) => {
 																						return (
-																							<>
-																								<li key={index}>
-																									<Link
-																										className="anchor-rep"
-																										to={category.url}
-																									>
-																										{category.name}
-																									</Link>
-																								</li>
-																							</>
+																							<li key={index}>
+																								<Link
+																									className="anchor-rep"
+																									to={category.url}>
+																									{category.name}
+																								</Link>
+																							</li>
 																						);
 																					})}
 																				</div>
@@ -386,7 +385,9 @@ const Navbar = (props) => {
 											</li>
 											<li>
 												<Link to="/pricing">
-													<div className="anchor-rep pricing-color">Pricing</div>
+													<div className="anchor-rep pricing-color">
+														Pricing
+													</div>
 												</Link>
 											</li>
 										</ul>
@@ -416,3 +417,4 @@ const Navbar = (props) => {
 };
 
 export default Navbar;
+

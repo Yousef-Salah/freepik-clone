@@ -47,7 +47,7 @@ right: 2.8%;
        background-color: rgb(227, 233, 237);
        color:rgb(55, 73, 87);
 }
-.list:hover,.grid:hover{
+.fonts .list:hover,.fonts .grid:hover{
     background-color: rgb(227, 233, 237);
 }
 .list,.grid{

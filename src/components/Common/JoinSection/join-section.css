@@ -76,9 +76,9 @@
   }
   #join-section .photo{
 	margin-right:-10%;
-}
+  }
   #join-section .content{
-	width: fit-content;
+	padding-right: 0px;
   }
 }
 @media (max-width: 725px) {

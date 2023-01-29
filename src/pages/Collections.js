@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import DiscoverCollections from "../components/Collections/DiscoverCollection/DiscoverCollections";
-import DiscoverCollectionTitle from "../components/Collections/DiscoverCollection/DiscoverCollectionsTitle";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
-import MainLayout from '../components/Layouts/MainLayout';
+import MainLayout from "../components/Layouts/MainLayout";
+import Collection from "../components/Collection/Collection";
 
 const Collections = (props) => {
   const [data, setData] = useState([]);
@@ -29,8 +28,8 @@ const Collections = (props) => {
         mainPage={false}
         searchQuery={props.searchQuery}
       />
-      <DiscoverCollectionTitle />
-      <DiscoverCollections />
+
+      <Collection />
     </MainLayout>
   );
 };

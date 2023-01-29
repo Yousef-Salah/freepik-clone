@@ -6,9 +6,11 @@
 }
 
 #search {
+  width: 95%;
   max-width: 770px;
   margin: 0 auto;
   background-color: white;
+  border-radius: 3px !important;
 }
 
 #search > div {
@@ -22,9 +24,15 @@
 #search #input-field input {
   width: 100%;
   height: 100%;
-  padding: 10px 30px 10px 10px;
+  padding-left: 15px;
   border: none;
   margin: 0px;
+  color: #d0d9e0;
+  font-family: "Roboto";
+  font-weight: 100 !important;
+  font-size: 0.95rem;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
 }
 
 #search input:focus {
@@ -85,12 +93,12 @@
   height: 100% !important;
   display: inline-block !important;
   font-size: 14px;
-  padding: 0px 38px 0px 20px;
+  padding: 0px 110px 0px 20px;
+  color: #475764;
   border: none;
   outline: none;
   background-color: white;
   position: relative;
-
   text-overflow: ellipsis !important;
   overflow: hidden;
 }
@@ -159,9 +167,20 @@
   }
 }
 
-@media screen and (min-width:770px) {
+@media screen and (min-width: 770px) {
   .sub-page-search form #input-field {
     width: calc(100% - 180px - 54px) !important;
+  }
+}
+@media screen and (min-width: 650) and (max-width: 768px) {
+  #search {
+    height: 115% !important;
+    padding: 2px 0 0 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #search > div {
+    height: 80%;
   }
 }
 
@@ -171,7 +190,7 @@
 }
 
 /* TODO: */
-.sub-page-search form{
+.sub-page-search form {
   max-width: none !important;
   margin-top: 10px !important;
   margin-bottom: 10px !important;
@@ -181,13 +200,15 @@
 }
 
 .sub-page-search *:not(.form-check-input) {
-  background-color: #E2E8EC !important;
+  background-color: #e2e8ec !important;
   border-radius: 5px !important;
 }
 
 #search #search-button button,
 #search #search-button button i {
   background-color: transparent !important;
+  font-size: 1.2rem;
+  color: #3a4752;
 }
 
 .sub-page-search .dropdown-menu,
@@ -196,7 +217,7 @@
 }
 
 .sub-page-search #search-button {
-  border: 3px solid #CFD9E0;
+  border: 3px solid #cfd9e0;
   border-radius: 0px !important;
 }
 
@@ -207,5 +228,6 @@
 }
 
 #search-input-tags > * {
-    width: auto;
+  width: auto;
 }
+
