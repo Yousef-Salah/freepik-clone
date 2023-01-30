@@ -8,7 +8,6 @@ const PreviewModal = (props) => {
 	const [visibility, setVisibility] = useState("");
 	const [loaded, setLoaded] = useState(false);
 	const buttonHandler = props.buttonHandler;
-
 	const exitButtonHandler = (e) => {
 		e.preventDefault();
 		setVisibility("d-none");

@@ -135,7 +135,7 @@ const SearchBox = (props) => {
     }
 
     // console.log(window.location.pathname.split('/')[2]);
-   history.pushState(null, '', searchInput.current?.replace(" ", "_"));
+    history.pushState(null, '', searchInput.current?.replace(" ", "_"));
     
     let data = {
       searchInput: searchInput.current,
