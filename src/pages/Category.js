@@ -19,7 +19,7 @@ const Category = (props) => {
 	//? didnt work with useParams() in useState
 	// const [catParam, setCatParam] = useState(useParams().term);
 	const [cat, setCat] = useState(props.catStyle);
-	let catParam = useParams().searchInput;
+	let catParam = useParams().term;
 
 	function isAlpaUpper(char) {
 		const charCode = char.charCodeAt(0);
