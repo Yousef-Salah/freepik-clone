@@ -55,7 +55,8 @@ const Search = (props) => {
           title={location.pathname
             .split("/")[2]
             .replace("%20", " ")
-            .replace("-", " ")}
+            .replace("-", " ")
+            .replace("_", " ")}
         />
         <Spinner visible={spinnerTrigger} />
       </div>

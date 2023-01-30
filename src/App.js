@@ -30,7 +30,7 @@ const App = () => {
   const [page, setPage] = useState("home");
 
   const searchQuery = useRef({
-    searchInput: "",
+    searchInput: window.location.pathname.split('/')[2]?.replace('_', " "),
     itemType: "Assets", // assets collections
     itemPriceType: [], // free premium
     category: "",
@@ -69,7 +69,20 @@ const App = () => {
             }
           />
           <Route
-            path={"/search/:term"}
+            path={"/search/:searchInput"}
+            element={
+              <Search
+                page={(name) => {
+                  setPage(name);
+                }}
+                dataFilter={dataFilter}
+                searchQuery={searchQuery}
+                newQuery={addQuery}
+              />
+            }
+          />
+          <Route
+            path={"/search/:searchInput/:itemId/preview"}
             element={
               <Search
                 page={(name) => {

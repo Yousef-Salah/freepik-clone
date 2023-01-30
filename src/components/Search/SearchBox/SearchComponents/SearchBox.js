@@ -14,7 +14,7 @@ const SearchBox = (props) => {
   const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
-  const searchInput = useRef(props.searchQuery.current.searchInput);
+  const searchInput = useRef(window.location.pathname.split('/')[2]?.replace("_", " "));
   const itemType = useRef(props.searchQuery.current.itemType);
   const category = useRef(props.searchQuery.current.category);
   const itemPricesList = useRef(props.searchQuery.current.itemPriceType);
@@ -134,6 +134,9 @@ const SearchBox = (props) => {
       return;
     }
 
+    // console.log(window.location.pathname.split('/')[2]);
+   history.pushState(null, '', searchInput.current?.replace(" ", "_"));
+    
     let data = {
       searchInput: searchInput.current,
       itemType: itemType.current, // assets collections
