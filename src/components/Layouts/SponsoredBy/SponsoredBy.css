@@ -1,37 +1,103 @@
-#sponsored-by-component { 
+#sponsored-by-component {
   width: 100%;
+}
+#sponsored-by-component .sections-wrapper {
+  margin: 10px 20px;
+  padding: 20px 17px;
+  background-image: linear-gradient(#d0dae1, #e3e9ed);
 }
 
 #sponsored-by-component .container {
-  background-color: #E0E7EB !important;
   height: 201px;
-  padding: 15px !important;
+  padding-top: 5px !important;
 }
 #sponsored-by-component article {
   height: 120px;
+  padding: 0 3px;
 }
-#sponsored-by-component .bg-image a {
-  display: inline-block !important;
-  background-image: url("https://t3.ftcdn.net/jpg/05/39/81/30/240_F_539813006_5ZJhMgukoWJf8UAJVy45kPSCJs89ZYVY.jpg");
-  width: 100%;
-  height: 100% !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-
-  object-fit: cover;
+#sponsored-by-component .bg-image {
+  display: flex;
+  overflow: hidden;
 }
-
-/* #sponsored-by-component {
-  width: max-content !important;
-} */
+#sponsored-by-component #sponsor-details {
+  padding: 12px 0 0 3px;
+  color: #384a58;
+  display: flex;
+  justify-content: space-between;
+}
 
 #sponsored-by-component #sponsor-details > * {
-  padding: 15px;
+  padding: 5px;
   width: max-content;
+}
+#ten-free {
+  color: #1173ee;
 }
 
 #sponsored-by-component #sponsor-details img {
   height: 20px;
+  padding: 0px 15px 0px 5px;
 }
+
+#sponsored-by-component .explore .explore-btn {
+  font-size: medium;
+  color: #1173ee;
+  width: 110px;
+  display: flex;
+}
+
+.explore .right-arrow {
+  padding-left: 0.5%;
+  color: #1173ee;
+  padding: 4px 0px 0px 10px;
+}
+
+.explore .explore-btn::after {
+  display: inline-block;
+  padding-left: 8px;
+}
+
+.explore .explore-btn:hover .right-arrow {
+  transform: translateX(4px);
+}
+
+.sponsor-image img {
+  width: 100%;
+  min-width: 160px;
+  max-width: 250px;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 1224px) {
+  .sponsor-image:nth-last-child(1) {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sponsor-image:nth-last-child(2) {
+    display: none;
+  }
+}
+@media (max-width: 824px) {
+  .sponsor-image:nth-last-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .sponsor-image:nth-last-child(4) {
+    display: none;
+  }
+}
+@media (max-width: 690px) {
+  .sponsor-image:nth-last-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 660px) {
+  #sponsored-by-component {
+    display: none;
+  }
+}
+
