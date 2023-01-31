@@ -30,6 +30,7 @@ const Category = (props) => {
 	useEffect(() => {
 		props.page("category")
 		isAlpaUpper(catParam[0]) ? setCat("style_sep") : setCat("style_full")
+        document.title = 'Seepik | ' + catParam.charAt(0).toUpperCase() + catParam.slice(1);
 	}, [catParam])
 
 	return (
