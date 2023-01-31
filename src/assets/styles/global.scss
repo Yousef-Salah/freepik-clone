@@ -18,7 +18,6 @@ h1,h2,h3,h4,h5,h6,p,pre,a,li,span,div,button,textarea,input,select,option,ul,ol,
     color: white;
     text-decoration: none;  
     font-size: 13.5px;
-    font-weight: 600;
     text-decoration: none;
 }
 
@@ -35,20 +34,7 @@ div,img{
 	animation-iteration-count: 1;
 	animation-direction: normal;
 	animation-fill-mode: none;
-	/* shorthand
-	animation: fade-in 0.1s linear 0s 1 normal none;*/
 }
-// @keyframes focus-in-contract {	
-// 	0% {
-// 		letter-spacing:1em;
-// 		filter:blur(12px);
-// 		opacity:0;
-// 	}
-// 	100% {
-// 		filter:blur(0);
-// 		opacity:1;
-// 	}
-// }
 @keyframes fade-in {
 			
 	0% {

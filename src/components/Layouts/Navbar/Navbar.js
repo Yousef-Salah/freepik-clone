@@ -250,7 +250,7 @@ const Navbar = (props) => {
 									<Link to="/">
 										<img
 											className="nav-logo"
-											src={"/assets/images/navbar/freepik-no_bg.png"}
+											src={"/assets/images/navbar/freepik-thick.png"}
 											alt="logo"
 										/>
 									</Link>
@@ -399,7 +399,7 @@ const Navbar = (props) => {
 							<ul>
 								<li>
 									<div className="login-link anchor-rep">
-										<Link to="/login">Login</Link>
+										<Link to="/login">Log in</Link>
 									</div>
 								</li>
 								<li>
