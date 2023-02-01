@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
 import "./SponsoredBy.css";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 //* This component is used to display the sponsored images in the search page
 //* It is a child component in the Search.js page
 //? give me about 7-9 images, and I will make it work
 const SponsoredBy = ({ images }) => {
+  const [sponsoredImages, setSponsoredImages] = useState([]);
+  const path = useLocation().pathname;
+  useEffect(() => {
+    setSponsoredImages(images);
+  }, [path]);
   console.log(images);
   return (
     <div id="sponsored-by-component">
       <div className="sections-wrapper rounded">
         <section className="bg-image">
-          {images.map((img) => (
+          {images?.map((img) => (
             <article className="sponsor-image">
               {/* <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006"></a> */}
               <img
