@@ -1,10 +1,10 @@
 #grid-cards{
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-	gap: 1rem;
-	width: 95%;
+	width: 98%;
 	margin: 0 auto;
-  }
+	display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
 
 .card-wrapper{
 	width: fit-content !important;
@@ -13,6 +13,11 @@
     display: inline;
 	margin: 1%;
 	margin: 0 auto;
+	padding: 5px 10px 10px 10px;
+	min-width: 200px;
+}
+.card-wrapper-flexed{
+	flex: 25%;
 }
 .inner-search-card{
 	width: fit-content;
@@ -20,10 +25,24 @@
 }
 
 @media screen and (max-width:768px) {
-#grid-cards{
-	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	.card-wrapper-flexed,.card-wrapper{
+		flex: 50%;
+	}
 }
+@media screen and (max-width:450px) {
+	.card-wrapper-flexed,.card-wrapper{
+		flex: 100%;
+	}
+	.card-wrapper .searchcard-img{
+		height: fit-content;
+	}
 }
+@media screen and (max-width:1224px) {
+	.card-wrapper-flexed{
+		flex: 33.3%;
+	}
+}
+
 #search-results{
-	overflow: hidder;
+	overflow: hidden;
 }

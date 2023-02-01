@@ -121,7 +121,7 @@
 
 .pushed {
   left: 270px;
-  width: 75%;
+  width: 85%;
   position: relative;
 }
 .sidebar-content .collapse.show {
@@ -146,8 +146,8 @@
 .tagbar {
   left: 200px;
   overflow-x: scroll;
-  max-width: 80%;
   background-color: white;
+  max-width: 87%;
   display: flex;
   position: absolute;
 }
@@ -302,6 +302,41 @@
 .colorr {
   padding: 2px 16px 27px;
 }
+@media (min-width: 1400px) and (max-width: 1750px) {
+  .tagbar {
+    max-width: 84%;
+  }
+  .pushed {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1650px) {
+  .tagbar {
+    max-width: 84%;
+  }
+  .pushed {
+    width: 80%;
+  }
+}
+@media (min-width: 1150px) and (max-width: 1400px) {
+  .tagbar {
+    max-width: 80%;
+  }
+  .pushed {
+    width: 76%;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1150px) {
+  .tagbar {
+    max-width: 75%;
+  }
+  .pushed {
+    width: 72%;
+  }
+}
+
 @media only screen and (max-width: 1095px) {
   .filterscont,
   .sidebarcontent,

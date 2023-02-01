@@ -12,71 +12,71 @@ import SponsoredBy from "../components/Layouts/SponsoredBy/SponsoredBy";
 import ModalTrigger from "../components/Category/PreviewModal/ModalTrigger";
 
 const Search = (props) => {
-  const location = useLocation();
-  const [open, setOpen] = useState(false);
-  const updateOpen = (value) => {
-    setOpen(value);
-  };
-  const [data, setData] = useState([]);
-  const [spinnerTrigger, setSpinnerTrigger] = useState(true);
-  const [contentState, setContentState] = useState(true);
-  const [modalDisplay, setModalDisplay] = useState(false);
-  const [modalData, setModalData] = useState({});
-  const [loaded, setLoaded] = useState(false);
+	const location = useLocation();
+	const [open, setOpen] = useState(false);
+	const updateOpen = (value) => {
+		setOpen(value);
+	};
+	const [data, setData] = useState([]);
+	const [spinnerTrigger, setSpinnerTrigger] = useState(true);
+	const [contentState, setContentState] = useState(true);
+	const [modalDisplay, setModalDisplay] = useState(false);
+	const [modalData, setModalData] = useState({});
+	const [loaded, setLoaded] = useState(false);
 
-  const toggleModal = () => {
-    setModalDisplay(!modalDisplay);
-  };
+	const toggleModal = () => {
+		setModalDisplay(!modalDisplay);
+	};
 
-  const modalHandler = (item) => {
-    setModalData(item);
-    toggleModal();
-  };
+	const modalHandler = (item) => {
+		setModalData(item);
+		toggleModal();
+	};
 
-  useEffect(() => {
-    props.page("search");
-    props.newQuery(location);
-  }, [spinnerTrigger, location]);
+	useEffect(() => {
+		props.page("search");
+		props.newQuery(location);
+	}, [spinnerTrigger, location]);
 
-  const loadData = () => {
-    setData(props.dataFilter.getData(props.searchQuery.current));
-    setContentState(false);
-    setSpinnerTrigger(true);
-    setTimeout(() => {
-      setSpinnerTrigger(false);
-      setContentState(true);
-    }, 1500);
-    (() => setLoaded(true))();
-  };
+	const loadData = () => {
+		setData(props.dataFilter.getData(props.searchQuery.current));
+		setContentState(false);
+		setSpinnerTrigger(true);
+		setTimeout(() => {
+			setSpinnerTrigger(false);
+			setContentState(true);
+		}, 1500);
+		(() => setLoaded(true))();
+	};
 
-  return (
-    <MainLayout page={props.page} pageTitle="Search">
-      {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
-      <SearchContainer
-        dataHandler={loadData}
-        mainPage={false}
-        searchQuery={props.searchQuery}
-      />
-      <SponsoredBy images={data.slice(data.length - 8, data.length - 1)} />
-      <SideBar updateOpen={updateOpen} data={SideBarData1} />
-      <div className={`search-content ${!open ? "base" : "pushed"}`}>
-        <TagBar
-          data={SearchTagBarData}
-          className={`${!open ? "base" : "pushed-tagbar"}`}
-        />
-        <SearchResults
-          images={data}
-          visible={contentState}
-          modalLift={modalHandler}
-          title={location.pathname
-            .split("/")[2]
-            .replace("%20", " ")
-            .replace("-", " ")}
-        />
-        <Spinner visible={spinnerTrigger} />
-      </div>
-    </MainLayout>
-  );
+	return (
+		<MainLayout page={props.page} pageTitle="Search">
+			{loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
+			<SearchContainer
+				dataHandler={loadData}
+				mainPage={false}
+				searchQuery={props.searchQuery}
+			/>
+			<SponsoredBy images={data.slice(data.length - 10, data.length - 1)} />
+			<SideBar updateOpen={updateOpen} data={SideBarData1} />
+			<div className={`search-content ${!open ? "base" : "pushed"}`}>
+				<TagBar
+					data={SearchTagBarData}
+					className={`${!open ? "base" : "pushed-tagbar"}`}
+				/>
+				<SearchResults
+					images={data}
+					visible={contentState}
+					modalLift={modalHandler}
+					title={location.pathname
+						.split("/")[2]
+						.replace("%20", " ")
+						.replace("-", " ")}
+				/>
+				<Spinner visible={spinnerTrigger} />
+			</div>
+		</MainLayout>
+	);
 };
 
 export default Search;
