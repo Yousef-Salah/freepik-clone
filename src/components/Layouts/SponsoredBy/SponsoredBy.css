@@ -17,7 +17,9 @@
 }
 #sponsored-by-component .bg-image {
   display: flex;
+  justify-content: center;
   overflow: hidden;
+  min-height: 120px;
 }
 #sponsored-by-component #sponsor-details {
   padding: 12px 0 0 3px;
