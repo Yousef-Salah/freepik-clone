@@ -9,6 +9,7 @@ import { useLocation } from "react-router";
 import SearchTagBarData from "../utils/SearchTagBarData";
 import MainLayout from "../components/Layouts/MainLayout";
 import SponsoredBy from "../components/Layouts/SponsoredBy/SponsoredBy";
+import ModalTrigger from "../components/Category/PreviewModal/ModalTrigger";
 
 const Search = (props) => {
   const location = useLocation();
@@ -19,6 +20,18 @@ const Search = (props) => {
   const [data, setData] = useState([]);
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   const [contentState, setContentState] = useState(true);
+  const [modalDisplay, setModalDisplay] = useState(false);
+  const [modalData, setModalData] = useState({});
+  const [loaded, setLoaded] = useState(false);
+
+  const toggleModal = () => {
+    setModalDisplay(!modalDisplay);
+  };
+
+  const modalHandler = (item) => {
+    setModalData(item);
+    toggleModal();
+  };
 
   useEffect(() => {
     props.page("search");
@@ -33,10 +46,12 @@ const Search = (props) => {
       setSpinnerTrigger(false);
       setContentState(true);
     }, 1500);
+    (() => setLoaded(true))();
   };
 
   return (
     <MainLayout page={props.page} pageTitle="Search">
+      {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
       <SearchContainer
         dataHandler={loadData}
         mainPage={false}
@@ -52,6 +67,7 @@ const Search = (props) => {
         <SearchResults
           images={data}
           visible={contentState}
+          modalLift={modalHandler}
           title={location.pathname
             .split("/")[2]
             .replace("%20", " ")
@@ -64,4 +80,8 @@ const Search = (props) => {
 };
 
 export default Search;
+
+// useEffect(() => {
+//   setLoaded(true);
+// }, [props.images]);
 
