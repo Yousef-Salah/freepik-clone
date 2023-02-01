@@ -25,7 +25,7 @@ const SearchResults = (props) => {
   };
 
   return (
-    <>
+    <div id="search-results">
       {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
       <SearchResultHeader
         title={"Showing results for " + props.title}
@@ -43,7 +43,7 @@ const SearchResults = (props) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

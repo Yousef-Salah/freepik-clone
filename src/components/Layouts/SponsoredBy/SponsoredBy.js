@@ -11,14 +11,18 @@ const SponsoredBy = ({ images }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    (() => setLoaded(false))();
-    console.log("im changing to", images[0]?.title);
-    images[0]?.title
-      ? setSponsoredImages(images)
-      : !sponsoredImages[0]?.title && setSponsoredImages(DefaultSponsor);
-    setTimeout(() => {
-      setLoaded(true);
-    }, 500);
+    if (
+      !sponsoredImages[0]?.title ||
+      sponsoredImages[0]?.title !== images[0]?.title
+    ) {
+      (() => setLoaded(false))();
+      images[0]?.title
+        ? setSponsoredImages(images)
+        : setSponsoredImages(DefaultSponsor);
+      setTimeout(() => {
+        setLoaded(true);
+      }, 500);
+    }
   }, [images]);
 
   return (
@@ -27,7 +31,7 @@ const SponsoredBy = ({ images }) => {
         <Link to="">
           <section className="bg-image">
             {loaded ? (
-              sponsoredImages.map((img) => (
+              sponsoredImages?.map((img) => (
                 <article className="sponsor-image">
                   <img
                     src={"/assets/images/thumb_images/" + img.img_path}

@@ -6,7 +6,7 @@ import "./filters.css";
 const CollapseBtn = (props) => {
   const [open, setOpen] = useState(true);
   return (
-    <div className="container-fluid table-row mt-5">
+    <div className="container-fluid table-row mb-5">
       <div className={props.className ? props.className : "collapsebtn"}>
         <button
           className={props.className1 ? props.className1 : "btn-collapse w-64"}

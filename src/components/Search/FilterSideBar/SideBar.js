@@ -15,11 +15,11 @@ const SideBar = (props) => {
     <div
       id="sidebarr"
       className={`sidebar flex position-absolute ${
-        open ? "tw-w-64 translatex100" : "tw-w-0 translatex0"
+        open ? "tw-w-64 translatex100 " : "tw-w-0 translatex0"
       }`}>
       <div
         className={`${
-          open ? "tw-w-64" : "tw-w-0"
+          open ? "tw-w-64 borda" : "tw-w-0"
         } sidebar-content h-screen tw-p-0 tw-pt-0 tw-sticky`}>
         <div
           className={` ${open && "tw-scale-0"}`}
@@ -38,7 +38,7 @@ const SideBar = (props) => {
           </div>
         </div>
         <div
-          className={`tw-flex tw-items-center tw-w-58 ${
+          className={`tw-flex tw-items-center tw-w-58 mb-5 ${
             !open && "tw-scale-0"
           }`}>
           <i className="bi bi-sliders position-absolute tw-top-5"></i>

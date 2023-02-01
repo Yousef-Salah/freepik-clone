@@ -14,13 +14,16 @@
 	margin: 1%;
 	margin: 0 auto;
 }
-  .inner-search-card{
+.inner-search-card{
 	width: fit-content;
 	display: inline;
-  }
+}
 
-  @media screen and (max-width:768px) {
-	#grid-cards{
-		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-	}
-  }
+@media screen and (max-width:768px) {
+#grid-cards{
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+}
+#search-results{
+	overflow: hidder;
+}
