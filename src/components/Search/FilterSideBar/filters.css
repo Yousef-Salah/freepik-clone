@@ -108,15 +108,20 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .search-description {
-  font-size: 17px;
-  font-weight: 100 !important;
-  margin-left: 25%;
-  max-width: 50%;
+  width: 90%;
+  max-width: 400px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  margin-bottom: 2rem;
+  justify-content: space-around;
+  margin: 0 auto 10px auto;
+  list-style: none;
+  font-size: 0.9rem;
+}
+.nav-item-search .active {
+  border-bottom: 2px solid rgba(39, 35, 35, 1);
+}
+.search-description button {
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgba(39, 35, 35, 0.434);
 }
 
 .pushed {
@@ -363,7 +368,7 @@
   .pushed-tagbar {
     left: 1% !important;
     width: 100% !important;
-    top: 10.7% !important;
+    top: 10px !important;
   }
   .page-3d .tagbar,
   .page-3d .pushed-tagbar,
@@ -393,3 +398,4 @@ i {
 .borda {
   border-right: 1px solid #e3e9ed;
 }
+
