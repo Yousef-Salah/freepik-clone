@@ -22,7 +22,7 @@ const Home = (props) => {
     <>
       <header id="main-page-header">
         <Navbar page={"home"} />
-        <SearchContainer mainPage={true} searchQuery={props.searchQuery} />
+        <SearchContainer mainPage={true} />
         <CircleCategoy />
       </header>
       <Annual />

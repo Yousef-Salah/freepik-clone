@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SearchResults from "../components/Search/SearchResults/SearchResults";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
@@ -6,9 +6,10 @@ import SearchResults1 from "../components/Search/SearchResults/Searchcardtest";
 import SideBar from "../components/Search/FilterSideBar/SideBar";
 import TagBar from "../components/Search/FilterSideBar/TagBar";
 import { SideBarData1 } from "../components/Search/FilterSideBar/SideBarData1";
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 import SearchTagBarData from "../utils/SearchTagBarData";
 import MainLayout from "../components/Layouts/MainLayout";
+import SearchQuery from "../context/SearchQuery";
 
 const Search = (props) => {
   const location = useLocation();
@@ -19,14 +20,19 @@ const Search = (props) => {
   const [data, setData] = useState([]);
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   const [contentState, setContentState] = useState(true);
+  const searchQuery = useContext(SearchQuery);
+  const itemId = useParams().itemId;
 
   useEffect(() => {
     props.page("search");
     props.newQuery(location);
-  }, [spinnerTrigger, location]);
+    if(!itemId && data.length == 0) {
+        loadData();
+    }
+  }, [location]);
 
   const loadData = () => {
-    setData(props.dataFilter.getData(props.searchQuery.current));
+    setData(props.dataFilter.getData(searchQuery.current));
     setContentState(false);
     setSpinnerTrigger(true);
     setTimeout(() => {
@@ -41,7 +47,6 @@ const Search = (props) => {
       <SearchContainer
         dataHandler={loadData}
         mainPage={false}
-        searchQuery={props.searchQuery}
       />
       <SideBar updateOpen={updateOpen} data={SideBarData1} />
       <div className={`search-content ${!open ? "base" : "pushed"}`}>

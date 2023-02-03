@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import MainLayout from "../components/Layouts/MainLayout";
 import Collection from "../components/Collection/Collection";
+import SearchQuery from "../context/SearchQuery";
+import { useNavigate } from "react-router-dom";
 
 const Collections = (props) => {
   const [data, setData] = useState([]);
-  const [spinnerTrigger, setSpinnerTrigger] = useState(true);
-  const [contentState, setContentState] = useState(true);
+//   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
+//   const [contentState, setContentState] = useState(true);
+  const searchQuery = useContext(SearchQuery);
+  const navigate = useNavigate();
+
   useEffect(() => {
     props.page("Collection");
   }, []);
 
+  // TODO: fix code redundancy issue
   const loadData = () => {
-    setData(props.dataFilter.getData(props.searchQuery.current));
-    setContentState(false);
-    setSpinnerTrigger(true);
-    setTimeout(() => {
-      setSpinnerTrigger(false);
-      setContentState(true);
-    }, 1500);
+    return navigate(`/search/${searchQuery.current.searchInput}`); 
   };
+
   return (
     
     <MainLayout page={props.page} pageTitle="Collections">
       <SearchContainer
         dataHandler={loadData}
         mainPage={false}
-        searchQuery={props.searchQuery}
       />
 
       <Collection />

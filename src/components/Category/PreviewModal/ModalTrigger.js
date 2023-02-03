@@ -24,7 +24,7 @@ export const ModalTrigger = (props) => {
 
     const pathNameHandler = (item) => {
         if(!display) {
-          console.log(item.id);
+          // console.log(item.id);
           return navigate(`/search/${searchInput}/${item.id}/preview`);
         } else {
           return navigate(`/search/${searchInput}`);
