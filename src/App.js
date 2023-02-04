@@ -28,6 +28,7 @@ import DiscountModal from "./components/Common/DiscountModal/DicountModal";
 
 // context
 import SearchQuery from './context/SearchQuery';
+import ResultsDataContainer from './context/ResultsDataContainer';
 
 const App = () => {
   const [page, setPage] = useState("home");
@@ -44,6 +45,8 @@ const App = () => {
     let searchQuery = sq.search.split("?query=")[1];
   };
 
+  const queryStringHandler = new URLSearchParams(document.location.search); 
+
   let dataFilter = new DataFilter();
 
   const Query = useRef({
@@ -55,6 +58,13 @@ const App = () => {
 
   return (
     <SearchQuery.Provider value={Query}>
+      <ResultsDataContainer.Provider value={{
+        data: [],
+        lastQuery: Query.searchInput,
+        offset: 15,
+        start: 0,
+        end: 15,
+      }}>
       <div className="App">
         <BrowserRouter>
           <Routes>
@@ -210,6 +220,7 @@ const App = () => {
           <DiscountModal />
         </BrowserRouter>
       </div>
+      </ResultsDataContainer.Provider>
     </SearchQuery.Provider>
   );
 };

@@ -10,6 +10,7 @@ import { useLocation, useParams } from "react-router";
 import SearchTagBarData from "../utils/SearchTagBarData";
 import MainLayout from "../components/Layouts/MainLayout";
 import SearchQuery from "../context/SearchQuery";
+import ResultsDataContainer from "../context/ResultsDataContainer";
 
 const Search = (props) => {
   const location = useLocation();
@@ -18,10 +19,12 @@ const Search = (props) => {
     setOpen(value);
   };
   const [data, setData] = useState([]);
+  const [partialData, setPartialData] = useState([]);
   const [spinnerTrigger, setSpinnerTrigger] = useState(true);
   const [contentState, setContentState] = useState(true);
   const searchQuery = useContext(SearchQuery);
   const itemId = useParams().itemId;
+  const resultsDataContainer = useContext(ResultsDataContainer);
 
   useEffect(() => {
     props.page("search");
@@ -29,10 +32,18 @@ const Search = (props) => {
     if(!itemId && data.length == 0) {
         loadData();
     }
-  }, [location]);
+  }, [location, resultsDataContainer]);
 
   const loadData = () => {
-    setData(props.dataFilter.getData(searchQuery.current));
+
+    if(searchQuery.current.searchInput !== resultsDataContainer.lastQuery) {
+      resultsDataContainer.lastQuery = searchQuery.current.searchInput;
+      resultsDataContainer.data = props.dataFilter.getData(searchQuery.current);
+      console.log(resultsDataContainer);
+      setPartialData(resultsDataContainer.data.slice(0,15));
+    }
+    // setData(props.dataFilter.getData(searchQuery.current));
+    
     setContentState(false);
     setSpinnerTrigger(true);
     setTimeout(() => {
@@ -40,6 +51,18 @@ const Search = (props) => {
       setContentState(true);
     }, 1500);
   };
+
+  const nextButtonHandler = () => {
+    resultsDataContainer.start += resultsDataContainer.offset;
+    resultsDataContainer.end += resultsDataContainer.offset;
+    setPartialData(resultsDataContainer.data.slice(resultsDataContainer.start, resultsDataContainer.end));
+  }
+
+  const previousButtonHandler = () => {
+    resultsDataContainer.start -= resultsDataContainer.offset;
+    resultsDataContainer.end -= resultsDataContainer.offset;
+    setPartialData(resultsDataContainer.data.slice(resultsDataContainer.start, resultsDataContainer.end));
+  }
 
   return (
     <MainLayout page={props.page} pageTitle="Search">
@@ -55,7 +78,7 @@ const Search = (props) => {
           className={`${!open ? "base" : "pushed-tagbar"}`}
         />
         <SearchResults
-          images={data}
+          images={partialData}
           visible={contentState}
           title={location.pathname
             .split("/")[2]
@@ -65,6 +88,9 @@ const Search = (props) => {
         />
         <Spinner visible={spinnerTrigger} />
       </div>
+      <button onClick={previousButtonHandler}>Previous</button>
+
+      <button onClick={nextButtonHandler}>Next</button>
     </MainLayout>
 
   );
