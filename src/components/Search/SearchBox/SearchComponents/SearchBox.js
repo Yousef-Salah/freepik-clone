@@ -1,30 +1,31 @@
 // Imports
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./search-box.css";
 import DropDownItem from "./SearchDropdown";
 import DropDownButton from "./DropDownButton";
 import { redirect, useNavigate } from "react-router-dom";
+import SearchQuery from "../../../../context/SearchQuery";
 
 // Components
 
 const SearchBox = (props) => {
-  const [searchInputState, setSearchInputState] = useState(
-    props.searchQuery.current.searchInput
-  );
+  let searchQuery = useContext(SearchQuery);
+  const [searchInputState, setSearchInputState] = useState(searchQuery.current.searchInput);
   const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
   const [buttonLabel, setButtonLabel] = useState("Assets");
   const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
-  const searchInput = useRef(props.searchQuery.current.searchInput);
-  const itemType = useRef(props.searchQuery.current.itemType);
-  const category = useRef(props.searchQuery.current.category);
-  const itemPricesList = useRef(props.searchQuery.current.itemPriceType);
+  const searchInput = useRef(window.location.pathname.split('/')[2]?.replace("_", " "));
+  const itemType = useRef(searchQuery.current.itemType);
+  const category = useRef(searchQuery.current.category);
+  const itemPricesList = useRef(searchQuery.current.itemPriceType);
+
 
   useEffect(() => {
     if (!props.mainPage && props.page != "category") props.dataHandler();
-
+    setSearchInputState(searchQuery.current.searchInput);
     setButtonLabel(buttonLabelGenerator());
     setSearchInputPlaceHolder();
-  }, [props.data]);
+  }, [props.data, searchQuery.current.searchInput]);
 
   const searchInputHanlder = (e) => {
     searchInput.current = e.target.value;
@@ -134,6 +135,9 @@ const SearchBox = (props) => {
       return;
     }
 
+    // console.log(window.location.pathname.split('/')[2]);
+    history.pushState(null, '', searchInput.current?.replace(" ", "_"));
+    
     let data = {
       searchInput: searchInput.current,
       itemType: itemType.current, // assets collections
@@ -141,7 +145,7 @@ const SearchBox = (props) => {
       category: category.current,
     };
 
-    props.searchQuery.current = data;
+    searchQuery.current = data;
 
     if (!props.mainPage && props.page != "category") {
       props.dataHandler();

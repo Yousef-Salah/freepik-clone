@@ -26,171 +26,202 @@ import Signup from "./pages/Signup";
 
 import DiscountModal from "./components/Common/DiscountModal/DicountModal";
 
+// context
+import SearchQuery from './context/SearchQuery';
+import ResultsDataContainer from './context/ResultsDataContainer';
+
 const App = () => {
   const [page, setPage] = useState("home");
 
-  const searchQuery = useRef({
-    searchInput: "",
-    itemType: "Assets", // assets collections
-    itemPriceType: [], // free premium
-    category: "",
-  });
+//   const searchQuery = useRef({
+//     searchInput: window.location.pathname.split('/')[2]?.replace('_', " "),
+//     itemType: "Assets", // assets collections
+//     itemPriceType: [], // free premium
+//     category: "",
+//   });
 
   const addQuery = (sq) => {
     let searchCat = sq.pathname.split("/")[2];
     let searchQuery = sq.search.split("?query=")[1];
   };
 
+  const queryStringHandler = new URLSearchParams(document.location.search); 
+
   let dataFilter = new DataFilter();
 
+  const Query = useRef({
+    searchInput: window.location.pathname.split('/')[2]?.replace('_', " "),
+    itemType: "Assets", // assets collections
+    itemPriceType: [], // free premium
+    category: "",
+  });
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path={"/*"}
-            element={
-              <NotFound
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/"}
-            element={
-              <Home
-                page={(name) => {
-                  setPage(name);
-                }}
-                searchQuery={searchQuery}
-              />
-            }
-          />
-          <Route
-            path={"/search/:term"}
-            element={
-              <Search
-                page={(name) => {
-                  setPage(name);
-                }}
-                dataFilter={dataFilter}
-                searchQuery={searchQuery}
-                newQuery={addQuery}
-              />
-            }
-          />
-          <Route
-            path={"/category/:term"}
-            element={
-              <Category
-                catStyle="style_sep"
-                page={(name) => {
-                  setPage(name);
-                }}
-                dataFilter={dataFilter}
-                searchQuery={searchQuery}
-              />
-            }
-          />
-          <Route
-            path={"/pricing"}
-            element={
-              <Pricing
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/login"}
-            element={
-              <Login
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/signup"}
-            element={
-              <Signup
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/3d-models"}
-            element={
-              <Page3D
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/fonts"}
-            element={
-              <Fonts
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/fontsgrid"}
-            element={
-              <FontsFormatGrid
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/fonts/:term"}
-            element={
-              <Fonts
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/fontsgrid/:term"}
-            element={
-              <FontsFormatGrid
-                page={(name) => {
-                  setPage(name);
-                }}
-              />
-            }
-          />
-          <Route
-            path={"/collections"}
-            element={
-              <Collections
-                page={(name) => {
-                  setPage(name);
-                }}
-                dataFilter={dataFilter}
-                searchQuery={searchQuery}
-                newQuery={addQuery}
-              />
-            }
-          />
-        </Routes>
-        <DiscountModal />
-      </BrowserRouter>
-    </div>
+    <SearchQuery.Provider value={Query}>
+      <ResultsDataContainer.Provider value={{
+        data: [],
+        lastQuery: Query.searchInput,
+        offset: 15,
+        start: 0,
+        end: 15,
+      }}>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path={"/*"}
+              element={
+                <NotFound
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/"}
+              element={
+                <Home
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/search/:searchInput"}
+              element={
+                <Search
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                  dataFilter={dataFilter}
+                  newQuery={addQuery}
+                />
+              }
+            />
+            <Route
+              path={"/search/:searchInput/:itemId/preview"}
+              element={
+                <Search
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                  dataFilter={dataFilter}
+                  newQuery={addQuery}
+                />
+              }
+            />
+            <Route
+              path={"/category/:term"}
+              element={
+                <Category
+                  catStyle="style_sep"
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                  dataFilter={dataFilter}
+                />
+              }
+            />
+            <Route
+              path={"/pricing"}
+              element={
+                <Pricing
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/login"}
+              element={
+                <Login
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/signup"}
+              element={
+                <Signup
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/3d-models"}
+              element={
+                <Page3D
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/fonts"}
+              element={
+                <Fonts
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/fontsgrid"}
+              element={
+                <FontsFormatGrid
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/fonts/:term"}
+              element={
+                <Fonts
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/fontsgrid/:term"}
+              element={
+                <FontsFormatGrid
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                />
+              }
+            />
+            <Route
+              path={"/collections"}
+              element={
+                <Collections
+                  page={(name) => {
+                    setPage(name);
+                  }}
+                  dataFilter={dataFilter}
+                  newQuery={addQuery}
+                />
+              }
+            />
+          </Routes>
+          <DiscountModal />
+        </BrowserRouter>
+      </div>
+      </ResultsDataContainer.Provider>
+    </SearchQuery.Provider>
   );
 };
 

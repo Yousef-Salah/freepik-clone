@@ -30,12 +30,13 @@ const Category = (props) => {
 	useEffect(() => {
 		props.page("category")
 		isAlpaUpper(catParam[0]) ? setCat("style_sep") : setCat("style_full")
+        document.title = 'Seepik | ' + catParam.charAt(0).toUpperCase() + catParam.slice(1);
 	}, [catParam])
 
 	return (
 		<>
         <MainLayout page={props.page} pageTitle={catParam.charAt(0).toUpperCase() + catParam.slice(1)}>
-     	<SearchContainer mainPage={false} page='category' searchQuery={props.searchQuery} />
+     	<SearchContainer mainPage={false} page='category' />
 
 			<CategoryHeader catotitle="The best backgrounds for your projects" catodesc="All your drawings, illustrations and compositions are not standing on thin air, right? There's scenery, something that tells everyone where your creation takes place. That's the background, probably one of the most important elements that make everything feel complete. A background is also a nice decorative touch, especially in slideshows, flyers, and other projects." />
 			{cat === "style_full" ? <CategoryFullList category={catParam} />

@@ -4,14 +4,30 @@ import "./search-results.scss";
 import Searchimgcard from "./Searchimgcard";
 import SearchResultHeader from "./SearchResultHeader";
 import ModalTrigger from "../../Category/PreviewModal/ModalTrigger";
+import { useNavigate, useParams } from "react-router-dom";
 
 const SearchResults = (props) => {
   const [modalDisplay, setModalDisplay] = useState(false);
   const [modalData, setModalData] = useState({});
   const [loaded, setLoaded] = useState(false);
+  const navigate = useNavigate();
+  let { itemId } = useParams();
+  let item; 
 
   useEffect(() => {
     setLoaded(true);
+
+    if(props.images.length != 0) {   // check for empty array
+      if(itemId != undefined) {
+        item =  props.images.find(item => item.id == itemId);
+          
+        if(item == undefined) {
+          return navigate('/not-found');
+        } else {
+          modalHandler(item)
+        }
+      }  
+    }
   }, [props.images]);
 
   const toggleModal = () => {
@@ -26,7 +42,7 @@ const SearchResults = (props) => {
 
   return (
     <>
-      {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
+      {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData}  />}
       <SearchResultHeader
         title={"Showing results for " + props.title}
         sort={true}
@@ -37,7 +53,10 @@ const SearchResults = (props) => {
             <div
               key={idx}
               className="card-wrapper"
-              onClick={() => modalHandler(item)}>
+              onClick={() => {
+                modalHandler(item); 
+                }
+              }>
               <Searchimgcard Cardphoto={item} />
             </div>
           );

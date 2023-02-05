@@ -86,7 +86,7 @@
 }
 
 #search-card:hover .searchcard-img {
-  filter: brightness(0.8);
+  filter: brightness(0.5);
 }
 #premium-icon {
   color: white;
@@ -107,3 +107,13 @@
   opacity: 0;
 }
 
+#search-card,
+#search-card .searchcard,
+#search-card .Cardphoto,
+#search-card .searchcard-img {
+    transition: all 0.1s ease-in;
+}
+
+#search-card:hover a {
+    color: white;
+}
