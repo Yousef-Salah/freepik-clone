@@ -41,6 +41,8 @@
   border: 10px black;
   background-color: white;
   height: 0px;
+  position: absolute;
+  z-index: 10;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -245,9 +247,11 @@
 .filters {
   /* margin: 0 !important;
 	padding: 0 !important; */
-  padding-top: 10px;
+  /* padding: 10px 20px 10px 20px; */
+  padding-bottom: 10px;
   display: initial;
   flex-shrink: 0;
+  background-color: white;
 }
 .filtersbtn {
   margin: 0 20 0 0;
@@ -278,6 +282,7 @@
   line-height: 1.66;
   -webkit-font-smoothing: antialiased;
   margin-top: -20px !important;
+  /* top: 30px; */
 }
 .collapse.show {
   visibility: visible;
@@ -397,5 +402,19 @@ i {
 
 .borda {
   border-right: 1px solid #e3e9ed;
+}
+
+.filter-btn-wrapper {
+  padding: 34.5px;
+  background-color: white;
+  position: relative;
+  width: 260px;
+  margin-left: -30px;
+}
+
+@media (max-width: 1095px) {
+  .reset-relative {
+    position: relative !important;
+  }
 }
 

@@ -6,5 +6,10 @@
 
 .tagbar {
   overflow: scroll;
+  z-index: 10;
+}
+
+.tagbar-wrapper {
+  height: 50px;
 }
 

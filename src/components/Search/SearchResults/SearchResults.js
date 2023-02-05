@@ -32,7 +32,7 @@ const SearchResults = (props) => {
       <div className="search-description" id="pills-tab" role="tablist">
         <li class="nav-item-search" role="presentation">
           <button
-            classNamce="active"
+            className="active"
             id="grid-cards-tab"
             data-bs-toggle="pill"
             data-bs-target="#grid-cards"

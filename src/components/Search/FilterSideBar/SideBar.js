@@ -14,7 +14,7 @@ const SideBar = (props) => {
   return (
     <div
       id="sidebarr"
-      className={`sidebar flex position-absolute ${
+      className={`sidebar flex ${
         open ? "tw-w-64 translatex100 " : "tw-w-0 translatex0"
       }`}>
       <div
@@ -27,13 +27,15 @@ const SideBar = (props) => {
             setOpen(!open);
             props.updateOpen(!open);
           }}>
-          <div className="filters">
+          <div className={`filters `}>
             <div className="container-fluid filterscont">
-              <button
-                className="btn-light filtersbtn tw-items-center position-absolute tw-top-5 tw-left-1"
-                type="button">
-                <i className="bi bi-sliders"></i>Filters
-              </button>
+              <div className={`${!open && "filter-btn-wrapper"} `}>
+                <button
+                  className="btn-light filtersbtn tw-items-center position-absolute tw-top-5 tw-left-1"
+                  type="button">
+                  <i className="bi bi-sliders"></i>Filters
+                </button>
+              </div>
             </div>
           </div>
         </div>
