@@ -39,17 +39,19 @@ const Search = (props) => {
     if(searchQuery.current.searchInput !== resultsDataContainer.lastQuery) {
       resultsDataContainer.lastQuery = searchQuery.current.searchInput;
       resultsDataContainer.data = props.dataFilter.getData(searchQuery.current);
+      resultsDataContainer.start = 0;
+      resultsDataContainer.end = 15;
       console.log(resultsDataContainer);
+
       setPartialData(resultsDataContainer.data.slice(0,15));
+      setContentState(false);
+      setSpinnerTrigger(true);
+      setTimeout(() => {
+        setSpinnerTrigger(false);
+        setContentState(true);
+      }, 1500);
     }
-    // setData(props.dataFilter.getData(searchQuery.current));
-    
-    setContentState(false);
-    setSpinnerTrigger(true);
-    setTimeout(() => {
-      setSpinnerTrigger(false);
-      setContentState(true);
-    }, 1500);
+    // setData(props.dataFilter.getData(searchQuery.current));    
   };
 
   const nextButtonHandler = () => {
