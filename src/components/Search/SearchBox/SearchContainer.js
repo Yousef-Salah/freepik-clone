@@ -28,7 +28,6 @@ const SearchContainer = (props) => {
           <SearchBox
             dataHandler={props.dataHandler}
             mainPage={true}
-            searchQuery={props.searchQuery}
             page={props.page}
           />
         </div>
@@ -55,7 +54,6 @@ const SearchContainer = (props) => {
           <SearchBox
             dataHandler={props.dataHandler}
             mainPage={false}
-            searchQuery={props.searchQuery}
             page={props.page}
           />
         </div>

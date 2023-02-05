@@ -11,6 +11,8 @@ const premiumimg = ({ Cardphoto }) => {
 	} else return "";
 }; //for the icon outside the hover
 
+// TODO: Id in the loop, NICE!! 
+
 const Searchimgcard = ({ Cardphoto }) => {
 	return (
 		<div className="inner-search-card" id="search-card">

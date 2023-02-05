@@ -4,15 +4,32 @@ import CollectionCard from "../../Collection/CollectionCard";
 import "./search-results.scss";
 import Searchimgcard from "./Searchimgcard";
 import SearchResultHeader from "./SearchResultHeader";
+import ModalTrigger from "../../Category/PreviewModal/ModalTrigger";
+import { useNavigate, useParams } from "react-router-dom";
 
 const SearchResults = (props) => {
   const [modalDisplay, setModalDisplay] = useState(false);
   const [modalData, setModalData] = useState({});
   const [loaded, setLoaded] = useState(false);
+  const navigate = useNavigate();
+  let { itemId } = useParams();
+  let item; 
 
   const cardStyles = ["card-wrapper", "card-wrapper card-wrapper-flexed"];
   useEffect(() => {
     setLoaded(true);
+
+    if(props.images.length != 0) {   // check for empty array
+      if(itemId != undefined) {
+        item =  props.images.find(item => item.id == itemId);
+          
+        if(item == undefined) {
+          return navigate('/not-found');
+        } else {
+          modalHandler(item)
+        }
+      }  
+    }
   }, [props.images]);
 
   const toggleModal = () => {
@@ -25,6 +42,7 @@ const SearchResults = (props) => {
 
   return (
     <div id="search-results">
+      {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData}  />}
       <SearchResultHeader
         title={"Showing results for " + props.title}
         sort={true}
