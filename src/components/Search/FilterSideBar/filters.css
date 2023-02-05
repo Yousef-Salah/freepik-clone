@@ -15,8 +15,8 @@
   transform: translateX(-100px);
 }
 .translatex100 .sidebarcontent {
-  border-right: 2px solid #e3e9ed;
-  border-top: 2px solid #e3e9ed;
+  border-top: 1px solid #e3e9ed;
+  padding-top: 10px;
 }
 .translatex0 {
   transform: translateX(0);
@@ -41,6 +41,8 @@
   border: 10px black;
   background-color: white;
   height: 0px;
+  position: absolute;
+  z-index: 10;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -94,7 +96,6 @@
 .sidetag {
   border-radius: 8px;
   padding: 10px;
-  height: 44px;
   color: #374957;
   font-weight: 400;
   margin: 0;
@@ -109,25 +110,31 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .search-description {
-  font-size: 17px;
-  font-weight: 100 !important;
-  margin-left: 25%;
-  max-width: 50%;
+  width: 90%;
+  max-width: 400px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  margin-bottom: 2rem;
+  justify-content: space-around;
+  margin: 0 auto 10px auto;
+  list-style: none;
+  font-size: 0.9rem;
+}
+.nav-item-search .active {
+  border-bottom: 2px solid rgba(39, 35, 35, 1);
+}
+.search-description button {
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgba(39, 35, 35, 0.434);
 }
 
 .pushed {
   left: 270px;
-  width: 80%;
+  width: 85%;
   position: relative;
 }
 .sidebar-content .collapse.show {
-  margin-bottom: -20%;
   transition: 0s;
+  margin: -40px 0 0 2px !important;
+  padding: 0px !important;
 }
 .collapseicon {
   font-weight: 600;
@@ -146,15 +153,14 @@
 .tagbar {
   left: 200px;
   overflow-x: scroll;
-  width: 87%;
   background-color: white;
-  border-top: 2px solid #e3e9ed;
+  max-width: 87%;
   display: flex;
   position: absolute;
 }
 .pushed-tagbar {
   left: 2%;
-  width: 100%;
+  max-width: 90%;
 }
 .tag-icon {
   padding: 0px 5px;
@@ -171,7 +177,6 @@
 .type {
   font-weight: 700;
   border-radius: 8px;
-  height: 44px;
   padding: 10px 15px;
   color: #374957;
   border: 1px solid #cfd9e0;
@@ -181,7 +186,7 @@
   cursor: pointer;
   font-size: 16px;
   flex-shrink: 0;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: fit-content;
   background-color: white;
 }
@@ -216,7 +221,6 @@
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 8px;
   padding: 10px 15px;
-  height: 44px;
   color: #374957;
   font-weight: 400;
   margin: 0;
@@ -229,6 +233,7 @@
   flex-shrink: 0;
   width: fit-content;
   background-color: white;
+  height: 46px;
 }
 
 .tag-class {
@@ -236,14 +241,17 @@
   outline: none;
   line-height: 1.66;
   flex-shrink: 0;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   background-color: white;
 }
 .filters {
-  margin: 0 20 0 0;
-  padding: 0px 30px;
+  /* margin: 0 !important;
+	padding: 0 !important; */
+  /* padding: 10px 20px 10px 20px; */
+  padding-bottom: 10px;
   display: initial;
   flex-shrink: 0;
+  background-color: white;
 }
 .filtersbtn {
   margin: 0 20 0 0;
@@ -273,6 +281,8 @@
   font-size: 16px;
   line-height: 1.66;
   -webkit-font-smoothing: antialiased;
+  margin-top: -20px !important;
+  /* top: 30px; */
 }
 .collapse.show {
   visibility: visible;
@@ -288,7 +298,7 @@
   color: #374957;
 }
 .sidebarrow {
-  padding: 12px 6.5px 0px !important;
+  padding: 0px 6.5px 0px !important;
 }
 .link {
   color: rgb(29, 123, 239);
@@ -302,6 +312,41 @@
 .colorr {
   padding: 2px 16px 27px;
 }
+@media (min-width: 1400px) and (max-width: 1750px) {
+  .tagbar {
+    max-width: 84%;
+  }
+  .pushed {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1650px) {
+  .tagbar {
+    max-width: 84%;
+  }
+  .pushed {
+    width: 80%;
+  }
+}
+@media (min-width: 1150px) and (max-width: 1400px) {
+  .tagbar {
+    max-width: 80%;
+  }
+  .pushed {
+    width: 76%;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1150px) {
+  .tagbar {
+    max-width: 75%;
+  }
+  .pushed {
+    width: 72%;
+  }
+}
+
 @media only screen and (max-width: 1095px) {
   .filterscont,
   .sidebarcontent,
@@ -316,7 +361,11 @@
   .tagbar,
   .pushed-tagbar {
     left: 1% !important;
-    width: 100% !important;
+    max-width: 98%;
+    margin: 0 auto;
+  }
+  .pushed .sidebar-content {
+    border-right: 1px solid #e3e9ed;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -324,7 +373,7 @@
   .pushed-tagbar {
     left: 1% !important;
     width: 100% !important;
-    top: 10.7% !important;
+    top: 10px !important;
   }
   .page-3d .tagbar,
   .page-3d .pushed-tagbar,
@@ -336,5 +385,36 @@
 
 .page-3d .tagbar {
   left: 4%;
+}
+
+div,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+i {
+  /* border: 1px dotted black; */
+}
+
+.borda {
+  border-right: 1px solid #e3e9ed;
+}
+
+.filter-btn-wrapper {
+  padding: 34.5px;
+  background-color: white;
+  position: relative;
+  width: 260px;
+  margin-left: -30px;
+}
+
+@media (max-width: 1095px) {
+  .reset-relative {
+    position: relative !important;
+  }
 }
 

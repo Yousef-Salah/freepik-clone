@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import SearchResults from "../components/Search/SearchResults/SearchResults";
 import SearchContainer from "../components/Search/SearchBox/SearchContainer";
 import Spinner from "../components/Search/LoadingSpinner/Spinner";
-import SearchResults1 from "../components/Search/SearchResults/Searchcardtest";
 import SideBar from "../components/Search/FilterSideBar/SideBar";
 import TagBar from "../components/Search/FilterSideBar/TagBar";
 import { SideBarData1 } from "../components/Search/FilterSideBar/SideBarData1";
@@ -11,6 +10,8 @@ import SearchTagBarData from "../utils/SearchTagBarData";
 import MainLayout from "../components/Layouts/MainLayout";
 import SearchQuery from "../context/SearchQuery";
 import ResultsDataContainer from "../context/ResultsDataContainer";
+import SponsoredBy from "../components/Layouts/SponsoredBy/SponsoredBy";
+import ModalTrigger from "../components/Category/PreviewModal/ModalTrigger";
 
 const Search = (props) => {
   const location = useLocation();
@@ -25,6 +26,9 @@ const Search = (props) => {
   const searchQuery = useContext(SearchQuery);
   const itemId = useParams().itemId;
   const resultsDataContainer = useContext(ResultsDataContainer);
+  const [modalDisplay, setModalDisplay] = useState(false);
+	const [modalData, setModalData] = useState({});
+	const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     props.page("search");
@@ -33,6 +37,16 @@ const Search = (props) => {
         loadData();
     }
   }, [location, resultsDataContainer]);
+
+  const toggleModal = () => {
+		setModalDisplay(!modalDisplay);
+	};
+
+	const modalHandler = (item) => {
+		setModalData(item);
+		toggleModal();
+	};
+
 
   const loadData = () => {
 
@@ -50,6 +64,7 @@ const Search = (props) => {
         setSpinnerTrigger(false);
         setContentState(true);
       }, 1500);
+      (() => setLoaded(true))();
     }
     // setData(props.dataFilter.getData(searchQuery.current));    
   };
@@ -68,11 +83,14 @@ const Search = (props) => {
 
   return (
     <MainLayout page={props.page} pageTitle="Search">
-
+      {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
+			
       <SearchContainer
         dataHandler={loadData}
         mainPage={false}
       />
+      <SponsoredBy images={data.slice(data.length - 10, data.length - 1)} />
+
       <SideBar updateOpen={updateOpen} data={SideBarData1} />
       <div className={`search-content ${!open ? "base" : "pushed"}`}>
         <TagBar
@@ -94,8 +112,7 @@ const Search = (props) => {
 
       <button onClick={nextButtonHandler}>Next</button>
     </MainLayout>
+	);
+};
 
-  );
-}
-  
 export default Search;

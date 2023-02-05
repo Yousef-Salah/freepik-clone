@@ -38,18 +38,15 @@
         padding: 15px 20px 15px 20px !important;
         h4{
             font-size: 15px !important;
-            font-weight: 600;
             color: #a5b7c6;
             padding-bottom: 5px;
         }
     }
 }
 .nav-wrapper{
-    // background-color: $main-color;
     width:100%;
 }
 .navbar{
-    // background-color: $main-color;
     margin: 0 auto;
     padding: 0;
     color: white;
@@ -145,7 +142,6 @@
     border-radius: 4px;
     margin-left:4px ;
     font-size: 8px;
-    font-weight: 600;
     background-color: white;
     color: blue !important;
 }
@@ -170,7 +166,11 @@
             height: fit-content;
             padding: 3px 0px 3px 0px;
             @include AnchorFontStyle();
+			font-weight: 600;
+			margin-top: 2px;
         }
+		font-weight: 600;
+		margin-top: 2px;
     }
     
 }
@@ -202,7 +202,6 @@
         @include resetBootstrap();
         h5{
             font-size: 15px;
-            font-weight: 600;
         }
         h6{
             font-size: 14px;
@@ -286,7 +285,6 @@
             height: 7vh;
             @include resetBootstrap();
             text-align: left;
-            //vertical align center
             display: flex;
             align-items: center;
         }
@@ -303,7 +301,6 @@
             font-size: 16px !important;
             color: $anchorColor2;
             letter-spacing: 0.5px;
-            font-weight: 600;
             &:hover{
                 color: white !important;
             }
@@ -350,7 +347,6 @@
             height: 7vh;
             @include resetBootstrap();
             text-align: left;
-            //vertical align center
             display: flex;
             align-items: center;
             padding: 45px 0px 15px 40px !important;
@@ -362,7 +358,6 @@
             font-size: 16px !important;
             color: $anchorColor2;
             letter-spacing: 0.5px;
-            font-weight: 600;
             &:hover{
                 color: white !important;
                 cursor: pointer;
@@ -370,10 +365,6 @@
         }
     }
 }
-
-// .side-menu{
-//     display: none;
-// }
 
 @media (min-width: 1250px) {
     .navbar{
@@ -383,19 +374,15 @@
 
 .other-class{
     background-color: $dark-color;
-
 }
 
-
 .new-class{
-
     background-color: #252a30 !important;
     max-height: 44px !important;
     max-width: none;
     .anchor-rep,a, button{
         color: #a5b7c6 !important;
-    }
-    
+    } 
     button{
         border: gray 1px solid !important;
     }
@@ -419,7 +406,7 @@
 }
 
 .login-link{
-    margin-top: 4px;
+    padding-top: 4px;
 }
 
 li .anchor-rep{

@@ -1,53 +1,68 @@
+import { Link } from "react-router-dom";
 import "./SponsoredBy.css";
+import { useState, useEffect } from "react";
+import Spinner from "../../Search/LoadingSpinner/Spinner";
+import DefaultSponsor from "../../../utils/DefaultSponsor";
+//* This component is used to display the sponsored images in the search page
+//* It is a child component in the Search.js page
+//? give me 7 images, and I will make it work nicely
+const SponsoredBy = ({ images }) => {
+  const [sponsoredImages, setSponsoredImages] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
-const SponsoredBy = (props) => {
+  useEffect(() => {
+    if (
+      !sponsoredImages[0]?.title ||
+      sponsoredImages[0]?.title !== images[0]?.title
+    ) {
+      (() => setLoaded(false))();
+      images[0]?.title
+        ? setSponsoredImages(images)
+        : setSponsoredImages(DefaultSponsor);
+      setTimeout(() => {
+        setLoaded(true);
+      }, 500);
+    }
+  }, [images]);
+
   return (
-    <div className="mt-5" id="sponsored-by-component">
-      <div className="container rounded p-5">
-        <section className="row bg-image">
-          <article className="col-3 overflow-hidden">
-            <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006">
-              {/* <img
-                src="https://t3.ftcdn.net/jpg/05/39/81/30/240_F_539813006_5ZJhMgukoWJf8UAJVy45kPSCJs89ZYVY.jpg"
-                alt=""
-              /> */}
-            </a>
-          </article>
-          <article className="col-3 overflow-hidden">
-            <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006">
-              {/* <img
-                src="https://t4.ftcdn.net/jpg/05/37/89/69/240_F_537896903_CnboBEBXJ4FFbUeXJOnFAFVMTQaycQGI.jpg"
-                alt=""
-              /> */}
-            </a>
-          </article>
-          <article className="col-3 overflow-hidden">
-            <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006">
-              {/* <img
-                src="https://t3.ftcdn.net/jpg/05/40/06/16/240_F_540061602_IlVgsws0IqhHcpxlpOghqsEh6LO0fCx1.jpg"
-                alt=""
-              /> */}
-            </a>
-          </article>
-          <article className="col-3 overflow-hidden">
-            <a href="https://stock.adobe.com/images/id/539813006?get_facets=1&order=relevance&safe_search=1&filters%5Bcontent_type%3Azip_vector%5D=1&clickref=1101lwhJdesG&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5&asset_id=539813006">
-              {/* <img
-                src="https://t4.ftcdn.net/jpg/05/36/81/01/240_F_536810188_O6akZ1GmtxWx0jySH7dXq9BVnQmYNjVq.jpg"
-                alt=""
-              /> */}
-            </a>
-          </article>
-        </section>
-        <section className="row" id="sponsor-details">
-          Sponsored results by
-          <a href="www.freepik.com/redirect?url=aHR0cHM6Ly9hZG9iZS5wcmYuaG4vY2xpY2svY2FtcmVmOjExMDBscjJpei9jcmVhdGl2ZXJlZjoxMTAxbDg5NTg0L3B1YnJlZjpHQTEuMi45MTk4MTA2NjYuMTY2NjI1ODgxMS9kZXN0aW5hdGlvbjpodHRwcyUzQSUyRiUyRnN0b2NrLmFkb2JlLmNvbSUyRnByb21vJTJGZmlyc3Rtb250aGZyZWU=&client_id=GA1.2.919810666.1666258811">
-            <img src="https://freepik.cdnpk.net/img/logos/adobestock.svg" className="d-inline" alt="adobe-stock" />
-          </a>
-          <span className="text-decoration-c" id="ten-free">
-            <a href="https://stock.adobe.com/promo/firstmonthfree?clickref=1011lwihvE5p&mv=affiliate&mv2=Freepik&as_camptype=&as_channel=affiliate&as_source=partnerize&as_campaign=Freepik&as_content=api&as_audience=srp&sdid=6WTV6YJ5">
-              Get 10 free Vevtors
-            </a>
-          </span>
+    <div id="sponsored-by-component">
+      <div className="sections-wrapper rounded">
+        <Link to="">
+          <section className="bg-image">
+            {loaded ? (
+              sponsoredImages?.map((img) => (
+                <article className="sponsor-image">
+                  <img
+                    src={"/assets/images/thumb_images/" + img.img_path}
+                    alt={img.title}
+                  />
+                </article>
+              ))
+            ) : (
+              <Spinner visible={true} />
+            )}
+          </section>
+        </Link>
+        <section id="sponsor-details">
+          <div className="sponsor-content">
+            Sponsored results by
+            <Link to="">
+              <img
+                src="https://freepik.cdnpk.net/img/logos/adobestock.svg"
+                className="d-inline"
+                alt="adobe-stock"
+              />
+            </Link>
+            <span className="text-decoration-c" id="ten-free">
+              <Link to="">Get 10 free Images</Link>
+            </span>
+          </div>
+          <div className="explore">
+            <Link href="/1234" className="explore-btn">
+              Show more <i className="fa-solid fa-arrow-right right-arrow"></i>
+            </Link>
+          </div>
         </section>
       </div>
     </div>
@@ -55,3 +70,4 @@ const SponsoredBy = (props) => {
 };
 
 export default SponsoredBy;
+

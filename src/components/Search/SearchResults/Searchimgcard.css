@@ -4,12 +4,13 @@
 }
 
 .searchcard-img {
-  width: fit-content;
-  height: 160px;
+  width: 100%;
+  height: 182px;
+  border-radius: 3px;
+  object-fit: cover;
 }
 .testsearchcard {
   position: relative;
-  display: inline-block;
 }
 .Cardphoto {
   position: absolute;
