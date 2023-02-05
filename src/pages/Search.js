@@ -55,7 +55,6 @@ const Search = (props) => {
       resultsDataContainer.data = props.dataFilter.getData(searchQuery.current);
       resultsDataContainer.start = 0;
       resultsDataContainer.end = 15;
-      console.log(resultsDataContainer);
 
       setPartialData(resultsDataContainer.data.slice(0,15));
       setContentState(false);
@@ -100,6 +99,7 @@ const Search = (props) => {
         <SearchResults
           images={partialData}
           visible={contentState}
+          modalLift={modalHandler}
           title={location.pathname
             .split("/")[2]
             .replace("%20", " ")

@@ -54,7 +54,7 @@
     display: flex;
     flex-wrap: nowrap;
     position: relative;
-    z-index: 10;
+    z-index: 99999;  
     .anchor-rep{
         img{
             width: 190px;
@@ -271,6 +271,10 @@
         height: 100vh;
         background-color: #252a31;
         overflow-y: scroll;
+
+        &::-webkit-scrollbar{
+          display: none;
+        }
 
         @include resetBootstrap();
         box-shadow: 20px 0px 0px 2000px rgb(0, 0, 0 , 30%);

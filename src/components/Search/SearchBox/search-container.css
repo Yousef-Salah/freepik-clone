@@ -39,6 +39,11 @@
   z-index: 10;
 }
 
+#op-search-container .row,
+#op-search-container .row>* {
+  margin-right: 0 !important;
+}
+
 #op-search-container img {
   height: 40px !important;
   max-height: 40px;

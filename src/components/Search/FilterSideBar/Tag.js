@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchQuery from "../../../context/SearchQuery";
 
 const Tag = (props) => {
 	const navigate = useNavigate();
-    const searchQuery = useContext(SearchQuery);
+  const searchQuery = useContext(SearchQuery);
 	let className1, className;
 	if (props.className1 == "tag" || props.className1 == "type") {
 		className1 = props.className1 + " me-3";
@@ -13,6 +13,8 @@ const Tag = (props) => {
 		className = "side-tag";
 		className1 = "sidetag";
 	}
+
+  useEffect(() => {}, []);
 	return (
 		<span className={` flex-shrink-0 ` + className}>
 			<button

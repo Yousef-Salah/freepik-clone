@@ -1,7 +1,6 @@
 const CollectionCard = ({ card }) => {
   let img = "";
   let title = "";
-  console.log(card);
   return (
     <div className="discover-collection-col1">
       <div className="row d-c-r">
