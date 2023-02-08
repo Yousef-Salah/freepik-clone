@@ -1,11 +1,10 @@
 .sidebarcontent {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  max-width: 17rem;
-  position: sticky;
-  min-height: 50rem;
-  max-height: 100%;
-  padding-right: 2%;
+	overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 17rem;
+    position: sticky;
+    max-height: 90vh;
+    padding-right: 2%;
 }
 .pushed .sidebarcontent {
   border-right: 2px solid #e3e9ed;
@@ -82,8 +81,7 @@
 }
 .sidebar-content {
   background-color: white;
-  /* overflow-y: visible; */
-  /* padding: 10px; */
+  height: 90vh;
   margin-left: 30%;
 }
 .resultheader {

@@ -39,7 +39,16 @@ const SearchResults = (props) => {
   const modalHandler = (item) => {
     props.modalLift(item);
   };
-
+  addEventListener("scroll", (event) => {
+	let docHeight = document.getElementById("search-results").scrollHeight;
+	let theMax = (docHeight-document.documentElement.scrollTop+200) + "px"
+	if(docHeight > 728){
+		document.getElementsByClassName("sidebarcontent")[0].style.maxHeight = theMax;
+	}else{
+		document.getElementsByClassName("sidebarcontent")[0].style.maxHeight = "95vh"
+	}
+	console.log(theMax,docHeight)
+})
   return (
     <div id="search-results">
       {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData}  />}

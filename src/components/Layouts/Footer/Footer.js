@@ -3,23 +3,17 @@ import './footer.css'
 import { Link } from 'react-router-dom';
 
 const Footer = (props) => {
-	// const [pageName, setPageName] = useState("");
 	const [loaded, setLoaded] = useState(false);
 	let fotClass = "";
 
 	useEffect(() => {
-		// setPageName(props.page);
 		setLoaded(true)
 	}, [loaded]);
-
-	// if (pageName === "login" || pageName === "signup") {
-	// 	fotClass += " hide-fot";
-	// }
 
 	return (
 		<>
 			{loaded && (
-				<footer className={fotClass}>
+				<footer className={fotClass} id="footer">
 					<div className="main-footer">
 
 						<div className="container">
@@ -60,7 +54,6 @@ const Footer = (props) => {
 									<ul className="list-unstyled">
 										<li><Link className="footer-hover" to="/search/faq">FAQ</Link></li>
 										<li><Link className="footer-hover" to="/search/contact">Contact</Link></li>
-
 									</ul>
 
 								</div>	{/*column 4*/}
@@ -110,12 +103,8 @@ const Footer = (props) => {
 										<li><a className="dropdown-item" href="#">Nederlands</a></li>
 										<li><a className="dropdown-item" href="#">Italiano</a></li>
 										<li><a className="dropdown-item" href="#">한국어</a></li>
-
-
 								</ul>
-
 							</div>
-
 						</div>
 					</div>
 					</div>
