@@ -14,10 +14,12 @@ const SearchResults = (props) => {
   const navigate = useNavigate();
   let { itemId } = useParams();
   let item; 
+  const [filteredImages, setFilteredImages] = useState([]);
+  const [foundResult, setFoundResult] = useState(true);
 
   const cardStyles = ["card-wrapper", "card-wrapper card-wrapper-flexed"];
   useEffect(() => {
-    setLoaded(true);
+    (()=> setLoaded(false))()
 
     if(props.images.length != 0) {   // check for empty array
       if(itemId != undefined) {
@@ -30,6 +32,16 @@ const SearchResults = (props) => {
         }
       }  
     }
+    setTimeout(() => {
+      setLoaded(true);
+    }, 500);
+
+    if(props.images[0]?.title){
+      setFilteredImages(props.images)
+      setFoundResult(true)
+    }else{
+      setFoundResult(false)
+    }
   }, [props.images]);
 
   const toggleModal = () => {
@@ -39,21 +51,25 @@ const SearchResults = (props) => {
   const modalHandler = (item) => {
     props.modalLift(item);
   };
+  
   addEventListener("scroll", (event) => {
-	let docHeight = document.getElementById("search-results").scrollHeight;
-	let theMax = (docHeight-document.documentElement.scrollTop+200) + "px"
-	if(docHeight > 728){
-		document.getElementsByClassName("sidebarcontent")[0].style.maxHeight = theMax;
-	}else{
-		document.getElementsByClassName("sidebarcontent")[0].style.maxHeight = "95vh"
-	}
-	console.log(theMax,docHeight)
-})
+    if(window.location.pathname.split('/')[1] === 'search') {
+      let docHeight = document.getElementById("search-results").scrollHeight;
+      let theMax = docHeight-document.documentElement.scrollTop+200;
+
+      if(docHeight > 728){
+        document.getElementsByClassName("sidebarcontent")[0].style.maxHeight = theMax + "px";
+      }else{
+        document.getElementsByClassName("sidebarcontent")[0].style.maxHeight = "95vh"
+      }
+    }
+  });
+
   return (
     <div id="search-results">
       {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData}  />}
       <SearchResultHeader
-        title={"Showing results for " + props.title}
+        title={(foundResult ? "Showing results for " : "couldn't find ") + props.title}
         sort={true}
       />
       <div className="search-description" id="pills-tab" role="tablist">
@@ -84,7 +100,7 @@ const SearchResults = (props) => {
         </li>
       </div>
       <div id="grid-cards" className="tab-pane fade show active">
-        {props.images.map((item, idx) => {
+        {loaded && filteredImages.map((item, idx) => {
           return (
             <div
               key={idx}

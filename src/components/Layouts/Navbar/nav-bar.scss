@@ -262,21 +262,20 @@
         cursor: pointer;
     }
     .side-menu{
+        @include resetBootstrap();
         top: 0;
         left: 0;
-        border-radius: 10px;
         position: fixed;
-        width: 350px;
+        width: 280px;
         max-width: 100vw;
         height: 100vh;
         background-color: #252a31;
         overflow-y: scroll;
-
+        padding: 0 15px 0 0;
         &::-webkit-scrollbar{
           display: none;
         }
 
-        @include resetBootstrap();
         box-shadow: 20px 0px 0px 2000px rgb(0, 0, 0 , 30%);
 
         ul{  
