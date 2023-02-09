@@ -12,7 +12,7 @@ import SearchQuery from "../context/SearchQuery";
 import ResultsDataContainer from "../context/ResultsDataContainer";
 import SponsoredBy from "../components/Layouts/SponsoredBy/SponsoredBy";
 import ModalTrigger from "../components/Category/PreviewModal/ModalTrigger";
-
+import Categories from "../utils/Categories";
 const Search = (props) => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -29,6 +29,7 @@ const Search = (props) => {
   const [modalDisplay, setModalDisplay] = useState(false);
 	const [modalData, setModalData] = useState({});
 	const [loaded, setLoaded] = useState(false);
+  const [tagbarData, setTagbarData] = useState([]);
 
   useEffect(() => {
     props.page("search");
@@ -37,6 +38,19 @@ const Search = (props) => {
         loadData();
     }
   }, [location, resultsDataContainer]);
+
+  useEffect(() => {
+    if(partialData[0]){
+      let _tagbarData = SearchTagBarData.map((item) => { 
+        return{
+          ...item,
+          // title: partialData[Math.floor(Math.random() * partialData.length)].related_tags[Math.floor(Math.random()*5)],
+          title: Categories()[Math.floor(Math.random()* Categories().length)].name,
+        }
+      });
+      setTagbarData(_tagbarData);
+    }
+  }, [contentState]);
 
   const toggleModal = () => {
 		setModalDisplay(!modalDisplay);
@@ -56,7 +70,7 @@ const Search = (props) => {
       resultsDataContainer.start = 0;
       resultsDataContainer.end = 15;
 
-      setPartialData(resultsDataContainer.data.slice(0,15));
+      setPartialData(resultsDataContainer.data.slice(0,30));
       setContentState(false);
       setSpinnerTrigger(true);
       setTimeout(() => {
@@ -88,12 +102,12 @@ const Search = (props) => {
         dataHandler={loadData}
         mainPage={false}
       />
-      <SponsoredBy images={data.slice(data.length - 10, data.length - 1)} />
+      <SponsoredBy images={partialData.slice(partialData.length - 10, partialData.length - 1)} />
 
       <SideBar updateOpen={updateOpen} data={SideBarData1} />
       <div className={`search-content ${!open ? "base" : "pushed"}`}>
         <TagBar
-          data={SearchTagBarData}
+          data={tagbarData[0] ? tagbarData : SearchTagBarData}
           className={`${!open ? "base" : "pushed-tagbar"}`}
         />
         <SearchResults

@@ -73,7 +73,7 @@ const SearchResults = (props) => {
         sort={true}
       />
       <div className="search-description" id="pills-tab" role="tablist">
-        <li class="nav-item-search" role="presentation">
+        <li className="nav-item-search" role="presentation">
           <button
             className="active"
             id="grid-cards-tab"
@@ -86,7 +86,7 @@ const SearchResults = (props) => {
             Images {props.images.length}
           </button>
         </li>{" "}
-        <li class="nav-item-search" role="presentation">
+        <li className="nav-item-search" role="presentation">
           <button
             id="collection-cards-tab"
             data-bs-toggle="pill"
