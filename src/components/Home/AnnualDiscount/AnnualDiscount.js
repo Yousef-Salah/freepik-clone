@@ -1,4 +1,5 @@
-import "./annual-discount.css";
+import React from 'react'
+import './annual-discount.css'
 
 const AnnualDiscount = () => {
   return (
@@ -15,6 +16,6 @@ const AnnualDiscount = () => {
         </nav>
       </div>
     </div>
-  );
-};
-export default AnnualDiscount;
+  )
+}
+export default AnnualDiscount

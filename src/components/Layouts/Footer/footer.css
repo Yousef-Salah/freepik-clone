@@ -3,10 +3,10 @@ footer {
   padding-right: 0;
   background-color: #1d262d;
 }
-#footer{
-	z-index: 20;
-    position: absolute;
-    width: 100%;
+#footer {
+  z-index: 20;
+  position: absolute;
+  width: 100%;
 }
 footer .list-unstyled {
   line-height: 1.9;
@@ -68,14 +68,11 @@ footer .fa-square-instagram {
 footer .dropdown-loc {
   display: flex;
   justify-content: flex-end;
-
 }
 
 footer .footer-hover:hover {
   color: #bac8d3;
 }
-
-
 
 .hide-fot {
   display: none;

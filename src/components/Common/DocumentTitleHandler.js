@@ -1,12 +1,14 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
+import propTypes from 'prop-types'
 
-const DocumentTitleHandler = (props) => {
-
-    useEffect(() => {
-        document.title = `Seepik | ${props.pageTitle}`;
-    }, [])
-
-    return(<></>);
+const DocumentTitleHandler = ({ pageTitle }) => {
+  useEffect(() => {
+    document.title = `Seepik | ${pageTitle}`
+  }, [])
 }
 
-export default DocumentTitleHandler;
+DocumentTitleHandler.propTypes = {
+  pageTitle: propTypes.string
+}
+
+export default DocumentTitleHandler

@@ -112,9 +112,9 @@
 #search-card .searchcard,
 #search-card .Cardphoto,
 #search-card .searchcard-img {
-    transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 #search-card:hover a {
-    color: white;
+  color: white;
 }

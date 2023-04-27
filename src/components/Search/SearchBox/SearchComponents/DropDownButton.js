@@ -1,4 +1,6 @@
-const DropDownButton = (props) => {
+import React from 'react'
+import propTypes from 'prop-types'
+const DropDownButton = ({ buttonLabel }) => {
   return (
     <button
       id="search-filters"
@@ -8,9 +10,13 @@ const DropDownButton = (props) => {
       aria-expanded="false"
       data-bs-auto-close="outside"
     >
-      {props.buttonLabel}
+      {buttonLabel}
     </button>
-  );
-};
+  )
+}
 
-export default DropDownButton;
+DropDownButton.propTypes = {
+  buttonLabel: propTypes.string
+}
+
+export default DropDownButton

@@ -8,10 +8,10 @@ const Type = (props) => {
         }
         type="button"
       >
-        <i className={props.pic + " icon"}></i>
+        <i className={props.pic + ' icon'}></i>
         {props.title}
       </button>
     </span>
-  );
-};
-export default Type;
+  )
+}
+export default Type

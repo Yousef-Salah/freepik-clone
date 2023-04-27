@@ -1,5 +1,5 @@
-import React from "react";
-import "./fontslist.css";
+import React from 'react'
+import './fontslist.css'
 
 const FontCardGrid = (props) => {
   return (
@@ -11,8 +11,7 @@ const FontCardGrid = (props) => {
         <div className="creator-name">{props.creator}</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FontCardGrid;
-
+export default FontCardGrid

@@ -47,55 +47,53 @@
   font-size: 15px;
   padding: 12px 26px;
 }
-#join-section .image-wrapper{
-	width: fit-content;
-	height: fit-content;
+#join-section .image-wrapper {
+  width: fit-content;
+  height: fit-content;
 }
 @media (max-width: 1000px) {
-	#join-section {
-	  padding: 0 0 20px 0;
-	  max-width:none ;
-	}
-	#join-section .content{
-		padding: 50px 0px 20px 50px;
-	}
-	#join-section .title{
-		font-size: 1.3rem;
-	}
-	#join-section .text{
-		font-size: 1rem;
-	}
-	#join-section .photo{
-		margin-right:-15%;
-	}
-
+  #join-section {
+    padding: 0 0 20px 0;
+    max-width: none;
   }
-@media (max-width: 1200px ) and (min-width:1000px) {
+  #join-section .content {
+    padding: 50px 0px 20px 50px;
+  }
+  #join-section .title {
+    font-size: 1.3rem;
+  }
+  #join-section .text {
+    font-size: 1rem;
+  }
+  #join-section .photo {
+    margin-right: -15%;
+  }
+}
+@media (max-width: 1200px) and (min-width: 1000px) {
   #join-section {
     padding-bottom: 50px;
   }
-  #join-section .photo{
-	margin-right:-10%;
+  #join-section .photo {
+    margin-right: -10%;
   }
-  #join-section .content{
-	padding-right: 0px;
+  #join-section .content {
+    padding-right: 0px;
   }
 }
 @media (max-width: 725px) {
-	#join-section .photo{
-		display: none;
-	}
-	#join-section .content{
-		width: 100%;
-	}
+  #join-section .photo {
+    display: none;
+  }
+  #join-section .content {
+    width: 100%;
+  }
 
-	#join-section .title{
-		font-size: 1.8rem;
-		width: 90%;
-	}
-	#join-section .text{
-		font-size: 1.3rem;
-		width: 90%;
-	}
-
+  #join-section .title {
+    font-size: 1.8rem;
+    width: 90%;
+  }
+  #join-section .text {
+    font-size: 1.3rem;
+    width: 90%;
+  }
 }

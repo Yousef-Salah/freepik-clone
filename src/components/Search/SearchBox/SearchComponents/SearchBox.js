@@ -1,171 +1,165 @@
+/* eslint react/prop-types: 0 */
 // Imports
-import { useContext, useEffect, useRef, useState } from "react";
-import "./search-box.css";
-import DropDownItem from "./SearchDropdown";
-import DropDownButton from "./DropDownButton";
-import { redirect, useNavigate } from "react-router-dom";
-import SearchQuery from "../../../../context/SearchQuery";
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import './search-box.css'
+import DropDownItem from './SearchDropdown'
+import DropDownButton from './DropDownButton'
+import { useNavigate } from 'react-router-dom'
+import SearchQuery from '../../../../contexts/SearchQuery'
 
 // Components
 
 const SearchBox = (props) => {
-  let searchQuery = useContext(SearchQuery);
-  const [searchInputState, setSearchInputState] = useState(searchQuery.current.searchInput);
-  const [deleteTextIcon, setDeleteTextIcon] = useState("d-none");
-  const [buttonLabel, setButtonLabel] = useState("Assets");
-  const [inputPlaceHolder, setInputPlaceHolder] = useState("Search all assets");
-  const searchInput = useRef(window.location.pathname.split('/')[2]?.replace("_", " "));
-  const itemType = useRef(searchQuery.current.itemType);
-  const category = useRef(searchQuery.current.category);
-  const itemPricesList = useRef(searchQuery.current.itemPriceType);
-
+  const searchQuery = useContext(SearchQuery)
+  const [searchInputState, setSearchInputState] = useState(searchQuery.current.searchInput)
+  const [deleteTextIcon, setDeleteTextIcon] = useState('d-none')
+  const [buttonLabel, setButtonLabel] = useState('Assets')
+  const [inputPlaceHolder, setInputPlaceHolder] = useState('Search all assets')
+  const searchInput = useRef(window.location.pathname.split('/')[2]?.replace('_', ' '))
+  const itemType = useRef(searchQuery.current.itemType)
+  const category = useRef(searchQuery.current.category)
+  const itemPricesList = useRef(searchQuery.current.itemPriceType)
 
   useEffect(() => {
-    if (!props.mainPage && props.page != "category") props.dataHandler();
-    setSearchInputState(searchQuery.current.searchInput);
-    setButtonLabel(buttonLabelGenerator());
-    setSearchInputPlaceHolder();
-  }, [props.data, searchQuery.current.searchInput]);
+    if (!props.mainPage && props.page !== 'category') props.dataHandler()
+    setSearchInputState(searchQuery.current.searchInput)
+    setButtonLabel(buttonLabelGenerator())
+    setSearchInputPlaceHolder()
+  }, [props.data, searchQuery.current.searchInput])
 
   const searchInputHanlder = (e) => {
-    searchInput.current = e.target.value;
+    searchInput.current = e.target.value
 
-    setSearchInputState(e.target.value);
+    setSearchInputState(e.target.value)
 
-    if (searchInput.current === "") {
-      setDeleteTextIcon("d-none");
+    if (searchInput.current === '') {
+      setDeleteTextIcon('d-none')
     } else {
-      setDeleteTextIcon("");
+      setDeleteTextIcon('')
     }
-  };
+  }
 
   const itemTypeHandler = (e) => {
-    itemType.current = e.target.getAttribute("title");
-    setButtonLabel(buttonLabelGenerator());
-    setSearchInputPlaceHolder();
-  };
+    itemType.current = e.target.getAttribute('title')
+    setButtonLabel(buttonLabelGenerator())
+    setSearchInputPlaceHolder()
+  }
 
   const itemPriceHandler = (e) => {
-    const incomingPrice = e.target.getAttribute("title");
+    const incomingPrice = e.target.getAttribute('title')
 
     if (!itemPricesList.current.length) {
       // there is no selected input
-      itemPricesList.current.push(incomingPrice);
-    } else if (itemPricesList.current.length == 2) {
-      const index = itemPricesList.current.indexOf(incomingPrice);
-      itemPricesList.current.splice(index, 1);
+      itemPricesList.current.push(incomingPrice)
+    } else if (itemPricesList.current.length === 2) {
+      const index = itemPricesList.current.indexOf(incomingPrice)
+      itemPricesList.current.splice(index, 1)
     } else {
-      itemPricesList.current[0] == incomingPrice
+      itemPricesList.current[0] === incomingPrice
         ? itemPricesList.current.pop()
-        : itemPricesList.current.push(incomingPrice);
+        : itemPricesList.current.push(incomingPrice)
     }
 
-    setButtonLabel(buttonLabelGenerator());
-    setSearchInputPlaceHolder();
-  };
+    setButtonLabel(buttonLabelGenerator())
+    setSearchInputPlaceHolder()
+  }
 
   const itemCategoryHandler = (e) => {
-    let value = e.target.getAttribute("title");
+    const value = e.target.getAttribute('title')
 
-    if (value === category.current) category.current = "";
-    else category.current = value;
+    if (value === category.current) category.current = ''
+    else category.current = value
 
-    setButtonLabel(buttonLabelGenerator());
-    setSearchInputPlaceHolder();
-  };
+    setButtonLabel(buttonLabelGenerator())
+    setSearchInputPlaceHolder()
+  }
 
   const setSearchInputPlaceHolder = () => {
-    let result = category.current;
+    let result = category.current
 
-    result += " " + itemType.current;
+    result += ' ' + itemType.current
 
-    if (category.current) result = "Search for " + result;
-    else result = "Search all" + result;
+    if (category.current) result = 'Search for ' + result
+    else result = 'Search all' + result
 
-    setInputPlaceHolder(result);
-  };
+    setInputPlaceHolder(result)
+  }
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const checkDeleteIconStatus = (event) => {
-    if (event.target.value) {
-      setDeleteTextIcon("opacity-100");
-    } else {
-      setDeleteTextIcon("opacity-0");
-      setTimeout(() => {
-        if (!event.target.value)
-          // in case user is writing while the d-none timeout is running
-          setDeleteTextIcon("d-none");
-      }, 1300);
-    }
-  };
+  // const checkDeleteIconStatus = (event) => {
+  //   if (event.target.value) {
+  //     setDeleteTextIcon('opacity-100')
+  //   } else {
+  //     setDeleteTextIcon('opacity-0')
+  //     setTimeout(() => {
+  //       if (!event.target.value) {
+  //         // in case user is writing while the d-none timeout is running
+  //         setDeleteTextIcon('d-none')
+  //       }
+  //     }, 1300)
+  //   }
+  // }
 
   const buttonLabelGenerator = () => {
-    let label = "";
+    let label = ''
 
-    label = itemType.current;
+    label = itemType.current
 
     // if(itemPrice.length) label += ', ' +  itemPrice.join(', ');
 
-    if (itemPricesList.current)
-      label += " " + itemPricesList.current.join(", ");
+    if (itemPricesList.current) label += ' ' + itemPricesList.current.join(', ')
 
-    if (category.current) label += ", " + category.current;
+    if (category.current) label += ', ' + category.current
 
-    return label;
-  };
+    return label
+  }
 
   const deleteText = (event) => {
-    searchInput.current = "";
-    event.target.value = "";
-    setSearchInputState("");
-    setDeleteTextIcon("opacity-0");
+    searchInput.current = ''
+    event.target.value = ''
+    setSearchInputState('')
+    setDeleteTextIcon('opacity-0')
 
     setTimeout(() => {
-      if (!event.target.value)
+      if (!event.target.value) {
         // in case user is writing while the d-none timeout is running
-        setDeleteTextIcon("d-none");
-    }, 1300);
-  };
+        setDeleteTextIcon('d-none')
+      }
+    }, 1300)
+  }
 
   const submitActionHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    if (searchInputState === "") {
-      return;
+    if (searchInputState === '') {
+      return
     }
 
     // console.log(window.location.pathname.split('/')[2]);
-    history.pushState(null, '', searchInput.current?.replace(" ", "_"));
-    
-    let data = {
+    history.pushState(null, '', searchInput.current?.replace(' ', '_'))
+
+    const data = {
       searchInput: searchInput.current,
       itemType: itemType.current, // assets collections
       itemPriceType: itemPricesList.current, // free premium
-      category: category.current,
-    };
-
-    searchQuery.current = data;
-
-    if (!props.mainPage && props.page != "category") {
-      props.dataHandler();
-    } else {
-      return navigate(
-        `${props.page == "category" ? "../../" : ""}search/${
-          searchInput.current
-        }`
-      );
+      category: category.current
     }
-  };
 
-  const mainPage = !props.mainPage ? "sub-page-search" : "";
+    searchQuery.current = data
+
+    if (!props.mainPage && props.page !== 'category') {
+      props.dataHandler()
+    } else {
+      return navigate(`${props.page === 'category' ? '../../' : ''}search/${searchInput.current}`)
+    }
+  }
+
+  const mainPage = !props.mainPage ? 'sub-page-search' : ''
 
   return (
     <div className={mainPage} id="search-input-container">
-      <form
-        id="search"
-        className="h-100 rounded"
-        onSubmit={submitActionHandler}>
+      <form id="search" className="h-100 rounded" onSubmit={submitActionHandler}>
         <div className="dropdown d-inline-block rounded-start">
           <DropDownButton buttonLabel={buttonLabel} />
           <div className="dropdown-menu" id="search-filter-items">
@@ -194,7 +188,7 @@ const SearchBox = (props) => {
                 name="free"
                 for="free"
                 inputHandler={itemPriceHandler}
-                value={itemPricesList.current.includes("Free") ? "Free" : ""}
+                value={itemPricesList.current.includes('Free') ? 'Free' : ''}
               />
               <DropDownItem
                 title="Premium"
@@ -203,9 +197,7 @@ const SearchBox = (props) => {
                 iconClasses="fa-solid fa-crown"
                 goldItem={true}
                 inputHandler={itemPriceHandler}
-                value={
-                  itemPricesList.current.includes("Premium") ? "Premium" : ""
-                }
+                value={itemPricesList.current.includes('Premium') ? 'Premium' : ''}
               />
             </div>
             <div id="item-category">
@@ -245,9 +237,7 @@ const SearchBox = (props) => {
             </div>
           </div>
         </div>
-        <div
-          className="d-inline-block position-relative rounded-start"
-          id="input-field">
+        <div className="d-inline-block position-relative rounded-start" id="input-field">
           <span className={deleteTextIcon} onClick={deleteText}>
             <i className="fa-solid fa-square-xmark fa-2x "></i>
           </span>
@@ -268,9 +258,8 @@ const SearchBox = (props) => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
 // Exports
-export default SearchBox;
-
+export default SearchBox

@@ -1,12 +1,12 @@
 #trend-content {
   box-sizing: border-box;
   outline: none;
-  font-family: "Proxima Nova", Verdana, "Avenir Next";
+  font-family: 'Proxima Nova', Verdana, 'Avenir Next';
   position: relative;
   width: 100%;
   align-self: center;
   justify-content: center;
-  padding:0px 10px
+  padding: 0px 10px;
 }
 #trending-content::marker {
   content: none;
@@ -43,7 +43,7 @@
 #trending {
   box-sizing: border-box;
   outline: none;
-  font-family: "Proxima Nova", Verdana, "Avenir Next";
+  font-family: 'Proxima Nova', Verdana, 'Avenir Next';
   float: none;
   margin: 0 auto;
   display: block;
@@ -73,11 +73,11 @@
   font-weight: 600;
   width: 100%;
 }
-.trendimg{
-	filter: brightness(0.8);
+.trendimg {
+  filter: brightness(0.8);
 }
-.trendimg:hover{
-	filter: brightness(0.7);
+.trendimg:hover {
+  filter: brightness(0.7);
 }
 #exploretrend {
   display: grid;
@@ -89,14 +89,14 @@
 #exploretrend::-webkit-scrollbar {
   display: none;
 }
-@media (max-width:1096px){
-  .trend-zoom{
- 	border-radius: 10px;
+@media (max-width: 1096px) {
+  .trend-zoom {
+    border-radius: 10px;
   }
 }
 @media screen and (min-width: 1096px) {
-  .trend-zoom{
-	border-radius: 5px;
+  .trend-zoom {
+    border-radius: 5px;
   }
   #trending {
     padding: 50px 0px;
@@ -124,7 +124,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     padding: 10px;
     row-gap: 10px;
-	/* border-radius: 4% / 14%; */
+    /* border-radius: 4% / 14%; */
   }
   #trending #explore-title {
     text-align: center;
@@ -149,4 +149,3 @@
     align-content: center;
   }
 }
-

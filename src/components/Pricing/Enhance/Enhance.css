@@ -1,26 +1,26 @@
-.Enhance-title{
-    text-align: center;
-    font-size: 30px;
-    width: 100%;  
+.Enhance-title {
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
 }
-#Enhance-container{
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 3%;
-    padding-bottom: 5%;
+#Enhance-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 3%;
+  padding-bottom: 5%;
 }
-#Enhance-img{
-    width: 200px;
-    margin-left:100px ;
-    padding-bottom: 1%;
+#Enhance-img {
+  width: 200px;
+  margin-left: 100px;
+  padding-bottom: 1%;
 }
-#symbolTitle{
-    text-align: center;
-    font-size: 17px;
-    width: 100%;
-    padding-bottom: 2%;
+#symbolTitle {
+  text-align: center;
+  font-size: 17px;
+  width: 100%;
+  padding-bottom: 2%;
 }
-#symbolText{
-    text-align: center;
-    font-size: 13px;
+#symbolText {
+  text-align: center;
+  font-size: 13px;
 }

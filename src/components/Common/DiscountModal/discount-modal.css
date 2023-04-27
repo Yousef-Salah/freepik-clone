@@ -41,20 +41,18 @@
   right: 5px;
   width: 40px;
   height: 40px;
-  background-color: rgb(255,255,255, 0.2);
+  background-color: rgb(255, 255, 255, 0.2);
   transition: background-color 0.2s ease 0.1s;
 }
 
 #discount-modal button:hover {
-  background-color: rgb(255,255,255, 0.6);
+  background-color: rgb(255, 255, 255, 0.6);
 }
 
 #discount-modal #righ-side-image {
   z-index: 12;
   position: absolute;
-  height: 100%  !important;
+  height: 100% !important;
   top: 0;
   right: 0;
 }
-
-

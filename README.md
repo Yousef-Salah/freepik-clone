@@ -1,91 +1,152 @@
-## A new version will be published soon!!!
-<br />
-<br />
-<br />
+## Refactoring in progress!!!
 
-## How to setup project files on your local machine:
-1- Clone the repository. `git clone https://github.com/Yousef-Salah/freepik-cap.git`
+<p align="center">
+    <img alt="logo" src="./public/assets/images/common/navbar/freepik-no_bg.png" height="40" />
+</p>
+<h1 align="center">
+  Seepik - A Freepik Clone
+</h1>
 
-2- Navigate to app directory. e.g: `cd freepik-cap`
+<p align="center">
+ <img src="https://img.shields.io/badge/v0.1.0-Seepik-blue?style=flat-square" alt="Seepik"> <img src="https://img.shields.io/badge/v18.2.0-React-darkblue?style=flat-square" alt="React">  <img src="https://img.shields.io/badge/v3-SASS-%239cf?style=flat-square" alt="SASS">
+ <img src="https://img.shields.io/badge/v5.2-Bootstrap-%2bbcf?style=flat-square" alt="SASS">
+</p>
 
-3- Run `npm install` inside freepik-cap directory (to install project dependencies).
+<p align="center">
+<img src="./public/assets/images/docs/overview.png" style="width:70%;"  />
+</p>
+<p align="center">
+    <a href="https://seepick.vercel.app" target="blank">View Demo</a>
+    ·
+    <a href="https://github.com/Yousef-Salah/freepik-cap/issues/new">Report Bug</a>
+    ·
+    <a href="https://github.com/Yousef-Salah/freepik-cap/issues/new">Request Feature</a>
+</p>
 
+#### Welcome to Our Freepik Clone!
 
-## How to push to your branch:
-1- `git add .`
+Freepik offers graphic resources for designers and creatives, including free and paid options through a subscription-based model. It's a leading website with millions of users worldwide and additional services like Flaticon and Slidesgo for icons and presentation templates.
 
-2- `git commit -m "{your comment}"`
+We as school students, we've worked on cloning it through a project, and now willing to maintain it and make it open for the community. Currently the project is maintained By 2 Contributors @OmarMHawash and @Yousef-Salah . The last succesful version of the website is deployed in the [demo](https://seepick.vercel.app) site. We are currently focused on refactoring the code base, more than adding features/fixing bugs, then we will be adding more features to the website.
 
-3- `git push origin {your_branch_name}`
+<h2 id="demo"> 🚀 Demo </h2>
 
-## Review\pull other code:
+<img src="https://img.shields.io/badge/status-on-green?style=flat-square" alt="learngrow">
 
-* `git checkout {branch_name}`
+Checkout The Demo: [Live Demo](https://seepick.vercel.app)
 
-* `git pull`
+<h2 id="markdown-navigation"> 🧭 Markdown Navigation </h2>
 
-## Available Scripts
-In the project directory, you can run:
+- [Quick Start](#quick-start)
+- [Features](#features)
+- [Resources](#resources)
+- [Preview](#preview)
+- [What's New?](#changes)
 
-### `npm start`
+<h2 id="quick-start">🛠️ Installation Steps </h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### \*pre-requisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+you will need to have **Node.js** installed on your computer and **Git** (or you can download as a **zip file**). we are using the **npm** package manager, yarn and pnpm would work perfectly.
 
-### `npm test`
+## Steps
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository
 
-### `npm run build`
+```bash
+git clone https://github.com/Yousef-Salah/freepik-cap.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Change the working directory
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd freepik-cap
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install dependencies and run the app
 
-### `npm run eject`
+```bash
+npm install && npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h2 id="features">🤯 Features & Functionalities </h2>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Features:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 8+ Pages with Fully responsive layout.
+- 34+ Different components.
+- Used Packages: Sass, Bootstrap 5.
+- Used Features: JSX, Hooks, ContextAPI
+- Website Images data is scraped from the internet Selenium driver (for testing only).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Functionalities
 
-## Learn More
+- Image searching throughout single search component.
+- Implemented SPA for the search page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+(in progress) refactoring the code & file structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2 id="resources">💻 Technologies Used </h2>
 
-### Code Splitting
+#### [Project Documentation](https://github.com/Yousef-Salah/freepik-cap/docs/documentation.md)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Used [Bootstrap](https://getbootstrap.com/) to maintain a general resposive layout, with [SASS](https://sass-lang.com/) for better stylesheets management.
 
-### Analyzing the Bundle Size
+<h2 id="preview">🌁 Project showdown</h2>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Home Page
 
-### Making a Progressive Web App
+<img src="./public/assets/images/docs/home.png" style="width:100%;"  />
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Searching Images
 
-### Advanced Configuration
+<img src="./public/assets/images/docs/search.png" style="width:100%;"  />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Preview Modal
 
-### Deployment
+<img src="./public/assets/images/docs/modal.png" style="width:100%;"  />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Categories Browsing
 
-### `npm run build` fails to minify
+<img src="./public/assets/images/docs/categories.png" style="width:100%;"  />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### registration
+
+<img src="./public/assets/images/docs/registration.png" style="width:100%;"  />
+
+### Premuim Pricing
+
+<img src="./public/assets/images/docs/premium.png" style="width:100%;" />
+
+### Fonts Search
+
+<img src="./public/assets/images/docs/fonts.png" style="width:100%;" />
+
+### 3D models Search
+
+<img src="./public/assets/images/docs/3d.png" style="width:100%;" />
+
+### Error Handleling
+
+<img src="./public/assets/images/docs/404.png" style="width:100%;" />
+
+<h2 id="changes"> 🆕 What's New </h2>
+
+### Latest Features
+
+- ...
+
+### Changelog
+
+- ...
+- ...
+
+<h2 id="contribute"> ➕ Contributing to the project </h2>
+
+- [Issue Template](https://github.com/Yousef-Salah/freepik-cap/docs/new_issue.md)
+- [Contribute Guidelines](https://github.com/Yousef-Salah/freepik-cap/docs/guidelines.md)
+- [Upcoming Changes](https://github.com/Yousef-Salah/freepik-cap/docs/upcoming.md)
+
+`npx eslint --fix {file_name}.{ext}`

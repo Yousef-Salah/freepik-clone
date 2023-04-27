@@ -28,7 +28,7 @@
   border: none;
   margin: 0px;
   color: black;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-weight: 100 !important;
   font-size: 0.95rem;
   vertical-align: middle;
@@ -64,8 +64,8 @@
 
 #search .dropdown-menu::before {
   color: white;
-  font-family: "Font Awesome 5 Free";
-  content: "\f0d8";
+  font-family: 'Font Awesome 5 Free';
+  content: '\f0d8';
   font-weight: 700;
   display: inline-block;
   position: absolute;
@@ -78,7 +78,7 @@
 }
 
 #search .dropdown::after {
-  content: "";
+  content: '';
   display: inline-block;
   position: absolute;
   height: 30px;
@@ -104,8 +104,8 @@
 }
 
 #search-filters::after {
-  font-family: "Font Awesome 5 Free";
-  content: "\f107";
+  font-family: 'Font Awesome 5 Free';
+  content: '\f107';
   font-weight: 700;
   display: inline-block;
   position: absolute;
@@ -118,7 +118,7 @@
 }
 
 #search .dropdown-toggle::after {
-  content: "" !important;
+  content: '' !important;
 }
 
 .gold-item {
@@ -230,4 +230,3 @@
 #search-input-tags > * {
   width: auto;
 }
-

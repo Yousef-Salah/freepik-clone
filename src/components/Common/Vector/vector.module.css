@@ -1,13 +1,9 @@
-.img_modal{
- 
-    text-align: center;
-    width:100%;
-    
-
+.img_modal {
+  text-align: center;
+  width: 100%;
 }
 
-.img_handler{
-    width:40%;
-    background-color: red;
-    
+.img_handler {
+  width: 40%;
+  background-color: red;
 }

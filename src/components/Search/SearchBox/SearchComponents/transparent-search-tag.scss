@@ -1,22 +1,21 @@
 .search-container-tag {
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 24px;
+  font-size: 13px;
+  margin: 0 1rem * 0.25;
+  cursor: pointer;
+  transition: background-color 0.1s linear 0s;
+
+  &:hover {
     color: white;
-    display: flex;
-    align-items: center;
-    height: 24px;
-    font-size: 13px;
-    margin: 0 1rem * 0.25;
-    cursor: pointer;
-    transition: background-color 0.1s linear 0s;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
 
-    &:hover {
-        color: white;
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-
-    i {
-        margin-right: 7px;
-    }
-
+  i {
+    margin-right: 7px;
+  }
 }

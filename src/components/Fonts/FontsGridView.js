@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import FontCard from "./FontCard";
-import "./fontslist.css";
-import { FontsData } from "./FontsData";
-import { Link, Router } from "react-router-dom";
-import FontCardGrid from "./FontCardGrid";
-import Fonts from "../../pages/Fonts";
+import React, { useState, useEffect } from 'react'
+import FontCard from './FontCard'
+import './fontslist.css'
+import { FontsData } from './FontsData'
+import { Link, Router } from 'react-router-dom'
+import FontCardGrid from './FontCardGrid'
+import Fonts from '../../pages/Fonts'
 const FontsGridView = () => {
-  let [shuffled, setShuffle] = useState(FontsData);
+  let [shuffled, setShuffle] = useState(FontsData)
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[array[i], array[j]] = [array[j], array[i]]
     }
   }
   function shuffle() {
-    window.scrollTo(0, 0);
-    const newShuffledArray = [...shuffled];
-    shuffleArray(newShuffledArray);
-    setShuffle(newShuffledArray);
+    window.scrollTo(0, 0)
+    const newShuffledArray = [...shuffled]
+    shuffleArray(newShuffledArray)
+    setShuffle(newShuffledArray)
   }
   return (
     <>
@@ -50,7 +50,7 @@ const FontsGridView = () => {
                     </Link>
                   </li>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
@@ -59,7 +59,7 @@ const FontsGridView = () => {
         Next Page <i className="bi bi-arrow-right"></i>
       </button>
     </>
-  );
-};
+  )
+}
 
-export default FontsGridView;
+export default FontsGridView

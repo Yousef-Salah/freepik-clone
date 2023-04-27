@@ -1,21 +1,21 @@
-import React from "react";
-import "./searchresultheader.css";
-import { useState } from "react";
+import React from 'react'
+import './searchresultheader.css'
+import { useState } from 'react'
 
 const SearchResultHeader = (props) => {
-  let [dropHeaderr, setDropHeader] = useState("Popular");
-  let [popular1, setPopular1] = useState("bx bx-check ");
-  let [recent1, setRecent1] = useState("unchecked");
-  let sort = props.sort || false;
+  let [dropHeaderr, setDropHeader] = useState('Popular')
+  let [popular1, setPopular1] = useState('bx bx-check ')
+  let [recent1, setRecent1] = useState('unchecked')
+  let sort = props.sort || false
   function setPopular() {
-    setDropHeader("Popular");
-    setPopular1("bx bx-check ");
-    setRecent1("unchecked");
+    setDropHeader('Popular')
+    setPopular1('bx bx-check ')
+    setRecent1('unchecked')
   }
   function setRecent() {
-    setDropHeader("Recent");
-    setPopular1("unchecked");
-    setRecent1("bx bx-check");
+    setDropHeader('Recent')
+    setPopular1('unchecked')
+    setRecent1('bx bx-check')
   }
   return (
     <>
@@ -32,7 +32,8 @@ const SearchResultHeader = (props) => {
             className="btn btn-primary dropdown-toggle sort-by-dropdown"
             type="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false">
+            aria-expanded="false"
+          >
             {dropHeaderr}
           </button>
           <ul className="dropdown-menu sortmenu">
@@ -41,18 +42,15 @@ const SearchResultHeader = (props) => {
                 className="dropdown-item sortbtn1"
                 onClick={setPopular}
                 id="popularDropBtn"
-                href="#">
-                {" "}
+                href="#"
+              >
+                {' '}
                 <i className={popular1}></i> Popular
               </a>
             </li>
             <li>
-              <a
-                className="dropdown-item sortbtn2"
-                onClick={setRecent}
-                id="recentDropBtn"
-                href="#">
-                {" "}
+              <a className="dropdown-item sortbtn2" onClick={setRecent} id="recentDropBtn" href="#">
+                {' '}
                 <i className={recent1}></i> Recent
               </a>
             </li>
@@ -60,8 +58,7 @@ const SearchResultHeader = (props) => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default SearchResultHeader;
-
+export default SearchResultHeader

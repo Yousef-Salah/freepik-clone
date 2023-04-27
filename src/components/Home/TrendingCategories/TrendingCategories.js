@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from 'react'
+import propTypes from 'prop-types'
+import './trending-category.css'
+import TrendingCard from './TrendingCard'
 
-import "./trending-category.css";
-import TrendingCard from "./TrendingCard";
-
-import Cardsphotos from "./Cardsphotos";
-const TrendingCategories = (props) => {
-  const [headingDisplay, setHeadingDisplay] = useState(true);
-  const data = Cardsphotos();
+import Trendingphotos from './Trendingphotos'
+const TrendingCategories = ({ headingDisplayProp }) => {
+  // const [headingDisplay, setHeadingDisplay] = useState(true)
+  const data = Trendingphotos()
 
   useEffect(() => {
-    if (props.headingDisplay === false) {
-      setHeadingDisplay(false);
+    if (headingDisplayProp === false) {
+      // setHeadingDisplay(false)
     }
-  }, [props.headingDisplay]);
+  }, [headingDisplayProp])
   return (
     <section className="container-fluid" id="trending">
       <h2 id="explore-title">
         <strong>Explore</strong> trending categories on Freepik
       </h2>
       <p className="text-muted">
-        Check what's popular on Freepik and make your project look trendy and
-        professional.
+        Check what&apos;s popular on Freepik and make your project look trendy and professional.
       </p>
 
       <div className="grid" id="exploretrend">
@@ -29,10 +28,15 @@ const TrendingCategories = (props) => {
             <div className="trenditem" id={Trendingphoto.id} key={idx}>
               <TrendingCard Trendingphoto={Trendingphoto} />
             </div>
-          );
+          )
         })}
       </div>
     </section>
-  );
-};
-export default TrendingCategories;
+  )
+}
+
+TrendingCategories.propTypes = {
+  headingDisplayProp: propTypes.any // @TODO check that
+}
+
+export default TrendingCategories

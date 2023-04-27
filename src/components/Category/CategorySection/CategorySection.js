@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "./category-section.css";
-import utils from "./utils";
+import React, { useState, useEffect } from 'react'
+import './category-section.css'
+import utils from './utils'
 
 const CategorySection = (props) => {
-  const [sections, setSections] = useState(utils());
+  const [sections, setSections] = useState(utils())
   return (
     <section id="iamge-card-text">
       {/* dynamic content */}
@@ -37,10 +37,10 @@ const CategorySection = (props) => {
               </>
             )}
           </div>
-        );
+        )
       })}
       {/* end of dynamic content */}
     </section>
-  );
-};
-export default CategorySection;
+  )
+}
+export default CategorySection

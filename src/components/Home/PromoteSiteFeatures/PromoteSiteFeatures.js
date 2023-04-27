@@ -1,7 +1,8 @@
-import PromoteImg from "./PromoteImg";
-import PromoteTitle from "./PromoteTitle";
-import Promote from "./Promote";
-import "./Promote.css";
+import React from 'react'
+import PromoteImg from './PromoteImg'
+import PromoteTitle from './PromoteTitle'
+import Promote from './Promote'
+import './Promote.css'
 const PromoteSiteFeatures = () => {
   return (
     <div id="promote-site-features">
@@ -33,8 +34,7 @@ const PromoteSiteFeatures = () => {
         <PromoteImg />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PromoteSiteFeatures;
-
+export default PromoteSiteFeatures

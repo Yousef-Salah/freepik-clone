@@ -1,6 +1,6 @@
-#Signup{
+#Signup {
   padding: 0;
-  max-height:100%;
+  max-height: 100%;
 }
 #Sign-up-photo {
   position: relative;
@@ -8,7 +8,7 @@
   color: white;
   padding: 0;
 }
-.signup-img{
+.signup-img {
   padding: 0;
   width: 100%;
   height: max-content;
@@ -24,7 +24,7 @@
   left: 16px;
 }
 .signup-imgby strong {
-    margin-left: 3px;
+  margin-left: 3px;
 }
 #Signup #signup-btns {
   display: grid;
@@ -65,7 +65,6 @@
   font-weight: 600;
   color: rgb(54, 113, 227);
   margin-left: 3px;
-
 }
 #signup-icon-facebook {
   color: rgb(54, 113, 227);
@@ -74,10 +73,9 @@
   display: inline-block;
   margin: 5%;
   padding: 0;
-
 }
 .Freepiknews {
-  font-family: Comic  ;
+  font-family: Comic;
   display: flex;
   float: left;
   margin: 5%;
@@ -91,13 +89,12 @@
   text-align: start;
   justify-content: center;
 }
-.freepik-company{
-    display: inline-flex;
-    justify-content: center;
-    max-width: 40%;
-    margin-bottom: 5%;
-
+.freepik-company {
+  display: inline-flex;
+  justify-content: center;
+  max-width: 40%;
+  margin-bottom: 5%;
 }
-.freepikcompany{
-    margin-left: 2% ;
+.freepikcompany {
+  margin-left: 2%;
 }

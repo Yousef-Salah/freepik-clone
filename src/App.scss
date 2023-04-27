@@ -1,0 +1,182 @@
+//* global element styling *//
+
+// colors and gradients
+
+// buttons
+
+// anchors
+
+// paragraph standards
+
+// old sass code
+$main-color: #4055c7;
+$dark-color: #252a31;
+$anchorColor2: #a5b7c6;
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+a,
+li,
+span,
+div,
+button,
+textarea,
+input,
+select,
+option,
+ul,
+ol,
+dl,
+dt,
+dd,
+blockquote,
+code,
+form,
+label,
+legend,
+table,
+th,
+td,
+thead,
+tbody,
+tfoot,
+tr,
+fieldset,
+figure,
+figcaption,
+hr,
+em,
+strong,
+small,
+del,
+ins,
+sub,
+sup,
+iframe,
+object,
+embed,
+video,
+audio,
+canvas,
+svg,
+article,
+aside,
+details,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  font-family: 'Figtree', cursive;
+}
+@mixin resetBootstrap() {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0px;
+  ul {
+    list-style: none;
+  }
+}
+@mixin AnchorFontStyle() {
+  color: white;
+  text-decoration: none;
+  font-size: 13.5px;
+  text-decoration: none;
+}
+
+.search-content {
+  min-height: 1000px;
+}
+
+.animate > div,
+.animate img {
+  animation-name: fade-in;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// header {
+//   background: linear-gradient(180deg, #2d2db0 -65%, #2c8cf4 110%);
+// }
+.blue-gradient {
+  background: linear-gradient(180deg, #2d2db0 -65%, #2c8cf4 110%);
+}
+// old css code
+.search-main-cont {
+  display: flex;
+  justify-content: space-between;
+}
+.aside-cont-show {
+  width: 25%;
+  min-width: 280px;
+  max-width: 280px;
+}
+.results-cont-small {
+  width: 75%;
+}
+.aside-cont-hide {
+  width: 0.01%;
+  background-color: white;
+  padding: 0px;
+  margin: 0px;
+  /* min-width: 280px;
+  max-width: 280px; */
+}
+
+.results-cont-big {
+  width: 98%;
+}
+.aside-dissapear {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .aside-cont-show {
+    display: none;
+  }
+  .aside-cont-hide {
+    display: none;
+  }
+  .results-cont-small {
+    width: 97%;
+  }
+}
+
+/* @media screen and (max-width: 800px) {
+  .aside-cont-show {
+	display: none;
+  }
+  .results-cont-small {
+	width: 100%;
+  }
+  .results-cont-big {
+	width: 100%;
+  }
+}
+
+} */

@@ -1,43 +1,44 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import SponsoredBy from "../../../Layouts/SponsoredBy/SponsoredBy";
-import Trendingphotos from "../../../Home/TrendingCategories/Trendingphotos";
-import "../preview-modal.css";
-import DefaultSponsor from "../../../../utils/DefaultSponsor";
+/* eslint-disable */
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import SponsoredBy from '../../../Layouts/SponsoredBy/SponsoredBy'
+import Trendingphotos from '../../../Home/TrendingCategories/Trendingphotos'
+import '../preview-modal.css'
+import { SponsoredByData } from '../../../../utils/Defaults'
 const PreviewModal = (props) => {
-  const [visibility, setVisibility] = useState("");
-  const [loaded, setLoaded] = useState(false);
-  const buttonHandler = props.buttonHandler;
+  const [visibility, setVisibility] = useState('')
+  const [loaded, setLoaded] = useState(false)
+  const buttonHandler = props.buttonHandler
 
   const exitButtonHandler = (e) => {
-    e.preventDefault();
-    setVisibility("d-none");
-    buttonHandler();
-  };
+    e.preventDefault()
+    setVisibility('d-none')
+    buttonHandler()
+  }
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   // TODO:: check for correctance of adding new element to DOM
   const downloadImage = async () => {
     if (!props.data.premium) {
-      const image = await fetch(props.data.img_og); // fetching the data from out source link
-      const imageBlog = await image.blob(); // convert fetched data to be readable data
-      const imageURL = URL.createObjectURL(imageBlog); // create url that represents the fetched image
+      const image = await fetch(props.data.img_og) // fetching the data from out source link
+      const imageBlog = await image.blob() // convert fetched data to be readable data
+      const imageURL = URL.createObjectURL(imageBlog) // create url that represents the fetched image
 
-      const link = document.createElement("a"); // create `a` element to use it to download the image
-      link.href = imageURL;
-      link.download = props.data.title;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      const link = document.createElement('a') // create `a` element to use it to download the image
+      link.href = imageURL
+      link.download = props.data.title
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
     } else {
-      return navigate("/login");
+      return navigate('/login')
     }
-  };
+  }
 
   useEffect(() => {
-    setLoaded(true);
-  }, [props.data]);
+    setLoaded(true)
+  }, [props.data])
 
   return (
     <div id="preview-modal" className={visibility}>
@@ -46,8 +47,9 @@ const PreviewModal = (props) => {
           <div className="row">
             <div className="col-1 d-flex justify-content-center align-items-center">
               <Link
-                to={"#"}
-                className="position-absolute d-flex justify-content-center align-items-center bg-fill-animation">
+                to={'#'}
+                className="position-absolute d-flex justify-content-center align-items-center bg-fill-animation"
+              >
                 <i className="fa-solid fa-angle-left"></i>
               </Link>
             </div>
@@ -74,10 +76,7 @@ const PreviewModal = (props) => {
                   <div className="info-row flex-div">
                     <i className="bi bi-file-earmark"></i>
                     <h3>File Type: </h3>
-                    <h3 className="file-type">
-                      {" "}
-                      {props.data.file_type.toUpperCase()}
-                    </h3>
+                    <h3 className="file-type"> {props.data.file_type.toUpperCase()}</h3>
                     <a href="https://google.com">How to edit?</a>
                   </div>
                 </div>
@@ -85,10 +84,7 @@ const PreviewModal = (props) => {
               <div className="author-media">
                 <div className="author-profile">
                   <div className="author-img">
-                    <img
-                      src={props.data.authour_image}
-                      alt={props.data.author}
-                    />
+                    <img src={props.data.authour_image} alt={props.data.author} />
                   </div>
                   <div className="auth-name">
                     <h5>{props.data.author}</h5>
@@ -119,12 +115,12 @@ const PreviewModal = (props) => {
               </div>
               <div className="img-title">
                 <h2>
-                  {(props.data.premium ? "Premium " : "Free ") +
+                  {(props.data.premium ? 'Premium ' : 'Free ') +
                     props.data.title[0].toUpperCase() +
                     props.data.title.slice(1, props.data.title.length) +
-                    " " +
+                    ' ' +
                     props.data.ethinicity +
-                    " " +
+                    ' ' +
                     props.data.style}
                 </h2>
               </div>
@@ -133,13 +129,13 @@ const PreviewModal = (props) => {
                 <div className="related-tags">
                   {props.data.related_tags?.map((tag) => {
                     return (
-                      <Link to={"/search/" + tag} className="img-rtag">
+                      <Link to={'/search/' + tag} className="img-rtag">
                         <i className="bi bi-search"></i>
                         {tag}
                       </Link>
-                    );
+                    )
                   })}
-                  <Link to={"/search/" + props.data.title} className="img-rtag">
+                  <Link to={'/search/' + props.data.title} className="img-rtag">
                     <i className="bi bi-search"></i>
                     28+
                   </Link>
@@ -153,66 +149,50 @@ const PreviewModal = (props) => {
                       <div className="au-img-wrapper" key={index}>
                         <img src={item.image} alt="title" />
                       </div>
-                    );
+                    )
                   })}
                 </div>
               </div>
 
-              <SponsoredBy images={DefaultSponsor} />
+              <SponsoredBy images={SponsoredByData} />
               <br />
               <br />
 
               <h4>You Might Also Like</h4>
               <div className="au-images-2">
                 <div className="au-img-wrapper">
-                  <img
-                    src={`/assets/images/thumb_images/${props.data.img_path}`}
-                    alt="title"
-                  />
+                  <img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
                 </div>
                 <div className="au-img-wrapper">
-                  <img
-                    src={`/assets/images/thumb_images/${props.data.img_path}`}
-                    alt="title"
-                  />
+                  <img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
                 </div>
                 <div className="au-img-wrapper">
-                  <img
-                    src={`/assets/images/thumb_images/${props.data.img_path}`}
-                    alt="title"
-                  />
+                  <img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
                 </div>
                 <div className="au-img-wrapper">
-                  <img
-                    src={`/assets/images/thumb_images/${props.data.img_path}`}
-                    alt="title"
-                  />
+                  <img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
                 </div>
                 <div className="au-img-wrapper">
-                  <img
-                    src={`/assets/images/thumb_images/${props.data.img_path}`}
-                    alt="title"
-                  />
+                  <img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
                 </div>
                 <div className="au-img-wrapper">
-                  <img
-                    src={`/assets/images/thumb_images/${props.data.img_path}`}
-                    alt="title"
-                  />
+                  <img src={`/assets/images/thumb_images/${props.data.img_path}`} alt="title" />
                 </div>
               </div>
             </div>
             <div className="col-1 d-flex justify-content-center align-items-center">
               <Link
-                to={""}
+                to={''}
                 onClick={exitButtonHandler}
                 id="exit-btn"
-                className="position-absolute d-flex justify-content-center align-self-start align-items-center bg-fill-animation">
+                className="position-absolute d-flex justify-content-center align-self-start align-items-center bg-fill-animation"
+              >
                 <i className="fa-solid fa-xmark"></i>
               </Link>
               <Link
-                to={""}
-                className="position-absolute d-flex justify-content-center align-items-center bg-fill-animation">
+                to={''}
+                className="position-absolute d-flex justify-content-center align-items-center bg-fill-animation"
+              >
                 <i className="fa-solid fa-angle-right opacity-100"></i>
               </Link>
             </div>
@@ -220,8 +200,7 @@ const PreviewModal = (props) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default PreviewModal;
-
+export default PreviewModal

@@ -1,23 +1,29 @@
-import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import SearchQuery from '../../../../context/SearchQuery';
-import './transparent-search-tag.scss';
+import React, { useContext } from 'react'
+import propTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
+import SearchQuery from '../../../../contexts/SearchQuery'
+import './transparent-search-tag.scss'
 
-const TransparentSearchTag = (props) => {
+const TransparentSearchTag = ({ titleProp }) => {
+  const navigate = useNavigate()
+  const title = titleProp.replace(' ', '_')
+  const searchQuery = useContext(SearchQuery)
 
-    const navigate = useNavigate();
-    const title = props.title.replace(' ', '_');
-    const searchQuery = useContext(SearchQuery);
-
-    return (
-        <a className="search-container-tag" onClick={() => {
-            searchQuery.current.searchInput = props.title; 
-            return navigate(`search/${title}`);
-        }}>
-            <i className="fa-solid fa-magnifying-glass"></i>
-            {props.title}
-        </a>
-    );
+  return (
+    <a
+      className="search-container-tag"
+      onClick={() => {
+        searchQuery.current.searchInput = titleProp
+        return navigate(`search/${title}`)
+      }}
+    >
+      <i className="fa-solid fa-magnifying-glass"></i>
+      {titleProp}
+    </a>
+  )
+}
+TransparentSearchTag.propTypes = {
+  titleProp: propTypes.string
 }
 
-export default TransparentSearchTag;
+export default TransparentSearchTag

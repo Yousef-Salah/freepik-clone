@@ -1,61 +1,57 @@
-import React, { useState } from "react";
-import FontCard from "./FontCard";
-import "./fontslist.css";
-import { FontsData } from "./FontsData";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import FontCard from './FontCard'
+import './fontslist.css'
+import { FontsData } from './FontsData'
+import { Link } from 'react-router-dom'
 const FontsList = () => {
-  let [cardTitle, setTtitle] = useState(
-    "The quick brown fox jumps over the lazy dog"
-  );
+  let [cardTitle, setTtitle] = useState('The quick brown fox jumps over the lazy dog')
   const [selected, setSelected] = useState({
-    btn1Class: "",
-    btn2Class: "size-selected",
-    btn3Class: "",
-    btn4Class: "",
-  });
+    btn1Class: '',
+    btn2Class: 'size-selected',
+    btn3Class: '',
+    btn4Class: ''
+  })
   const sizes = {
-    btn1Size: ["p24", "margin3"],
-    btn2Size: ["p36", "margin25"],
-    btn3Size: ["p48", "margin15"],
-    btn4Size: ["p72", "margin15"],
-  };
-  const [size, setSize] = useState(["p36", "margin25"]);
-  cardTitle = cardTitle
-    ? cardTitle
-    : "The quick brown fox jumps over the lazy dog";
-  let [shuffled, setShuffle] = useState(FontsData);
+    btn1Size: ['p24', 'margin3'],
+    btn2Size: ['p36', 'margin25'],
+    btn3Size: ['p48', 'margin15'],
+    btn4Size: ['p72', 'margin15']
+  }
+  const [size, setSize] = useState(['p36', 'margin25'])
+  cardTitle = cardTitle ? cardTitle : 'The quick brown fox jumps over the lazy dog'
+  let [shuffled, setShuffle] = useState(FontsData)
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[array[i], array[j]] = [array[j], array[i]]
     }
   }
   function shuffle() {
-    window.scrollTo(0, 0);
-    const newShuffledArray = [...shuffled];
-    shuffleArray(newShuffledArray);
-    setShuffle(newShuffledArray);
+    window.scrollTo(0, 0)
+    const newShuffledArray = [...shuffled]
+    shuffleArray(newShuffledArray)
+    setShuffle(newShuffledArray)
   }
   function fontCheck(e) {
-    cardTitle = e.target.value;
-    setTtitle(cardTitle);
+    cardTitle = e.target.value
+    setTtitle(cardTitle)
   }
   function buttonClick(e) {
-    let id = e.currentTarget.id;
-    let newClasses = { ...selected };
+    let id = e.currentTarget.id
+    let newClasses = { ...selected }
     Object.keys(newClasses).forEach((key) => {
-      if (key == id + "Class") {
-        newClasses[key] = "size-selected";
+      if (key == id + 'Class') {
+        newClasses[key] = 'size-selected'
       } else {
-        newClasses[key] = "";
+        newClasses[key] = ''
       }
-    });
+    })
     Object.keys(sizes).forEach((key) => {
-      if (key == id + "Size") {
-        setSize(sizes[key]);
+      if (key == id + 'Size') {
+        setSize(sizes[key])
       }
-    });
-    setSelected(newClasses);
+    })
+    setSelected(newClasses)
   }
   return (
     <div className="fonts">
@@ -146,17 +142,13 @@ const FontsList = () => {
                 />
               </Link>
             </li>
-          );
+          )
         })}
       </ul>
-      <button
-        onClick={shuffle}
-        type="button"
-        className="btn btn-primary nextpage"
-      >
+      <button onClick={shuffle} type="button" className="btn btn-primary nextpage">
         Next Page <i className="bi bi-arrow-right"></i>
       </button>
     </div>
-  );
-};
-export default FontsList;
+  )
+}
+export default FontsList
