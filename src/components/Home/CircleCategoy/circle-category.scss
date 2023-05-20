@@ -1,0 +1,112 @@
+#circle-categories {
+  background-color: transparent;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 165px !important;
+  width: 100%;
+  margin-top: 40px;
+  box-sizing: border-box;
+  font-size: 18px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .circle-category {
+    width: 161px;
+    height: 150px;
+    display: inline-block;
+
+    .circle-link {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      p {
+        text-align: center;
+      }
+      .image-border {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        margin: 0 auto 10px auto;
+        z-index: 2;
+        overflow: hidden;
+        transition: all 0.2s ease-out;
+        position: relative;
+        .image-container {
+          width: 108px !important;
+          height: 108px !important;
+          overflow: hidden;
+          border-radius: 50%;
+          transition: inherit;
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            z-index: 1;
+            transition: inherit;
+          }
+        }
+      }
+
+      &:hover {
+        .image-border {
+          border-color: rgba(255, 255, 255, 1);
+          .image-container {
+            overflow: hidden !important;
+            img {
+              scale: 1.2;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1096px) {
+      width: 100px;
+      height: 95px;
+      .circle-link {
+        .image-border {
+          width: 65px !important;
+          height: 65px !important;
+          .image-container {
+            width: 56px !important;
+            height: 56px !important;
+            top: 2.5px;
+            left: 2.5px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1096px) {
+    margin-top: 50px;
+    height: 135px !important;
+    padding: 0 20px;
+    font-size: 13px;
+  }
+}
+
+#main-page-header {
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 1096px) {
+  #main-page-header {
+    padding-bottom: 40px;
+  }
+}
