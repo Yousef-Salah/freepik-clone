@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import SponsoredBy from '../../../Layouts/SponsoredBy/SponsoredBy'
-import Trendingphotos from '../../../Home/TrendingCategories/Trendingphotos'
+import { Trendingphotos } from '../../../../utils/Categories'
 import '../preview-modal.scss'
 import { SponsoredByData } from '../../../../utils/Defaults'
 const PreviewModal = (props) => {

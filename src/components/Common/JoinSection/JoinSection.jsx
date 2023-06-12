@@ -7,14 +7,14 @@ const Join = () => (
     <div className="content">
       <p className="title">
         Join Freepik&apos;s
-        <strong>creator community</strong>
+        <strong> creator community</strong>
       </p>
       <p className="text">
         Behind every stock image there&apos;s a creative mind.You can also
         create content and sell it on Freepik
       </p>
       <Link
-        to="/register"
+        to="/login"
         className="button"
         target="_blank"
         rel="noopener noreferrer"

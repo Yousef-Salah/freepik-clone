@@ -1,4 +1,3 @@
-import React from 'react'
 export const FontsData = [
   {
     numberOfStyles: '1',
@@ -7,7 +6,7 @@ export const FontsData = [
     font: 'Georgia, "Times New Roman", Times, serif',
     link: '/',
     avatar: 'default_07.png',
-    creator: 'Ahmaddramz'
+    creator: 'Ahmaddramz',
   },
   {
     numberOfStyles: '1',
@@ -16,7 +15,7 @@ export const FontsData = [
     font: '"Apple Chancery", cursive',
     link: '/',
     avatar: 'default_08.png',
-    creator: 'Twinletter'
+    creator: 'Twinletter',
   },
   {
     numberOfStyles: '1',
@@ -25,7 +24,7 @@ export const FontsData = [
     font: 'Trattatello, fantasy',
     link: '/',
     avatar: 'default_01.png',
-    creator: 'Letterhend'
+    creator: 'Letterhend',
   },
   {
     numberOfStyles: '1',
@@ -34,7 +33,7 @@ export const FontsData = [
     font: 'OCR A Std, monospace',
     link: '/',
     avatar: 'youngtype.jpg',
-    creator: 'youngtype'
+    creator: 'youngtype',
   },
   {
     numberOfStyles: '1',
@@ -43,7 +42,7 @@ export const FontsData = [
     font: 'Snell Roundhand, cursive',
     link: '/',
     avatar: 'default_08.png',
-    creator: 'GassType'
+    creator: 'GassType',
   },
   {
     numberOfStyles: '14',
@@ -52,16 +51,16 @@ export const FontsData = [
     font: 'Chalkduster, fantasy',
     avatar: 'default_08.png',
     creator: 'GassType',
-    link: '/'
+    link: '/',
   },
   {
     numberOfStyles: '1',
     fontName: 'Stormlight',
     img: 'Stormlight-thumb2x.webp',
-    font: 'Luminari, fantasy	',
+    font: 'Luminari, fantasy',
     avatar: 'default_08.png',
     creator: 'GassType',
-    link: '/'
+    link: '/',
   },
   {
     numberOfStyles: '2',
@@ -70,25 +69,25 @@ export const FontsData = [
     font: 'Blippo, fantasy',
     avatar: 'default_07.png',
     creator: 'AlmarkhaType',
-    link: '/'
+    link: '/',
   },
   {
     numberOfStyles: '2',
     fontName: 'Nathain Script',
     img: 'Nathain-thumb2x.webp',
-    font: 'Snell Roundhand, cursive	',
+    font: 'Snell Roundhand, cursive',
     avatar: 'youngtype.jpg',
     creator: 'youngType',
-    link: '/'
+    link: '/',
   },
   {
     numberOfStyles: '2',
     fontName: 'Marthens',
     img: '1-preview.webp',
-    font: 'Snell Roundhand, cursive	',
+    font: 'Snell Roundhand, cursive',
     avatar: 'youngtype.jpg',
     creator: 'youngType',
-    link: '/'
+    link: '/',
   },
   {
     numberOfStyles: '1',
@@ -97,7 +96,7 @@ export const FontsData = [
     font: 'Brush Script MT, Brush Script Std, cursive',
     link: '/',
     avatar: 'default_08.png',
-    creator: 'GassType'
+    creator: 'GassType',
   },
   {
     numberOfStyles: '1',
@@ -106,25 +105,25 @@ export const FontsData = [
     font: 'Brush Script MT, Brush Script Std, cursive',
     link: '/',
     avatar: 'default_01.png',
-    creator: 'Letterhend'
+    creator: 'Letterhend',
   },
   {
     numberOfStyles: '2',
     fontName: 'Billy Money',
     img: 'Billy_Money_1-preview.jpg',
-    font: 'Arial, sans-serif	',
+    font: 'Arial, sans-serif',
     link: '/',
     avatar: 'default_01.png',
-    creator: 'Alit Design'
+    creator: 'Alit Design',
   },
   {
     numberOfStyles: '1',
     fontName: 'The last Shuriken',
     img: 'Cover-preview.webp',
-    font: 'Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif	',
+    font: 'Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif',
     link: '/',
     avatar: 'default_07.png',
-    creator: 'Ahmaddramz'
+    creator: 'Ahmaddramz',
   },
   {
     numberOfStyles: '1',
@@ -133,6 +132,7 @@ export const FontsData = [
     font: 'Palatino, URW Palladio L, serif',
     link: '/',
     avatar: 'default_08.png',
-    creator: 'Twinletter'
-  }
+    creator: 'Twinletter',
+  },
 ]
+export default FontsData

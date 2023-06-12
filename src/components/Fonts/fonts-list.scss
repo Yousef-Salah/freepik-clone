@@ -1,6 +1,12 @@
 .fonts {
   margin-left: 3%;
   margin-right: 3%;
+  .img-card {
+    width: 100%;
+  }
+  li {
+    list-style: none;
+  }
 }
 .fonts-title {
   font-size: 18px;
@@ -89,6 +95,8 @@
   white-space: nowrap;
   overflow-x: clip;
   max-width: 100%;
+
+  color: black;
 }
 .card-body-fonts {
   margin-left: 1%;
@@ -142,7 +150,7 @@
     margin-top: -1.7%;
   }
   #fontimage {
-    width: 100px;
+    width: 100%;
     flex-shrink: 0;
     height: 67px;
     max-width: fit-content !important;

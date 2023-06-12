@@ -15,7 +15,7 @@ const RelatedArticles = (props) => {
               <a className="col-12 col-sm-6 col-md-4 article p-3">
                 <img
                   className="rounded mb-3"
-                  src={`/assets/images/related-articles/${article.image}`}
+                  src={`assets/images/categories/related_articles/${article.image}`}
                   alt="nothing"
                 />
                 <h3 className="fs-5">{article.header}</h3>

@@ -3,7 +3,7 @@ import PromoteImg from './PromoteImg'
 import PromoteTitle from './PromoteTitle'
 import Promote from './Promote'
 
-import './Promote.scss'
+import './promote.scss'
 
 const PromoteSiteFeatures = () => (
   <div id="promote-site-features">

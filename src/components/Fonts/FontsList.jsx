@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import FontCard from './FontCard'
-import './fontslist.scss'
-import { FontsData } from './FontsData'
 import { Link } from 'react-router-dom'
+import FontCard from './FontCard'
+import { FontsData } from './FontsData.utils'
+import './fonts-list.scss'
+
 const FontsList = () => {
-  let [cardTitle, setTtitle] = useState(
+  const [cardTitle, setTtitle] = useState(
     'The quick brown fox jumps over the lazy dog'
   )
   const [selected, setSelected] = useState({
@@ -20,14 +21,14 @@ const FontsList = () => {
     btn4Size: ['p72', 'margin15'],
   }
   const [size, setSize] = useState(['p36', 'margin25'])
-  cardTitle = cardTitle
-    ? cardTitle
-    : 'The quick brown fox jumps over the lazy dog'
-  let [shuffled, setShuffle] = useState(FontsData)
+  // cardTitle = cardTitle
+  //   ? cardTitle
+  //   : 'The quick brown fox jumps over the lazy dog'
+  const [shuffled, setShuffle] = useState(FontsData)
   function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[array[i], array[j]] = [array[j], array[i]]
+    for (let i = array.length - 1; i > 0; i -= 1) {
+      // const j = Math.floor(Math.random() * (i + 1))
+      // [array[i], array[j]] = [array[j], array[i]]
     }
   }
   function shuffle() {
@@ -37,21 +38,20 @@ const FontsList = () => {
     setShuffle(newShuffledArray)
   }
   function fontCheck(e) {
-    cardTitle = e.target.value
-    setTtitle(cardTitle)
+    setTtitle(e.target.value)
   }
   function buttonClick(e) {
-    let id = e.currentTarget.id
-    let newClasses = { ...selected }
+    const { id } = e.currentTarget
+    const newClasses = { ...selected }
     Object.keys(newClasses).forEach((key) => {
-      if (key == id + 'Class') {
+      if (key === id.toString().concat('Class')) {
         newClasses[key] = 'size-selected'
       } else {
         newClasses[key] = ''
       }
     })
     Object.keys(sizes).forEach((key) => {
-      if (key == id + 'Size') {
+      if (key === id.toString().concat('Size')) {
         setSize(sizes[key])
       }
     })
@@ -68,10 +68,11 @@ const FontsList = () => {
           className="form-control fontcheck col"
           placeholder="The quick brown fox jumps over the lazy dog"
           onKeyUp={fontCheck}
-        ></input>
+        />
 
         <div className="fontsizebtns col">
           <button
+            type="submit"
             className={`btn btn-primary fontsize  ${selected.btn1Class}`}
             id="btn1"
             onClick={buttonClick}
@@ -83,6 +84,7 @@ const FontsList = () => {
             </p>
           </button>
           <button
+            type="submit"
             className={`btn btn-primary fontsize ${selected.btn2Class}`}
             id="btn2"
             onClick={buttonClick}
@@ -94,6 +96,7 @@ const FontsList = () => {
             </p>
           </button>
           <button
+            type="submit"
             className={`btn btn-primary fontsize ${selected.btn3Class}`}
             id="btn3"
             onClick={buttonClick}
@@ -105,6 +108,7 @@ const FontsList = () => {
             </p>
           </button>
           <button
+            type="submit"
             className={`btn btn-primary fontsize ${selected.btn4Class}`}
             id="btn4"
             onClick={buttonClick}
@@ -116,14 +120,14 @@ const FontsList = () => {
             </p>
           </button>
           <div className="grid-list position-absolute col">
-            <button className="list grid-list-selected">
+            <button className="list grid-list-selected" type="submit">
               <Link to="/fonts">
-                <i className="bx bx-list-ul"></i>
+                <i className="bx bx-list-ul" />
               </Link>
             </button>
-            <button className="grid">
+            <button className="grid" type="submit">
               <Link to="/fontsgrid">
-                <i className="bi bi-grid-3x3-gap-fill"></i>
+                <i className="bi bi-grid-3x3-gap-fill" />
               </Link>
             </button>
           </div>
@@ -131,30 +135,29 @@ const FontsList = () => {
       </div>
 
       <ul className="fonts-list">
-        {shuffled.map((val) => {
-          return (
-            <li>
-              <Link to={val.link}>
-                <FontCard
-                  title={cardTitle}
-                  fontName={val.fontName}
-                  img={`/assets/images/fonts/${val.img}`}
-                  stylesCount={val.numberOfStyles}
-                  font={val.font}
-                  fontSize={size[0]}
-                  margin={size[1]}
-                />
-              </Link>
-            </li>
-          )
-        })}
+        {shuffled.map((val) => (
+          <li>
+            <Link to={val.link}>
+              <FontCard
+                title={cardTitle}
+                fontName={val.fontName}
+                img={`/assets/images/fonts/${val.img}`}
+                stylesCount={val.numberOfStyles}
+                font={val.font}
+                fontSize={size[0]}
+                margin={size[1]}
+              />
+            </Link>
+          </li>
+        ))}
       </ul>
       <button
         onClick={shuffle}
         type="button"
         className="btn btn-primary nextpage"
       >
-        Next Page <i className="bi bi-arrow-right"></i>
+        Next Page
+        <i className="bi bi-arrow-right" />
       </button>
     </div>
   )
