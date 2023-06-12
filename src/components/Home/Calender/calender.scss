@@ -1,5 +1,9 @@
 #calender {
-  background-image: linear-gradient(0deg, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.9)),
+  background-image: linear-gradient(
+      0deg,
+      rgba(17, 17, 17, 0.9),
+      rgba(17, 17, 17, 0.9)
+    ),
     url('https://static-gcp.freepikcompany.com/freepik/chinese-new-year-2023/gam/noise.png');
   height: 400px;
   width: 100%;
@@ -45,6 +49,7 @@
       background: rgb(255 255 255 / 8%);
       color: white;
       float: left;
+      text-decoration: none;
     }
     .cal-btn:hover {
       background: #ffffffaa;

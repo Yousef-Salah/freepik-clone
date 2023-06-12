@@ -1,5 +1,5 @@
 import React from 'react'
-import './card3d.scss'
+import './card-3d.scss'
 const Card3D = (props) => {
   return (
     <>

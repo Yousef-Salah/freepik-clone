@@ -2,6 +2,10 @@ footer {
   padding: 20px;
   padding-right: 0;
   background-color: #1d262d;
+  a {
+    text-decoration: none;
+    color: #869fb2;
+  }
 }
 #footer {
   z-index: 20;
@@ -84,4 +88,9 @@ footer .footer-hover:hover {
   padding-bottom: 2%;
   font-size: small;
   font-weight: bolder;
+}
+
+.sign-upfooter ul li {
+  list-style: none;
+  padding: 0;
 }

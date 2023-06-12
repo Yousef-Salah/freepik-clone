@@ -46,6 +46,7 @@ const Search = ({ dataFilter }) => {
         setSpinnerTrigger(false)
         setContentState(true)
       }, 1500)
+      // eslint-disable-next-line
       ;(() => setLoaded(true))()
     }
     // setData(props.dataFilter.getData(searchQuery.current));
@@ -66,7 +67,9 @@ const Search = ({ dataFilter }) => {
     if (partialData[0]) {
       const newTagbarData = SearchTagBarData.map((item) => ({
         ...item,
-        title: SearchTagBarData[Math.floor(Math.random() * SearchTagBarData.length)].name,
+        title:
+          SearchTagBarData[Math.floor(Math.random() * SearchTagBarData.length)]
+            .name,
       }))
       setTagbarData(newTagbarData)
     }
@@ -85,7 +88,10 @@ const Search = ({ dataFilter }) => {
     resultsDataContainer.start += resultsDataContainer.offset
     resultsDataContainer.end += resultsDataContainer.offset
     setPartialData(
-      resultsDataContainer.data.slice(resultsDataContainer.start, resultsDataContainer.end)
+      resultsDataContainer.data.slice(
+        resultsDataContainer.start,
+        resultsDataContainer.end
+      )
     )
   }
 
@@ -93,7 +99,10 @@ const Search = ({ dataFilter }) => {
     resultsDataContainer.start -= resultsDataContainer.offset
     resultsDataContainer.end -= resultsDataContainer.offset
     setPartialData(
-      resultsDataContainer.data.slice(resultsDataContainer.start, resultsDataContainer.end)
+      resultsDataContainer.data.slice(
+        resultsDataContainer.start,
+        resultsDataContainer.end
+      )
     )
   }
 
@@ -102,7 +111,12 @@ const Search = ({ dataFilter }) => {
       {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
 
       <SearchContainer dataHandler={loadData} mainPage={false} />
-      <SponsoredBy images={partialData.slice(partialData.length - 10, partialData.length - 1)} />
+      <SponsoredBy
+        images={partialData.slice(
+          partialData.length - 10,
+          partialData.length - 1
+        )}
+      />
 
       <SideBar updateOpen={updateOpen} data={SideBarData1} />
       <div className={`search-content ${!open ? 'base' : 'pushed'}`}>

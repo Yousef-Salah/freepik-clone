@@ -10,7 +10,7 @@ const Calender = () => (
         <p className="cal-subtitle">The year of the rabbit has come</p>
         <h3 className="cal-title">
           Hop on for
-          <span className="gold-text">Chinese New Year</span>
+          <span className="gold-text"> Chinese New Year </span>
           with Freepik
         </h3>
         <Link to="calender" className="cal-btn">

@@ -4,5 +4,6 @@ export const wepikInfo = {
   paragraphText:
     'Customize and download free templates to make stunning designs with our online editing tool.',
   buttonText: 'Start editing online',
-  photoUrl: 'assets/images/home/wepik_section/wepikPhoto.png'
+  photoUrl: 'assets/images/home/wepik_section/wepik-photo.png',
 }
+export default wepikInfo

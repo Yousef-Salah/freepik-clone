@@ -8,7 +8,10 @@ const CardLayout = () => {
   let [shuffled, setShuffle] = useState(Cards3dData)
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = (Math.floor(Math.random() * (i + 1))[(array[i], array[j])] = [array[j], array[i]])
+      const j = (Math.floor(Math.random() * (i + 1))[(array[i], array[j])] = [
+        array[j],
+        array[i],
+      ])
     }
   }
   function shuffle() {
@@ -24,16 +27,20 @@ const CardLayout = () => {
           <div className="col" key={idx}>
             <Link to={val.link}>
               <Card3D
-                image={`/assets/images/3dmodels/${val.image}`}
+                image={`assets/images/categories/3d-models/${val.image}`}
                 name={val.name}
-                avatar={`/assets/images/3dmodels/avatars/${val.avatar}`}
+                avatar={`assets/images/categories/3d-models/${val.avatar}`}
                 owner={val.owner}
               />
             </Link>
           </div>
         )
       })}
-      <button onClick={shuffle} type="button" className="btn btn-primary  nextpage next3d">
+      <button
+        onClick={shuffle}
+        type="button"
+        className="btn btn-primary  nextpage next3d"
+      >
         Next Page <i className="bi bi-arrow-right"></i>
       </button>
     </div>

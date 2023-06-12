@@ -14,20 +14,20 @@ const DiscoverCollections = () => {
                 <div className="col-6 discover-collection-col">
                   <div className="row discover-collection-row2">
                     <img
-                      src={`assets/images/collection-page/${item.link}`}
+                      src={`assets/images/collections/collection_cards/${item.link}`}
                       className="discover-img1"
                     />
                   </div>
                   <div className="row discover-collection-row3">
                     <img
-                      src={`assets/images/collection-page/${item.link2}`}
+                      src={`assets/images/collections/collection_cards/${item.link2}`}
                       className="discover-img2"
                     />
                   </div>
                 </div>
                 <div className="col-6 discover-collection-col">
                   <img
-                    src={`assets/images/collection-page/${item.link3}`}
+                    src={`assets/images/collections/collection_cards/${item.link3}`}
                     className="discover-img3"
                   />
                 </div>

@@ -1,6 +1,9 @@
 import React from 'react'
+
 const DropDwonItem = (props) => {
-  const icon = props.iconClasses ? <i className={props.iconClasses + ' li-icon'}></i> : null
+  const icon = props.iconClasses ? (
+    <i className={props.iconClasses.concat(' li-icon')} />
+  ) : null
 
   const gold = props.goldItem ? 'gold-item' : ''
 

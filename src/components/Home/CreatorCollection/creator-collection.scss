@@ -4,9 +4,11 @@
   padding: 45px 10px;
 }
 .creator-collection-title {
-  font-size: 28px;
   font-weight: bold;
   color: rgb(69, 70, 70);
+  h1 {
+    font-size: 28px !important;
+  }
 }
 
 .creator-collection-p {

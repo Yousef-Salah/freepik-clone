@@ -1,31 +1,18 @@
-import React, { useContext } from 'react'
-import propTypes from 'prop-types'
-import { Link, useNavigate } from 'react-router-dom'
-import SearchQuery from '../../../contexts/SearchQuery'
-const TrendingCard = ({ Trendingphoto }) => {
-  const title = Trendingphoto.title.replace(' ', '_')
-  const searchQuery = useContext(SearchQuery)
-  const navigate = useNavigate()
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-  return (
-    <div className="container" id="trend-content">
+const TrendingCard = ({ Trendingphoto }) => (
+  <div className="container" id="trend-content">
+    <Link to={`/search/${Trendingphoto.title}`}>
       <div className="trend-zoom" key={Trendingphoto.id}>
-        <Link
-          to="#"
-          onClick={(event) => {
-            event.preventDefault()
-            searchQuery.current.searchInput = Trendingphoto.title
-            return navigate(`/search/${title}`)
-          }}
-        >
-          <img className="trendimg" src={Trendingphoto.image} alt={Trendingphoto.title} />
-          <p className="trendtext">{Trendingphoto.title}</p>
-        </Link>
+        <img
+          className="trendimg"
+          src={Trendingphoto.image}
+          alt={Trendingphoto.title}
+        />
+        <p className="trendtext">{Trendingphoto.title}</p>
       </div>
-    </div>
-  )
-}
-TrendingCard.propTypes = {
-  Trendingphoto: propTypes.object
-}
+    </Link>
+  </div>
+)
 export default TrendingCard

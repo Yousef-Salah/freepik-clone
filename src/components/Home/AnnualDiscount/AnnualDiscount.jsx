@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './annual-discount.scss'
 
 const AnnualDiscount = () => (
@@ -10,9 +11,11 @@ const AnnualDiscount = () => (
           <strong> 30% OFF </strong>
           <span>on the Annual Plan</span>
         </span>
-        <button type="button" className="btn" id="premium-btn">
-          Go Premium
-        </button>
+        <Link to="/pricing">
+          <button type="button" className="btn" id="premium-btn">
+            Go Premium
+          </button>
+        </Link>
       </nav>
     </div>
   </div>

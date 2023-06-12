@@ -1,6 +1,6 @@
 import React from 'react'
-import { wepikInfo } from './utils'
-
+import { Link } from 'react-router-dom'
+import { wepikInfo } from './wepik.utils'
 import './wepik.scss'
 
 const Wepik = () => {
@@ -11,12 +11,14 @@ const Wepik = () => {
         <img className="wepik-logo" src={logoUrl} alt="wepik-logo" />
         <h5 className="wepik-header">{headerText}</h5>
         <h6 className="wepik-paragraph">{paragraphText}</h6>
-        <button type="button" className="btn btn-primary btn-lg wepik-btn">
-          {buttonText}
-        </button>
+        <Link to="/search/backgrounds">
+          <button type="button" className="btn btn-primary btn-lg wepik-btn">
+            {buttonText}
+          </button>
+        </Link>
       </div>
       <div className="col-6 d-lg-block wepik-photo">
-        <img src={`/ ${photoUrl}`} alt="wepik-pho" />
+        <img src={`/${photoUrl}`} alt="wepik-pho" />
       </div>
     </div>
   )

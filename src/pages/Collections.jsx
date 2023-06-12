@@ -19,7 +19,7 @@ const Collections = (props) => {
 
   // TODO: fix code redundancy issue
   const loadData = () => {
-    return navigate(`/search/${searchQuery.current.searchInput}`)
+    // return navigate(`/search/${searchQuery.current.searchInput}`)
   }
 
   return (
