@@ -1,5 +1,5 @@
 import React from 'react'
-import './promote.scss'
+import './Promote.scss'
 
 const Promote = ({ icon, heder, title }) => (
   <div className="promote-content">
