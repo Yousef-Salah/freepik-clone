@@ -1,10 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import LogIn from '../components/Login/LogIn'
 
-const Login = (props) => {
-  useEffect(() => {
-    // props.page('login')
-  }, [])
-  return <LogIn />
-}
+const Login = () => <LogIn />
 export default Login

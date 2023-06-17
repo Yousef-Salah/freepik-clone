@@ -1,6 +1,15 @@
 #login {
   padding: 0;
   max-height: 100%;
+  p {
+    margin: 0;
+  }
+  button {
+    border: 2px #80808066 solid;
+    border-radius: 5px;
+    background-color: white;
+  }
+  overflow: hidden;
 }
 #loginphoto {
   position: relative;
@@ -11,8 +20,8 @@
 .login-img {
   padding: 0;
   width: 100%;
-  height: max-content;
-  max-height: 100vh;
+  height: 100vh;
+  object-fit: cover;
 }
 #login-form {
   align-self: center;
@@ -22,6 +31,8 @@
   display: block;
   bottom: 10px;
   left: 16px;
+  background-color: #dddddd88;
+  padding: 1px 5px;
 }
 .login-imgby strong {
   margin-left: 3px;
@@ -29,10 +40,12 @@
 #login #login-btns {
   display: grid;
   grid-row: 1fr;
-  row-gap: 20%;
   grid-column: 1fr;
   justify-content: center;
   margin: 5% 0 10%;
+  p {
+    min-width: 220px;
+  }
 }
 .login-freepik {
   display: inline-flex;
@@ -43,13 +56,8 @@
 #login-btn-google,
 #login-btn-facebook,
 #login-btn-email {
-  display: flex;
-  justify-content: center;
-  border-width: 2px;
-  border-radius: 5px;
-  padding: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 10px 30px;
+  margin-bottom: 20px;
 }
 #login-icon-google,
 #login-icon-facebook,
@@ -67,4 +75,45 @@
 }
 #login-icon-facebook {
   color: rgb(54, 113, 227);
+}
+
+.more-login-info {
+  margin: 10px;
+}
+
+.freepik-company {
+  margin-top: 150px;
+  img {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .login-img {
+    height: 40vh;
+  }
+}
+
+#signup-icon-facebook {
+  color: rgb(54, 113, 227);
+}
+.signupTerms {
+  display: inline-block;
+  margin: 5%;
+  padding: 0;
+}
+.Freepiknews {
+  font-family: Comic;
+  display: flex;
+  float: left;
+  margin: 5%;
+}
+.newscheckbox {
+  align-self: flex-start;
+  margin: 2%;
+  text-align: start;
+}
+.freepik-news {
+  text-align: start;
+  justify-content: center;
 }
