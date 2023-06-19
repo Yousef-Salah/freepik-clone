@@ -1,6 +1,7 @@
 .discover-collection-row * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 .discover-list {
   padding: 10px 5px 30px 5px;
@@ -39,6 +40,7 @@
 
 .discover-img3 {
   height: 100%;
+  width: 100%;
   object-fit: cover;
   border-radius: 0 10px 10px 0;
   border-left: 1px white solid;
@@ -111,6 +113,10 @@
 
 .collection-card {
   padding: 0 20px;
+  button {
+    border: none;
+    background: none;
+  }
 }
 
 .collection-card:hover {

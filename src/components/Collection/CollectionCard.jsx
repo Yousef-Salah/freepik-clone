@@ -1,6 +1,6 @@
 import React from 'react'
-import propTypes from 'prop-types'
-const CollectionCard = ({ card }) => {
+
+const CollectionCard = () => {
   const img = ''
   const title = ''
   return (
@@ -12,12 +12,14 @@ const CollectionCard = ({ card }) => {
               <img
                 src={`/assets/images/collections/collection_cards/${img}`}
                 id="discover-img1"
+                alt="d-img"
               />
             </div>
             <div className="row discover-collection-row3">
               <img
                 src={`/assets/images/collections/collection_cards/${img}`}
                 id="discover-img2"
+                alt="d-img"
               />
             </div>
           </div>
@@ -25,6 +27,7 @@ const CollectionCard = ({ card }) => {
             <img
               src={`/assets/images/collections/collection_cards/${img}`}
               id="discover-img3"
+              alt="d-img"
             />
           </div>
         </div>
@@ -37,10 +40,6 @@ const CollectionCard = ({ card }) => {
       </div>
     </div>
   )
-}
-
-CollectionCard.propTypes = {
-  card: propTypes.object,
 }
 
 export default CollectionCard
