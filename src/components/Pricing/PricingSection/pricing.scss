@@ -3,14 +3,16 @@
   justify-content: center;
   padding: 30px;
 }
+.pricing-photo-wrapper {
+  overflow: hidden;
+}
 
 .card1 {
-  font-size: small;
-  margin-top: 30px;
-  margin-left: 100px;
-  max-width: 600px;
+  width: 50%;
+  min-width: 550px;
+  max-width: 650px;
   border-radius: 20px;
-  width: 60%;
+  margin-right: 30px;
   box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
   border-color: #f8fafb;
 }
@@ -30,13 +32,12 @@
 }
 
 .card2 {
+  width: 100%;
+  max-width: 450px;
   display: flex;
   justify-content: flex-end;
   padding: 30px;
-  margin-top: 30px;
-  margin-left: 50px;
-  max-height: 1000px;
-  max-width: 600px;
+  margin-bottom: 30px;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
   border-color: #f8fafb;
@@ -44,12 +45,10 @@
 }
 
 .card3 {
+  width: 100%;
+  max-width: 450px;
   padding: 30px;
   justify-content: center;
-  margin-top: 30px;
-  margin-left: 50px;
-  max-height: 200px;
-  max-width: 600px;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
   border-color: #f8fafb;
@@ -58,22 +57,17 @@
 
 .card-sect {
   display: flex;
+  justify-content: space-around;
   flex: 2;
   background-color: #f8fafb;
-  padding-bottom: 30px;
-}
-
-.card-section {
-  flex: 1;
+  padding: 30px 10px;
 }
 
 .card-teams1 {
-  font-size: small;
   display: flex;
-  margin-top: 30px;
-  margin-left: 150px;
-  max-height: 350px;
-  max-width: 700px;
+  width: 45%;
+  max-width: 550px;
+  margin: 30px;
   border-radius: 20px;
   border-color: #f8fafb;
   box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
@@ -81,14 +75,12 @@
 
 .card-temas2 {
   display: flex;
-  padding: 30px;
+  width: 45%;
+  max-width: 550px;
+  margin: 30px;
+  padding: 20px;
   justify-content: center;
-  margin-top: 30px;
-  margin-left: 50px;
-  max-height: 600px;
   padding-left: 10px;
-  max-width: 500px;
-  font-size: small;
   border-radius: 20px;
   border-color: #f8fafb;
   box-shadow: 2px 2px 2px 2px rgba(185, 186, 183, 0.5);
@@ -103,22 +95,14 @@
 .best-value {
   background-color: #c7ebff;
   background-size: 100px;
-  padding-top: 2px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-bottom: 2px;
+  padding: 2px;
   color: #1675eb;
   font-size: 14px;
   font-weight: bolder;
 }
 
 .font-strong {
-  font-size: larger;
-  display: flex;
-}
-
-.btn-subs {
-  margin-left: 300px;
+  font-size: 1rem;
 }
 
 .color-textcard {
@@ -133,6 +117,7 @@
 
 .card-section2 {
   display: flex;
+  justify-content: space-around;
   flex: 2;
   background-color: #f8fafb;
   padding-bottom: 30px;
@@ -142,22 +127,14 @@
   display: flex;
 }
 
-.card-text3 {
-  padding-left: 150px;
-}
-
 .btn-team {
   padding-left: 100px;
   margin-top: 30px;
 }
 
 .font-eur {
-  font-size: xx-large;
+  font-size: 2rem;
   font-weight: bolder;
-}
-
-.input-value {
-  padding-left: 270px;
 }
 
 .pricingform {
@@ -167,10 +144,7 @@
 
 .save-sp {
   background-color: #c7ebff;
-  padding-top: 2px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-bottom: 2px;
+  padding: 2px;
   color: #1675eb;
   font-size: 14px;
   font-weight: bolder;
@@ -179,27 +153,44 @@
 
 .new-sp {
   background-color: #2f8ff7;
-  padding-top: 2px;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-bottom: 2px;
+  padding: 2px;
   border-radius: 2px;
   font-weight: bold;
   color: white;
 }
 
-@media only screen and (max-width: 645px) {
+@media only screen and (max-width: 1050px) {
+  .card-sect {
+    display: block;
+  }
   .card1,
-  .card-teams1,
-  .card-temas2,
-  .card2,
-  .card3 {
-    margin-left: 0px;
+  .card-section {
     width: 100%;
     max-height: 100% !important;
   }
-
-  .btn-subs {
-    margin-left: 0px;
+  .card1 {
+    font-size: 0.8rem;
+  }
+  .card1,
+  .card2,
+  .card3 {
+    min-width: 350px;
+    width: 80%;
+    margin: 20px auto;
+  }
+  .pricing-photo1,
+  .pricing-photo2 {
+    max-height: 150px !important;
+    margin-left: -50px;
+  }
+  .card-section2 {
+    display: block;
+  }
+  .card-teams1,
+  .card-temas2 {
+    width: 80%;
+    min-width: 350px;
+    margin: 20px auto;
+    max-width: none;
   }
 }
