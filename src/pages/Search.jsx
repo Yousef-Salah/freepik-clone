@@ -22,7 +22,7 @@ const Search = ({ dataFilter }) => {
   const [partialData, setPartialData] = useState([])
   const [spinnerTrigger, setSpinnerTrigger] = useState(true)
   const [contentState, setContentState] = useState(true)
-  const searchQueryCont = useContext(SearchQuery).current
+  const searchQuery = useContext(SearchQuery)
   const { itemId } = useParams()
   const resultsDataContainer = useContext(ResultsDataContainer)
   const [modalDisplay, setModalDisplay] = useState(false)
@@ -31,15 +31,16 @@ const Search = ({ dataFilter }) => {
   const [tagbarData, setTagbarData] = useState([])
 
   const loadData = () => {
-    const { searchQuery } = searchQueryCont
-    const { lastQuery, pData } = resultsDataContainer
-    if (searchQuery !== lastQuery) {
-      resultsDataContainer.lastQuery = searchQuery.current.searchInput
+    const { searchInput } = searchQuery.current
+    const { lastQuery, data } = resultsDataContainer
+
+    if (searchInput !== lastQuery) {
+      resultsDataContainer.lastQuery = searchInput
       resultsDataContainer.data = dataFilter.getData(searchQuery.current)
       resultsDataContainer.start = 0
       resultsDataContainer.end = 15
 
-      setPartialData(pData.slice(0, 30))
+      setPartialData(data.slice(0, 30))
       setContentState(false)
       setSpinnerTrigger(true)
       setTimeout(() => {
@@ -56,7 +57,7 @@ const Search = ({ dataFilter }) => {
     if (!itemId) {
       loadData()
     }
-  }, [location, resultsDataContainer])
+  }, [location, resultsDataContainer, searchQuery.current])
   const logPath = location.pathname
     .split('/')[2]
     .replace('%20', ' ')
