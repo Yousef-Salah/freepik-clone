@@ -23,7 +23,7 @@ const Layout = () => {
     searchInput: window.location.pathname.split('/')[2]?.replace('_', ' '),
     itemType: 'Assets', // assets collections
     itemPriceType: [], // free premium
-    category: 'c'
+    category: 'Vectors'
   })
   const sqValue = {
     data: [],
