@@ -1,48 +1,63 @@
-/* eslint-disable */
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 import CategoryCard from '../CategoryCard/CategoryCard'
 import { CategoryList } from '../../../utils/Categories'
 
 import './category-sep-list.scss'
-const SepList = (props) => {
+
+const SepList = ({ by }) => {
   const [frontVis, setFrontVis] = useState('visible')
   const [backVis, setBackVis] = useState('hidden')
-  const list = document.getElementsByClassName('sep-cat-list')[0]
+  const [lWidth, setLWidth] = useState(0)
+  const refList = useRef(null)
 
   const checkScroll = () => {
-    list.scrollLeft < 850 ? setFrontVis('visible') : setFrontVis('hidden')
-    list.scrollLeft >= 10 ? setBackVis('visible') : setBackVis('hidden')
+    setLWidth(refList.current.scrollLeft)
+    if (lWidth <= 950) setFrontVis('visible')
+    else setFrontVis('hidden')
+
+    if (lWidth >= 10) setBackVis('visible')
+    else setBackVis('hidden')
   }
   const scrollList = () => {
-    list.scrollLeft += 300
+    refList.current.scrollLeft = lWidth + 300
     checkScroll()
   }
   const deScrollList = () => {
-    list.scrollLeft -= 300
+    refList.current.scrollLeft = lWidth - 300
     checkScroll()
   }
 
   return (
     <div className="sep-cat">
-      <h3>By {props.by || 'unknow cat'}:</h3>
-      <div className="inline-f-cat sep-cat-list">
-        {CategoryList.map((item, index) => {
-          return (
-            <div key={index}>
-              <CategoryCard category={item} />
-            </div>
-          )
-        })}
+      <h3>By {by || 'unknow cat'}:</h3>
+      <div className="inline-f-cat sep-cat-list" ref={refList}>
+        {CategoryList.map((item) => (
+          <div>
+            <CategoryCard category={item} />
+          </div>
+        ))}
       </div>
-      <div className={`btn-arrow sc-front ${frontVis}`} onClick={scrollList}>
-        <button>
-          <i className="bi bi-arrow-right-short"></i>
+      <div
+        className={`btn-arrow sc-front ${frontVis}`}
+        onClick={scrollList}
+        onKeyDown={scrollList}
+        role="button"
+        tabIndex={-1}
+      >
+        <button type="button">
+          <i className="bi bi-arrow-right-short" />
         </button>
       </div>
-      <div className={`btn-arrow sc-back ${backVis}`} onClick={deScrollList}>
-        <button>
-          <i className="bi bi-arrow-left-short"></i>
+      <div
+        className={`btn-arrow sc-back ${backVis}`}
+        onClick={deScrollList}
+        onKeyDown={deScrollList}
+        role="button"
+        tabIndex={0}
+      >
+        <button type="button">
+          <i className="bi bi-arrow-left-short" />
         </button>
       </div>
     </div>

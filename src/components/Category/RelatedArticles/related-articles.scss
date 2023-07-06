@@ -1,25 +1,28 @@
 .article {
   cursor: pointer;
-
   p {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
   &:hover p {
     color: black;
   }
-
   h3 {
     color: #374957;
     font-weight: 600;
-
     &:hover {
       color: #1273eb;
       font-weight: 600;
     }
+  }
+  img {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
 

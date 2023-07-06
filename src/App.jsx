@@ -16,6 +16,7 @@ import Collections from './pages/Collections'
 
 import DataFilter from './api/helpers/DataFilter'
 import './App.scss'
+import Test from './components/Home/Test/Test'
 
 const App = () => {
   const dataFilter = new DataFilter()
@@ -33,6 +34,7 @@ const App = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
+        <Route path="/test" element={<Test />} />
         {home && <Route path="/" element={<Home />} />}
         {search && (
           <Route
