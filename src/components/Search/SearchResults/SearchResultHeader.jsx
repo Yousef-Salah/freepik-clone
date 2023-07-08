@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './searchresultheader.scss'
-import { useState } from 'react'
 
-const SearchResultHeader = (props) => {
-  let [dropHeaderr, setDropHeader] = useState('Popular')
-  let [popular1, setPopular1] = useState('bx bx-check ')
-  let [recent1, setRecent1] = useState('unchecked')
-  let sort = props.sort || false
+const SearchResultHeader = ({title, description, sort}) => {
+  const [dropHeaderr, setDropHeader] = useState('Popular')
+  const [popular1, setPopular1] = useState('bx bx-check ')
+  const [recent1, setRecent1] = useState('unchecked')
+  
   function setPopular() {
     setDropHeader('Popular')
     setPopular1('bx bx-check ')
@@ -20,12 +19,12 @@ const SearchResultHeader = (props) => {
   return (
     <>
       <div className="container-fluid d-flex justify-content-center resultheader">
-        <h1 className="headerr">{props.title}</h1>
+        <h1 className="headerr">{title}</h1>
         <br />
       </div>
 
-      <p className="search-description">{props.description}</p>
-      {props.sort && (
+      <p className="search-description">{description}</p>
+      {sort && (
         <div className="dropdown sort" id="dropdown-sort">
           Sort By:
           <button
@@ -38,26 +37,27 @@ const SearchResultHeader = (props) => {
           </button>
           <ul className="dropdown-menu sortmenu">
             <li>
-              <a
+              <button
+                type='button'
                 className="dropdown-item sortbtn1"
                 onClick={setPopular}
                 id="popularDropBtn"
-                href="#"
+                
               >
                 {' '}
-                <i className={popular1}></i> Popular
-              </a>
+                <i className={popular1}> </i> Popular
+              </button>
             </li>
             <li>
-              <a
+              <button
+                type='button'
                 className="dropdown-item sortbtn2"
                 onClick={setRecent}
                 id="recentDropBtn"
-                href="#"
               >
                 {' '}
-                <i className={recent1}></i> Recent
-              </a>
+                <i className={recent1}> </i> Recent
+              </button>
             </li>
           </ul>
         </div>
