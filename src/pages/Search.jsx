@@ -1,146 +1,32 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
-import SearchResults from '../components/Search/SearchResults/SearchResults'
-import SearchContainer from '../components/Search/SearchBox/SearchContainer'
-import Spinner from '../components/Search/LoadingSpinner/Spinner'
-import SideBar from '../components/Search/FilterSideBar/SideBar'
-import TagBar from '../components/Search/FilterSideBar/TagBar'
-import { SideBarData1 } from '../components/Search/FilterSideBar/SideBarData1'
-import { SearchTagBarData } from '../utils/Search'
-import SearchQuery from '../contexts/SearchQuery'
-import ResultsDataContainer from '../contexts/ResultsDataContainer'
-import SponsoredBy from '../components/Layouts/SponsoredBy/SponsoredBy'
-import ModalTrigger from '../components/Category/PreviewModal/ModalTrigger'
+import React from 'react'
 
-const Search = ({ dataFilter }) => {
-  const location = useLocation()
-  const [open, setOpen] = useState(false)
-  const updateOpen = (value) => {
-    setOpen(value)
-  }
-  // const [data, setData] = useState([])
-  const [partialData, setPartialData] = useState([])
-  const [spinnerTrigger, setSpinnerTrigger] = useState(true)
-  const [contentState, setContentState] = useState(true)
-  const searchQuery = useContext(SearchQuery)
-  const { itemId } = useParams()
-  const resultsDataContainer = useContext(ResultsDataContainer)
-  const [modalDisplay, setModalDisplay] = useState(false)
-  const [modalData, setModalData] = useState({})
-  const [loaded, setLoaded] = useState(false)
-  const [tagbarData, setTagbarData] = useState([])
-
-  const loadData = () => {
-    const { searchInput } = searchQuery.current
-    const { lastQuery, data } = resultsDataContainer
-
-    if (searchInput !== lastQuery) {
-      resultsDataContainer.lastQuery = searchInput
-      resultsDataContainer.data = dataFilter.getData(searchQuery.current)
-      resultsDataContainer.start = 0
-      resultsDataContainer.end = 15
-
-      setPartialData(data.slice(0, 30))
-      setContentState(false)
-      setSpinnerTrigger(true)
-      setTimeout(() => {
-        setSpinnerTrigger(false)
-        setContentState(true)
-      }, 1500)
-      // eslint-disable-next-line
-      ;(() => setLoaded(true))()
-    }
-    // setData(props.dataFilter.getData(searchQuery.current));
-  }
-
-  useEffect(() => {
-    if (!itemId) {
-      loadData()
-    }
-  }, [location, resultsDataContainer, searchQuery.current])
-  const logPath = location.pathname
-    .split('/')[2]
-    .replace('%20', ' ')
-    .replace('-', ' ')
-    .replace('_', ' ')
-  console.log(logPath)
-  useEffect(() => {
-    if (partialData[0]) {
-      const newTagbarData = SearchTagBarData.map((item) => ({
-        ...item,
-        title:
-          SearchTagBarData[Math.floor(Math.random() * SearchTagBarData.length)]
-            .name,
-      }))
-      setTagbarData(newTagbarData)
-    }
-  }, [contentState])
-
-  const toggleModal = () => {
-    setModalDisplay(!modalDisplay)
-  }
-
-  const modalHandler = (item) => {
-    setModalData(item)
-    toggleModal()
-  }
-
-  const nextButtonHandler = () => {
-    resultsDataContainer.start += resultsDataContainer.offset
-    resultsDataContainer.end += resultsDataContainer.offset
-    setPartialData(
-      resultsDataContainer.data.slice(
-        resultsDataContainer.start,
-        resultsDataContainer.end
-      )
-    )
-  }
-
-  const previousButtonHandler = () => {
-    resultsDataContainer.start -= resultsDataContainer.offset
-    resultsDataContainer.end -= resultsDataContainer.offset
-    setPartialData(
-      resultsDataContainer.data.slice(
-        resultsDataContainer.start,
-        resultsDataContainer.end
-      )
-    )
-  }
-
-  return (
-    <>
-      {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
-
-      <SearchContainer dataHandler={loadData} mainPage={false} />
-      <SponsoredBy
-        images={partialData.slice(
-          partialData.length - 10,
-          partialData.length - 1
-        )}
-      />
-
-      <SideBar updateOpen={updateOpen} data={SideBarData1} />
-      <div className={`search-content ${!open ? 'base' : 'pushed'}`}>
-        <TagBar
-          data={tagbarData[0] ? tagbarData : SearchTagBarData}
-          className={`${!open ? 'base' : 'pushed-tagbar'}`}
-        />
-        <SearchResults
-          images={partialData}
-          visible={contentState}
-          modalLift={modalHandler}
-          title={location.pathname
-            .split('/')[2]
-            .replace('%20', ' ')
-            .replace('-', ' ')
-            .replace('_', ' ')}
-        />
-        <Spinner visible={spinnerTrigger} />
+const Search = () => (
+  <div className="search-results">
+    <div className="searchbox-wrapper">
+      <h2>Seach Here</h2>
+    </div>
+    <div className="sponsored-wrapper">
+      <h2>sponsored elements</h2>
+    </div>
+    <div className="sidebar-results">
+      <div className="sidebar-wrapper">
+        <h3>sidebar</h3>
       </div>
-      <button onClick={previousButtonHandler}>Previous</button>
-      <button onClick={nextButtonHandler}>Next</button>
-    </>
-  )
-}
+      <div className="tagbar-results">
+        <div className="tagbar-wrapper">
+          <h4>tags list</h4>
+        </div>
+        <div className="results-wrapper">
+          <div className="results-header">
+            <h2>search keyword</h2>
+          </div>
+          <div className="results-list">
+            <h2>items here</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
 
 export default Search

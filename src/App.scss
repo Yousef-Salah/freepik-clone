@@ -180,3 +180,86 @@ summary {
 }
 
 } */
+
+.search-results div {
+  border: 1px dotted black;
+  text-align: center;
+  h1,
+  h2,
+  h3 {
+    padding: 15px;
+  }
+  padding: 10px 5px;
+}
+
+.search-results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #b6b6b6;
+  padding: 5px;
+  .searchbox-wrapper {
+    width: 100%;
+    height: 70px;
+    background-color: #40a5c7;
+    margin-bottom: 5px;
+  }
+  .sponsored-wrapper {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    background-color: #4055aa;
+    margin-bottom: 5px;
+  }
+  .sidebar-results {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: #4055c750;
+    .sidebar-wrapper {
+      width: 300px;
+      height: calc(100vh - 320px);
+      margin-right: 5px;
+      background-color: #407865;
+    }
+    .tagbar-results {
+      width: calc(100% - 300px);
+      height: calc(100vh - 320px);
+      display: flex;
+      flex-direction: column;
+      background-color: #2d324a;
+      overflow: hidden;
+      .tagbar-wrapper {
+        width: 100%;
+        height: 60px;
+        background-color: #7a8ef5df;
+        overflow: scroll;
+      }
+      .results-wrapper {
+        width: 100%;
+        height: calc(100% - 30px);
+        background-color: #858687;
+
+        .results-header {
+          width: 100%;
+          height: 120px;
+          background-color: #fff;
+        }
+        .results-list {
+          width: 100%;
+          height: calc(100% - 120px);
+          background-color: #a9a9a9;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .sidebar-wrapper {
+    display: none;
+  }
+  .tagbar-results {
+    width: 100% !important;
+  }
+}
