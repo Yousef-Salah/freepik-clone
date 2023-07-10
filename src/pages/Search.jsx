@@ -31,12 +31,13 @@ const Search = ({ dataFilter }) => {
   const [tagbarData, setTagbarData] = useState([])
 
   const loadData = () => {
-    const { searchInput } = searchQuery.current
+    const {current: currentSearchQuery} = searchQuery;
+    const { searchInput } = currentSearchQuery
     const { lastQuery, data } = resultsDataContainer
 
     if (searchInput !== lastQuery) {
       resultsDataContainer.lastQuery = searchInput
-      resultsDataContainer.data = dataFilter.getData(searchQuery.current)
+      resultsDataContainer.data = dataFilter.getData(currentSearchQuery)
       resultsDataContainer.start = 0
       resultsDataContainer.end = 15
 
@@ -57,14 +58,10 @@ const Search = ({ dataFilter }) => {
     if (!itemId) {
       loadData()
     }
-  }, [location, resultsDataContainer, searchQuery.current])
-  const logPath = location.pathname
-    .split('/')[2]
-    .replace('%20', ' ')
-    .replace('-', ' ')
-    .replace('_', ' ')
-  console.log(logPath)
-  useEffect(() => {
+      // eslint-disable-next-line
+    }, [location, resultsDataContainer, searchQuery.current])
+
+    useEffect(() => {
     if (partialData[0]) {
       const newTagbarData = SearchTagBarData.map((item) => ({
         ...item,
@@ -86,25 +83,37 @@ const Search = ({ dataFilter }) => {
   }
 
   const nextButtonHandler = () => {
-    resultsDataContainer.start += resultsDataContainer.offset
-    resultsDataContainer.end += resultsDataContainer.offset
+    const {offset, data} = resultsDataContainer;
+    let {start, end} = resultsDataContainer;
+
+    start += offset;
+    end += offset;
     setPartialData(
-      resultsDataContainer.data.slice(
-        resultsDataContainer.start,
-        resultsDataContainer.end
+      data.slice(
+        start,
+        end
       )
     )
+
+    resultsDataContainer.start = start;
+    resultsDataContainer.end = end;
   }
 
   const previousButtonHandler = () => {
-    resultsDataContainer.start -= resultsDataContainer.offset
-    resultsDataContainer.end -= resultsDataContainer.offset
+    const {offset, data} = resultsDataContainer;
+    let {start, end} = resultsDataContainer;
+
+    start -= offset
+    end -= offset
     setPartialData(
-      resultsDataContainer.data.slice(
-        resultsDataContainer.start,
-        resultsDataContainer.end
+      data.slice(
+        start,
+        end
       )
     )
+
+    resultsDataContainer.start = start;
+    resultsDataContainer.end = end;
   }
 
   return (
@@ -137,8 +146,8 @@ const Search = ({ dataFilter }) => {
         />
         <Spinner visible={spinnerTrigger} />
       </div>
-      <button onClick={previousButtonHandler}>Previous</button>
-      <button onClick={nextButtonHandler}>Next</button>
+      <button onClick={previousButtonHandler} type='button'>Previous</button>
+      <button onClick={nextButtonHandler} type='button'>Next</button>
     </>
   )
 }
