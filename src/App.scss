@@ -182,14 +182,12 @@ summary {
 } */
 
 .search-results div {
-  border: 1px dotted black;
   text-align: center;
   h1,
   h2,
   h3 {
     padding: 15px;
   }
-  padding: 10px 5px;
 }
 
 .search-results {
@@ -197,42 +195,43 @@ summary {
   display: flex;
   flex-direction: column;
   background-color: #b6b6b6;
-  padding: 5px;
   .searchbox-wrapper {
     width: 100%;
-    height: 70px;
+    height: 75px;
     background-color: #40a5c7;
-    margin-bottom: 5px;
+    border-bottom: 2px solid #d2d2d2;
+    // margin-bottom: 5px;
   }
   .sponsored-wrapper {
     width: 100%;
     height: 180px;
     display: flex;
     background-color: #4055aa;
-    margin-bottom: 5px;
   }
   .sidebar-results {
     width: 100%;
     height: fit-content;
     display: flex;
-    background-color: #4055c750;
+    background-color: #4055c7;
+    padding: 0;
     .sidebar-wrapper {
       width: 300px;
-      height: calc(100vh - 320px);
-      margin-right: 5px;
+      height: calc(100vh);
       background-color: #407865;
+      border-right: 2px solid #d2d2d2;
     }
     .tagbar-results {
       width: calc(100% - 300px);
-      height: calc(100vh - 320px);
+      height: calc(200vh - 150px);
       display: flex;
       flex-direction: column;
       background-color: #2d324a;
+      padding: 0;
       overflow: hidden;
       .tagbar-wrapper {
         width: 100%;
         height: 60px;
-        background-color: #7a8ef5df;
+        background-color: #7a8ef5;
         overflow: scroll;
       }
       .results-wrapper {
@@ -253,6 +252,34 @@ summary {
       }
     }
   }
+  .s-hide {
+    display: none;
+  }
+}
+
+.s-fix {
+  position: fixed;
+  z-index: 2;
+}
+.sb-fixed {
+  top: 0;
+}
+.side-fixed {
+  top: 75px;
+}
+.tagbar-fixed {
+  top: 75px;
+  left: 300px;
+  width: calc(100% - 300px) !important;
+}
+
+.results-fixed {
+  margin-top: 140px;
+}
+
+.tagbar-results-fixed {
+  width: calc(100% - 300px);
+  margin-left: 300px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -261,5 +288,10 @@ summary {
   }
   .tagbar-results {
     width: 100% !important;
+    margin: 0 !important;
+    .tagbar-wrapper {
+      left: 0 !important;
+      width: 100% !important;
+    }
   }
 }
