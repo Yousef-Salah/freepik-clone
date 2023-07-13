@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { Outlet } from 'react-router-dom'
 import { DevConfig } from '../../seepick.config'
-import { GlobalContext } from '../../contexts/Context'
+import GlobalContext from '../../contexts/Context'
 import SearchQuery from '../../contexts/SearchQuery'
 import ResultsDataContainer from '../../contexts/ResultsDataContainer'
 import Navbar from './Navbar/Navbar'
@@ -12,9 +12,8 @@ const Layout = () => {
   const animations = (DevConfig.animations && 'animate') || ''
   const search = {
     searchQuery: 'xyz',
-    searchImage: async () => {
-      return { title: 'im an item', desc: 'holding description' }
-    }
+    searchImage: async () => 
+      { title: 'im an item', desc: 'holding description' }
   }
   const config = {
     getPageName: () => {}
