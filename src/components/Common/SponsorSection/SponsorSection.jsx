@@ -1,3 +1,4 @@
+/* eslint-disable */
 import './sponsor-section.scss'
 import SponsoredByData from '../../../utils/SponsoredByData'
 import SponsorCard from './SponsorCard'

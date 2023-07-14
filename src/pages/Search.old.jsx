@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect, useContext } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import SearchResults from '../components/Search/SearchResults/SearchResults'

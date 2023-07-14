@@ -6,4 +6,5 @@ export const wepikInfo = {
   buttonText: 'Start editing online',
   photoUrl: 'assets/images/home/wepik_section/wepik-photo.png',
 }
+
 export default wepikInfo

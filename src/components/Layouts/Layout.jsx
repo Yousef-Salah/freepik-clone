@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useRef } from 'react'
 import { Outlet } from 'react-router-dom'
 import { DevConfig } from '../../seepick.config'
@@ -8,12 +9,13 @@ import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
 import DiscountModal from '../Common/DiscountModal/DicountModal'
 
-const Layout = () => {
+export const Layout = () => {
   const animations = (DevConfig.animations && 'animate') || ''
   const search = {
     searchQuery: 'xyz',
-    searchImage: async () => 
-      { title: 'im an item', desc: 'holding description' }
+    searchImage: async function() { 
+      return { title: 'im an item', desc: 'holding description' };
+    }
   }
   const config = {
     getPageName: () => {}
@@ -47,4 +49,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default Layout;

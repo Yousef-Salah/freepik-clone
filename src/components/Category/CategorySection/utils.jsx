@@ -1,5 +1,4 @@
-const utils = () => {
-  return [
+const utils = () => [
     {
       title: 'Get cool wallpapers and desktop backgrounds for your computer',
       desc: 'Since we live in the computer era, devices are all around us. As we use them a lot, how about giving them your own personal touch? Backgrounds are easy to use, and they can convey what you feel, or just represent your favorite topics. You can use wonderful backgrounds for your cell phone, tablet or computer.',
@@ -16,5 +15,5 @@ const utils = () => {
       img: 'https://fps.cdnpk.net/landings-paid/23022022/backgrounds/img-product-3.webp'
     }
   ]
-}
+
 export default utils

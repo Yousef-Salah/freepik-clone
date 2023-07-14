@@ -109,7 +109,6 @@ export const SideBarData1 = [
     switchId: 'editToggle',
     links: [
       'https://storyset.com/?_gl=1%2a1ulmfcj%2a_ga%2amtk4odaxnje2ms4xnjy2ntuymjmz%2a_ga_18b6qptjpc%2amty3mtc4nzgzmy4xoc4xlje2nze3odgymzkundcumc4w',
-      ,
       'https://wepik.com/?_gl=1*huk58t*fp_ga*MTk4ODAxNjE2MS4xNjY2NTUyMjMz*fp_ga_QWX66025LC*MTY3MTc4NzgzMy4xNDUuMS4xNjcxNzg4MjM5LjQ3LjAuMA..*_ga*MTk4ODAxNjE2MS4xNjY2NTUyMjMz*_ga_18B6QPTJPC*MTY3MTc4NzgzMy4xOC4xLjE2NzE3ODgyMzkuNDcuMC4w'
     ]
   },
@@ -132,3 +131,5 @@ export const SideBarData1 = [
     page: 'search'
   }
 ]
+
+export default SideBarData1;

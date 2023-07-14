@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import style from './vector.scss'
 
 export default function Vector() {
-  //giving initial value for title by using useState
-  let [title, setTitle] = useState('Free Vectors')
+  // giving initial value for title by using useState
+  const title = 'Free Vectors';
+  const alt = 'image';
+
   return (
     <>
       {/* take title value from title variable since we put initial value fot it */}
@@ -14,7 +16,7 @@ export default function Vector() {
         <img
           className={`   ${style.img_modal} margin-auto`}
           src="./Images/socialMedia.jpg"
-          alt="image"
+          alt={alt}
         />
       </div>
     </>

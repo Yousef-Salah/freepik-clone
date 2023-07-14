@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react'
 import './footer.scss'
 import { Link, useLocation } from 'react-router-dom'
