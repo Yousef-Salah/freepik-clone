@@ -45,14 +45,14 @@ const SearchContainer = ({ dataHandler, page, mainPage }) => {
   const categoriesSearchComponent = (
     <div className="container-fluid" id="op-search-container">
       <div className="row">
-        <div className="col-3 col-sm-2">
+        <div className="col-3 col-sm-2 sb-img">
           <Link
             to="/"
             className="d-flex align-items-center justify-content-center w-100 h-100"
           >
             <img
               className="h-100"
-              src="/assets/images/icons/freepik-full-logo.PNG"
+              src="/assets/images/common/icons/freepik-full-logo.png"
               alt="freepik icon"
             />
           </Link>
