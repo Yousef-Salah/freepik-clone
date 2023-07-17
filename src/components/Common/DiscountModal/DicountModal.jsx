@@ -32,7 +32,7 @@ const DiscountModal = () => {
 
   return (
     <div className="position-relative" id="discount-modal">
-      <div className={modalState + ' p-2'}>
+      <div className={`${modalState} p-2`}>
         <div className="container text-light">
           <div className="row">
             <div className="col-7">
@@ -70,12 +70,13 @@ const DiscountModal = () => {
         <button
           className="position-absolute rounded"
           onClick={modalStateHandler}
+          type='button'
         >
           X
         </button>
 
         <div id="righ-side-image">
-          <img src="/assets/images/common/Discount_modal/DiscountModal.jpg" />
+          <img src="/assets/images/common/Discount_modal/DiscountModal.jpg" alt='discount-modal'/>
         </div>
       </div>
     </div>

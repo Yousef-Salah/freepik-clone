@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Card3D from './Card3D'
-import { Cards3dData } from './Cards3dData'
+import Cards3dData  from './Cards3dData'
 
 const CardLayout = () => (
   <div className="row layout-3d ">

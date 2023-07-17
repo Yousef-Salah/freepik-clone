@@ -1,5 +1,4 @@
-import React from 'react'
-export const Cards3dData = [
+const Cards3dData = [
   {
     image: 'abacus-001-beauty.webp',
     name: 'Abacus 001',
@@ -113,3 +112,5 @@ export const Cards3dData = [
     link: '/'
   }
 ]
+
+export default Cards3dData;

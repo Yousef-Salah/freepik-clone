@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './not-found.scss'
 // import errImg from '/as'
-const PageNotFound = (props) => {
+const PageNotFound = () => {
   useEffect(() => {
     // props.page('error')
   }, [])
@@ -24,7 +24,7 @@ const PageNotFound = (props) => {
             Try going back to our homepage.
           </p>
           <Link to="/">
-            <button className="go-home-btn">Go to homepage</button>
+            <button className="go-home-btn" type='button'>Go to homepage</button>
           </Link>
         </div>
         <h6 className="error-footer">

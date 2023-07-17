@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react'
 import SearchResultHeader from '../components/Search/SearchResults/SearchResultHeader'
 import SideBar from '../components/Search/FilterSideBar/SideBar'
