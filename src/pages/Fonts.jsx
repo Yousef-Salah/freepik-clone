@@ -1,48 +1,62 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react'
 import SearchResultHeader from '../components/Search/SearchResults/SearchResultHeader'
-import SideBar from '../components/Search/FilterSideBar/SideBar'
 import TagBar from '../components/Search/FilterSideBar/TagBar'
-import { FontsTagBarData, FontsSideBarData } from '../utils/Fonts'
 import FontsList from '../components/Fonts/FontsList'
-import MainLayout from '../components/Layouts/MainLayout'
-const Fonts = (props) => {
-  const [open, setOpen] = useState(false)
-  const updateOpen = (value) => {
-    setOpen(value)
-  }
-  useEffect(() => {
-    // props.page('Fonts')
-  }, [])
-  const [lastWord, setLastWord] = useState('')
-  const [link, setLink] = useState(window.location.href)
-  useEffect(() => {
-    setLink(location.pathname)
+import { FontsTagBarData } from '../utils/Fonts'
 
-    if (link !== 'http://localhost:3000/fonts') {
-      const words = link.split('/')
-      const fontsIndex = words.indexOf('fonts')
-      const newLastWord = words[fontsIndex + 1] || ''
-      setLastWord(newLastWord.replace('All%20fonts', ' '))
+const Fonts = () => {
+  const [sbPos, setSbPos] = useState('')
+  const [sidePos, setSidePos] = useState('')
+  const [resultsPos, setResultsPos] = useState('')
+  const [tagbarPos, setTagbarPos] = useState('')
+  const [tagResPos, setTagResPos] = useState('')
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 43.5) {
+      setSbPos('s-fix sb-fixed')
+      setSidePos('s-fix side-fixed')
+      setTagbarPos('s-fix tagbar-fixed')
+      setResultsPos('results-fixed')
+      setTagResPos('tagbar-results-fixed')
+    } else {
+      setSbPos('')
+      setSidePos('')
+      setTagbarPos('')
+      setResultsPos('')
+      setTagResPos('')
     }
-  }, [location])
-
+  })
   return (
-    <>
-      {/* <MainLayout page={props.page} pageTitle="Fonts"> */}
-      {/* <SearchContainer mainPage={false} /> */}
-      <SideBar updateOpen={updateOpen} data={FontsSideBarData} />
-
-      <div className={`fonts-page ${!open ? 'base' : 'pushed'}`}>
-        <TagBar data={FontsTagBarData} className={`${!open ? 'base' : 'pushed-tagbar'}`} />
-        <SearchResultHeader
-          title={`Free ${lastWord} Fonts`}
-          description="Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!"
-        />
-        <FontsList />
+    <div className={`search-results fonts-page base`}>
+      <div className={`searchbox-wrapper ${sbPos}`}>
+        <h2>Seach Here</h2>
       </div>
-      {/* </MainLayout> */}
-    </>
+      <div className="sponsored-wrapper s-hide">
+        <h2>sponsored elements</h2>
+      </div>
+      <div className="sidebar-results">
+        <div className={`sidebar-wrapper ${sidePos}`}>
+          <h3>sidebar</h3>
+        </div>
+        <div className={`tagbar-results ${tagResPos}`}>
+          <div className={`tagbar-wrapper ${tagbarPos}`}>
+            <TagBar data={FontsTagBarData} />
+          </div>
+          <div className={`results-wrapper ${resultsPos}`}>
+            <div className="results-header">
+              <SearchResultHeader
+                title="Free Good Fonts"
+                description="Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!"
+              />
+            </div>
+            <div className="results-list">
+              <FontsList />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
