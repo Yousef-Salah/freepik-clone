@@ -1,48 +1,54 @@
-#grid-cards{
-	width: 98%;
-	margin: 0 auto;
-	display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+#grid-cards {
+  width: 98%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-.card-wrapper{
-	width: fit-content !important;
-    padding: 0px;
-    margin: 0px;
-    display: inline;
-	margin: 1%;
-	margin: 0 auto;
-	padding: 5px 10px 10px 10px;
-	min-width: 200px;
+.card-wrapper {
+  width: fit-content !important;
+  padding: 0px;
+  margin: 0px;
+  display: inline;
+  margin: 1%;
+  margin: 0 auto;
+  padding: 5px 10px 10px 10px;
+  min-width: 200px;
 }
-.card-wrapper-flexed{
-	flex: 25%;
+.card-wrapper-flexed {
+  flex: 25%;
 }
-.inner-search-card{
-	width: fit-content;
-	display: inline;
-}
-
-@media screen and (max-width:768px) {
-	.card-wrapper-flexed,.card-wrapper{
-		flex: 50%;
-	}
-}
-@media screen and (max-width:450px) {
-	.card-wrapper-flexed,.card-wrapper{
-		flex: 100%;
-	}
-	.card-wrapper .searchcard-img{
-		height: fit-content;
-	}
-}
-@media screen and (max-width:1224px) {
-	.card-wrapper-flexed{
-		flex: 33.3%;
-	}
+.inner-search-card {
+  width: fit-content;
+  display: inline;
 }
 
-#search-results{
-	overflow: hidden;
+@media screen and (max-width: 768px) {
+  .card-wrapper-flexed,
+  .card-wrapper {
+    flex: 50%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .card-wrapper-flexed,
+  .card-wrapper {
+    flex: 100%;
+  }
+  .card-wrapper .searchcard-img {
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 1224px) {
+  .card-wrapper-flexed {
+    flex: 33.3%;
+  }
+}
+
+#search-results {
+  overflow: hidden;
+}
+
+.hide-section {
+  display: none;
 }

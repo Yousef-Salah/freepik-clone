@@ -1,0 +1,120 @@
+#search-card {
+  color: white;
+  padding-bottom: 15px;
+}
+
+.searchcard-img {
+  width: 100%;
+  height: 182px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+.testsearchcard {
+  position: relative;
+}
+.Cardphoto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+  margin: 5px;
+}
+.searchcard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+  margin: 5px;
+}
+.likes-no {
+  position: absolute;
+  font-size: 50%;
+  background-color: white;
+  color: rgb(188, 52, 48);
+  border-width: 1px;
+  border-radius: 2px;
+  border-color: rgb(188, 52, 48);
+  z-index: 3;
+  padding: 1%;
+  top: 0;
+  right: 0;
+}
+.searchcard-desc {
+  font-size: 85%;
+  margin-bottom: 2px;
+}
+#searchauthor-img {
+  width: 10%;
+  float: left;
+  padding-right: 5px;
+}
+#searchauthor-name {
+  font-size: 85%;
+}
+.searchcard-buttons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  top: 7px;
+  right: 0;
+}
+.searchcard-button {
+  top: 0;
+  font-size: 50%;
+  margin-bottom: 1px;
+  border-radius: 2px;
+}
+#pintrest-btn {
+  color: white;
+  background-color: rgb(188, 52, 48);
+  border-radius: 2px;
+}
+
+#like-btn,
+#collect-btn {
+  color: gray;
+  background-color: rgb(255, 255, 255);
+}
+#search-card:hover .searchcard {
+  opacity: 1;
+}
+#search-card:hover .Cardphoto {
+  opacity: 1;
+}
+
+#search-card:hover .searchcard-img {
+  filter: brightness(0.5);
+}
+#premium-icon {
+  color: white;
+  float: left;
+  margin-right: 2%;
+}
+#premium-img {
+  position: absolute;
+  padding: 2%;
+  z-index: 2;
+  color: rgb(226, 168, 58);
+  background-color: rgb(88, 96, 107, 0.7);
+  margin-top: 2%;
+  margin-left: 2%;
+  border-radius: 2px;
+}
+#search-card:hover #premium-img {
+  opacity: 0;
+}
+
+#search-card,
+#search-card .searchcard,
+#search-card .Cardphoto,
+#search-card .searchcard-img {
+  transition: all 0.1s ease-in;
+}
+
+#search-card:hover a {
+  color: white;
+}

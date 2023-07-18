@@ -1,0 +1,119 @@
+#login {
+  padding: 0;
+  max-height: 100%;
+  p {
+    margin: 0;
+  }
+  button {
+    border: 2px #80808066 solid;
+    border-radius: 5px;
+    background-color: white;
+  }
+  overflow: hidden;
+}
+#loginphoto {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 0;
+}
+.login-img {
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+#login-form {
+  align-self: center;
+}
+#loginphoto .login-imgby {
+  position: absolute;
+  display: block;
+  bottom: 10px;
+  left: 16px;
+  background-color: #dddddd88;
+  padding: 1px 5px;
+}
+.login-imgby strong {
+  margin-left: 3px;
+}
+#login #login-btns {
+  display: grid;
+  grid-row: 1fr;
+  grid-column: 1fr;
+  justify-content: center;
+  margin: 5% 0 10%;
+  p {
+    min-width: 220px;
+  }
+}
+.login-freepik {
+  display: inline-flex;
+  justify-content: center;
+  margin: 20% 0 8%;
+  width: 25%;
+}
+#login-btn-google,
+#login-btn-facebook,
+#login-btn-email {
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+#login-icon-google,
+#login-icon-facebook,
+#login-icon-email {
+  margin-right: 10px;
+  float: left;
+}
+#addaccount {
+  margin: 20%;
+}
+#addaccount strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: rgb(54, 113, 227);
+}
+#login-icon-facebook {
+  color: rgb(54, 113, 227);
+}
+
+.more-login-info {
+  margin: 10px;
+}
+
+.freepik-company {
+  margin-top: 150px;
+  img {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .login-img {
+    height: 40vh;
+  }
+}
+
+#signup-icon-facebook {
+  color: rgb(54, 113, 227);
+}
+.signupTerms {
+  display: inline-block;
+  margin: 5%;
+  padding: 0;
+}
+.Freepiknews {
+  font-family: Comic;
+  display: flex;
+  float: left;
+  margin: 5%;
+}
+.newscheckbox {
+  align-self: flex-start;
+  margin: 2%;
+  text-align: start;
+}
+.freepik-news {
+  text-align: start;
+  justify-content: center;
+}

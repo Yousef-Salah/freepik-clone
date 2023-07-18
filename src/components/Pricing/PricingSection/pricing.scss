@@ -1,0 +1,196 @@
+.btn-pricing {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+.pricing-photo-wrapper {
+  overflow: hidden;
+}
+
+.card1 {
+  width: 50%;
+  min-width: 550px;
+  max-width: 650px;
+  border-radius: 20px;
+  margin-right: 30px;
+  box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
+  border-color: #f8fafb;
+}
+
+.tick {
+  color: rgb(34, 113, 224);
+  margin-right: 30px;
+}
+
+.fales {
+  color: silver;
+}
+
+.logo-crown {
+  color: orange;
+  font-size: small;
+}
+
+.card2 {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
+  border-color: #f8fafb;
+  cursor: pointer;
+}
+
+.card3 {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
+  border-color: #f8fafb;
+  cursor: pointer;
+}
+
+.card-sect {
+  display: flex;
+  justify-content: space-around;
+  flex: 2;
+  background-color: #f8fafb;
+  padding: 30px 10px;
+}
+
+.card-teams1 {
+  display: flex;
+  width: 45%;
+  max-width: 550px;
+  margin: 30px;
+  border-radius: 20px;
+  border-color: #f8fafb;
+  box-shadow: 2px 2px 2px 2px rgba(186, 183, 183, 0.5);
+}
+
+.card-temas2 {
+  display: flex;
+  width: 45%;
+  max-width: 550px;
+  margin: 30px;
+  padding: 20px;
+  justify-content: center;
+  padding-left: 10px;
+  border-radius: 20px;
+  border-color: #f8fafb;
+  box-shadow: 2px 2px 2px 2px rgba(185, 186, 183, 0.5);
+}
+
+.more-info {
+  cursor: pointer;
+  color: #1675eb;
+  margin-left: 3px;
+}
+
+.best-value {
+  background-color: #c7ebff;
+  background-size: 100px;
+  padding: 2px;
+  color: #1675eb;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.font-strong {
+  font-size: 1rem;
+}
+
+.color-textcard {
+  color: slategray;
+  font-size: smaller;
+  font-weight: bolder;
+}
+
+.card-text {
+  padding: 10px;
+}
+
+.card-section2 {
+  display: flex;
+  justify-content: space-around;
+  flex: 2;
+  background-color: #f8fafb;
+  padding-bottom: 30px;
+}
+
+.card-tite {
+  display: flex;
+}
+
+.btn-team {
+  padding-left: 100px;
+  margin-top: 30px;
+}
+
+.font-eur {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.pricingform {
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.save-sp {
+  background-color: #c7ebff;
+  padding: 2px;
+  color: #1675eb;
+  font-size: 14px;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+
+.new-sp {
+  background-color: #2f8ff7;
+  padding: 2px;
+  border-radius: 2px;
+  font-weight: bold;
+  color: white;
+}
+
+@media only screen and (max-width: 1050px) {
+  .card-sect {
+    display: block;
+  }
+  .card1,
+  .card-section {
+    width: 100%;
+    max-height: 100% !important;
+  }
+  .card1 {
+    font-size: 0.8rem;
+  }
+  .card1,
+  .card2,
+  .card3 {
+    min-width: 350px;
+    width: 80%;
+    margin: 20px auto;
+  }
+  .pricing-photo1,
+  .pricing-photo2 {
+    max-height: 150px !important;
+    margin-left: -50px;
+  }
+  .card-section2 {
+    display: block;
+  }
+  .card-teams1,
+  .card-temas2 {
+    width: 80%;
+    min-width: 350px;
+    margin: 20px auto;
+    max-width: none;
+  }
+}

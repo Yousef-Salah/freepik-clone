@@ -1,0 +1,172 @@
+#creator-inner-col {
+  width: 96%;
+  margin: 0 auto;
+  padding: 45px 10px;
+}
+.creator-collection-title {
+  font-weight: bold;
+  color: rgb(69, 70, 70);
+  h1 {
+    font-size: 28px !important;
+  }
+}
+
+.creator-collection-p {
+  padding-top: 1%;
+  font-size: 18px;
+  color: rgb(91, 92, 92);
+  display: flex;
+  justify-content: space-between;
+}
+
+.Explore-btn {
+  font-size: medium;
+  color: rgb(77, 77, 247);
+  min-width: 70px;
+}
+
+.right-arrow {
+  padding-left: 0.5%;
+  color: rgb(77, 77, 247);
+}
+
+.Explore-btn::after {
+  display: inline-block;
+  padding-left: 8px;
+}
+
+.Explore-btn:hover .right-arrow {
+  transform: translateX(4px);
+}
+
+.d-collection-col {
+  display: inline-block;
+  padding: 0 40px 0 0;
+}
+
+/* Css for the discover collection cards  */
+.collection-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  overflow-x: scroll;
+  margin: 0 auto;
+  padding: 4vw 0;
+}
+.collection-row::-webkit-scrollbar {
+  display: none;
+}
+
+.creator-collection-div {
+  position: relative;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 6%;
+}
+
+.creator-collection-img {
+  width: 300px;
+  height: 370px;
+  position: relative;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: all 0.2s;
+}
+.creator-collection-img1 {
+  position: absolute;
+  width: 300px;
+  height: 370px;
+  rotate: 4deg;
+  border-radius: 10px;
+  opacity: 0.5;
+  object-fit: cover;
+}
+.creator-collection-div:hover .creator-collection-img {
+  transform: scale(1.015);
+  filter: brightness(0.8);
+}
+
+.creator-collection-div:hover .creator-collection-text {
+  padding-bottom: 4%;
+}
+
+.resources {
+  display: none;
+  color: azure;
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.creator-collection-div:hover .resources {
+  justify-content: center;
+  display: flex;
+}
+
+.creator-collection-text {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.exploreBox {
+  height: 100%;
+  width: calc(35vw - 20px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  border: 1px solid #808080aa;
+}
+.c-c-t-r {
+  width: 98%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .Explore-btn {
+    display: none;
+  }
+  .d-collection-col img {
+    min-width: 150px;
+    min-height: 190px;
+    width: 35vw;
+    height: 45vw;
+  }
+  .d-collection-col {
+    padding: 0 15px;
+  }
+  .creator-collection-title {
+    font-size: 24px;
+    text-align: center;
+  }
+  .creator-collection-p {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0 20px 0;
+  }
+}
+@media (min-width: 768px) {
+  .exploreBox {
+    display: none;
+  }
+}
+
+@media (min-width: 1450px) {
+  .collection-row {
+    width: fit-content;
+  }
+
+  .inner-col-title {
+    width: 1350px;
+    margin: 0 auto;
+    padding-right: 15px;
+  }
+}

@@ -1,0 +1,167 @@
+.discover-collection-row * {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.discover-list {
+  padding: 10px 5px 30px 5px;
+}
+.discover-collection-container {
+  width: fit-content;
+}
+
+.discover-collection-div:hover {
+  -webkit-filter: brightness(0.5);
+  filter: brightness(0.8);
+}
+.discover-collection-div {
+  display: flex;
+}
+.discover-collection-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  overflow: scroll;
+  padding: 20px 10px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.discover-collection-row2 {
+  height: 50%;
+}
+.para-col {
+  font-weight: 900;
+}
+
+.discover-collection-row3 {
+  height: 50%;
+}
+
+.discover-img3 {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0 10px 10px 0;
+  border-left: 1px white solid;
+  object-fit: cover;
+}
+
+.discover-para {
+  font-size: 16px;
+}
+
+.discover-resources {
+  color: rgb(86, 86, 86);
+  font-size: 13px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.discover-img1 {
+  border-radius: 10px 0 0 0;
+  border-bottom: 1px white solid;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discover-img2 {
+  height: 100%;
+  border-radius: 0 0 0 10px;
+  object-fit: cover;
+}
+
+.discover-collection-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0 0 0;
+}
+
+.dropdown-item {
+  padding: 5px;
+}
+
+.media-section {
+  display: flex;
+  height: 300px;
+  width: 300px;
+}
+
+.discover-collection-h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.viewall-btn {
+  color: blue;
+  font-weight: 500;
+  font-size: 1.3rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+.center-content {
+  flex: 0.7;
+}
+.view-content {
+  flex: 0.15;
+  margin: 0 auto;
+}
+.left-space {
+  flex: 0.15;
+}
+
+.collection-card {
+  padding: 0 20px;
+  button {
+    border: none;
+    background: none;
+  }
+}
+
+.collection-card:hover {
+  -webkit-filter: brightness(1.05);
+  filter: brightness(1.05);
+}
+.discover-dropDown {
+  float: right;
+}
+.collection-card-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0 0 0;
+}
+
+.discover-collection-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 1350px) {
+  .discover-collection-row {
+    width: 95%;
+  }
+  .collection-card {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 950px) {
+  .media-section {
+    height: 170px;
+  }
+  .discover-collection-h1 {
+    font-size: 1.2rem;
+  }
+  .left-space {
+    display: none;
+  }
+  .discover-collection-title {
+    flex-direction: column;
+  }
+  .viewall-btn {
+    font-size: 1.2rem;
+  }
+  .view-content {
+    padding-top: 5px;
+  }
+}

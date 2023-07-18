@@ -1,0 +1,102 @@
+#join-section .title {
+  font-size: xx-large;
+  color: #374957;
+  padding-bottom: 25px;
+}
+#join-section strong {
+  color: blue;
+}
+#join-section {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto 30px auto;
+  border-radius: 10px;
+  background-image: linear-gradient(45deg, #d2eafd, #e9f7fe);
+  padding-bottom: 20px;
+  overflow: hidden;
+  .button {
+    text-decoration: none;
+  }
+}
+#join-section .photo {
+  height: 300px;
+  width: 400px;
+  position: relative;
+}
+#join-section img {
+  height: 330px;
+  object-fit: cover;
+  margin-top: -20px;
+  position: absolute;
+}
+#join-section .content {
+  width: 65%;
+  padding: 50px 60px 0 80px;
+}
+
+#join-section .text {
+  width: 90%;
+  max-width: fit-content;
+  color: #485762;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+#join-section .button {
+  background-color: #1273eb;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 15px;
+  padding: 12px 26px;
+}
+#join-section .image-wrapper {
+  width: fit-content;
+  height: fit-content;
+}
+@media (max-width: 1000px) {
+  #join-section {
+    padding: 0 0 20px 0;
+    max-width: none;
+  }
+  #join-section .content {
+    padding: 50px 0px 20px 50px;
+  }
+  #join-section .title {
+    font-size: 1.3rem;
+  }
+  #join-section .text {
+    font-size: 1rem;
+  }
+  #join-section .photo {
+    margin-right: -15%;
+  }
+}
+@media (max-width: 1200px) and (min-width: 1000px) {
+  #join-section {
+    padding-bottom: 50px;
+  }
+  #join-section .photo {
+    margin-right: -10%;
+  }
+  #join-section .content {
+    padding-right: 0px;
+  }
+}
+@media (max-width: 725px) {
+  #join-section .photo {
+    display: none;
+  }
+  #join-section .content {
+    width: 100%;
+  }
+
+  #join-section .title {
+    font-size: 1.8rem;
+    width: 90%;
+  }
+  #join-section .text {
+    font-size: 1.3rem;
+    width: 90%;
+  }
+}

@@ -4,81 +4,82 @@
       rgba(17, 17, 17, 0.9),
       rgba(17, 17, 17, 0.9)
     ),
-    url("https://static-gcp.freepikcompany.com/freepik/chinese-new-year-2023/gam/noise.png");
-	height: 400px;
-	width: 100%;
-	overflow: hidden;
+    url('https://static-gcp.freepikcompany.com/freepik/chinese-new-year-2023/gam/noise.png');
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
 }
-.gold-text{
-	color: #f8d346;
+.gold-text {
+  color: #f8d346;
 }
-.cal-wrapper{
-	display: flex;
-	flex-direction: row;
-	position: relative;
-	justify-content: space-between;
-	.cal-info{
-		display: flex;
-		flex-direction: column;
-		padding: 20px 60px;
-		justify-content: center;
-		position: absolute;
-		height: 100%;
-		width: 55%;
-		.cal-title{
-			font-size: 1.8rem;
-			color: #fff;
-			font-weight: 600;
-			margin-bottom: 10px;
-		}
-		.cal-subtitle{
-			font-size: 1.5rem;
-			color: rgb(168, 168, 168);
-			font-weight: 400;
-		}
-		.cal-btn{
-			border: none;
-			border-radius: 3px;
-			padding: 0 20px;
-			cursor: pointer;
-			width: 150px;
-			height: 44px;
-			font-size: 1rem;
-			line-height: 44px;
-			transition: 250ms linear;
-			background: rgb(255 255 255 / 8%);
-			color: white ;
-			float: left;
-		}
-		.cal-btn:hover{
-			background: #ffffffaa;
-		}
-	}
-	.cover-image{
-		height: 450px;
-    	width: 100%;
-		.cover-wrapper{
-			position: relative;
-			img{
-				margin-left:calc( 100% - (100% / 2) + 50px) ;
-				position: absolute;
-				min-height: 450px;
-				min-width: fit-content;
-			}
-	}
-	}
+.cal-wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  .cal-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 60px;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    .cal-title {
+      font-size: 1.8rem;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .cal-subtitle {
+      font-size: 1.5rem;
+      color: rgb(168, 168, 168);
+      font-weight: 400;
+    }
+    .cal-btn {
+      border: none;
+      border-radius: 3px;
+      padding: 0 20px;
+      cursor: pointer;
+      width: 150px;
+      height: 44px;
+      font-size: 1rem;
+      line-height: 44px;
+      transition: 250ms linear;
+      background: rgb(255 255 255 / 8%);
+      color: white;
+      float: left;
+      text-decoration: none;
+    }
+    .cal-btn:hover {
+      background: #ffffffaa;
+    }
+  }
+  .cover-image {
+    height: 450px;
+    width: 100%;
+    .cover-wrapper {
+      position: relative;
+      img {
+        margin-left: calc(100% - (100% / 2) + 50px);
+        position: absolute;
+        min-height: 450px;
+        min-width: fit-content;
+      }
+    }
+  }
 }
 @media (max-width: 768px) {
-	.cal-wrapper{
-		.cal-info{
-			padding: 20px 20px;
-			width: 70%;
-			.cal-title{
-				font-size: 1.35rem;
-			}
-			.cal-subtitle{
-				font-size: 1rem;
-			}
-		}
-	}
+  .cal-wrapper {
+    .cal-info {
+      padding: 20px 20px;
+      width: 70%;
+      .cal-title {
+        font-size: 1.35rem;
+      }
+      .cal-subtitle {
+        font-size: 1rem;
+      }
+    }
+  }
 }
