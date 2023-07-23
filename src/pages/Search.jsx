@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import SideBar from '../components/Search/SideBar/SideBar'
 
 const Search = () => {
   const [sbPos, setSbPos] = useState('')
@@ -33,7 +34,7 @@ const Search = () => {
       </div>
       <div className="sidebar-results">
         <div className={`sidebar-wrapper ${sidePos}`}>
-          <h3>sidebar</h3>
+          <SideBar />
         </div>
         <div className={`tagbar-results ${tagResPos}`}>
           <div className={`tagbar-wrapper ${tagbarPos}`}>
