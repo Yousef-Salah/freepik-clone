@@ -212,13 +212,19 @@ summary {
     width: 100%;
     height: fit-content;
     display: flex;
-    background-color: #4055c7;
+    background-color: #fff;
     padding: 0;
     .sidebar-wrapper {
       width: 300px;
-      height: calc(100vh);
-      background-color: #407865;
+      height: calc(100vh - 70px);
+      overflow: scroll;
+      background-color: #fff;
       border-right: 2px solid #d2d2d2;
+      .sidebar-body {
+        .sidebar-item:last-child {
+          padding-bottom: 30px;
+        }
+      }
     }
     .tagbar-results {
       width: calc(100% - 300px);
