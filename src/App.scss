@@ -290,8 +290,8 @@ summary {
       width: 100%;
       margin-left: 0 !important;
       .tagbar-wrapper {
-        left: 0;
-        width: 100% !important;
+        left: 60;
+        width: calc( 100% - 60px ) !important;
       }
     }
   }
