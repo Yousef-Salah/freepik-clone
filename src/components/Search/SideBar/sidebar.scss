@@ -2,6 +2,8 @@
   width: 100%;
   height: 100%;
   background-color: white;
+  overflow-x: hidden;
+  z-index: 3;
 }
 
 // for debugging
@@ -62,9 +64,10 @@
     .tag-item {
       display: flex;
       align-items: center;
-      padding: 10px 18px;
+      padding: 6px 18px;
       outline: 1px solid #e6e6e6;
       border-radius: 10px;
+      font-size: 0.96rem;
       width: fit-content;
       margin: 12px 10px 0px 0px;
       color: #374957;
@@ -81,6 +84,10 @@
         color: rgb(3, 174, 3, 0.8);
         font-weight: 800;
       }
+    }
+    .focus-tag-item {
+      background-color: #2c8cf4;
+      color: white;
     }
   }
 }
