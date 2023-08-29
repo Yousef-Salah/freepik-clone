@@ -1,6 +1,7 @@
 import React from 'react'
 import './category-section.scss'
 import categoryPageData from './utils'
+import categoryPageData from './utils'
 
 const CategorySection = () => (
   <section id="iamge-card-text">

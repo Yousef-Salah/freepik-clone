@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const TagBarData = [
   {
     title: 'Photos',
@@ -80,3 +78,5 @@ export const TagBarData = [
     className1: 'tag'
   }
 ]
+
+export default TagBarData;

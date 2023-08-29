@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react'
 import SearchResultHeader from '../components/Search/SearchResults/SearchResultHeader'
 import SideBar from '../components/Search/FilterSideBar/SideBar'
@@ -33,10 +34,16 @@ const Fonts = (props) => {
     <>
       <MainLayout page={props.page} pageTitle="Fonts">
         {/*<SearchContainer mainPage={false} />*/}
-        <SideBar updateOpen={updateOpen} data={FontsSideBarData} />
 
-        <div className={`search-content fonts-page fonts-grid-page ${!open ? 'base' : 'pushed'}`}>
-          <TagBar data={FontsTagBarData} className={`${!open ? 'base' : 'pushed-tagbar'}`} />
+        <div
+          className={`search-content fonts-page fonts-grid-page ${
+            !open ? 'base' : 'pushed'
+          }`}
+        >
+          <TagBar
+            data={FontsTagBarData}
+            className={`${!open ? 'base' : 'pushed-tagbar'}`}
+          />
           <SearchResultHeader
             title={`Free ${lastWord} Fonts`}
             description="Discover and install our selection of free fonts, include them in your projects and make incredible designs! Book covers, merchandise, billboards, magazines. Start creating now!"

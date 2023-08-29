@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import SignUp from '../components/Signup/SignUp'
 
-const Signup = (props) => {
+const Signup = () => {
   useEffect(() => {
     // props.page('signup')
   }, [])

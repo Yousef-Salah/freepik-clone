@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Pages } from './seepick.config'
 
 import PageNotFound from './components/Common/PageNotFound/PageNotFound'
-import Layout from './components/Layouts/Layout'
+import { Layout } from './components/Layouts/Layout'
 import Home from './pages/Home'
 import Search from './pages/Search'
 import Category from './pages/Category'
