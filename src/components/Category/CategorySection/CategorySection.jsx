@@ -1,11 +1,11 @@
 import React from 'react'
 import './category-section.scss'
-import categoryPageData from './utils'
+import utils from './utils'
 
 const CategorySection = () => (
   <section id="iamge-card-text">
-    {categoryPageData.map((item, index) => (
-      <div className="row" key={index.id}>
+    {utils.map((item, index) => (
+      <div className="row" key={index.item}>
         {index % 2 === 0 ? (
           <>
             <div className="rightPargraph">
