@@ -32,10 +32,7 @@ const SidebarItem = ({ item }) => {
       <div className="sidebar-item-body">
         {isOpen && (
           <div className="tags-list">
-            {tags &&
-              tags.map((tag) => (
-                <Tag name={tag.name} icon={tag.icon} isNew={tag.isNew} />
-              ))}
+            {tags && tags.map((tag) => <Tag tagData={tag} tagType={title} />)}
           </div>
         )}
       </div>

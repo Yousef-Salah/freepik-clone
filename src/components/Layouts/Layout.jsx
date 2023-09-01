@@ -1,8 +1,7 @@
 /* eslint-disable */
-import React, { useRef } from 'react'
+import React, { useContext, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { DevConfig } from '../../seepick.config'
-import GlobalContext from '../../contexts/Context'
 import SearchQuery from '../../contexts/SearchQuery'
 import ResultsDataContainer from '../../contexts/ResultsDataContainer'
 import Navbar from './Navbar/Navbar'
@@ -11,42 +10,33 @@ import DiscountModal from '../Common/DiscountModal/DicountModal'
 
 export const Layout = () => {
   const animations = (DevConfig.animations && 'animate') || ''
-  const search = {
-    searchQuery: 'xyz',
-    searchImage: async function() { 
-      return { title: 'im an item', desc: 'holding description' };
-    }
+  const [Query, setQuery] = useState(useContext(SearchQuery))
+  const queryData = {
+    filterData: Query,
+    setFilterData: (data) => {
+      setQuery(data)
+      console.log(data)
+    },
   }
-  const config = {
-    getPageName: () => {}
-  }
-  const Query = useRef({
-    searchInput: window.location.pathname.split('/')[2]?.replace('_', ' '),
-    itemType: 'Assets', // assets collections
-    itemPriceType: [], // free premium
-    category: 'Vectors'
-  })
-  const sqValue = {
+  const searchConfig = {
     data: [],
     lastQuery: Query.searchInput,
     offset: 15,
     start: 0,
-    end: 15
+    end: 15,
   }
   return (
-    <GlobalContext.Provider value={{ search, config }}>
-      <SearchQuery.Provider value={Query}>
-        <ResultsDataContainer.Provider value={sqValue}>
-          <main className={animations}>
-            <Navbar />
-            <Outlet />
-            <Footer />
-            <DiscountModal />
-          </main>
-        </ResultsDataContainer.Provider>
-      </SearchQuery.Provider>
-    </GlobalContext.Provider>
+    <SearchQuery.Provider value={{ ...queryData }}>
+      <ResultsDataContainer.Provider value={searchConfig}>
+        <main className={animations}>
+          <Navbar />
+          <Outlet />
+          <Footer />
+          <DiscountModal />
+        </main>
+      </ResultsDataContainer.Provider>
+    </SearchQuery.Provider>
   )
 }
 
-export default Layout;
+export default Layout

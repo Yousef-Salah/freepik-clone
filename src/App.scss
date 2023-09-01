@@ -290,8 +290,8 @@ summary {
       width: 100%;
       margin-left: 0 !important;
       .tagbar-wrapper {
-        left: 60;
-        width: calc( 100% - 60px ) !important;
+        left: 0;
+        width: 100% !important;
       }
     }
   }
@@ -334,8 +334,9 @@ summary {
     width: 100% !important;
     margin: 0 !important;
     .tagbar-wrapper {
-      left: 0 !important;
       width: 100% !important;
+      left: 0 !important;
+      margin: 0 !important;
     }
   }
 }
