@@ -1,10 +1,10 @@
 /* eslint-disable */
 import React, { useState, useContext, useEffect } from 'react'
-import SearchQuery from '../../../contexts/SearchQuery'
+import SearchQueryNew from '../../../contexts/SearchQueryNew'
 
 const Tag = ({ tagData, tagType }) => {
   const [isClicked, setIsClicked] = useState(false)
-  const [queryContext, setQueryContext] = useState(useContext(SearchQuery))
+  const [queryContext, setQueryContext] = useState(useContext(SearchQueryNew))
   const { name, icon, isNew } = tagData
   useEffect(() => {
     if (queryContext.filterData[tagType] === name) {
@@ -21,7 +21,7 @@ const Tag = ({ tagData, tagType }) => {
     } else {
       newFilerData[tagType] = name
     }
-    // console.log(newFilerData)
+    console.log(newFilerData)
     queryContext.setFilterData(newFilerData)
     setIsClicked(!isClicked)
   }

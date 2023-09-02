@@ -13,6 +13,6 @@ const DefaultQuery = {
   'Freepicks choice': '',
 }
 
-const SearchQuery = createContext(DefaultQuery)
+const SearchQueryNew = createContext(DefaultQuery)
 
-export default SearchQuery
+export default SearchQueryNew
