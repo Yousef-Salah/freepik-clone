@@ -4,34 +4,37 @@ import SearchQueryNew from '../../../contexts/SearchQueryNew'
 
 const Tag = ({ tagData, tagType }) => {
   const [isClicked, setIsClicked] = useState(false)
-  const [queryContext, setQueryContext] = useState(useContext(SearchQueryNew))
+  const { filterData, setFilterData } = useContext(SearchQueryNew)
   const { name, icon, isNew } = tagData
-  useEffect(() => {
-    if (queryContext.filterData[tagType] === name) {
-      setIsClicked(true)
-    } else {
-      setIsClicked(false)
-    }
-  }, [queryContext.filterData[tagType]])
 
-  const changeState = () => {
-    const newFilerData = queryContext.filterData
+  useEffect(() => {
     if (isClicked) {
-      newFilerData[tagType] = ''
-    } else {
-      newFilerData[tagType] = name
+      console.log('we are true')
+      if (filterData['Asset Type'] !== name) {
+        setIsClicked(false)
+      }
     }
-    console.log(newFilerData)
-    queryContext.setFilterData(newFilerData)
+  }, [filterData])
+
+  const toggleItemStatus = (source) => {
     setIsClicked(!isClicked)
+    updateContext()
+  }
+
+  const updateContext = () => {
+    if (isClicked) {
+      setFilterData({ ...filterData, 'Asset Type': '' })
+    } else {
+      setFilterData({ ...filterData, 'Asset Type': name })
+    }
   }
 
   return (
     <div className="tag-item-wrapper">
       <div
         className={`tag-item ${isClicked ? 'focus-tag-item' : ''}`}
-        onClick={changeState}
-        onKeyDown={changeState}
+        onClick={toggleItemStatus}
+        onKeyDown={toggleItemStatus}
         role="button"
         tabIndex={0}
       >
