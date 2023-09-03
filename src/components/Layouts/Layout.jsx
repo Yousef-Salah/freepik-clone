@@ -40,7 +40,7 @@ export const Layout = () => {
     filterData: newQuery,
     setFilterData: (data) => {
       setNewQuery(data)
-      console.log(data)
+      // console.log(data)
     },
   }
 

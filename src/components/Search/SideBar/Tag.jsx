@@ -9,23 +9,20 @@ const Tag = ({ tagData, tagType }) => {
 
   useEffect(() => {
     if (isClicked) {
-      console.log('we are true')
-      if (filterData['Asset Type'] !== name) {
+      if (filterData[tagType] !== name) {
         setIsClicked(false)
       }
     }
   }, [filterData])
 
-  const toggleItemStatus = (source) => {
-    setIsClicked(!isClicked)
+  const toggleItemStatus = () => {
+    setIsClicked(true)
     updateContext()
   }
 
   const updateContext = () => {
-    if (isClicked) {
-      setFilterData({ ...filterData, 'Asset Type': '' })
-    } else {
-      setFilterData({ ...filterData, 'Asset Type': name })
+    if (!isClicked) {
+      setFilterData({ ...filterData, [tagType]: name })
     }
   }
 
