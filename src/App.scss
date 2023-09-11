@@ -229,14 +229,16 @@ summary {
       }
     }
     .sidebar-to-button {
-      height: 60px;
-      width: 102px;
+      height: 45px;
+      width: 100px;
+      padding: 10px;
       position: fixed;
       border: 1px solid #dfdfdf;
       border-radius: 5px;
-      margin: 8px;
+      margin: 4px 0 0 20px;
       z-index: 4;
-      background-color: #eff3f6;
+      background-color: #fff;
+      box-shadow: -20px 0px 0px 2px #fff;
     }
     .hide-us {
       position: absolute;
@@ -250,8 +252,8 @@ summary {
     }
     .sidebar-filters-btn {
       position: absolute;
-      top: 20px;
-      left: 30px;
+      margin: 0 auto;
+      align-items: center;
       z-index: 11;
     }
 
@@ -260,14 +262,13 @@ summary {
       height: calc(200vh - 150px);
       display: flex;
       flex-direction: column;
-      background-color: #2d324a;
       padding: 0;
       overflow: hidden;
       .tagbar-wrapper {
         width: 100%;
         height: 60px;
-        background-color: #7a8ef5;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
       }
       .results-wrapper {
         width: 100%;

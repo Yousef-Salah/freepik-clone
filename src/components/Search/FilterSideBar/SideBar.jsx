@@ -37,7 +37,7 @@ const SideBar = (props) => {
                   className="btn-light filtersbtn tw-items-center position-absolute tw-top-5 tw-left-1"
                   type="button"
                 >
-                  <i className="bi bi-sliders"></i>Filters
+                  <i className="bi bi-sliders"></i> Filters
                 </button>
               </div>
             </div>
