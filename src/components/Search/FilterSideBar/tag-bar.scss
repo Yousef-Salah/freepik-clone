@@ -6,9 +6,17 @@
 
 .tagbar {
   overflow: scroll;
+  display: flex;
   z-index: 10;
+  p {
+    padding: 3px;
+    margin: 0;
+  }
 }
 
 .tagbar-wrapper {
   height: 50px;
+}
+.tagbar::-webkit-scrollbar {
+  display: none;
 }

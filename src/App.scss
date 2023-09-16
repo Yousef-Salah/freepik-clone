@@ -269,6 +269,8 @@ summary {
         height: 60px;
         overflow-y: scroll;
         overflow-x: hidden;
+        min-height: 60px;
+        background-color: #fff;
       }
       .results-wrapper {
         width: 100%;
@@ -283,7 +285,7 @@ summary {
         .results-list {
           width: 100%;
           height: calc(100% - 120px);
-          background-color: #a9a9a9;
+          background-color: #fff;
         }
       }
     }
