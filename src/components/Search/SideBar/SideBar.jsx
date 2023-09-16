@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react'
+import './sidebar.scss'
+import SidebarItem from './SidebarItem'
+import { filters, headItem } from './utils'
+import SidebarHeadItem from './SidebarHeadItem'
 
-const SideBar = () => {
-  const [isOpen, setOpen] = useState(false)
-  const toggle = () => {
-    setOpen(!isOpen)
-  }
-
-  return (
-    <button style={{ width: !isOpen ? 'visible' : 'hidden' }} onClick={toggle} type='button'>
-      Filters
-      <div className="bi bi-sliders" />
-    </button>
-  )
-}
+const SideBar = () => (
+  <div id="sidebar">
+    <div className="sidebar-head">
+      <SidebarHeadItem item={headItem} />
+    </div>
+    <div className="sidebar-body">
+      <div className="filters-list">
+        {filters.map((item) => (
+          <SidebarItem item={item} />
+        ))}
+      </div>
+    </div>
+  </div>
+)
 
 export default SideBar

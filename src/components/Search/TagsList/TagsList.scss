@@ -1,0 +1,22 @@
+.tags-items {
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: white;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.tagbar-item {
+  width: fit-content;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px 10px;
+  outline: 1px solid #e6e6e6;
+  border-radius: 8px;
+
+  h5 {
+    padding: 7px 4px 0px 4px;
+    line-height: 1;
+    font-size: 1.1rem;
+  }
+}
