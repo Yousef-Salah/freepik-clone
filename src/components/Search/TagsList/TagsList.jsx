@@ -8,11 +8,24 @@ const TagsList = () => {
     <div className="tags-list">
       <div className="tags-items">
         {tagsData.map((item) => (
-          <div className="tagbar-item">
-            <h5>{item}</h5>
-          </div>
+          <TagItem key={item.toString()} data={item} />
         ))}
       </div>
+    </div>
+  )
+}
+
+const TagItem = ({ data }) => {
+  const [selected, setSelected] = React.useState(false)
+  return (
+    <div
+      className={`tagbar-item ${selected ? 'bg-primary text-white' : ''}`}
+      onClick={() => setSelected(!selected)}
+      onKeyDown={() => setSelected(!selected)}
+      role="tab"
+      tabIndex={0}
+    >
+      <h5>{data}</h5>
     </div>
   )
 }

@@ -7,6 +7,7 @@ import Searchimgcard from './Searchimgcard'
 import SearchResultHeader from './SearchResultHeader'
 import ModalTrigger from '../../Category/PreviewModal/ModalTrigger'
 import { useNavigate, useParams } from 'react-router-dom'
+import '../FilterSideBar/filters.scss'
 
 const SearchResults = (props) => {
   const [modalDisplay, setModalDisplay] = useState(false)
@@ -71,13 +72,13 @@ const SearchResults = (props) => {
   return (
     <div id="search-results">
       {loaded && <ModalTrigger displayStatus={modalDisplay} data={modalData} />}
-      <SearchResultHeader
+      {/* <SearchResultHeader
         title={
           (foundResult ? 'Showing results for ' : "couldn't find ") +
           props.title
         }
         sort={true}
-      />
+      /> */}
       <div className="search-description" id="pills-tab" role="tablist">
         <li className="nav-item-search" role="presentation">
           <button

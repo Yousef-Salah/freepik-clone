@@ -1,5 +1,5 @@
 const tags = [
-  'backgroun',
+  'background',
   'rain',
   'colored',
   'smile',

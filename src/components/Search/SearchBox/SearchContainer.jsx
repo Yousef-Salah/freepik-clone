@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SearchBox from './SearchComponents/SearchBox'
@@ -58,7 +57,7 @@ const SearchContainer = ({ dataHandler, page, mainPage }) => {
           </Link>
         </div>
         <div className="col-9 col-sm-10">
-          <SearchBox dataHandler={dataHandler} mainPage={false} page={page} />
+          <SearchBox mainPage={false} page={page} />
         </div>
       </div>
     </div>

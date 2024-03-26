@@ -18,5 +18,5 @@ export const DevConfig = {
   environment: 'development' || 'production' || 'staging' || 'test',
   style_debug_level: false, // false, 'basic', 'advanced'
   debug: false, // ? how can we do this? is it possible? is it useful?
-  animations: false,
+  animations: true,
 }

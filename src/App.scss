@@ -197,7 +197,7 @@ summary {
   background-color: #b6b6b6;
   .searchbox-wrapper {
     width: 100%;
-    height: 75px;
+    height: fit-content;
     background-color: #40a5c7;
     border-bottom: 2px solid #d2d2d2;
     // margin-bottom: 5px;
@@ -259,7 +259,8 @@ summary {
 
     .tagbar-results {
       width: calc(100% - 300px);
-      height: calc(200vh - 150px);
+      min-height: calc(200vh - 150px);
+      height: fit-content;
       display: flex;
       flex-direction: column;
       padding: 0;
@@ -271,6 +272,7 @@ summary {
         overflow-x: hidden;
         min-height: 60px;
         background-color: #fff;
+        z-index: 1;
       }
       .results-wrapper {
         width: 100%;
@@ -311,11 +313,11 @@ summary {
   top: 0;
 }
 .side-fixed {
-  top: 75px;
+  top: 66px;
   position: fixed !important;
 }
 .tagbar-fixed {
-  top: 75px;
+  top: 66px;
   left: 300px;
   width: calc(100% - 300px) !important;
 }

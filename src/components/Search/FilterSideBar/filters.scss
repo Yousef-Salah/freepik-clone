@@ -119,6 +119,14 @@
 .nav-item-search .active {
   border-bottom: 2px solid rgba(39, 35, 35, 1);
 }
+.nav-item-search {
+  * {
+    background-color: transparent;
+    border: none;
+  }
+  padding: 0 10px;
+  list-style: none;
+}
 .search-description button {
   padding-bottom: 5px;
   border-bottom: 2px solid rgba(39, 35, 35, 0.434);

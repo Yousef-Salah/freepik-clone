@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import SideBar from '../components/Search/SideBar/SideBar'
 import TagsList from '../components/Search/TagsList/TagsList'
+import SearchContainer from '../components/Search/SearchBox/SearchContainer'
+import SearchResults from '../components/Search/SearchResults/SearchResults'
+import SearchDB from '../api/utils/search-db.json'
 
 const Search = () => {
   const [sbPos, setSbPos] = useState('')
@@ -11,7 +15,25 @@ const Search = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [sideBtn, setSideBtn] = useState('')
   const [searchFull, setSearchFull] = useState('')
+  const [pathname, setPathname] = useState('')
+  const [imagesData, setImagesData] = useState([])
   const navHeight = 43.5
+
+  const imagesDB = SearchDB
+  const location = useLocation()
+
+  useEffect(() => {
+    const filteredImagesData = imagesDB
+      .filter((item) => item.title.includes(pathname))
+      .slice(30, 60)
+    setImagesData(filteredImagesData)
+  }, [])
+
+  useEffect(() => {
+    const newPath = location.pathname.split('/')[2]
+    setPathname(newPath)
+  }, [location.pathname])
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > navHeight) {
       setSbPos('s-fix sb-fixed')
@@ -42,7 +64,7 @@ const Search = () => {
   return (
     <div className={`search-results `}>
       <div className={`searchbox-wrapper ${sbPos}`}>
-        <h2>Seach Here</h2>
+        <SearchContainer dataHandler={() => {}} />
       </div>
       <div className="sponsored-wrapper s-hide">
         <h2>sponsored elements</h2>
@@ -80,10 +102,10 @@ const Search = () => {
           </div>
           <div className={`results-wrapper ${resultsPos}`}>
             <div className="results-header">
-              <h2>search keyword</h2>
+              <h2>Showing results for {pathname}</h2>
             </div>
             <div className="results-list">
-              <h2>items here</h2>
+              <SearchResults title={pathname} images={imagesData} />
             </div>
           </div>
         </div>

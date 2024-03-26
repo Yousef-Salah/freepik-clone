@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import DropDownItem from './SearchDropdown'
 import DropDownButton from './DropDownButton'
 import SearchQuery from '../../../../contexts/SearchQuery'
+import SearchQueryNew from '../../../../contexts/SearchQueryNew'
 import './search-box.scss'
 
 const SearchBox = (props) => {
@@ -18,12 +19,19 @@ const SearchBox = (props) => {
   const searchInput = useRef(
     window.location.pathname.split('/')[2]?.replace('_', ' ')
   )
+  const { filterData, setFilterData } = useContext(SearchQueryNew)
   const itemType = useRef(searchQuery.current.itemType)
   const category = useRef(searchQuery.current.category)
   const itemPricesList = useRef(searchQuery.current.itemPriceType)
   const navigate = useNavigate()
   const mainPage = !props.mainPage ? 'sub-page-search' : ''
-
+  // update searchQueryNew context
+  useEffect(() => {
+    setFilterData({
+      ...filterData,
+      searchInput: searchInput.current,
+    })
+  }, [])
   const buttonLabelGenerator = () => {
     let label = ''
 
@@ -49,7 +57,7 @@ const SearchBox = (props) => {
   }
 
   useEffect(() => {
-    if (!props.mainPage && props.page !== 'category') props.dataHandler()
+    // if (!props.mainPage && props.page !== 'category') props.dataHandler()
     setSearchInputState(searchQuery.current.searchInput)
     setButtonLabel(buttonLabelGenerator())
     setSearchInputPlaceHolder()
@@ -148,7 +156,7 @@ const SearchBox = (props) => {
     searchQuery.current = data
 
     if (!props.mainPage && props.page !== 'category') {
-      props.dataHandler()
+      // props.dataHandler()
     } else {
       return navigate(
         `${props.page === 'category' ? '../../' : ''}search/${

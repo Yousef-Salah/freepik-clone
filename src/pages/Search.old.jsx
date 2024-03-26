@@ -64,7 +64,6 @@ const Search = ({ dataFilter }) => {
     .replace('%20', ' ')
     .replace('-', ' ')
     .replace('_', ' ')
-  console.log(logPath)
   useEffect(() => {
     if (partialData[0]) {
       const newTagbarData = SearchTagBarData.map((item) => ({
